@@ -1,0 +1,6 @@
+@charset "utf-8";
+
+.group-board ul { padding:0px; margin:0px 0px 30px; line-height:22px; list-style:none; }
+.group-board li { margin:0; padding:0px; display:block; text-overflow:ellipsis; white-space:nowrap; word-wrap:normal; overflow:hidden; }
+.group-board li .icon { color:#ddd; }
+.group-board li .count { margin-left:8px; margin-right:4px; }
