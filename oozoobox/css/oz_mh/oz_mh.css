@@ -1,0 +1,115 @@
+@charset "utf-8";
+/* CSS Document  공통부분*/
+
+html, body, div, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select{margin:0; padding:0;}
+body, input, textarea, select, button, table{font:12px/1.5 tahoma, arial, "宋体";}
+img, fieldset{border:0;}
+body{}
+ul, ol{list-style:none;}
+em, address{font-style:normal;}
+a{text-decoration:none; color:#ddd;}
+a:hover, a:active, a:focus{text-decoration:underline; color:#ddd;}
+a, a:link, a:hover, a:visited, a:active{color: #444; text-decoration:none;}
+a, a:hover, a:active{cursor: pointer;}
+img{border:0;}
+input img {vertical-align:middle;}
+table{border-collapse:collapse; border:0 none;}
+ul, ol, dl{list-style:none}
+
+fieldset legend{display: none;}
+.hide{position: absolute; top: -50000px; left: -50000px; width: 0; height: 0; overflow: hidden; font-size: 0; line-height: 0;}
+.block{ display:block; }
+.none{ display:none;}
+
+
+
+/*MAIN/
+/** top 광고**/
+.oz_top_con {width:100%; }
+.oz_top_con img{display:block;}
+
+#oz_mallpage {width: auto; min-width: 990px; background-color: transparent;}
+
+/**top 상단 메뉴**/
+#oz_site_nav {background:rgb(242, 242, 242); width:auto; height:32px; border-bottom:1px solid rgb(229, 229, 229); position:relative !important; z-index:99999; min-width:990px; -webkit-transform:translate3d(0, 0, 0); font-family:"Microsoft YaHei",tahoma,arial,"Hiragino Sans GB","宋体",sans-serif;}
+#oz_site_nav a:link { color: rgb(119, 119, 119);}
+#oz_site_nav a:visited { color: rgb(119, 119, 119);}
+#oz_site_nav .oz_sn_container { color: rgb(119, 119, 119);}
+#oz_site_nav a:hover { color: rgb(218, 32, 32);}
+#oz_site_nav a:active { color: rgb(218, 32, 32);}
+
+#oz_site_nav #oz_sn_bd { position: relative; margin:auto;}
+#oz_site_nav .oz_sn_container { height: 32px;}
+#oz_site_nav .oz_sn_prm_info { height: 32px; line-height: 32px; display:inline-block; position:relative;}
+#oz_site_nav .oz_sn_quick_menu { height: 32px; line-height: 32px; position:absolute; right:0; top:0;}
+#oz_site_nav .oz_sn_quick_menu li {float:left; position:relative; padding:0 10px;}
+#oz_site_nav .oz_sn_quick_menu .oz_sn_separator {float:left; top: 9px; display:inline-block; padding:0; width:0; height:14px; line-height:14px; vertical-align:top; position:relative; left:0; font-size:0px; border-left:1px solid #ccc; margin:0 2px 0 5px;} /*sw: oz_site_nav의 세로줄*/
+
+/**HEADER**/
+#oz_mallpage #oz_header {background: rgb(255, 255, 255); margin-bottom: 0px; min-width: 990px;}
+#oz_header {width:auto !important; height: 145px; margin-top: -26px !important; position: relative; z-index: 1000; margin-right: auto; margin-left: auto;}
+.oz_headerlayout {margin: 0px auto; width: 990px; padding-top: 26px;}
+.oz_headercontent::after {overflow: hidden; display: table; content: "";}
+.oz_headercontent::before {overflow: hidden; display: table; content: "";}
+.oz_headercontent::after {clear: both;}
+.oz_headercontent {-ms-zoom: 1;}
+
+/***logo***/
+#oz_mallLogo {float:left; z-index:9; padding-top:50px; width:280px; height:64px; line-height:64px; position:relative;}
+#oz_mallLogo a {color: rgb(255, 255, 255); text-indent: 0px !important; display: block; position: relative;}
+#oz_mallLogo s {position:absolute; display:block; top:0; cursor:pointer;}
+#oz_mallLogo .oz_mlogo {padding: 0px; margin-right: 10px; float: left;}
+#oz_mallLogo .oz_mlogo a {width: 190px; height:30px; overflow: hidden; font-size: 22px;}
+#oz_mallLogo .oz_mlogo s {background: url('/images/oz_logo.png') no-repeat 0px 0px; width: 190px; height: 28px; }
+
+/***배너***/
+.oz_header_extra {overflow: hidden;}
+.oz_header_banner {float:right; padding:30px 10px 0 100px;}
+
+/***검색창***/
+.oz_event_query {height:18px; display:inline-block; font-size:14px; width:100%; font-family: "Microsoft YaHei",arial,"宋体"; margin-left:-12px;}
+.oz_event_query li{display:inline-block; border-right:1px solid rgb(204,204,204); line-height:1.1; padding:0 18px;}
+.oz_event_query li a{color:rgb(80,80,80);}
+.oz_event_query li a:hover{color:rgb(218, 32, 32);}
+.oz_event_query li.last {border-right:0;}
+#oz_mallSearch {width: 390px; overflow: hidden; padding-top: 25px; float: right;}
+.oz_mallSearch_form {border-width: 3px 0px 3px 3px; border-style: solid; border-color: rgb(243, 156, 18); border-image: none;}
+#oz_mallSearch legend {display: none;}
+#oz_mallSearch fieldset {position: relative;}
+.oz_clearfix::after {overflow: hidden; display: table; content: "";}
+.oz_clearfix::before {overflow: hidden; display: table; content: "";}
+.oz_clearfix::after {clear: both;}
+
+#oz_mallSearch #mq { margin: 0px; padding: 5px 3px 5px 5px; outline: 0px; border: 0px currentColor; border-image: none; width: 289px; height: 20px; color: rgb(130, 130, 130); line-height: 20px; font-weight: 900; position: relative; z-index: 2; box-sizing: content-box; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; _height: 18px; _line-height: 18px;}
+.oz_mallSearch_input {background: rgb(255, 255, 255); height: 30px; position: relative;}
+#oz_mallSearch button {border: 0px currentColor; border-image: none; top: 0px; width: 90px; height: 30px; right: 0px; color: rgb(255, 255, 255); letter-spacing: 4px; overflow: hidden; font-family: "Microsoft YaHei",arial,"宋体"; font-size: 16px; position: absolute; cursor: pointer; background-color: rgb(243, 156, 18); _right: -1px;}
+#oz_mallSearch .s-combobox {height: 30px;}
+#oz_mallSearch #mq {font: 16px/22px arial; font-size-adjust: none; font-stretch: normal; background:url('/images/bg_oz_mallSearch.png') repeat-x;}
+
+@media screen and (-ms-high-contrast:active), all and (-ms-high-contrast:none)
+{ #oz_site_nav .oz_sn_container { top: 1px;}
+}
+
+@media all and (min-width:1910px)
+{#oz_sn_bd { width: 1640px;}
+.oz_headerlayout {width: 1640px;}
+#oz_mallSearch {width: 900px !important; margin-right: 40px;}
+#oz_mallSearch #mq {width: 799px !important;}
+}
+@media all and (max-width:1910px) and (min-width:1261px)
+{#oz_site_nav #oz_sn_bd { left: -15px;}
+#oz_sn_bd { width: 1200px;}
+.oz_headerlayout {width: 1200px;}
+#oz_header #oz_mallSearch {width: 500px;}
+#oz_header #oz_mallSearch #mq {width: 399px;}
+}
+@media all and (max-width:1260px)
+{#oz_sn_bd { width: 1004px;}
+.oz_headerlayout {width: 1004px;}
+}
+
+
+/**CONTENT**/
+#oz_content{font-fmaily:"Microsoft YaHei",tahoma,arial,"Hiragino Sans GB","宋体",sans-serif; background-color:rgb(245,245,245); width:100%; position:relative; z-index:10000;}
+#oz_content {background: rgb(255, 255, 255); color: rgb(153, 153, 153); font-size: 12px; -webkit-text-size-adjust: none;}
+
