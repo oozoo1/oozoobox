@@ -10,11 +10,50 @@ add_stylesheet('<link rel="stylesheet" href="/css/oz_mh/oz_mh.css" type="text/cs
 
 ?>
 
-<script>
-var f=l.get("#mallSearch");
-if(f){f.appendChild(n);
-var d='<form method="GET" accept-charset="gbk" target="_blank" class="hidden" action="{action}">                                            <input type="hidden" value="{q}" name="q"/>                                                <input type="hidden" value="{click_id}" name="click_id"/>                                                <input type="hidden" value="{from}" name="from"/>                                                <input type="hidden" value="{spm}" name="spm"/>                                            </form>';
+
+<script src="/oz_js/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script src="/oz_js/jquery.SuperSlide.2.1.1.js" type="text/javascript"></script>
+<script src="/oz_js/jquery.slides.min.js"></script>
+<script type="text/javascript" src="/oz_js/jquery.als-1.7.min.js"></script>
+
+
+<script type="text/javascript">
+$(".oz_main_nav .tit").slide({
+	type:"menu",
+	titCell:".mod_cate",
+	targetCell:".mod_subcate",
+	delayTime:0,
+	triggerTime:10,
+	defaultPlay:false,
+	returnDefault:true
+});
 </script>
+
+
+  <script>
+    $(function() {
+      $('#slides').slidesjs({
+        width: 823,
+        height: 500,
+        navigation: {
+          effect: "fade"
+        },
+		  play: {
+          auto: true,
+		  effect:"fade"
+        },
+        pagination: {
+          effect: "fade"
+        },
+        effect: {
+          fade: {
+            speed: 400
+          }
+        }
+      });
+    });
+  </script>
+
 
 
 
@@ -38,7 +77,7 @@ var d='<form method="GET" accept-charset="gbk" target="_blank" class="hidden" ac
                     <div id="oz_sn_bd"> <!----- @media  있음------>
                         <div class="oz_sn_container">
                             <p class="oz_sn_prm_info">
-                            	<em>情爱的客户， 今天紫外线太强了，必须使用防晒霜！ 〉〉〉去看看防晒霜</em> <!--"고객님, 오늘은 자외선이 강하네요. 외출할때 반드시 썬크림을 사용하세요>>>썬크림보러가기"  SW: php가 필요할지도.. -->
+                            	<em><a href="#">情爱的客户， 今天紫外线太强了，必须使用防晒霜！ 〉〉〉去看看防晒霜</a></em> <!--"고객님, 오늘은 자외선이 강하네요. 외출할때 반드시 썬크림을 사용하세요>>>썬크림보러가기"  SW: php가 필요할지도.. -->
                             </p>
                             <ul class="oz_sn_quick_menu">
                                 <li>
