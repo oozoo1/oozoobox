@@ -9,11 +9,11 @@ fieldset legend { display:none; }
 label { font-weight:normal; }
 label.checkbox, label.radio { line-height:12px; font-size: 12px; font-weight: normal; cursor: pointer; }
 hr { margin-top: 20px; margin-bottom:20px; border:0; border-top:1px solid #eee; display:block; }
-h1, h1 a { font-family: "Roboto", sans-serif; }
-h2, h2 a { font-family: "Roboto", sans-serif; }
-h3, h3 a { font-family: "Roboto", sans-serif; }
-h4, h4 a { font-family: "Roboto", sans-serif; }
-h5, h5 a { font-family: "Roboto", sans-serif; }
+h1, h1 a { font-family: 微软雅黑, "Roboto", sans-serif; }
+h2, h2 a { font-family: 微软雅黑, "Roboto", sans-serif; }
+h3, h3 a { font-family: 微软雅黑, "Roboto", sans-serif; }
+h4, h4 a { font-family: 微软雅黑, "Roboto", sans-serif; }
+h5, h5 a { font-family: 微软雅黑, "Roboto", sans-serif; }
 blockquote { font-size: 12px; margin:0px 0px 20px; }
 
 /* Font */

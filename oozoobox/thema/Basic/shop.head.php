@@ -11,48 +11,11 @@ add_stylesheet('<link rel="stylesheet" href="/css/oz_mh/oz_mh.css" type="text/cs
 ?>
 
 
-<script src="/oz_js/jquery-1.8.2.min.js" type="text/javascript"></script>
 <script src="/oz_js/jquery.SuperSlide.2.1.1.js" type="text/javascript"></script>
 <script src="/oz_js/jquery.slides.min.js"></script>
 <script type="text/javascript" src="/oz_js/jquery.als-1.7.min.js"></script>
 
 
-<script type="text/javascript">
-$(".oz_main_nav .tit").slide({
-	type:"menu",
-	titCell:".mod_cate",
-	targetCell:".mod_subcate",
-	delayTime:0,
-	triggerTime:10,
-	defaultPlay:false,
-	returnDefault:true
-});
-</script>
-
-
-  <script>
-    $(function() {
-      $('#slides').slidesjs({
-        width: 823,
-        height: 500,
-        navigation: {
-          effect: "fade"
-        },
-		  play: {
-          auto: true,
-		  effect:"fade"
-        },
-        pagination: {
-          effect: "fade"
-        },
-        effect: {
-          fade: {
-            speed: 400
-          }
-        }
-      });
-    });
-  </script>
 
 
 
@@ -155,7 +118,9 @@ $(".oz_main_nav .tit").slide({
                         </div>
                     </div>
                 </div> 
-                <!--e: 로고, 검색창-->               
+                <!--e: 로고, 검색창-->
+                
+                               
                 
             </div>
             <!------e: 쇼핑몰 페이지-------->
