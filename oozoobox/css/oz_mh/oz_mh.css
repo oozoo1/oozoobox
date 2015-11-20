@@ -186,17 +186,16 @@ fieldset legend{display: none;}
 }
 
 
-.interact-con { margin: 15px auto 10px; width: 1620px; height: 200px; padding-right: 30px;}
+.interact-con { margin: 15px auto 10px; width: 1620px; height: 200px;}
 .interact-con .module-body { background-color: rgb(255, 255, 255);}
-.interact-con .module-body .interact-item { width: 400px; height: 200px; margin-right: 6px; float: left; display: block;}
-.interact-con .module-body .interact-item last{ margin-right: 0px;}
+.interact-con .module-body .interact-item { width: 400px; height: 200px; margin-right:6px; float: left; display: block;}
 .interact-con .module-body .interact-item img { width: 100%;}
 @media all and (max-width:1910px)
-{ .interact-con { width: 1200px; height: 148px; padding-right: 30px;}
+{ .interact-con { width: 1200px; height: 148px;}
 .interact-con .module-body .interact-item { width: 296px; height: 148px; margin-right: 5px;}
 }
 @media all and (max-width:1260px)
-{ .interact-con { width: 1004px; height: 123px; padding-right: 0px;}
+{ .interact-con { width: 1004px; height: 123px;}
 .interact-con .module-body .interact-item { width: 247px; height: 123px; margin-right: 5px;}
 }
 
