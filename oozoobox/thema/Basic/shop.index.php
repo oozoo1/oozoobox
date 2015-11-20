@@ -140,6 +140,33 @@ $result = sql_query($sql);
             </div>
     	</div>
         <!--e: MAIN 네가지 약속--> 
+        
+        <!--s: MAIN 특별매장-->
+        <div class="oz_channel_con">
+        	<div class="module-title">
+            	特色市场
+                <b class="title_deco">
+                </b>
+            </div>
+            <div class="module_body">
+            	<a class="big_chn" href="#">
+                	<img src=""/>
+                </a>
+                <div class="small_chn_con">
+                	<a class="small_chn">
+                    	<div class="title_chn">
+                        	<h3 class="title">焕新频道</h3>
+                        </div>
+                        <img src=""/>
+                    </a>
+                    <s class="seprate"></s> 
+                </div>
+            </div>
+        </div>
+        <!--e: MAIN 특별매장-->
+        
+        
+        
     
     </div>
     <!--e:CONTENT-->
