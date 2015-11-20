@@ -14,7 +14,8 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 //} else {
 //	echo '<div class="text-muted text-center" style="padding:300px 0px;">Switcher에서 메인을 선택해 주세요.</div>';
 //}
-
+$sql = "SELECT * FROM g5_shop_category WHERE ca_id = '10' or ca_id = '20'  or ca_id = '30'  or ca_id = '40' or ca_id = '50'";
+$result = sql_query($sql);
 ?>
 
 
@@ -31,143 +32,33 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
                 <div id="oz_main_nav">
                 
                     <ul class="tit">
-                        
+                    <?php $k=1; for ($i=0; $row=sql_fetch_array($result); $i++){?>
                         <li class="mod_cate">
-                            <h2><i class="oz_main_glo_ico"><img src="/images/glo_icon_01.png" alt="给宝宝最好的 icon"/></i><a>给宝宝最好的</a></h2><!--"내 아이에게 주고 싶은 가장 좋은 것"-->
+                            <h2><i class="oz_main_glo_ico"><img src="/images/glo_icon_0<?=$k++?>.png" alt="给宝宝最好的 icon"/></i><a><?=$row[ca_name]?></a></h2><!--"내 아이에게 주고 싶은 가장 좋은 것"-->
                             <div class="mod_subcate">
                                 <div class="mod_subcate_main">
+                                <?php 
+                                $category_sql = "SELECT * FROM g5_shop_category WHERE ca_order = '$row[ca_order]' and ca_id !='10' and ca_id !='20' and ca_id !='30' and ca_id !='40' and ca_id !='50'";
+                                $category = sql_query($category_sql);
+                                for ($i=0; $row_category=sql_fetch_array($category); $i++){
+                                ?>
                                     <dl>
-                                        <dt><a href="#">纸尿裤</a></dt><!--"기저귀"-->
+                                        <dt><a href="/shop/list.php?ca_id=<?=$row_category[ca_id]?>"><?=$row_category[ca_name]?></a></dt><!--"기저귀"-->
                                         <!--<dd>
                                             <a href="http://sc.admin5.com/">로컬하위메뉴</a>
                                             <i class="mod_subcate_line"></i>
                                             <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
                                         </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
                                     </dl>
-                                    <dl>
-                                        <dt><a href="#">食品</a></dt><!--"식품"-->
-                                    </dl>
-                                    <dl>
-                                        <dt><a href="#">营养食品</a></dt><!--"영양식품"-->
-                                    </dl>
-                                    <dl>
-                                        <dt><a href="#">衣服</a></dt><!--"옷"-->
-                                    </dl>
-                                    <dl>
-                                        <dt><a href="#">日用杂货</a></dt><!--"일용잡화"-->
-                                    </dl>
+                                 <?php } ?>
                                 </div>
                                 <div class="mod_subcate_side">
                                     <div class="mod_subcate_side_hd"></div>
-                                    <a class="mod_subcate_gg" href="#"><img src="/images/glo_prm_01.png" alt="纸尿裤 广告"/></a>
+                                    <a class="mod_subcate_gg" href="#"><img src="/images/glo_prm_<?=$row[ca_id]?>.png" alt="纸尿裤 广告"/></a>
                                 </div>
                             </div>
                         </li>
-                        
-                        <li class="mod_cate">
-                            <h2><i class="oz_main_glo_ico"><img src="/images/glo_icon_02.png" alt="白滑牛奶皮肤 ico"/></i><a>白滑牛奶皮肤</a></h2><!--"우유처럼 매끄러운 피부"-->
-                            <div class="mod_subcate">
-                                <div class="mod_subcate_main">
-                                    <dl>
-                                        <dt><a href="#">面膜</a></dt><!--"마스크"-->
-                                    </dl>
-                                    <dl>
-                                        <dt><a href="#">化妆水/乳液</a></dt><!--"스킨/로션"-->
-                                    </dl>
-                                    <dl>
-                                        <dt><a href="#">精华/护肤霜</a></dt><!--"에센스/크림"-->
-                                    </dl>
-                                    <dl>
-                                        <dt><a href="#">彩妆</a></dt><!--"색조"-->
-                                    </dl>
-                                    <dl>
-                                        <dt><a href="#">套妆</a></dt><!--"세트상품"-->
-                                    </dl>
-                                </div>
-                                <div class="mod_subcate_side">
-                                    <div class="mod_subcate_side_hd"></div>
-                                    <a class="mod_subcate_gg" href="#"><img src="/images/glo_prm_02.png"  alt="白滑牛奶皮肤广告"/></a>
-                                </div>
-                            </div>
-                        </li>
-                        
-                        <li class="mod_cate">
-                            <h2><i class="oz_main_glo_ico"><img src="/images/glo_icon_03.png" alt="津津有味 icon"/></i><a>津津有味</a></h2><!--"입이 즐거워 진다"-->
-                            <div class="mod_subcate">
-                                <div class="mod_subcate_main">
-                                    <dl>
-                                        <dt><a href="#">调料</a></dt><!--"조미료"-->
-                                    </dl>
-                                    <dl>
-                                        <dt><a href="#">面类</a></dt><!--"면류"-->
-                                    </dl>
-                                    <dl>
-                                        <dt><a href="#">饼干</a></dt><!--"과자"-->
-                                    </dl>
-                                    <dl>
-                                        <dt><a href="#">营养</a></dt><!--"영양"-->
-                                    </dl>
-                                    <dl>
-                                        <dt><a href="#">饮料</a></dt><!--"음료수"-->
-                                    </dl>
-                                    <dl>
-                                        <dt><a href="#">健康</a></dt><!--"건강"-->
-                                    </dl>                            
-                                </div>
-                                <div class="mod_subcate_side">
-                                    <div class="mod_subcate_side_hd"></div>
-                                    <a class="mod_subcate_gg" href="#"><img src="/images/glo_prm_03.png" alt="津津有味 广告"/></a>
-                                </div>
-                            </div>
-                        </li>
-                        
-                        <li class="mod_cate">
-                            <h2><i class="oz_main_glo_ico"><img src="/images/glo_icon_04.png" alt="小生活必备 icon"/></i><a>小生活必备</a></h2><!--"생활에 꼭 필요한 것"-->
-                            <div class="mod_subcate">
-                                <div class="mod_subcate_main">
-                                    <dl>
-                                        <dt><a href="#">女士</a></dt><!--"여성용품"-->
-                                    </dl>
-                                    <dl>
-                                        <dt><a href="#">厨房</a></dt><!--"주방"-->
-                                    </dl>
-                                    <dl>
-                                        <dt><a href="#">洗澡</a></dt><!--"목욕"-->
-                                    </dl>
-                                    <dl>
-                                        <dt><a href="#">其他</a></dt><!--"기타"-->
-                                    </dl>
-                                </div>
-                                <div class="mod_subcate_side">
-                                    <div class="mod_subcate_side_hd"></div>
-                                    <a class="mod_subcate_gg" href="#"><img src="/images/glo_prm_04.png" alt="小生活必备 广告"/></a>
-                                </div>
-                            </div>
-                        </li>
-                        
-                        <li class="mod_cate">
-                            <h2><i class="oz_main_glo_ico"><img src="/images/glo_icon_05.png" alt="美丽的穿着 icon"/></i><a>美丽的穿着</a></h2><!--"아름다움을 입다"-->
-                            <div class="mod_subcate">
-                                <div class="mod_subcate_main">
-                                    <dl>
-                                        <dt><a href="#">女装</a></dt><!--"여성복"-->
-                                    </dl>
-                                    <dl>
-                                        <dt><a href="#">男装</a></dt><!--"남성복"-->
-                                    </dl>
-                                    <dl>
-                                        <dt><a href="#">儿童</a></dt><!--"아동복"-->
-                                    </dl>
-                                    <dl>
-                                        <dt><a href="#">内衣</a></dt><!--"내의"-->
-                                    </dl>
-                                </div>
-                                <div class="mod_subcate_side">
-                                    <div class="mod_subcate_side_hd"></div>
-                                    <a class="mod_subcate_gg" href="#"><img src="/images/glo_prm_05.png" alt="美丽的穿着 광고"/></a>
-                                </div>
-                            </div>
-                        </li>
+                        <?php } ?>
                     </ul>
                     <div class="mod_cate2">
                     </div> 
@@ -228,8 +119,26 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
                 </a>
             </div>
             <!--e: MAIN 슬라이드 상단 작은 배너-->
-
-    	</div>   
+    	</div>
+        
+        <div class="interact-con">
+            <div class="module-body">
+                <a class="interact-item" href="#">
+                    <img src="images/main_promise_01.png" alt=""/> 
+                </a>
+                <a class="interact-item" href="#">
+                    <img src="images/main_promise_02.png" alt=""/> 
+                </a>
+                <a class="interact-item" href="#">
+                    <img src="images/main_promise_03.png" alt=""/> 
+                </a>
+                <a class="interact-item last" href="#">
+                    <img src="images/main_promise_04.png" alt=""/> 
+                </a>
+            </div>
+    	</div>
+        
+           
     </div>
     <!--e:CONTENT-->
 </div>
