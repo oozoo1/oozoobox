@@ -43,25 +43,56 @@ add_stylesheet('<link rel="stylesheet" href="/css/oz_mh/oz_mh.css" type="text/cs
                             	<em><a href="#">情爱的客户， 今天紫外线太强了，必须使用防晒霜！ 〉〉〉去看看防晒霜</a></em> <!--"고객님, 오늘은 자외선이 강하네요. 외출할때 반드시 썬크림을 사용하세요>>>썬크림보러가기"  SW: php가 필요할지도.. -->
                             </p>
                             <ul class="oz_sn_quick_menu">
+                            <?php if($member[mb_id]){?>
+                                <?php if($member['admin']) {?>
                                 <li>
-                                    <a href="#" target="_top">请登录</a> <!--"로그인하세요"-->
+                                    <a href="<?php echo G5_ADMIN_URL;?>" target="_top">관리자+</a> <!--"관리자페이지"-->
+                                </li>
+                                <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
+                                <?php } ?>
+                                <?php if($member['partner']) { ?>
+                                <li>
+                                    <a href="/shop/partner/" target="_top">마이샵</a> <!--"마이샵관리페이지"-->
+                                </li>
+                                <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
+                                <?php }else{ ?>
+                                <li>
+                                    <a href="/shop/partner/register.php" target="_top">입점신청</a> <!--"입점신청"-->
+                                </li>
+                                <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
+                                <?php } ?>
+                                <li>
+                                    <a href="#" target="_top">信息修改</a> <!--"자료수정"-->
                                 </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <li class="oz_sn_join">
-                                    <a href="#" target="_top" rel="nofollow">免费注册</a><!--"회원가입하기"-->
+                                    <a href="<?php echo $at_href['logout'];?>" target="_top" rel="nofollow">退出登录</a><!--"로그아웃"-->
+                                </li>
+                            <?php }else{ ?>
+                                <li>
+                                    <a href="/shop/partner/login.php" target="_top">입점자로그인</a> <!--"로그인하세요"-->
                                 </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
+                                <li>
+                                    <a href="/bbs/login.php" target="_top">请登录</a> <!--"로그인하세요"-->
+                                </li>
+                                <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
+                                <li class="oz_sn_join">
+                                    <a href="/bbs/register.php" target="_top" rel="nofollow">免费注册</a><!--"회원가입하기"-->
+                                </li>
+                            <?php } ?>
+                                <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <li class="sn-cart">
-                                    <a href="#" target="_top" rel="nofollow">购物车</a> <!--"장바구니"-->
+                                    <a href="/shop/cart.php" target="_top" rel="nofollow">购物车</a> <!--"장바구니"-->
                                 </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <li class="oz_sn_myshopping">
-                                    <a href="#" target="_top">我的购物信息 </a><!--"내 쇼핑 정보"-->
+                                    <a href="/shop/orderinquiry.php" target="_top">我的购物信息 </a><!--"내 쇼핑 정보"-->
                                     <!--SW: display:none 으로 되어 있는데 아마도 판매자로 로그인 하면 display:block으로 되지 않을까??-->
                                 </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->                        
                                 <li class="oz_sn_delivery ">
-                                    <a href="#" target="_top">订单跟踪 </a><!--"배송정보"--> 
+                                    <a href="/shop/orderinquiry.php" target="_top">订单跟踪 </a><!--"배송정보"--> 
                                 </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <li class="oz_sn_customcenter">
