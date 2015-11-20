@@ -7,7 +7,7 @@ include_once(THEMA_PATH.'/sidebar.php'); // 사이드바
 echo '<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10">'.PHP_EOL; //김미혜: 반응형 viewport 설정
 
 add_stylesheet('<link rel="stylesheet" href="/css/oz_mh/oz_mh.css" type="text/css" media="screen" >',0); //김미혜: css추가 및 경로 설정
-
+$top_message="情爱的客户， 今天紫外线太强了，必须使用防晒霜！ 〉〉〉去看看防晒霜";
 ?>
 
 
@@ -40,7 +40,7 @@ add_stylesheet('<link rel="stylesheet" href="/css/oz_mh/oz_mh.css" type="text/cs
                     <div id="oz_sn_bd"> <!----- @media  있음------>
                         <div class="oz_sn_container">
                             <p class="oz_sn_prm_info">
-                            	<em><a href="#">情爱的客户， 今天紫外线太强了，必须使用防晒霜！ 〉〉〉去看看防晒霜</a></em> <!--"고객님, 오늘은 자외선이 강하네요. 외출할때 반드시 썬크림을 사용하세요>>>썬크림보러가기"  SW: php가 필요할지도.. -->
+                            	<em><a href="#"><?php echo "$top_message";?></a></em> <!--"고객님, 오늘은 자외선이 강하네요. 외출할때 반드시 썬크림을 사용하세요>>>썬크림보러가기"  SW: php가 필요할지도.. -->
                             </p>
                             <ul class="oz_sn_quick_menu">
                             <?php if($member[mb_id]){?>
@@ -125,18 +125,19 @@ add_stylesheet('<link rel="stylesheet" href="/css/oz_mh/oz_mh.css" type="text/cs
                                 <!--s:검색창-->
                                 <div class="oz_mall_search" id="oz_mallSearch"><!--@media 적용-->
                                     <ul class="oz_event_query">
-                                    	<li><a href="#">本月推选</a></li> <!--"이달의 베스트"-->
-                                        <li><a href="#">优惠专区</a></li> <!--"이벤트"-->
-                                        <li class="last"><a href="#">相互共享</a></li>  <!--"커뮤니티"-->
+                                    	<li><a href="/?type=month"><font <?php if($_GET[type]=="month"){?> class="ck_font"<?php }?>>本月推选</font></a></li> <!--"이달의 베스트"-->
+                                        <li><a href="/?type=sale"><font <?php if($_GET[type]=="sale"){?> class="ck_font"<?php }?>>优惠专区</font></a></li> <!--"이벤트"-->
+                                        <li class="last"><a href="/?type=share"><font <?php if($_GET[type]=="share"){?> class="ck_font"<?php }?>>相互共享</font></a></li>  <!--"커뮤니티"-->
                                     </ul>
 
                                     <form name="oz_searchTop" class="oz_mallSearch_form oz_clearfix" action="#" target="_top" acceptcharset="gbk">
+                                        <input type="hidden" name="type" value="<?php echo $_GET[type];?>">
                                         <fieldset>
                                             <legend>天猫搜索</legend> 
                                             <div class="oz_mallSearch_input oz_clearfix">
                                                 <div class="s-combobox">
                                                     <div class="s-combobox-input-wrap">
-                                                        <input name="q" title="请输入搜索文字" class="s-combobox-input" id="mq"  role="combobox" accesskey="s" placeholder="请输入搜索文字"></input>
+                                                        <input name="q" title="请输入搜索文字" class="s-combobox-input" id="mq"  role="combobox" accesskey="s" placeholder="请输入搜索文字" value="<?php echo $_GET[q];?>"></input>
                                                     </div>
                                                 </div>
                                                 <button type="submit">搜索<s></s></button>

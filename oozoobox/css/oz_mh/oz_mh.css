@@ -21,6 +21,8 @@ fieldset legend{display: none;}
 .block{ display:block; }
 .none{ display:none;}
 
+/*체크폰트색상*/
+.ck_font{color:rgb(218, 32, 32);}
 
 /*MAIN/
 /** top 광고**/
