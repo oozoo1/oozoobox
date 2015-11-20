@@ -27,7 +27,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
         
         <div class="category-con">
             <div class="category-inner-con">
-                <!-- s: MAIN 글로벌메뉴-->
+                <!--s: MAIN 글로벌메뉴-->
                 <div id="oz_main_nav">
                 
                     <ul class="tit">
@@ -173,9 +173,9 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
                     </div> 
                 </div> 
             </div>   
-            <!-- e: MAIN 글로벌메뉴-->
+            <!--e: MAIN 글로벌메뉴-->
             
-            <!-- s: MAIN 배너 슬라이드-->
+            <!--s: MAIN 배너 슬라이드-->
            <div class="oz_main_bn">
                 <div id="slides">
                   <a href="#" style="background:rgb(255,204,0);">
@@ -214,9 +214,20 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
                           </div>
                       </div>
                   </a>
-                </div>
+                </div>s
             </div>
-            <!-- e: MAIN 배너 슬라이드-->
+            <!--e: MAIN 배너 슬라이드-->
+            
+            <!--s: MAIN 슬라이드 상단 작은 배너-->
+            <div class="small_banner_con">
+            	<a class="small_banner" href="#">
+                	<img width="170" height="440" alt="" src="/images/small_banner01.png"/>
+                    <div class="small_banner_btn">
+                    	<span class="btn_object">지금투표하러가기</span>
+                    </div>
+                </a>
+            </div>
+            <!--e: MAIN 슬라이드 상단 작은 배너-->
 
     	</div>   
     </div>
@@ -256,7 +267,7 @@ $("#oz_main_nav .tit").slide({
         },
         effect: {
           fade: {
-            speed: 400
+            speed: 600
           }
         }
       });
