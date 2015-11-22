@@ -115,7 +115,7 @@ fieldset legend{display: none;}
 #oz_content {background-color:rgb(245,245,245); width:100%; position:relative; z-index:10000; font-family:"Microsoft YaHei",tahoma,arial,"Hiragino Sans GB","宋体",sans-serif;}
 
 .category-con {width: 100%; height: 500px; position: relative;}
-.category-con .category-inner-con {margin: 0px auto; width: 1620px; height: 0px; padding-right: 30px; position: relative; z-index: 100;}
+.category-con .category-inner-con { width:1620px; height:0; padding-right:30px; position: relative; z-index: 100; margin:0 auto;}
 
 /***MAIN 글로벌메뉴***/
 #oz_main_nav{ width:230px; position:relative; background:rgba(247,156,15,0.9); z-index:100;}
@@ -162,7 +162,7 @@ fieldset legend{display: none;}
 .category_con .small_banner_con {width:1620px; margin:0 auto; height:0; position:relative; margin-top:-486px; padding-right:30px;}
 
 .banner-con .banner-slider .small-_banner_con {margin: -486px auto 0px; width: 1620px; height: 0px; padding-right: 30px; position: relative;}
-.category-con .small_banner_con .small_banner {top: 27px; width: 170px; height: 440px; right: 30px; position: absolute; z-index: 100;}
+.category-con .small_banner_con .small_banner {top: 27px; width: 170px; height: 440px; right:150px; position: absolute; z-index: 100;}
 .small_banner_con .small_banner .small_banner_btn {position: absolute; top:390px; right:28px; width:114px; height:30px; background:rgb(237,50,85); display:inline-block;}
 .small_banner_con .small_banner .small_banner_btn :hover{width:114px; height:30px; background:rgb(243,156,18); display:inline-block;}
 .small_banner_con .small_banner .small_banner_btn .btn_object {color:rgb(255,255,255); font-size:14px; line-height:26px;}
@@ -185,7 +185,7 @@ fieldset legend{display: none;}
 .category-con .small_banner {display: none;}
 }
 
-
+/***MAIN 네가지 약속***/
 .interact-con { margin: 15px auto 10px; width: 1620px; height: 200px;}
 .interact-con .module-body { background-color: rgb(255, 255, 255);}
 .interact-con .module-body .interact-item { width: 400px; height: 200px; margin-right:6px; float: left; display: block;}
@@ -198,5 +198,52 @@ fieldset legend{display: none;}
 { .interact-con { width: 1004px; height: 123px;}
 .interact-con .module-body .interact-item { width: 247px; height: 123px; margin-right: 5px;}
 }
+
+
+
+/***특별매장***/
+.oz_channel_con { margin: 0px auto; width: 1620px; height: 450px;}
+.oz_channel_con .module_title { width: 220px; height: 30px; color: rgb(0, 0, 0); line-height: 30px; padding-left: 5px; font-size: 17px; font-weight: 700; margin-top: 10px; display: block; position: relative;}
+.oz_channel_con .module_title .title_deco { background: url("/images/channel_con_title_deco.png") no-repeat; left: 78px; top: 7px; width: 212px; height: 19px; display: block; position: absolute;}
+.oz_channel_con .module_body { width: 100%; height: 420px; background-color: rgb(255, 255, 255);}
+.oz_channel_con .module_body .big_chn { width: 25%; height: 100%; float: left;}
+.oz_channel_con .module_body .big_chn img { width: 100%; height: 100%;}
+.oz_channel_con .module_body .small_chn_con { width: 75%; height: 420px; line-height: 50%; float: left;}
+.oz_channel_con .module_body .small_chn_con .seprate { width: 1px; height: 140px; margin-top: 35px; float: left; display: block; background-color: rgb(231, 231, 231);}
+.oz_channel_con .module_body .small_chn_con .hidden-1920.seprate { clear: both; display: none;}
+.oz_channel_con .module_body .small_chn_con .small_chn { width: 33%; height: 50%; overflow: hidden; float: left;}
+.oz_channel_con .module_body .small_chn_con .small_chn .title_chn { margin: 20px 0px 0px 20px; width: 120px; height: 100%; overflow: hidden; float: left;}
+.oz_channel_con .module_body .small_chn_con .small_chn .title_chn_right { margin: 20px 20px 0px 0px; width: 120px; height: 100%; overflow: hidden; float: right;}
+
+.oz_channel_con .module_body .small_chn_con .small_chn .title_chn .title { color: rgb(47, 47, 47); line-height: 100%; padding-top: 16px; font-size: 19px; font-weight: 700; white-space: nowrap;}
+.oz_channel_con .module_body .small_chn_con .small_chn .title_chn_right .title_right {float:right; color: rgb(47, 47, 47); line-height: 100%; padding-top: 16px; font-size: 19px; font-weight: 700; white-space: nowrap;}
+.oz_channel_con .module_body .small_chn_con .small_chn .title_chn .info { color: rgb(102, 102, 102); line-height: 120%; font-size: 13px; margin-top: 6px; white-space: nowrap;}
+.oz_channel_con .module_body .small_chn_con .small_chn .title_chn_right .info_right {float:right; color: rgb(102, 102, 102); line-height: 120%; font-size: 13px; margin-top: 6px; white-space: nowrap; text-align:right;}
+.oz_channel_con .module_body .small_chn_con .small_chn .chn_pic_right { width: 190px; height: 210px; float: right;}
+.oz_channel_con .module_body .small_chn_con .small_chn .chn_pic_left { width: 190px; height: 210px; float: left;}
+@media all and (max-width:1910px)
+{ .oz_channel_con { width: 1200px; height: 353px;}
+.oz_channel_con .module_body { height: 318px; overflow: hidden;}
+.oz_channel_con .module_body .small_chn_con { height: 318px; overflow: hidden;}
+.oz_channel_con .module_body .small_chn_con .seprate { height: 115px;}
+.oz_channel_con .module_body .small_chn_con .small_chn { height: 48%;}
+.oz_channel_con .module_body .small_chn_con .small_chn .title_con { width: 106px; display: inline;}
+.oz_channel_con .module_body .small_chn_con .small_chn .chn_pic_right { width: 136px; height: 150px; overflow:hidden;}
+.oz_channel_con .module_body .small_chn_con .small_chn .chn_pic_left { width: 136px; height: 150px; overflow:hidden;}
+}
+
+@media all and (max-width:1260px)
+{ .oz_channel_con { width: 1004px; height: 402px; padding-right: 0px;}
+.oz_channel_con .module_body { height: 351px;}
+.oz_channel_con .module_body .big_chn { width: 33%;}
+.oz_channel_con .module_body .small_chn_con { width: 67%; height: 351px;}
+.oz_channel_con .module_body .small_chn_con .seprate { height: 115px;}
+.oz_channel_con .module_body .small_chn_con .hidden_990.seprate { display: none;}
+.oz_channel_con .module_body .small_chn_con .small_chn { width: 49%; height: 48%;}
+.oz_channel_con .module_body .small_chn_con .small_chn .hn_pic_right { width: 168px; height: 185px; float: left; display: block; z-index: 10000;}
+.oz_channel_con .module_body .small_chn_con .small_chn .hn_pic_left { width: 168px; height: 185px; float: left; display: block; z-index: 10000;}
+.oz_channel_con .module_body .small_chn_con .hidden_990.small_chn { display: none;}
+}
+
 
 

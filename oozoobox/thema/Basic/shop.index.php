@@ -105,7 +105,7 @@ $result = sql_query($sql);
                           </div>
                       </div>
                   </a>
-                </div>s
+                </div>
             </div>
             <!--e: MAIN 배너 슬라이드-->
             
@@ -143,23 +143,62 @@ $result = sql_query($sql);
         
         <!--s: MAIN 특별매장-->
         <div class="oz_channel_con">
-        	<div class="module-title">
+        	<div class="module_title">
             	特色市场
                 <b class="title_deco">
                 </b>
             </div>
             <div class="module_body">
             	<a class="big_chn" href="#">
-                	<img src=""/>
+                	<img src="/images/big_chn_01.png"/>
                 </a>
                 <div class="small_chn_con">
                 	<a class="small_chn">
                     	<div class="title_chn">
-                        	<h3 class="title">焕新频道</h3>
+                        	<h3 class="title">时尚</h3>
+                            <h4 class="info">한국은 지금<br>어떤 옷이 유행할까</h4>
                         </div>
-                        <img src=""/>
+                        <img class="chn_pic_right" src="/images/small_chn_01.png"/>
                     </a>
                     <s class="seprate"></s> 
+                    <a class="small_chn">
+                    	<div class="title_chn">
+                        	<h3 class="title">食品</h3>
+                            <h4 class="info">오늘 저녁 밥상이<br>다채로워 진다<br>음식의 모든 것</h4>
+                        </div>
+                        <img class="chn_pic_right" src="/images/small_chn_02.png"/>
+                    </a>
+                    <s class="seprate hidden_990"></s> 
+                    <a class="small_chn hidden_990">
+                    	<div class="title_chn">
+                        	<h3 class="title">推荐商品</h3>
+                            <h4 class="info">당신만을 위한<br>맞춤상품!<br>지금 추천해 드려요</h4>
+                        </div>
+                        <img class="chn_pic_right" src="/images/small_chn_03.png"/>
+                    </a>
+                    <a class="small_chn">
+                        <img class="chn_pic_left" src="/images/small_chn_04.png"/>
+                        <div class="title_chn_right">
+                            <h3 class="title_right">化妆品</h3>
+                            <h4 class="info_right">소중한 당신을<br>더욱 특별하게</h4>
+                        </div>
+                    </a>
+                    <s class="seprate "></s> 
+                    <a class="small_chn">
+                        <img class="chn_pic_left" src="/images/small_chn_05.png"/>
+                        <div class="title_chn_right">
+                            <h3 class="title_right">日常用品</h3>
+                            <h4 class="info_right">작은 변화가<br>일상을 바꾸다</h4>
+                        </div>                      
+                    </a>
+                    <s class="seprate hidden_990"></s> 
+                    <a class="small_chn hidden_990">
+                        <img class="chn_pic_left" src="/images/small_chn_06.png"/>
+                        <div class="title_chn_right">
+                            <h3 class="title_right">特价</h3>
+                            <h4 class="info_right">OOZOOBOX의 특가제품을<br>만나는 특별한 기회를<br>놓치지 마세요</h4>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
