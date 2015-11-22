@@ -120,18 +120,18 @@ fieldset legend{display: none;}
 /***MAIN 글로벌메뉴***/
 #oz_main_nav{ width:230px; position:relative; background:rgba(247,156,15,0.9); z-index:100;}
 
-#oz_main_nav .mod_cate,#oz_main_nav .mod_cate2{height:70px; border-bottom:1px rgb(230,126,34) solid; padding:16px 2px 3px 18px;}
+#oz_main_nav .mod_cate,#oz_main_nav .mod_cate2{height:50px; border-bottom:1px rgb(230,126,34) solid; padding:16px 2px 3px 18px;}
 #oz_main_nav .mod_cate h2,#oz_main_nav .mod_cate2 h2{font-size:18px;font-weight:normal; }
 #oz_main_nav .mod_cate h2 a,#oz_main_nav .mod_cate2 h2 a {color:#FFFFFF; padding-right:0px; padding-left:15px}
-#oz_main_nav .mod_cate2{height:150px; overflow:hidden; background:url('/images/main_glo06.png'); border:0}
-#oz_main_nav .mod_subcate{display:none;width:790px;height:500px; border:1px #ddd solid; background:#FFFFFF; position:absolute; top:0px; z-index:99; left:230px; overflow:hidden;}
+#oz_main_nav .mod_cate2{height:131px; overflow:hidden; background:url('/images/main_glo06.png'); border:0}
+#oz_main_nav .mod_subcate{display:none;width:800px;height:500px; border:1px #ddd solid; background:#FFFFFF; position:absolute; top:0px; z-index:99; left:230px; overflow:hidden;}
 #oz_main_nav .mod_subcate_main{width:230px;padding:0px 20px 450px 20px;margin-bottom:-450px;border-right:1px #ddd solid;float:left;}
 #oz_main_nav .mod_subcate_line{width:100%;height:1px;clear:both;font-size:0px;margin-bottom:5px;border-top:5px #fff solid;border-bottom:1px #dadada dotted;overflow:hidden;display:block;}
 #oz_main_nav .mod_subcate_main dl{padding:19px 0 18px 65px;border-bottom:1px #e5e5e5 solid;overflow:hidden;}
 #oz_main_nav .mod_subcate_main dl dt a{width:230px;font-size:15px; color:#666;line-height:32px;font-style:normal;font-variant:normal;margin-left:-65px;float:left;font-size-adjust:none;font-stretch:normal; }
 #oz_main_nav .mod_subcate_main dl dt a:hover {color:#fb595a;}
 #oz_main_nav .oz_main_glo_ico {width:36px; height:35px; overflow:hidden; }
-#oz_main_nav .mod_subcate_side{float:left; width:550px; padding-top:5px; padding-left:10px;padding-bottom:450px; margin-bottom:-450px;}
+#oz_main_nav .mod_subcate_side{float:left;padding-left:10px; padding-top:10px;}
 #oz_main_nav .on{padding:16px 2px 3px 18px; border-bottom:1px rgb(230,126,34) solid; background:url('/images/bg_main_glo.png');}
 #oz_main_nav .on .mod_subcate{display:block !important; }
 #oz_main_nav .on .mod_cate_r a{color:#666666;}
@@ -162,7 +162,7 @@ fieldset legend{display: none;}
 .category_con .small_banner_con {width:1620px; margin:0 auto; height:0; position:relative; margin-top:-486px; padding-right:30px;}
 
 .banner-con .banner-slider .small-_banner_con {margin: -486px auto 0px; width: 1620px; height: 0px; padding-right: 30px; position: relative;}
-.category-con .small_banner_con .small_banner {top: 27px; width: 170px; height: 440px; right:150px; position: absolute; z-index: 100;}
+.category-con .small_banner_con .small_banner {top: 27px; width: 170px; height: 440px; right:165px; position: absolute; z-index: 100;}
 .small_banner_con .small_banner .small_banner_btn {position: absolute; top:390px; right:28px; width:114px; height:30px; background:rgb(237,50,85); display:inline-block;}
 .small_banner_con .small_banner .small_banner_btn :hover{width:114px; height:30px; background:rgb(243,156,18); display:inline-block;}
 .small_banner_con .small_banner .small_banner_btn .btn_object {color:rgb(255,255,255); font-size:14px; line-height:26px;}
@@ -186,7 +186,7 @@ fieldset legend{display: none;}
 }
 
 /***MAIN 네가지 약속***/
-.interact-con { margin: 15px auto 10px; width: 1620px; height: 200px;}
+.interact-con { margin: 15px auto 10px; width: 1620px; height: 200px; padding-right:30px; }
 .interact-con .module-body { background-color: rgb(255, 255, 255);}
 .interact-con .module-body .interact-item { width: 400px; height: 200px; margin-right:6px; float: left; display: block;}
 .interact-con .module-body .interact-item img { width: 100%;}
@@ -202,7 +202,7 @@ fieldset legend{display: none;}
 
 
 /***특별매장***/
-.oz_channel_con { margin: 0px auto; width: 1620px; height: 450px;}
+.oz_channel_con { margin: 0px auto; width: 1620px; height: 450px; padding-right:30px;}
 .oz_channel_con .module_title { width: 220px; height: 30px; color: rgb(0, 0, 0); line-height: 30px; padding-left: 5px; font-size: 17px; font-weight: 700; margin-top: 10px; display: block; position: relative;}
 .oz_channel_con .module_title .title_deco { background: url("/images/channel_con_title_deco.png") no-repeat; left: 78px; top: 7px; width: 212px; height: 19px; display: block; position: absolute;}
 .oz_channel_con .module_body { width: 100%; height: 420px; background-color: rgb(255, 255, 255);}
