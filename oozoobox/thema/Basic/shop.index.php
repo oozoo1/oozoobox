@@ -669,6 +669,43 @@ $result = sql_query($sql);
         </div>
         <!--e: FULL 광고 배너 02-->       
         
+    	<!--s: MD 추천 상품-->
+        <div class="oz_market_con">
+        	<div class="market_title">
+            	采购员推存
+                <b class="title_deco">
+                </b>
+            </div>
+            <div class="module_body">
+            	<div class="market_line">
+                	<div class="market_item">
+                    	<a class="main_pic" href="#">
+                        	<img src="/images/md_01.png"/>
+                        </a>
+                        <a href="#">
+                            <span class="market_info">
+                                날이 많이 추워졌어요.<br>
+                                김이 모락모락 나는 라면 한 그릇과<br>
+                                오늘 저녁은 함께 할래요! 
+                            </span>
+                        </a>
+                        <a href="#">
+                        	<span class="market_good">
+                            </span>
+                        </a>
+                        <a href="#">
+                        	<img src=""/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        	
+        
+        </div>
+        <!--e: MD 추천 상품-->
+    
+    
+    
     
     </div>
     <!--e:CONTENT-->
