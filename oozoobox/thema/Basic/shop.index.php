@@ -141,7 +141,7 @@ $result = sql_query($sql);
     	</div>
         <!--e: MAIN 네가지 약속--> 
         
-        <!--s: MAIN 특별매장-->
+        <!--s: MAIN 特色市场 특별매장-->
         <div class="oz_channel_con">
         	<div class="module_title">
             	特色市场
@@ -203,6 +203,240 @@ $result = sql_query($sql);
             </div>
         </div>
         <!--e: MAIN 특별매장-->
+
+        <!--s: FULL 광고 배너-->
+		<div class="oz_full_banner" style="margin-top:10px;">
+        	<ins id="oz_full_banner_outer" style="margin:0; padding:0; width:1620px; height:90px; display:inline-block;">
+            	<a href="#" targer="_blank">
+                	<img width="1620" height="90" src="/images/full_banner_02.jpg" border="0"/>
+                </a>
+            </ins>
+        </div>
+        <!--e: FULL 광고 배너-->
+        
+        <!--s: MAIN热门商品 인기상품-->
+        <div class="oz_wonderful_con">
+        	<div class="wonderful_title">
+            	特色市场
+                <b class="title_deco">
+                </b>
+            </div>
+            <div class="module_content">
+            	<ul class="wonderful_line">
+                  	<li class="wonderful_item">
+                    	<div class="card_item" href="#">
+                        	<a href="#">
+                                <span class="item_pic">
+                                    <img width="100%" src="/images/item_pic_01.png"/>
+                                </span>
+                            </a>
+                            <span class="item_info">
+                            	<a href="#">
+                                    <span class="item_desc">
+                                        <em title="CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水" class="item_name">CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水</em>
+                                    </span>
+                                </a>
+                                <span class="item_detail">
+                                	<a href="#">
+                                        <span class="item_price">
+                                            <i class="price_rmb">¥</i>
+                                            <span class="price_integer">59</span>
+                                            <span class="price_decimal">.9</span>
+                                        </span>
+                                    </a>
+                                    <span class="item_tag">
+                                    	<span class="wonderful_cart">
+                                        	<a href="#">
+                                            	<img width="100%" src="/images/wonderful_cart.png" onmouseover="this.src='/images/wonderful_cart_o.png'" onmouseout="this.src='/images/wonderful_cart.png'"/>
+                                            </a>
+                                        </span>
+                                        <span class="wonderful_after">
+                                        	<a href="#">
+                                        		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
+                                            </a>
+                                        </span>
+                                        <span class="wonderful_wish">
+                                        	<a href="#">
+                                        		<img width="100%" src="/images/wonderful_wish.png" onmouseover="this.src='/images/wonderful_wish_o.png'" onmouseout="this.src='/images/wonderful_wish.png'"/>
+                                            </a>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                        </a>
+                    </li>  
+                  	<li class="wonderful_item">
+                    	<div class="card_item" href="#">
+                        	<a href="#">
+                                <span class="item_pic">
+                                    <img width="100%" src="/images/item_pic_02.png"/>
+                                </span>
+                            </a>
+                            <span class="item_info">
+                            	<a href="#">
+                                    <span class="item_desc">
+                                        <em title="CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水" class="item_name">CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水</em>
+                                    </span>
+                                </a>
+                                <span class="item_detail">
+                                	<a href="#">
+                                        <span class="item_price">
+                                            <i class="price_rmb">¥</i>
+                                            <span class="price_integer">59</span>
+                                            <span class="price_decimal">.9</span>
+                                        </span>
+                                    </a>
+                                    <span class="item_tag">
+                                    	<span class="wonderful_cart">
+                                        	<a href="#">
+                                            	<img width="100%" src="/images/wonderful_cart.png" onmouseover="this.src='/images/wonderful_cart_o.png'" onmouseout="this.src='/images/wonderful_cart.png'"/>
+                                            </a>
+                                        </span>
+                                        <span class="wonderful_after">
+                                        	<a href="#">
+                                        		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
+                                            </a>
+                                        </span>
+                                        <span class="wonderful_wish">
+                                        	<a href="#">
+                                        		<img width="100%" src="/images/wonderful_wish.png" onmouseover="this.src='/images/wonderful_wish_o.png'" onmouseout="this.src='/images/wonderful_wish.png'"/>
+                                            </a>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                        </a>
+                    </li>  
+                  	<li class="wonderful_item">
+                    	<div class="card_item" href="#">
+                        	<a href="#">
+                                <span class="item_pic">
+                                    <img width="100%" src="/images/item_pic_03.png"/>
+                                </span>
+                            </a>
+                            <span class="item_info">
+                            	<a href="#">
+                                    <span class="item_desc">
+                                        <em title="CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水" class="item_name">CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水</em>
+                                    </span>
+                                </a>
+                                <span class="item_detail">
+                                	<a href="#">
+                                        <span class="item_price">
+                                            <i class="price_rmb">¥</i>
+                                            <span class="price_integer">59</span>
+                                            <span class="price_decimal">.9</span>
+                                        </span>
+                                    </a>
+                                    <span class="item_tag">
+                                    	<span class="wonderful_cart">
+                                        	<a href="#">
+                                            	<img width="100%" src="/images/wonderful_cart.png" onmouseover="this.src='/images/wonderful_cart_o.png'" onmouseout="this.src='/images/wonderful_cart.png'"/>
+                                            </a>
+                                        </span>
+                                        <span class="wonderful_after">
+                                        	<a href="#">
+                                        		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
+                                            </a>
+                                        </span>
+                                        <span class="wonderful_wish">
+                                        	<a href="#">
+                                        		<img width="100%" src="/images/wonderful_wish.png" onmouseover="this.src='/images/wonderful_wish_o.png'" onmouseout="this.src='/images/wonderful_wish.png'"/>
+                                            </a>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                        </a>
+                    </li>  
+                  	<li class="wonderful_item">
+                    	<div class="card_item" href="#">
+                        	<a href="#">
+                                <span class="item_pic">
+                                    <img width="100%" src="/images/item_pic_04.png"/>
+                                </span>
+                            </a>
+                            <span class="item_info">
+                            	<a href="#">
+                                    <span class="item_desc">
+                                        <em title="CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水" class="item_name">CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水</em>
+                                    </span>
+                                </a>
+                                <span class="item_detail">
+                                	<a href="#">
+                                        <span class="item_price">
+                                            <i class="price_rmb">¥</i>
+                                            <span class="price_integer">59</span>
+                                            <span class="price_decimal">.9</span>
+                                        </span>
+                                    </a>
+                                    <span class="item_tag">
+                                    	<span class="wonderful_cart">
+                                        	<a href="#">
+                                            	<img width="100%" src="/images/wonderful_cart.png" onmouseover="this.src='/images/wonderful_cart_o.png'" onmouseout="this.src='/images/wonderful_cart.png'"/>
+                                            </a>
+                                        </span>
+                                        <span class="wonderful_after">
+                                        	<a href="#">
+                                        		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
+                                            </a>
+                                        </span>
+                                        <span class="wonderful_wish">
+                                        	<a href="#">
+                                        		<img width="100%" src="/images/wonderful_wish.png" onmouseover="this.src='/images/wonderful_wish_o.png'" onmouseout="this.src='/images/wonderful_wish.png'"/>
+                                            </a>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                        </a>
+                    </li>  
+                  	<li class="wonderful_item hidden_1366">
+                    	<div class="card_item last_1920" href="#">
+                        	<a href="#">
+                                <span class="item_pic">
+                                    <img width="100%" src="/images/item_pic_05.png"/>
+                                </span>
+                            </a>
+                            <span class="item_info">
+                            	<a href="#">
+                                    <span class="item_desc">
+                                        <em title="CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水" class="item_name">CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水</em>
+                                    </span>
+                                </a>
+                                <span class="item_detail">
+                                	<a href="#">
+                                        <span class="item_price">
+                                            <i class="price_rmb">¥</i>
+                                            <span class="price_integer">59</span>
+                                            <span class="price_decimal">.9</span>
+                                        </span>
+                                    </a>
+                                    <span class="item_tag">
+                                    	<span class="wonderful_cart">
+                                        	<a href="#">
+                                            	<img width="100%" src="/images/wonderful_cart.png" onmouseover="this.src='/images/wonderful_cart_o.png'" onmouseout="this.src='/images/wonderful_cart.png'"/>
+                                            </a>
+                                        </span>
+                                        <span class="wonderful_after">
+                                        	<a href="#">
+                                        		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
+                                            </a>
+                                        </span>
+                                        <span class="wonderful_wish">
+                                        	<a href="#">
+                                        		<img width="100%" src="/images/wonderful_wish.png" onmouseover="this.src='/images/wonderful_wish_o.png'" onmouseout="this.src='/images/wonderful_wish.png'"/>
+                                            </a>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                        </a>
+                    </li>                  
+                </ul>
+            </div>
+        </div>
+        <!--e: MAIN热门商品 인기상품-->
         
         
         

@@ -201,7 +201,7 @@ fieldset legend{display: none;}
 
 
 
-/***특별매장***/
+/***MAIN 特色市场 특별매장***/
 .oz_channel_con { margin: 0px auto; width: 1620px; height: 450px; padding-right:30px;}
 .oz_channel_con .module_title { width: 220px; height: 30px; color: rgb(0, 0, 0); line-height: 30px; padding-left: 5px; font-size: 17px; font-weight: 700; margin-top: 10px; display: block; position: relative;}
 .oz_channel_con .module_title .title_deco { background: url("/images/channel_con_title_deco.png") no-repeat; left: 78px; top: 7px; width: 212px; height: 19px; display: block; position: absolute;}
@@ -243,6 +243,71 @@ fieldset legend{display: none;}
 .oz_channel_con .module_body .small_chn_con .small_chn .hn_pic_right { width: 168px; height: 185px; float: left; display: block; z-index: 10000;}
 .oz_channel_con .module_body .small_chn_con .small_chn .hn_pic_left { width: 168px; height: 185px; float: left; display: block; z-index: 10000;}
 .oz_channel_con .module_body .small_chn_con .hidden_990.small_chn { display: none;}
+}
+
+.oz_full_banner {margin: 0px auto; left: -3px; width: 100%; height: 90px; overflow: hidden; display: block; position: relative;}
+.oz_full_banner img {width: 1620px; height: 90px; display: block;}
+
+@media all and (min-width:1910px)
+{.oz_full_banner {width: 1640px;}
+.oz_full_banner {left: -3px;}
+}
+
+@media all and (max-width:1910px) and (min-width:1261px)
+{.oz_full_banner {left: -15px; width: 100%;}
+.oz_full_banner img {margin-left: -180px;}
+.oz_full_banner {width: 1200px;}
+}
+
+@media all and (max-width:1260px)
+{.oz_full_banner {width: 100%;}
+.oz_full_banner img {margin-left: -313.5px;}
+.oz_full_banner {width: 1004px;}
+}
+
+/***MAIN热门商品 인기상품***/
+.oz_wonderful_con {margin: 0px auto; width: 1620px; padding-right: 30px;}
+.oz_wonderful_con .wonderful_title {width: 220px; height: 30px; color: rgb(0, 0, 0); line-height: 30px; padding-left: 5px; font-size: 17px; font-weight: 700; margin-top: 10px; display: block; position: relative;}
+.oz_wonderful_con .wonderful_title .title_deco { background: url("/images/wonderful_con_title_deco.png") no-repeat; left: 78px; top: 7px; width: 212px; height: 19px; display: block; position: absolute;}
+.oz_wonderful_con .wonderful_line {height: 415px;}
+.oz_wonderful_con .wonderful_item {float: left;}
+.oz_wonderful_con .card_item {border: 2px solid rgb(255, 255, 255); border-image: none; width: 314px; height: 100%; overflow: hidden; margin-right: 7px; margin-bottom: 7px; display: block; position: relative; background-color: rgb(255, 255, 255);}
+.oz_wonderful_con .last_1920.card_item {margin-right: 0px;}
+.oz_wonderful_con .card_item .item_pic {width: 100%; height: 313px; display: block;}
+.oz_wonderful_con .card_item .item_info {padding: 14px 12px 8px; text-align: left; display: block;}
+.oz_wonderful_con .card_item .item_desc {height: 34px; line-height: 14px; overflow: hidden; display: block;}
+.oz_wonderful_con .card_item .item_name {color: rgb(102, 102, 102); line-height: 18px; font-size: 13px;}
+.oz_wonderful_con .card_item .item_detail {height: 33px; line-height: 22px; margin-top: 2px; display: block; position: relative;}
+.oz_wonderful_con .card_item .item_price {color:rgb(17,17,17); line-height: 32px;}
+.oz_wonderful_con .card_item .item_price .price_rmb {font-size: 14px;}
+.oz_wonderful_con .card_item .item_price .price_integer {font-size: 16px;}
+.oz_wonderful_con .card_item .item_price .price_decimal {font-size: 14px;}
+.oz_wonderful_con .card_item .item_tag {position:absolute; right:0px; top:3px; width:100px;}
+.oz_wonderful_con .card_item .item_tag .wonderful_cart{float:left; width:26px; height:18px; margin-right:11px;}
+.oz_wonderful_con .card_item .item_tag .wonderful_after{float:left; width:26px; height:18px; margin-right:11px;}
+.oz_wonderful_con .card_item .item_tag .wonderful_wish{float:left; width:26px; height:18px;}
+
+@media all and (max-width:1910px)
+{.oz_wonderful_con {width: 1200px; padding-right: 30px;}
+.oz_wonderful_con .wonderful_line {height: 333px;}
+.oz_wonderful_con .wonderful_item {width: 230px; margin-right: 12px; margin-bottom: 7px;}
+.oz_wonderful_con .hidden_1366.wonderful_item {margin-right: 0px;}
+.oz_wonderful_con .card_item {width: 100%; height: 315px;}
+.oz_wonderful_con .last_1920.card_item {margin-right: 0px;}
+.oz_wonderful_con .card_item .item_pic {height: 230px;}
+}
+
+@media all and (max-width:1260px)
+{.oz_wonderful_con {width: 1004px; padding-right: 0px;}
+.oz_wonderful_con .wonderful_line {height: 299px;}
+.oz_wonderful_con .wonderful_item {width: 191px; margin-right: 11px;}
+.oz_wonderful_con .card_item {width: 100%; height: 280px;}
+.oz_wonderful_con .last_1920.card_item {margin-right: 13px;}
+.oz_wonderful_con .card_item .item_pic {width: 100%; height: 190px;}
+.oz_wonderful_con .card_item .item_tag {width:72px; padding-right:7px;}
+.oz_wonderful_con .card_item .item_tag .wonderful_cart{width:22px; height:15px; margin-right:3px;}
+.oz_wonderful_con .card_item .item_tag .wonderful_after{width:22px; height:15px; margin-right:3px;}
+.oz_wonderful_con .card_item .item_tag .wonderful_wish{width:22px; height:15px;}
 }
 
 
