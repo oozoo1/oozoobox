@@ -27,8 +27,7 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
     <div class="oz_top_con" style="height:90px; display:block; position:relative;">
 	    <div style="background: rgb(255, 204, 1); left: 0px; width: 50%; height: 100%; position: absolute;"></div>
 	    <div style="background: rgb(255, 204, 1); width: 50%; height: 100%; right: 0px; position: absolute;"></div>
-	    <img width="990" height="90" style="margin: 0px auto; top: 0px; position: relative; z-index: 10;" 
-	    src="/images/oz_prm_151112.png" alt="广告"/>
+	    <img width="990" height="90" style="margin: 0px auto; top: 0px; position: relative; z-index: 10;" src="/data/banner/<?=$rowbn1[bn_id]?>" alt="广告"/>
 	    <a style="left: 0px ; top: 0px; width: 100%; height: 100%; display: block; position: absolute; z-index: 100;"  href="#"> <img width="100%" height="100%" src="/images/s.png"></a>
     </div>
     <!--e: top광고-->
@@ -119,7 +118,7 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                             <div class="oz_header_extra">
                             	<!--s: 배너-->
                                 <div class="oz_header_banner">
-                                    <img src="/images/oz_header_banner.png" alt="广告"/>
+                                    <img src="/data/banner/25" alt="广告"/>
                                 </div>
                                 <!--e: 배너-->
                                 <!--s:검색창-->

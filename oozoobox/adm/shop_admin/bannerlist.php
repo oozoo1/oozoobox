@@ -92,7 +92,7 @@ $from_record = ($page - 1) * $rows; // 시작 열을 구함
 
     <tr class="<?php echo $bg; ?>">
         <td headers="th_id" rowspan="2" class="td_num"><?php echo $row['bn_id']; ?></td>
-        <td headers="th_dvc"><?php echo $bn_device; ?></td>
+        <td headers="th_dvc"><?php echo $row[bn_alt]; ?></td>
         <td headers="th_loc"><?php echo $row['bn_position']; ?></td>
         <td headers="th_st" class="td_datetime"><?php echo $bn_begin_time; ?></td>
         <td headers="th_end" class="td_datetime"><?php echo $bn_end_time; ?></td>
