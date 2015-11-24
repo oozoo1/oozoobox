@@ -682,28 +682,168 @@ $result = sql_query($sql);
                     	<a class="main_pic" href="#">
                         	<img src="/images/md_01.png"/>
                         </a>
-                        <a href="#">
-                            <span class="market_info">
-                                날이 많이 추워졌어요.<br>
-                                김이 모락모락 나는 라면 한 그릇과<br>
-                                오늘 저녁은 함께 할래요! 
-                            </span>
+                        <a class="market_info" href="#">
+                            날이 많이 추워졌어요.<br>
+                            김이 모락모락 나는 라면 한 그릇과<br>
+                            오늘 저녁은 함께 할래요! 
                         </a>
-                        <a href="#">
-                        	<span class="market_good">
-                            </span>
+                        <a class="market_good" href="#">
+                                <span class="market_good_no">2,501</span>
                         </a>
-                        <a href="#">
-                        	<img src=""/>
-                        </a>
+                        <div class="market_right">
+                            <a href="#">
+                                <img width="100%" src="/images/md_go_01.png" onmouseover="this.src='/images/md_go_01_o.png'" onmouseout="this.src='/images/md_go_01.png'"/>
+                            </a>
+                        </div>
                     </div>
+                    <div class="market_item">
+                    	<a class="main_pic" href="#">
+                        	<img src="/images/md_02.png"/>
+                        </a>
+                        <a class="market_info" href="#">
+                            집에 돌아가는 길에 <br>
+                            신라면 어떠세요?<br>
+                            오늘 아빠의 퇴근길은<br>
+                            발걸음이 유난히 가볍습니다.   
+                        </a>
+                        <a class="market_good" href="#">
+                                <span class="market_good_no">2,501</span>
+                        </a>
+                        <div class="market_right">
+                            <a href="#">
+                                <img width="100%" src="/images/md_go_02.png" onmouseover="this.src='/images/md_go_02_o.png'" onmouseout="this.src='/images/md_go_02.png'"/>
+                            </a>
+                        </div>
+                    </div>
+                	<div class="market_item">
+                    	<a class="main_pic" href="#">
+                        	<img src="/images/md_03.png"/>
+                        </a>
+                        <a class="market_info" href="#">
+                            보송보송한 아기 엉덩이<br>
+                            오늘도 기분이 좋은지<br>
+                            샤방샤방한 미소를 지어요 
+                        </a>
+                        <a class="market_good" href="#">
+                                <span class="market_good_no">2,501</span>
+                        </a>
+                        <div class="market_right">
+                            <a href="#">
+                                <img width="100%" src="/images/md_go_03.png" onmouseover="this.src='/images/md_go_03_o.png'" onmouseout="this.src='/images/md_go_03.png'"/>
+                            </a>
+                        </div>
+                    </div>                    
+                	<div class="market_item last_990">
+                    	<a class="main_pic" href="#">
+                        	<img src="/images/md_04.png"/>
+                        </a>
+                        <a class="market_info" href="#">
+                            당신의 건강을 지켜 줄<br>
+                            옐로푸드 레드푸드<br>
+                            함께해요~
+                        </a>
+                        <a class="market_good" href="#">
+                                <span class="market_good_no">2,501</span>
+                        </a>
+                        <div class="market_right">
+                            <a href="#">
+                                <img width="100%" src="/images/md_go_04.png" onmouseover="this.src='/images/md_go_04_o.png'" onmouseout="this.src='/images/md_go_04.png'"/>
+                            </a>
+                        </div>
+                    </div>                    
                 </div>
+<!-------------------------허걸: 아래는 반복--------------------------->
+                <div class="market_line">
+                	<div class="market_item">
+                    	<a class="main_pic" href="#">
+                        	<img src="/images/md_01.png"/>
+                        </a>
+                        <a class="market_info" href="#">
+                            날이 많이 추워졌어요.<br>
+                            김이 모락모락 나는 라면 한 그릇과<br>
+                            오늘 저녁은 함께 할래요! 
+                        </a>
+                        <a class="market_good" href="#">
+                                <span class="market_good_no">2,501</span>
+                        </a>
+                        <div class="market_right">
+                            <a href="#">
+                                <img width="100%" src="/images/md_go_01.png" onmouseover="this.src='/images/md_go_01_o.png'" onmouseout="this.src='/images/md_go_01.png'"/>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="market_item">
+                    	<a class="main_pic" href="#">
+                        	<img src="/images/md_02.png"/>
+                        </a>
+                        <a class="market_info" href="#">
+                            집에 돌아가는 길에 <br>
+                            신라면 어떠세요?<br>
+                            오늘 아빠의 퇴근길은<br>
+                            발걸음이 유난히 가볍습니다.   
+                        </a>
+                        <a class="market_good" href="#">
+                                <span class="market_good_no">2,501</span>
+                        </a>
+                        <div class="market_right">
+                            <a href="#">
+                                <img width="100%" src="/images/md_go_02.png" onmouseover="this.src='/images/md_go_02_o.png'" onmouseout="this.src='/images/md_go_02.png'"/>
+                            </a>
+                        </div>
+                    </div>
+                	
+                    <div class="market_item">
+                    	<a class="main_pic" href="#">
+                        	<img src="/images/md_03.png"/>
+                        </a>
+                        <a class="market_info" href="#">
+                            보송보송한 아기 엉덩이<br>
+                            오늘도 기분이 좋은지<br>
+                            샤방샤방한 미소를 지어요 
+                        </a>
+                        <a class="market_good" href="#">
+                                <span class="market_good_no">2,501</span>
+                        </a>
+                        <div class="market_right">
+                            <a href="#">
+                                <img width="100%" src="/images/md_go_03.png" onmouseover="this.src='/images/md_go_03_o.png'" onmouseout="this.src='/images/md_go_03.png'"/>
+                            </a>
+                        </div>
+                    </div>                    
+                	<div class="market_item last_990">
+                    	<a class="main_pic" href="#">
+                        	<img src="/images/md_04.png"/>
+                        </a>
+                        <a class="market_info" href="#">
+                            당신의 건강을 지켜 줄<br>
+                            옐로푸드 레드푸드<br>
+                            함께해요~
+                        </a>
+                        <a class="market_good" href="#">
+                                <span class="market_good_no">2,501</span>
+                        </a>
+                        <div class="market_right">
+                            <a href="#">
+                                <img width="100%" src="/images/md_go_04.png" onmouseover="this.src='/images/md_go_04_o.png'" onmouseout="this.src='/images/md_go_04.png'"/>
+                            </a>
+                        </div>
+                    </div>                    
+                </div>
+<!------------------------------여기까지 반복--------------------------->                
             </div>
-        	
-        
         </div>
         <!--e: MD 추천 상품-->
-    
+
+         <!--s: FULL 광고 배너 03-->
+		<div class="oz_full_banner" style="margin-top:10px;">
+        	<ins id="oz_full_banner_outer" style="margin:0; padding:0; width:1620px; height:90px; display:inline-block;">
+            	<a href="#" targer="_blank">
+                	<img width="1620" height="90" src="/images/full_banner_01.jpg" border="0"/>
+                </a>
+            </ins>
+        </div>
+        <!--e: FULL 광고 배너 03-->          
     
     
     

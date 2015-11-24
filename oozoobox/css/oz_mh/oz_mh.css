@@ -195,7 +195,7 @@ fieldset legend{display: none;}
 .interact-con .module-body .interact-item { width: 296px; height: 148px; margin-right: 5px;}
 }
 @media all and (max-width:1260px)
-{ .interact-con { width: 1004px; height: 123px;}
+{ .interact-con { width: 1004px; height: 123px; padding-right:0;}
 .interact-con .module-body .interact-item { width: 247px; height: 123px; margin-right: 5px;}
 }
 
@@ -315,57 +315,48 @@ fieldset legend{display: none;}
 
 /***MD 추천 상품***/
 
-.oz_market_con { margin: 10px auto; width: 1620px; padding-right: 30px; min-height: 1000px;}
+.oz_market_con { margin: 10px auto; width: 1620px; padding-right: 30px;}
 .oz_market_con .market_title {width: 220px; height: 30px; color: rgb(0, 0, 0); line-height: 30px; padding-left: 5px; font-size: 17px; font-weight: 700; margin-top: 10px; display: block; position: relative;}
 .oz_market_con .market_title .title_deco { background: url("/images/market_con_title_deco.png") no-repeat; left: 95px; top: 7px; width: 212px; height: 19px; display: block; position: absolute;}
 .oz_market_con .module_body { width: 100%;}
-.oz_market_con .module_body .market_line { transition:height 0.3s; height: 750px; overflow: hidden; -webkit-transition: height .3s; -moz-transition: height .3s; -o-transition: height .3s;}
+.oz_market_con .module_body .market_line { transition:height 0.3s; height: 400px; overflow: hidden; -webkit-transition: height .3s; -moz-transition: height .3s; -o-transition: height .3s; margin-bottom:10px;}
 .oz_market_con .module_body .more.market_line { margin: 0px !important; height: 0px;}
+
 .oz_market_con .module_body .market_item { border: 2px solid rgb(255, 255, 255); border-image: none; width: 394px; height: 100%; overflow: hidden; margin-right: 9px; float: left; position: relative; background-color: rgb(255, 255, 255);}
 .oz_market_con .module_body .last_990.market_item { margin-right: 0px;}
-.oz_market_con .module_body .market_item .market_type { background: url("//gtms03.alicdn.com/tps/i3/TB1qaIdKXXXXXXHXVXXBOphYpXX-1945-178.png") no-repeat; padding: 5px 0px 0px 10px; width: 90px; height: 95px; color: rgb(255, 255, 255); font-size: 14px; display: block; position: absolute; z-index: 10;}
-
-.oz_market_con .module_body .market_item .market_type i { font-size: 19px; display: block;}
 .oz_market_con .module_body .market_item .main_pic { width: 100%; height: 252px; display: block; position: relative;}
 .oz_market_con .module_body .market_item .main_pic img { left: 0px; top: 0px; width: 100%; position: absolute;}
-.oz_market_con .module_body .market_item .main_pic .title_outer_con { background: url("//gtms04.alicdn.com/tps/i4/TB1SpoNJFXXXXbrXVXXG2A30pXX-288-138.png") no-repeat; margin: 0px auto; padding: 10px; top: 240px; width: 268px; height: 138px; text-align: center; position: relative; _background: 0 0;}
-.oz_market_con .module_body .market_item .main_pic .title_outer_con .title { margin: 20px auto 0px; width: 200px; color: rgb(47, 47, 47); overflow: hidden; font-size: 16px; white-space: nowrap;}
-.oz_market_con .module_body .market_item .main_pic .title_outer_con .seprate { margin: 6px auto; width: 80%; height: 1px; border-bottom-color: rgb(47, 47, 47); border-bottom-width: 1px; border-bottom-style: dashed; display: block;}
-.oz_market_con .module_body .market_item .main_pic .title_outer_con .sub_title { margin: 0px auto; width: 200px; color: rgb(47, 47, 47); overflow: hidden; font-size: 20px; white-space: nowrap;}
-.oz_market_con .module_body .market_item .small_channel { margin: 15px auto; width: 380px; height: 92px; overflow: hidden; display: block;}
-.oz_market_con .module_body .market_item .small_channel img { width: 92px; height: 100%; float: left;}
-.oz_market_con .module_body .market_item .small_channel .title_con { padding: 20px; width: 247px; overflow: hidden;}
-.oz_market_con .module_body .market_item .small_channel .title_con .title { height: 24px; color: rgb(47, 47, 47); overflow: hidden; font-size: 16px;}
-.oz_market_con .module_body .market_item .small_channel .title_con .sub_title { height: 24px; color: rgb(102, 102, 102); overflow: hidden; font-size: 13px;}
-.oz_market_con .module_body .market_more { background: url("//gtms03.alicdn.com/tps/i3/TB1qaIdKXXXXXXHXVXXBOphYpXX-1945-178.png") no-repeat -131px -102px; margin: 0px auto 20px; border-radius: 22px; width: 200px; height: 48px; text-align: center; line-height: 44px; cursor: pointer;}
+.oz_market_con .module_body .market_item .market_info {float:left; width:229px; margin:10px 0 0 10px; height:83px; font-size:14px; line-height:18px; display:block;}
+.oz_market_con .module_body .market_item .market_good {width:150px; float:left; height:40px; position:relative; margin:7px 0 8px 10px; background:url('/images/ico_market_good.png') no-repeat;}
+.oz_market_con .module_body .market_item .market_good:hover{background:url('/images/ico_market_good_o.png')no-repeat;}
+.oz_market_con .module_body .market_item .market_good .market_good_no{font-size:14px; color:rgb(234,92,12); font-weight:700; display:block; position:absolute; left:45px; bottom:3px;}
+.oz_market_con .module_body .market_item .market_right {position:absolute; right:0; bottom:10px; margin-right:5px;}
+
 @media all and (max-width:1910px)
 { .oz_market_con { width: 1200px;}
-.oz_market_con .module_body .market_line { height: 590px;}
+.oz_market_con .module_body .market_line { height:360px;}
 .oz_market_con .module_body .more.market_line { height: 0px;}
 .oz_market_con .module_body .market_item { width: 290px; margin-right: 8px;}
 .oz_market_con .module_body .last_990.market_item { margin-right: 0px;}
-.oz_market_con .module_body .market_item .main_pic { height: 308px;}
-.oz_market_con .module_body .market_item .main_pic .title_outer_con { background: url("//gtms01.alicdn.com/tps/i1/TB1kZe2JVXXXXXxXXXXPHdJ9XXX-234-112.png") no-repeat; top: 170px; width: 214px; height: 112px; _background: 0 0;}
-.oz_market_con .module_body .market_item .main_pic .title_outer_con .title { margin: 10px auto 0px;}
-.oz_market_con .module_body .market_item .small_channel { width: 280px; height: 70px; margin-top: 10px;}
-.oz_market_con .module_body .market_item .small_channel img { width: 70px; height: 70px;}
-.oz_market_con .module_body .market_item .small_channel .title_con { padding: 10px; width: 180px;}
+.oz_market_con .module_body .market_item .main_pic { height: 187px;}
+.oz_market_con .module_body .market_item .market_info {float:left; width:270px; height:70px; margin:7px 0 10px 10px; font-size:14px; line-height:18px; display:block;}
+.oz_market_con .module_body .market_item .market_good {width:150px; float:left; height:40px; position:relative; margin:37px 0 8px 10px;}
+.oz_market_con .module_body .market_item .market_good .market_good_no{font-size:14px; color:rgb(234,92,12); font-weight:700; display:block; position:absolute; left:45px; bottom:3px;}
+.oz_market_con .module_body .market_item .market_right {position:absolute; bottom:10px; right:0; width:120px; margin-right:5px;}
+
 }
 
 @media all and (max-width:1260px)
 { .oz_market_con { width: 1004px; padding-right: 0px;}
-.oz_market_con .module_body .market_line { height: 474px;}
+.oz_market_con .module_body .market_line { height: 330px;}
 .oz_market_con .module_body .more.market_line { height: 0px;}
 .oz_market_con .module_body .market_item { width: 241px; margin-right: 8px;}
-.oz_market_con .module-body .market_item .main_pic { height: 256px;}
-.oz_market_con .module-body .market_item .main_pic .title_outer_con { background: url("//gtms01.alicdn.com/tps/i1/TB1kZe2JVXXXXXxXXXXPHdJ9XXX-234-112.png") no-repeat; top: 120px; width: 214px; height: 112px;}
-.oz_market_con .module_body .market_item .main_pic .title_outer_con .title { margin: 10px auto 0px;}
-.oz_market_con .module_body .market_item .main_pic .title_outer_con .sub_title { font-size: 18px;}
-.oz_market_con .module_body .market_item .small_channel { width: 220px; height: 55px; margin-top: 10px;}
-.oz_market_con .module_body .market_item .small_channel img { width: 55px; height: 55px;}
-.oz_market_con .module_body .market_item .small_channel .title_con { padding: 10px; width: 145px;}
-.oz_market_con .module_body .market_item .small_channel .title_con .title { font-size: 14px;}
-.oz_market_con .module_body .last-990.market-item { margin-right: 0px;}
+.oz_market_con .module_body .market_item .main_pic { height:155px;}
+.oz_market_con .module_body .market_item .market_info {float:left; width:227px; height:65px; margin:7px 0 0px 10px; font-size:14px; line-height:18px; display:block;}
+.oz_market_con .module_body .market_item .market_good {width:100px; float:left; height:30px; position:relative; margin:67px 0 8px 10px; background:url('/images/ico_market_good_small.png') no-repeat;}
+.oz_market_con .module_body .market_item .market_good:hover {background:url('/images/ico_market_good_small_o.png') no-repeat;}
+.oz_market_con .module_body .market_item .market_good .market_good_no{font-size:14px; color:rgb(234,92,12); font-weight:700; display:block; position:absolute; left:35px; bottom:3px;}
+.oz_market_con .module_body .market_item .market_right {position:absolute; bottom:10px; right:0; width:120px; margin-right:5px;}
 }
 
 
