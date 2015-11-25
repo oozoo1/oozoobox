@@ -59,11 +59,7 @@ include_once (G5_ADMIN_PATH.'/admin.head.php');
                 
                 <option>--------------------</option>
                 
-                <option value="main_tops1" <?php echo get_selected($bn['bn_position'], 'main_tops1'); ?>>메인탑슬라이드1</option>
-                <option value="main_tops2" <?php echo get_selected($bn['bn_position'], 'main_tops2'); ?>>메인탑슬라이드2</option>
-                <option value="main_tops3" <?php echo get_selected($bn['bn_position'], 'main_tops3'); ?>>메인탑슬라이드3</option>
-                <option value="main_tops4" <?php echo get_selected($bn['bn_position'], 'main_tops4'); ?>>메인탑슬라이드4</option>
-                <option value="main_tops5" <?php echo get_selected($bn['bn_position'], 'main_tops5'); ?>>메인탑슬라이드5</option>
+                <option value="main_tops" <?php echo get_selected($bn['bn_position'], 'main_tops'); ?>>메인탑슬라이드</option>
                 <option>--------------------</option>
                 <option value="main1_left" <?php echo get_selected($bn['bn_position'], 'main1_left'); ?>>메인1좌</option>
                 <option value="main1_right" <?php echo get_selected($bn['bn_position'], 'main1_right'); ?>>메인1우</option>
@@ -78,11 +74,7 @@ include_once (G5_ADMIN_PATH.'/admin.head.php');
                 <option>--------------------</option>
                 <option value="baner0_1" <?php echo get_selected($bn['bn_position'], 'baner0_1'); ?>>메인배너A</option>
                 <option>--------------------</option>
-                <option value="menu_1" <?php echo get_selected($bn['bn_position'], 'menu_1'); ?>>메뉴배너1</option>
-                <option value="menu_2" <?php echo get_selected($bn['bn_position'], 'menu_2'); ?>>메뉴배너2</option>
-                <option value="menu_3" <?php echo get_selected($bn['bn_position'], 'menu_3'); ?>>메뉴배너3</option>
-                <option value="menu_4" <?php echo get_selected($bn['bn_position'], 'menu_4'); ?>>메뉴배너4</option>
-                <option value="menu_5" <?php echo get_selected($bn['bn_position'], 'menu_5'); ?>>메뉴배너5</option>
+                <option value="menu" <?php echo get_selected($bn['bn_position'], 'menu'); ?>>메뉴배너</option>
                 <option>--------------------</option>
                 <option value="baner1_1" <?php echo get_selected($bn['bn_position'], 'baner1_1'); ?>>배너A1</option>
                 <option value="baner1_2" <?php echo get_selected($bn['bn_position'], 'baner1_2'); ?>>배너A2</option>

@@ -14,6 +14,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 //} else {
 //	echo '<div class="text-muted text-center" style="padding:300px 0px;">Switcher에서 메인을 선택해 주세요.</div>';
 //}
+
 $sql = "SELECT * FROM g5_shop_category WHERE ca_id = '10' or ca_id = '20'  or ca_id = '30'  or ca_id = '40' or ca_id = '50'";
 $result = sql_query($sql);
 ?>
@@ -32,7 +33,7 @@ $result = sql_query($sql);
                 <div id="oz_main_nav">
                 
                     <ul class="tit">
-                    <?php $k=1; for ($i=0; $row=sql_fetch_array($result); $i++){?>
+                    <?php $k=1; $a=2; for ($i=0; $row=sql_fetch_array($result); $i++){?>
                         <li class="mod_cate">
                             <h2><i class="oz_main_glo_ico"><img src="/images/glo_icon_0<?=$k++?>.png" alt="给宝宝最好的 icon"/></i><a><?=$row[ca_name]?></a></h2><!--"내 아이에게 주고 싶은 가장 좋은 것"-->
                             <div class="mod_subcate">
@@ -54,7 +55,7 @@ $result = sql_query($sql);
                                 </div>
                                 <div class="mod_subcate_side">
                                     <div class="mod_subcate_side_hd"></div>
-                                    <a class="mod_subcate_gg" href="#"><img src="/images/glo_prm_<?=$row[ca_id]?>.png" alt="纸尿裤 广告"/></a>
+                                    <a class="mod_subcate_gg" href="/shop/list.php?ca_id=<?=$row[ca_id]?>"><img src="/data/banner/<?=$a++?>"/></a>
                                 </div>
                             </div>
                         </li>
@@ -111,12 +112,14 @@ $result = sql_query($sql);
             
             <!--s: MAIN 슬라이드 상단 작은 배너-->
             <div class="small_banner_con">
-            	<a class="small_banner" href="#">
-                	<img width="170" height="440" alt="" src="/images/small_banner01.png"/>
+            <?php for ($i=0; $row3=sql_fetch_array($baner0_1); $i++){?>
+            	<a class="small_banner" href="<?=$row3[bn_url]?>">
+                	<img width="170" height="440" alt="" src="/data/banner/<?=$row3[bn_id]?>"/>
                     <div class="small_banner_btn">
                     	<span class="btn_object">지금투표하러가기</span>
                     </div>
                 </a>
+            <?php } ?>
             </div>
             <!--e: MAIN 슬라이드 상단 작은 배너-->
     	</div>
