@@ -269,7 +269,7 @@ fieldset legend{display: none;}
 .oz_wonderful_con {margin: 0px auto; width: 1620px; padding-right: 30px;}
 .oz_wonderful_con .wonderful_title {width: 220px; height: 30px; color: rgb(0, 0, 0); line-height: 30px; padding-left: 5px; font-size: 17px; font-weight: 700; margin-top: 10px; display: block; position: relative;}
 .oz_wonderful_con .wonderful_title .title_deco { background: url("/images/wonderful_con_title_deco.png") no-repeat; left: 78px; top: 7px; width: 212px; height: 19px; display: block; position: absolute;}
-.oz_wonderful_con .wonderful_line {height: 415px;}
+.oz_wonderful_con .wonderful_line {height: 435px;}
 .oz_wonderful_con .wonderful_item {float: left;}
 .oz_wonderful_con .card_item {border: 2px solid rgb(255, 255, 255); border-image: none; width: 314px; height: 100%; overflow: hidden; margin-right: 7px; margin-bottom: 7px; display: block; position: relative; background-color: rgb(255, 255, 255);}
 .oz_wonderful_con .last_1920.card_item {margin-right: 0px;}
@@ -320,7 +320,7 @@ fieldset legend{display: none;}
 .oz_market_con .market_title {width: 220px; height: 30px; color: rgb(0, 0, 0); line-height: 30px; padding-left: 5px; font-size: 17px; font-weight: 700; margin-top: 10px; display: block; position: relative;}
 .oz_market_con .market_title .title_deco { background: url("/images/market_con_title_deco.png") no-repeat; left: 95px; top: 7px; width: 212px; height: 19px; display: block; position: absolute;}
 .oz_market_con .module_body { width: 100%;}
-.oz_market_con .module_body .market_line { transition:height 0.3s; height: 400px; overflow: hidden; -webkit-transition: height .3s; -moz-transition: height .3s; -o-transition: height .3s; margin-bottom:10px;}
+.oz_market_con .module_body .market_line { transition:height 0.3s; height: 400px; overflow: hidden; -webkit-transition: height .3s; -moz-transition: height .3s; -o-transition: height .3s; margin-bottom:30px;}
 .oz_market_con .module_body .more.market_line { margin: 0px !important; height: 0px;}
 
 .oz_market_con .module_body .market_item { border: 2px solid rgb(255, 255, 255); border-image: none; width: 394px; height: 100%; overflow: hidden; margin-right: 9px; float: left; position: relative; background-color: rgb(255, 255, 255);}
@@ -336,7 +336,7 @@ fieldset legend{display: none;}
 
 @media all and (max-width:1910px)
 { .oz_market_con { width: 1200px;}
-.oz_market_con .module_body .market_line { height:360px;}
+.oz_market_con .module_body .market_line { height:360px; margin-bottom:25px;}
 .oz_market_con .module_body .more.market_line { height: 0px;}
 .oz_market_con .module_body .market_item { width: 290px; margin-right: 8px;}
 .oz_market_con .module_body .last_990.market_item { margin-right: 0px;}
@@ -350,7 +350,7 @@ fieldset legend{display: none;}
 
 @media all and (max-width:1260px)
 { .oz_market_con { width: 1004px; padding-right: 0px;}
-.oz_market_con .module_body .market_line { height: 330px;}
+.oz_market_con .module_body .market_line { height: 330px; marign-bottom:20px;}
 .oz_market_con .module_body .more.market_line { height: 0px;}
 .oz_market_con .module_body .market_item { width: 241px; margin-right: 8px;}
 .oz_market_con .module_body .market_item .main_pic { height:155px;}
