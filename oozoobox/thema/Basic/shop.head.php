@@ -9,7 +9,7 @@ echo '<meta name="viewport" content="width=device-width,initial-scale=1.0,minimu
 add_stylesheet('<link rel="stylesheet" href="/css/oz_mh/oz_mh.css" type="text/css" media="screen" >',0); //김미혜: css추가 및 경로 설정
 $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒霜！ 〉〉〉去看看防晒霜";
 ?>
-<!-- 주석추가 -->
+
 
 <script src="/oz_js/jquery.SuperSlide.2.1.1.js" type="text/javascript"></script>
 <script src="/oz_js/jquery.slides.min.js"></script>
