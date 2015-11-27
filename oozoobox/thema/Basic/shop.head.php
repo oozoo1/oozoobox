@@ -8,20 +8,9 @@ echo '<meta name="viewport" content="width=device-width,initial-scale=1.0,minimu
 
 add_stylesheet('<link rel="stylesheet" href="/css/oz_mh/oz_mh.css" type="text/css" media="screen" >',0); //김미혜: css추가 및 경로 설정
 $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒霜！ 〉〉〉去看看防晒霜";
-
-$sql_main_top = "SELECT * FROM g5_shop_banner WHERE bn_position = 'main_top' ORDER BY `g5_shop_banner`.`bn_id` DESC LIMIT 0 , 1";
-$main_top = sql_query($sql_main_top);
-
-$sql_main_tops = "SELECT * FROM g5_shop_banner WHERE bn_position = 'main_tops' ORDER BY `g5_shop_banner`.`bn_id` DESC LIMIT 0 , 1";
-$main_tops = sql_query($sql_main_tops);
-
-$sql_baner0_1 = "SELECT * FROM g5_shop_banner WHERE bn_position = 'baner0_1' ORDER BY `g5_shop_banner`.`bn_id` DESC LIMIT 0 , 1";
-$baner0_1 = sql_query($sql_baner0_1);
-
-$sql_menu = "SELECT * FROM g5_shop_banner WHERE bn_position = 'menu' ORDER BY `g5_shop_banner`.`bn_id` ASC LIMIT 0 , 5";
-$menu = sql_query($sql_menu);
-
 ?>
+<!-- 주석추가 -->
+
 <script src="/oz_js/jquery.SuperSlide.2.1.1.js" type="text/javascript"></script>
 <script src="/oz_js/jquery.slides.min.js"></script>
 <script type="text/javascript" src="/oz_js/jquery.als-1.7.min.js"></script>
@@ -38,10 +27,8 @@ $menu = sql_query($sql_menu);
     <div class="oz_top_con" style="height:90px; display:block; position:relative;">
 	    <div style="background: rgb(255, 204, 1); left: 0px; width: 50%; height: 100%; position: absolute;"></div>
 	    <div style="background: rgb(255, 204, 1); width: 50%; height: 100%; right: 0px; position: absolute;"></div>
-	    <?php for ($i=0; $row1=sql_fetch_array($main_top); $i++){?>
-	    <img width="990" height="90" style="margin: 0px auto; top: 0px; position: relative; z-index: 10;" src="/data/banner/<?=$row1[bn_id]?>" alt="广告"/>	    
-	    <a style="left: 0px ; top: 0px; width: 100%; height: 100%; display: block; position: absolute; z-index: 100;"  href="<?=$row1[bn_url]?>"> <img width="100%" height="100%" src="/images/s.png"></a>
-        <?php }?>
+	    <img width="990" height="90" style="margin: 0px auto; top: 0px; position: relative; z-index: 10;" src="/data/banner/1" alt="广告"/>
+	    <a style="left: 0px ; top: 0px; width: 100%; height: 100%; display: block; position: absolute; z-index: 100;"  href="#"> <img width="100%" height="100%" src="/images/s.png"></a>
     </div>
     <!--e: top광고-->
     
@@ -131,9 +118,7 @@ $menu = sql_query($sql_menu);
                             <div class="oz_header_extra">
                             	<!--s: 배너-->
                                 <div class="oz_header_banner">
-                                    <?php for ($i=0; $row2=sql_fetch_array($main_tops); $i++){?>
-                                    <a href="<?=$row2[bn_url]?>"><img src="/data/banner/<?=$row2[bn_id]?>" alt="广告"/></a>
-                                    <?php } ?>
+                                    <img src="/data/banner/25" alt="广告"/>
                                 </div>
                                 <!--e: 배너-->
                                 <!--s:검색창-->
