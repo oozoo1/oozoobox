@@ -19,7 +19,7 @@ if($is_admin != 'super')
 #g4_import_frm .frm_input {background-color:#fff !important}
 #g4_import_frm .btn_submit {padding:0 10px;height:24px}
 </style>
-<!-- 주석추가 -->
+
 <!-- 상단 시작 { -->
 <div id="hd">
     <h1 id="hd_h1"><?php echo $g5['title'] ?></h1>
