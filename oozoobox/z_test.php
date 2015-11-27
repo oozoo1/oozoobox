@@ -12,7 +12,7 @@ if(get_session('yc4_tables_copied') == 'done')
 if($is_admin != 'super')
     alert('최고관리자로 로그인 후 실행해 주십시오.', G5_URL);
 ?>
-
+<!-- 주석추가 -->
 <style>
 #g4_import p {padding:0 0 10px;line-height:1.8em}
 #g4_import_frm {margin:20px 0 30px;padding:30px 0;border:1px solid #e9e9e9;background:#f5f8f9;text-align:center}
