@@ -172,26 +172,26 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                                 <div class="title">
 									특별상품
                                 </div>
-                                <div class="img-box">
+                                <div class="img-box"> 
                                     <a href="#">
-                                    	<img onerror="if(this.src=='http://pics.auction.co.kr/common/img_error300.gif') return; this.src='http://pics.auction.co.kr/common/img_error130.gif';" style="HEIGHT: 260px; WIDTH: 260px" alt=내가찍은상품 src="(홈스몰)젠트로%20이동식%20행거%201단-2단_files/deb6e8f93.jpg"/>
+                                    	<img onerror="if(this.src=='http://pics.auction.co.kr/common/img_error300.gif') return; this.src='http://pics.auction.co.kr/common/img_error130.gif';" style="height:200px; width:260px" alt="MD" src="/images/top_glo_md_01.png"/>
                                     </a> 
                                     <div class="icon-check">
-                                    	<img alt=내가찍은상품 src="(홈스몰)젠트로%20이동식%20행거%201단-2단_files/icon_check_products.png"/>
+                                    	<img alt="top 글로벌 MD 상품" src="/images/ico_top_glo_md_01.png"/>
                                     </div>
                                 </div>
                                 <div class="rating-area">
-                                    <p class="tit">(홈스몰)젠트로 이동식 행거 1단/2단</p>
-                                    <p class="price">9,900<span>원</span></p>
+                                    <p class="tit">捞鱼猫新生儿秋冬宝宝棉衣服</p>
+                                    <p class="price"><span>¥</span>105.00</p>
                                     <div class="sns-wallpaper">
                                         <span>
                                             <a href="#">
-                                            	<img alt=상품상세정보 src="(홈스몰)젠트로%20이동식%20행거%201단-2단_files/btn_detailinfo02.gif"/>
+                                            	<img alt="상품상세정보" src="/images/btn_top_glo_md_detail.png"/>
                                             </a>
                                         </span> 
                                         <span>
                                             <a onclick="javascript:favoriteItemOpenSingleRegist(this.parentNode, 'B282487011', '4470', 'http://sell3.auction.co.kr');" href="javascript:void(0);">
-                                            	<img alt=관심상품등록 src="(홈스몰)젠트로%20이동식%20행거%201단-2단_files/btn_interest02.gif">
+                                            	<img alt="관심상품등록" src="/images/btn_top_glo_md_wish.png"/>
                                             </a>
                                         </span>
                                     </div>
@@ -203,23 +203,23 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                                                 <em>%</em>
                                             </strong>
                                         </div>
-                                        <ul class="rating">
-                                            <li>
+                                        <dl class="rating">
+                                            <dd>
                                                 <span class="list-title">상품평</span>
                                                 7건 
-                                            </li>
-                                            <li>
+                                            </dd>
+                                            <dd>
                                                 <span class="list-title">상품</span>
                                                 <span class="star-rating">
                                                 	<span style="width: 100%">100%</span>
                                                 </span>
-                                            </li>
-                                            <li>
+                                            </dd>
+                                            <dd>
                                                 <span class="list-title">배송</span>
                                                 <span class="star-rating">
                                                 	<span style="width: 100%">100%</span>
                                                 </span>
-                                            </li>
+                                            </dd>
                                         </ul>
                                     </div>
                                 </div>

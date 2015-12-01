@@ -394,37 +394,34 @@ fieldset legend{display: none;}
 
 .whatbuy-head {float:left; width:780px; margin: 0px auto;}
 .whatbuy-head .title {height:20px; width:765px; float: left; padding:0px 0 0 15px; margin-top:10px; background-color: #f1f1f1; text-align:left;}
-.whatbuy-head .img-box {position:relative; float:left; margin:26px 0px 0px 27px; display:block; border:1px solid #333;}
+.whatbuy-head .img-box {position:relative; float:left; margin:26px 0px 0px 27px; display:block;}
 .whatbuy-head .img-box img {height:200px; width:260px;}
-.whatbuy-head .img-box .icon-check {position: absolute; left: -23px; top: -13px; border:1px solid #D9161A;}
-.whatbuy-head .img-box .icon-check img {height: 107px; width: 88px;}
-.whatbuy-head .rating-area {float:left; height: 300px; width: 407px; position: relative; float:left; margin: 20px 0px 0px 36px;}
+.whatbuy-head .img-box .icon-check {position: absolute; left: -23px; top: -13px;}
+.whatbuy-head .img-box .icon-check img {height: 106px; width: 87px;}
+.whatbuy-head .rating-area {float:left; height: 250px; width: 407px; position: relative; margin: 20px 0px 0px 70px;  text-align:left;}
 .whatbuy-head .rating-area > p.tit {overflow:hidden; height:32px; color:#666; font:12px/1.3 Tahoma, '微软雅黑', sans-serif; letter-spacing:-1px;}
-.whatbuy-head .rating-area p.price {color:#333; font font:12px/1.3 Tahoma, '微软雅黑', sans-serif; margin-top:5px; letter-spacing:-1px;}
-.whatbuy-head .rating-area p.price span {vertical-align:1px; font:12px/1.25 Tahoma, '微软雅黑', sans-serif; padding:3px;}
+.whatbuy-head .rating-area p.price {color:#333; font:bold 22px/1.3 Tahoma, '微软雅黑', sans-serif; margin-top:5px; letter-spacing:-1px;}
+.whatbuy-head .rating-area p.price span {vertical-align:1px; font:bold 12px/1.25 Tahoma, '微软雅黑', sans-serif; padding:3px;}
 .rating-area .sns-wallpaper {position:relative; margin-top:8px;}
-.rating-area .sns-wallpaper > span {font-size:0px; float:left; margin-right:4px;}
+.rating-area .sns-wallpaper > span {width:144px; font-size:0px; float:left; margin-right:4px;}
 .rating-area .sns-wallpaper ul {overflow:hidden; float:left;}
 .rating-area .sns-wallpaper li {font-size:0px; position:relative; float:left; margin-left:-1px; z-index:1; line-height:0;}
 .rating-area .sns-wallpaper li:first-child {margin-left: 0px;}
 .rating-area .sns-wallpaper li:hover {z-index: 10;}
 .rating-area .sns-wallpaper li a {overflow:hidden; height:38px; display:block;}
 .rating-area .sns-wallpaper li a:hover img {margin-top:-38px;}
-.whatbuy-head .no-compare {padding-top:23px;}
-.whatbuy-head .no-compare .satisfy-area {background:none transparent scroll repeat 0% 0%;}
-.no-compare .sns-wallpaper {margin:20px;}
-.no-compare div.satisfy-area {padding-top:0px; margin-top:25px;}
-div.satisfy-area {overflow:hidden; padding:9px 0 5px 0; clear:both; margin-top:52px; background-color:#fff;}
-div.satisfy-area .satisfy {widht: 97px; float:left; color:#999; text-align:center; font:12px/1.25 Tahoma, '微软雅黑', sans-serif; letter-spacing:-1px;}
-div.satisfy-area .satisfy strong {color:#4f6bcb; font: bold 24px/1.25 Tahoma, Gulim, sans-serif; padding-left: 13px; display:block;}
-div.satisfy-area .satisfy strong em {font: 17px/1.25 Tahoma, '微软雅黑', sans-serif;}
-div.satisfy-area .rating {width:293px; background:url(//pics.auction.co.kr/corner/persnalbridge/bg_rating.gif) no-repeat 0px 3px; float:left; padding:2px 0 0 16px;}
-div.satisfy-area .rating li:first-child {width:100%;}
-div.satisfy-area .rating li {margin-bottom: 6px; width:49.9%; float:left; color:#333; letter-spacing:-1px;}
-div.satisfy-area .rating li span {color: #999;}
-div.satisfy-area .rating li span.list-title {width:45px;}
-div.satisfy-area .rating span { display:inline-block;}
-div.satisfy-area .rating span.star-rating {height:15px; vertical-align:top; font:0px/0 a;}
-div.satisfy-area .rating span.star-rating span {height:15px; vertical-align:top; font:0px/0 a;}
-div.satisfy-area .rating span.star-rating {width:80px; background: url(//pics.auction.co.kr/vip/2013/vip_star.png) no-repeat 0px 0px;}
-div.satisfy-area .rating span.star-rating span {backgrond:url(//pics.auction.co.kr/vip/2013/vip_star.png) no-repeat 0px -16px; color:transparent;}
+
+.whatbuy-head .satisfy-area {overflow:hidden; padding:9px 0 5px 0; clear:both; margin-top:52px; background-color:#fff;}
+.whatbuy-head .satisfy-area .satisfy {width: 97px; float:left; color:#999; text-align:center; font:12px/1.25 Tahoma, '微软雅黑', sans-serif; letter-spacing:-1px;}
+.whatbuy-head .satisfy-area .satisfy strong {color:#4f6bcb; font: bold 24px/1.25 Tahoma, Gulim, sans-serif; padding-left: 13px; display:block;}
+.whatbuy-head .satisfy-area .satisfy strong em {font: 17px/1.25 Tahoma, '微软雅黑', sans-serif;}
+.whatbuy-head .satisfy-area dl.rating {width:290px; /*background:url("//pics.auction.co.kr/corner/persnalbridge/bg_rating.gif") no-repeat 0px 3px; */float:left; padding:0 0 0 16px;}
+.whatbuy-head .satisfy-area .rating dd:first-child {width:100%;}
+.whatbuy-head .satisfy-area .rating dd {margin-bottom: 7px; width:49.9%; float:left; color:#333; letter-spacing:-1px;}
+.whatbuy-head .satisfy-area .rating dd span {color: #999;}
+.whatbuy-head .satisfy-area .rating dd span.list-title {width:39px;}
+.whatbuy-head .satisfy-area .rating span { display:inline-block;}
+.whatbuy-head .satisfy-area .rating span.star-rating {margin-top:3px; height:15px; vertical-align:top; font:0px/0 a;}
+.whatbuy-head .satisfy-area .rating span.star-rating span {height:15px; vertical-align:top; font:0px/0 a;}
+.whatbuy-head .satisfy-area .rating span.star-rating {width:80px; background: url('/images/btn_top_glo_md_star.png') no-repeat 0px 0px;}
+.whatbuy-head .satisfy-area .rating span.star-rating span {background:url('/images/btn_top_glo_md_star.png') no-repeat 0px -16px; color:transparent;}
