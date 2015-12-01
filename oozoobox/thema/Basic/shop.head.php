@@ -15,6 +15,9 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
 <script src="/oz_js/jquery.slides.min.js"></script>
 <script type="text/javascript" src="/oz_js/jquery.als-1.7.min.js"></script>
 
+<?php if($_SERVER['PHP_SELF']=="/index.php"){}else{ ?>
+<script src="/oz_js/jquery.min.js"></script>
+<? } ?>
 
 <div class="wrapper <?php echo $at_set['font'];?><?php echo (G5_IS_MOBILE) ? ' mobile-font' : '';?> <?php echo $at_set['layout'];?>">
 
@@ -144,14 +147,173 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                             </div>
                         </div>
                     </div>
-                </div> 
+
                 <!--e: 로고, 검색창-->
                 
 <?php if($_SERVER['PHP_SELF']=="/index.php"){}else{ ?>
 
-<? } ?>       
-                
-            </div>
+<div id="oz_glo2">
+	<div class="oz_glo2_bg">
+    	<div class="oz_glo2_navbg">
+            <ul id="nav">
+                <li class="on">
+                    <a href="#" class="first glo_1">给宝宝最好的</a>
+                    <div class="second">
+                    	<dl class="second_left">
+                        	<dd><a href="#" class="glo2_local">尿片</a></dd>
+                            <dd><a href="#" class="glo2_local">食品</a></dd>
+                            <dd><a href="#" class="glo2_local">保健食品</a></dd>
+                            <dd><a href="#" class="glo2_local">童装</a></dd>
+                            <dd><a href="#" class="glo2_local">母婴用品</a></dd>
+                        </dl>
+                        <!--s:GLOBAL2 MD추천상품-->
+                        <div class="gol2_md_pro">
+                            <div class="whatbuy-head">
+                                <div class="title">
+									특별상품
+                                </div>
+                                <div class="img-box">
+                                    <a href="#">
+                                    	<img onerror="if(this.src=='http://pics.auction.co.kr/common/img_error300.gif') return; this.src='http://pics.auction.co.kr/common/img_error130.gif';" style="HEIGHT: 260px; WIDTH: 260px" alt=내가찍은상품 src="(홈스몰)젠트로%20이동식%20행거%201단-2단_files/deb6e8f93.jpg"/>
+                                    </a> 
+                                    <div class="icon-check">
+                                    	<img alt=내가찍은상품 src="(홈스몰)젠트로%20이동식%20행거%201단-2단_files/icon_check_products.png"/>
+                                    </div>
+                                </div>
+                                <div class="rating-area">
+                                    <p class="tit">(홈스몰)젠트로 이동식 행거 1단/2단</p>
+                                    <p class="price">9,900<span>원</span></p>
+                                    <div class="sns-wallpaper">
+                                        <span>
+                                            <a href="#">
+                                            	<img alt=상품상세정보 src="(홈스몰)젠트로%20이동식%20행거%201단-2단_files/btn_detailinfo02.gif"/>
+                                            </a>
+                                        </span> 
+                                        <span>
+                                            <a onclick="javascript:favoriteItemOpenSingleRegist(this.parentNode, 'B282487011', '4470', 'http://sell3.auction.co.kr');" href="javascript:void(0);">
+                                            	<img alt=관심상품등록 src="(홈스몰)젠트로%20이동식%20행거%201단-2단_files/btn_interest02.gif">
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div class="satisfy-area">
+                                        <div class="satisfy">
+                                        	만족도
+                                            <strong>
+                                                100
+                                                <em>%</em>
+                                            </strong>
+                                        </div>
+                                        <ul class="rating">
+                                            <li>
+                                                <span class="list-title">상품평</span>
+                                                7건 
+                                            </li>
+                                            <li>
+                                                <span class="list-title">상품</span>
+                                                <span class="star-rating">
+                                                	<span style="width: 100%">100%</span>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="list-title">배송</span>
+                                                <span class="star-rating">
+                                                	<span style="width: 100%">100%</span>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--e:GLOBAL2 MD추천상품-->         
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="glo_2">白滑牛奶皮</a>
+                    <div class="second">
+                    	<dl class="second_left">
+                        	<dd><a href="#" class="glo2_local">面膜</a></dd>
+                            <dd><a href="#" class="glo2_local">化妆水/乳液</a></dd>
+                            <dd><a href="#" class="glo2_local">精华/护肤霜 </a></dd>
+                            <dd><a href="#" class="glo2_local">彩妆</a></dd>
+                            <dd><a href="#" class="glo2_local">套妆</a></dd>
+                        </dl>                    
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="glo_3">津津有味</a>
+                    <div class="second">
+                    	<dl class="second_left">
+                        	<dd><a href="#" class="glo2_local">调料</a></dd>
+                            <dd><a href="#" class="glo2_local">面类</a></dd>
+                            <dd><a href="#" class="glo2_local">营养</a></dd>
+                            <dd><a href="#" class="glo2_local">健康</a></dd>
+                            <dd><a href="#" class="glo2_local">饼干</a></dd>
+                        </dl>                                            
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="glo_4">小生活必备</a>
+                    <div class="second">
+                    	<dl class="second_left">
+                        	<dd><a href="#" class="glo2_local">女装</a></dd>
+                            <dd><a href="#" class="glo2_local">男装</a></dd>
+                            <dd><a href="#" class="glo2_local">儿童</a></dd>
+                            <dd><a href="#" class="glo2_local">内衣</a></dd>
+                        </dl>                    
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="glo_5">美丽的穿着</a>
+                    <div class="second">
+                     	<dl class="second_left">
+                        	<dd><a href="#" class="glo2_local">女士</a></dd>
+                            <dd><a href="#" class="glo2_local">厨房</a></dd>
+                            <dd><a href="#" class="glo2_local">洗澡</a></dd>
+                            <dd><a href="#" class="glo2_local">其他</a></dd>
+                        </dl>                   
+                    </div>
+                </li>                                   
+            </ul>
+    		<div class="dot"><ul><span></span></ul></div>           
+        </div>
+    </div>
+
+    <div id="slide"></div>
+</div>
+
+    
+    
+<script>
+$(function(){
+	var liWidth = $('#oz_glo2 #nav li').width();
+	var secondWidth = $('#oz_glo2 #nav2 .second').width();	
+	$('#oz_glo2 #nav li').hover(function(){
+		var index = $(this).index();
+		$('#oz_glo2 .dot span').stop().animate({
+			left:liWidth*index+'px'
+		},200);
+		$(this).addClass('on').siblings().removeClass('on');
+		$(this).find('.second').fadeIn(100);
+		$('#oz_glo2 #slide').stop().animate({
+			height:'340px'
+		},200);
+	},function(){
+		$(this).find('.second').fadeOut(300);
+		$('#oz_glo2 #slide').stop().animate({
+			height:'0'
+		},400);
+	});
+});
+</script>
+
+
+<? } ?>      
+
+ 
+            </div> 
+            <!-----------e: HEADER-------------->    
+        </div>
             <!------e: 쇼핑몰 페이지-------->
     
     

@@ -136,6 +136,7 @@ fieldset legend{display: none;}
 #oz_main_nav .on .mod_subcate{display:block !important; }
 #oz_main_nav .on .mod_cate_r a{color:#666666;}
 
+
 /****로컬메뉴 광고*****/
 #mod_subcate_gg{display:block;position:absolute;bottom:0;right:0;}
 
@@ -361,4 +362,69 @@ fieldset legend{display: none;}
 .oz_market_con .module_body .market_item .market_right {position:absolute; bottom:10px; right:0; width:120px; margin-right:5px;}
 }
 
+/* LIST*/
+/**LIST 글로벌메뉴*/
+#oz_glo2{ width:100%; height:340px; overflow:hidden; position:relative; border-bottom:#ddd solid 1px;}
+.oz_glo2_bg {width:100%; height:42px; background:#ea5b0c;}
+.oz_glo2_navbg {width:990px; height:42px; margin:0 auto; background:#f47a22; position:relative;}
+#oz_glo2 ul{ width:100%; overflow:hidden; height:330px; z-index:30;}
+#oz_glo2 ul li{float:left; width:198px; height:42px; display:block; text-align:center; }
 
+#oz_glo2 ul li a{ width:198px; height:42px; line-height:42px; margin-bottom:10px;display:block; float:left; font-size:16px; font-family:'微软雅黑'; color:#fff; font-weight:bold; text-decoration:none; z-index:40;}
+#oz_glo2 ul li a.glo_1{position:absolute; top:0px; left:0;}
+#oz_glo2 ul li a.glo_2{position:absolute; top:0px; left:199px;}
+#oz_glo2 ul li a.glo_3{position:absolute; top:0px; left:397px;}
+#oz_glo2 ul li a.glo_4{position:absolute; top:0px; left:595px;}
+#oz_glo2 ul li a.glo_5{position:absolute; top:0px; left:793px;}
+
+#oz_glo2 ul li a:hover{text-decoration:none;}
+#oz_glo2 ul li.on a{ color:#ffdbc1;}
+
+#oz_glo2 ul li .second{ width:990px; height:300px; position:absolute; top:42px; left:0px; display:none; z-index:50;}
+#oz_glo2 ul li .second .second_left {float:left; width:168px; padding-left:30px;}
+#oz_glo2 ul li .second .second_left dd {float:left; height:40px; text-align:left;}
+#oz_glo2 ul li .second .second_left dd a.glo2_local{ text-align:left; font-size:14px; color:#333; font-weight:500;}
+#oz_glo2 ul li .second .second_left dd a:hover{color:#f47a22;}
+
+#oz_glo2 .dot{ width:990px;height:8px; line-height:8px; position:absolute; left:0px; top:34px;}
+#oz_glo2 .dot ul{width:990px; height:8px; line-height:8px; position:relative;}
+#oz_glo2 .dot ul span{ width:198px; height:8px; background:url('/images/dot.png') no-repeat center center; display:block; position:absolute; left:0; top:0;}
+#oz_glo2 #slide{ width:100%; height:0; background:#ffffff; overflow:hidden; position:absolute; left:0; top:42px; z-index:10;}
+
+
+.whatbuy-head {float:left; width:780px; margin: 0px auto;}
+.whatbuy-head .title {height:20px; width:765px; float: left; padding:0px 0 0 15px; margin-top:10px; background-color: #f1f1f1; text-align:left;}
+.whatbuy-head .img-box {position:relative; float:left; margin:26px 0px 0px 27px; display:block; border:1px solid #333;}
+.whatbuy-head .img-box img {height:200px; width:260px;}
+.whatbuy-head .img-box .icon-check {position: absolute; left: -23px; top: -13px; border:1px solid #D9161A;}
+.whatbuy-head .img-box .icon-check img {height: 107px; width: 88px;}
+.whatbuy-head .rating-area {float:left; height: 300px; width: 407px; position: relative; float:left; margin: 20px 0px 0px 36px;}
+.whatbuy-head .rating-area > p.tit {overflow:hidden; height:32px; color:#666; font:12px/1.3 Tahoma, '微软雅黑', sans-serif; letter-spacing:-1px;}
+.whatbuy-head .rating-area p.price {color:#333; font font:12px/1.3 Tahoma, '微软雅黑', sans-serif; margin-top:5px; letter-spacing:-1px;}
+.whatbuy-head .rating-area p.price span {vertical-align:1px; font:12px/1.25 Tahoma, '微软雅黑', sans-serif; padding:3px;}
+.rating-area .sns-wallpaper {position:relative; margin-top:8px;}
+.rating-area .sns-wallpaper > span {font-size:0px; float:left; margin-right:4px;}
+.rating-area .sns-wallpaper ul {overflow:hidden; float:left;}
+.rating-area .sns-wallpaper li {font-size:0px; position:relative; float:left; margin-left:-1px; z-index:1; line-height:0;}
+.rating-area .sns-wallpaper li:first-child {margin-left: 0px;}
+.rating-area .sns-wallpaper li:hover {z-index: 10;}
+.rating-area .sns-wallpaper li a {overflow:hidden; height:38px; display:block;}
+.rating-area .sns-wallpaper li a:hover img {margin-top:-38px;}
+.whatbuy-head .no-compare {padding-top:23px;}
+.whatbuy-head .no-compare .satisfy-area {background:none transparent scroll repeat 0% 0%;}
+.no-compare .sns-wallpaper {margin:20px;}
+.no-compare div.satisfy-area {padding-top:0px; margin-top:25px;}
+div.satisfy-area {overflow:hidden; padding:9px 0 5px 0; clear:both; margin-top:52px; background-color:#fff;}
+div.satisfy-area .satisfy {widht: 97px; float:left; color:#999; text-align:center; font:12px/1.25 Tahoma, '微软雅黑', sans-serif; letter-spacing:-1px;}
+div.satisfy-area .satisfy strong {color:#4f6bcb; font: bold 24px/1.25 Tahoma, Gulim, sans-serif; padding-left: 13px; display:block;}
+div.satisfy-area .satisfy strong em {font: 17px/1.25 Tahoma, '微软雅黑', sans-serif;}
+div.satisfy-area .rating {width:293px; background:url(//pics.auction.co.kr/corner/persnalbridge/bg_rating.gif) no-repeat 0px 3px; float:left; padding:2px 0 0 16px;}
+div.satisfy-area .rating li:first-child {width:100%;}
+div.satisfy-area .rating li {margin-bottom: 6px; width:49.9%; float:left; color:#333; letter-spacing:-1px;}
+div.satisfy-area .rating li span {color: #999;}
+div.satisfy-area .rating li span.list-title {width:45px;}
+div.satisfy-area .rating span { display:inline-block;}
+div.satisfy-area .rating span.star-rating {height:15px; vertical-align:top; font:0px/0 a;}
+div.satisfy-area .rating span.star-rating span {height:15px; vertical-align:top; font:0px/0 a;}
+div.satisfy-area .rating span.star-rating {width:80px; background: url(//pics.auction.co.kr/vip/2013/vip_star.png) no-repeat 0px 0px;}
+div.satisfy-area .rating span.star-rating span {backgrond:url(//pics.auction.co.kr/vip/2013/vip_star.png) no-repeat 0px -16px; color:transparent;}
