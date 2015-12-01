@@ -25,7 +25,7 @@ $result = sql_query($sql);
 <div id="oz_mallpage2">
 	<!--s: CONTENT-->
 	<div id="oz_content">
-    	
+<?php if($_SERVER['PHP_SELF']=="/index.php"){?>    	
         <!--s: MAIN 글로벌메뉴&MAIN 배너 슬라이드-->
         <div class="category-con">
             <div class="category-inner-con">
@@ -124,7 +124,7 @@ $result = sql_query($sql);
             <!--e: MAIN 슬라이드 상단 작은 배너-->
     	</div>
         <!--e: MAIN 글로벌메뉴&MAIN 배너 슬라이드-->
-        
+        <? } ?>
         <!--s: MAIN 네가지 약속--> 
         <div class="interact-con">
             <div class="module-body">
