@@ -15,9 +15,11 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
 <script src="/oz_js/jquery.slides.min.js"></script>
 <script type="text/javascript" src="/oz_js/jquery.als-1.7.min.js"></script>
 
-
-
-
+<?php if($_SERVER['PHP_SELF']=="/index.php"){?>
+메인 메뉴
+<?php }else{ ?>
+서브메뉴
+<?php }  ?>
 
 
 <div class="wrapper <?php echo $at_set['font'];?><?php echo (G5_IS_MOBILE) ? ' mobile-font' : '';?> <?php echo $at_set['layout'];?>">
