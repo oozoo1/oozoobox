@@ -363,12 +363,12 @@ fieldset legend{display: none;}
 }
 
 /* LIST*/
-/**LIST 글로벌메뉴*/
-#oz_glo2{ width:100%; height:340px; overflow:hidden; position:relative; border-bottom:#ddd solid 1px;}
+/** 글로벌메뉴2**/
+#oz_glo2{ width:100%; height:340px; overflow:hidden; position:relative;}
 .oz_glo2_bg {width:100%; height:42px; background:#ea5b0c;}
 .oz_glo2_navbg {width:990px; height:42px; margin:0 auto; background:#f47a22; position:relative;}
 #oz_glo2 ul{ width:100%; overflow:hidden; height:330px; z-index:30;}
-#oz_glo2 ul li{float:left; width:198px; height:42px; display:block; text-align:center; }
+#oz_glo2 ul li{float:left; width:198px; height:42px; text-align:center;}
 
 #oz_glo2 ul li a{ width:198px; height:42px; line-height:42px; margin-bottom:10px;display:block; float:left; font-size:16px; font-family:'微软雅黑'; color:#fff; font-weight:bold; text-decoration:none; z-index:40;}
 #oz_glo2 ul li a.glo_1{position:absolute; top:0px; left:0;}
@@ -388,8 +388,28 @@ fieldset legend{display: none;}
 
 #oz_glo2 .dot{ width:990px;height:8px; line-height:8px; position:absolute; left:0px; top:34px;}
 #oz_glo2 .dot ul{width:990px; height:8px; line-height:8px; position:relative;}
-#oz_glo2 .dot ul span{ width:198px; height:8px; background:url('/images/dot.png') no-repeat center center; display:block; position:absolute; left:0; top:0;}
-#oz_glo2 #slide{ width:100%; height:0; background:#ffffff; overflow:hidden; position:absolute; left:0; top:42px; z-index:10;}
+#oz_glo2 .dot ul span{ width:198px; height:8px; background:url('/images/dot.png') no-repeat center center; display:block; position:absolute; left:0px; top:0;}
+#oz_glo2 #slide{ width:100%; height:0; background:#ffffff; overflow:hidden; position:absolute; left:40px; top:42px; z-index:10;}
+
+
+@media all and (min-width:1260px)
+{ .oz_glo2_navbg {width:1190px;}
+#oz_glo2 ul li{ width:238px; }
+#oz_glo2 ul li a{ width:238px;}
+#oz_glo2 ul li a.glo_1{position:absolute; top:0px; left:0;}
+#oz_glo2 ul li a.glo_2{position:absolute; top:0px; left:239px;}
+#oz_glo2 ul li a.glo_3{position:absolute; top:0px; left:477px;}
+#oz_glo2 ul li a.glo_4{position:absolute; top:0px; left:715px;}
+#oz_glo2 ul li a.glo_5{position:absolute; top:0px; left:953px;}
+#oz_glo2 ul li .second{ width:1190px;}
+#oz_glo2 ul li .second .second_left {float:left; width:204px; padding-left:50px;}
+
+
+#oz_glo2 .dot{ width:1190px;height:8px; line-height:8px; position:absolute; left:0px; top:34px;}
+#oz_glo2 .dot ul{width:1190px; height:8px; line-height:8px; position:relative;}
+#oz_glo2 .dot ul span{ width:238px; height:8px; background:url('/images/dot.png') no-repeat center center; display:block; position:absolute; left:0; top:0;}
+
+}
 
 
 .whatbuy-head {float:left; width:780px; margin: 0px auto;}
@@ -424,4 +444,11 @@ fieldset legend{display: none;}
 .whatbuy-head .satisfy-area .rating span.star-rating {margin-top:3px; height:15px; vertical-align:top; font:0px/0 a;}
 .whatbuy-head .satisfy-area .rating span.star-rating span {height:15px; vertical-align:top; font:0px/0 a;}
 .whatbuy-head .satisfy-area .rating span.star-rating {width:80px; background: url('/images/btn_top_glo_md_star.png') no-repeat 0px 0px;}
-.whatbuy-head .satisfy-area .rating span.star-rating span {background:url('/images/btn_top_glo_md_star.png') no-repeat 0px -16px; color:transparent;}
+.whatbuy-head .satisfy-area .rating span.star-rating span {background:url('/images/btn_top_glo_md_star.png') no-repeat 0px -15px; color:transparent;}
+
+@media all and (min-width:1260px)
+{ .whatbuy-head {width:830px;}
+.whatbuy-head .title {width:800px;}
+}
+
+/**LIST배너**/

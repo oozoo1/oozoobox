@@ -215,7 +215,7 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                                                 </span>
                                             </dd>
                                             <dd>
-                                                <span class="list-title">배송</span>
+                                                <span class="list-title">가격</span>
                                                 <span class="star-rating">
                                                 	<span style="width: 100%">100%</span>
                                                 </span>
@@ -237,7 +237,67 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                             <dd><a href="#" class="glo2_local">精华/护肤霜 </a></dd>
                             <dd><a href="#" class="glo2_local">彩妆</a></dd>
                             <dd><a href="#" class="glo2_local">套妆</a></dd>
-                        </dl>                    
+                        </dl> 
+                        <!--s:GLOBAL2 MD추천상품-->
+                        <div class="gol2_md_pro">
+                            <div class="whatbuy-head">
+                                <div class="title">
+									특별상품
+                                </div>
+                                <div class="img-box"> 
+                                    <a href="#">
+                                    	<img onerror="if(this.src=='http://pics.auction.co.kr/common/img_error300.gif') return; this.src='http://pics.auction.co.kr/common/img_error130.gif';" style="height:200px; width:260px" alt="MD" src="/images/top_glo_md_02.png"/>
+                                    </a> 
+                                    <div class="icon-check">
+                                    	<img alt="top 글로벌 MD 상품" src="/images/ico_top_glo_md_01.png"/>
+                                    </div>
+                                </div>
+                                <div class="rating-area">
+                                    <p class="tit">捞鱼猫新生儿秋冬宝宝棉衣服</p>
+                                    <p class="price"><span>¥</span>105.00</p>
+                                    <div class="sns-wallpaper">
+                                        <span>
+                                            <a href="#">
+                                            	<img alt="상품상세정보" src="/images/btn_top_glo_md_detail.png"/>
+                                            </a>
+                                        </span> 
+                                        <span>
+                                            <a onclick="javascript:favoriteItemOpenSingleRegist(this.parentNode, 'B282487011', '4470', 'http://sell3.auction.co.kr');" href="javascript:void(0);">
+                                            	<img alt="관심상품등록" src="/images/btn_top_glo_md_wish.png"/>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div class="satisfy-area">
+                                        <div class="satisfy">
+                                        	만족도
+                                            <strong>
+                                                100
+                                                <em>%</em>
+                                            </strong>
+                                        </div>
+                                        <dl class="rating">
+                                            <dd>
+                                                <span class="list-title">상품평</span>
+                                                7건 
+                                            </dd>
+                                            <dd>
+                                                <span class="list-title">상품</span>
+                                                <span class="star-rating">
+                                                	<span style="width: 100%">100%</span>
+                                                </span>
+                                            </dd>
+                                            <dd>
+                                                <span class="list-title">가격</span>
+                                                <span class="star-rating">
+                                                	<span style="width: 100%">100%</span>
+                                                </span>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--e:GLOBAL2 MD추천상품-->                                               
                     </div>
                 </li>
                 <li>
@@ -249,29 +309,209 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                             <dd><a href="#" class="glo2_local">营养</a></dd>
                             <dd><a href="#" class="glo2_local">健康</a></dd>
                             <dd><a href="#" class="glo2_local">饼干</a></dd>
-                        </dl>                                            
+                        </dl>
+<!--s:GLOBAL2 MD추천상품-->
+                        <div class="gol2_md_pro">
+                            <div class="whatbuy-head">
+                                <div class="title">
+									특별상품
+                                </div>
+                                <div class="img-box"> 
+                                    <a href="#">
+                                    	<img onerror="if(this.src=='http://pics.auction.co.kr/common/img_error300.gif') return; this.src='http://pics.auction.co.kr/common/img_error130.gif';" style="height:200px; width:260px" alt="MD" src="/images/top_glo_md_03.png"/>
+                                    </a> 
+                                    <div class="icon-check">
+                                    	<img alt="top 글로벌 MD 상품" src="/images/ico_top_glo_md_01.png"/>
+                                    </div>
+                                </div>
+                                <div class="rating-area">
+                                    <p class="tit">捞鱼猫新生儿秋冬宝宝棉衣服</p>
+                                    <p class="price"><span>¥</span>105.00</p>
+                                    <div class="sns-wallpaper">
+                                        <span>
+                                            <a href="#">
+                                            	<img alt="상품상세정보" src="/images/btn_top_glo_md_detail.png"/>
+                                            </a>
+                                        </span> 
+                                        <span>
+                                            <a onclick="javascript:favoriteItemOpenSingleRegist(this.parentNode, 'B282487011', '4470', 'http://sell3.auction.co.kr');" href="javascript:void(0);">
+                                            	<img alt="관심상품등록" src="/images/btn_top_glo_md_wish.png"/>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div class="satisfy-area">
+                                        <div class="satisfy">
+                                        	만족도
+                                            <strong>
+                                                100
+                                                <em>%</em>
+                                            </strong>
+                                        </div>
+                                        <dl class="rating">
+                                            <dd>
+                                                <span class="list-title">상품평</span>
+                                                7건 
+                                            </dd>
+                                            <dd>
+                                                <span class="list-title">상품</span>
+                                                <span class="star-rating">
+                                                	<span style="width: 100%">100%</span>
+                                                </span>
+                                            </dd>
+                                            <dd>
+                                                <span class="list-title">가격</span>
+                                                <span class="star-rating">
+                                                	<span style="width: 100%">100%</span>
+                                                </span>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--e:GLOBAL2 MD추천상품-->                                                                              
                     </div>
                 </li>
                 <li>
                     <a href="#" class="glo_4">小生活必备</a>
                     <div class="second">
                     	<dl class="second_left">
-                        	<dd><a href="#" class="glo2_local">女装</a></dd>
-                            <dd><a href="#" class="glo2_local">男装</a></dd>
-                            <dd><a href="#" class="glo2_local">儿童</a></dd>
-                            <dd><a href="#" class="glo2_local">内衣</a></dd>
-                        </dl>                    
+                        	<dd><a href="#" class="glo2_local">女士</a></dd>
+                            <dd><a href="#" class="glo2_local">厨房</a></dd>
+                            <dd><a href="#" class="glo2_local">洗澡</a></dd>
+                            <dd><a href="#" class="glo2_local">其他</a></dd>                            
+                        </dl>
+<!--s:GLOBAL2 MD추천상품-->
+                        <div class="gol2_md_pro">
+                            <div class="whatbuy-head">
+                                <div class="title">
+									특별상품
+                                </div>
+                                <div class="img-box"> 
+                                    <a href="#">
+                                    	<img onerror="if(this.src=='http://pics.auction.co.kr/common/img_error300.gif') return; this.src='http://pics.auction.co.kr/common/img_error130.gif';" style="height:200px; width:260px" alt="MD" src="/images/top_glo_md_04.png"/>
+                                    </a> 
+                                    <div class="icon-check">
+                                    	<img alt="top 글로벌 MD 상품" src="/images/ico_top_glo_md_01.png"/>
+                                    </div>
+                                </div>
+                                <div class="rating-area">
+                                    <p class="tit">捞鱼猫新生儿秋冬宝宝棉衣服</p>
+                                    <p class="price"><span>¥</span>105.00</p>
+                                    <div class="sns-wallpaper">
+                                        <span>
+                                            <a href="#">
+                                            	<img alt="상품상세정보" src="/images/btn_top_glo_md_detail.png"/>
+                                            </a>
+                                        </span> 
+                                        <span>
+                                            <a onclick="javascript:favoriteItemOpenSingleRegist(this.parentNode, 'B282487011', '4470', 'http://sell3.auction.co.kr');" href="javascript:void(0);">
+                                            	<img alt="관심상품등록" src="/images/btn_top_glo_md_wish.png"/>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div class="satisfy-area">
+                                        <div class="satisfy">
+                                        	만족도
+                                            <strong>
+                                                100
+                                                <em>%</em>
+                                            </strong>
+                                        </div>
+                                        <dl class="rating">
+                                            <dd>
+                                                <span class="list-title">상품평</span>
+                                                7건 
+                                            </dd>
+                                            <dd>
+                                                <span class="list-title">상품</span>
+                                                <span class="star-rating">
+                                                	<span style="width: 100%">100%</span>
+                                                </span>
+                                            </dd>
+                                            <dd>
+                                                <span class="list-title">가격</span>
+                                                <span class="star-rating">
+                                                	<span style="width: 100%">100%</span>
+                                                </span>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--e:GLOBAL2 MD추천상품-->                                                      
                     </div>
                 </li>
                 <li>
                     <a href="#" class="glo_5">美丽的穿着</a>
                     <div class="second">
                      	<dl class="second_left">
-                        	<dd><a href="#" class="glo2_local">女士</a></dd>
-                            <dd><a href="#" class="glo2_local">厨房</a></dd>
-                            <dd><a href="#" class="glo2_local">洗澡</a></dd>
-                            <dd><a href="#" class="glo2_local">其他</a></dd>
-                        </dl>                   
+                        	<dd><a href="#" class="glo2_local">女装</a></dd>
+                            <dd><a href="#" class="glo2_local">男装</a></dd>
+                            <dd><a href="#" class="glo2_local">儿童</a></dd>
+                            <dd><a href="#" class="glo2_local">内衣</a></dd>
+                        </dl> 
+<!--s:GLOBAL2 MD추천상품-->
+                        <div class="gol2_md_pro">
+                            <div class="whatbuy-head">
+                                <div class="title">
+									특별상품
+                                </div>
+                                <div class="img-box"> 
+                                    <a href="#">
+                                    	<img onerror="if(this.src=='http://pics.auction.co.kr/common/img_error300.gif') return; this.src='http://pics.auction.co.kr/common/img_error130.gif';" style="height:200px; width:260px" alt="MD" src="/images/top_glo_md_05.png"/>
+                                    </a> 
+                                    <div class="icon-check">
+                                    	<img alt="top 글로벌 MD 상품" src="/images/ico_top_glo_md_01.png"/>
+                                    </div>
+                                </div>
+                                <div class="rating-area">
+                                    <p class="tit">捞鱼猫新生儿秋冬宝宝棉衣服</p>
+                                    <p class="price"><span>¥</span>105.00</p>
+                                    <div class="sns-wallpaper">
+                                        <span>
+                                            <a href="#">
+                                            	<img alt="상품상세정보" src="/images/btn_top_glo_md_detail.png"/>
+                                            </a>
+                                        </span> 
+                                        <span>
+                                            <a onclick="javascript:favoriteItemOpenSingleRegist(this.parentNode, 'B282487011', '4470', 'http://sell3.auction.co.kr');" href="javascript:void(0);">
+                                            	<img alt="관심상품등록" src="/images/btn_top_glo_md_wish.png"/>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div class="satisfy-area">
+                                        <div class="satisfy">
+                                        	만족도
+                                            <strong>
+                                                100
+                                                <em>%</em>
+                                            </strong>
+                                        </div>
+                                        <dl class="rating">
+                                            <dd>
+                                                <span class="list-title">상품평</span>
+                                                7건 
+                                            </dd>
+                                            <dd>
+                                                <span class="list-title">상품</span>
+                                                <span class="star-rating">
+                                                	<span style="width: 100%">100%</span>
+                                                </span>
+                                            </dd>
+                                            <dd>
+                                                <span class="list-title">가격</span>
+                                                <span class="star-rating">
+                                                	<span style="width: 100%">100%</span>
+                                                </span>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--e:GLOBAL2 MD추천상품-->                                                    
                     </div>
                 </li>                                   
             </ul>
@@ -299,7 +539,7 @@ $(function(){
 			height:'340px'
 		},200);
 	},function(){
-		$(this).find('.second').fadeOut(300);
+		$(this).find('.second').fadeOut(200);
 		$('#oz_glo2 #slide').stop().animate({
 			height:'0'
 		},400);
