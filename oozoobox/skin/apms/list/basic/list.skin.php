@@ -1,8 +1,15 @@
 <?php
 if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 
+
+add_stylesheet('<link rel="stylesheet" href="/css/oz_mh/oz_mh.css" type="text/css" media="screen" >',0); //김미혜: css추가 및 경로 설정
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
 add_stylesheet('<link rel="stylesheet" href="'.$list_skin_url.'/style.css" media="screen">', 0);
+
+echo '<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10">'.PHP_EOL; //김미혜: 반응형 viewport 설정
+
+
+
 
 // 높이
 $img_h = apms_img_height($thumb_w, $thumb_h);
@@ -19,16 +26,26 @@ $new_item = ($wset['newtime']) ? $wset['newtime'] : 24;
 
 $list_cnt = count($list);
 
-include_once($list_skin_path.'/category.skin.php');
+/*include_once($list_skin_path.'/category.skin.php');*/ /*SW: MH 임시로 해놓음*/
 ?>
 
-<style>
+<?php /*?><style>
 	.list-wrap .list-container { overflow:hidden; margin-right:<?php echo ($gap_right > 0) ? '-'.$gap_right : 0;?>px; margin-bottom:<?php echo ($gap_bottom > 15) ? 0 : 15;?>px; }
 	.list-wrap .list-row { float:left; width:<?php echo $item_w;?>%; }
 	.list-wrap .list-item { margin-right:<?php echo $gap_right;?>px; margin-bottom:<?php echo $gap_bottom;?>px; }
-</style>
+</style><?php */?>
 
-<div class="list-wrap<?php echo (G5_IS_MOBILE) ? ' list-mobile' : '';?>">
+
+<div id="oz_list_content">
+<div class="oz_list_main">
+dddddd
+</div>
+</div>
+
+
+
+
+<?php /*?><div class="list-wrap<?php echo (G5_IS_MOBILE) ? ' list-mobile' : '';?>">
 	<div class="list-container">
 		<?php 
 			for ($i=0; $i < $list_cnt; $i++) { 
@@ -192,3 +209,4 @@ include_once($list_skin_path.'/category.skin.php');
 	</div>
 	<div class="clearfix"></div>
 </div>
+<?php */?>
