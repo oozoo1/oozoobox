@@ -38,60 +38,101 @@ $list_cnt = count($list);
 <!--s: LIST 페이지-->
 <div id="oz_list_content">
     <div class="oz_list_main">
-        <!--s: LIST 배너 01-->
-        <div id="banner_tabs" class="flexslider">
-            <ul class="slides">
-                <li>
-                    <a title="상품이름" target="_blank" href="#">
-                    	<img width="100%" alt="" style="background: url('/images/img_list_bn_slide01.png') no-repeat center; " src="/images/list_bn_slide_alpha.png">
-                    </a>
-                </li>
-                <li>
-                    <a title="상품이름"  target="_blank" href="#">
-                    	<img width="100%" alt="" style="background: url('/images/img_list_bn_slide02.png') no-repeat center; " src="/images/list_bn_slide_alpha.png">
-                    </a>
-                </li>
-            </ul>
-            <ol id="bannerctrl" class="flex-control-nav flex-control-paging">
-                <li><a>1</a></li>
-                <li><a>2</a></li>
-            </ol>
-        </div>
-        <!--e: LIST 배너 01-->
-        <!--s: LIST 배너 02-->
-        <div class="oz_list_bn_slide_02">
-			<img src="/images/img_list_bn02_slide01.png" alt="상품이름" width="100%"/>
-        </div>
-        <!--e: LIST 배너 02-->
-		<!--s: LIST 배너 03-->        
-        <div class="friend">
-            <div class="mr_frbox">
-                <img class="mr_frBtnL prev" src="/images/mfrl.png" alt="left"/>
-                    <ul id="mr_fu">
-                        <li>
-                            <a href="#">
-                                <img src="/images/img_list_bn03_slide01.png" alt=""/>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="/images/img_list_bn03_slide02.png" alt=""/>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="/images/img_list_bn03_slide03.png" alt=""/>
-                            </a>
-                        </li>
-                    </ul>
-                <img class="mr_frBtnR next" src="/images/mfrr.png" alt="right"/>
+    	<!--s: LIST 배너-->
+    	<div class="oz_list_bn_wrap">
+            <!--s: LIST 배너 01-->
+            <div id="banner_tabs" class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <a title="상품이름" target="_blank" href="#">
+                            <img width="100%" alt="" src="/images/img_list_bn_slide01.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a title="상품이름"  target="_blank" href="#">
+                            <img width="100%" alt="" src="/images/img_list_bn_slide02.png">
+                        </a>
+                    </li>
+                </ul>
+                <ol id="bannerctrl" class="flex-control-nav flex-control-paging">
+                    <li><a>1</a></li>
+                    <li><a>2</a></li>
+                </ol>
             </div>
+            <!--e: LIST 배너 01-->
+            <!--s: LIST 배너 02-->
+            <div class="oz_list_bn_slide_02">
+                <img src="/images/img_list_bn02_slide01.png" alt="상품이름" width="100%"/>
+            </div>
+            <!--e: LIST 배너 02-->
+            <!--s: LIST 배너 03-->
+            <div id="lista1" class="als-container">
+                <span class="als-prev"><img src="/images/mfrl.png" alt="prev" title="previous" /></span>
+                <div class="als-viewport">
+                    <ul class="als-wrapper">
+                        <li class="als-item">
+                            <a href="#"><img src="/images/img_list_bn03_slide01.png" alt="calculator" title="상품01" /></a>
+                        </li>
+                        <li class="als-item">
+                            <a href="#"><img src="/images/img_list_bn03_slide02.png" alt="light bulb" title="상품02" /></a>
+                        </li>
+                        <li class="als-item">
+                            <a href="#"><img src="/images/img_list_bn03_slide03.png" alt="card" title="card" /></a>
+                        </li>
+                        <li class="als-item">
+                            <a href="#"><img src="/images/img_list_bn03_slide04.png" alt="card" title="card" /></a>
+                        </li>
+                        <li class="als-item">
+                            <a href="#"><img src="/images/img_list_bn03_slide05.png" alt="card" title="card" /></a>
+                        </li>                                                
+                    </ul>
+                </div>
+                <span class="als-next"><img src="/images/mfrr.png" alt="next" title="next" /></span>
+            </div>
+            <!--e: LIST 배너 03-->
         </div>
-		<!--e: LIST 배너 03-->        
-    </div>
-<!--e: LIST 페이지-->
-</div>
+        <!--e: LIST 배너-->
+        
+        <!--s: LIST filter-->
+        <div class="oz_filter">
+            <a title="点击后恢复默认排序" class="filter_sort first" href="#">综合
+                <i class="f_ico_arrow_d"></i>
+            </a>     
+            <a title="点击后按人气从高到低" class="filter_sort" href="#">人气
+                <i class="f_ico_arrow_d"></i>
+            </a>
+            <a class="filter_sort" href="#" >新品
+                <i class="f_ico_arrow_d"></i>
+            </a>
+            <a title="点击后按月销量从高到低" class="filter_sort" href="#">销量
+                <i class="f_ico_arrow_d"></i>
+            </a>
+            <a title="点击后按价格从低到高" class="filter_sort" href="#">价格
+                <i class="f_ico_arrow_d"></i>
+            </a>               
+            <a title="点击后按价格从高到低" class="filter_sort" href="#">价格
+                <i class="f_ico_arrow_u"></i>
+            </a>   
+            <a class="filter_type_store" href="#">店铺
+                <i class="ico_filter_type_store"></i>
+            </a>    
+            <a class="filter_type_big" href="javascript:;">大图
+                <i class="ico_filter_type_big"></i>
+            </a>
+            <a class="filter_type_small" href="#">小图
+                <i class="ico_filter_type_small"></i>
+            </a>  
+            <p class="ui-page-s">
+                <b class="ui-page-s-len">1/100</b>
+                <b title="上一页" class="ui-page-s-prev">&lt;</b> 
+                <a title="下一页" class="ui-page-s-next" href="#">&gt;</a>
+            </p>
+        </div>
+		<!--e: LIST filter-->
 
+    </div>
+</div>
+<!--e: LIST 페이지-->
 
 <script type="text/javascript">
 $(function() { var bannerSlider = new Slider($('#banner_tabs'), { time: 5000,
@@ -104,22 +145,25 @@ $(function() { var bannerSlider = new Slider($('#banner_tabs'), { time: 5000,
     }); })
 </script>
 
+<!--list bn03-->
 <script type="text/javascript">
-$(document).ready(function () {
-	
-	/* 图片滚动效果 */
-	$(".mr_frbox").slide({
-		titCell: "",
-		mainCell: "#mr_fu",
-		autoPage: true,
-		effect: "leftLoop",
-		autoPlay: true,
-		vis: 3
-	});
-	
-});
-</script>
+	$(document).ready(function() 
+	{
+		$("#lista1").als({
+			visible_items: 3,
+			scrolling_items: 1,
+			orientation: "horizontal",
+			circular: "yes",
+			autoscroll: "yes",
+			interval: 5000,
+			speed: 500,
+			easing: "linear",
+			direction: "left",
+			start_from: 0
+		});
 
+	});
+</script>
 
 <?php /*?><div class="list-wrap<?php echo (G5_IS_MOBILE) ? ' list-mobile' : '';?>">
 	<div class="list-container">
