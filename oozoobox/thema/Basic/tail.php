@@ -5,7 +5,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 			<?php if($col_name == "two") { ?>
 					</div>
 					<div class="col-md-<?php echo $col_side;?><?php echo ($at_set['side']) ? ' pull-left' : '';?> sideArea">
-						<?php include_once(THEMA_PATH.'/side.php'); ?>
+						<?php //include_once(THEMA_PATH.'/side.php'); ?>
 					</div>
 				</div>
 			<?php } ?>

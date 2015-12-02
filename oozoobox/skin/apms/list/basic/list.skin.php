@@ -35,14 +35,90 @@ $list_cnt = count($list);
 	.list-wrap .list-item { margin-right:<?php echo $gap_right;?>px; margin-bottom:<?php echo $gap_bottom;?>px; }
 </style><?php */?>
 
-
+<!--s: LIST 페이지-->
 <div id="oz_list_content">
-<div class="oz_list_main">
-dddddd
-</div>
+    <div class="oz_list_main">
+        <!--s: LIST 배너 01-->
+        <div id="banner_tabs" class="flexslider">
+            <ul class="slides">
+                <li>
+                    <a title="상품이름" target="_blank" href="#">
+                    	<img width="100%" alt="" style="background: url('/images/img_list_bn_slide01.png') no-repeat center; " src="/images/list_bn_slide_alpha.png">
+                    </a>
+                </li>
+                <li>
+                    <a title="상품이름"  target="_blank" href="#">
+                    	<img width="100%" alt="" style="background: url('/images/img_list_bn_slide02.png') no-repeat center; " src="/images/list_bn_slide_alpha.png">
+                    </a>
+                </li>
+            </ul>
+            <ol id="bannerctrl" class="flex-control-nav flex-control-paging">
+                <li><a>1</a></li>
+                <li><a>2</a></li>
+            </ol>
+        </div>
+        <!--e: LIST 배너 01-->
+        <!--s: LIST 배너 02-->
+        <div class="oz_list_bn_slide_02">
+			<img src="/images/img_list_bn02_slide01.png" alt="상품이름" width="100%"/>
+        </div>
+        <!--e: LIST 배너 02-->
+		<!--s: LIST 배너 03-->        
+        <div class="friend">
+            <div class="mr_frbox">
+                <img class="mr_frBtnL prev" src="/images/mfrl.png" alt="left"/>
+                    <ul id="mr_fu">
+                        <li>
+                            <a href="#">
+                                <img src="/images/img_list_bn03_slide01.png" alt=""/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="/images/img_list_bn03_slide02.png" alt=""/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="/images/img_list_bn03_slide03.png" alt=""/>
+                            </a>
+                        </li>
+                    </ul>
+                <img class="mr_frBtnR next" src="/images/mfrr.png" alt="right"/>
+            </div>
+        </div>
+		<!--e: LIST 배너 03-->        
+    </div>
+<!--e: LIST 페이지-->
 </div>
 
 
+<script type="text/javascript">
+$(function() { var bannerSlider = new Slider($('#banner_tabs'), { time: 5000,
+        delay: 400,
+        event: 'hover',
+        auto: true,
+        mode: 'fade',
+        controller: $('#bannerctrl'),
+        activeControllerCls: 'active'
+    }); })
+</script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+	
+	/* 图片滚动效果 */
+	$(".mr_frbox").slide({
+		titCell: "",
+		mainCell: "#mr_fu",
+		autoPage: true,
+		effect: "leftLoop",
+		autoPlay: true,
+		vis: 3
+	});
+	
+});
+</script>
 
 
 <?php /*?><div class="list-wrap<?php echo (G5_IS_MOBILE) ? ' list-mobile' : '';?>">
