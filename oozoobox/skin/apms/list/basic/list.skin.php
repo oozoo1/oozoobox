@@ -93,6 +93,7 @@ $list_cnt = count($list);
         </div>
         <!--e: LIST 배너-->
         
+<!-----------------------------s: album형식------------------------->
         <!--s: LIST filter-->
         <div class="oz_filter">
             <a title="点击后恢复默认排序" class="filter_sort first" href="#">综合
@@ -116,7 +117,7 @@ $list_cnt = count($list);
             <a class="filter_type_store" href="#">店铺
                 <i class="ico_filter_type_store"></i>
             </a>    
-            <a class="filter_type_big" href="javascript:;">大图
+            <a class="filter_type_big_on" href="#">大图
                 <i class="ico_filter_type_big"></i>
             </a>
             <a class="filter_type_small" href="#">小图
@@ -124,11 +125,493 @@ $list_cnt = count($list);
             </a>  
             <p class="ui-page-s">
                 <b class="ui-page-s-len">1/100</b>
-                <b title="上一页" class="ui-page-s-prev">&lt;</b> 
+                <a title="上一页" class="ui-page-s-prev">&lt;</a> 
                 <a title="下一页" class="ui-page-s-next" href="#">&gt;</a>
             </p>
         </div>
 		<!--e: LIST filter-->
+        
+        <!--s: album-->
+        <div class="list_type_album">
+            <ul class="list_album">
+                <li class="list_album_item">
+                    <div class="album_card">
+                        <span class="album_item_pic">
+                            <a href="#">
+                            	<img width="100%" src="/images/list_album_01.png" alt="상품이름" title="상품이름"/>
+                            </a>                                
+                        </span>
+                        <a href="#" class="album_wish_plus">
+                            <span class="album_ico_wish">
+                                <em>13</em>
+                            </span>
+                        </a>
+                        <span class="album_info">
+                            <a href="#">
+                                <span class="album_item_desc">
+                                    <em title="捞鱼猫新生儿秋冬宝宝棉衣服" class="album_item_name">捞鱼猫新生儿秋冬宝宝棉衣服</em>
+                                </span>
+                            </a>
+                            <a href="#">
+                                <span class="album_item_shop">
+                                    <em title="捞鱼猫旗舰店" class="album_ item_shop_name">捞鱼猫旗舰店</em>
+                                </span>
+                            </a>
+                            <span class="album_item_detail">
+                                <a href="#">
+                                    <span class="album_item_price">
+                                        <i class="album_price_rmb">¥</i>
+                                        <span class="album_price_integer">59</span>
+                                        <span class="album_price_decimal">.9</span>
+                                    </span>
+                                </a>
+                                <span class="album_item_tag">
+                                    <span class="album_item_buy">
+                                        <a href="#">
+                                            <span>月成交</span>
+                                            <em>1,011</em>
+                                            <span>笔</span>
+                                        </a>
+                                    </span>
+                                    <span class="album_item_after">
+                                        <a href="#">
+                                            <span>评价</span>
+                                            <em>8,141</em>
+                                        </a>
+                                    </span>
+                                </span>
+                            </span>                            
+                        </span>
+                    </div>
+                </li>
+                
+                <li class="list_album_item">
+                    <div class="album_card">
+                        <span class="album_item_pic">
+                            <a href="#">
+                            	<img width="100%" src="/images/list_album_02.png" alt="상품이름" title="상품이름"/>
+                            </a>                                
+                        </span>
+                        <a href="#" class="album_wish_plus">
+                            <span class="album_ico_wish">
+                                <em>13</em>
+                            </span>
+                        </a>
+                        <span class="album_info">
+                            <a href="#">
+                                <span class="album_item_desc">
+                                    <em title="捞鱼猫新生儿秋冬宝宝棉衣服" class="album_item_name">捞鱼猫新生儿秋冬宝宝棉衣服</em>
+                                </span>
+                            </a>
+                            <a href="#">
+                                <span class="album_item_shop">
+                                    <em title="捞鱼猫旗舰店" class="album_ item_shop_name">捞鱼猫旗舰店</em>
+                                </span>
+                            </a>
+                            <span class="album_item_detail">
+                                <a href="#">
+                                    <span class="album_item_price">
+                                        <i class="album_price_rmb">¥</i>
+                                        <span class="album_price_integer">59</span>
+                                        <span class="album_price_decimal">.9</span>
+                                    </span>
+                                </a>
+                                <span class="album_item_tag">
+                                    <span class="album_item_buy">
+                                        <a href="#">
+                                            <span>月成交</span>
+                                            <em>1,011</em>
+                                            <span>笔</span>
+                                        </a>
+                                    </span>
+                                    <span class="album_item_after">
+                                        <a href="#">
+                                            <span>评价</span>
+                                            <em>8,141</em>
+                                        </a>
+                                    </span>
+                                </span>
+                            </span>                            
+                        </span>
+                    </div>
+                </li>                
+                <li class="list_album_item">
+                    <div class="album_card">
+                        <span class="album_item_pic">
+                            <a href="#">
+                            	<img width="100%" src="/images/list_album_03.png" alt="상품이름" title="상품이름"/>
+                            </a>                                
+                        </span>
+                        <a href="#" class="album_wish_plus">
+                            <span class="album_ico_wish">
+                                <em>13</em>
+                            </span>
+                        </a>
+                        <span class="album_info">
+                            <a href="#">
+                                <span class="album_item_desc">
+                                    <em title="捞鱼猫新生儿秋冬宝宝棉衣服" class="album_item_name">捞鱼猫新生儿秋冬宝宝棉衣服</em>
+                                </span>
+                            </a>
+                            <a href="#">
+                                <span class="album_item_shop">
+                                    <em title="捞鱼猫旗舰店" class="album_ item_shop_name">捞鱼猫旗舰店</em>
+                                </span>
+                            </a>
+                            <span class="album_item_detail">
+                                <a href="#">
+                                    <span class="album_item_price">
+                                        <i class="album_price_rmb">¥</i>
+                                        <span class="album_price_integer">59</span>
+                                        <span class="album_price_decimal">.9</span>
+                                    </span>
+                                </a>
+                                <span class="album_item_tag">
+                                    <span class="album_item_buy">
+                                        <a href="#">
+                                            <span>月成交</span>
+                                            <em>1,011</em>
+                                            <span>笔</span>
+                                        </a>
+                                    </span>
+                                    <span class="album_item_after">
+                                        <a href="#">
+                                            <span>评价</span>
+                                            <em>8,141</em>
+                                        </a>
+                                    </span>
+                                </span>
+                            </span>                            
+                        </span>
+                    </div>
+                </li>
+                <li class="list_album_item last_item">
+                    <div class="album_card">
+                        <span class="album_item_pic">
+                            <a href="#">
+                            	<img width="100%" src="/images/list_album_04.png" alt="상품이름" title="상품이름"/>
+                            </a>                                
+                        </span>
+                        <a href="#" class="album_wish_plus">
+                            <span class="album_ico_wish">
+                                <em>13</em>
+                            </span>
+                        </a>
+                        <span class="album_info">
+                            <a href="#">
+                                <span class="album_item_desc">
+                                    <em title="捞鱼猫新生儿秋冬宝宝棉衣服" class="album_item_name">捞鱼猫新生儿秋冬宝宝棉衣服</em>
+                                </span>
+                            </a>
+                            <a href="#">
+                                <span class="album_item_shop">
+                                    <em title="捞鱼猫旗舰店" class="album_ item_shop_name">捞鱼猫旗舰店</em>
+                                </span>
+                            </a>
+                            <span class="album_item_detail">
+                                <a href="#">
+                                    <span class="album_item_price">
+                                        <i class="album_price_rmb">¥</i>
+                                        <span class="album_price_integer">59</span>
+                                        <span class="album_price_decimal">.9</span>
+                                    </span>
+                                </a>
+                                <span class="album_item_tag">
+                                    <span class="album_item_buy">
+                                        <a href="#">
+                                            <span>月成交</span>
+                                            <em>1,011</em>
+                                            <span>笔</span>
+                                        </a>
+                                    </span>
+                                    <span class="album_item_after">
+                                        <a href="#">
+                                            <span>评价</span>
+                                            <em>8,141</em>
+                                        </a>
+                                    </span>
+                                </span>
+                            </span>                            
+                        </span>
+                    </div>
+                </li>                                
+            </ul>
+        </div>
+        <!--e: album-->
+        
+<!-------------------------s: LIST형식---------------------->
+        <!--s: LIST filter-->
+        <div class="oz_filter">
+            <a title="点击后恢复默认排序" class="filter_sort first" href="#">综合
+                <i class="f_ico_arrow_d"></i>
+            </a>     
+            <a title="点击后按人气从高到低" class="filter_sort" href="#">人气
+                <i class="f_ico_arrow_d"></i>
+            </a>
+            <a class="filter_sort" href="#" >新品
+                <i class="f_ico_arrow_d"></i>
+            </a>
+            <a title="点击后按月销量从高到低" class="filter_sort" href="#">销量
+                <i class="f_ico_arrow_d"></i>
+            </a>
+            <a title="点击后按价格从低到高" class="filter_sort" href="#">价格
+                <i class="f_ico_arrow_d"></i>
+            </a>               
+            <a title="点击后按价格从高到低" class="filter_sort" href="#">价格
+                <i class="f_ico_arrow_u"></i>
+            </a>   
+            <a class="filter_type_store" href="#">店铺
+                <i class="ico_filter_type_store"></i>
+            </a>    
+            <a class="filter_type_big" href="#">大图
+                <i class="ico_filter_type_big"></i>
+            </a>
+            <a class="filter_type_small_on" href="#">小图
+                <i class="ico_filter_type_small"></i>
+            </a>  
+            <p class="ui-page-s">
+                <b class="ui-page-s-len">1/100</b>
+                <a title="上一页" class="ui-page-s-prev">&lt;</a> 
+                <a title="下一页" class="ui-page-s-next" href="#">&gt;</a>
+            </p>
+        </div>
+		<!--e: LIST filter-->
+        
+        <!--s: LIST-->
+        <div class="list_type_list">
+            <ul class="list_list">
+                <li class="list_list_item">
+                    <div class="list_card">
+                        <span class="list_item_pic">
+                            <a href="#">
+                            	<img width="100%" src="/images/list_album_01.png" alt="상품이름" title="상품이름"/>
+                            </a>                                
+                        </span>
+                        <span class="list_info">
+                            <a href="#">
+                                <span class="list_item_shop">
+                                    <em title="捞鱼猫旗舰店" class="list_ item_shop_name">捞鱼猫旗舰店</em>
+                                </span>
+                            </a>                        
+                            <a href="#">
+                                <span class="list_item_desc">
+                                    <em title="捞鱼猫新生儿秋冬宝宝棉衣服" class="list_item_name">捞鱼猫新生儿秋冬宝宝棉衣服</em>
+                                </span>
+                            </a>
+                            <span class="list_item_detail">
+                                <a href="#">
+                                    <span class="list_item_price">
+                                        <i class="list_price_rmb">¥</i>
+                                        <span class="list_price_integer">109</span>
+                                        <span class="list_price_decimal">.00</span>
+                                    </span>
+                                </a>
+                            </span>
+                            <span class="list_item_tag">
+                                <span class="list_item_buy">
+                                    <a href="#">
+                                    	<span class="list_ico_buy"></span>
+                                        <span>月成交</span>
+                                        <em>1,011</em>
+                                        <span>笔</span>
+                                    </a>
+                                </span>
+                                <span class="list_item_after">
+                                    <a href="#">
+                                    	<span class="list_ico_after"></span>
+                                        <span>评价</span>
+                                        <em>8,141</em>
+                                        <span>件</span>
+                                    </a>
+                                </span>
+                                <span class="list_item_wish">
+                                    <a href="#">
+                                    	<span class="list_ico_wish"></span>
+                                        <span>喜欢</span>
+                                        <em>8,141</em>
+                                        <span>人</span>
+                                    </a>
+                                </span>                                    
+                            </span>
+                        </span>                            
+                    </div>
+                </li> 
+                <li class="list_list_item last_item">
+                    <div class="list_card">
+                        <span class="list_item_pic">
+                            <a href="#">
+                            	<img width="100%" src="/images/list_album_02.png" alt="상품이름" title="상품이름"/>
+                            </a>                                
+                        </span>
+                        <span class="list_info">
+                            <a href="#">
+                                <span class="list_item_shop">
+                                    <em title="捞鱼猫旗舰店" class="list_ item_shop_name">捞鱼猫旗舰店</em>
+                                </span>
+                            </a>                        
+                            <a href="#">
+                                <span class="list_item_desc">
+                                    <em title="捞鱼猫新生儿秋冬宝宝棉衣服" class="list_item_name">捞鱼猫新生儿秋冬宝宝棉衣服</em>
+                                </span>
+                            </a>
+                            <span class="list_item_detail">
+                                <a href="#">
+                                    <span class="list_item_price">
+                                        <i class="list_price_rmb">¥</i>
+                                        <span class="list_price_integer">109</span>
+                                        <span class="list_price_decimal">.00</span>
+                                    </span>
+                                </a>
+                            </span>
+                            <span class="list_item_tag">
+                                <span class="list_item_buy">
+                                    <a href="#">
+                                    	<span class="list_ico_buy"></span>
+                                        <span>月成交</span>
+                                        <em>1,011</em>
+                                        <span>笔</span>
+                                    </a>
+                                </span>
+                                <span class="list_item_after">
+                                    <a href="#">
+                                    	<span class="list_ico_after"></span>
+                                        <span>评价</span>
+                                        <em>8,141</em>
+                                        <span>件</span>
+                                    </a>
+                                </span>
+                                <span class="list_item_wish">
+                                    <a href="#">
+                                    	<span class="list_ico_wish"></span>
+                                        <span>喜欢</span>
+                                        <em>8,141</em>
+                                        <span>人</span>
+                                    </a>
+                                </span>                                    
+                            </span>
+                        </span>                            
+                    </div>
+                </li>                                
+            </ul>
+ 			<ul class="list_list">
+                <li class="list_list_item">
+                    <div class="list_card">
+                        <span class="list_item_pic">
+                            <a href="#">
+                            	<img width="100%" src="/images/list_album_03.png" alt="상품이름" title="상품이름"/>
+                            </a>                                
+                        </span>
+                        <span class="list_info">
+                            <a href="#">
+                                <span class="list_item_shop">
+                                    <em title="捞鱼猫旗舰店" class="list_ item_shop_name">捞鱼猫旗舰店</em>
+                                </span>
+                            </a>                        
+                            <a href="#">
+                                <span class="list_item_desc">
+                                    <em title="捞鱼猫新生儿秋冬宝宝棉衣服" class="list_item_name">捞鱼猫新生儿秋冬宝宝棉衣服</em>
+                                </span>
+                            </a>
+                            <span class="list_item_detail">
+                                <a href="#">
+                                    <span class="list_item_price">
+                                        <i class="list_price_rmb">¥</i>
+                                        <span class="list_price_integer">109</span>
+                                        <span class="list_price_decimal">.00</span>
+                                    </span>
+                                </a>
+                            </span>
+                            <span class="list_item_tag">
+                                <span class="list_item_buy">
+                                    <a href="#">
+                                    	<span class="list_ico_buy"></span>
+                                        <span>月成交</span>
+                                        <em>1,011</em>
+                                        <span>笔</span>
+                                    </a>
+                                </span>
+                                <span class="list_item_after">
+                                    <a href="#">
+                                    	<span class="list_ico_after"></span>
+                                        <span>评价</span>
+                                        <em>8,141</em>
+                                        <span>件</span>
+                                    </a>
+                                </span>
+                                <span class="list_item_wish">
+                                    <a href="#">
+                                    	<span class="list_ico_wish"></span>
+                                        <span>喜欢</span>
+                                        <em>8,141</em>
+                                        <span>人</span>
+                                    </a>
+                                </span>                                    
+                            </span>
+                        </span>                            
+                    </div>
+                </li> 
+                <li class="list_list_item last_item">
+                    <div class="list_card">
+                        <span class="list_item_pic">
+                            <a href="#">
+                            	<img width="100%" src="/images/list_album_04.png" alt="상품이름" title="상품이름"/>
+                            </a>                                
+                        </span>
+                        <span class="list_info">
+                            <a href="#">
+                                <span class="list_item_shop">
+                                    <em title="捞鱼猫旗舰店" class="list_ item_shop_name">捞鱼猫旗舰店</em>
+                                </span>
+                            </a>                        
+                            <a href="#">
+                                <span class="list_item_desc">
+                                    <em title="捞鱼猫新生儿秋冬宝宝棉衣服" class="list_item_name">捞鱼猫新生儿秋冬宝宝棉衣服</em>
+                                </span>
+                            </a>
+                            <span class="list_item_detail">
+                                <a href="#">
+                                    <span class="list_item_price">
+                                        <i class="list_price_rmb">¥</i>
+                                        <span class="list_price_integer">109</span>
+                                        <span class="list_price_decimal">.00</span>
+                                    </span>
+                                </a>
+                            </span>
+                            <span class="list_item_tag">
+                                <span class="list_item_buy">
+                                    <a href="#">
+                                    	<span class="list_ico_buy"></span>
+                                        <span>月成交</span>
+                                        <em>1,011</em>
+                                        <span>笔</span>
+                                    </a>
+                                </span>
+                                <span class="list_item_after">
+                                    <a href="#">
+                                    	<span class="list_ico_after"></span>
+                                        <span>评价</span>
+                                        <em>8,141</em>
+                                        <span>件</span>
+                                    </a>
+                                </span>
+                                <span class="list_item_wish">
+                                    <a href="#">
+                                    	<span class="list_ico_wish"></span>
+                                        <span>喜欢</span>
+                                        <em>8,141</em>
+                                        <span>人</span>
+                                    </a>
+                                </span>                                    
+                            </span>
+                        </span>                            
+                    </div>
+                </li>                                
+            </ul>           
+        </div>
+        <!--e: LIST-->
+
+
+
 
     </div>
 </div>
