@@ -268,7 +268,7 @@ $result = sql_query($sql);
                                     </span>
                                 </span>
                             </span>
-                        </a>
+                       </div>
                     </li> 
 <!----------------------허걸:  e: 여기까지 반복 4번--------------------------->        
                   	<li class="wonderful_item">

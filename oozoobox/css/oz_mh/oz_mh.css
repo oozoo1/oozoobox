@@ -392,7 +392,7 @@ fieldset legend{display: none;}
 
 
 @media all and (min-width:1260px)
-{ .oz_glo2_navbg {width:1190px;}
+{ .oz_glo2_navbg {width:1190px; position:relative;}
 #oz_glo2 ul li{ width:238px; }
 #oz_glo2 ul li a{ width:238px;}
 #oz_glo2 ul li a.glo_1{position:absolute; top:0px; left:0;}
@@ -434,7 +434,7 @@ fieldset legend{display: none;}
 .whatbuy-head .satisfy-area .satisfy {width: 97px; float:left; color:#999; text-align:center; font:12px/1.25 Tahoma, '微软雅黑', sans-serif; letter-spacing:-1px;}
 .whatbuy-head .satisfy-area .satisfy strong {color:#4f6bcb; font: bold 24px/1.25 Tahoma, Gulim, sans-serif; padding-left: 13px; display:block;}
 .whatbuy-head .satisfy-area .satisfy strong em {font: 17px/1.25 Tahoma, '微软雅黑', sans-serif;}
-.whatbuy-head .satisfy-area dl.rating {width:290px; /*background:url("//pics.auction.co.kr/corner/persnalbridge/bg_rating.gif") no-repeat 0px 3px; */float:left; padding:0 0 0 16px;}
+.whatbuy-head .satisfy-area dl.rating {width:290px; float:left; padding:0 0 0 16px;}
 .whatbuy-head .satisfy-area .rating dd:first-child {width:100%;}
 .whatbuy-head .satisfy-area .rating dd {margin-bottom: 7px; width:49.9%; float:left; color:#333; letter-spacing:-1px;}
 .whatbuy-head .satisfy-area .rating dd span {color: #999;}
@@ -451,7 +451,7 @@ fieldset legend{display: none;}
 }
 
 /* LIST*/
-#oz_list_content {float:left; margin:0 !important; width:100% !important;}
+#oz_list_content {float:left; margin:0 !important; width:100% !important; background:#fff;}
 .oz_list_main {position:relative; margin:60px auto 0; width:990px; text-align:left;}
 
 @media all and (min-width:1260px)
@@ -460,7 +460,6 @@ fieldset legend{display: none;}
 
 /**LIST 배너**/
 .oz_list_bn {width:990px; height:400px; margin:0;}
-
 
 .oz_list_bn_wrap{float:left;}
 /**LIST 배너 01**/
@@ -497,39 +496,132 @@ fieldset legend{display: none;}
 #lista1 {width:447px; margin-top:45px; }
 }
 
-.oz_list_main .oz_filter {float:left; width:990px; padding:5px 0; margin:10px 0; position:relative; z-index:10; background:#f1f1f1; color:#806f66;}
+
+/**LIST 필터**/
+.oz_list_main .oz_filter {float:left; width:990px; padding:5px 0; margin:50px 0 10px 0 ; position:relative; z-index:10; background:#f1f1f1; color:#806f66;}
 .oz_filter a {color:#806f66; cursor:pointer;}
 .oz_filter a:hover {color:#ea5b0c; background-color:#ffe4d5; text-decoration:none;}
-
 .oz_filter .filter_sort {float:left; padding:0 15px 0 5px; margin-left:-1px; position:relative; display:inline-block; overflow:hidden; background-color:#fff; border:#ccc 1px solid;}
 .oz_filter .first{margin-left:20px;}
-
 .f_ico_arrow_d {width:10px; height:9px; position:absolute; top:8px; right:4px; display:inline-block;  background:url('/images/oz_filter_ico.png' ) no-repeat 0 0;}
 .oz_filter a:hover .f_ico_arrow_d{background:url('/images/oz_filter_ico.png' ) no-repeat -9px 0;}
 .f_ico_arrow_u {width:10px; height:9px; position:absolute; top:7px; right:4px; display:inline-block;  background:url('/images/oz_filter_ico.png' ) no-repeat -18px 0;}
-.oz_filter a:hover .f_ico_arrow_u{background:url('/images/oz_filter_ico.png' ) no-repeat -26px 0;}
-
+.oz_filter a:hover .f_ico_arrow_u {background:url('/images/oz_filter_ico.png' ) no-repeat -26px 0;}
 .filter_type_store, .filter_type_big, .filter_type_small {float:left; padding:0 5px 0 15px; margin-left:-1px; position:relative; display:inline-block; overflow:hidden; background-color:#fff; border:#ccc 1px solid;}
- 
+
+a.filter_type_big_on, a.filter_type_small_on {float:left; padding:0 5px 0 15px; margin-left:-1px; position:relative; display:inline-block; overflow:hidden; color:#ea5b0c; background-color:#ffe4d5; text-decoration:none; border:#ccc 1px solid;}
+
 .filter_type_store {margin-left:150px;}
 .ico_filter_type_store {width:9px; height:9px; position:absolute; top:7px; left:4px; display:inline-block;  background:url('/images/oz_filter_ico.png' ) no-repeat -36px 0;}
 .oz_filter a:hover .ico_filter_type_store {background:url('/images/oz_filter_ico.png' ) no-repeat -45px 0;}
-
 .ico_filter_type_big {width:9px; height:9px; position:absolute; top:7px; left:4px; display:inline-block;  background:url('/images/oz_filter_ico.png' ) no-repeat -54px 0;}
 .oz_filter a:hover .ico_filter_type_big {background:url('/images/oz_filter_ico.png' ) no-repeat -63px 0;}
+.filter_type_big_on .ico_filter_type_big{background:url('/images/oz_filter_ico.png' ) no-repeat -63px 0;}
 
 .ico_filter_type_small {width:9px; height:9px; position:absolute; top:7px; left:4px; display:inline-block;  background:url('/images/oz_filter_ico.png' ) no-repeat -72px 0;}
 .oz_filter a:hover .ico_filter_type_small {background:url('/images/oz_filter_ico.png' ) no-repeat -80px 0;} 
+.filter_type_small_on .ico_filter_type_small {background:url('/images/oz_filter_ico.png' ) no-repeat -80px 0;}
 
-.ui-page-s {float:right; height:21px; overflow:hidden; color:#999; font-family:宋体, Helvetica, sans-serif; font-size:12px;}
-b.ui-page-s-len {background:0 0; line-height:20px; font-weight:400;}
-.ui-page-s-len, .ui-page-s-prev, .ui-page-s-next {float:left; display:inline; margin-left:3px;}
+.ui-page-s {float:right; height:21px; overflow:hidden; color:#999; font-family:宋体, Helvetica, sans-serif; font-size:12px; margin-right:20px;}
+b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 .ui-page-s a:hover {background-color:#efefef; }
-.ui-page-s b {background-color:#efefef; }
-.ui-page-s-prev, .ui-page-s-next {width:19px; padding:4px 0 2px; line-height:1; font-weight:700; font-size:12px; text-aline:center; background-color:#fff; border:1px solid #e5e5e5; }
+.ui-page-s-prev, .ui-page-s-next {width:19px; padding:4px 0 2px; line-height:1; font-weight:700; font-size:12px; text-align:center; display:inline-block; background-color:#fff; border:1px solid #e5e5e5; }
 .ui-page-s-len, .ui-page-s-prev, .ui-page-s-next {float:left; display:inline; margin-left:3px;}
 
 @media all and (min-width:1260px)
 {.oz_list_main .oz_filter {width:1190px;}
 .filter_type_store {margin-left:250px;}
+}
+
+/**LIST 앨범형**/
+.list_type_album {float:left; width: 990px; margin-left:5px;}
+.list_type_album .list_album {height: 310px;}
+.list_type_album .list_album_item {float: left; margin-right: 15px; }
+.list_type_album .album_card {border:1px solid #fff; width:233px; height: 100%; overflow: hidden; margin-bottom: 20px; display: block; position: relative; background-color: #fff;}
+.list_type_album .album_card:hover{border:1px solid #df121a;}
+.list_type_album .album_ico_wish {width:33px; height:33px; display:block; border:1px solid #efefef; background:url('/images/bg_album_ico_wish.png') no-repeat; position:absolute; top:0; left:0; color:#ea5b0c; text-align:center;}
+.list_type_album .album_ico_wish em {overflow:hidden; width:33px; display:block; margin:0 auto; padding-top:14px;}
+.list_type_album .album_wish_plus:hover .album_ico_wish{ background:url('/images/bg_album_ico_wish.png') no-repeat -33px 0; color:#000;}
+.list_type_album .last_item {margin-right: 0px;}
+
+.list_type_album .album_card .album_item_pic {width: 100%; height:233px; display: block;}
+.list_type_album .album_card .album_info {padding:7px 6px 0px 6px; text-align: left; display: block;}
+.list_type_album .album_card .album_item_desc {font-size:12px; height:14px; line-height: 16px; overflow: hidden; display: block;}
+.list_type_album .album_card .album_item_shop{font-size:12px; color:#999; line-height:16px; display:block; overflow:hidden; height:14px; margin-top:3px;}
+.list_type_album .album_card .album_item_shop:hover {color: rgb(234, 91, 11);}
+.list_type_album .album_card .album_item_name:hover {color: rgb(234, 91, 11);}
+.list_type_album .album_card .album_item_detail {height: 33px; line-height: 22px; margin-top:7px; display: block; position: relative;}
+.list_type_album .album_card .album_item_price {color:rgb(17,17,17); line-height: 32px;}
+.list_type_album .album_card .album_item_price:hover {color: rgb(234, 91, 11);}
+.list_type_album .album_card .album_item_price .album_price_rmb {font-size: 14px;}
+.list_type_album .album_card .album_item_price .album_price_integer {font-size: 16px;}
+.list_type_album .album_card .album_item_price .album_price_decimal {font-size: 14px;}
+.list_type_album .album_card .album_item_tag {font-size:10px; display:block;}
+.list_type_album .album_card .album_item_tag .album_item_buy {position:absolute; right:63px; top:5px; height:18px;}
+.album_item_buy a:hover{color: rgb(234, 91, 11);}
+.list_type_album .album_card .album_item_tag .album_item_buy em{color:#ea5b0c;}
+.list_type_album .album_card .album_item_tag .album_item_after {position:absolute; right:0px; top:5px;}
+.album_item_after a:hover {color: rgb(234, 91, 11);} 
+.list_type_album .album_card .album_item_tag .album_item_after em{color:#ea5b0c;}
+
+@media all and (min-width:1260px)
+{.list_type_album {width: 1190px;}
+.list_type_album .list_album {height: 375px;}
+.list_type_album .list_album_item  {width: 283px; margin-right: 16px; margin-bottom: 20px;}
+.list_type_album .album_card {width: 100%; height: 375px;}
+.list_type_album .last_item {margin-right: 0px;}
+.list_type_album .album_card .album_item_pic {height: 283px;}
+.oz_wonderful_con .card_item .item_tag {width:283px;}
+.list_type_album .album_card .album_item_tag .album_item_buy {margin-right:6px;}
+.oz_wonderful_con .card_item .item_tag .wonderful_after{margin-right:6px;}
+.list_type_album .album_card .album_item_tag {font-size:12px;}
+.list_type_album .album_card .album_item_tag .album_item_buy {position:absolute; right:73px;}
+}
+
+
+/**LIST 리스트형**/
+.list_type_list {float:left; width: 990px; margin-left:5px;}
+.list_type_list .list_list {height: 133px; }
+.list_type_list .list_list_item {float:left; margin-right:13px; width:487px; }
+.list_list .last_item {margin-right: 0px;}
+.list_type_list .list_card {border: 1px solid #fff; width:487px; height: 100%; overflow: hidden; margin-bottom: 20px; display: block; position: relative; background-color: #fff; border-bottom:1px solid #ddd;}
+.list_type_list .list_card:hover{border: 1px solid #df121a;}
+.list_type_list .list_card .list_item_pic {float:left; width:102px; margin:10px 0 17px 10px; height:102px; display: block;}
+.list_type_list .list_card .list_info {float:left; width: 355px; padding: 10px 10px 0px 10px; text-align: left; display: block;}
+.list_type_list .list_card .list_item_desc {float:left; width:240px; font-size:12px; height:34px; line-height: 16px; overflow: hidden; display: block;}
+.list_type_list .list_card .list_item_shop{font-size:12px; color:#999; line-height:16px; display:block; overflow:hidden; height:18px; margin-top:3px;}
+.list_type_list .list_card .list_item_shop:hover {color: rgb(234, 91, 11);}
+.list_type_list .list_card .list_item_name:hover {color: rgb(234, 91, 11);}
+.list_type_list .list_card .list_item_detail {width:240px; display: block; position:absolute; bottom:15px; }
+.list_type_list .list_card .list_item_price {float:left; display:block; color:rgb(17,17,17);}
+.list_type_list .list_card .list_item_price:hover {color: rgb(234, 91, 11);}
+.list_type_list .list_card .list_item_price .list_price_rmb {font-size: 14px;}
+.list_type_list .list_card .list_item_price .list_price_integer {font-size: 16px;}
+.list_type_list .list_card .list_item_price .list_price_decimal {font-size: 14px;}
+.list_type_list .list_card .list_item_tag {position:absolute; bottom:15px; right:10px; width:100px; font-size:12px; display:block;}
+.list_type_list .list_card .list_item_tag .list_item_buy {float:right; position:relative;}
+.list_type_list .list_card .list_item_tag .list_item_buy em{color:#ea5b0c;}
+
+.list_item_buy .list_ico_buy {width:9px; height:9px; display:block; background:url('/images/list_ico.png') no-repeat; position:absolute; left:-13px; top:7px;}
+.list_item_buy a:hover{color: rgb(234, 91, 11);}
+.list_item_buy a:hover .list_ico_buy {background:url('/images/list_ico.png')no-repeat -9px 0;}
+.list_item_tag .list_item_after {float:right; position:relative;}
+.list_item_tag .list_item_after em{color:#ea5b0c;}
+.list_item_after .list_ico_after {width:9px; height:9px; display:block; background:url('/images/list_ico.png') no-repeat -18px 0; position:absolute; left:-13px; top:7px;}
+.list_item_after a:hover {color: rgb(234, 91, 11);}
+.list_item_after a:hover .list_ico_after {background:url('/images/list_ico.png') no-repeat -27px 0;}
+.list_item_tag .list_item_wish {float:right; position:relative;}
+.list_item_tag .list_item_wish em{color:#ea5b0c;}
+.list_item_wish .list_ico_wish {width:9px; height:9px; display:block; background:url('/images/list_ico.png') no-repeat -36px 0; position:absolute; left:-13px; top:7px;}
+.list_item_wish a:hover {color: rgb(234, 91, 11);} 
+.list_item_wish a:hover .list_ico_wish {background:url('/images/list_ico.png') no-repeat -45px 0; }
+
+
+@media all and (min-width:1260px)
+{.list_type_list {width: 1190px;}
+.list_type_list .list_list {height:142px;}
+.list_type_list .list_list_item  {width:570px; margin-right:37px; margin-bottom: 20px;}
+.list_type_list .list_card {width:100%; height:142px;}
+.list_type_list .last_item {margin-right: 0px;}
+.list_type_list .list_card .list_item_pic {width:120px; height:120px;}
 }
