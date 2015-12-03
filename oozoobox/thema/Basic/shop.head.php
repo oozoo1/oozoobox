@@ -16,7 +16,10 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
 <script type="text/javascript" src="/oz_js/jquery.als-1.7.min.js"></script>
 
 <?php if($_SERVER['PHP_SELF']=="/index.php"){}else{ ?>
-<script src="/oz_js/jquery.min.js"></script>
+<script src="/oz_js/jquery.min.js"></script><!--list global menu-->
+<script src="/oz_js/slider.js"></script><!--list bn01-->
+<!--<script src="/oz_js/jquery.SuperSlide2.js"></script>-->
+<script type="text/javascript" src="/oz_js/jquery.als-1.7.min.js"></script><!--list bn03-->
 <? } ?>
 
 <div class="wrapper <?php echo $at_set['font'];?><?php echo (G5_IS_MOBILE) ? ' mobile-font' : '';?> <?php echo $at_set['layout'];?>">
@@ -810,24 +813,3 @@ $(function(){
     
     
 
-	<?php if($page_title) { // 페이지 타이틀 ?>
-		<div class="page-title">
-			<div class="container">
-				<h2><?php echo ($bo_table) ? '<a href="'.G5_BBS_URL.'/board.php?bo_table='.$bo_table.'"><span>'.$page_title.'</span></a>' : $page_title;?></h2>
-				<?php if($page_desc) { // 페이지 설명글 ?>
-					<ol class="breadcrumb hidden-xs">
-						<li class="active"><?php echo $page_desc;?></li>
-					</ol>
-				<?php } ?>
-			</div>
-		</div>
-	<?php } ?>
-
-	<?php if($col_name) { ?>
-		<div class="at-content">
-			<div class="container">
-			<?php if($col_name == "two") { ?>
-				<div class="row">
-					<div class="col-md-<?php echo $col_content;?><?php echo ($at_set['side']) ? ' pull-right' : '';?> contentArea">		
-			<?php } ?>
-	<?php } ?>
