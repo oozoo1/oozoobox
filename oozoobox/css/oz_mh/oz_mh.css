@@ -450,6 +450,7 @@ fieldset legend{display: none;}
 .whatbuy-head .title {width:800px;}
 }
 
+
 /* LIST*/
 #oz_list_content {float:left; margin:0 !important; width:100% !important; background:#fff;}
 .oz_list_main {position:relative; margin:60px auto 0; width:990px; text-align:left;}
@@ -616,7 +617,6 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 .list_item_wish a:hover {color: rgb(234, 91, 11);} 
 .list_item_wish a:hover .list_ico_wish {background:url('/images/list_ico.png') no-repeat -45px 0; }
 
-
 @media all and (min-width:1260px)
 {.list_type_list {width: 1190px;}
 .list_type_list .list_list {height:142px;}
@@ -625,3 +625,66 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 .list_type_list .last_item {margin-right: 0px;}
 .list_type_list .list_card .list_item_pic {width:120px; height:120px;}
 }
+
+
+/*DETAIL*/
+#oz_detail_wrap {float:left; margin:0 !important; width:100% !important; background:#fff; font:14px '微软雅黑', sans-serif;}
+.oz_detail_main {position:relative; margin:70px auto 0; width:990px; text-align:left;}
+/**image slide**/
+.detail_good_pic{float:left; width:420px; position:relative;}
+.detail_good_slide_big {float:left; margin-top:10px; width:418px; height:418px; border:1px solid #ddd;} 
+.detail_good_slide_small {float:left; margin-top:20px;}
+.detail_good_slide_small li{float:left; margin-right:10px; border:1px solid #ddd;}
+.detail_good_slide_small li.last {margin-right:0;}
+
+.detail_good_info{float:left; width:524px; margin:10px 0 0 33px; }
+.detail_good_info h3 {font-size:18px; font-weight:600;}
+.detail_good_info tr {height:30px;}
+.detail_good_info .good_info_satisfy {margin-top:30px; position:relative;}
+.detail_good_info .good_info_satisfy span{float:left;}
+.detail_good_info .good_info_satisfy .good_info_satisfy_grade {font-size:18px; font-weight:bold;}
+.detail_good_info .good_info_satisfy .good_info_satisfy_star {position:absolute; top:7px; left:135px; width:84px; height:15px; background:url("/images/good_info_satisfy_star.png") no-repeat 0 0; display:block;}
+.detail_good_info .good_info_satisfy .good_info_satisfy_star span {width:84px; height:15px; background:url("/images/good_info_satisfy_star.png") no-repeat 0px -15px; color:transparent;}
+.good_info_scrap .space {margin-left:15px;}
+
+p.detail_total_price {position:relative; padding:5px 0; margin:15px 0; border-top:1px solid #ddd; display:block;}
+.detail_total_price .detail_total_price_info {position:absolute; right:0; top:0;}
+.detail_total_price_info .detail_total {font-size:16px; font-weight:600;}
+.detail_total_price_info .item_total_price .price_rmb {display:block; float:left; font-size: 20px; font-style:normal;}
+.detail_total_price_info .item_total_price .price_integer {display:block; float:left; font-size: 20px;}
+.detail_total_price_info .item_total_price .price_decimal {display:block; float:left; font-size: 20px;}
+.choice-control {float:left;}
+
+#btnBuyNow {border:0; margin-right:2px;}
+#btnAddToCart {border:0; margin-right:2px;}
+#btnAddToWishList {border:0; margin-right:2px;}
+#btnAddToSend {border:0}
+
+/**상세보기 제품 정보, 게시판**/
+#detail_container{float:left; width:990px; margin-top:30px;}
+.detail_tabs {width:990px; height:40px; border-top:1px solid #ddd; font:bold 14px/32px Tahoma, '微软雅黑', sans-serif;}
+.detail_tabs li {cursor:pointer; float:left; margin:0 60px; border-top:3px solid #fff;}
+.detail_tabs .active{color:#f47a22; border-top:2px solid #f47a22;}
+.detail_tabs .tap_no {font-size:12px; font-weight:normal;}
+
+.detail_tab_content {float:left; position:relative;}
+.tab_content_warp {float:left; width:988px; border:1px solid #ddd; position:relative;}
+.detail_tab_content h4.description {margin:50px auto 10px; text-align:center; padding:10px 0; width:850px; font-size:20px; border-bottom:2px solid #ddd; font-weight:bold;}
+.detail_tab_content h4 span.strap {font-size:16px; margin-left:15px; color:#999999; font-weight:bold;}
+#btnAfter {float:left; width:200px; height:50px; margin:10px 0 0 400px; }
+
+
+
+/***상세보기 qna***/
+.question { background-color: #ccc; cursor: pointer; padding: 5px; margin-bottom: 10px; border-bottom: 1px solid #000; }
+.answer { padding: 5px; }
+
+
+
+
+
+
+
+
+
+
