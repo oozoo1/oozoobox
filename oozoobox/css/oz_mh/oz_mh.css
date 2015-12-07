@@ -669,8 +669,57 @@ p.detail_total_price {position:relative; padding:5px 0; margin:15px 0; border-to
 
 .detail_tab_content {float:left; position:relative;}
 .tab_content_warp {float:left; width:988px; border:1px solid #ddd; position:relative;}
-.detail_tab_content h4.description {margin:50px auto 10px; text-align:center; padding:10px 0; width:850px; font-size:20px; border-bottom:2px solid #ddd; font-weight:bold;}
+.detail_tab_content h4.description {margin:50px auto 10px; text-align:center; padding:10px 0; width:850px; font-size:20px; border-bottom:2px solid #ddd; font-weight:bold; color:#727272;}
 .detail_tab_content h4 span.strap {font-size:16px; margin-left:15px; color:#999999; font-weight:bold;}
+.detail_tab_content h4.tab_content_tit {margin:50px auto 10px; text-align:left; padding:10px 0; width:850px; font-size:20px; border-bottom:2px solid #ddd; font-weight:bold; color:#727272;}
+.detail_tab_content h4 span.strap {font-size:16px; margin-left:15px; color:#999999; font-weight:bold;}
+
+/***#tab3 询问/回复 "질문과 답변"***/
+#detail_tab3 {font:14px Tahoma, '微软雅黑';}
+/****QnA wirte****/
+#btnWriteQna {border:0}
+#btnQnaSearch {border:0}
+#btnFilter {border:0}
+#btnWriteQna {border:0}
+.tab_qna_act {margin:30px 0 0 70px; width:850px;}
+#QnaSearch {float:right; display:inline;}
+.tab_qna_act #txtQnaKeyword{vertical-align:middle; margin-right:2px; border:1px solid #c9c9c9; width:245px; height:23px; font-size:12px;}
+.tab_qna_act .search-area {margin-right:10px;}
+#qna_write_panel {margin-bottom:13px; width:850px; margin:15px 0 0 70px;}
+.tab_content_warp .tab3_qna_write {position:relative; height:127px; margin-top:15px; border:1px solid #dadada;}
+.tab_content_warp .tab3_qna_write .section {border-bottom:1px solid #dadada; padding:4px 0 2px 12px;}
+.tab_content_warp .tab3_qna_write label {margin-right:7px; color:#464646;}
+.tab_content_warp .tab3_qna_write input.txt {height:21px; padding:2px 0 0 4px; border:1px solid #ccc; line-height:23px;}
+.tab_content_warp .tab3_qna_write .c_subject {padding:4px 0 2px 12px; }
+.tab_content_warp .tab3_qna_write .c_subject label {margin-right:7px; color:#464646;}
+.tab_content_warp .tab3_qna_write .c_subject textarea {width:695px; height:80px; padding:4px 0 0 4px; border:1px solid #ccc; vertical-align:middle;}
+.tab3_qna_write .c_subject .regist-btn {position:absolute; top:-1px; right:-1px; float:left; display:block; width:93px; height:129px; background:url('/images/bg_tab3_qna_write.png') no-repeat; text-indent:-9999em; border:0;}
+/****QnA list****/
+.tab3_qnalist {width:850px; margin:30px 0 150px 70px;}
+.tab3_qnalist th {padding:9px 0 7px 0; border-top:1px solid #e2e2e2; border-bottom:1px solid #e2e2e2; background:#f4f4f4; color:#464646; font-weight:normal; text-align:center;}
+#tblQnAList .question td{ padding:9px 0 7px 0; border-top:1px solid #e2e2e2; border-bottom:1px solid #e2e2e2; background:#fff; color:#464646; font-weight:normal; text-align:center;}
+#tblQnAList .question .subject {text-align:left; font-weight:bold;}
+
+#tblQnAList .answer td {padding:0 0 5px 0; color:#464646;}
+#tblQnAList .answer p.answer_question {padding:13px 30px 7px 93px; background:url('/images/icon_question.png') no-repeat 35px 15px; line-height:1.8;}
+#tblQnAList .answer .answer_wrap {padding-top:5px; border-top:1px dashed #d4d4d4;}
+#tblQnAList .answer .answer_wrap p.answer_answer {padding:9px 30px 7px 93px; background:#f3f5fb url('/images/icon_answer.png') no-repeat 35px 15px; line-height:1.8;}
+ 
+/***#tab4 卖家信息 "판매자 정보"***/
+#detail_tab4 {font:14px/1.8em Tahoma, '微软雅黑';}
+.tab_content_warp .tab_seller {width:850px; margin:30px 0 150px 70px; color:#696969; border-top:6px solid #dbdbdb; border-bottom:6px solid #dbdbdb;}
+.tab_content_warp .tab_seller th {border-right:1px solid #d5d5d5; padding:17px 0 14px 20px; border-bottom:1px solid #d5d5d5;}
+.tab_content_warp .tab_seller td {border-bottom:1px solid #d5d5d5; padding-left:55px;}
+
+/***#tab5 取消/换货/退货 "교환/환불정책"***/
+#detail_tab5 {font:14px/1.8em Tahoma, '微软雅黑';}
+.tab_content_warp .return_title {font-size:14px; font-weight:bold; display:inline-block; padding:5px 10px; margin:20px 0 10px 70px; color:#696969; border:2px solid #e8e8e8;}
+.tab_content_warp .detail_tab_return {width:840px; display:block; margin:0 0 0px 70px; color:#555; }
+.tab_content_warp .detail_tab_return p.tab_return_paragraph {margin-top:7px;}
+.tab_content_warp .detail_tab_return li { background:url('/images/bg_detail_return.png') no-repeat 0 10px; padding-left:15px; color:#767676;}
+
+
+.tab_content_warp hr {width:850px; display:block; margin:20px auto 5px; border-bottom:1px dotted #ddd;}
 #btnAfter {float:left; width:200px; height:50px; margin:10px 0 0 400px; }
 
 
