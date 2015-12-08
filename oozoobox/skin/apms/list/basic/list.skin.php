@@ -96,7 +96,7 @@ $list_cnt = count($list);
 <!-----------------------------s: album형식------------------------->
         <!--s: LIST filter-->
         <div class="oz_filter">
-            <a title="点击后恢复默认排序" class="<?php if($_GET[sort]==''){?>filter_sort_on<?php }else{ ?>filter_sort first<?php } ?>" href="<?php echo $list_sort_href; ?>">综合
+            <a title="点击后恢复默认排序" class="<?php if($_GET[sort]==''){?>filter_sort_on first<?php }else{ ?>filter_sort first<?php } ?>" href="<?php echo $list_sort_href; ?>">综合
                 <i class="f_ico_arrow_d"></i>
             </a>     
             <a title="点击后按人气从高到低" class="<?php if($_GET[sort]=='it_type4'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?>" href="<?php echo $list_sort_href; ?>it_type4&amp;sortodr=desc">人气

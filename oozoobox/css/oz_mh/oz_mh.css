@@ -500,7 +500,7 @@ fieldset legend{display: none;}
 
 /**LIST 필터**/
 .oz_list_main .oz_filter {float:left; width:990px; padding:5px 0; margin:50px 0 10px 0 ; position:relative; z-index:10; background:#f1f1f1; color:#806f66;}
-.oz_filter .first{margin-left:20px;}
+.oz_filter a.first{margin-left:20px;}
 .oz_filter .filter_sort {float:left; padding:0 15px 0 5px; margin-left:-1px; position:relative; display:inline-block; overflow:hidden; background-color:#fff; border:#ccc 1px solid; color:#806f66; cursor:pointer;}
 .f_ico_arrow_d {width:10px; height:9px; position:absolute; top:8px; right:4px; display:inline-block;  background:url('/images/oz_filter_ico.png' ) no-repeat 0 0;}
 .f_ico_arrow_u {width:10px; height:9px; position:absolute; top:7px; right:4px; display:inline-block;  background:url('/images/oz_filter_ico.png' ) no-repeat -18px 0;}
