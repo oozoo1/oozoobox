@@ -500,19 +500,20 @@ fieldset legend{display: none;}
 
 /**LIST 필터**/
 .oz_list_main .oz_filter {float:left; width:990px; padding:5px 0; margin:50px 0 10px 0 ; position:relative; z-index:10; background:#f1f1f1; color:#806f66;}
-.oz_filter a {color:#806f66; cursor:pointer;}
-.oz_filter a:hover {color:#ea5b0c; background-color:#ffe4d5; text-decoration:none;}
-.oz_filter .filter_sort {float:left; padding:0 15px 0 5px; margin-left:-1px; position:relative; display:inline-block; overflow:hidden; background-color:#fff; border:#ccc 1px solid;}
 .oz_filter .first{margin-left:20px;}
+.oz_filter .filter_sort {float:left; padding:0 15px 0 5px; margin-left:-1px; position:relative; display:inline-block; overflow:hidden; background-color:#fff; border:#ccc 1px solid; color:#806f66; cursor:pointer;}
 .f_ico_arrow_d {width:10px; height:9px; position:absolute; top:8px; right:4px; display:inline-block;  background:url('/images/oz_filter_ico.png' ) no-repeat 0 0;}
-.oz_filter a:hover .f_ico_arrow_d{background:url('/images/oz_filter_ico.png' ) no-repeat -9px 0;}
-
 .f_ico_arrow_u {width:10px; height:9px; position:absolute; top:7px; right:4px; display:inline-block;  background:url('/images/oz_filter_ico.png' ) no-repeat -18px 0;}
+
+/*filter mouse hover 일때*/
+.oz_filter .filter_sort:hover {color:#ea5b0c; background-color:#ffe4d5; text-decoration:none;}
+.oz_filter a:hover .f_ico_arrow_d{background:url('/images/oz_filter_ico.png' ) no-repeat -9px 0;}
 .oz_filter a:hover .f_ico_arrow_u {background:url('/images/oz_filter_ico.png' ) no-repeat -26px 0;}
 
-/*1*/
-
-.filter_sort_on {color:#ea5b0c; background-color:#ffe4d5; text-decoration:none; background:url('/images/oz_filter_ico.png' ) no-repeat -9px 0;}
+/*filter mouse on 일때*/
+.oz_filter .filter_sort_on {float:left; padding:0 15px 0 5px; margin-left:-1px; position:relative; display:inline-block; overflow:hidden; background-color:#ffe4d5; border:#ccc 1px solid; color:#ea5b0c;}
+.oz_filter .filter_sort_on .f_ico_arrow_d{background:url('/images/oz_filter_ico.png' ) no-repeat -9px 0;}
+.oz_filter .filter_sort_on .f_ico_arrow_u {background:url('/images/oz_filter_ico.png' ) no-repeat -26px 0;}
 
 
 .filter_type_store, .filter_type_big, .filter_type_small {float:left; padding:0 5px 0 15px; margin-left:-1px; position:relative; display:inline-block; overflow:hidden; background-color:#fff; border:#ccc 1px solid;}
