@@ -96,22 +96,22 @@ $list_cnt = count($list);
 <!-----------------------------s: album형식------------------------->
         <!--s: LIST filter-->
         <div class="oz_filter">
-            <a title="点击后恢复默认排序" class="filter_sort first" href="#">综合
+            <a title="点击后恢复默认排序" class="filter_sort first" href="<?php echo $list_sort_href; ?>">综合
                 <i class="f_ico_arrow_d"></i>
             </a>     
-            <a title="点击后按人气从高到低" class="filter_sort" href="#">人气
+            <a title="点击后按人气从高到低" class="<?php if($_GET[sortodr]=='desc'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?>" href="<?php echo $list_sort_href; ?>it_type4&amp;sortodr=desc">人气
                 <i class="f_ico_arrow_d"></i>
             </a>
-            <a class="filter_sort" href="#" >新品
+            <a class="filter_sort" href="<?php echo $list_sort_href; ?>it_type3&amp;sortodr=desc" >新品
                 <i class="f_ico_arrow_d"></i>
             </a>
-            <a title="点击后按月销量从高到低" class="filter_sort" href="#">销量
+            <a title="点击后按月销量从高到低" class="filter_sort" href="<?php echo $list_sort_href; ?>it_sum_qty&amp;sortodr=desc">销量
                 <i class="f_ico_arrow_d"></i>
             </a>
-            <a title="点击后按价格从低到高" class="filter_sort" href="#">价格
+            <a title="点击后按价格从低到高" class="filter_sort" href="<?php echo $list_sort_href; ?>it_price&amp;sortodr=asc">价格
                 <i class="f_ico_arrow_d"></i>
             </a>               
-            <a title="点击后按价格从高到低" class="filter_sort" href="#">价格
+            <a title="点击后按价格从高到低" class="filter_sort" href="<?php echo $list_sort_href; ?>it_price&amp;sortodr=desc">价格
                 <i class="f_ico_arrow_u"></i>
             </a>   
             <a class="filter_type_store" href="#">店铺
@@ -134,11 +134,18 @@ $list_cnt = count($list);
         <!--s: album-->
         <div class="list_type_album">
             <ul class="list_album">
-                <li class="list_album_item">
+            <?php 
+			for ($i=0; $i < $list_cnt; $i++) { 
+
+				// 이미지
+				$img = apms_it_thumbnail($list[$i], $thumb_w, $thumb_h, false, true);
+
+			?>
+                <li class="<?php if($i!="3") {?>list_album_item<?php }else{ ?>list_list_item last_item<?php } ?>">
                     <div class="album_card">
                         <span class="album_item_pic">
-                            <a href="#">
-                            	<img width="100%" src="/images/list_album_01.png" alt="상품이름" title="상품이름"/>
+                            <a href="<?php echo $list[$i]['href'];?>">
+                            	<img width="100%" src="<?php echo $img['src'];?>" alt="<?php echo $list[$i]['it_name'];?>" title="<?php echo $list[$i]['it_name'];?>"/>
                             </a>                                
                         </span>
                         <a href="#" class="album_wish_plus">
@@ -147,14 +154,16 @@ $list_cnt = count($list);
                             </span>
                         </a>
                         <span class="album_info">
-                            <a href="#">
+                            <a href="<?php echo $list[$i]['href'];?>">
                                 <span class="album_item_desc">
-                                    <em title="捞鱼猫新生儿秋冬宝宝棉衣服" class="album_item_name">捞鱼猫新生儿秋冬宝宝棉衣服</em>
+                                    <em title="<?php echo $list[$i]['it_name'];?>" class="album_item_name"><?php echo $list[$i]['it_name'];?></em>
                                 </span>
                             </a>
+                            <?php 
+                            ?>
                             <a href="#">
                                 <span class="album_item_shop">
-                                    <em title="捞鱼猫旗舰店" class="album_ item_shop_name">捞鱼猫旗舰店</em>
+                                    <em title="捞鱼猫旗舰店" class="album_ item_shop_name"><?php echo $list[$i]['pt_id'];?></em>
                                 </span>
                             </a>
                             <span class="album_item_detail">
@@ -184,157 +193,8 @@ $list_cnt = count($list);
                         </span>
                     </div>
                 </li>
-                
-                <li class="list_album_item">
-                    <div class="album_card">
-                        <span class="album_item_pic">
-                            <a href="#">
-                            	<img width="100%" src="/images/list_album_02.png" alt="상품이름" title="상품이름"/>
-                            </a>                                
-                        </span>
-                        <a href="#" class="album_wish_plus">
-                            <span class="album_ico_wish">
-                                <em>13</em>
-                            </span>
-                        </a>
-                        <span class="album_info">
-                            <a href="#">
-                                <span class="album_item_desc">
-                                    <em title="捞鱼猫新生儿秋冬宝宝棉衣服" class="album_item_name">捞鱼猫新生儿秋冬宝宝棉衣服</em>
-                                </span>
-                            </a>
-                            <a href="#">
-                                <span class="album_item_shop">
-                                    <em title="捞鱼猫旗舰店" class="album_ item_shop_name">捞鱼猫旗舰店</em>
-                                </span>
-                            </a>
-                            <span class="album_item_detail">
-                                <a href="#">
-                                    <span class="album_item_price">
-                                        <i class="album_price_rmb">¥</i>
-                                        <span class="album_price_integer">59</span>
-                                        <span class="album_price_decimal">.9</span>
-                                    </span>
-                                </a>
-                                <span class="album_item_tag">
-                                    <span class="album_item_buy">
-                                        <a href="#">
-                                            <span>月成交</span>
-                                            <em>1,011</em>
-                                            <span>笔</span>
-                                        </a>
-                                    </span>
-                                    <span class="album_item_after">
-                                        <a href="#">
-                                            <span>评价</span>
-                                            <em>8,141</em>
-                                        </a>
-                                    </span>
-                                </span>
-                            </span>                            
-                        </span>
-                    </div>
-                </li>                
-                <li class="list_album_item">
-                    <div class="album_card">
-                        <span class="album_item_pic">
-                            <a href="#">
-                            	<img width="100%" src="/images/list_album_03.png" alt="상품이름" title="상품이름"/>
-                            </a>                                
-                        </span>
-                        <a href="#" class="album_wish_plus">
-                            <span class="album_ico_wish">
-                                <em>13</em>
-                            </span>
-                        </a>
-                        <span class="album_info">
-                            <a href="#">
-                                <span class="album_item_desc">
-                                    <em title="捞鱼猫新生儿秋冬宝宝棉衣服" class="album_item_name">捞鱼猫新生儿秋冬宝宝棉衣服</em>
-                                </span>
-                            </a>
-                            <a href="#">
-                                <span class="album_item_shop">
-                                    <em title="捞鱼猫旗舰店" class="album_ item_shop_name">捞鱼猫旗舰店</em>
-                                </span>
-                            </a>
-                            <span class="album_item_detail">
-                                <a href="#">
-                                    <span class="album_item_price">
-                                        <i class="album_price_rmb">¥</i>
-                                        <span class="album_price_integer">59</span>
-                                        <span class="album_price_decimal">.9</span>
-                                    </span>
-                                </a>
-                                <span class="album_item_tag">
-                                    <span class="album_item_buy">
-                                        <a href="#">
-                                            <span>月成交</span>
-                                            <em>1,011</em>
-                                            <span>笔</span>
-                                        </a>
-                                    </span>
-                                    <span class="album_item_after">
-                                        <a href="#">
-                                            <span>评价</span>
-                                            <em>8,141</em>
-                                        </a>
-                                    </span>
-                                </span>
-                            </span>                            
-                        </span>
-                    </div>
-                </li>
-                <li class="list_album_item last_item">
-                    <div class="album_card">
-                        <span class="album_item_pic">
-                            <a href="#">
-                            	<img width="100%" src="/images/list_album_04.png" alt="상품이름" title="상품이름"/>
-                            </a>                                
-                        </span>
-                        <a href="#" class="album_wish_plus">
-                            <span class="album_ico_wish">
-                                <em>13</em>
-                            </span>
-                        </a>
-                        <span class="album_info">
-                            <a href="#">
-                                <span class="album_item_desc">
-                                    <em title="捞鱼猫新生儿秋冬宝宝棉衣服" class="album_item_name">捞鱼猫新生儿秋冬宝宝棉衣服</em>
-                                </span>
-                            </a>
-                            <a href="#">
-                                <span class="album_item_shop">
-                                    <em title="捞鱼猫旗舰店" class="album_ item_shop_name">捞鱼猫旗舰店</em>
-                                </span>
-                            </a>
-                            <span class="album_item_detail">
-                                <a href="#">
-                                    <span class="album_item_price">
-                                        <i class="album_price_rmb">¥</i>
-                                        <span class="album_price_integer">59</span>
-                                        <span class="album_price_decimal">.9</span>
-                                    </span>
-                                </a>
-                                <span class="album_item_tag">
-                                    <span class="album_item_buy">
-                                        <a href="#">
-                                            <span>月成交</span>
-                                            <em>1,011</em>
-                                            <span>笔</span>
-                                        </a>
-                                    </span>
-                                    <span class="album_item_after">
-                                        <a href="#">
-                                            <span>评价</span>
-                                            <em>8,141</em>
-                                        </a>
-                                    </span>
-                                </span>
-                            </span>                            
-                        </span>
-                    </div>
-                </li>                                
+                <?php } ?>                
+                                               
             </ul>
         </div>
         <!--e: album-->
@@ -646,169 +506,3 @@ $(function() { var bannerSlider = new Slider($('#banner_tabs'), { time: 5000,
 
 	});
 </script>
-
-<?php /*?><div class="list-wrap<?php echo (G5_IS_MOBILE) ? ' list-mobile' : '';?>">
-	<div class="list-container">
-		<?php 
-			for ($i=0; $i < $list_cnt; $i++) { 
-
-				$item_label = $cur_price = $dc = '';
-				if($list[$i]['it_cust_price'] > 0 && $list[$i]['it_price'] > 0) {
-					$dc = round((($list[$i]['it_cust_price'] - $list[$i]['it_price']) / $list[$i]['it_cust_price']) * 100);
-					$cur_price = '<div class="cur-price"><strike>&nbsp;'.number_format($list[$i]['it_cust_price']).'</strike></div>';
-				}
-
-				if($list[$i]['it_id'] == $it_id) {
-					$item_label = '<div class="label-cap bg-green">Now</div>';	
-				} else if($dc || $list[$i]['it_type5']) {
-					$item_label = '<div class="label-cap bg-red">DC</div>';	
-				} else if($list[$i]['it_type3'] || $list[$i]['pt_num'] >= (G5_SERVER_TIME - ($new_item * 3600))) {
-					$item_label = '<div class="label-cap bg-'.$wset['new'].'">New</div>';
-				}
-
-				// 이미지
-				$img = apms_it_thumbnail($list[$i], $thumb_w, $thumb_h, false, true);
-
-				// 아이콘
-				$item_icon = item_icon($list[$i]);
-				$item_icon = ($item_icon) ? '<div class="label-tack">'.$item_icon.'</div>' : '';
-
-		?>
-			<?php if($i > 0 && $i%$list_mods == 0) { ?>
-				<div class="clearfix"></div>
-			<?php } ?>
-				<div class="list-row">
-					<div class="list-item">
-						<?php if($thumb_h) { // 이미지 높이값이 있을 경우?>
-							<div class="imgframe">
-								<div class="img-wrap" style="padding-bottom:<?php echo $img_h;?>%;">
-									<?php echo $item_icon;?>
-									<?php echo $item_label;?>
-									<div class="img-item">
-
-										<a href="<?php echo $list[$i]['href'];?>">
-											<img src="<?php echo $img['src'];?>" alt="<?php echo $img['alt'];?>">
-										</a>
-										<?php if($dc) { ?>
-											<div class="<?php echo ($cur_price) ? 'label-dc-cur' : 'label-dc';?> en">
-												<?php echo $cur_price;?>
-												<?php echo $dc;?>%
-											</div>
-										<?php } ?>
-									</div>
-								</div>
-							</div>
-						<?php } else { ?>
-							<div class="list-img">
-								<?php echo $item_icon;?>
-								<?php echo $item_label;?>
-								<a href="<?php echo $list[$i]['href'];?>">
-									<img src="<?php echo $img['src'];?>" alt="<?php echo $img['alt'];?>">
-								</a>
-								<?php if($dc) { ?>
-									<div class="<?php echo ($cur_price) ? 'label-dc-cur' : 'label-dc';?> en">
-										<?php echo $cur_price;?>
-										<?php echo $dc;?>%
-									</div>
-								<?php } ?>
-							</div>
-						<?php } ?>
-						<?php if($wset['shadow']) echo apms_shadow($wset['shadow']); //그림자 ?>
-						<div class="list-content">
-							<?php if($wset['star']) { ?>
-								<div class="list-star text-center">
-									<?php echo apms_get_star($list[$i]['it_use_avg'], 'fa-2x '.$wset['scolor']); //평균별점 ?>
-								</div>
-							<?php } ?>
-							<strong>
-								<a href="<?php echo $list[$i]['href'];?>">
-									<?php echo $list[$i]['it_name'];?>
-								</a>
-							</strong>
-							<?php if($list[$i]['it_basic']) { ?>
-								<div class="list-desc text-center text-muted">
-									<?php echo $list[$i]['it_basic']; ?>
-								</div>
-							<?php } ?>
-							<div class="list-details">
-								<div class="pull-left en font-13 text-muted">
-									<?php if($wset['cmt']) { ?>
-										<i class="fa fa-comment"></i> 
-										<?php echo ($list[$i]['pt_comment']) ? '<span class="red">'.number_format($list[$i]['pt_comment']).'</span>' : 0;?>
-									<?php } ?>
-									<?php if($wset['buy']) { ?>
-										&nbsp;
-										<i class="fa fa-shopping-cart"></i> <?php echo ($list[$i]['it_sum_qty']) ? '<span class="blue">'.number_format($list[$i]['it_sum_qty']).'</span>' : 0;?>
-									<?php } ?>
-									<?php if($list[$i]['it_point']) { ?>
-										&nbsp;
-										<i class="fa fa-gift"></i> 
-										<span class="green"><?php echo ($list[$i]['it_point_type'] == 2) ? $list[$i]['it_point'].'%' : number_format(get_item_point($list[$i]));?></span>
-									<?php } ?>
-								</div>
-								<div class="pull-right font-16 en">
-									<b><?php echo ($list[$i]['it_tel_inq']) ? 'Call' : number_format($list[$i]['it_price']);?></b>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<?php if($wset['sns']) { ?>
-								<div class="list-sns">
-									<?php 
-										$sns_url  = G5_SHOP_URL.'/item.php?it_id='.$list[$i]['it_id'];
-										$sns_title = get_text($list[$i]['it_name'].' | '.$config['cf_title']);
-										$sns_img = $list_skin_url.'/img';
-										echo  get_sns_share_link('facebook', $sns_url, $sns_title, $sns_img.'/sns_fb_s.png').' ';
-										echo  get_sns_share_link('twitter', $sns_url, $sns_title, $sns_img.'/sns_twt_s.png').' ';
-										echo  get_sns_share_link('googleplus', $sns_url, $sns_title, $sns_img.'/sns_goo_s.png').' ';
-										echo  get_sns_share_link('kakaostory', $sns_url, $sns_title, $sns_img.'/sns_kakaostory_s.png').' ';
-										echo  get_sns_share_link('kakaotalk', $sns_url, $sns_title, $sns_img.'/sns_kakao_s.png').' ';
-										echo  get_sns_share_link('naverband', $sns_url, $sns_title, $sns_img.'/sns_naverband_s.png').' ';
-									?>
-								</div>
-							<?php } ?>
-						</div>
-					</div>
-				</div>
-			<?php } ?>
-			<div class="clearfix"></div>
-		</div>
-	<?php if (!$i) { ?>
-		<div class="text-center text-muted list-none">등록된 자료가 없습니다.</div>
-	<?php } ?>
-</div>
-
-<div style="list-btn">
-	<?php if($total_page > 1) { ?>
-		<div class="list-page pull-left">
-			<ul class="pagination pagination-sm en">
-				<?php echo apms_paging($write_pages, $page, $total_page, $list_page); ?>
-			</ul>
-			<div class="clearfix"></div>
-		</div>
-	<?php } ?>
-	<div class="pull-right">
-		<div class="btn-group">
-			<?php if ($is_event) { ?>
-				<a class="btn btn-color btn-sm" href="./event.php"><i class="fa fa-gift"></i> 이벤트</a>
-			<?php } ?>
-			<?php if ($write_href) { ?>
-				<a class="btn btn-black btn-sm" href="<?php echo $write_href;?>"><i class="fa fa-upload"></i><span class="hidden-xs"> 등록</span></a>
-			<?php } ?>
-			<?php if ($admin_href) { ?>
-				<a class="btn btn-black btn-sm" href="<?php echo $admin_href;?>"><i class="fa fa-th-large"></i><span class="hidden-xs"> 관리</span></a>
-			<?php } ?>
-			<?php if ($config_href) { ?>
-				<a class="btn btn-black btn-sm" href="<?php echo $config_href;?>"><i class="fa fa-cog"></i><span class="hidden-xs"> 설정</span></a>
-			<?php } ?>
-			<?php if($setup_href) { ?>
-				<a class="btn btn-black btn-sm win_memo" href="<?php echo $setup_href;?>"><i class="fa fa-cogs"></i><span class="hidden-xs"> 스킨설정</span></a>
-			<?php } ?>
-			<?php if ($rss_href) { ?>
-				<a class="btn btn-color btn-sm" title="카테고리 RSS 구독하기" href="<?php echo $rss_href;?>" target="_blank"><i class="fa fa-rss fa-lg"></i></a>
-			<?php } ?>
-		</div>
-		<div class="h30"></div>
-	</div>
-	<div class="clearfix"></div>
-</div>
-<?php */?>
