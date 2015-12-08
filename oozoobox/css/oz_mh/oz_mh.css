@@ -506,8 +506,15 @@ fieldset legend{display: none;}
 .oz_filter .first{margin-left:20px;}
 .f_ico_arrow_d {width:10px; height:9px; position:absolute; top:8px; right:4px; display:inline-block;  background:url('/images/oz_filter_ico.png' ) no-repeat 0 0;}
 .oz_filter a:hover .f_ico_arrow_d{background:url('/images/oz_filter_ico.png' ) no-repeat -9px 0;}
+
 .f_ico_arrow_u {width:10px; height:9px; position:absolute; top:7px; right:4px; display:inline-block;  background:url('/images/oz_filter_ico.png' ) no-repeat -18px 0;}
 .oz_filter a:hover .f_ico_arrow_u {background:url('/images/oz_filter_ico.png' ) no-repeat -26px 0;}
+
+/*1*/
+
+.filter_sort_on {color:#ea5b0c; background-color:#ffe4d5; text-decoration:none; background:url('/images/oz_filter_ico.png' ) no-repeat -9px 0;}
+
+
 .filter_type_store, .filter_type_big, .filter_type_small {float:left; padding:0 5px 0 15px; margin-left:-1px; position:relative; display:inline-block; overflow:hidden; background-color:#fff; border:#ccc 1px solid;}
 
 a.filter_type_big_on, a.filter_type_small_on {float:left; padding:0 5px 0 15px; margin-left:-1px; position:relative; display:inline-block; overflow:hidden; color:#ea5b0c; background-color:#ffe4d5; text-decoration:none; border:#ccc 1px solid;}
@@ -569,7 +576,7 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 {.list_type_album {width: 1190px;}
 .list_type_album .list_album {height: 375px;}
 .list_type_album .list_album_item  {width: 283px; margin-right: 16px; margin-bottom: 20px;}
-.list_type_album .album_card {width: 100%; height: 375px;}
+.list_type_album .album_card {width: 283px; height: 375px;}
 .list_type_album .last_item {margin-right: 0px;}
 .list_type_album .album_card .album_item_pic {height: 283px;}
 .oz_wonderful_con .card_item .item_tag {width:283px;}
@@ -663,16 +670,22 @@ p.detail_total_price {position:relative; padding:5px 0; margin:15px 0; border-to
 /**상세보기 제품 정보, 게시판**/
 #detail_container{float:left; width:990px; margin-top:30px;}
 .detail_tabs {width:990px; height:40px; border-top:1px solid #ddd; font:bold 14px/32px Tahoma, '微软雅黑', sans-serif;}
-.detail_tabs li {cursor:pointer; float:left; margin:0 60px; border-top:3px solid #fff;}
+.detail_tabs li {cursor:pointer; float:left; width:178px; margin:0 10px; border-top:3px solid #fff; text-align:center;}
 .detail_tabs .active{color:#f47a22; border-top:2px solid #f47a22;}
 .detail_tabs .tap_no {font-size:12px; font-weight:normal;}
-
 .detail_tab_content {float:left; position:relative;}
 .tab_content_warp {float:left; width:988px; border:1px solid #ddd; position:relative;}
 .detail_tab_content h4.description {margin:50px auto 10px; text-align:center; padding:10px 0; width:850px; font-size:20px; border-bottom:2px solid #ddd; font-weight:bold; color:#727272;}
 .detail_tab_content h4 span.strap {font-size:16px; margin-left:15px; color:#999999; font-weight:bold;}
 .detail_tab_content h4.tab_content_tit {margin:50px auto 10px; text-align:left; padding:10px 0; width:850px; font-size:20px; border-bottom:2px solid #ddd; font-weight:bold; color:#727272;}
 .detail_tab_content h4 span.strap {font-size:16px; margin-left:15px; color:#999999; font-weight:bold;}
+
+/***#tab2 商品详情 "상품상세보기"***/
+#detail_container .tab2_titcomment {width:850px; margin:0 0 20px 70px;}
+#detail_container a.linkmyafter {color:#f47a22;}
+#detail_container a:hover {color:#ea5b0c; font-weight:bold;}
+.tab_content_warp .tab2_view_after {width:850px; margin:15px 0 0 70px;}
+#btnWriteAfter {border:0; float:right; } 
 
 /***#tab3 询问/回复 "질문과 답변"***/
 #detail_tab3 {font:14px Tahoma, '微软雅黑';}
@@ -701,9 +714,9 @@ p.detail_total_price {position:relative; padding:5px 0; margin:15px 0; border-to
 #tblQnAList .question .subject {text-align:left; font-weight:bold;}
 
 #tblQnAList .answer td {padding:0 0 5px 0; color:#464646;}
-#tblQnAList .answer p.answer_question {padding:13px 30px 7px 93px; background:url('/images/icon_question.png') no-repeat 35px 15px; line-height:1.8;}
+#tblQnAList .answer p.answer_question {padding:13px 30px 7px 93px; background:url('/images/icon_question.png') no-repeat 30px 15px; line-height:1.8;}
 #tblQnAList .answer .answer_wrap {padding-top:5px; border-top:1px dashed #d4d4d4;}
-#tblQnAList .answer .answer_wrap p.answer_answer {padding:9px 30px 7px 93px; background:#f3f5fb url('/images/icon_answer.png') no-repeat 35px 15px; line-height:1.8;}
+#tblQnAList .answer .answer_wrap p.answer_answer {padding:9px 30px 7px 93px; background:#f3f5fb url('/images/icon_answer.png') no-repeat 30px 15px; line-height:1.8;}
  
 /***#tab4 卖家信息 "판매자 정보"***/
 #detail_tab4 {font:14px/1.8em Tahoma, '微软雅黑';}

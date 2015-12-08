@@ -167,11 +167,11 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                 <li rel="detail_tab2">用户评价 <span class="tap_no">(110)</span></li>
                 <li rel="detail_tab3">询问/回复</li>
                 <li rel="detail_tab4">卖家信息</li>
-                <li rel="detail_tab5">取消/换货/退货</li>
+                <li rel="detail_tab5">取消/换货/退货 <span class="tap_no">(18)</span></li>
             </ul>
                         
             <div class="detail_tab_container">
-            	<!--s: 商品详情(상품상세보기) -->
+            	<!--s: #tab1 商品详情 "상품상세보기" -->
                 <div id="detail_tab1" class="detail_tab_content">
 					<div class="tab_content_warp">
                         <h4 class="description">商品详情  <span class="strap">Description</span></h4>
@@ -184,20 +184,21 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                     	<img alt="후기보러가기" src="/images/detail_btn_tab1.png"/>
                     </button>
                 </div>
-                <!--e: 商品详情(상품상세보기) -->
+                <!--e: #tab1 商品详情 "상품상세보기" -->
+                <!--s: #tab2 商品详情 "상품상세보기" -->
                 <div id="detail_tab2" class="detail_tab_content">
-                    
-                    <a id='openClose' href='#'>Open All</a>                    
-                    
-                    <div class='question'>Question 1</div>
-                    <div class='answer'>Answer 1</div>
-                    
-                    <div class='question'>Question 2</div>
-                    <div class='answer'>Answer 2</div>
-                    
-                    <div class='question'>Question 3</div>
-                    <div class='answer'>Answer 3</div>
-
+					<div class="tab_content_warp">
+                        <h4 class="tab_content_tit">用户评价 <span class="strap">Comment</span></h4>
+                        <p class="tab2_titcomment">상품평은 구매완료 후 <a href="#" class="linkmyafter">수취확인</a>에서 작성하실 수 있습니다. 광고, 비방 제품과 관계없는 애용, 타 사이트 및 가격비교, 기타 통신예절에 어긋나거나 OOZOO BOX의 취지와 맞지 않은 글은 예고없이 삭제 및 수정될 수 있습니다.</p>
+                        <div class="tab2_view_after">
+                            <button id="btnWriteAfter" type="submit">
+                                <img alt="후기보러가기" src="/images/btn_tab2_writeafter.png"/>
+                            </button>                        
+                        </div>
+                    </div>
+                    <button id="btnAfter" type="submit">
+                    	<img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
+                    </button>         
                 </div>
                 <!-- #tab2 -->
                 <!--s: #tab3 询问/回复 "질문과 답변"-->
@@ -311,6 +312,9 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                         </table>
                         <!--e: QnA list-->
                     </div>
+                    <button id="btnAfter" type="submit">
+                    	<img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
+                    </button>                             
                 </div>
                 <!--e: #tab3 询问/回复 "질문과 답변"-->
                 <!--s: #tab4 卖家信息 "판매자 정보"-->
