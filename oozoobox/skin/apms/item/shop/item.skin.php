@@ -1,6 +1,5 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
-
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
 add_stylesheet('<link rel="stylesheet" href="'.$item_skin_url.'/style.css" media="screen">', 0);
 
@@ -40,772 +39,513 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
 
 ?>
 
-<?php if($nav_title) { ?>
-	<aside class="item-nav">
-		<span class="page-nav pull-right text-muted">
-			<i class="fa fa-home"></i> 홈
-			<?php
-				if($is_nav) {		
-					$nav_cnt = count($nav);
-					for($i=0;$i < $nav_cnt; $i++) { 
-			?>
-					>
-					<a href="./list.php?ca_id=<?php echo $nav[$i]['ca_id'];?>">
-						<span class="text-muted"><?php echo $nav[$i]['name'];?>(<?php echo $nav[$i]['cnt'];?>)</span>
-					</a>
-				<?php } ?>
-			<?php } else {
-				echo ($page_nav1) ? ' > '.$page_nav1 : '';
-				echo ($page_nav2) ? ' > '.$page_nav2 : '';
-				echo ($page_nav3) ? ' > '.$page_nav3 : '';
-				} 
-			?>
-		</span>
-		<h3 class="div-title-underbar">
-			<span class="div-title-underbar-bold border-color">
-				<?php echo $nav_title;?>
-			</span>
-		</h3>
-	</aside>
-<?php } ?>
 
-<?php echo $it_head_html; // 상단 HTML; ?>
+<!--s: 상세보기-->
+<div id="oz_detail_wrap">
+	<!--s: 상세보기 wrap-->
+    <div class="oz_detail_main">
+    	<!--s: 상세보기 제품 사진, 가격정보-->
+    	<div class="detail_good">
+        	<!--s: 제품 사진 보기-->
+        	<div class="detail_good_pic">
+            	<div class="detail_good_slide_big">
+                	<img src="/images/detail_good_slide_big_01.png" alt="슬라이드 큰 이미지"/>
+                </div>
+                <ul class="detail_good_slide_small">
+                	<li><img src="/images/detail_good_slide_small_01.png" alt="슬라이드 작은 이미지"/></li>
+                    <li><img src="/images/detail_good_slide_small_02.png" alt="슬라이드 작은 이미지"/></li>
+                    <li><img src="/images/detail_good_slide_small_03.png" alt="슬라이드 작은 이미지"/></li>
+                    <li><img src="/images/detail_good_slide_small_04.png" alt="슬라이드 작은 이미지"/></li>
+                    <li class="last"><img src="/images/detail_good_slide_small_05.png" alt="슬라이드 작은 이미지"/></li>
+                </ul>
+            </div>
+            <!--e: 제품 사진 보기-->
 
-<div class="item-head">
-	<div class="row">
-		<div class="col-sm-6">
-			<div class="item-image">
-            
-                <? if($it[it_1]){?>
-                <iframe height=409 width=409 src="http://player.youku.com/embed/<?=$it[it_1]?>==" frameborder=0 allowfullscreen></iframe>           
-                <? }else{ ?>
-				<a href="<?php echo $item_image_href;?>" id="item_image_href" class="popup_item_image" target="_blank">
-					<img id="item_image" src="<?php echo $item_image;?>" alt="">
-				</a>
-                <? } ?>
-				<?php if($wset['shadow']) echo apms_shadow($wset['shadow']); //그림자 ?>
-			</div>
-			<div class="item-thumb text-center">
-			<?php 
-				for($i=0; $i < count($thumbnails); $i++) { 
-					echo $thumbnails[$i]; 
-				} 
-			?>
-			</div>
-			<script>
-				$(function(){
-					$(".thumb_item_image").hover(function() {
-						var img = $(this).attr("ref");
-						var url = $(this).attr("href");
-						$("#item_image").attr("src", img);
-						$("#item_image_href").attr("href", url);
-						return true;
-					});
-					// 이미지 크게보기
-					$(".popup_item_image").click(function() {
-						var url = $(this).attr("href");
-						var top = 10;
-						var left = 10;
-						var opt = 'scrollbars=yes,top='+top+',left='+left;
-						popup_window(url, "largeimage", opt);
+            <!--s: 제품 가격 정보-->
+            <div class="detail_good_info">
+                <h3>Plum Organics 菠菜苹果甘蓝口味磨牙饼干 84克</h3>
+                <table summary="해당상품에 대한 정보 및 옵션선택 영역입니다. 원산지, 판매국가, 배송구분, 스크랩, 추가정보 항목과 해당 상품에 대한 옵션선택 및 가격정보 바로구매, 장바구니 담기 위시리스트 등록 기능이 있습니다." class="good_info_satisfy">
+                    <colgroup>
+                        <col style="width:65px;">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr class="good_info_satisfy">
+                            <th scope="row">满意度</th>
+                            <td>
+                                <span class="good_info_satisfy_grade">96%</span>
+                                <span class="good_info_satisfy_star">
+                                	<span style="width: 96%"></span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr class="good_info_scrap">
+                            <th scope="row">简报</th>
+                            <td>
+                                <a href="#">
+                                	<img alt="qq" src="/images/detail_sns_01.png"/>
+                                </a> 
+                                <a href="#">
+                                	<img class="space" alt="人人网" src="/images/detail_sns_02.png"/>
+                                </a>
+                                <a href="#">
+                                	<img class="space" alt="微博" src="/images/detail_sns_03.png"/>
+                                </a> 
+                                <a href="#">
+                                	<img class="space" alt="微信" src="/images/detail_sns_04.png"/>
+                                </a>                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">送货</th>
+                            <td>商店</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                            	<label for="option-select">选择</label>
+                            </th>
+                            <td>
+                                <div class="position-relative">
+                                    <select title="옵션선택" id="btnChoiceOption">
+                                        <option value="01" selected="selected">01시</option>
+                                        <option value="02">02시</option>
+                                        <option value="03">03시</option>
+                                        <option value="04">04시</option>
+                                        <option value="05">05시</option>
+                                        <option value="06">06시</option>
+                                        <option value="07">07시</option>
+                                        <option value="08">08시</option>
+                                        <option value="09">09시</option>
+                                        <option value="10">10시</option>
+                                        <option value="11">11시</option>
+                                        <option value="12">12시</option>
+                                        <option value="13">13시</option>
+                                    </select>                       
+                                </div>
+                                <p class="detail_total_price">
+                                    <div class="detail_total_price_info">
+                                        <span class="detail_total">选择商品 合算 :</span> 
+                                        <span class="item_total_price">
+                                            <i class="price_rmb">¥</i>
+                                            <span class="price_integer">59</span>
+                                            <span class="price_decimal">.9</span>
+                                        </span> 
+                                    </div>                                  
+                                </p>
+                                <div class="choice-control">
+                                    <button id="btnBuyNow" type="submit">
+                                    <img alt="바로구매" src="/images/detail_btn_01.png"/>
+                                    </button>
+                                    <button id="btnAddToCart" type="button">
+                                    <img alt="장바구니 담기" src="/images/detail_btn_02.png"/>
+                                    </button>
+                                    <button id="btnAddToWishList" type="button">
+                                    <img alt="위시 리스트" src="/images/detail_btn_03.png"/>
+                                    </button>
+                                    <button id="btnAddToSend" type="button">
+                                    <img alt="조르기" src="/images/detail_btn_04.png"/>
+                                    </button>                                       
+                                </div>
+                                <div style="padding-left: 3px;"><br>
+                                    <a href="#">
+                                    	<img alt="이 업체상품 모두보기" src=""/>
+                                    </a>          
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--e: 제품 가격 정보-->
+        </div>
+        <!--e: 상세보기 제품 사진, 가격정보-->
 
-						return false;
-					});
-				});
-			</script>
-		</div>
-		<div class="col-sm-6">
-			<h1><?php echo stripslashes($it['it_name']); // 상품명 ?></h1>
-			<?php if($it['it_basic']) { // 기본설명 ?>
-				<p class="help-block"><?php echo $it['it_basic']; ?></p>
-			<?php } ?>
-			<form name="fitem" method="post" action="<?php echo $action_url; ?>" class="form item-form" role="form" onsubmit="return fitem_submit(this);">
-			<input type="hidden" name="it_id[]" value="<?php echo $it_id; ?>">
-			<input type="hidden" name="it_msg1[]" value="<?php echo $it['pt_msg1']; ?>">
-			<input type="hidden" name="it_msg2[]" value="<?php echo $it['pt_msg2']; ?>">
-			<input type="hidden" name="it_msg3[]" value="<?php echo $it['pt_msg3']; ?>">
-			<input type="hidden" name="sw_direct">
-			<input type="hidden" name="url">
+        <!--s:상세보기 제품 정보, 게시판-->
+        <div id="detail_container">
+            <ul class="detail_tabs">
+                <li class="active" rel="detail_tab1">商品详情</li>
+                <li rel="detail_tab2">用户评价 <span class="tap_no">(110)</span></li>
+                <li rel="detail_tab3">询问/回复</li>
+                <li rel="detail_tab4">卖家信息</li>
+                <li rel="detail_tab5">取消/换货/退货</li>
+            </ul>
+                        
+            <div class="detail_tab_container">
+            	<!--s: 商品详情(상품상세보기) -->
+                <div id="detail_tab1" class="detail_tab_content">
+					<div class="tab_content_warp">
+                        <h4 class="description">商品详情  <span class="strap">Description</span></h4>
+                        <img src="/images/detail_01_01.png" alt="상품소개01"/>
+                        <img src="/images/detail_01_02.png" alt="상품소개02"/>
+                        <img src="/images/detail_01_03.png" alt="상품소개03"/>
+                        <img src="/images/detail_01_04.png" alt="상품소개04"/>
+                    </div>
+                    <button id="btnAfter" type="submit">
+                    	<img alt="후기보러가기" src="/images/detail_btn_tab1.png"/>
+                    </button>
+                </div>
+                <!--e: 商品详情(상품상세보기) -->
+                <div id="detail_tab2" class="detail_tab_content">
+                    
+                    <a id='openClose' href='#'>Open All</a>                    
+                    
+                    <div class='question'>Question 1</div>
+                    <div class='answer'>Answer 1</div>
+                    
+                    <div class='question'>Question 2</div>
+                    <div class='answer'>Answer 2</div>
+                    
+                    <div class='question'>Question 3</div>
+                    <div class='answer'>Answer 3</div>
 
-			<table class="div-table table">
-			<col width="120">
-			<tbody>
-			<?php if ($it['it_use_avg']) { ?>
-				<tr><th scope="row">고객평점</th><td><?php echo apms_get_star($it['it_use_avg'],'fa-lg red'); //평균별점 ?></td></tr>
-			<?php } ?>
-			<?php if ($it['it_maker']) { ?>
-				<tr><th scope="row">제조사</th><td><?php echo $it['it_maker']; ?></td></tr>
-			<?php } ?>
-			<?php if ($it['it_origin']) { ?>
-				<tr><th scope="row">원산지</th><td><?php echo $it['it_origin']; ?></td></tr>
-			<?php } ?>
-			<?php if ($it['it_brand']) { ?>
-				<tr><th scope="row">브랜드</th><td><?php echo $it['it_brand']; ?></td></tr>
-			<?php } ?>
-			<?php if ($it['it_model']) { ?>
-				<tr><th scope="row">모델</th><td><?php echo $it['it_model']; ?></td></tr>
-			<?php } ?>
-			<?php if (!$it['it_use']) { // 판매가능이 아닐 경우 ?>
-				<tr><th scope="row">판매가격</th><td>판매중지</td></tr>
-			<?php } else if ($it['it_tel_inq']) { // 전화문의일 경우 ?>
-				<tr><th scope="row">판매가격</th><td>전화문의</td></tr>
-			<?php } else { // 전화문의가 아닐 경우?>
-				<?php if ($it['it_cust_price']) { ?>
-					<tr><th scope="row">시중가격</th><td><?php echo display_price($it['it_cust_price']); ?></td></tr>
-				<?php } // 시중가격 끝 ?>
-				<tr><th scope="row">판매가격</th><td>
-						<?php echo display_price(get_price($it)); ?>
-						<input type="hidden" id="it_price" value="<?php echo get_price($it); ?>">
-				</td></tr>
-			<?php } ?>
-			<?php
-				/* 재고 표시하는 경우 주석 해제
-				<tr><th scope="row">재고수량</th><td><?php echo number_format(get_it_stock_qty($it_id)); ?> 개</td></tr>
-				*/
-			?>
-			<?php if ($config['cf_use_point']) { // 포인트 사용한다면 ?>
-				<tr>
-				<th scope="row">포인트</th>
-				<td>
-					<?php
-						if($it['it_point_type'] == 2) {
-							echo '구매금액(추가옵션 제외)의 '.$it['it_point'].'%';
-						} else {
-							$it_point = get_item_point($it);
-							echo number_format($it_point).'점';
-						}
-					?>
-				</td>
-				</tr>
-			<?php } ?>
-			<?php if($it['it_buy_min_qty']) { ?>
-				<tr><th>최소구매수량</th><td><?php echo number_format($it['it_buy_min_qty']); ?> 개</td></tr>
-			<?php } ?>
-			<?php if($it['it_buy_max_qty']) { ?>
-				<tr><th>최대구매수량</th><td><?php echo number_format($it['it_buy_max_qty']); ?> 개</td></tr>
-			<?php } ?>
-			<?php
-				$ct_send_cost_label = '배송비결제';
+                </div>
+                <!-- #tab2 -->
+                <!--s: #tab3 询问/回复 "질문과 답변"-->
+                <div id="detail_tab3" class="detail_tab_content">
+					<div class="tab_content_warp">
+                        <h4 class="tab_content_tit">询问/回复  <span class="strap">Question & Answer</span></h4>
+						<!--s: QnA search 버튼-->
+                        <div class="tab_qna_act">
+                        	<button id="btnWriteQna" type="button">
+                            	<img src="/images/detail_btn_tab3_qna.png" alt="询问 질문하기"/>
+                            </button>
+                            <form id="QnaSearch" action=""  method="" autocomplete="off">
+                            	<span class="search-area">
+                                	<input name="Keyword" class="txt" id="txtQnaKeyword" type="text">
+                                    </input>
+                                    <button id="btnQnaSearch" type="submit">
+                                    	<img src="/images/detail_btn_tab3_search.png" alt="检索 검색하기"/>
+                                    </button>
+                                </span>
+                            	<button id="btnFilter" type="button">
+                                	<img src="/images/detail_btn_tab3_myquestion.png" alt="察看我询问的 내가 쓴글 보기"/>
+                                </button>
+                                <button id="btnShowALLQna" type="button">
+                                	<img src="/images/detail_btn_tab3_allquestion.png" alt="察看全部 QnA 전부보기"/>
+                                </button>
+                            </form>
+                        </div>
+                        <!--e: QnA search 버튼-->
+                        <!--s: QnA wirte-->
+                        <form class="tab3_qna_write" id="qna_write_panel" style="display:none;" action="" method="post" autocomplete="off" >
+                        	<p class="section">
+                            	<label for="subject-write">题目</label>
+                                <input name="subject" class="txt" id="subject-write" style="width:630px;" type="text" size="90"></input>
+                            </p>
+                        	<p class="c_subject">
+                            	<label for="text-write">内容</label>
+                                <textarea name="body" id="text-write" rows="6" cols="120"></textarea>
+                                <button class="regist-btn" type="">提问</button>
+                            </p>                            
+                        </form>
+                        <!--e: QnA wirte-->
+                        <!--s: QnA list-->
+                        <table class="tab3_qnalist" summary="판매자들이 입력한 정보를 보여주는 공간입니다.">
+                        	<colgroup>
+                            	<col width="90px"></col>
+                                <col width="460px"></col>
+                                <col width="100px"></col>
+                                <col width="100px"></col>
+                            	<col width="100px"></col>                           
+                            </colgroup>
+                            <thead>
+                            	<tr>
+                                	<th scope="col">번호</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">아이디</th>
+                                    <th scope="col">답변상태</th>
+                                    <th scope="col">작성일</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tblQnAList">
+                            	<tr class="question">
+                                	<td>2</td>
+                                    <td class="subject">
+                                    	<a class="view-qna-detail">재입고 문의</a>
+                                    </td>
+                                    <td>khjk**</td>
+                                    <td class="answer-stats">
+                                    	<img src="/images/icon_answer_complete.png" alt="답변완료"/>
+                                    </td>
+                                    <td>2015-12-03</td>
+                                </tr>
+                                <tr class="answer">
+                                	<td colspan="5">
+                                    <p class="answer_question">이 상품 재입고는 언제쯤 되나요?<br>
+                                    그리고 재입고 알림 신청은 어디서 하는건가요? </p>
+                                    <div class="answer_wrap">
+                                    	<p class="answer_answer">안녕하세요 고객님. 상품 담당자입니다.<br><br>
+                                        현재 대략적인 일정이 나오지 않아서 예약 판매를 하지 않는데요,<br>
+                                        조만간 일정이 정해지면 판매 시작 하겠습니다.<br><br>
+                                        [재입고 알림신청]을 해주시면 예약 주문시 재고 등록되었다고 안내 메일이 발송 될 거예요.<br><br>
+                                        문의주셔서 감사합니다.<br>
+                                        편안한 하루 되세요.
+                                        </p>
+                                    </div>
+                                    </td>
+                                </tr>      
+                            	<tr class="question">
+                                	<td>1</td>
+                                    <td class="subject">
+                                    	<a class="view-qna-detail">배송문의</a>
+                                    </td>
+                                    <td>everlist**</td>
+                                    <td class="answer-stats">
+                                    	<img src="/images/icon_answer_waiting.png" alt="미답변"/>
+                                    </td>
+                                    <td>2015-11-27</td>
+                                </tr>
+                                <tr class="answer">
+                                	<td colspan="5">
+                                    <p class="answer_question">저두여~~언제 배송 되나요 기다리다 목이 기린 되겠져여 ㅋㅋ</p>
+                                    <div class="answer_wrap">
+                                    	<p class="answer_answer">안녕하세요 고객님. 상품 담당자입니다.<br><br>
+                                        27일 출고되었으니 송장조회 확인 부탁드립니다.<br><br>
+                                        문의주셔서 감사합니다.<br>
+                                        편안한 하루 되세요.
+                                        </p>
+                                    </div>
+                                    </td>
+                                </tr>                                
+                            </tbody>
+                        </table>
+                        <!--e: QnA list-->
+                    </div>
+                </div>
+                <!--e: #tab3 询问/回复 "질문과 답변"-->
+                <!--s: #tab4 卖家信息 "판매자 정보"-->
+                <div id="detail_tab4" class="detail_tab_content">
+                	<div class="tab_content_warp">
+                        <h4 class="tab_content_tit">卖家信息  <span class="strap">Sellers Information</span></h4>
+                       	<table class="tab_seller" summary="판매자들이 입력한 정보를 보여주는 공간입니다.">
+                        	<colgroup>
+                            	<col width="18%"></col>
+                                <col width="82%"></col>
+                            </colgroup>
+                            <tbody>
+                            	<tr>
+                                	<th scope="row">卖家</th>
+                                    <td>홈플러스 온라인몰</td>
+                                </tr>
+                            	<tr>
+                                	<th scope="row">商户/代表人</th>
+                                    <td>홈플러스(주)/도성환</td>
+                                </tr>
+                            	<tr>
+                                	<th scope="row">联系方式</th>
+                                    <td>1577-3355</td>
+                                </tr> 
+                             	<tr>
+                                	<th scope="row">CS咨询时间</th>
+                                    <td>09시~18시</td>
+                                </tr> 
+                             	<tr>
+                                	<th scope="row">电子邮件</th>
+                                    <td>ehmp224@homeplus.co.kr</td>
+                                </tr>                               
+                            	<tr>
+                                	<th scope="row">传真</th>
+                                    <td>02-3459-8005</td>
+                                </tr> 
+                            	<tr>
+                                	<th scope="row">商业号码</th>
+                                    <td>220-81-603348</td>
+                                </tr>
+                            	<tr>
+                                	<th scope="row">通信销售申报号码</th>
+                                    <td>강남-1872</td>
+                                </tr>
+                                <tr>
+                                	<th scope="row">营业所在地</th>
+                                    <td>서울 강남구 테헤란로 301 (역삼동, 상정개발17층)</td>
+                                </tr>                                                                                                                                                  
+                            </tbody>
+                        </table>
+                    </div>
+                    <button id="btnAfter" type="submit">
+                    	<img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
+                    </button>                        
+                </div>
+                <!--e: #tab4 卖家信息 "판매자 정보"-->
+                <!--s: #tab5 取消/换货/退货 "교환/환불정책"-->
+                <div id="detail_tab5" class="detail_tab_content">
+                	<div class="tab_content_warp">
+                        <h4 class="tab_content_tit">取消/换货/退货  <span class="strap">Return Policy</span></h4>
+                        <span class="return_title">换货/退款政策</span>
+                        <ul class="detail_tab_return">
+                            <p>我们将在收到退回的货物后，给您退货和换货。因为是进口商品，将需要花费大量的时间和费用，所以请慎重决定。<br></p>
+                            <p class="tab_return_paragraph"><b>申请退换货之前，请确认以下注意事项。</b></p>
+                            <li>退货及退款申请仅限购买者。</li>                        
+                        	<li>请务必在收货后3个工作日以内完成在线申请，以便我们在系统中进行记录；并且需要申请退货时，请务必在收货后7个工作日以内，将货物返回物流中心。</li>
+                            <li>如因购买者自身原因需要退货的情况，运费由客户负担。</li>
+                            <li>如因商品质量问题需要退款的情况，请顾客先垫付配送费，我们收货确认后将进行退款处理。</li>
+                            <li>商品配送中取消订单的情况，退款将在商品回收后进行处理。但此前交易时产生的汇款手续费及各种手续费将无法返回，请注意。</li>                            
+                            <li>销售时标注有“不可退货”的商品，将不能因为顾客自身原因进行退货/退款。</li>                            
+                            <li>因顾客意外失误产生的损坏，将不能进行退换货。 </li>
+                              
+                            <p class="tab_return_paragraph"><b>不可退换货情况</b></p>            
+                            <li>收到商品后，7个工作日内（公休日/节假日除外）没有将其返还到达物流中心的情况。</li>                        
+                        	<li>收货后包装不是最初配送状态的情况。（包括赠品）</li>
+                            <li>商品留有适用痕迹（化妆品，食品等），或者产品有磨损痕迹（香水味等）的情况。</li>
+                            <li>商品留有洗濯痕迹的情况。</li>
+                            <li>针织类、浅色类、细致材质、饰品，不可退换货。</li>                            
+                            <li>商品断货的情况。</li>                            
+                            <li>订单制作及手工制作鞋的情况。</li>                
+                            <li>没有通过在线申请退换货后发送的情况。</li>                        
+                        	<li>证书或商品标签清除，损坏的情况。</li>
+                            <li>根据商品特征没有商品标签，说明书，表证书配送时，不能以此为理由退换货。</li>
+                            
+                            <p class="tab_return_paragraph"><b>退货 (顾客自身原因时)</b><br>
+                            如若因商品质量问题/配送失误产生退货时，可以100%退款；但因购买者不喜欢或者其他个人问题不能使用时，退货运费将由顾客承担。(国际运费及国内，韩国当地运费)</p>            
+                            <li>退货费用 : 国内运费+国际运费+韩国当地运费+关税 </li>                        
 
-				if($it['it_sc_type'] == 1)
-					$sc_method = '무료배송';
-				else {
-					if($it['it_sc_method'] == 1)
-						$sc_method = '수령후 지불';
-					else if($it['it_sc_method'] == 2) {
-						$ct_send_cost_label = '<label for="ct_send_cost">배송비결제</label>';
-						$sc_method = '<select name="ct_send_cost" id="ct_send_cost" class="form-control input-sm">
-										  <option value="0">주문시 결제</option>
-										  <option value="1">수령후 지불</option>
-									  </select>';
-					}
-					else
-						$sc_method = '주문시 결제';
-				}
-			?>
-			<tr>
-				<th><?php echo $ct_send_cost_label; ?></th><td><?php echo $sc_method; ?></td>
-			</tr>
-			</tbody>
-			</table>
+                            <p class="tab_return_paragraph"><b>换货</b><br>因配送失误，需要换货的情况下，所有的费用由盼达网来承担。  一般换货，请在收货后的七个工作日内提出申请，并且费用将由买家承担。<br>
+                            换货费用 : (国内运费+国际运费+韩国当地运费+关税) X 2 <br>
+                            <b>可以换货情况</b></p>
+                            <li>同一商品尺寸</li>                        
+                        	<li>同一商品颜色</li>
+                            <li>顾客喜好变更换货 </li>
+                            
+                            <p class="tab_return_paragraph"><b>退款</b></p>
+                            <li>申请退款从收货后，3日以内通过在线申请完成，但以下情况下退款费用不需要顾客承担。<br>
+                            1) 配送时发生商品损坏的情况。<br>
+                            2) 配送的商品和订购的不同或有质量问题的情况。<br>
+                            以上事由退款，将在收回商品后处理退款。（包括赠品等）</li>
+                            <li>国际配送前退货时，韩国当地运费由顾客承担。<br>
+                            顾客承担费用：韩国当地费用</li>
+                            <li>国际配送后申请退款时国际运费+韩国当地运费由顾客承担。<br>
+                            顾客承担费用: 国际运费+韩国当地运费+关税</li>
+                            <li>签收商品后申请退款时国际运费，韩国当地运费，国内运费由顾客承担，这将在商品回收后减取费用后，进行退款。<br>
+                            顾客承担费用: 国际运费+韩国当地运费+国内运费+关税</li>
+                            <li>退款时不可退还手续费，请注意。 </li>    
+                            
+                            <p class="tab_return_paragraph"><b>断货情况</b></p>
+                            <li>若商品断货时，负责人会第一时间通过便条方式通知顾客，并退款至预付款，会员可以在我的账户中查询相关状态。</li>              
+                        </ul>
+                        
+                        <hr>
+                        <span class="return_title">售后服务</span>
+                        <ul class="detail_tab_return">
+                            <p class="tab_return_paragraph"><b>OOZOOBOX郑重承诺：</b><br>
+                            自客户收到商品之日起（以签收日期为准），7日内提供退换货服务。<br>
+                            请注意：限时特卖商品暂不提供换货，只提供退货服务。</p>
+                                                        
+							<p class="tab_return_paragraph"><b>特别说明：</b><br>
+                            退回商品须未经穿着，商品及包装须和OOZOOBOX出售时一样，商品吊牌及配件齐全。如有发票及赠品，需一同寄回。<br>
+                            出于安全和卫生考虑，贴身用品如：内裤、内衣套装（文胸+内裤）、泳装、袜子（包括丝袜、连裤袜、运动袜、打底裤），一经签收，非质量问题不予退换货，请您谅解。<br>
+                            <b>以下情况将不提供退换货服务：</b></p>
+							<li>任何非OOZOOBOX出售的商品; </li>
+                           	<li>已使用的商品（如商品在使用过程中发生质量问题，则按照三包中的相关规定执行）；</li>
+                            <li>任何因非正常使用及保管导致损坏的商品（包括但不仅限于：不适合雨天穿着，不适合水洗，碰酸、碱、油等腐蚀性物质，触碰硬物、尖锐物体做不属于/不适合鞋款设计功能的运动、长时间高强度运动、人为破坏或经过不适当修理造成损坏等）；</li>
+                           	<li>商品的外包装破损，包裹填充物/品牌包装箱或外包装袋/鞋盒外直接缠胶带，商品附件、说明书、保修单、标签等有缺失。若商品有吊牌，请您不要剪掉或损坏吊牌，吊牌被剪掉或损坏，会直接影响退换服务</li>
+                            <li>已开具发票的商品，未将发票退回。</li>
+                            <li>购买时有赠品的商品，未将赠品退回。</li>
+                            <li>赠品不享受退换货服务（有质量问题除外）。</li>
+                            <li>已经标明为残次品或处理品的。</li>
+                            <li>出于安全和卫生考虑，贴身用品如:内裤、内衣套装（文胸+内裤）、泳装、袜子（包括丝袜、连裤袜、运动袜、打底裤），一经签收，非质量问题不予退换货。 </li>
+                            <li>数码配件类商品原厂包装打开，一次性封贴或胶条破损，产品已使用无质量问题不予退换货。</li>
+                            
+                            <p class="tab_return_paragraph"><b>办理退换货商品的退回方式：</b></p>
+                            <li>客户自行将商品邮寄回物流中心。</li>
+                            <li>寄回地址：请您务必按照在线退换货申请中提供的地址寄回，或咨询OOZOOBOX客服。</li>
+                            
+                            <p class="tab_return_paragraph"><b>关于寄回商品运费的说明：</b><br>
+                            如果由于产品本身质量问题造成的退换货，运费由OOZOOBOX承担，最多报销20元运费。在我们接到您退回的商品后，<br>会有专人为您办理。<br>
+                            由于款式、颜色、尺码、个人喜好等原因造成的退换货，将商品寄回到OOZOOBOX仓库的运费由客户自行承担，<br>再次发出的运费由OOZOOBOX公司承担。<br>
 
-			<div id="item_option">
-				<?php if($option_item) { ?>
-					<p>&nbsp; <b><i class="fa fa-check-square-o fa-lg"></i> 선택옵션</b></p>
-					<table class="div-table table">
-					<col width="120">
-					<tbody>
-					<?php echo $option_item; // 선택옵션	?>
-					</tbody>
-					</table>
-				<?php }	?>
-
-				<?php if($supply_item) { ?>
-					<p>&nbsp; <b><i class="fa fa-check-square-o fa-lg"></i> 추가옵션</b></p>
-					<table class="div-table table">
-					<col width="120">
-					<tbody>
-					<?php echo $supply_item; // 추가옵션 ?>
-					</tbody>
-					</table>
-				<?php }	?>
-
-				<?php if ($is_orderable) { ?>
-					<div id="it_sel_option">
-						<?php
-						if(!$option_item) {
-							if(!$it['it_buy_min_qty'])
-								$it['it_buy_min_qty'] = 1;
-						?>
-							<ul id="it_opt_added" class="list-group">
-								<li class="it_opt_list list-group-item">
-									<input type="hidden" name="io_type[<?php echo $it_id; ?>][]" value="0">
-									<input type="hidden" name="io_id[<?php echo $it_id; ?>][]" value="">
-									<input type="hidden" name="io_value[<?php echo $it_id; ?>][]" value="<?php echo $it['it_name']; ?>">
-									<input type="hidden" class="io_price" value="0">
-									<input type="hidden" class="io_stock" value="<?php echo $it['it_stock_qty']; ?>">
-									<div class="row">
-										<div class="col-sm-7">
-											<label>
-												<span class="it_opt_subj"><?php echo $it['it_name']; ?></span>
-												<span class="it_opt_prc"><span class="sound_only">(+0원)</span></span>
-											</label>
-										</div>
-										<div class="col-sm-5">
-											<div class="input-group">
-												<label for="ct_qty_<?php echo $i; ?>" class="sound_only">수량</label>
-												<input type="text" name="ct_qty[<?php echo $it_id; ?>][]" value="<?php echo $it['it_buy_min_qty']; ?>" id="ct_qty_<?php echo $i; ?>" class="form-control input-sm" size="5">
-												<div class="input-group-btn">
-													<button type="button" class="it_qty_plus btn btn-black btn-sm"><i class="fa fa-plus-circle fa-lg"></i><span class="sound_only">증가</span></button>
-													<button type="button" class="it_qty_minus btn btn-black btn-sm"><i class="fa fa-minus-circle fa-lg"></i><span class="sound_only">감소</span></button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<?php if($it['pt_msg1']) { ?>
-										<div style="margin-top:10px;">
-											<input type="text" name="pt_msg1[<?php echo $it_id; ?>][]" class="form-control input-sm" placeholder="<?php echo $it['pt_msg1'];?>">
-										</div>
-									<?php } ?>
-									<?php if($it['pt_msg2']) { ?>
-										<div style="margin-top:10px;">
-											<input type="text" name="pt_msg2[<?php echo $it_id; ?>][]" class="form-control input-sm" placeholder="<?php echo $it['pt_msg2'];?>">
-										</div>
-									<?php } ?>
-									<?php if($it['pt_msg3']) { ?>
-										<div style="margin-top:10px;">
-											<input type="text" name="pt_msg3[<?php echo $it_id; ?>][]" class="form-control input-sm" placeholder="<?php echo $it['pt_msg3'];?>">
-										</div>
-									<?php } ?>
-								</li>
-							</ul>
-							<script>
-							$(function() {
-								price_calculate();
-							});
-							</script>
-						<?php } ?>
-					</div>
-					<!-- 총 구매액 -->
-					<h4 style="text-align:center; margin-bottom:15px;">
-						총 금액 : <span id="it_tot_price">0원</span>
-					</h4>
-				<?php } ?>
-			</div>
-
-			<?php if($is_soldout) { ?>
-				<p id="sit_ov_soldout">재고가 부족하여 구매할 수 없습니다.</p>
-			<?php } ?>
-
-			<?php if ($is_orderable) { ?>
-				<div style="text-align:center; padding:12px 0;">
-					<ul class="item-buy-btn">
-					<li><input type="submit" onclick="document.pressed=this.value;" value="바로구매" class="btn btn-color btn-block"></li>
-					<li><input type="submit" onclick="document.pressed=this.value;" value="장바구니" class="btn btn-black btn-block"></li>
-					<li><a href="#" class="btn btn-black btn-block" onclick="apms_wishlist('<?php echo $it['it_id']; ?>'); return false;">위시리스트</a></li>
-					<li><a href="#" class="btn btn-black btn-block" onclick="apms_recommend('<?php echo $it['it_id']; ?>', '<?php echo $ca_id; ?>'); return false;">추천하기</a></li>
-					</ul>
-				</div>
-			<?php } if(!$is_orderable && $it['it_soldout'] && $it['it_stock_sms']) { ?>
-				<div style="text-align:center; padding:12px 0;">
-					<button type="button" onclick="popup_stocksms('<?php echo $it['it_id']; ?>','<?php echo $ca_id; ?>');" class="btn btn-primary">재입고알림(SMS)</button>
-				</div>
-			<?php } ?>
-			</form>
-
-			<script>
-				// BS3
-				$(function() {
-					$("select.it_option").addClass("form-control input-sm");
-					$("select.it_supply").addClass("form-control input-sm");
-				});
-
-				// 재입고SMS 알림
-				function popup_stocksms(it_id, ca_id) {
-					url = "./itemstocksms.php?it_id=" + it_id + "&ca_id=" + ca_id;
-					opt = "scrollbars=yes,width=616,height=420,top=10,left=10";
-					popup_window(url, "itemstocksms", opt);
-				}
-
-				// 바로구매, 장바구니 폼 전송
-				function fitem_submit(f) {
-					if (document.pressed == "장바구니") {
-						f.sw_direct.value = 0;
-					} else { // 바로구매
-						f.sw_direct.value = 1;
-					}
-
-					// 판매가격이 0 보다 작다면
-					if (document.getElementById("it_price").value < 0) {
-						alert("전화로 문의해 주시면 감사하겠습니다.");
-						return false;
-					}
-
-					if($(".it_opt_list").size() < 1) {
-						alert("선택옵션을 선택해 주십시오.");
-						return false;
-					}
-
-					var val, io_type, result = true;
-					var sum_qty = 0;
-					var min_qty = parseInt(<?php echo $it['it_buy_min_qty']; ?>);
-					var max_qty = parseInt(<?php echo $it['it_buy_max_qty']; ?>);
-					var $el_type = $("input[name^=io_type]");
-
-					$("input[name^=ct_qty]").each(function(index) {
-						val = $(this).val();
-
-						if(val.length < 1) {
-							alert("수량을 입력해 주십시오.");
-							result = false;
-							return false;
-						}
-
-						if(val.replace(/[0-9]/g, "").length > 0) {
-							alert("수량은 숫자로 입력해 주십시오.");
-							result = false;
-							return false;
-						}
-
-						if(parseInt(val.replace(/[^0-9]/g, "")) < 1) {
-							alert("수량은 1이상 입력해 주십시오.");
-							result = false;
-							return false;
-						}
-
-						io_type = $el_type.eq(index).val();
-						if(io_type == "0")
-							sum_qty += parseInt(val);
-					});
-
-					if(!result) {
-						return false;
-					}
-
-					if(min_qty > 0 && sum_qty < min_qty) {
-						alert("선택옵션 개수 총합 "+number_format(String(min_qty))+"개 이상 주문해 주십시오.");
-						return false;
-					}
-
-					if(max_qty > 0 && sum_qty > max_qty) {
-						alert("선택옵션 개수 총합 "+number_format(String(max_qty))+"개 이하로 주문해 주십시오.");
-						return false;
-					}
-
-					if (document.pressed == "장바구니") {
-						$.post("./itemcart.php", $(f).serialize(), function(error) {
-							if(error != "OK") {
-								alert(error.replace(/\\n/g, "\n"));
-								return false;
-							} else {
-								if(confirm("장바구니에 담겼습니다.\n\n바로 확인하시겠습니까?")) {
-									document.location.href = "./cart.php";
-								}
-							}
-						});
-						return false;
-					} else {
-						return true;
-					}
-				}
-
-				// Wishlist
-				function apms_wishlist(it_id) {
-					if(!it_id) {
-						alert("코드가 올바르지 않습니다.");
-						return false;
-					}
-
-					$.post("./itemwishlist.php", { it_id: it_id },	function(error) {
-						if(error != "OK") {
-							alert(error.replace(/\\n/g, "\n"));
-							return false;
-						} else {
-							if(confirm("위시리스트에 담겼습니다.\n\n바로 확인하시겠습니까?")) {
-								document.location.href = "./wishlist.php";
-							}
-						}
-					});
-
-					return false;
-				}
-
-				// Recommend
-				function apms_recommend(it_id, ca_id) {
-					if (!g5_is_member) {
-						alert("회원만 추천하실 수 있습니다.");
-					} else {
-						url = "./itemrecommend.php?it_id=" + it_id + "&ca_id=" + ca_id;
-						opt = "scrollbars=yes,width=616,height=420,top=10,left=10";
-						popup_window(url, "itemrecommend", opt);
-					}
-				}
-			</script>
-
-			<div class="pull-right">
-				<?php include_once(G5_SNS_PATH."/item.sns.skin.php"); ?>
-			</div>
-			<div class="clearfix"></div>
-
-			<?php if ($is_tag) { // 태그 ?>
-				<p class="item-tag"><i class="fa fa-tags"></i> <?php echo $tag_list;?></p>
-			<?php } ?>
-
-		</div>
-	</div>
+                            <b>&nbsp;&nbsp;&nbsp;注：</b>
+                            </p>
+                          	<li>图片及信息仅供参考，不属质量问题。因拍摄灯光及不同显示器色差等问题可能造成商品图片与实物有一定色差，不属于质量问题，一切以实物为准。</li>
+                            <li>OOZOOBOX不支持“到付”服务，请不要选择“到付”形式将商品寄回，请您谅解。</li>
+                          	<li>商品发生退换货时，订单运费将不予返还，请您谅解。</li>
+                        </ul>
+                        <br><br><br><br><br>
+                    </div>
+                    <button id="btnAfter" type="submit">
+                    	<img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
+                    </button>                    
+                </div>
+                <!--e: #tab5 取消/换货/退货 "교환/환불정책"-->              
+                
+            </div>
+        	<!-- .tab_container -->
+        </div> 
+        <!--e: 상세보기 제품 정보-->        
+    </div>
+    <!--e: 상세보기 wrap-->
 </div>
+<!--e: 상세보기-->
 
-<?php if($is_viewer || $is_link) { 
-	// 보기용 첨부파일 확장자에 따른 FA 아이콘 - array(이미지, 비디오, 오디오, PDF)
-	$viewer_fa = array("picture-o", "video-camera", "music", "file-powerpoint-o");
-?>
-	<?php echo apms_line('fa', 'fa-gift'); //라인 ?> 
 
-	<div class="item-view-box">
-		<?php if($is_link) { ?>
-			<?php for($i=0; $i < count($link); $i++) { ?>
-				<a href="<?php echo $link[$i]['url']; ?>" target="_blank" class="at-tip" title="<?php echo ($link[$i]['name']) ? $link[$i]['name'] : '관련링크'; ?>"><i class="fa fa-<?php echo ($link[$i]['fa']) ? $link[$i]['fa'] : 'link';?>"></i></a>
-			<?php } ?>
-		<?php } ?>
-
-		<?php if($is_viewer) { ?>
-			<?php for($i=0; $i < count($viewer); $i++) { $v = ($viewer[$i]['ext'] - 1); ?>
-				<?php if($viewer[$i]['href_view']) { ?>
-					<a href="<?php echo $viewer[$i]['href_view'];?>" class="view_win at-tip" title="<?php echo ($viewer[$i]['free']) ? '무료보기' : '바로보기';?>">
-				<?php } else { ?>
-					<a onclick="alert('구매한 회원만 볼 수 있습니다.');" class="at-tip" title="유료보기">
-				<?php } ?>
-					<i class="fa fa-<?php echo $viewer_fa[$v];?>"></i>
-				</a>
-			<?php } ?>
-		<?php } ?>
-		<script>
-			var view_win = function(href) {
-				var new_win = window.open(href, 'view_win', 'left=0,top=0,width=640,height=480,toolbar=0,location=0,scrollbars=0,resizable=1,status=0,menubar=0');
-				new_win.focus();
-			}
-			$(function() {
-				$(".view_win").click(function() {
-					view_win(this.href);
-					return false;
-				});
-			});
-		</script>
-	</div>
-<?php } ?>
-
-<?php // 비디오
-	$item_video = apms_link_video($link_video);
-	if($item_video) {
-		echo apms_line('fa', 'fa-video-camera');
-		echo $item_video;
-	}
-?>
-
-<?php if($is_download) { // 다운로드 ?>
-	<?php echo apms_line('fa', 'fa-download'); // 라인 ?> 
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title"><i class="fa fa-download"></i> Download</h3>
-		</div>
-		<div class="list-group">
-			<?php for($i=0; $i < count($download); $i++) { ?>
-				<a class="list-group-item break-word" href="<?php echo ($download[$i]['href']) ? $download[$i]['href'] : 'javascript:alert(\'구매한 회원만 다운로드할 수 있습니다.\');';?>">
-					<?php if($download[$i]['free']) { ?>
-						<?php if($download[$i]['guest_use']) { ?>
-							<span class="label label-default label-item pull-right"><span class="font-11 en">Free</span></span> 
-						<?php } else { ?>
-							<span class="label label-primary label-item pull-right"><span class="font-11 en">Join</span></span> 
-						<?php } ?>
-					<?php } else { ?>
-						<span class="label label-danger label-item pull-right"><span class="font-11 en">Paid</span></span> 
-					<?php } ?>
-					<i class="fa fa-download"></i> <?php echo $download[$i]['source'];?> (<?php echo $download[$i]['size'];?>)
-				</a>
-			<?php } ?>
-			<?php if($i && $is_ramintime) { //이용기간 안내
-				$remain_day = (int)(($is_reamintime - G5_SERVER_TIME) / 86400); //남은일수
-			?>
-				<a class="list-group-item" href="#">
-					<i class="fa fa-bell"></i> <?php echo date("Y.m.d H:i", $is_remaintime);?>(<?php echo number_format($remain_day);?>일 남음)까지 이용가능합니다.
-				</a>
-			<?php } ?>
-		</div>
-	</div>
-<?php } ?>
-
-<?php if ($is_torrent) { // 토렌트 파일정보 ?>
-	<?php echo apms_line('fa', 'fa-cube'); // 라인 ?> 
-	<?php for($i=0; $i < count($torrent); $i++) { ?>
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title"><i class="fa fa-cube"></i> <?php echo $torrent[$i]['name'];?></h3>
-			</div>
-			<div class="panel-body">
-				<span class="pull-right hidden-xs text-muted en font-11"><i class="fa fa-clock-o"></i> <?php echo date("Y-m-d H:i", $torrent[$i]['date']);?></span>
-				<?php if ($torrent[$i]['is_size']) { ?>
-						<b class="en font-16"><i class="fa fa-cube"></i> <?php echo $torrent[$i]['info']['name'];?> (<?php echo $torrent[$i]['info']['size'];?>)</b>
-				<?php } else { ?>
-					<p><b class="en font-16"><i class="fa fa-cubes"></i> Total <?php echo $torrent[$i]['info']['total_size'];?></b></p>
-					<div class="text-muted font-12">
-						<?php for ($j=0;$j < count($torrent[$i]['info']['file']);$j++) { 
-							echo ($j + 1).'. '.implode(', ', $torrent[$i]['info']['file'][$j]['name']).' ('.$torrent[$i]['info']['file'][$j]['size'].')<br>'."\n";
-						} ?>
-					</div>
-				<?php } ?>
-			</div>
-			<ul class="list-group">
-				<li class="list-group-item en font-14 break-word"><i class="fa fa-magnet"></i> <?php echo $torrent[$i]['magnet'];?></li>
-				<li class="list-group-item break-word">
-					<div class="text-muted" style="font-size:12px;">
-						<?php for ($j=0;$j < count($torrent[$i]['tracker']);$j++) { ?>
-							<i class="fa fa-tags"></i> <?php echo $torrent[$i]['tracker'][$j];?><br>
-						<?php } ?>
-					</div>
-				</li>
-				<?php if($torrent[$i]['comment']) { ?>
-					<li class="list-group-item en font-14 break-word"><i class="fa fa-bell"></i> <?php echo $torrent[$i]['comment'];?></li>
-				<?php } ?>
-			</ul>
-		</div>
-	<?php } ?>
-<?php } ?>
-
-<?php echo apms_line('fa'); // 라인 ?> 
-
-<div class="item-explan">
-	<?php if ($it['pt_explan']) { // 구매회원에게만 추가로 보이는 상세설명 ?>
-		<div class="well"><?php echo apms_explan($it['pt_explan']); ?></div>
-	<?php } ?>
-	<?php echo apms_explan($it['it_explan']); ?>
-</div>
-
-<?php if ($is_good) { // 추천 ?>
-	<div class="item-good-box">
-		<span class="item-good">
-			<a href="#" onclick="apms_good('<?php echo $it_id;?>', '', 'good', 'it_good'); return false;">
-				<b id="it_good"><?php echo number_format($it['pt_good']) ?></b>
-				<br>
-				<i class="fa fa-thumbs-up"></i>
-			</a>
-		</span>
-		<span class="item-nogood">
-			<a href="#" onclick="apms_good('<?php echo $it_id;?>', '', 'nogood', 'it_nogood'); return false;">
-				<b id="it_nogood"><?php echo number_format($it['pt_nogood']) ?></b>
-				<br>
-				<i class="fa fa-thumbs-down"></i>
-			</a>
-		</span>
-	</div>
-<?php } ?>
-
-<?php if ($is_ccl) { // CCL ?>
-	<div class="h20"></div>
-	<div class="well">
-		<img src="<?php echo $ccl_img;?>" alt="CCL" />  &nbsp; 본 자료는 <u><?php echo $ccl_license;?></u>에 따라 이용할 수 있습니다.
-	</div>
-<?php } ?>
-
-<?php if($is_seller && $wset['seller']) { // 판매자 ?>
-	<div class="panel panel-default item-seller">
-		<div class="panel-heading">
-			<h3 class="panel-title">
-				<?php if($author['partner']) { ?>
-					<a href="<?php echo $at_href['myshop'];?>?id=<?php echo $author['mb_id'];?>" class="pull-right">
-						<span class="label label-primary"><span class="font-11 en">My Shop</span></span>
-					</a>
-				<?php } ?>
-				Seller
-			</h3>
-		</div>
-		<div class="panel-body">
-			<div class="pull-left text-center auth-photo">
-				<div class="img-photo">
-					<?php echo ($author['photo']) ? '<img src="'.$author['photo'].'" alt="">' : '<i class="fa fa-user"></i>'; ?>
-				</div>
-				<div class="btn-group" style="margin-top:-30px;white-space:nowrap;">
-					<button type="button" class="btn btn-color btn-sm" onclick="apms_like('<?php echo $author['mb_id'];?>', 'like', 'it_like'); return false;" title="Like">
-						<i class="fa fa-thumbs-up"></i> <span id="it_like"><?php echo number_format($author['liked']) ?></span>
-					</button>
-					<button type="button" class="btn btn-color btn-sm" onclick="apms_like('<?php echo $author['mb_id'];?>', 'follow', 'it_follow'); return false;" title="Follow">
-						<i class="fa fa-users"></i> <span id="it_follow"><?php echo $author['followed']; ?></span>
-					</button>
-				</div>
-			</div>
-			<div class="auth-info">
-				<div style="margin-bottom:4px;">
-					<span class="pull-right">Lv.<?php echo $author['level'];?></span>
-					<b><?php echo $author['name']; ?></b> &nbsp;<span class="text-muted font-11"><?php echo $author['grade'];?></span>
-				</div>
-				<div class="div-progress progress progress-striped no-margin">
-					<div class="progress-bar progress-bar-exp" role="progressbar" aria-valuenow="<?php echo round($author['exp_per']);?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo round($author['exp_per']);?>%;">
-						<span class="sr-only"><?php echo number_format($author['exp']);?> (<?php echo $author['exp_per'];?>%)</span>
-					</div>
-				</div>
-				<p style="margin-top:10px;">
-					<?php echo ($author['signature']) ? $author['signature'] : '등록된 서명이 없습니다.'; ?>
-				</p>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-<?php } ?>
-
-<?php if ($is_relation) { ?>
-	<div class="div-title-wrap">
-		<div class="div-title" style="line-height:30px;">
-			<i class="fa fa-cubes fa-lg lightgray"></i> <b>관련아이템</b>
-		</div>
-		<div class="div-sep-wrap">
-			<div class="div-sep sep-bold"></div>
-		</div>
-	</div>
-	<?php include_once('./itemrelation.php'); ?>
-<?php } ?>
-
-<?php // 위젯에서 해당글 클릭시 이동위치 : icv - 댓글, iuv - 후기, iqv - 문의 ?>
-<div class="div-tab tabs<?php echo ($wset['tabline']) ? '' : ' trans-top';?>">
-	<ul class="nav nav-tabs nav-justified">
-		<li class="active"><a href="#item-review" data-toggle="tab"><b>후기글<?php echo $it_use_cnt;?></b></a></li>
-		<li><a href="#item-qa" data-toggle="tab"><b>문의글<?php echo $it_qa_cnt;?></b></a></li>
-		<?php if($is_comment) { // 댓글 ?>
-			<li><a href="#item-cmt" data-toggle="tab"><b>댓글<?php echo $it_comment_cnt;?></b></a></li>
-		<?php } ?>
-		<?php if($is_ii) { // 상품정보고시 ?>
-			<li><a href="#item-info" data-toggle="tab"><b>필수표기정보</b></a></li>
-		<?php } ?>
-		<li><a href="#item-delivery" data-toggle="tab"><b>배송/교환/반품</b></a></li>
-	</ul>
-	<div class="tab-content" style="border:0px; padding:20px 0px;">
-		<div class="tab-pane active" id="item-review">
-			<div id="iuv"></div>
-			<div id="itemuse">
-				<?php include_once('./itemuse.php'); ?>
-			</div>
-		</div>
-		<div class="tab-pane" id="item-qa">
-			<div id="iqv"></div>
-			<div id="itemqa">
-				<?php include_once('./itemqa.php'); ?>
-			</div>
-		</div>
-		<?php if($is_comment) { // 댓글 ?>
-			<div class="tab-pane" id="item-cmt">
-				<div id="icv"></div>
-				<?php include_once('./itemcomment.php'); ?>
-			</div>
-		<?php } ?>
-		<?php if($is_ii) { // 상품정보고시 ?>
-			<div class="tab-pane" id="item-info">
-
-				<div class="tbox-head no-line">
-					<i class="fa fa-check-square fa-lg lightgray"></i> 상품요약정보 : <?php echo $item_info[$gubun]['title']; ?>
-				</div>
-				<div class="tbox-body">
-					<div class="table-responsive">
-						<table class="div-table table top-border">
-						<caption>상품정보고시</caption>
-						<tbody>
-							<?php for($i=0; $i < count($ii); $i++) { ?>
-								<tr>
-									<th><?php echo $ii[$i]['title']; ?></th>
-									<td><?php echo $ii[$i]['value']; ?></td>
-								</tr>
-							<?php } ?>
-						</tbody>
-						</table>
-					</div>
-				</div>
-
-				<div class="tbox-head no-line">
-					<i class="fa fa-check-square fa-lg lightgray"></i> 거래조건에 관한 정보
-				</div>
-				<div class="tbox-body">
-					<div class="table-responsive">
-						<table class="div-table table top-border">
-						<caption>거래조건</caption>
-						<tbody>
-							<tr>
-								<th>재화 등의 배송방법에 관한 정보</th>
-								<td>상품 상세설명페이지 참고</td>
-							</tr>
-							<tr>
-								<th>주문 이후 예상되는 배송기간</th>
-								<td>상품 상세설명페이지 참고</td>
-							</tr>
-							<tr>
-								<th>제품하자가 아닌 소비자의 단순변심, 착오구매에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보</th>
-								<td>배송ㆍ교환ㆍ반품 상세설명페이지 참고</td>
-							</tr>
-							<tr>
-								<th>제품하자가 아닌 소비자의 단순변심, 착오구매에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거</th>
-								<td>배송ㆍ교환ㆍ반품 상세설명페이지 참고</td>
-							</tr>
-							<tr>
-								<th>재화등의 교환ㆍ반품ㆍ보증 조건 및 품질보증 기준</th>
-								<td>소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.</td>
-							</tr>
-							<tr>
-								<th>재화등의 A/S 관련 전화번호</th>
-								<td>상품 상세설명페이지 참고</td>
-							</tr>
-							<tr>
-								<th>대금을 환불받기 위한 방법과 환불이 지연될 경우 지연에 따른 배상금을 지급받을 수 있다는 사실 및 배상금 지급의 구체적 조건 및 절차</th>
-								<td>배송ㆍ교환ㆍ반품 상세설명페이지 참고</td>
-							</tr>
-							<tr>
-								<th>소비자피해보상의 처리, 재화등에 대한 불만처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항</th>
-								<td>소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.</td>
-							</tr>
-							<tr>
-								<th>거래에 관한 약관의 내용 또는 확인할 수 있는 방법</th>
-								<td>상품 상세설명페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.</td>
-							</tr>
-						</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		<?php } ?>
-		<div class="tab-pane" id="item-delivery">
-			<?php include_once($item_skin_path.'/item.delivery.php'); ?>
-		</div>
-	</div>							
-</div>
-
-<?php echo $it_tail_html; // 하단 HTML ?>
-
-<div class="btn-group btn-group-justified">
-	<?php if($prev_href) { ?>
-		<a class="btn btn-black" href="<?php echo $prev_href;?>" title="<?php echo $prev_item;?>"><i class="fa fa-chevron-circle-left"></i> 이전</a>
-	<?php } ?>
-	<?php if($next_href) { ?>
-		<a class="btn btn-black" href="<?php echo $next_href;?>" title="<?php echo $next_item;?>"><i class="fa fa-chevron-circle-right"></i> 다음</a>
-	<?php } ?>
-	<?php if($edit_href) { ?>
-		<a class="btn btn-black" href="<?php echo $edit_href;?>"><i class="fa fa-plus"></i><span class="hidden-xs"> 수정</span></a>
-	<?php } ?>
-	<?php if ($write_href) { ?>
-		<a class="btn btn-black" href="<?php echo $write_href;?>"><i class="fa fa-upload"></i><span class="hidden-xs"> 등록</span></a>
-	<?php } ?>
-	<?php if($item_href) { ?>
-		<a class="btn btn-black" href="<?php echo $item_href;?>"><i class="fa fa-th-large"></i><span class="hidden-xs"> 관리</span></a>
-	<?php } ?>
-	<?php if($setup_href) { ?>
-		<a class="btn btn-black win_memo" href="<?php echo $setup_href;?>"><i class="fa fa-cogs"></i><span class="hidden-xs"> 스킨설정</span></a>
-	<?php } ?>
-	<a class="btn btn-black" href="<?php echo $list_href;?>"><i class="fa fa-bars"></i> 목록</a>
-</div>
-
-<div class="h30"></div>
 
 <script>
-$(function() {
-	$("a.view_image").click(function() {
-		window.open(this.href, "large_image", "location=yes,links=no,toolbar=no,top=10,left=10,width=10,height=10,resizable=yes,scrollbars=no,status=no");
-		return false;
-	});
+$(document).ready(function(){
+  $("#btnWriteQna").click(function(){
+    $("#qna_write_panel").toggle();
+  });
 });
 </script>
+
+
+<script>
+    $(document).ready(
+        function()
+        { 
+		$('.answer').hide();
+            $('.question')
+                .append(' <span></span>');
+            var toggleAnswer = function toggleAnswer(question, showAnswer)
+            { 
+			var $answer = $(question).next('tr');
+                var updateText = function()
+                                 {
+                                    var text = $answer.is(':visible') ? ' ' : '';
+                                    $(question).find('span').html(text);
+                                 }
+                var method = null;
+                if(arguments.length > 1)
+                {
+					 method = showAnswer === true ? 'show' : 'hide';
+                }
+                else
+                {
+                    method = $answer.is(':visible') ? 'hide' : 'show';
+                }
+
+                $answer[method]('fast', updateText);
+            };
+            $('.question').click(function(){ toggleAnswer(this);});
+            $('#openClose').click(
+                function() 
+                { 
+                    var showAnswer = $(this).html().toLowerCase().indexOf('open') != -1 ? true : false;
+                    $('.question').each(function() { toggleAnswer(this, showAnswer); });
+                    $(this).html(showAnswer ? 'Close All' : 'Open All'); 
+                    return false;
+                } 
+            );
+
+        }
+     );
+</script>
+
+<script>
+$(function () {
+
+    $(".detail_tab_content").hide();
+    $(".detail_tab_content:first").show();
+
+    $("ul.detail_tabs li").click(function () {
+        $("ul.detail_tabs li").removeClass("active").css({"color": "#333", "border-top":"3px solid #fff"});
+        //$(this).addClass("active").css({"color": "darkred","font-weight": "bolder"});
+        $(this).addClass("active").css({"color": "#f47a22", "border-top":"3px solid #f47a22"});
+        $(".detail_tab_content").hide()
+        var activeTab = $(this).attr("rel");
+        $("#" + activeTab).fadeIn()
+    });
+});
+</script>
+
+
 
 <?php include_once('./itemlist.php'); // 분류목록 ?>

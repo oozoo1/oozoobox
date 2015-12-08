@@ -470,12 +470,11 @@ $list_cnt = count($list);
         </div>
         <!--e: LIST-->
 
-
-
-
     </div>
 </div>
 <!--e: LIST 페이지-->
+
+
 
 <script type="text/javascript">
 $(function() { var bannerSlider = new Slider($('#banner_tabs'), { time: 5000,
