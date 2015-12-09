@@ -170,8 +170,7 @@ $list_cnt = count($list);
                                 <a href="#">
                                     <span class="album_item_price">
                                         <i class="album_price_rmb">¥</i>
-                                        <span class="album_price_integer">59</span>
-                                        <span class="album_price_decimal">.9</span>
+                                        <span class="album_price_integer"><?php echo ($list[$i]['it_tel_inq']) ? 'Call' : number_format($list[$i]['it_price']);?></span>
                                     </span>
                                 </a>
                                 <span class="album_item_tag">
