@@ -64,7 +64,7 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
             <!--s: 제품 가격 정보-->
             <div class="detail_good_info">
                 <h3>Plum Organics 菠菜苹果甘蓝口味磨牙饼干 84克</h3>
-                <table summary="해당상품에 대한 정보 및 옵션선택 영역입니다. 원산지, 판매국가, 배송구분, 스크랩, 추가정보 항목과 해당 상품에 대한 옵션선택 및 가격정보 바로구매, 장바구니 담기 위시리스트 등록 기능이 있습니다." class="good_info_satisfy">
+                <table summary="해당상품에 대한 정보 및 옵션선택 영역입니다. 원산지, 판매국가, 배송구분, 스크랩, 추가정보 항목과 해당 상품에 대한 옵션선택 및 가격정보 바로구매, 장바구니 담기 위시리스트 등록 기능이 있습니다." class="detail_good_etc">
                     <colgroup>
                         <col style="width:65px;">
                         <col>
@@ -101,56 +101,55 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                             <td>商店</td>
                         </tr>
                         <tr>
-                            <th scope="row">
-                            	<label for="option-select">选择</label>
-                            </th>
-                            <td>
+                            <th scope="row" class="option-select">
+                            	选择
+              		        </th>
+                            <td class="option-all">
                                 <div class="position-relative">
                                     <select title="옵션선택" id="btnChoiceOption">
-                                        <option value="01" selected="selected">01시</option>
-                                        <option value="02">02시</option>
-                                        <option value="03">03시</option>
-                                        <option value="04">04시</option>
-                                        <option value="05">05시</option>
-                                        <option value="06">06시</option>
-                                        <option value="07">07시</option>
-                                        <option value="08">08시</option>
-                                        <option value="09">09시</option>
-                                        <option value="10">10시</option>
-                                        <option value="11">11시</option>
-                                        <option value="12">12시</option>
-                                        <option value="13">13시</option>
+                                        <option value="01" selected="selected">상품이름1</option>
+                                        <option value="02">상품이름2</option>
+                                        <option value="03">상품이름3</option>
+                                        <option value="04">상품이름4</option>
                                     </select>                       
-                                </div>
-                                <p class="detail_total_price">
-                                    <div class="detail_total_price_info">
-                                        <span class="detail_total">选择商品 合算 :</span> 
-                                        <span class="item_total_price">
-                                            <i class="price_rmb">¥</i>
-                                            <span class="price_integer">59</span>
-                                            <span class="price_decimal">.9</span>
-                                        </span> 
-                                    </div>                                  
-                                </p>
-                                <div class="choice-control">
-                                    <button id="btnBuyNow" type="submit">
-                                    <img alt="바로구매" src="/images/detail_btn_01.png"/>
-                                    </button>
-                                    <button id="btnAddToCart" type="button">
-                                    <img alt="장바구니 담기" src="/images/detail_btn_02.png"/>
-                                    </button>
-                                    <button id="btnAddToWishList" type="button">
-                                    <img alt="위시 리스트" src="/images/detail_btn_03.png"/>
-                                    </button>
-                                    <button id="btnAddToSend" type="button">
-                                    <img alt="조르기" src="/images/detail_btn_04.png"/>
-                                    </button>                                       
-                                </div>
-                                <div style="padding-left: 3px;"><br>
-                                    <a href="#">
-                                    	<img alt="이 업체상품 모두보기" src=""/>
-                                    </a>          
-                                </div>
+                                    <div class="detail_total_price">
+                                        <div class="detail_total_price_info">
+                                            <span class="detail_total">选择商品 合算 :</span> 
+                                            <span class="item_total_price">
+                                                <i class="price_rmb">¥</i>
+                                                <span class="price_integer">59</span>
+                                                <span class="price_decimal">.9</span>
+                                            </span> 
+                                        </div>
+                                    </div>
+                                    <div class="choice-control">
+                                        <a href="#">
+                                            <button id="btnBuyNow" type="submit">
+                                                <img alt="立即购买(바로구매)" src="/images/detail_btn_01.png" title="立即购买(바로구매)"/>
+                                            </button>
+                                        </a>
+                                        <a href="#">
+                                            <button id="btnAddToCart" type="button">
+                                                <img alt="加入购物车(장바구니 담기)" src="/images/detail_btn_02.png" title="加入购物车(장바구니 담기)"/>
+                                            </button>
+                                        </a>
+                                        <a href="#">
+                                            <button id="btnAddToWishList" type="button">
+                                                <img alt="MD询问(MD에게 묻기)" src="/images/detail_btn_03.png" title="MD询问(MD에게 묻기)"/>
+                                            </button>
+                                        </a>
+                                        <a href="#">
+                                            <button id="btnAddToSend" type="button">
+                                                <img alt="软磨硬泡(조르기)" src="/images/detail_btn_04.png" title="软磨硬泡(조르기)"/>
+                                            </button>
+                                        </a>                                       
+                                    </div>
+                                    <div class="detail_seller_store" style="padding-left: 3px;"><br>
+                                        <a href="#">
+                                            <img alt="进入店铺" src="/images/btn_allitem_thisshop.png"/>
+                                        </a>          
+                                    </div>
+                            	</div>
                             </td>
                         </tr>
                     </tbody>
@@ -180,27 +179,107 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                         <img src="/images/detail_01_03.png" alt="상품소개03"/>
                         <img src="/images/detail_01_04.png" alt="상품소개04"/>
                     </div>
-                    <button id="btnAfter" type="submit">
-                    	<img alt="후기보러가기" src="/images/detail_btn_tab1.png"/>
-                    </button>
+                    <a href="#">
+                        <button id="btnAfter" type="submit">
+                            <img alt="去看看用户评价(후기보러가기)" src="/images/detail_btn_tab1.png" title="去看看用户评价(후기보러가기)"/>
+                        </button>
+                    </a>
                 </div>
                 <!--e: #tab1 商品详情 "상품상세보기" -->
-                <!--s: #tab2 商品详情 "상품상세보기" -->
+                <!--s: #tab2 用户评价 "상품후기" -->
                 <div id="detail_tab2" class="detail_tab_content">
 					<div class="tab_content_warp">
                         <h4 class="tab_content_tit">用户评价 <span class="strap">Comment</span></h4>
                         <p class="tab2_titcomment">상품평은 구매완료 후 <a href="#" class="linkmyafter">수취확인</a>에서 작성하실 수 있습니다. 광고, 비방 제품과 관계없는 애용, 타 사이트 및 가격비교, 기타 통신예절에 어긋나거나 OOZOO BOX의 취지와 맞지 않은 글은 예고없이 삭제 및 수정될 수 있습니다.</p>
                         <div class="tab2_view_after">
-                            <button id="btnWriteAfter" type="submit">
-                                <img alt="후기보러가기" src="/images/btn_tab2_writeafter.png"/>
-                            </button>                        
+                            <a href="#">
+                                <button id="btnWriteAfter" type="submit">
+                                    <img alt="去制作用户评价(후기작성하러가기)" src="/images/btn_tab2_writeafter.png" title="去制作用户评价(후기작성하러가기)"/>
+                                </button>
+                            </a>
+                            <!--s: 후기 리스트-->
+                            <ul id="tab2_after_comment">
+                            	<!-- 후기 1--->
+                                <li>
+                                	<p class="after_comment_number">111</p><!-- 번호 --->
+                                    <div class="after_information"> <!-- 내용--->
+                                    	<p class="after_talk">
+                                        	각각 기능이 다른데, 혹시 각각의 가능별로 빈들을 불류한 제품은 추가 계획이 없나요? <br>
+                                        </p>
+                                        <p class="after_writer">
+                                            <span class="after_writer_nick">ykc** </span><span class="after_writer_place">, 상해</span><!--작성자 & 지역-->
+                                            <span class="after_writer_bar">|</span>2015-11-13 20:15:12 <!--날짜-->
+                                        </p>
+                                        <p class="after_reply"> <!-- 판매자 답변-->
+                                        	안녕하세요, 엔엠씨입니다 ^__^ <br>
+                                            먼저, 저희 엔엠씨에 많은 관심을 가져주셔서 정말 감사드립니다.<br> 
+                                            문의하신 화산콩(마그마빈) 클렌저의 색상별 생산 여부는<br>
+                                            아직 계획되어 있지 않은 점 참조 부탁드립니다.<br>
+                                            또한, 고객님의 의견을 수렴하여 더욱 개선되어지는 엔엠씨 화장품이 될 것을 약속드리겠습니다~!<br>
+                                            행복한 월요일 보내세요~<br>
+                                            감사합니다 ^^ 
+                                            <span class="after_reply_date">2015-08-24 09:40:18</span>
+                                        </p>
+                                    </div>
+                                    <dl class="after_info"> <!-- 작성자 정보--->
+                                    	<dt>평점</dt> <!--만족도-->
+                                        <dd>
+                                        	<span class="after_satisfy_grade">매우만족</span>
+                                            <span class="after_satisfy_star"></span>
+                                        </dd>
+                                        <dt>직업</dt><dd>주부</dd> <!--직업-->
+                                        <dt>나이</dt><dd>35세</dd> <!--나이-->
+                                        <dt>성별</dt><dd>여</dd>  <!--성별-->
+                                        <dt class="frequency">사용빈도</dt><dd class="frequency_sub">매일</dd> <!--사용빈도-->
+                                    </dl>                                    
+                            	</li>
+								<!-- 후기 2--->
+                                <li>
+                                	<p class="after_comment_number"><!-- 번호 --->
+                                    110
+                                    </p>
+                                    <div class="after_information"> <!-- 내용--->
+                                    	<p class="after_talk">
+                                        	후기를 썼던것 같은데 없는거 보니 착각인가봐요..ㅋㅋ<br>
+                                            거품이 생각보다 많이 안나서 쪼끔 실망스럽지만<br> 
+                                            그래도 세정력은 괜찮네요ㅎㅎ<br>
+                                            다음 제품 개발할 때는 향을 조금이라도 추가 해주셨음 좋겠어요~ 
+                                        </p>
+                                        <p class="after_writer">
+                                            <span class="after_writer_nick">ykc** </span><span class="after_writer_place">, 상해</span><!--작성자 & 지역-->
+                                            <span class="after_writer_bar">|</span>2015-11-13 20:15:12 <!--날짜-->
+                                        </p>
+                                        <p class="after_reply"> <!-- 판매자 답변-->
+                                        	안녕하세요, 엔엠씨입니당 ^0^<br>
+                                            저희 엔엠씨를 이용해주셔서 정말 감사드립니당~!<br> 
+                                            고객님의 의견을 수렴하여 더욱 개선되어지는 엔엠씨 화장품이 될 것을 약속드리겠습니다~!<br>
+                                            행복한 하루 보내세용^7^
+                                            <span class="after_reply_date">2015-08-24 09:40:18</span>
+                                        </p>
+                                    </div>
+                                    <dl class="after_info"> <!-- 작성자 정보--->
+                                    	<dt>평점</dt> <!--만족도-->
+                                        <dd>
+                                        	<span class="after_satisfy_grade">매우만족</span>
+                                            <span class="after_satisfy_star"></span>
+                                        </dd>
+                                        <dt>직업</dt><dd>주부</dd> <!--직업-->
+                                        <dt>나이</dt><dd>35세</dd> <!--나이-->
+                                        <dt>성별</dt><dd>여</dd>  <!--성별-->
+                                        <dt class="frequency">사용빈도</dt><dd class="frequency_sub">매일</dd> <!--사용빈도-->
+                                    </dl>                                    
+                            	</li>
+							</ul>
+                            <!--s: 후기 리스트-->                        
                         </div>
                     </div>
-                    <button id="btnAfter" type="submit">
-                    	<img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
-                    </button>         
+                    <a href="#">
+                        <button id="btnAfter" type="submit">
+                            <img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
+                        </button>
+                    </a>         
                 </div>
-                <!-- #tab2 -->
+                <!--e: #tab2 用户评价 "상품후기" -->
                 <!--s: #tab3 询问/回复 "질문과 답변"-->
                 <div id="detail_tab3" class="detail_tab_content">
 					<div class="tab_content_warp">
@@ -312,9 +391,11 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                         </table>
                         <!--e: QnA list-->
                     </div>
-                    <button id="btnAfter" type="submit">
-                    	<img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
-                    </button>                             
+                    <a href="#">
+                        <button id="btnAfter" type="submit">
+                            <img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
+                        </button>
+                    </a>                             
                 </div>
                 <!--e: #tab3 询问/回复 "질문과 답변"-->
                 <!--s: #tab4 卖家信息 "판매자 정보"-->
@@ -366,9 +447,11 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                             </tbody>
                         </table>
                     </div>
-                    <button id="btnAfter" type="submit">
-                    	<img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
-                    </button>                        
+                    <a href="#">
+                        <button id="btnAfter" type="submit">
+                            <img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
+                        </button>
+                    </a>                    
                 </div>
                 <!--e: #tab4 卖家信息 "판매자 정보"-->
                 <!--s: #tab5 取消/换货/退货 "교환/환불정책"-->
@@ -465,9 +548,11 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                         </ul>
                         <br><br><br><br><br>
                     </div>
-                    <button id="btnAfter" type="submit">
-                    	<img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
-                    </button>                    
+                    <a href="#">
+                        <button id="btnAfter" type="submit">
+                            <img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
+                        </button>
+                    </a>                 
                 </div>
                 <!--e: #tab5 取消/换货/退货 "교환/환불정책"-->              
                 

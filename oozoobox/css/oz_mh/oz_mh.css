@@ -636,7 +636,7 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 
 
 /*DETAIL*/
-#oz_detail_wrap {float:left; margin:0 !important; width:100% !important; background:#fff; font:14px '微软雅黑', sans-serif;}
+#oz_detail_wrap {float:left; margin:0 !important; width:100% !important; background:#fff; font:14px/1.8 Tahoma, '微软雅黑',"돋움",dotum;}
 .oz_detail_main {position:relative; margin:70px auto 0; width:990px; text-align:left;}
 /**image slide**/
 .detail_good_pic{float:left; width:420px; position:relative;}
@@ -647,25 +647,25 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 
 .detail_good_info{float:left; width:524px; margin:10px 0 0 33px; }
 .detail_good_info h3 {font-size:18px; font-weight:600;}
+.detail_good_info .detail_good_etc {margin-top:30px; position:relative; font:14px/1.8 Tahoma, '微软雅黑',"돋움",dotum;}
 .detail_good_info tr {height:30px;}
-.detail_good_info .good_info_satisfy {margin-top:30px; position:relative;}
 .detail_good_info .good_info_satisfy span{float:left;}
 .detail_good_info .good_info_satisfy .good_info_satisfy_grade {font-size:18px; font-weight:bold;}
 .detail_good_info .good_info_satisfy .good_info_satisfy_star {position:absolute; top:7px; left:135px; width:84px; height:15px; background:url("/images/good_info_satisfy_star.png") no-repeat 0 0; display:block;}
 .detail_good_info .good_info_satisfy .good_info_satisfy_star span {width:84px; height:15px; background:url("/images/good_info_satisfy_star.png") no-repeat 0px -15px; color:transparent;}
-.good_info_scrap .space {margin-left:15px;}
+.detail_good_info .good_info_scrap .space {margin-left:15px;}
+.detail_good_info th.option-select {vertical-align:text-top; padding-top:12px;}
+.detail_good_info .position-relative {position:relative;}
+.detail_good_info #btnChoiceOption {width:100%; height:25px; margin-top:15px; border:1px solid #ddd;}
+.detail_good_info .detail_total_price {padding:15px 0; height:34px; margin-top:20px; border-top:1px solid #dcdcdc; text-align:right; font-size:21px;}
+.detail_good_info .detail_total {font-size:18px;font-weight:bold; color:#666;}
+.detail_good_info .detail_total_price .item_total_price {font-weight:bold; color:#0272c9;}
+.detail_good_info .detail_total_price .item_total_price .price_rmb{font-size:16px;}
+.detail_good_info .choice-control {float:right; overflow:hidden; margin-top:12px; padding-bottom:15px;}
 
-p.detail_total_price {position:relative; padding:5px 0; margin:15px 0; border-top:1px solid #ddd; display:block;}
-.detail_total_price .detail_total_price_info {position:absolute; right:0; top:0;}
-.detail_total_price_info .detail_total {font-size:16px; font-weight:600;}
-.detail_total_price_info .item_total_price .price_rmb {display:block; float:left; font-size: 20px; font-style:normal;}
-.detail_total_price_info .item_total_price .price_integer {display:block; float:left; font-size: 20px;}
-.detail_total_price_info .item_total_price .price_decimal {display:block; float:left; font-size: 20px;}
-.choice-control {float:left;}
-
-#btnBuyNow {border:0; margin-right:2px;}
-#btnAddToCart {border:0; margin-right:2px;}
-#btnAddToWishList {border:0; margin-right:2px;}
+#btnBuyNow {border:0; margin-right:1px; }
+#btnAddToCart {border:0; margin-right:1px;}
+#btnAddToWishList {border:0; margin-right:1px;}
 #btnAddToSend {border:0}
 
 /**상세보기 제품 정보, 게시판**/
@@ -681,12 +681,33 @@ p.detail_total_price {position:relative; padding:5px 0; margin:15px 0; border-to
 .detail_tab_content h4.tab_content_tit {margin:50px auto 10px; text-align:left; padding:10px 0; width:850px; font-size:20px; border-bottom:2px solid #ddd; font-weight:bold; color:#727272;}
 .detail_tab_content h4 span.strap {font-size:16px; margin-left:15px; color:#999999; font-weight:bold;}
 
-/***#tab2 商品详情 "상품상세보기"***/
+/***#tab2 用户评价 "상품후기" ***/
+#detail_tab2 {font:14px/1.8 Tahoma, '微软雅黑',"돋움",dotum;}
 #detail_container .tab2_titcomment {width:850px; margin:0 0 20px 70px;}
 #detail_container a.linkmyafter {color:#f47a22;}
-#detail_container a:hover {color:#ea5b0c; font-weight:bold;}
+#detail_container a:hover {color:#9bdbe1;}
 .tab_content_warp .tab2_view_after {width:850px; margin:15px 0 0 70px;}
-#btnWriteAfter {border:0; float:right; } 
+#btnWriteAfter {border:0; float:right; margin-right:10px; margin-bottom:30px;} 
+/**** 후기 리스트****/
+#tab2_after_comment li {display:inline-block; position:relative; width:100%; margin-top:10px;}
+#tab2_after_comment li .after_comment_number {padding-top:26px; float:left; width:80px; line-height:12px; color:#7f7f7f; text-align:center;}
+#tab2_after_comment .after_information {float:left; padding:20px 25px 10px 15px; width:580px; display:block; border-top:1px #d1d1d1 dashed;}
+
+
+#tab2_after_comment .after_talk {padding:1px;}
+#tab2_after_comment .after_writer {padding:1px; margin:0 0 8px 0;}
+#tab2_after_comment .after_writer_nick {font-weight:bold;}
+#tab2_after_comment .after_writer_bar {margin:0 9px;}
+#tab2_after_comment .after_reply {padding:15px 20px 14px 20px; background:#f3f5fb;}
+
+#tab2_after_comment .after_info {float:right; padding:30px 0; width:150px; display:block; border-top:1px #d1d1d1 dashed;}
+#tab2_after_comment .after_info dt {display:block; float:left; width:40px;}
+#tab2_after_comment .after_info dd{display:block; float:left; width:100px; padding-left:5px;}
+#tab2_after_comment .after_info dt.frequency {display:block; float:left; width:60px;}
+#tab2_after_comment .after_info dd.frequency_sub {display:block; float:left; width:80px; padding-left:10px;}
+#tab2_after_comment .after_satisfy_grade {float:left; width:90px; font-size:14px;}
+#tab2_after_comment .after_satisfy_star {float:left; width:90px; height:12px; margin-bottom:7px; background:url("/images/after_satisfy_star.png") no-repeat 0 -12px; display:block;}
+
 
 /***#tab3 询问/回复 "질문과 답변"***/
 #detail_tab3 {font:14px Tahoma, '微软雅黑';}
