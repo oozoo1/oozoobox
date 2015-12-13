@@ -752,23 +752,92 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 .tab_content_warp .detail_tab_return {width:840px; display:block; margin:0 0 0px 70px; color:#555; }
 .tab_content_warp .detail_tab_return p.tab_return_paragraph {margin-top:7px;}
 .tab_content_warp .detail_tab_return li { background:url('/images/bg_detail_return.png') no-repeat 0 10px; padding-left:15px; color:#767676;}
-
-
 .tab_content_warp hr {width:850px; display:block; margin:20px auto 5px; border-bottom:1px dotted #ddd;}
 #btnAfter {float:left; width:200px; height:50px; margin:10px 0 0 400px; }
-
-
 
 /***상세보기 qna***/
 .question { background-color: #ccc; cursor: pointer; padding: 5px; margin-bottom: 10px; border-bottom: 1px solid #000; }
 .answer { padding: 5px; }
 
+/*MY PAGE*/
+/**장바구니**/
+#oz_order_wrap {float:left; margin:0 !important; width:100% !important; background:#fff; font:14px/1.8 Tahoma, '微软雅黑',"돋움",dotum;}
+.oz_order_main {position:relative; margin:70px auto 0; width:990px; text-align:left;}
+.oz_order_main h3.order_tit{width:100%; display:block; font-size:20px; font-weight:bold; color:#333333; padding-bottom:10px; border-bottom:1px solid #ddd;}
+.oz_order_main .order_small {color:#ec4f4a; font-size:14px; padding-left:10px;}
+.oz_order_main .order_step {margin-top:7px; padding-top:20px; overflow:hidden;}
+.oz_order_main .order_step h3 {float:left;}
+.oz_order_main .order_step ol {float:left; width:744px; height:68px; text-indent:-9999px; background:url("/images/bg_order_step_01.png") no-repeat 0 0; }
+.oz_order_main .order_notice {margin:40px 0 0 3px; color:#464646;}
+.oz_order_main .order_notice h4 {margin:0 0 15px 3px; background:url("/images/bg_order_notice.png") no-repeat 0 3px; padding-left:24px; font-weight:bold; color:#ec4f4a;}
+.oz_order_main .order_notice .order_notice_small {color:#333; font-size:14px; padding-left:10px;}
+.oz_order_main .order_notice ul {margin-bottom:20px;}
 
+/***장바구니 상품 있음: 01. OOZOO BOX***/
+.oz_order_main .content1 {position:relative;}
+.oz_order_main .content1 h4, .oz_order_main .content2 h4{margin:0 0 7px 11px; font-size:20px; font-weight:bold;}
+.oz_order_main .content1 h4 span.blue, .oz_order_main .content2 h4 span.blue{color:#0a5daf;}
+.oz_order_main table {width:990px; border-top:3px solid #dbdbdb;}
+.oz_order_main table, th, td {border-collapse:collapse;}
+.oz_order_main table thead th, .oz_order_main table tbody td, .oz_order_main table tfoot td{padding:10px 0; border-bottom:1px solid #e2e2e2; text-align:center;} 
+.oz_order_main table th{background:#f8f8f8; font-weight:normal;}
+.oz_order_main .hidden-text {overflow:hidden; position:absolute; top:0; left:0; width:1%; height:1%; text-indent:100%; white-space:nowrap;}
+.oz_order_main table td.order_subject img {float:left; margin-right:18px;}
+.oz_order_main table td.order_subject div{float:left; width:350px; text-align:left;}
+.oz_order_main table td.order_subject strong {padding-top:25px; font-size:14px; color:#464646;}
+.oz_order_main table td.order_subject strong, .oz_order_main table td span {display:inline-block;}
+.oz_order_main table td span {margin-top:5px; color:#767676;}
+.oz_order_main table td.order_btn button {position:relative; display:block; margin:3px auto; padding:0; width:95px; height:20px; font-size:0; line-height:0; overflow:visible; border:0; cursor:pointer;}
+.oz_order_main table tfoot td {text-align:right;}
+.oz_order_main table tfoot td.save {border-bottom:3px solid #dbdbdb;}
+.oz_order_main table tfoot td.save button.more_ozbox {position:relative; display:block; float:right; width:230px; height:29px; margin-left:15px; background:url("/images/btn_order_more_ozbox.png"); line-height:0; text-indent:-9999em; border:0;}
+.oz_order_main table tfoot td.save .order_delivery {margin-top:5px; float:right;}
+.oz_order_main table tfoot td.order_sum {font:bold 16px Tahoma, '微软雅黑',"돋움",dotum; padding:20px 14px 16px 0;}
+.oz_order_main table tfoot .order_price {margin:0 5px 0 10px; color:#464646; vertical-align:middle;}
+.oz_order_main table tfoot .order_plus  {margin:0 15px; vertical-align:middle;}
+.oz_order_main table tfoot td.merge {font:bold 16px Tahoma, '微软雅黑',"돋움",dotum; padding:20px 14px 12px 0; border-bottom:3px solid #dbdbdb;
+}
+.oz_order_main table tfoot td.merge .order_article_b {font-weight:bold; color:#0a5daf;}
 
+/***장바구니 상품 있음: 02. 商店***/
+.oz_order_main .content2 {margin-top:47px;}
+.oz_order_main .content2  tfoot td.save button.more_ozbox {position:relative; display:block; float:right; width:230px; height:29px; margin-left:15px; background:url("/images/btn_order_more_seller.png"); line-height:0; text-indent:-9999em; border:0;}
 
+/***장바구니 상품 합계 ***/
+.oz_order_main .content3 {margin:65px 0 50px;}
+.oz_order_main .content3 .total_price {padding:20px 0 5px; border:5px solid #cfdfef; font-family:'微软雅黑',"돋움",dotum;}
+.oz_order_main .content3 .total_price p {font-size:18px; text-align:right; padding-right:70px; margin-bottom:15px; color:#595959;}
+.oz_order_main .content3 .total_price p span {vertical-align:middle;}
+.oz_order_main .content3 .total_price p span.order_price {margin:0 5px 0 10px; font-weight:bold;}
+.oz_order_main .content3 .total_price p span.order_article01 {font-weight:bold
+; margin-left:30px;}
+.oz_order_main .content3 .total_price p.total_last_sum {font-weight:bold; border-top:1px solid #d3d3d3; padding-top:22px; font-size:20px;}
+.oz_order_main .content3 .total_price p.total_last_sum .order_article_b {font-weight:bold; color:#0a5daf;}
+.oz_order_main .content3 .total_price p.total_last_sum .order_price {margin-left:20px;}
+.oz_order_main .btn_area {float:left; margin:15px 0 10px 4px;}
+.oz_order_main .btn_area button, .oz_order_main .content3 .btn_area01 button{border:0; cursor:pointer;}
+.oz_order_main .btn_area button.select {width:100px; height:22px;}
+.oz_order_main .btn_area button.select01 {width:185px; height:22px;}
+.oz_order_main .btn_area button.aleft11 {margin-left:7px;}
+.oz_order_main .btn_area01{border-top:1px solid #c9c9c9; padding:69px; text-align:center;}
 
-
-
-
-
-
+/***위시리스트, 나중에 주문하기***/
+.oz_order_main .content4 {}
+.order_tabs {width:988px; height:42px; border:1px solid #c9c9c9; border-bottom:2px solid #12599f; font:bold 18px/2.0 Tahoma, '微软雅黑', sans-serif; display:block; }
+.order_tabs li {cursor:pointer; float:left; width:494px; height:42px; text-align:center; display:block; background-color:#eeeeee;}
+.order_tabs .active{color:#fff; background-color:#12599f;}
+.order_tab_content {float:left; position:relative;}
+.order_tab_content .select-product {position:absolute; left:0; top:0; padding:7px 0 7px 40px; border-bottom:1px solid #dedede; background:url("/images/ico_bul_sub_cate_title01.png") no-repeat 16px 10px;}
+.order_tab_content .prd-list-type01-wrap {border-bottom:1px solid #dedede; margin-top:60px !important;}
+.order_tab_content .prd-list-type01-wrap .clear-obj01{height:90px; border-bottom:1px solid #dedede;}
+.order_tab_content .prd-list-type01-wrap .clear-obj02{height:90px; border-bottom:1px solid #dedede;} 
+.order_tab_content .clear-obj03 li {position:relative; width:200px; display:inline-block; font-size:12px; letter-spacing:0; vertical-align:top;}
+.order_tab_content .clear-obj03 li.first_child {margin-left:0;}
+.order_tab_content .clear-obj03 li .check-area{display:block; margin-bottom:4px}
+.order_tab_content .clear-obj03 li input.check{width:13px; height:13px; vertical-align:middle;}
+.order_tab_content .clear-obj03 li .thumb {width:198px; height:198px; border:1px solid #ddd;}
+.order_tab_content .clear-obj03 li .information {display:block; margin-top:12px; text-align:center;}
+.order_tab_content .clear-obj03 li .spot {color:#464646;}
+.order_tab_content .clear-obj03 li .desc {display:block; margin-top:6px; color:#9d9c9c; overflow:hidden; white-space:break-word; text-overflow:ellipsis;}
+.order_tab_content .clear-obj03 li .price {display:block; color:#666; text-align:center;} 
+.order_tab_content .clear-obj03 li {margin-left:59px;}
