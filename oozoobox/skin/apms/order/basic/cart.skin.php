@@ -357,6 +357,9 @@ if($header_skin)
                 	<button class="select" id="btnAllOrder" style="margin-right:20px;" type="button">
                     	<img src="/images/btn_AllOrder.png" alt="立即订购"/>
                     </button>
+                	<button class="select" id="btnCheckOrder" style="margin-right:20px;" type="button">
+                    	<img src="/images/btn_select_order.png" alt="继续购物"/>
+                    </button>                         
                 	<button class="select" id="btnList" type="button">
                     	<img src="/images/btn_List.png" alt="继续购物"/>
                     </button>              
@@ -366,18 +369,16 @@ if($header_skin)
         </div>
         <!-- e: 장바구니 상품 있음-->
         
-        <!--s: 위시리스트, 나중에 주문하기-->
+       <!--s: 关注商品 & 选择商品以后再订购-->    
         <div id="order_item2">
         	<div class="content4">
                 <ul class="order_tabs">
-                    <li class="active" rel="order_tab1">关注商品</li>
-                    <li rel="order_tab2">选择商品以后再订购</li>
+                    <li class="active" rel="order_tab1" id="tab01">关注商品</li>
+                    <li rel="order_tab2" id="tab02">选择商品以后再订购</li>
                 </ul>
-                            
                 <div class="order_tab_container">
-                    <!--s: #tab1 商品详情 "상품상세보기" -->
+                    <!--s: 关注商品-->
                     <div id="order_tab1" class="order_tab_content"><br>
-						<!--s: 关注商品-->
                         <div class="select-product list" style="width:950px;">
                         	<p class="fleft">위시리스트 폴더
                             	<select name="sltWishLIstFolder" id="sltWishListFolder">
@@ -482,48 +483,301 @@ if($header_skin)
                                     </a>
                                 </li>
                             </ul>  
-                            <div class="btn_area">
-                                <button class="select" id="btnLCheckAll" type="button">
-                                    <img src="/images/btn_CheckAll.png" alt="全部选择"/>
-                                </button>
-                                <button class="select" id="btnLUnCheckAll" type="button">
-                                    <img src="/images/btn_UnCheckAll.png" alt="取消选择"/>
-                                </button>      
-                                <button class="aleft11 select01" id="btnLCheckLater" type="button">
-                                    <img src="/images/btn_Check_cart_01.png" alt="选择商品添加购物车"/>
-                                </button>
-                                <button class="aleft11 select01" id="btnLCheckAddWishlist" type="button" style="display:none;">
-                                    <img src="/images/btn_CheckAddWishlist.png" alt="选择商品放入关注商品"/>
-                                </button>
-                                <button class="aleft11 select" id="btnLCheckDelete" type="button">
-                                    <img src="/images/btn_CheckDelete.png" alt="删除选择"/>
-                                </button>              
-                            </div>                                                                   
-                        </div> 
-                        <!--e: 关注商品-->
-
-      
+                            <!--e:버튼-->                                                                
+                        </div>  
                     </div>
-                    <div id="order_tab2" class="order_tab_content">     <br>
-
-
+                    <!--e: 关注商品-->
+                    <!--s: 选择商品以后再订购-->
+                    <div id="order_tab2" class="order_tab_content">
+                        <table class="tblPlaceHolder" summary="장바구니에 선택한 상품이 있을 떄 표시되는 영역입니다.">
+                            <colgroup>
+                                <col width="47"></col>
+                                <col width=""></col>
+                                <col width="105"></col>
+                                <col width="105"></col>
+                                <col width="120"></col>
+                                <col width="95"></col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        <label class="hidden-text" for="all_check">상품 전체 선택 </label>
+                                        <input name="prdcheck" class="order_all_check" type="checkbox"></input>
+                                    </th>
+                                    <th scope="col">商品</th>
+                                    <th scope="col">单价（元）</th>
+                                    <th scope="col">数量</th>
+                                    <th scope="col">小计（元）</th>
+                                    <th scope="col">操作</th>                            
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label class="hidden-text" for="product_check">상품 선택</label>
+                                        <input name="prdcheck" class="prdcheck" type="checkbox"></input> 
+                                    </td>
+                                    <td class="order_subject" >
+                                        <a onclick="window.open('/','_blank'); return false;" href="#">
+                                            <img src="/images/order_item_01.png" alt="상품이미지"/>
+                                        </a>
+                                        <div>
+                                            <a onclick="window.open('/','_blank'); return false;" href="#">
+                                                <strong>[zoffoli] EAST SEA GLOBE - 1. DESK GLOBE ON FLAT WOOD BASE </strong>
+                                            </a>
+                                            <span> 수급 안정 / 결제 완료 후 5일 이내 / CJ대한통운 </span>
+                                        </div>
+                                    </td>
+                                    <td>178,000원</td>
+                                    <td>
+                                        <select name="ordercount">
+                                            <option value="1" selected="">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>         
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>                                                                        
+                                        </select>
+                                    </td>
+                                    <td>178,000원</td>
+                                    <td class="order_btn">
+                                        <button name="btnLaterBuyPart" id="btnLaterBuyPart" type="button">
+                                            <img alt="나중에 주문하기" src="/images/btn_order_later.png"/>
+                                        </button>
+                                        <button name="btnWishlistPart" id="btnWishlistPart" type="button">
+                                            <img alt="위시리스트담기" src="/images/btn_order_wishlist.png"/>
+                                        </button>
+                                        <button name="btnDeletePart" id="btnDeletePart" type="button">
+                                            <img alt="삭제하기" src="/images/btn_order_delete.png"/>
+                                        </button>                                                                
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td class="order_sum" colspan="6">
+                                        <span class="order_article">商品数量</span>
+                                        <span class="order_price">1</span>
+                                        <span class="order_article">个</span>
+                                        <span class="order_article01">商品金额</span>
+                                        <span class="order_price">¥49.00</span>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>                        
                     </div>
                     <!--e: 选择商品添加购物车-->
                 </div>
                 <!--e: 위시리스트, 나중에 주문하기 content-->
+                <div class="btn_area">
+                    <button class="select" id="btnLCheckAll" type="button">
+                        <img src="/images/btn_CheckAll.png" alt="全部选择"/>
+                    </button>
+                    <button class="select" id="btnLUnCheckAll" type="button">
+                        <img src="/images/btn_UnCheckAll.png" alt="取消选择"/>
+                    </button>      
+                    <button class="aleft11 select01" id="btnLCheckLater" type="button">
+                        <img src="/images/btn_Check_cart_01.png" alt="选择商品添加购物车"/>
+                    </button>
+                    <button class="aleft11 select01" id="btnLCheckAddWishlist" type="button">
+                        <img src="/images/btn_CheckAddWishlist.png" alt="选择商品放入关注商品"/>
+                    </button>
+                    <button class="aleft11 select" id="btnLCheckDelete" type="button">
+                        <img src="/images/btn_CheckDelete.png" alt="删除选择"/>
+                    </button>              
+                </div>     
             </div>
-            <!--위시리스트, 나중에 주문하기 wrap-->   
+            <!--위시리스트, 나중에 주문하기 wrap--> 
         </div>
         <!--e: 위시리스트, 나중에 주문하기-->
+        <!----------------------------------STEP 01------------------------------------->
+        
+        
+        <div style="width:990px; height:150px; display:block; float:left;"></div> <!---임시 div  추후 삭제 --->
+        
+        
+        
+    	<h3 class="order_tit"> 购买<span class="order_small">YOUR ORDER</span></h3>
+        <div class="order_step">
+            <h3 class="order_step_tit">
+                <img src="/images/h3_order_step_tit.png" alt="购买顺序"/>
+            </h3>
+            <ol class="STEP02">
+            	<li>我的购物车</li>
+                <li>提交订单</li>
+                <li>支付成功</li> 
+            </ol>
+    	</div>
+        <div class="order_notice">
+        	<h4>결제시 주의사항 <span class="order_notice_small">결제하실때 아래 사항을 꼭 확인해 주세요</span></h4>
+            <ul>
+            	<li>- 정확한 주문을 위해 주문상품과 금액을 꼭 확인하시고, 수령인 및 배송지 정보를 정확하게 입력하시기 바랍니다.</li>
+                <li>- 직접 취소가 가능한 내역은 `我的购物信息 > 我的订单` 에서 확인 가능하며, 불가한 내역은 고객센터로 문의해 주세요.</li>
+            </ul>            
+        </div>
 
+		<div class="content2">
+            <h4><span class="blue">01. 商品</span>清单</h4>
+            <table class="tblPlaceHolder" summary="장바구니에 선택한 상품이 있을 떄 표시되는 영역입니다.">
+                <colgroup>
+                    <col width="47"></col>
+                    <col width=""></col>
+                    <col width="105"></col>
+                    <col width="105"></col>
+                    <col width="120"></col>
+                    <col width="95"></col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col" colspan="2">商品</th>
+                        <th scope="col">单价（元）</th>
+                        <th scope="col">数量</th>
+                        <th scope="col">小计（元）</th>
+                        <th scope="col">操作</th>                            
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="order_subject" colspan="2">
+                            <a onclick="window.open('/','_blank'); return false;" href="#">
+                                <img src="/images/order_item_01.png" alt="상품이미지"/>
+                            </a>
+                            <div>
+                                <a onclick="window.open('/','_blank'); return false;" href="#">
+                                    <strong>[zoffoli] EAST SEA GLOBE - 1. DESK GLOBE ON FLAT WOOD BASE </strong>
+                                </a>
+                                <span> 수급 안정 / 결제 완료 후 5일 이내 / CJ대한통운 </span>
+                            </div>
+                        </td>
+                        <td>178,000원</td>
+                        <td>1</td>
+                        <td>178,000원</td>
+                        <td>업체배송</td>
+                    </tr>
+                </tbody>
+            </table>
+			<!-- 장바구니 합계-->
+        </div>
+		
+		<div class="content2">
+        	<h4><span class="blue">02. 专用</span>优惠</h4> 
+            <ul class="order_notice step02_order_notice">
+                <li>- 보유하신 무료배송 포인트로 배송비를 차감할 수 있습니다. (2,500원 단위 사용 가능)</li>
+                <li>- F포인트는 주문금액 할인에 사용할 수 있으며 주문 금액의 최대 20%까지 사용 가능합니다. (100원 단위 사용 가능)</li>
+                <li>- 아트캐쉬는 주문금액 할인에 사용할 수 있습니다. (100원 단위 사용 가능)</li>
+            </ul>
+            <div class="order_point">
+            	<strong class="oozoopoint">OOZOOBOX POINT 사용하기</strong>
+                <input name="ozPoint" class="txt" id="txtozPoint" style="float:left; width:100px; margin:15px 0 0 10px; display:inline-block;" type="text" maxlength="7" value="0"></input>
+                <span>POINT</span>
+                <button name="useozPoint" id="useozPoint" type="button" style="width:38px; margin:12px 0 0 80px; display:inline-block;"><img src="/images/btn_use_ozpoint.png"/></button>
+                <button name="useAllozPoint" id="useAllozPoint" type="button"  style="width:38px; margin:12px 0 0 7px; display:inline-block;" ><img src="/images/btn_use_all_ozpoint.png"/></button>
+            </div>     
+            <div class="total_price step02_total_price">
+                <p>
+                    <span class="order_article01">总商店数</span>
+                    <span class="order_price">2</span>
+                    <span class="order_article">家</span>
+                    <img class="order_plus step02_order_plus" alt="상품금액" src="/images/ico_order_plus.png"/>
+                    <span class="order_article01">总商品数</span>
+                    <span class="order_price">2</span>
+                    <span class="order_article">个</span>
+                    <img class="order_plus step02_order_plus" alt="상품금액" src="/images/ico_order_plus.png"/>
+                    <span class="order_article01">商品总计</span>
+                    <span class="order_price">98.00</span>
+                    <span class="order_article">元</span>         
+                </p>
+                <p>
+                    <img class="order_plus" alt="상품금액" src="/images/ico_order_minus.png"/>
+                    <span class="order_article01 order_red">POINT</span>
+                    <span class="order_price order_red">88.00</span>
+                    <span class="order_article order_red">元</span>
+                    <img class="order_plus  step02_order_plus" alt="상품금액" src="/images/ico_order_plus.png"/>
+                    <span class="order_article01">运费总计</span>
+                    <span class="order_price">88.00</span>
+                    <span class="order_article">元</span>
+                </p>
+                <p class="total_last_sum">
+                    <span class="order_article_b">结算总额</span>
+                    <span class="order_price">196.00</span>
+                    <span class="order_article">元</span>
+                </p>
+            </div>
+        </div>
+        <!--포인트 사용 및 총계-->
+        
+        <div class="content3">
+        	<h4><span class="blue">03. 收货人</span>信息</h4>
+            <table class="delivery" summary="배송지, 수령인, 핸드폰 번호, 전화 번호, 주소, 요청사항등 배송을 확인 할 수 있습니다.">
+            	<colgroup>
+                	<col width="15%"></col>
+                    <col width="85%"></col>
+                </colgroup>
+                <tbody>
+                	<tr>
+                    	<th scope="row">
+                        	배송지 선택
+                        </th>
+                        <td class="input">
+                        	<label>
+                            	<input class="check" type="radio">회원정보</input>
+                            </label>
+                        	<label>
+                            	<input class="check" type="radio">최근배송지</input>
+                            </label>
+                        	<label>
+                            	<input class="check" type="radio">새로운 주소</input>
+                            </label>    
+                        	<label>
+                            	<input class="check" type="radio">주소록선택</input>
+                            </label>                                                                                
+                        </td>
+                    </tr>
+                    <tr>
+                    	<th scope="row">
+                        	<label>수령인</label>
+                        </th>
+                        <td class="input">
+                        	<input name="FullName" title="수령인 입력" class="txt" id="tbFullName" style="width:197px;" type="text" maxlength="16"></input>
+                        </td>
+                    </tr> 
+                </tbody>
+            </table>         
+        
+        </div>
 
-
+        
+     
+        <div class="btn_area01">
+            <button class="select" id="btnAllOrder" style="margin-right:20px;" type="button">
+                <img src="/images/btn_AllOrder.png" alt="立即订购"/>
+            </button>
+            <button class="select" id="btnCheckOrder" style="margin-right:20px;" type="button">
+                <img src="/images/btn_select_order.png" alt="继续购物"/>
+            </button>                         
+            <button class="select" id="btnList" type="button">
+                <img src="/images/btn_List.png" alt="继续购物"/>
+            </button>              
+        </div>
 
     </div>
     <!--e: 장바구니 wrap-->
 </div>
 <!--e: 장바구니-->
-
 
 
 
@@ -554,7 +808,7 @@ $(document).ready(function(){
 </script>
 
 
-<script>
+<script><!-- tab 열고 닫기-->
 $(function () {
 
     $(".order_tab_content").hide();
@@ -570,8 +824,18 @@ $(function () {
     });
 });
 </script>
-        
-
+       
+<script><!-- 버튼 보이기 닫기--->
+$(document).ready(function(){
+	$(".content4 #btnLCheckAddWishlist").hide();
+    $(".content4 #tab01").click(function(){
+        $(".content4 #btnLCheckAddWishlist").hide();
+    });
+    $(".content4 #tab02").click(function(){
+        $(".content4 #btnLCheckAddWishlist").show();
+    });
+});
+</script>
 
 
 <?php /*?>

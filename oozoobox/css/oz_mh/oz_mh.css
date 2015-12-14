@@ -775,8 +775,8 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 
 /***장바구니 상품 있음: 01. OOZOO BOX***/
 .oz_order_main .content1 {position:relative;}
-.oz_order_main .content1 h4, .oz_order_main .content2 h4{margin:0 0 7px 11px; font-size:20px; font-weight:bold;}
-.oz_order_main .content1 h4 span.blue, .oz_order_main .content2 h4 span.blue{color:#0a5daf;}
+.oz_order_main .content1 h4, .oz_order_main .content2 h4, .oz_order_main .content3 h4{margin:0 0 7px 11px; font-size:20px; font-weight:bold;}
+.oz_order_main .content1 h4 span.blue, .oz_order_main .content2 h4 span.blue,  .oz_order_main .content3 h4 span.blue{color:#0a5daf;}
 .oz_order_main table {width:990px; border-top:3px solid #dbdbdb;}
 .oz_order_main table, th, td {border-collapse:collapse;}
 .oz_order_main table thead th, .oz_order_main table tbody td, .oz_order_main table tfoot td{padding:10px 0; border-bottom:1px solid #e2e2e2; text-align:center;} 
@@ -805,32 +805,34 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 
 /***장바구니 상품 합계 ***/
 .oz_order_main .content3 {margin:65px 0 50px;}
-.oz_order_main .content3 .total_price {padding:20px 0 5px; border:5px solid #cfdfef; font-family:'微软雅黑',"돋움",dotum;}
-.oz_order_main .content3 .total_price p {font-size:18px; text-align:right; padding-right:70px; margin-bottom:15px; color:#595959;}
-.oz_order_main .content3 .total_price p span {vertical-align:middle;}
-.oz_order_main .content3 .total_price p span.order_price {margin:0 5px 0 10px; font-weight:bold;}
-.oz_order_main .content3 .total_price p span.order_article01 {font-weight:bold
+.oz_order_main .total_price {padding:20px 0 5px; border:5px solid #cfdfef; font-family:'微软雅黑',"돋움",dotum;}
+.oz_order_main .total_price p {font-size:18px; text-align:right; padding-right:70px; margin-bottom:15px; color:#595959;}
+.oz_order_main .total_price p span {vertical-align:middle;}
+.oz_order_main .total_price p span.order_price {margin:0 5px 0 10px; font-weight:bold;}
+.oz_order_main .total_price p span.order_article01 {font-weight:bold
 ; margin-left:30px;}
-.oz_order_main .content3 .total_price p.total_last_sum {font-weight:bold; border-top:1px solid #d3d3d3; padding-top:22px; font-size:20px;}
-.oz_order_main .content3 .total_price p.total_last_sum .order_article_b {font-weight:bold; color:#0a5daf;}
-.oz_order_main .content3 .total_price p.total_last_sum .order_price {margin-left:20px;}
-.oz_order_main .btn_area {float:left; margin:15px 0 10px 4px;}
+.oz_order_main .total_price p.total_last_sum {font-weight:bold; border-top:1px solid #d3d3d3; padding-top:22px; font-size:20px;}
+.oz_order_main .total_price p.total_last_sum .order_article_b {font-weight:bold; color:#0a5daf;}
+.oz_order_main .total_price p.total_last_sum .order_price {margin-left:20px;}
+.oz_order_main .btn_area {margin:15px 0 10px 4px;}
 .oz_order_main .btn_area button, .oz_order_main .content3 .btn_area01 button{border:0; cursor:pointer;}
 .oz_order_main .btn_area button.select {width:100px; height:22px;}
 .oz_order_main .btn_area button.select01 {width:185px; height:22px;}
 .oz_order_main .btn_area button.aleft11 {margin-left:7px;}
 .oz_order_main .btn_area01{border-top:1px solid #c9c9c9; padding:69px; text-align:center;}
 
-/***위시리스트, 나중에 주문하기***/
+/***关注商品 & 选择商品以后再订购***/
 .oz_order_main .content4 {}
-.order_tabs {width:988px; height:42px; border:1px solid #c9c9c9; border-bottom:2px solid #12599f; font:bold 18px/2.0 Tahoma, '微软雅黑', sans-serif; display:block; }
+.order_tabs {width:988px; height:42px; border:1px solid #c9c9c9; border-bottom:2px solid #14518c; font:bold 18px/2.0 Tahoma, '微软雅黑', sans-serif; display:block; }
 .order_tabs li {cursor:pointer; float:left; width:494px; height:42px; text-align:center; display:block; background-color:#eeeeee;}
-.order_tabs .active{color:#fff; background-color:#12599f;}
+.order_tabs .active{color:#fff; background-color:#14518c;}
+/***关注商品***/
 .order_tab_content {float:left; position:relative;}
 .order_tab_content .select-product {position:absolute; left:0; top:0; padding:7px 0 7px 40px; border-bottom:1px solid #dedede; background:url("/images/ico_bul_sub_cate_title01.png") no-repeat 16px 10px;}
 .order_tab_content .prd-list-type01-wrap {border-bottom:1px solid #dedede; margin-top:60px !important;}
 .order_tab_content .prd-list-type01-wrap .clear-obj01{height:90px; border-bottom:1px solid #dedede;}
 .order_tab_content .prd-list-type01-wrap .clear-obj02{height:90px; border-bottom:1px solid #dedede;} 
+.order_tab_content .clear-obj03 {padding-bottom:10px;}
 .order_tab_content .clear-obj03 li {position:relative; width:200px; display:inline-block; font-size:12px; letter-spacing:0; vertical-align:top;}
 .order_tab_content .clear-obj03 li.first_child {margin-left:0;}
 .order_tab_content .clear-obj03 li .check-area{display:block; margin-bottom:4px}
@@ -841,3 +843,20 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 .order_tab_content .clear-obj03 li .desc {display:block; margin-top:6px; color:#9d9c9c; overflow:hidden; white-space:break-word; text-overflow:ellipsis;}
 .order_tab_content .clear-obj03 li .price {display:block; color:#666; text-align:center;} 
 .order_tab_content .clear-obj03 li {margin-left:59px;}
+
+/***选择商品以后再订购***/
+.order_tab_content .tblPlaceHolder {border-top:0;}
+.order_tab_content .tblPlaceHolder .order_sum {border-top:3px solid #dbdbdb; border-bottom:3px solid #dbdbdb;}
+.order_tab_content .tblPlaceHolder .order_sum .order_article01 {margin-left:30px;}
+#order_item2 .content4 .btn_area {float:left; width:990px;}
+
+/**step02**/
+.oz_order_main .order_step ol.STEP02 {background:url("/images/bg_order_step_02.png") no-repeat 0 0; }
+.oz_order_main .step02_total_price {margin:20px 0 85px;}
+.oz_order_main .step02_order_plus  {margin-left:20px; vertical-align:middle;}
+.oz_order_main .step02_order_notice {margin:0 0 0 3px; color:#464646;}
+.oz_order_main .order_point {width:988px; height:50px; border:solid 1px #dbdbdb; position:relative; margin:15px 0 40px 0;}
+.oz_order_main .order_point button {border:0;}
+.oz_order_main .order_point .oozoopoint {height:50px; width:250px; background:#e1e9f1; display:block; float:left; text-align:center; font:18px/2.8 Tahoma, '微软雅黑',"돋움",dotum;}
+.oz_order_main .order_point span{float:left; margin:13px 0 0 15px; display:inline-block; font-size:16px;}
+.oz_order_main .order_red {color:#ec4f4a;}
