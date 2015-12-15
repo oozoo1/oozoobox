@@ -112,7 +112,7 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                             <!--s: logo-->
                             <h1 id="oz_mallLogo">
                                 <span class="oz_mlogo">
-                                    <a title="OOZOOBOX.com" href="#"><s></s>OOZOOBOX</a>
+                                    <a title="OOZOOBOX.com" href="/"><s></s>OOZOOBOX</a>
                                 </span> 
                             </h1>
                             <!--e: logo-->
@@ -160,14 +160,14 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
     	<div class="oz_glo2_navbg">
             <ul id="nav">
                 <li class="on">
-                    <a href="#" class="first glo_1">给宝宝最好的</a>
+                    <a href="/shop/list.php?ca_id=10" class="first glo_1">给宝宝最好的</a>
                     <div class="second">
                     	<dl class="second_left">
-                        	<dd><a href="#" class="glo2_local">尿片</a></dd>
-                            <dd><a href="#" class="glo2_local">食品</a></dd>
-                            <dd><a href="#" class="glo2_local">保健食品</a></dd>
-                            <dd><a href="#" class="glo2_local">童装</a></dd>
-                            <dd><a href="#" class="glo2_local">母婴用品</a></dd>
+                        	<dd><a href="/shop/list.php?ca_id=1010" class="glo2_local">尿片</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=1020" class="glo2_local">食品</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=1030" class="glo2_local">保健食品</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=1040" class="glo2_local">童装</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=1050" class="glo2_local">母婴用品</a></dd>
                         </dl>
                         <!--s:GLOBAL2 MD추천상품-->
                         <div class="gol2_md_pro">
@@ -232,14 +232,14 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                     </div>
                 </li>
                 <li>
-                    <a href="#" class="glo_2">白滑牛奶皮</a>
+                    <a href="/shop/list.php?ca_id=20" class="glo_2">白滑牛奶皮</a>
                     <div class="second">
                     	<dl class="second_left">
-                        	<dd><a href="#" class="glo2_local">面膜</a></dd>
-                            <dd><a href="#" class="glo2_local">化妆水/乳液</a></dd>
-                            <dd><a href="#" class="glo2_local">精华/护肤霜 </a></dd>
-                            <dd><a href="#" class="glo2_local">彩妆</a></dd>
-                            <dd><a href="#" class="glo2_local">套妆</a></dd>
+                        	<dd><a href="/shop/list.php?ca_id=2010" class="glo2_local">面膜</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=2020" class="glo2_local">化妆水/乳液</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=2030" class="glo2_local">精华/护肤霜 </a></dd>
+                            <dd><a href="/shop/list.php?ca_id=2040" class="glo2_local">彩妆</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=2050" class="glo2_local">套妆</a></dd>
                         </dl> 
                         <!--s:GLOBAL2 MD추천상품-->
                         <div class="gol2_md_pro">
@@ -304,14 +304,14 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                     </div>
                 </li>
                 <li>
-                    <a href="#" class="glo_3">津津有味</a>
+                    <a href="/shop/list.php?ca_id=30" class="glo_3">津津有味</a>
                     <div class="second">
                     	<dl class="second_left">
-                        	<dd><a href="#" class="glo2_local">调料</a></dd>
-                            <dd><a href="#" class="glo2_local">面类</a></dd>
-                            <dd><a href="#" class="glo2_local">营养</a></dd>
-                            <dd><a href="#" class="glo2_local">健康</a></dd>
-                            <dd><a href="#" class="glo2_local">饼干</a></dd>
+                        	<dd><a href="/shop/list.php?ca_id=3010" class="glo2_local">调料</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=3020" class="glo2_local">面类</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=3030" class="glo2_local">营养</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=3040" class="glo2_local">健康</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=3050" class="glo2_local">饼干</a></dd>
                         </dl>
 <!--s:GLOBAL2 MD추천상품-->
                         <div class="gol2_md_pro">
@@ -376,13 +376,13 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                     </div>
                 </li>
                 <li>
-                    <a href="#" class="glo_4">小生活必备</a>
+                    <a href="/shop/list.php?ca_id=50" class="glo_4">小生活必备</a>
                     <div class="second">
                     	<dl class="second_left">
-                        	<dd><a href="#" class="glo2_local">女士</a></dd>
-                            <dd><a href="#" class="glo2_local">厨房</a></dd>
-                            <dd><a href="#" class="glo2_local">洗澡</a></dd>
-                            <dd><a href="#" class="glo2_local">其他</a></dd>                            
+                        	<dd><a href="/shop/list.php?ca_id=5010" class="glo2_local">女士</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=5020" class="glo2_local">厨房</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=5030" class="glo2_local">洗澡</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=5040" class="glo2_local">其他</a></dd>                            
                         </dl>
 <!--s:GLOBAL2 MD추천상품-->
                         <div class="gol2_md_pro">
@@ -447,13 +447,13 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                     </div>
                 </li>
                 <li>
-                    <a href="#" class="glo_5">美丽的穿着</a>
+                    <a href="/shop/list.php?ca_id=40" class="glo_5">美丽的穿着</a>
                     <div class="second">
                      	<dl class="second_left">
-                        	<dd><a href="#" class="glo2_local">女装</a></dd>
-                            <dd><a href="#" class="glo2_local">男装</a></dd>
-                            <dd><a href="#" class="glo2_local">儿童</a></dd>
-                            <dd><a href="#" class="glo2_local">内衣</a></dd>
+                        	<dd><a href="/shop/list.php?ca_id=4010" class="glo2_local">女装</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=4020" class="glo2_local">男装</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=4030" class="glo2_local">儿童</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=4040" class="glo2_local">内衣</a></dd>
                         </dl> 
 <!--s:GLOBAL2 MD추천상품-->
                         <div class="gol2_md_pro">

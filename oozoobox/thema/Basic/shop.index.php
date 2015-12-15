@@ -35,7 +35,7 @@ $result = sql_query($sql);
                     <ul class="tit">
                     <?php $k=1; $a=2; for ($i=0; $row=sql_fetch_array($result); $i++){?>
                         <li class="mod_cate">
-                            <h2><i class="oz_main_glo_ico"><img src="/images/glo_icon_0<?=$k++?>.png" alt="给宝宝最好的 icon"/></i><a><?=$row[ca_name]?></a></h2><!--"내 아이에게 주고 싶은 가장 좋은 것"-->
+                            <h2><i class="oz_main_glo_ico"><img src="/images/glo_icon_0<?=$k++?>.png" alt="给宝宝最好的 icon"/></i><a href="/shop/list.php?ca_id=<?=$row[ca_id]?>"><?=$row[ca_name]?></a></h2><!--"내 아이에게 주고 싶은 가장 좋은 것"-->
                             <div class="mod_subcate">
                                 <div class="mod_subcate_main">
                                 <?php 

@@ -545,7 +545,7 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 /**LIST 앨범형**/
 .list_type_album {float:left; width: 990px; margin-left:5px;}
 .list_type_album .list_album {height: 310px;}
-.list_type_album .list_album_item {float: left; margin-right: 15px; }
+.list_type_album .list_album_item {float: left; margin-right: 15px;}
 .list_type_album .album_card {border:1px solid #fff; width:233px; height: 100%; overflow: hidden; margin-bottom: 20px; display: block; position: relative; background-color: #fff;}
 .list_type_album .album_card:hover{border:1px solid #df121a;}
 .list_type_album .album_ico_wish {width:33px; height:33px; display:block; border:1px solid #efefef; background:url('/images/bg_album_ico_wish.png') no-repeat; position:absolute; top:0; left:0; color:#ea5b0c; text-align:center;}

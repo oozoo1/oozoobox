@@ -564,7 +564,7 @@ function apms_paging($write_pages, $cur_page, $total_page, $url, $add='', $first
 		if ($cur_page < 2) {
 			$str .= '<li class="disabled"><a>'.$first.'</a></li>';
 		} else {
-			$str .= '<li><a href="'.$url.'1'.$add.'">'.$first.'</a></li>';
+			$str .= '<li><a href="'.$url.'1'.$add.'&l_type='.$_GET[l_type].'#nv_list">'.$first.'</a></li>';
 		}
 	}
 
@@ -576,7 +576,7 @@ function apms_paging($write_pages, $cur_page, $total_page, $url, $add='', $first
 	}
 
 	if ($start_page > 1) { 
-		$str .= '<li><a href="'.$url.($start_page-1).$add.'">'.$prev.'</a></li>';
+		$str .= '<li><a href="'.$url.($start_page-1).$add.'&l_type='.$_GET[l_type].'#nv_list">'.$prev.'</a></li>';
 	} else {
 		$str .= '<li class="disabled"><a>'.$prev.'</a></li>'; 
 	}
@@ -584,7 +584,7 @@ function apms_paging($write_pages, $cur_page, $total_page, $url, $add='', $first
 	if ($total_page > 0){
 		for ($k=$start_page;$k<=$end_page;$k++){
 			if ($cur_page != $k) {
-				$str .= '<li><a href="'.$url.$k.$add.'">'.$k.'</a></li>';
+				$str .= '<li><a href="'.$url.$k.$add.'&l_type='.$_GET[l_type].'#nv_list">'.$k.'</a></li>';
 			} else {
 				$str .= '<li class="active"><a>'.$k.'</a></li>';
 			}
@@ -592,14 +592,14 @@ function apms_paging($write_pages, $cur_page, $total_page, $url, $add='', $first
 	}
 
 	if ($total_page > $end_page) {
-		$str .= '<li><a href="'.$url.($end_page+1).$add.'">'.$next.'</a></li>';
+		$str .= '<li><a href="'.$url.($end_page+1).$add.'&l_type='.$_GET[l_type].'#nv_list">'.$next.'</a></li>';
 	} else {
 		$str .= '<li class="disabled"><a>'.$next.'</a></li>';
 	}
 
 	if($last) {
 		if ($cur_page < $total_page) {
-			$str .= '<li><a href="'.$url.($total_page).$add.'">'.$last.'</a></li>';
+			$str .= '<li><a href="'.$url.($total_page).$add.'&l_type='.$_GET[l_type].'#nv_list">'.$last.'</a></li>';
 		} else {
 			$str .= '<li class="disabled"><a>'.$last.'</a></li>';
 		}
