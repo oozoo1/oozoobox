@@ -852,7 +852,7 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 
 /**step02**/
 .oz_order_main .order_step ol.STEP02 {background:url("/images/bg_order_step_02.png") no-repeat 0 0; }
-.oz_order_main .step02_total_price {margin:20px 0 85px;}
+.oz_order_main .step02_total_price {margin:20px 0 47px;}
 .oz_order_main .step02_order_plus  {margin-left:20px; vertical-align:middle;}
 .oz_order_main .step02_order_notice {margin:0 0 0 3px; color:#464646;}
 .oz_order_main .order_point {width:988px; height:50px; border:solid 1px #dbdbdb; position:relative; margin:15px 0 40px 0;}
@@ -860,3 +860,24 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 .oz_order_main .order_point .oozoopoint {height:50px; width:250px; background:#e1e9f1; display:block; float:left; text-align:center; font:18px/2.8 Tahoma, '微软雅黑',"돋움",dotum;}
 .oz_order_main .order_point span{float:left; margin:13px 0 0 15px; display:inline-block; font-size:16px;}
 .oz_order_main .order_red {color:#ec4f4a;}
+
+/***Step 02-收货人信息***/
+.oz_pay .delivery {width:100%; border:1px solid #d1d1d1;}
+.oz_order_main .content3 {margin-top:10px;}
+.oz_pay .content3 table th {width:133px; background:#f8f8f8; border-right:1px solid #eaeaea; line-height:41px; text-align:center; color:#333; font-size:14px;}
+.oz_pay .content3 table th, .oz_pay .content3 table td {border-bottom:1px solid #d1d1d1;}
+.oz_pay .content3 table td {text-align:left; padding-left:20px;}
+.oz_pay .content3 table td .savead {text-align:right;}
+.oz_pay .content3 table td input, .oz_pay .content3 table td label {vertical-align:middle; margin:0;}
+input.txt {height:21px; padding:2px 0 0 4px; border:1px solid #ccc; font-family: "Microsoft YaHei",arial,"宋体"; line-height:23px; }
+input.check {width:13px; height:13px;}
+.oz_pay .content3 select {color:#777; background-color:#fff; vertical-align:top; display:inline-block; height:26px; width:100px; padding:4px; border:solid 1px #ccc;}
+.oz_pay .content3 table p {width:100%; color:#666; display:inline-block; padding:4px 0;}
+.oz_pay .content3 table td.savead {text-align:right; padding-right:20px;}
+.oz_pay .btn_area02{padding:60px; text-align:center;}
+.oz_pay .content3 .payment-list li {vertical-align:top; text-align:center; display:inline-block; padding:10px 30px; margin:11px; border:1px solid #e6e6e6; border-radius:4px; position:relative; z-index:1;}
+.oz_pay .content3 .payment-list li:hover, .oz_pay .payment-list li.using {border:solid 2px #52a452; margin:10px;}
+.oz_pay .content3 .payment-list li label {display:block; cursor:pointer;}
+.oz_pay .content3 .payment-list li.using i {background:url("/images/ico_oz_pay_using.png") no-repeat 0 0; display:block; width:32px; height:32px; position:absolute; top:2px; left:0; z-index:1;}
+.oz_pay .content3 .payment-list li .logo {text-align:center; vertical-align:middle; display:table-cell; height:50px; overflow:hidden;}
+.oz_pay .content3 .payment-list li .logo img {max-width:120px; max-height:50px;}

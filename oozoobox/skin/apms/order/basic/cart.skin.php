@@ -1,4 +1,4 @@
-<?php
+                                                                                                                                              <?php
 if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
@@ -605,11 +605,9 @@ if($header_skin)
         </div>
         <!--e: 위시리스트, 나중에 주문하기-->
         <!----------------------------------STEP 01------------------------------------->
-        
-        
+    </div>       
+    <div class="oz_order_main oz_pay">        
         <div style="width:990px; height:150px; display:block; float:left;"></div> <!---임시 div  추후 삭제 --->
-        
-        
         
     	<h3 class="order_tit"> 购买<span class="order_small">YOUR ORDER</span></h3>
         <div class="order_step">
@@ -720,12 +718,13 @@ if($header_skin)
         </div>
         <!--포인트 사용 및 총계-->
         
+        <!--s: Step 02-收货人信息-->
         <div class="content3">
         	<h4><span class="blue">03. 收货人</span>信息</h4>
             <table class="delivery" summary="배송지, 수령인, 핸드폰 번호, 전화 번호, 주소, 요청사항등 배송을 확인 할 수 있습니다.">
             	<colgroup>
-                	<col width="15%"></col>
-                    <col width="85%"></col>
+                	<col width="20%"></col>
+                    <col width="80%"></col>
                 </colgroup>
                 <tbody>
                 	<tr>
@@ -734,44 +733,150 @@ if($header_skin)
                         </th>
                         <td class="input">
                         	<label>
-                            	<input class="check" type="radio">회원정보</input>
+                            	<input class="check" type="radio"> 회원정보</input>
                             </label>
                         	<label>
-                            	<input class="check" type="radio">최근배송지</input>
+                            	<input class="check" type="radio"> 최근배송지</input>
                             </label>
                         	<label>
-                            	<input class="check" type="radio">새로운 주소</input>
+                            	<input class="check" type="radio"> 새로운 주소</input>
                             </label>    
                         	<label>
-                            	<input class="check" type="radio">주소록선택</input>
+                            	<input class="check" type="radio"> 주소록선택</input>
                             </label>                                                                                
                         </td>
                     </tr>
                     <tr>
                     	<th scope="row">
-                        	<label>수령인</label>
+                        	<label>收货人姓名</label>
                         </th>
                         <td class="input">
-                        	<input name="FullName" title="수령인 입력" class="txt" id="tbFullName" style="width:197px;" type="text" maxlength="16"></input>
+                        	<input name="FullName" title="收货人姓名" class="txt" id="tbFullName" style="width:197px;" type="text" maxlength="16"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<th scope="row">
+                        	<label>所在地区</label>
+                        </th>
+                        <td class="input">
+                        	<select class="address">
+                            	<option>-请选择-</option>
+                                <option value="1">北京</option>
+                                <option value="2">天津</option>
+                                <option value="3">河北</option>
+                                <option value="4">山西</option>
+                                <option value="5">内蒙古</option>
+                                <option value="6">辽宁</option>
+                                <option value="7">吉林</option>
+                                <option value="8">黑龙江</option>
+                                <option value="9">上海</option>
+                                <option value="10">江苏</option>
+                                <option value="11">浙江</option>
+                                <option value="12">安徽</option>
+                                <option value="13">福建</option>
+                                <option value="14">江西</option>
+                                <option value="15">山东</option>
+                                <option value="16">河南</option>
+                                <option value="17">湖北</option>
+                                <option value="18">湖南</option>
+                                <option value="19">广东</option>
+                                <option value="20">广西</option>
+                                <option value="21">海南</option>
+                                <option value="22">重庆</option>
+                                <option value="23">四川</option>
+                                <option value="24">贵州</option>
+                                <option value="25">云南</option>
+                                <option value="26">西藏</option>
+                                <option value="27">陕西</option>
+                                <option value="28">甘肃</option>
+                                <option value="29">青海</option>
+                                <option value="30">宁夏</option>
+                                <option value="31">新疆</option>
+                                <option value="32">台湾</option>
+                                <option value="33">香港</option>
+                                <option value="34">澳门</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<th scope="row">
+                        	<label>详细地址</label>
+                        </th>
+                        <td class="input">
+                        	<input name="Address" title="详细地址" class="txt" id="tbAddress" style="width:570px;" type="text" maxlength="16"></input>
+                            <p>请填写真实地址，不需要重复填写所在地区</p>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<th scope="row">
+                        	<label>邮政编码</label>
+                        </th>
+                        <td class="input">
+                        	<input name="PostalCode" title="邮政编码" class="txt" id="tbPostalCode" style="width:197px;" type="text" maxlength="16"></input>
+                        </td>
+                    </tr>                                         
+                       <tr>
+                    	<th scope="row">
+                        	<label>手机号码</label>
+                        </th>
+                        <td class="input">
+                        	<span class="ng-binding" >+86</span>
+                        	<input name="Mobile" title="手机号码" class="txt" id="tbMobile" style="width:171px;" type="text" maxlength="12"></input>
                         </td>
                     </tr> 
+ 					<tr>
+                    	<th scope="row">
+                        	<label>요청사항</label>
+                        </th>
+                        <td class="input">
+                        	<input name="Message" title="요청사항" class="txt" id="tbMessage" style="width:570px;" type="text"></input>
+                            <p>요청사항 내용 중 [취소요청, 옵션변경] 은 적용이 되지 않습니다. 해당 내용은 고객센터로 문의해 주세요. </p>
+                        </td>
+                    </tr>                                        
+                    <tr>
+                        <td class="input savead" colspan="2">
+                        	<input name="SaveAddress" title="手机号码" class="check" id="tbSaveAddress" type="checkbox" > 设置为默认收货地址（设置后奖自动选中该收货地址）</input>
+                        </td>
+                    </tr>                  
                 </tbody>
             </table>         
-        
         </div>
-
         
-     
-        <div class="btn_area01">
-            <button class="select" id="btnAllOrder" style="margin-right:20px;" type="button">
-                <img src="/images/btn_AllOrder.png" alt="立即订购"/>
-            </button>
-            <button class="select" id="btnCheckOrder" style="margin-right:20px;" type="button">
-                <img src="/images/btn_select_order.png" alt="继续购物"/>
-            </button>                         
-            <button class="select" id="btnList" type="button">
-                <img src="/images/btn_List.png" alt="继续购物"/>
-            </button>              
+        <div class="content3">
+        	<h4><span class="blue">04. 支付</span>方式<span class="order_notice_small">결제하실때 아래 사항을 꼭 확인해 주세요</span></h4>
+
+            <ul>
+            	<li>- 一些税收规定均按照中国海关相关条例。</li>
+                <li>- 货物被海关扣押时，由买家承担相关税收。若拒绝缴税，要求退款时，货物产生的相关邮费由买家承担。</li>
+            </ul>
+            
+           	<ul class="payment-list">
+            	<li payment_code="alipay">
+                	<label for="pay_alipay">
+                    	<i></i>
+                    	<div class="logo" for="pay_2">
+                         	<img src="/images/logo_pay_alipay.png"/>
+                        </div>
+                    </label>
+                </li>
+            	<li payment_code="unionpay">
+                	<label for="pay_union">
+                    	<i></i>
+                    	<div class="logo" for="pay_3">
+                         	<img src="/images/logo_pay_unionpay.png"/>
+                        </div>
+                    </label>
+                </li>                
+            </ul>        
+            
+            <div class="btn_area02">
+                <button class="select" id="btnPay" style="margin-right:20px; border:0;" type="button">
+                    <img src="/images/btn_pay.png" alt="立即订购"/>
+                </button>
+                <button class="select" id="btnReturnCart" style="margin-right:20px; border:0;" type="button">
+                    <img src="/images/btn_returncart.png" alt="返回购物车"/>
+                </button>                                   
+        	</div>
         </div>
 
     </div>
@@ -835,6 +940,19 @@ $(document).ready(function(){
         $(".content4 #btnLCheckAddWishlist").show();
     });
 });
+</script>
+
+
+<!-- 지불방식 --->
+<script type="text/javascript">
+$(function(){
+	$('.payment-list > li').on('click',function(){
+		$('.payment-list > li').removeClass('using');
+		$(this).addClass('using');
+		$('#payment_code').val($(this).attr('payment_code'));});
+		$('#next_button').on('click',function(){
+			if($('#payment_code').val()==''){showDialog('请选择支付方式','error','','','','','','','','',2);return false;}
+$('#buy_form').submit();});});
 </script>
 
 
