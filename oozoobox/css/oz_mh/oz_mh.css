@@ -881,3 +881,10 @@ input.check {width:13px; height:13px;}
 .oz_pay .content3 .payment-list li.using i {background:url("/images/ico_oz_pay_using.png") no-repeat 0 0; display:block; width:32px; height:32px; position:absolute; top:2px; left:0; z-index:1;}
 .oz_pay .content3 .payment-list li .logo {text-align:center; vertical-align:middle; display:table-cell; height:50px; overflow:hidden;}
 .oz_pay .content3 .payment-list li .logo img {max-width:120px; max-height:50px;}
+
+/**step03**/
+.oz_order_main .order_step ol.STEP03 {background:url("/images/bg_order_step_03.png") no-repeat 0 0; }
+.oz_order_main .step03_success{float:left; width:100%; height:200px; text-align:center;}
+.oz_order_main .step03_success img {margin-top:100px;}
+.oz_order_main .step03_infocart {float:left; width:100%; height:200px; text-align:center;}
+.oz_order_main .step03_infocart button {border:0; padding:0; marign:0 auto;}

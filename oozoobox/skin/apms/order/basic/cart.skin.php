@@ -604,8 +604,9 @@ if($header_skin)
             <!--위시리스트, 나중에 주문하기 wrap--> 
         </div>
         <!--e: 위시리스트, 나중에 주문하기-->
+    </div>   
         <!----------------------------------STEP 01------------------------------------->
-    </div>       
+    
     <div class="oz_order_main oz_pay">        
         <div style="width:990px; height:150px; display:block; float:left;"></div> <!---임시 div  추후 삭제 --->
         
@@ -878,9 +879,29 @@ if($header_skin)
                 </button>                                   
         	</div>
         </div>
-
     </div>
     <!--e: 장바구니 wrap-->
+    <div class="oz_order_main">        
+    	<h3 class="order_tit"> 购买<span class="order_small">YOUR ORDER</span></h3>
+        <div class="order_step">
+            <h3 class="order_step_tit">
+                <img src="/images/h3_order_step_tit.png" alt="购买顺序"/>
+            </h3>
+            <ol class="STEP03">
+            	<li>我的购物车</li>
+                <li>提交订单</li>
+                <li>支付成功</li> 
+            </ol>
+    	</div>
+        <div class="step03_success">
+        	<img src="/images/step03_success.png" alt="支付成功"/>
+        </div>
+        <div class="step03_infocart">
+            <button class="select" id="btnInfoCart">
+            	<img src="/images/btn_step03_infocart.png" alt="察看我的购物信息"/>
+            </button>
+        </div>
+    </div>    
 </div>
 <!--e: 장바구니-->
 
