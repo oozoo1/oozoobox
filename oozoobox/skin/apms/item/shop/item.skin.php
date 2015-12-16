@@ -14,17 +14,17 @@ for($i=1; $i<=10; $i++) {
 	if(!$it['it_img'.$i])
 		continue;
 
-	$thumb = get_it_thumbnail($it['it_img'.$i], 60, 60);
+	$thumb = get_it_thumbnail($it['it_img'.$i], 72, 72);
 
 	if($thumb) {
 		$org_url = G5_DATA_URL.'/item/'.$it['it_img'.$i];
-		$img = apms_thumbnail($org_url, 600, 600, false, true);
+		$img = apms_thumbnail($org_url, 418, 418, false, true);
 		$thumb_url = ($img['src']) ? $img['src'] : $org_url;
 		if($j == 0) {
 			$item_image = $thumb_url; // 큰이미지
 			$item_image_href = G5_SHOP_URL.'/largeimage.php?it_id='.$it['it_id'].'&amp;ca_id='.$ca_id.'&amp;no='.$i; // 큰이미지 주소
 		}
-		$thumbnails[$j] = '<a href="'.G5_SHOP_URL.'/largeimage.php?it_id='.$it['it_id'].'&amp;ca_id='.$ca_id.'&amp;no='.$i.'" ref="'.$thumb_url.'" target="_blank" class="thumb_item_image popup_item_image">'.$thumb.'<span class="sound_only"> '.$i.'번째 이미지 새창</span></a>';
+		$thumbnails[$j] = '<a href="#" ref="'.$thumb_url.'" class="thumb_item_image popup_item_image">'.$thumb.'<span class="sound_only"> '.$i.'번째 이미지 새창</span></a>';
 		$j++;
 	}
 }
@@ -49,26 +49,59 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
         	<!--s: 제품 사진 보기-->
         	<div class="detail_good_pic">
             	<div class="detail_good_slide_big">
-                	<img src="/images/detail_good_slide_big_01.png" alt="슬라이드 큰 이미지"/>
+				<div class="item-image">				            
+                <? if($it[it_1]){?>
+                <iframe height=409 width=409 src="http://player.youku.com/embed/<?=$it[it_1]?>==" frameborder=0 allowfullscreen></iframe>           
+                <? }else{ ?>
+				<a href="#" id="item_image_href" class="popup_item_image">
+				<img id="item_image" src="<?php echo $item_image;?>" alt="">
+				</a>
+                <? } ?>
+					<?php if($wset['shadow']) echo apms_shadow($wset['shadow']); //그림자 ?>
+				</div>
                 </div>
                 <ul class="detail_good_slide_small">
-                	<li><img src="/images/detail_good_slide_small_01.png" alt="슬라이드 작은 이미지"/></li>
-                    <li><img src="/images/detail_good_slide_small_02.png" alt="슬라이드 작은 이미지"/></li>
-                    <li><img src="/images/detail_good_slide_small_03.png" alt="슬라이드 작은 이미지"/></li>
-                    <li><img src="/images/detail_good_slide_small_04.png" alt="슬라이드 작은 이미지"/></li>
-                    <li class="last"><img src="/images/detail_good_slide_small_05.png" alt="슬라이드 작은 이미지"/></li>
-                </ul>
+                	<div class="item-thumb text-center">
+                	<?php for($i=0; $i < 5; $i++) {  ?><li><?php echo $thumbnails[$i]; ?></li><?php } ?>
+                	</div>
+					<script>
+					$(function(){
+						$(".thumb_item_image").hover(function() {
+							var img = $(this).attr("ref");
+							var url = $(this).attr("href");
+							$("#item_image").attr("src", img);
+							$("#item_image_href").attr("href", url);
+							return true;
+						});
+						// 이미지 크게보기
+						$(".popup_item_image").click(function() {
+							var url = $(this).attr("href");
+							var top = 10;
+							var left = 10;
+					
+							return false;
+						});
+					});
+					</script>
+                </ul>                
             </div>
             <!--e: 제품 사진 보기-->
 
             <!--s: 제품 가격 정보-->
             <div class="detail_good_info">
-                <h3>Plum Organics 菠菜苹果甘蓝口味磨牙饼干 84克</h3>
+                <h3><?php echo stripslashes($it['it_name']); // 상품명 ?></h3>
                 <table summary="해당상품에 대한 정보 및 옵션선택 영역입니다. 원산지, 판매국가, 배송구분, 스크랩, 추가정보 항목과 해당 상품에 대한 옵션선택 및 가격정보 바로구매, 장바구니 담기 위시리스트 등록 기능이 있습니다." class="detail_good_etc">
                     <colgroup>
-                        <col style="width:65px;">
+                        <col style="width:65px;"><?php echo $it['it_basic']; ?>
                         <col>
                     </colgroup>
+					<form name="fitem" method="post" action="<?php echo $action_url; ?>" class="form item-form" role="form" onsubmit="return fitem_submit(this);">
+					<input type="hidden" name="it_id[]" value="<?php echo $it_id; ?>">
+					<input type="hidden" name="it_msg1[]" value="<?php echo $it['pt_msg1']; ?>">
+					<input type="hidden" name="it_msg2[]" value="<?php echo $it['pt_msg2']; ?>">
+					<input type="hidden" name="it_msg3[]" value="<?php echo $it['pt_msg3']; ?>">
+					<input type="hidden" name="sw_direct">
+					<input type="hidden" name="url">
                     <tbody>
                         <tr class="good_info_satisfy">
                             <th scope="row">满意度</th>
@@ -117,8 +150,8 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                                             <span class="detail_total">选择商品 合算 :</span> 
                                             <span class="item_total_price">
                                                 <i class="price_rmb">¥</i>
-                                                <span class="price_integer">59</span>
-                                                <span class="price_decimal">.9</span>
+                                                <span class="price_integer" id="it_tot_price"><?php echo display_price(get_price($it)); ?>
+						<input type="hidden" id="it_price" value="<?php echo get_price($it); ?>"></span>
                                             </span> 
                                         </div>
                                     </div>
@@ -152,6 +185,7 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                             	</div>
                             </td>
                         </tr>
+                    </form>
                     </tbody>
                 </table>
             </div>
