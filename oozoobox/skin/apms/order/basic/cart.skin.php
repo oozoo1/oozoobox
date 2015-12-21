@@ -1,9 +1,8 @@
-                                                                                                                                              <?php
+<?php
 if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
-// add_stylesheet('<link rel="stylesheet" href="'.$skin_url.'/style.css" media="screen">', 0);
-add_stylesheet('<link rel="stylesheet" href="/css/oz_mh/oz_mh.css" type="text/css" media="screen" >',0); //김미혜: css추가 및 경로 설정
+add_stylesheet('<link rel="stylesheet" href="'.$skin_url.'/style.css" media="screen">', 0);
 
 // 목록헤드
 if(isset($wset['chead']) && $wset['chead']) {
@@ -22,8 +21,18 @@ if($header_skin)
 <script src="<?php echo $skin_url;?>/shop.js"></script>
 
 <!-- Modal -->
+<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+		<div id="mod_option_box"></div>
+	  </div>
+    </div>
+  </div>
+</div>
 
-<?php echo $head_class;?>
+<form name="frmcartlist" id="sod_bsk_list" method="post" action="<?php echo $action_url; ?>" class="form" role="form">
+    <div class="table-responsive">
 <!--s: 장바구니--> 
 <div id="#oz_order_wrap">
 	<!--s: 장바구니 wrap-->
@@ -55,147 +64,87 @@ if($header_skin)
         </div>
         <!-- s: 장바구니 상품 없음-->
         <div id="order_no_item">
-        	<div class="content1">
-            	<h4><span class="blue">OOZOO BOX</span> 配送商品</h4>
-                <table summary="장바구니에 선택한 상품이 없을 때 표시되는 영역입니다.">
-                	<colgroup>
-                    	<col width="47"></col>
-                        <col width=""></col>
-                        <col width="105"></col>
-                        <col width="105"></col>
-                        <col width="120"></col>
-                        <col width="95"></col>
-                    </colgroup>
-                    <thead>
-                    	<tr>
-                        	<th scope="col"></th>
-                            <th scope="col">商品</th>
-                            <th scope="col">单价（元）</th>
-                            <th scope="col">数量</th>
-                            <th scope="col">小计（元）</th>
-                            <th scope="col">操作</th>                            
-                        </tr>
-                    </thead>
-                    <tbody>
-                    	<tr>
-                        	<td style="height:120px;" colspan="6">장바구니에 담겨있는 상품이 없습니다.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <!-- e: 장바구니 상품 없음-->
-		<!-- s: 장바구니 상품 있음-->
-        <div id="order_item">
-        	<!-- s: 장바구니 상품 있음: 01. OOZOO BOX -->
-        	<div class="content1">
-            	<h4><span class="blue">OOZOO BOX</span> 配送商品</h4>
-                <table class="tblPlaceHolder" summary="장바구니에 선택한 상품이 있을 떄 표시되는 영역입니다.">
-                	<colgroup>
-                    	<col width="47"></col>
-                        <col width=""></col>
-                        <col width="105"></col>
-                        <col width="105"></col>
-                        <col width="120"></col>
-                        <col width="95"></col>
-                    </colgroup>
-                    <thead>
-                    	<tr>
-                        	<th scope="col">
-                            	<label class="hidden-text" for="all_check">상품 전체 선택 </label>
-                                <input name="prdcheck" class="order_all_check" type="checkbox"></input>
-                            </th>
-                            <th scope="col">商品</th>
-                            <th scope="col">单价（元）</th>
-                            <th scope="col">数量</th>
-                            <th scope="col">小计（元）</th>
-                            <th scope="col">操作</th>                            
-                        </tr>
-                    </thead>
-                    <tbody><!---------- oozoobox상품일 때 여기만 반복 : tbody------------------>
-                    	<tr>
-                        	<td>
-                            	<label class="hidden-text" for="product_check">상품 선택</label>
-                                <input name="prdcheck" class="prdcheck" type="checkbox"></input> 
-                            </td>
-                            <td class="order_subject" >
-                            	<a onclick="window.open('/','_blank'); return false;" href="#">
-                                	<img src="/images/order_item_01.png" alt="상품이미지"/>
-                                </a>
-                                <div>
-                                	<a onclick="window.open('/','_blank'); return false;" href="#">
-                                    	<strong>[zoffoli] EAST SEA GLOBE - 1. DESK GLOBE ON FLAT WOOD BASE </strong>
-                                    </a>
-                                    <span> 수급 안정 / 결제 완료 후 5일 이내 / CJ대한통운 </span>
+        	<div class="content2">                 
+                <table class="div-table table bsk-tbl bg-white">
+                <tbody>
+                <tr class="<?php echo $head_class;?>">
+                    <th scope="col">
+                        <label for="ct_all" class="sound_only">상품 전체</label>
+                        <span><input type="checkbox" name="ct_all" value="1" id="ct_all" checked="checked"></span>
+                    </th>
+                    <th scope="col"><span>图片</span></th>
+                    <th scope="col"><span>商品</span></th>
+                    <th scope="col"><span>数量</span></th>
+                    <th scope="col"><span>价格</span></th>
+                    <th scope="col"><span>小计</span></th>
+                    <th scope="col"><span>积分</span></th>
+                    <th scope="col"><span class="last">运费</span></th>
+                </tr>
+                <?php for($i=0;$i < count($item); $i++) { ?>
+                    <tr<?php echo ($i == 0) ? ' class="tr-line"' : '';?>>
+                        <td class="text-center">
+                            <label for="ct_chk_<?php echo $i; ?>" class="sound_only">상품</label>
+                            <input type="checkbox" name="ct_chk[<?php echo $i; ?>]" value="1" id="ct_chk_<?php echo $i; ?>" checked="checked">
+                        </td>
+                        <td class="text-center">
+                            <div class="item-img">
+                                <?php echo get_it_image($item[$i]['it_id'], 100, 100); ?>
+                                <div class="item-type">
+                                    <?php echo $item[$i]['pt_it']; ?>
                                 </div>
-                            </td>
-                            <td>178,000원</td>
-                            <td>
-                            	<select name="ordercount">
-                                	<option value="1" selected="">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>         
-                                	<option value="11">11</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                    <option value="16">16</option>
-                                    <option value="17">17</option>
-                                    <option value="18">18</option>
-                                    <option value="19">19</option>
-                                    <option value="20">20</option>                                                                        
-                                </select>
-                            </td>
-                            <td>178,000원</td>
-                            <td class="order_btn">
-                            	<button name="btnLaterBuyPart" id="btnLaterBuyPart" type="button">
-                                	<img alt="나중에 주문하기" src="/images/btn_order_later.png"/>
-                                </button>
-                            	<button name="btnWishlistPart" id="btnWishlistPart" type="button">
-                                	<img alt="위시리스트담기" src="/images/btn_order_wishlist.png"/>
-                                </button>
-                            	<button name="btnDeletePart" id="btnDeletePart" type="button">
-                                	<img alt="삭제하기" src="/images/btn_order_delete.png"/>
-                                </button>                                                                
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
+                            </div>
+                        </td>
+                        <td>
+                            <input type="hidden" name="it_id[<?php echo $i; ?>]" value="<?php echo $item[$i]['it_id']; ?>">
+                            <input type="hidden" name="it_name[<?php echo $i; ?>]" value="<?php echo get_text($item[$i]['it_name']); ?>">
+                            <a href="./item.php?it_id=<?php echo $item[$i]['it_id'];?>">
+                                <b><?php echo stripslashes($item[$i]['it_name']); ?></b>
+                            </a>
+                            <?php if($item[$i]['it_options']) { ?>
+                                <div class="well well-sm"><?php echo $item[$i]['it_options'];?></div>
+                                <button type="button" class="btn btn-primary btn-sm btn-block mod_options">选项/数量 修改</button>
+                            <?php } ?>
+                        </td>
+                        <td class="text-center"><?php echo number_format($item[$i]['qty']); ?></td>
+                        <td class="text-right"><?php echo number_format($item[$i]['ct_price']); ?></td>
+                        <td class="text-right"><span id="sell_price_<?php echo $i; ?>"><?php echo number_format($item[$i]['sell_price']); ?></span></td>
+                        <td class="text-right"><?php echo number_format($item[$i]['point']); ?></td>
+                        <td class="text-center"><?php echo $item[$i]['ct_send_cost']; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php if ($i == 0) { ?>
+                    <tr><td colspan="8" class="text-center text-muted"><p style="padding:50px 0;">购物车 没有东西了！ 快去抢购吧！.</p></td></tr>
+                <?php } ?>
+                </tbody>
+                <?php if ($tot_price > 0 || $send_cost > 0) { ?>
+                <tfoot>
+                        <?php if ($send_cost > 0) { // 배송비가 0 보다 크다면 (있다면) ?>
                     	<tr>
-                        	<td class="save" colspan="6">
+                        	<td class="save" colspan="8">
                             	<button name="btnMoreProduct" class="more_ozbox" type="button" value="0">배송비 절약상품 보기</button>
-                                <p class="order_delivery">배송비 ¥44.00 / ¥500.00원 이상 무료 배송</p>
+                                <p class="order_delivery"><?php echo number_format($send_cost); ?> 元</p>
                             </td>
                         </tr>
+                        <? } ?>
                         <tr>
-                        	<td class="order_sum" colspan="6">
-                            	<span class="order_article">商品数量</span>
-                                <span class="order_price">1</span>
-                                <span class="order_article">个</span>
+                        	<td class="order_sum" colspan="8">
                                 <img class="order_plus" alt="상품금액" src="/images/ico_order_plus.png"/>
                                 <span class="order_article">商品金额</span>
-                                <span class="order_price">¥49.00</span>
+                                <span class="order_price">¥<?php echo number_format($tot_price-$send_cost); ?> </span>
                                 <img class="order_plus" alt="상품금액" src="/images/ico_order_plus.png"/>
                                 <span class="order_article">运费</span>
-                                <span class="order_price">¥44.00</span>
+                                <span class="order_price">¥<?php echo number_format($send_cost); ?></span>
                             </td>                                
                         </tr>
                         <tr>
-                        	<td class="merge" colspan="6">
-                        	<span class="order_article_b">总计</span>
-                            <span class="order_price">93.00</span>
+                        	<td class="merge" colspan="8">
+                        	<span class="order_article_b">结算总额</span>
+                            <span class="order_price"><?php echo number_format($tot_price); ?></span>
                             <span class="order_article">元</span>
                             </td>
                         </tr>
                     </tfoot>
+                    <?php } ?>
                 </table>
             </div>
        		<!-- e: 장바구니 상품 있음: 01. OOZOO BOX-->                   
