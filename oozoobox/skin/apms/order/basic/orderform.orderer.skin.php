@@ -1,7 +1,7 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 ?>
-
+<script type="text/javascript"  src="/js/ct.js"></script>  
 <?php if(!$is_orderform) { //주문서가 필요없는 주문일 때 ?>
 
 	<section id="sod_frm_orderer" style="margin-bottom:0px;">
@@ -51,13 +51,14 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 <?php } else { ?>
 
+
 	<!-- 주문하시는 분 입력 시작 { -->
 	<section id="sod_frm_orderer" style="margin-bottom:0px;">
 		<div class="panel panel-default">
-			<div class="panel-heading"><strong><i class="fa fa-user fa-lg"></i> 주문하시는 분</strong></div>
+			<div class="panel-heading"><strong><i class="fa fa-user fa-lg"></i> 购买者信息</strong></div>
 			<div class="panel-body">
 				<div class="form-group has-feedback">
-					<label class="col-sm-2 control-label" for="od_name"><b>이름</b><strong class="sound_only">필수</strong></label>
+					<label class="col-sm-2 control-label" for="od_name"><b>姓名</b><strong class="sound_only">필수</strong></label>
 					<div class="col-sm-3">
 						<input type="text" name="od_name" value="<?php echo get_text($member['mb_name']); ?>" id="od_name" required class="form-control input-sm" maxlength="20">
 						<span class="fa fa-check form-control-feedback"></span>
@@ -65,55 +66,56 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 				</div>
 				<?php if (!$is_member) { // 비회원이면 ?>
 					<div class="form-group has-feedback">
-						<label class="col-sm-2 control-label" for="od_pwd"><b>비밀번호</b><strong class="sound_only">필수</strong></label>
+						<label class="col-sm-2 control-label" for="od_pwd"><b>密码</b><strong class="sound_only">필수</strong></label>
 						<div class="col-sm-3">
 							<input type="password" name="od_pwd" id="od_pwd" required class="form-control input-sm" maxlength="20">
 							<span class="fa fa-lock form-control-feedback"></span>
 						</div>
 						<div class="col-sm-7">
-							<span class="help-block">영,숫자 3~20자 (주문서 조회시 필요)</span>
+							<span class="help-block">영,숫자 3~20자 (查看购买记录时需要)</span>
 						</div>
 					</div>			
 				<?php } ?>			
 				<div class="form-group has-feedback">
-					<label class="col-sm-2 control-label" for="od_tel"><b>전화번호</b><strong class="sound_only">필수</strong></label>
+					<label class="col-sm-2 control-label" for="od_tel"><b>电话号码</b><strong class="sound_only">필수</strong></label>
 					<div class="col-sm-3">
 						<input type="text" name="od_tel" value="<?php echo get_text($member['mb_tel']); ?>" id="od_tel" required class="form-control input-sm" maxlength="20">
 						<span class="fa fa-phone form-control-feedback"></span>
 					</div>
 				</div>
 				<div class="form-group has-feedback">
-					<label class="col-sm-2 control-label" for="od_hp"><b>핸드폰</b></label>
+					<label class="col-sm-2 control-label" for="od_hp"><b>手机号码</b></label>
 					<div class="col-sm-3">
 						<input type="text" name="od_hp" value="<?php echo get_text($member['mb_hp']); ?>" id="od_hp" class="form-control input-sm" maxlength="20">
 						<span class="fa fa-mobile form-control-feedback"></span>
 					</div>
 				</div>
-
 				<div class="form-group has-feedback">
-					<label class="col-sm-2 control-label"><b>주소</b><strong class="sound_only">필수</strong></label>
+					<label class="col-sm-2 control-label"><b>地址</b><strong class="sound_only">필수</strong></label>
 					<div class="col-sm-8">
-						<label for="od_zip" class="sound_only">우편번호<strong class="sound_only"> 필수</strong></label>
-						<label>
-							<input type="text" name="od_zip" value="<?php echo $member['mb_zip1'].$member['mb_zip2'] ?>" id="od_zip" required class="form-control input-sm" size="6" maxlength="6">
-						</label>
-						<label>
-		                    <button type="button" class="btn btn-black btn-sm" style="margin-top:0px;" onclick="win_zip('forderform', 'od_zip', 'od_addr1', 'od_addr2', 'od_addr3', 'od_addr_jibeon');">주소 검색</button>
-						</label>
-
-						<div class="addr-line">
-							<label class="sound_only" for="od_addr1">기본주소<strong class="sound_only"> 필수</strong></label>
-							<input type="text" name="od_addr1" value="<?php echo get_text($member['mb_addr1']) ?>" id="od_addr1" required class="form-control input-sm" size="60" placeholder="기본주소">
-						</div>
-
-						<div class="addr-line">
-							<label class="sound_only" for="od_addr2">상세주소</label>
-							<input type="text" name="od_addr2" value="<?php echo get_text($member['mb_addr2']) ?>" id="od_addr2" class="form-control input-sm" size="50" placeholder="상세주소">
-						</div>
-
-						<label class="sound_only" for="od_addr3">참고항목</label>
-						<input type="text" name="od_addr3" value="<?php echo get_text($member['mb_addr3']) ?>" id="od_addr3" class="form-control input-sm" size="50" readonly="readonly" placeholder="참고항목">
-						<input type="hidden" name="od_addr_jibeon" value="<?php echo get_text($member['mb_addr_jibeon']) ?>">
+                        <div id="sel" style="width:400px;">
+                            <select onChange="getCity(this)" name="od_add1" required style="width:110px; border:solid 1px #cccccc; padding:10px; margin-right:5px;">
+                            <? if($member[mb_addr1]){?>
+                                <option value=""><?=$member[mb_addr1]?></option>
+                            <? }else{ ?>
+                                <option value="">请选择--省</option>
+                            <? } ?>
+                            </select>
+                            <select onChange="getCity(this)" name="od_add2" required style="width:110px; border:solid 1px #cccccc; padding:10px; margin-right:5px;">
+                            <? if($member[mb_addr2]){?>
+                                <option value=""><?=$member[mb_addr2]?></option>
+                            <? }else{ ?>
+                                <option value="">请选择--市</option>
+                            <? } ?>                                
+                            </select>
+                            <select onChange="getCity(this)" name="od_add3" required style="width:110px; border:solid 1px #cccccc; padding:10px;">
+                            <? if($member[mb_addr3]){?>
+                                <option value=""><?=$member[mb_addr3]?></option>
+                            <? }else{ ?>
+                                <option value="">请选择--镇</option>
+                            <? } ?>
+                            </select> 
+                        </div>
 					</div>
 				</div>
 

@@ -1,23 +1,45 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 ?>
+<div class="oz_order_main">
+    <h3 class="order_tit"> 购买<span class="order_small">YOUR ORDER</span></h3>
+    <div class="order_step">
+        <h3 class="order_step_tit">
+            <img src="/images/h3_order_step_tit.png" alt="购买顺序"/>
+        </h3>
+        <ol class="STEP02">
+            <li>我的购物车</li>
+            <li>提交订单</li>
+            <li>支付成功</li> 
+        </ol>
+    </div>
+    <div class="order_notice">
+        <h4>결제시 주의사항 <span class="order_notice_small">결제하실때 아래 사항을 꼭 확인해 주세요</span></h4>
+        <ul>
+            <li>- 정확한 주문을 위해 주문상품과 금액을 꼭 확인하시고, 수령인 및 배송지 정보를 정확하게 입력하시기 바랍니다.</li>
+            <li>- 직접 취소가 가능한 내역은 `我的购物信息 > 我的订单` 에서 확인 가능하며, 불가한 내역은 고객센터로 문의해 주세요.</li>
+        </ul>            
+    </div>
 
-<div class="well well-sm">
-	<i class="fa fa-shopping-cart fa-lg"></i> 주문하실 상품을 확인해 주세요.</strong>
-</div>
+
+
+
+
+
+
 
 <div class="table-responsive order-item">
 	<table id="sod_list" class="div-table table bg-white bsk-tbl">
 	<tbody>
 	<tr class="<?php echo $head_class;?>">
-		<th scope="col"><span>이미지</span></th>
-		<th scope="col"><span>상품명</span></th>
-		<th scope="col"><span>총수량</span></th>
-		<th scope="col"><span>판매가</span></th>
-		<th scope="col"><span>쿠폰</span></th>
-		<th scope="col"><span>소계</span></th>
-		<th scope="col"><span>포인트</span></th>
-		<th scope="col"><span class="last">배송비</span></th>
+		<th scope="col"><span>图片</span></th>
+		<th scope="col"><span>商品</span></th>
+		<th scope="col"><span>数量</span></th>
+		<th scope="col"><span>价格</span></th>
+		<th scope="col"><span>代金卷</span></th>
+		<th scope="col"><span>小计</span></th>
+		<th scope="col"><span>积分</span></th>
+		<th scope="col"><span class="last">运费</span></th>
 	</tr>
 	<?php for($i=0; $i < count($item); $i++) { ?>
 		<tr<?php echo ($i == 0) ? ' class="tr-line"' : '';?>>

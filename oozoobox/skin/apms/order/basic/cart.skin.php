@@ -188,7 +188,8 @@ if($header_skin)
                     </div>
             <?php } ?>
         </div>
-
+</div>
+</div>
 </form>
 <script>
 	$(function() {
