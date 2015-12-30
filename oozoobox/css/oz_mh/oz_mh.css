@@ -2,7 +2,7 @@
 /* CSS Document  공통부분*/
 
 html, body, div, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select{margin:0; padding:0;}
-body, input, textarea, select, button, table{font:12px/1.5 "Microsoft YaHei",arial,"宋体";;}
+body, input, textarea, select, button, table{font:12px/1.5 "Microsoft YaHei",arial,"宋体";}
 img, fieldset{border:0;}
 body{}
 ul, ol{list-style:none;}
@@ -888,3 +888,72 @@ input.check {width:13px; height:13px;}
 .oz_order_main .step03_success img {margin-top:100px;}
 .oz_order_main .step03_infocart {float:left; width:100%; height:200px; text-align:center;}
 .oz_order_main .step03_infocart button {border:0; padding:0; marign:0 auto;}
+
+
+/*******************MYPAGE*********************/
+h3.mp_tit {width:100%; font-size:24px; font-weight:bold; padding-bottom:10px; padding-top:20px; border-bottom:1px solid #dfdfdf; }
+span.mp_tit_small {padding-left:15px; font-size:14px; font-weight:normal; color:#acacac;}
+#Left_Navigation {position:relative; float:left; width:210px;}
+.MyMenu {display:block; background-color:#ffeee1; margin-top:16px;}
+.MM_tit {border-top:1px solid #dfdfdf; border-bottom:1px solid #dfdfdf;}
+ul.MM_List {padding:10px 0 20px 0;}
+ul.MM_List li {padding:5px 0; margin-left:23px; font-size:14px; color:#7e7e7e;}
+ul.MM_List li a:hover {color:#ea5b0c;}
+.My_subsection {margin-top:30px;}
+
+/**RIGHT CONTENTS**/
+.My_container {float:right; width:750px; font-family: "Microsoft YaHei",arial,"宋体"; }
+
+/***내 정보 BAR***/
+.My_info {border:1px solid #dadada; margin-top:16px; margin-bottom:23px; font-size:14px; color:#333; position:relative;}
+.My_info_bar {width:100%; position:relative; padding:5px 0; border-bottom:1px solid #dadada;}
+.My_info_bar .My_baseinfo {width:400px; height:55px;}
+.My_info_bar .My_picframe {display:block; width:55px; height:55px; margin-right:13px; margin-left:12px; position:relative; overflow:hidden; float:left;}
+.My_info_bar .My_picframe img {width:100%; height:100%; border-radius:50%;}
+.My_info_bar .My_nickname {display:block;}
+.My_info_bar .My_grade {display:block;}
+.My_info_bar .My_address em{position:absolute; top:20px; right:40px; display:inline;}
+.My_info_bar .My_address i {position:absolute; top:30px; right:25px; float:left; width:9px; height:9px; background:url("/images/mypage_add_arr.png")no-repeat 0 0; display:block;}
+.My_info_bar .My_address:hover em{color:#ea5b0c;}
+.My_info_bar .My_address:hover i{background:url("/images/mypage_add_arr.png")no-repeat -9px 0; }
+.My_Shopping_info ul{height:52px; overflow:hidden;}
+.My_Shopping_info li {width:20%; float:left;}
+.My_Shopping_info li a{padding:17px 0; vertical-align:middle; display:block; text-align:center;}
+.My_Shopping_info li a span{margin-left:-1px; height:18px; line-height:18px; display:block; border-left:1px solid #dadada;}
+.My_Shopping_info li a span em {margin-left:5px; color:#ea5b0c;}
+
+/***猜你喜欢***/
+.oz_guess_like {float:left; width:100%;}
+.right_tit_bar {background:#f98232; font-size:16px; font-weight:bold; line-height:16px; color:#fff; padding:11px 10px; position:relative;}
+.right_tit_bar span.light_orange{color:#f3c9ac;}
+.right_tit_bar a.more_item {font-weight:normal; position:absolute; right:10px; top:10px; padding:3px 12px; margin-top:-3px; height:20px; background:#fff; font-size:14px; line-height:20px; transition:all .2s linear; -webkit-transition:all .2s linear; -moz-transition:all .2s linear;-o-transition:all .2s linear;}
+.right_tit_bar .more_item i {display:block; width:15px; height:15px; background:url("/images/ico_my_rotate.png") no-repeat -15px 0; margin-top:3px; margin-right:9px; float:left;}
+.right_tit_bar .more_item span {display:inline; float:left;}
+.right_tit_bar .more_item:hover {color:#ea5b0c;}
+.right_tit_bar .more_item:hover i{ background:url("/images/ico_my_rotate.png") no-repeat 0 0; transition:all .2s linear; }
+.guess_like_content {float:left; border:1px solid #dadada; border-top:0; background-color:#f5f5f5; padding:26px 0 0;}
+.inner_content {margin:0 8px;}
+.guess_like_item {position:relative; margin:0 12px 20px; width:218px; height:313px; float:left; background:#fff; border:1px solid #ddd;}
+.guess_pic {width:218px; height:218px; overflow:hidden; position:relative;}
+.guess_pic .guess_pic_link {vertical-align:middle; display:table-cell; width:218px; height:218px; overflow:hidden; text-align:center;}
+.guess_pic_link img {max-width:220px; max-height:220px; vertical-align:middle;}
+.guess_like_item .guess_item {margin:0 10px; font-size:14px; text-align:center;}
+.guess_like_item .guess_item a {display:block; height:16px; line-height:16px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; margin-top:10px;}
+.guess_item a.guess_subtit {color:#999;}
+.guess_item span.guess_price {display:block; margin-top:8px; font-weight:bold;}
+.guess_like_item .guess_item a:hover {color:#ea5b0c;}
+
+/***OOZOOBOX推荐***/
+.oz_selection {width:100%; float:left;}
+.selection_like_item {position:relative; margin:0 12px 20px; width:218px; float:left;}
+.selection_pic {width:218px; height:218px; overflow:hidden; position:relative;}
+.selection_pic .selection_pic_link {vertical-align:middle; display:table-cell; width:218px; height:218px; overflow:hidden; text-align:center;}
+.selection_pic_link img {max-width:220px; max-height:220px; vertical-align:middle;}
+.selection_like_item .selection_item {width:196px; height:85px; padding:10px 10px; font-size:14px; background:#fff; border:1px solid #ddd; margin-top:5px;}
+.selection_like_item .selection_item a {display:block; line-height:18px;}
+.selection_item a.selection_tit {color:#333; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.selection_item a.selection_tit:hover {color:#ea5b0c;}
+.md_selection {margin-top:10px;}
+.md_selection img {width:40px; height:40px; border-radius:50%; float:left; margin-top:5px;}
+.selection_item a.selection_txt{float:left; width:119px; height:55px; padding:0 8px 0 18px; margin-left:10px; color:#999; font-size:12px; overflow:hidden; background:url("/images/bg_selection_txt.png") no-repeat;}
+
