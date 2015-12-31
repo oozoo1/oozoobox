@@ -103,7 +103,7 @@ $skin_url = $member_skin_url;
                 	<tr>
                     	<th>修改密码</th>
                         <td>
-                        	<a><button id="btnChangePass" type="button"><img src="/images/btn_change_pw.png" alt="修改密码"/></button></a>
+                        	<a onClick="window.open('/shop/popup/pop01.html', '', 'width=500, height=320, scrollbars=no')"><button id="btnChangePass" type="button"><img src="/images/btn_change_pw.png" alt="修改密码"/></button></a>
                         </td>
                     </tr> 
                     <tr>
@@ -163,4 +163,6 @@ $skin_url = $member_skin_url;
         <!--e: RIGHT CONTENTS-->
 	</div>
 </div>
+
+
 <?php  include_once('./_tail.php'); ?>
