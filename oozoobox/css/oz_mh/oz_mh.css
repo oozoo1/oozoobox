@@ -904,6 +904,7 @@ ul.MM_List li a:hover {color:#ea5b0c;}
 /**RIGHT CONTENTS**/
 .My_container {float:right; width:750px; font-family: "Microsoft YaHei",arial,"宋体"; }
 
+/*******MY PAGE MAIN*******/
 /***내 정보 BAR***/
 .My_info {border:1px solid #dadada; margin-top:16px; margin-bottom:23px; font-size:14px; color:#333; position:relative;}
 .My_info_bar {width:100%; position:relative; padding:5px 0; border-bottom:1px solid #dadada;}
@@ -957,3 +958,27 @@ ul.MM_List li a:hover {color:#ea5b0c;}
 .md_selection img {width:40px; height:40px; border-radius:50%; float:left; margin-top:5px;}
 .selection_item a.selection_txt{float:left; width:119px; height:55px; padding:0 8px 0 18px; margin-left:10px; color:#999; font-size:12px; overflow:hidden; background:url("/images/bg_selection_txt.png") no-repeat;}
 
+/****MY PAGE MAIN을 제외한 공통****/
+.Mypage_tit {width:100%; height:31px; background:url("/images/bg_mypage_h4.png") no-repeat; margin-top:25px; margin-bottom:23px; font-size:18px; color:#6e6e6e; position:relative; font-weight:bold; padding-left:15px; }
+
+/*******MY PAGE.01 我的基本消息*******/
+/***我的基本消息***/
+.My_Information {width:100%; font-size:14px; }
+.My_Information button {border:0}
+.My_Information tr {height:50px; border-bottom:1px solid #dfdfdf;}
+.My_Information th {background-color:#eee; padding-left:25px; font-weight:normal;}
+.My_Information td {padding-left:25px; color:#6e6e6e;}
+.My_Information input.txt {height:25px; border:1px solid #dfdfdf; color:#6e6e6e; font-size:14px;}
+.My_Information select {height:25px; border:1px solid #dfdfdf; color:#6e6e6e; font-size:14px;}
+.btn_wrap {position:relative; margin-top:60px; text-align:center;}
+.btn_wrap button {border:0; margin:0 5px;}
+.Change_email_inform {width:100%; height:140px; background-color:#ededed; padding:10px 0;}
+.Change_email_inform span {display:block; font-size:18px; margin:0 0 8px 15px;}
+.Change_email_inform p {display:block; font-size:14px; margin:0 0 0 15px;}
+.Change_email_address {width:100%; margin-top:30px;}
+.Change_email_address dt{margin-left:15px; display:inline-block;}
+.Change_email_address dd {display:inline-block;}
+.Change_email_address input{width:360px; height:25px; padding:0 5px; border:1px solid #dfdfdf; color:#6e6e6e; font-size:14px;}
+.Change_email_address dl.send_email {padding-top:60px;}
+.Change_email_address .send_email dd {width:100%; text-align:center;}
+.Change_email_address dl.send_email button {border:0;}
