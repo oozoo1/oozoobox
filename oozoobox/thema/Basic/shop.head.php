@@ -530,22 +530,22 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
 <script>
 $(function(){
 	var liWidth = $('#oz_glo2 #nav li').width();
-	var secondWidth = $('#oz_glo2 #nav2 .second').width();	
+	var secondWidth = $('#oz_glo2 #nav .second').width();	
 	$('#oz_glo2 #nav li').hover(function(){
 		var index = $(this).index();
 		$('#oz_glo2 .dot span').stop().animate({
 			left:liWidth*index+'px'
 		},200);
 		$(this).addClass('on').siblings().removeClass('on');
-		$(this).find('.second').fadeIn(100);
-		$('#oz_glo2 #slide').stop().animate({
+		$(this).find('.second').fadeIn(200);
+		$('#oz_glo2, #slide').stop().animate({
 			height:'340px'
 		},200);
 	},function(){
 		$(this).find('.second').fadeOut(200);
-		$('#oz_glo2 #slide').stop().animate({
-			height:'0'
-		},400);
+		$('#oz_glo2, #slide').stop().animate({
+			height:'43px'
+		},200);
 	});
 });
 </script>

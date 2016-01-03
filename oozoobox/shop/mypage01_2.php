@@ -1,0 +1,180 @@
+<?php
+include_once('./_common.php');
+
+if (!$is_member)
+    goto_url(G5_BBS_URL."/login.php?url=".urlencode(G5_SHOP_URL."/mypage.php"));
+
+// 쿠폰
+$cp_count = 0;
+$sql = " select cp_id
+            from {$g5['g5_shop_coupon_table']}
+            where mb_id IN ( '{$member['mb_id']}', '전체회원' )
+              and cp_start <= '".G5_TIME_YMD."'
+              and cp_end >= '".G5_TIME_YMD."' ";
+$res = sql_query($sql);
+
+for($k=0; $cp=sql_fetch_array($res); $k++) {
+    if(!is_used_coupon($member['mb_id'], $cp['cp_id']))
+        $cp_count++;
+}
+
+$mb_homepage = set_http(get_text(clean_xss_tags($member['mb_homepage'])));
+$mb_profile = ($member['mb_profile']) ? conv_content($member['mb_profile'],0) : '';
+$mb_signature = ($member['mb_signature']) ? apms_content(conv_content($member['mb_signature'], 1)) : '';
+
+
+
+$g5['title'] = get_text($member['mb_name']).'님 마이페이지';
+include_once('./_head.php');
+
+$skin_path = $member_skin_path;
+$skin_url = $member_skin_url;
+?>
+<div id="oz_detail_wrap">
+    <div class="oz_detail_main">
+		<h3 class="mp_tit">MY OOZOOBOX <span class="mp_tit_small">고객님의 개인정보, 주문 내역 등의 이용 기록을 조회할 수 있습니다.</span></h3>
+        <!--s: LEFT_NAVIGATION-->
+        <div id="Left_Navigation">
+        	<!--s: MypageMenu-->
+        	<div class="MyMenu">
+            	<h4 class="MM_tit">
+                	<img src="/images/tit_myozbox01.png" alt="我的信息 My Information"/>
+                </h4>
+                <ul class="MM_List">
+                	<li><a href="/shop/mypage01.php">회원정보</a></li>
+                    <li><a href="#">주소록</a></li>
+                    <li><a href="#">개인정보이용내역</a></li>
+                    <li><a href="#">회원등급</a></li>
+                </ul>
+            	<h4 class="MM_tit">
+                	<img src="/images/tit_myozbox02.png" alt="购买信息 Shopping Info"/>
+                </h4>
+                <ul class="MM_List">
+                	<li><a href="#">주문내역/배송조회</a></li>
+                    <li><a href="#">결제대기</a></li>
+                    <li><a href="#">주문취소내역</a></li>
+                    <li><a href="#">교환/환불내역</a></li>
+                    <li><a href="#">장바구니</a></li>
+                    <li><a href="#">위시리스트</a></li>
+                </ul> 
+            	<h4 class="MM_tit">
+                	<img src="/images/tit_myozbox03.png" alt="我的活动 My Activity"/>
+                </h4>
+                <ul class="MM_List">
+                	<li><a href="#">상품문의</a></li>
+                    <li><a href="#">상품평 조회</a></li>
+                    <li><a href="#">상품평 쓰기</a></li>
+                    <li><a href="#">건의함 조회</a></li>
+                    <li><a href="#">신고 고발 조회</a></li>
+                </ul>  
+            	<h4 class="MM_tit">
+                	<img src="/images/tit_myozbox04.png" alt="我的优惠 OOZOOBOX Event"/>
+                </h4>
+                <ul class="MM_List">
+                	<li><a href="#">쿠폰</a></li>
+                    <li><a href="#">포인트</a></li>
+                    <li><a href="#">이벤트 응모 담청</a></li>
+                </ul> 
+			</div>
+            <!--e: MypageMenu-->
+            <!--s: 고객센터 배너-->
+            <div class="My_subsection">
+            	<img src="/images/my_bn_cs_center.png" alt="CS_CENTER"/>
+            </div>
+            <!--e: 고객센터 배너-->
+        </div>
+        <!--e: LEFT_NAVIGATION-->
+        
+        <!--s: RIGHT CONTENTS-->
+        <div class="My_container">
+        	<h4 class="Mypage_tit">
+            OOZOOBOX 注销
+            </h4>
+            <div class="My_leave_paragraph01">
+            	<h5>申请注销帐号</h5>
+                <p>회원탈퇴란, OOZOOBOX사이트에 대한 이용해지를 의미합니다. OOZOOBOX에서 발송하는 광고성 이메일의 경우
+                회원탈퇴 요청 접수 후 24시간 이내에 발송이 중지됩니다. <br>
+                다만, 드물게 데이터 처리사정상 일부 지연될 수 있으니 혹 회원탈퇴 요청 후 48시간이 지난 후에 광고성 이메일/SMS를 접
+                수하시는 경우 당사에 연락하여 주시기 바랍니다
+                </p>
+            </div>
+            <div class="My_leave_paragraph02">
+            	<ul><span>회원탈퇴시 유의사항</span>
+                	<li>회원탈퇴를 위해선 아래 4가지 조건 확인이 필요합니다.</li>
+                    <li>판매 또는 구매가 진행중인 상품이 없어야 합니다.</li>
+                    <li>가상계좌 잔액이 없어야 합니다.</li>
+                    <li>회원탈퇴 시 보유하고 계신 쿠폰은 즉시 소멸되며,동일한 아이디로 재가입 하더라도 복원되지 않습니다.</li>
+                    <li>동일한 아이디로 재가입시 판매자 닉네임은 그대로 유지됩니다.</li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="My_leave_paragraph02" style="margin-left:15px;">
+            	<ul><span>탈퇴회원 회원정보 보존기간</span>
+                	<li>회원탈퇴가 완료되더라도 판/구매자의 권익을 보호하기 위해 다음과 
+                    같이 회원정보가 일정기간 보존됨을 알려드립니다. </li>
+                    <li>관계 법령에 의거하여 보존이 필요한 경우에 한하여 보존됩니다.</li>
+                    <li>계약 및 청약철회 등에 관한 기록 : 5년</li>
+                    <li>대금결제 및 재화등의 공급에 관한 기록 : 5년</li>
+                    <li>소비자의 불만 또는 분쟁처리에 관한 기록 : 3년</li>
+                    <li>부정이용 등에 관한 기록 : 1년</li>
+                </ul>
+            </div>
+            <div class="My_leave_paragraph01">
+            	<h5>申请注销条件</h5>
+                <p>회원탈퇴란, OOZOOBOX사이트에 대한 이용해지를 의미합니다. OOZOOBOX에서 발송하는 광고성 이메일의 경우
+                회원탈퇴 요청 접수 후 24시간 이내에 발송이 중지됩니다. <br>
+                다만, 드물게 데이터 처리사정상 일부 지연될 수 있으니 혹 회원탈퇴 요청 후 48시간이 지난 후에 광고성 이메일/SMS를 접
+                수하시는 경우 당사에 연락하여 주시기 바랍니다.
+                </p>
+            </div>
+            <div class="tbl_My_leave">
+            	<table>
+                	<colgroup span="1">
+                        <col widht="132" span="1"></col>
+                        <col widht="67" span="1"></col>
+                        <col widht="50" span="1"></col>
+                        <col widht="50" span="1"></col>
+                        <col widht="300" span="1"></col>
+                        <col widht="136" span="1"></col> 
+                    </colgroup>
+                    <tbody>
+                    	<tr>
+                        	<th rowspan="2" colspan="2">구분</th>
+                            <th  colspan="2">재가입기준</th>
+                            <th rowspan="2">비고</th>
+                            <th rowspan="2">재가입유예기간</th>
+                        </tr>
+                        <tr>
+                        	<th class="leftline">새로운 ID</th>
+                            <th class="leftline">동일 ID</th>
+                        </tr>
+                        <tr>
+                        	<td colspan="2">거래내역이 없는 회원</td>
+                            <td class="txtc"></td>
+                            <td class="txtc"></td>
+                            <td>예전 사용했던 아이디로 재가입 불가능, 새로운 아이디로만 가입 가능</td>
+                            <td class="txtc" rowspan="4">
+                            	본인인증이 완료된 회원은
+                                <br><br>
+                                탈퇴 후
+                                <span class="space_none">7</span>
+                                일 경과 후
+                                <br><br>
+                                재가입 가능
+                                </td>
+                        </tr>
+                        <tr>
+                        	<td rowspan="2">거래내역이 있는 회원</td>
+                            <td>개인구매회원</td>
+                            <td class="txtc"></td>
+                            <td class="txtc"></td>
+                            <td>개인구매회원의 경우 항상 새로운 아이디로만 가입 가능</td>
+                        </tr>
+                    </tbody>
+               	</table>
+            </div>
+        </div>
+        <!--e: RIGHT CONTENTS-->
+	</div>
+</div>
+<?php  include_once('./_tail.php'); ?>

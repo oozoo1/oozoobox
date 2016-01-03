@@ -363,7 +363,7 @@ fieldset legend{display: none;}
 }
 
 /** 글로벌메뉴2**/
-#oz_glo2{ width:100%; height:340px; overflow:hidden; position:relative; margin-top:5px;}
+#oz_glo2{ width:100%; height:43px; overflow:hidden; position:relative; margin-top:5px;}
 .oz_glo2_bg {width:100%; height:42px; background:#ea5b0c;}
 .oz_glo2_navbg {width:990px; height:42px; margin:0 auto; background:#f47a22; position:relative;}
 #oz_glo2 ul{ width:100%; overflow:hidden; height:330px; z-index:30;}
@@ -962,7 +962,7 @@ ul.MM_List li a:hover {color:#ea5b0c;}
 .Mypage_tit {width:100%; height:31px; background:url("/images/bg_mypage_h4.png") no-repeat; margin-top:25px; margin-bottom:23px; font-size:18px; color:#6e6e6e; position:relative; font-weight:bold; padding-left:15px; }
 
 /*******MY PAGE.01 我的基本消息*******/
-/***我的基本消息***/
+/***我的基本消息 mypage01.php***/
 .My_Information {width:100%; font-size:14px; }
 .My_Information button {border:0}
 .My_Information tr {height:50px; border-bottom:1px solid #dfdfdf;}
@@ -972,6 +972,8 @@ ul.MM_List li a:hover {color:#ea5b0c;}
 .My_Information select {height:25px; border:1px solid #dfdfdf; color:#6e6e6e; font-size:14px;}
 .btn_wrap {position:relative; margin-top:60px; text-align:center;}
 .btn_wrap button {border:0; margin:0 5px;}
+
+/****修改电子邮件 mypage01_1.php****/
 .Change_email_inform {width:100%; height:140px; background-color:#ededed; padding:10px 0;}
 .Change_email_inform span {display:block; font-size:18px; margin:0 0 8px 15px;}
 .Change_email_inform p {display:block; font-size:14px; margin:0 0 0 15px;}
@@ -982,3 +984,13 @@ ul.MM_List li a:hover {color:#ea5b0c;}
 .Change_email_address dl.send_email {padding-top:60px;}
 .Change_email_address .send_email dd {width:100%; text-align:center;}
 .Change_email_address dl.send_email button {border:0;}
+
+/****OOZOOBOX注销 mypage01_2.php****/
+.My_leave_paragraph01 {float:left; width:730px;}
+.My_container h5{background:url("/images/ico_my_leave_orange.png") no-repeat; display:block; padding:0 0 10px 15px; font-size:16px; color:#ea5b0c;}
+.My_container p {font-size:14px; color:#777;}
+.My_leave_paragraph02 {float:left; display:block; width:364px; padding-bottom:5px; margin:15px 0; background-color:#f5f5f5; border:1px solid #d2d2d2;}
+.My_leave_paragraph02 ul span {background:url("/images/ico_my_leave_blue.png") no-repeat; background-color:#e7e7e7; padding:3px 0 0 20px; height:28px; display:block; border-bottom:1px solid #d2d2d2; color:#14518c;}
+.My_leave_paragraph02 ul li {background:url("/images/ico_my_leave_gray.png") no-repeat; display:block; padding:3px 0 0 20px; line-height:1.5; color:#777;}
+.tbl_My_leave table {width:100%;}
+.tbl_My_leave table th {padding:13px 0 9px; background:#efefef; boder-left:1px solid #e6e6e6; border-top:1px solid #e6e6e6; font-size:12px; color:#666; line-height:18px;}

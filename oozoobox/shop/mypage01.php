@@ -153,7 +153,7 @@ $skin_url = $member_skin_url;
                         <img src="/images/btn_my_cancel.png" alt="取消"/>
                     </button>
                 </a>
-                <a>
+                <a href="/shop/mypage01_2.php">
                     <button class="btn_join" id="btnSubmit" type="button">
                         <img src="/images/btn_my_leave.png" alt="注销帐号"/>
                     </button>
