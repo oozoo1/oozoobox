@@ -100,10 +100,12 @@ $skin_url = $member_skin_url;
             </div>
             <div class="My_leave_paragraph02">
             	<ul><span>회원탈퇴시 유의사항</span>
-                	<li>회원탈퇴를 위해선 아래 4가지 조건 확인이 필요합니다.</li>
-                    <li>판매 또는 구매가 진행중인 상품이 없어야 합니다.</li>
-                    <li>가상계좌 잔액이 없어야 합니다.</li>
-                    <li>회원탈퇴 시 보유하고 계신 쿠폰은 즉시 소멸되며,동일한 아이디로 재가입 하더라도 복원되지 않습니다.</li>
+                	<li>회원탈퇴를 위해선 아래 3가지 조건 확인이 필요합니다.<br>
+                    - 판매 또는 구매가 진행중인 상품이 없어야 합니다.<br>
+                    - 가상계좌 잔액이 없어야 합니다.<br>
+                    - 회원탈퇴 시 보유하고 계신 쿠폰은 즉시 소멸되며,<br>
+                    &nbsp;&nbsp;동일한 아이디로 재가입 하더라도 복원되지 않습니다.
+                    </li>
                     <li>동일한 아이디로 재가입시 판매자 닉네임은 그대로 유지됩니다.</li>
                     <li></li>
                 </ul>
@@ -112,11 +114,11 @@ $skin_url = $member_skin_url;
             	<ul><span>탈퇴회원 회원정보 보존기간</span>
                 	<li>회원탈퇴가 완료되더라도 판/구매자의 권익을 보호하기 위해 다음과 
                     같이 회원정보가 일정기간 보존됨을 알려드립니다. </li>
-                    <li>관계 법령에 의거하여 보존이 필요한 경우에 한하여 보존됩니다.</li>
-                    <li>계약 및 청약철회 등에 관한 기록 : 5년</li>
-                    <li>대금결제 및 재화등의 공급에 관한 기록 : 5년</li>
-                    <li>소비자의 불만 또는 분쟁처리에 관한 기록 : 3년</li>
-                    <li>부정이용 등에 관한 기록 : 1년</li>
+                    <li>관계 법령에 의거하여 보존이 필요한 경우에 한하여 보존됩니다.<br>
+                    - 계약 및 청약철회 등에 관한 기록 : 5년<br>
+                    - 대금결제 및 재화등의 공급에 관한 기록 : 5년<br>
+                    - 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년<br>
+                    - 부정이용 등에 관한 기록 : 1년</li>
                 </ul>
             </div>
             <div class="My_leave_paragraph01">
@@ -130,48 +132,60 @@ $skin_url = $member_skin_url;
             <div class="tbl_My_leave">
             	<table>
                 	<colgroup span="1">
-                        <col widht="132" span="1"></col>
-                        <col widht="67" span="1"></col>
-                        <col widht="50" span="1"></col>
-                        <col widht="50" span="1"></col>
-                        <col widht="300" span="1"></col>
-                        <col widht="136" span="1"></col> 
+                        <col width="80" span="1"></col>
+                        <col width="115" span="1"></col>
+                        <col width="62" span="1"></col>
+                        <col width="62" span="1"></col>
+                        <col width="280" span="1"></col>
+                        <col width="136" span="1"></col> 
                     </colgroup>
                     <tbody>
                     	<tr>
-                        	<th rowspan="2" colspan="2">구분</th>
+                        	<th class="leftline" rowspan="2" colspan="2">구분</th>
                             <th  colspan="2">재가입기준</th>
                             <th rowspan="2">비고</th>
                             <th rowspan="2">재가입유예기간</th>
                         </tr>
                         <tr>
-                        	<th class="leftline">새로운 ID</th>
-                            <th class="leftline">동일 ID</th>
+                        	<th>새로운 ID</th>
+                            <th>동일 ID</th>
                         </tr>
                         <tr>
-                        	<td colspan="2">거래내역이 없는 회원</td>
-                            <td class="txtc"></td>
-                            <td class="txtc"></td>
+                        	<td class="leftline" colspan="2">거래내역이 없는 회원</td>
+                            <td class="txtc">O</td>
+                            <td class="txtc">X</td>
                             <td>예전 사용했던 아이디로 재가입 불가능, 새로운 아이디로만 가입 가능</td>
                             <td class="txtc" rowspan="4">
-                            	본인인증이 완료된 회원은
-                                <br><br>
-                                탈퇴 후
-                                <span class="space_none">7</span>
-                                일 경과 후
-                                <br><br>
+                            	본인인증이 완료된<br>
+                                회원은 탈퇴 후<br>
+                                7일 경과 후<br>
                                 재가입 가능
-                                </td>
+                            </td>
                         </tr>
                         <tr>
-                        	<td rowspan="2">거래내역이 있는 회원</td>
+                        	<td class="leftline" rowspan="2">거래내역이 있는 회원</td>
                             <td>개인구매회원</td>
-                            <td class="txtc"></td>
-                            <td class="txtc"></td>
+                            <td class="txtc">O</td>
+                            <td class="txtc">X</td>
                             <td>개인구매회원의 경우 항상 새로운 아이디로만 가입 가능</td>
                         </tr>
+                        <tr>
+                        	<td>개인판구매회원</td>
+                            <td class="txtc">X</td>
+                            <td class="txtc">O</td>
+                            <td>동일한 아이디로 재가입 할 경우 예전 아이디실적이 그대로 반영됨</td>
+                        </tr>   
+                        <tr>
+                        	<td class="leftline" colspan="2">영구정지 회원</td>
+                            <td class="txtc">X</td>
+                            <td class="txtc">X</td>
+                            <td>영구정지회원은 재가입 자체가 불가능함</td>
+                        </tr>                                                 
                     </tbody>
                	</table>
+            </div>
+            <div class="basicbtn">
+            	<a href="/shop/mypage01_3.php"><button id="btnSubmit" type="submit"><img src="/images/btn_pass_ok_02.png"/></button></a>
             </div>
         </div>
         <!--e: RIGHT CONTENTS-->
