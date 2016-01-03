@@ -1001,7 +1001,7 @@ ul.MM_List li a:hover {color:#ea5b0c;}
 .basicbtn {width:100%;  text-align:center; margin-top:40px;}
 .basicbtn button {border:0;}
 
-/****核实密码 mypage01_3.php****/
+/****OOZOOBOX注销 Step3 核实密码 mypage01_3.php****/
 .Change_email_inform {width:100%; height:140px; background-color:#ededed; padding:10px 0;}
 .Change_email_inform span {display:block; font-size:18px; margin:0 0 8px 15px;}
 .Change_email_inform p {display:block; font-size:14px; margin:0 0 0 15px;}
@@ -1009,6 +1009,17 @@ ul.MM_List li a:hover {color:#ea5b0c;}
 .My_leave_step03 dt{width:10%; margin-left:15px; display:inline-block; padding:7px 0;}
 .My_leave_step03 dd {width:80%; display:inline-block; padding:7px 0;}
 .My_leave_step03 input{width:360px; height:25px; padding:0 5px; border:1px solid #dfdfdf; color:#6e6e6e; font-size:14px;}
-.My_leave_step03 dl.send_pw {padding-top:60px;}
-.My_leave_step03 .send_pw dd {width:100%; text-align:center;}
-.My_leave_step03 dl.send_pw button {border:0;}
+.send_pw {padding-top:60px; width:100%; text-align:center;}
+.send_pw button {border:0;}
+
+/****OOZOOBOX注销 Step4 mypage01_4.php****/
+.My_leave_confirm {width:100%; padding:10px 0;}
+.My_leave_confirm p {display:block; font-size:14px; margin:0 0 0 15px;}
+.confirm_info {display:inline-table; width:65%; margin:30px 0 0 15px; font-size:14px;}
+.confirm_info th{padding:20px 0; border-bottom:1px solid #ddd; text-align:center; color:#333;}
+.confirm_info td {color:#6e6e6e; border-bottom:1px solid #ddd; }
+.My_leave_paragraph04 {width:100%; margin:60px 0 0 15px;}
+.My_leave_paragraph04 ul {width:100%; background:#f1f1f1; padding:10px 0 15px 15px; margin-top:10px; font-size:14px; color:#666;}
+.My_leave_paragraph04 li {padding:5px 0;}
+.My_leave_paragraph04 li .text {width:450px; height:25px; padding:0 5px; border:1px solid #dfdfdf; color:#6e6e6e; font-size:14px; margin-left:10px;}
+

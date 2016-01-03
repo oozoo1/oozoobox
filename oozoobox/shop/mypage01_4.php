@@ -88,8 +88,51 @@ $skin_url = $member_skin_url;
         <!--s: RIGHT CONTENTS-->
         <div class="My_container">
         	<h4 class="Mypage_tit">
-            我的基本消息
+            회원탈퇴 신청
             </h4>
+            <span class="My_leave_confirm">
+                <p>그동안 OOZOOBOX를 이용해 주셔서 감사합니다.</p>
+            </span>
+            <table class="confirm_info">
+                <colgroup>
+                    <col width="25%"></col>
+                    <col></col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>탈퇴아이디 확인</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>아이디</th>
+                        <td>oozooboxID12345</td>
+                    </tr>
+                    <tr>
+                        <th>이름</th>
+                        <td>KIM MI HYE</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="My_leave_paragraph04">
+                <b>OOZOOBOX를 탈퇴하시는 이유는 무엇인가요?</b>
+                <ul class="My_leave_reason">
+                	<li><input type="radio"/> 사이트 이용빈도 낮음</li>
+                    <li><input type="radio"/> 회원가입혜택 부족</li>
+                    <li><input type="radio"/> 개인정보 유출 우려</li>
+                    <li><input type="radio"/> 가격불만</li>
+                    <li><input type="radio"/> 상품품질불만</li>
+                    <li><input type="radio"/> 배송지연</li>
+                    <li><input type="radio"/> 재 가입을 위해서</li> 
+                    <li><input type="radio"/> 기타 <input type="text" class="text"></li> 
+                </ul>
+            </div>
+            <div class="send_pw">
+                <a onClick="window.open('/shop/popup/pop02.html', '', 'width=400, height=560, scrollbars=no')"><button id="btnChangePass" type="button">
+                    <button>
+                        <img src="/images/btn_pass_ok_02.png" alt="申请注销OOZOOBOX"/>
+                    </button>
+                </a>
+            </div>                  
         </div>
         <!--e: RIGHT CONTENTS-->
 	</div>

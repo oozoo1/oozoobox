@@ -100,14 +100,18 @@ $skin_url = $member_skin_url;
             	<form id="login_form">
                 	<dl>
                     	<dt>用户名 ：</dt>
-                        <dd><input name="id" class="text" id="email" type="text" maxlength="40" value="oozooboxID12345"></dd>
+                        <dd><input name="id" class="text" id="ID" type="text" maxlength="40" value="oozooboxID12345"></dd>
                     	<dt>密&nbsp;&nbsp; 码 ：</dt>
-                        <dd><input name="pw" class="text" id="pw" type="password" maxlength="40" value=""></dd>                    </dl>
-                    <dl class="send_pw">
-                    	<dt></dt>
-                        <dd><a href="/shop/mypage01_4.php"><button class="submit" type="button"><img src="/images/btn_My_certi.png" alt="认证邮箱地址"/></button></a></dd>
+                        <dd><input name="pw" class="text" id="pw" type="password" maxlength="40" value=""></dd>
                     </dl>
                 </form>
+                <div class="send_pw">
+                    <a href="/shop/mypage01_4.php">
+                        <button>
+                            <img src="/images/btn_pass_ok_02.png" alt="认证密码"/>
+                        </button>
+                    </a>
+                </div>
             </div>            
         </div>
         <!--e: RIGHT CONTENTS-->
