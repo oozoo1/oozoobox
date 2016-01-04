@@ -7,7 +7,31 @@ add_stylesheet('<link rel="stylesheet" href="'.$skin_url.'/style.css" media="scr
 if($header_skin)
 	include_once('./header.php');
 
+
+
+
+
+
+
+
+
+
+
+
+
+$ex1_filed = explode("|",$write[wr_1]); 
+$ext1_00  = $ex1_filed[0];
+$ext1_01  = $ex1_filed[1];
+$ext1_02  = $ex1_filed[2];
+$ext1_03  = $ex1_filed[3];
+$ext1_04  = $ex1_filed[4];
+$ext1_05  = $ex1_filed[5];
+$ext1_06  = $ex1_filed[6];
+$ext1_07  = $ex1_filed[7];
+$ext1_08  = $ex1_filed[8];
+$ext1_09  = $ex1_filed[9];
 ?>
+<script type="text/javascript"  src="/js/ct.js"></script>  
 <script src="<?php echo G5_JS_URL ?>/jquery.register_form.js"></script>
 <?php if($config['cf_cert_use'] && ($config['cf_cert_ipin'] || $config['cf_cert_hp'])) { ?>
 	<script src="<?php echo G5_JS_URL ?>/certify.js"></script>
@@ -169,35 +193,37 @@ if($header_skin)
 					</div>
 				</div>
 			<?php }  ?>
-
-			<?php if ($config['cf_use_addr']) { ?>
+            <? if($w=="u"){?>
 				<div class="form-group has-feedback">
-					<label class="col-sm-2 control-label"><b>省份</b><?php if ($config['cf_req_addr']) { ?><strong class="sound_only">必填项</strong><?php }  ?></label>
+					<label class="col-sm-2 control-label"><b>地址</b><strong class="sound_only">필수</strong></label>
 					<div class="col-sm-8">
-						<label for="reg_mb_zip" class="sound_only">邮政编码<?php echo $config['cf_req_addr']?'<strong class="sound_only"> 必填项</strong>':''; ?></label>
-						<label>
-						<input type="text" name="mb_zip" value="<?php echo $member['mb_zip1'].$member['mb_zip2'] ?>" id="reg_mb_zip" <?php echo $config['cf_req_addr']?"required":""; ?> class="form-control input-sm" size="6" maxlength="6">
-						</label>
-						<label>
-			                <button type="button" class="btn btn-black btn-sm win_zip_find" style="margin-top:0px;" onclick="win_zip('fregisterform', 'mb_zip', 'mb_addr1', 'mb_addr2', 'mb_addr3', 'mb_addr_jibeon');">주소 검색</button>
-						</label>
-
-						<div class="addr-line">
-							<label class="sound_only" for="reg_mb_addr1">城市<?php echo $config['cf_req_addr']?'<strong class="sound_only"> 必填项</strong>':''; ?></label>
-							<input type="text" name="mb_addr1" value="<?php echo get_text($member['mb_addr1']) ?>" id="reg_mb_addr1" <?php echo $config['cf_req_addr']?"required":""; ?> class="form-control input-sm" size="50" placeholder="기본주소">
-						</div>
-
-						<div class="addr-line">
-							<label class="sound_only" for="reg_mb_addr2">详细地址</label>
-							<input type="text" name="mb_addr2" value="<?php echo get_text($member['mb_addr2']) ?>" id="reg_mb_addr2" class="form-control input-sm" size="50" placeholder="상세주소">
-						</div>
-
-						<label class="sound_only" for="reg_mb_addr3">참고항목</label>
-						<input type="text" name="mb_addr3" value="<?php echo get_text($member['mb_addr3']) ?>" id="reg_mb_addr3" class="form-control input-sm" size="50" readonly="readonly" placeholder="참고항목">
-						<input type="hidden" name="mb_addr_jibeon" value="<?php echo get_text($member['mb_addr_jibeon']); ?>">
+                        <div id="sel" style="width:400px;">
+                            <select onChange="getCity(this)" name="mb_addr1" required style="width:110px; border:solid 1px #cccccc; padding:10px; margin-right:5px;">
+                            <? if($member[mb_addr1]){?>
+                                <option value=""><?=$member[mb_addr1]?></option>
+                            <? }else{ ?>
+                                <option value="">请选择--省</option>
+                            <? } ?>
+                            </select>
+                            <select onChange="getCity(this)" name="mb_addr2" required style="width:110px; border:solid 1px #cccccc; padding:10px; margin-right:5px;">
+                            <? if($member[mb_addr2]){?>
+                                <option value=""><?=$member[mb_addr2]?></option>
+                            <? }else{ ?>
+                                <option value="">请选择--市</option>
+                            <? } ?>                                
+                            </select>
+                            <select onChange="getCity(this)" name="mb_addr3" required style="width:110px; border:solid 1px #cccccc; padding:10px;">
+                            <? if($member[mb_addr3]){?>
+                                <option value=""><?=$member[mb_addr3]?></option>
+                            <? }else{ ?>
+                                <option value="">请选择--镇</option>
+                            <? } ?>
+                            </select> 
+                        </div>
 					</div>
 				</div>
-			<?php }  ?>
+             <? } ?>   
+                
 
 		</div>
 	</div>

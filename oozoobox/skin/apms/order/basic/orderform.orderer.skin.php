@@ -1,269 +1,178 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
+
+if(USE_G5_THEME && defined('G5_THEME_PATH')) {
+    require_once(G5_SHOP_PATH.'/yc/orderaddress.php');
+    return;
+}
+
+if(!$is_member)
+    alert_close('회원이시라면 회원로그인 후 이용해 주십시오.');
+
+if($w == 'd') {
+    $sql = " delete from {$g5['g5_shop_order_address_table']} where mb_id = '{$member['mb_id']}' and ad_id = '$ad_id' ";
+    sql_query($sql);
+    goto_url($_SERVER['SCRIPT_NAME']);
+}
+
+$sql_common = " from {$g5['g5_shop_order_address_table']} where mb_id = '{$member['mb_id']}' ";
+
+$sql = " select count(ad_id) as cnt " . $sql_common;
+$row = sql_fetch($sql);
+$total_count = $row['cnt'];
+
+$rows = $config['cf_page_rows'];
+$total_page  = ceil($total_count / $rows);  // 전체 페이지 계산
+if ($page < 1) { $page = 1; } // 페이지가 없으면 첫 페이지 (1 페이지)
+$from_record = ($page - 1) * $rows; // 시작 열을 구함
+
+$sql = " select *
+            $sql_common
+            order by ad_default desc, ad_id desc
+            limit $from_record, $rows";
+
+$result = sql_query($sql);
+
+if(!sql_num_rows($result))
+    alert_close('배송지 목록 자료가 없습니다.');
+
+$list = array();
+
+$sep = chr(30);
+for($i=0; $row=sql_fetch_array($result); $i++) {
+	$list[$i] = $row;
+	$list[$i]['addr'] = $row['ad_name'].$sep.$row['ad_tel'].$sep.$row['ad_hp'].$sep.$row['ad_zip1'].$sep.$row['ad_zip2'].$sep.$row['ad_addr1'].$sep.$row['ad_addr2'].$sep.$row['ad_addr3'].$sep.$row['ad_jibeon'].$sep.$row['ad_subject'];
+
+	$list[$i]['addr'] = get_text($list[$i]['addr']);
+	$list[$i]['ad_name'] = get_text($list[$i]['ad_name']);
+	$list[$i]['ad_subject'] = get_text($list[$i]['ad_subject']);
+	$list[$i]['del_href'] = $_SERVER['SCRIPT_NAME'].'?w=d&amp;ad_id='.$row['ad_id'];
+	$list[$i]['print_addr'] = print_address($row['ad_addr1'], $row['ad_addr2'], $row['ad_addr3'], $row['ad_jibeon']);
+
+}
+
+
+$pid = ($pid) ? $pid : ''; // Page ID
+$at = apms_page_thema($pid);
+include_once(G5_LIB_PATH.'/apms.thema.lib.php');
+
+$skin_row = array();
+$skin_row = apms_rows('order_'.MOBILE_.'skin, order_'.MOBILE_.'set');
+$order_skin_path = G5_SKIN_PATH.'/apms/order/'.$skin_row['order_'.MOBILE_.'skin'];
+$order_skin_url = G5_SKIN_URL.'/apms/order/'.$skin_row['order_'.MOBILE_.'skin'];
+
+// 스킨설정
+$wset = array();
+if($skin_row['order_'.MOBILE_.'set']) {
+	$wset = apms_unpack($skin_row['order_'.MOBILE_.'set']);
+}
 ?>
 <script type="text/javascript"  src="/js/ct.js"></script>  
 <?php if(!$is_orderform) { //주문서가 필요없는 주문일 때 ?>
 
-	<section id="sod_frm_orderer" style="margin-bottom:0px;">
-		<div class="panel panel-default">
-			<div class="panel-heading"><strong><i class="fa fa-user fa-lg"></i> 결제하시는 분</strong></div>
-			<div class="panel-body">
-				<div class="form-group">
-					<label class="col-sm-2 control-label"><b>아이디</b></label>
-					<label class="col-sm-3 control-label" style="text-align:left;">
-						<b><?php echo $member['mb_id'];?></b>
-					</label>
-				</div>
-				<div class="form-group has-feedback">
-					<label class="col-sm-2 control-label" for="od_name"><b>이름</b><strong class="sound_only">필수</strong></label>
-					<div class="col-sm-3">
-						<input type="text" name="od_name" value="<?php echo get_text($member['mb_name']); ?>" id="od_name" required class="form-control input-sm" maxlength="20">
-						<span class="fa fa-check form-control-feedback"></span>
-					</div>
-				</div>
-				<div class="form-group has-feedback">
-					<label class="col-sm-2 control-label" for="od_tel"><b>연락처</b><strong class="sound_only">필수</strong></label>
-					<div class="col-sm-3">
-						<input type="text" name="od_tel" value="<?php echo ($member['mb_hp']) ? get_text($member['mb_hp']) : get_text($member['mb_tel']); ?>" id="od_tel" required class="form-control input-sm" maxlength="20">
-						<span class="fa fa-phone form-control-feedback"></span>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label" for="od_memo"><b>메모</b></label>
-					<div class="col-sm-8">
-						<textarea name="od_memo" rows=3 id="od_memo" class="form-control input-sm"></textarea>
-					</div>
-				</div>
-				<input type="hidden" name="od_email" value="<?php echo $member['mb_email']; ?>">
-				<input type="hidden" name="od_hp" value="<?php echo get_text($member['mb_hp']); ?>">
-				<input type="hidden" name="od_b_name" value="<?php echo get_text($member['mb_name']); ?>">
-				<input type="hidden" name="od_b_tel" value="<?php echo get_text($member['mb_tel']); ?>">
-				<input type="hidden" name="od_b_hp" value="<?php echo get_text($member['mb_hp']); ?>">
-				<input type="hidden" name="od_b_zip" value="<?php echo $member['mb_zip1'].$member['mb_zip2']; ?>">
-				<input type="hidden" name="od_b_addr1" value="<?php echo get_text($member['mb_addr1']); ?>">
-				<input type="hidden" name="od_b_addr2" value="<?php echo get_text($member['mb_addr2']); ?>">
-				<input type="hidden" name="od_b_addr3" value="<?php echo get_text($member['mb_addr3']); ?>">
-				<input type="hidden" name="od_b_addr_jibeon" value="<?php echo get_text($member['mb_addr_jibeon']); ?>">
-
-			</div>
-		</div>
-	</section>
 
 <?php } else { ?>
 
-
-	<!-- 주문하시는 분 입력 시작 { -->
-	<section id="sod_frm_orderer" style="margin-bottom:0px;">
-		<div class="panel panel-default">
-			<div class="panel-heading"><strong><i class="fa fa-user fa-lg"></i> 购买者信息</strong></div>
-			<div class="panel-body">
-				<div class="form-group has-feedback">
-					<label class="col-sm-2 control-label" for="od_name"><b>姓名</b><strong class="sound_only">필수</strong></label>
-					<div class="col-sm-3">
-						<input type="text" name="od_name" value="<?php echo get_text($member['mb_name']); ?>" id="od_name" required class="form-control input-sm" maxlength="20">
-						<span class="fa fa-check form-control-feedback"></span>
-					</div>
-				</div>
-				<?php if (!$is_member) { // 비회원이면 ?>
-					<div class="form-group has-feedback">
-						<label class="col-sm-2 control-label" for="od_pwd"><b>密码</b><strong class="sound_only">필수</strong></label>
-						<div class="col-sm-3">
-							<input type="password" name="od_pwd" id="od_pwd" required class="form-control input-sm" maxlength="20">
-							<span class="fa fa-lock form-control-feedback"></span>
-						</div>
-						<div class="col-sm-7">
-							<span class="help-block">영,숫자 3~20자 (查看购买记录时需要)</span>
-						</div>
-					</div>			
-				<?php } ?>			
-				<div class="form-group has-feedback">
-					<label class="col-sm-2 control-label" for="od_tel"><b>电话号码</b><strong class="sound_only">필수</strong></label>
-					<div class="col-sm-3">
-						<input type="text" name="od_tel" value="<?php echo get_text($member['mb_tel']); ?>" id="od_tel" required class="form-control input-sm" maxlength="20">
-						<span class="fa fa-phone form-control-feedback"></span>
-					</div>
-				</div>
-				<div class="form-group has-feedback">
-					<label class="col-sm-2 control-label" for="od_hp"><b>手机号码</b></label>
-					<div class="col-sm-3">
-						<input type="text" name="od_hp" value="<?php echo get_text($member['mb_hp']); ?>" id="od_hp" class="form-control input-sm" maxlength="20">
-						<span class="fa fa-mobile form-control-feedback"></span>
-					</div>
-				</div>
-				<div class="form-group has-feedback">
-					<label class="col-sm-2 control-label"><b>地址</b><strong class="sound_only">필수</strong></label>
-					<div class="col-sm-8">
-                        <div id="sel" style="width:400px;">
-                            <select onChange="getCity(this)" name="od_add1" required style="width:110px; border:solid 1px #cccccc; padding:10px; margin-right:5px;">
-                            <? if($member[mb_addr1]){?>
-                                <option value=""><?=$member[mb_addr1]?></option>
-                            <? }else{ ?>
-                                <option value="">请选择--省</option>
-                            <? } ?>
-                            </select>
-                            <select onChange="getCity(this)" name="od_add2" required style="width:110px; border:solid 1px #cccccc; padding:10px; margin-right:5px;">
-                            <? if($member[mb_addr2]){?>
-                                <option value=""><?=$member[mb_addr2]?></option>
-                            <? }else{ ?>
-                                <option value="">请选择--市</option>
-                            <? } ?>                                
-                            </select>
-                            <select onChange="getCity(this)" name="od_add3" required style="width:110px; border:solid 1px #cccccc; padding:10px;">
-                            <? if($member[mb_addr3]){?>
-                                <option value=""><?=$member[mb_addr3]?></option>
-                            <? }else{ ?>
-                                <option value="">请选择--镇</option>
-                            <? } ?>
-                            </select> 
-                        </div>
-					</div>
-				</div>
-
-				<div class="form-group has-feedback">
-					<label class="col-sm-2 control-label" for="od_email"><b>E-mail</b><strong class="sound_only"> 필수</strong></label>
-					<div class="col-sm-5">
-						<input type="text" name="od_email" value="<?php echo $member['mb_email']; ?>" id="od_email" required class="form-control input-sm email" size="35" maxlength="100">
-						<span class="fa fa-envelope form-control-feedback"></span>
-					</div>
-				</div>
-
-				<?php if ($default['de_hope_date_use']) { // 배송희망일 사용 ?>
-					<div class="form-group">
-						<label class="col-sm-2 control-label" for="od_hope_date"><b>희망배송일</b></label>
-						<!--
-							<div class="col-sm-3">
-								<select name="od_hope_date" id="od_hope_date" class="form-control input-sm>
-									<option value="">선택하십시오.</option>
-									<?php
-										for ($i=0; $i<7; $i++) {
-											$sdate = date("Y-m-d", time()+86400*($default['de_hope_date_after']+$i));
-											echo '<option value="'.$sdate.'">'.$sdate.' ('.get_yoil($sdate).')</option>'.PHP_EOL;
-										}
-									?>
-								</select>
-							</div>
-						-->
-						<div class="col-sm-7">
-							<span class="form-inline">
-								<input type="text" name="od_hope_date" value="" id="od_hope_date" required class="form-control input-sm" size="11" maxlength="10" readonly="readonly">
-							</span> 
-							이후로 배송 바랍니다.
-						</div>
-					</div>
-				<?php } ?>
-			</div>
-		</div>
-	</section>
-	<!-- } 주문하시는 분 입력 끝 -->
+	
 
 	<!-- 받으시는 분 입력 시작 { -->
 	<section id="sod_frm_taker">
 		<div class="panel panel-default">
-			<div class="panel-heading"><strong><i class="fa fa-truck fa-lg"></i> 받으시는 분</strong></div>
+			<div class="panel-heading"><strong><i class="fa fa-truck fa-lg"></i> 收货人</strong><strong style="float:right;"> <a href="/shop/orderaddress.php" target="_blank">管理收货地址</a></strong></div>
 			<div class="panel-body">
+ 
+<? if($_GET[type_ad]){?>
+
+                <table style="width:100%;" border="0" cellspacing="0" cellpadding="0">
+				<?php for($i=0; $i < count($list); $i++) { ?>
+                <? if($list[$i][ad_id]=="$_GET[type_ad]"){?>
+                
+                <!-- 주문하시는 분 입력 시작 { -->
+                <input type="hidden" name="od_name" value="<?=$list[$i]['ad_name']?>">
+                <input type="hidden" name="od_tel" value="<?=$list[$i]['ad_tel']?>">
+                <input type="hidden" name="od_hp" value="<?=$list[$i]['ad_hp']?>">
+                <input type="hidden" name="od_email" value="<?php echo $member['mb_email']; ?>">
+                <input type="hidden" name="od_add1" value="<?=$list[$i]['ad_addr1']?>">
+                <input type="hidden" name="od_add2" value="<?=$list[$i]['ad_addr2']?>">
+                <input type="hidden" name="od_add3" value="<?=$list[$i]['ad_addr3']?>">
+                <input type="hidden" name="od_addr_jibeon" value="<?=$list[$i]['ad_jibeon']?>">
+                <!-- } 주문하시는 분 입력 끝 -->
+                <!-- 받으시는 분 입력 시작 { -->                
+                <input type="hidden" name="od_b_name" required maxlength="20" value="<?=$list[$i]['ad_name']?>">
+                <input type="hidden" name="od_b_tel" required maxlength="20" value="<?=$list[$i]['ad_tel']?>">
+                <input type="hidden" name="od_b_hp"  value="<?=$list[$i]['ad_hp']?>">
+                <input type="hidden" name="od_b_zip" required size="6" maxlength="6" value="<?=$list[$i]['ad_subject']?>">
+                <input type="hidden" name="od_b_addr1" required size="60" placeholder="기본주소" value="<?=$list[$i]['ad_addr1']?>">
+                <input type="hidden" name="od_b_addr2" size="50" placeholder="상세주소" value="<?=$list[$i]['ad_addr2']?>">
+                <input type="hidden" name="od_b_addr3" size="50" readonly="readonly" placeholder="참고항목" value="<?=$list[$i]['ad_addr3']?>">
+                <input type="hidden" name="od_b_addr_jibeon" value="<?=$list[$i]['ad_jibeon']?>">
+                <!-- 받으시는 분 입력 끝 { -->
+                <? } ?>
+                  <tr>
+                    <td style="width:80px;"><? if($list[$i][ad_id]=="$_GET[type_ad]"){?><b>寄送至</b><?  } ?></td>
+                    <td><input name="ad_sel_addr" type="checkbox" value="<?=$list[$i]['ad_id']?>" <? if($list[$i][ad_id]=="$_GET[type_ad]"){?>checked="checked"<? } ?> disabled="disabled"></td>
+                    <td>&nbsp;</td>
+                    <td style="text-align:left; <? if($list[$i][ad_id]=="$_GET[type_ad]"){?>font-weight:bold; font-size:14px;<? } ?>"><a href="/shop/orderform.php?sw_direct=1&type_ad=<?=$list[$i][ad_id]?>"><span style="color:#333333;"><?php echo $list[$i]['print_addr']; ?> <?php echo $list[$i]['ad_jibeon']; ?> （<?=$list[$i]['ad_name']?> 收）</span> <span style="color:#bbb;"><?php echo $list[$i]['ad_hp']; ?></span></a></td>
+                    <td>修改本地址</td>
+                  </tr>                  
+                <? } ?>
+                </table>
+                
+ <? }else{ ?>
+ 
+                <table style="width:100%;" border="0" cellspacing="0" cellpadding="0">
+				<?php for($i=0; $i < count($list); $i++) { ?>
+                <? if($list[$i]['ad_default']){?>   
+                
+                <!-- 주문하시는 분 입력 시작 { -->
+                <input type="hidden" name="od_name" value="<?=$list[$i]['ad_name']?>">
+                <input type="hidden" name="od_tel" value="<?=$list[$i]['ad_tel']?>">
+                <input type="hidden" name="od_hp" value="<?=$list[$i]['ad_hp']?>">
+                <input type="hidden" name="od_email" value="<?php echo $member['mb_email']; ?>">
+                <input type="hidden" name="od_add1" value="<?=$list[$i]['ad_addr1']?>">
+                <input type="hidden" name="od_add2" value="<?=$list[$i]['ad_addr2']?>">
+                <input type="hidden" name="od_add3" value="<?=$list[$i]['ad_addr3']?>">
+                <input type="hidden" name="od_addr_jibeon" value="<?=$list[$i]['ad_jibeon']?>">
+                <!-- } 주문하시는 분 입력 끝 -->
+                <!-- 받으시는 분 입력 시작 { -->               
+                <input type="hidden" name="od_b_name" required maxlength="20" value="<?=$list[$i]['ad_name']?>">
+                <input type="hidden" name="od_b_tel" required maxlength="20" value="<?=$list[$i]['ad_tel']?>">
+                <input type="hidden" name="od_b_hp"  value="<?=$list[$i]['ad_hp']?>">
+                <input type="hidden" name="od_b_zip" required size="6" maxlength="6" value="<?=$list[$i]['ad_subject']?>">
+                <input type="hidden" name="od_b_addr1" required size="60" placeholder="기본주소" value="<?=$list[$i]['ad_addr1']?>">
+                <input type="hidden" name="od_b_addr2" size="50" placeholder="상세주소" value="<?=$list[$i]['ad_addr2']?>">
+                <input type="hidden" name="od_b_addr3" size="50" readonly="readonly" placeholder="참고항목" value="<?=$list[$i]['ad_addr3']?>">
+                <input type="hidden" name="od_b_addr_jibeon" value="<?=$list[$i]['ad_jibeon']?>">
+                <!-- 받으시는 분 입력 끝 { -->
+                <? } ?>
+                  <tr>
+                    <td style="width:80px;"><? if($list[$i]['ad_default']){?><b>寄送至</b><?  } ?></td>
+                    <td><input name="ad_sel_addr" type="checkbox" value="<?=$list[$i]['ad_id']?>" <? if($list[$i]['ad_default']){?>checked="checked"<? } ?> disabled="disabled"></td>
+                    <td>&nbsp;</td>
+                    <td style="text-align:left; <? if($list[$i]['ad_default']){?>font-weight:bold; font-size:14px;<? } ?>"><a href="/shop/orderform.php?sw_direct=1&type_ad=<?=$list[$i][ad_id]?>"><span style="color:#333333;"><?php echo $list[$i]['print_addr']; ?> <?php echo $list[$i]['ad_jibeon']; ?> （<?=$list[$i]['ad_name']?> 收）</span> <span style="color:#bbb;"><?php echo $list[$i]['ad_hp']; ?></span></a></td>
+                    <td>修改本地址</td>
+                  </tr>                  
+                <? } ?>
+                </table>
+ 
+ 
+ 
+ 
+ <br />
+
+ 
+ 
+ <? } ?>
+ 
+ 
+ 
+ 
+ 
+            
+
 
 				<div class="form-group">
-					<label class="col-sm-2 control-label"><b>배송지선택</b></label>
-					<div class="col-sm-10 radio-line">
-						<?php if($is_member) { ?>
-							<label>
-								<input type="radio" name="ad_sel_addr" value="same" id="ad_sel_addr_same">
-								주문자와 동일
-							</label>
-							<?php if($addr_default) { ?>
-								<label>
-									<input type="radio" name="ad_sel_addr" value="<?php echo get_text($addr_default);?>" id="ad_sel_addr_def">
-									기본배송지
-								</label>
-							<?php } ?>
-
-							<?php for($i=0; $i < count($addr_sel); $i++) { ?>
-								<label>
-									<input type="radio" name="ad_sel_addr" value="<?php echo get_text($addr_sel[$i]['addr']);?>" id="ad_sel_addr_<?php echo $i+1;?>">
-									최근배송지<?php echo ($addr_sel[$i]['name']) ? '('.get_text($addr_sel[$i]['name']).')' : '';?>
-								</label>
-							<?php } ?>
-							<label>
-								<input type="radio" name="ad_sel_addr" value="new" id="od_sel_addr_new">
-								신규배송지
-							</label>
-							<span>
-								<a href="<?php echo G5_SHOP_URL;?>/orderaddress.php" id="order_address" class="btn btn-black btn-sm">배송지목록</a>
-							</span>
-						<?php } else { ?>
-							<label>
-								<input type="checkbox" name="ad_sel_addr" value="same" id="ad_sel_addr_same">
-								주문자와 동일
-							</label>
-						<?php } ?>
-					</div>
-				</div>
-				<?php if($is_member) { ?>
-					<div class="form-group">
-						<label class="col-sm-2 control-label" for="ad_subject"><b>배송지명</b></label>
-						<div class="col-sm-3">
-							<input type="text" name="ad_subject" id="ad_subject" class="form-control input-sm" maxlength="20">
-						</div>
-						<div class="col-sm-7 radio-line">
-							<label>
-								<input type="checkbox" name="ad_default" id="ad_default" value="1">
-								기본배송지로 설정
-							</label>
-						</div>
-					</div>
-				<?php } ?>
-
-				<div class="form-group has-feedback">
-					<label class="col-sm-2 control-label" for="od_b_name"><b>이름</b><strong class="sound_only">필수</strong></label>
-					<div class="col-sm-3">
-						<input type="text" name="od_b_name" id="od_b_name" required class="form-control input-sm" maxlength="20">
-						<span class="fa fa-check form-control-feedback"></span>
-					</div>
-				</div>
-				<div class="form-group has-feedback">
-					<label class="col-sm-2 control-label" for="od_b_tel"><b>전화번호</b><strong class="sound_only">필수</strong></label>
-					<div class="col-sm-3">
-						<input type="text" name="od_b_tel" id="od_b_tel" required class="form-control input-sm" maxlength="20">
-						<span class="fa fa-phone form-control-feedback"></span>
-					</div>
-				</div>
-				<div class="form-group has-feedback">
-					<label class="col-sm-2 control-label" for="od_b_hp"><b>핸드폰</b></label>
-					<div class="col-sm-3">
-						<input type="text" name="od_b_hp" id="od_b_hp" class="form-control input-sm" maxlength="20">
-						<span class="fa fa-mobile form-control-feedback"></span>
-					</div>
-				</div>
-
-				<div class="form-group has-feedback">
-					<label class="col-sm-2 control-label"><b>주소</b><strong class="sound_only">필수</strong></label>
-					<div class="col-sm-8">
-						<label for="od_b_zip" class="sound_only">우편번호<strong class="sound_only"> 필수</strong></label>
-						<label>
-							<input type="text" name="od_b_zip" id="od_b_zip" required class="form-control input-sm" size="6" maxlength="6">
-						</label>
-						<label>
-							<button type="button" class="btn btn-black btn-sm" style="margin-top:0px;" onclick="win_zip('forderform', 'od_b_zip', 'od_b_addr1', 'od_b_addr2', 'od_b_addr3', 'od_b_addr_jibeon');">주소 검색</button>
-						</label>
-
-						<div class="addr-line">
-							<label class="sound_only" for="od_b_addr1">기본주소<strong class="sound_only"> 필수</strong></label>
-							<input type="text" name="od_b_addr1" id="od_b_addr1" required class="form-control input-sm" size="60" placeholder="기본주소">
-						</div>
-
-						<div class="addr-line">
-							<label class="sound_only" for="od_b_addr2">상세주소</label>
-							<input type="text" name="od_b_addr2" id="od_b_addr2" class="form-control input-sm" size="50" placeholder="상세주소">
-						</div>
-
-						<label class="sound_only" for="od_b_addr3">참고항목</label>
-						<input type="text" name="od_b_addr3" id="od_b_addr3" class="form-control input-sm" size="50" readonly="readonly" placeholder="참고항목">
-						<input type="hidden" name="od_b_addr_jibeon" value="">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="col-sm-2 control-label" for="od_memo"><b>전하실말씀</b></label>
+					<label class="col-sm-2 control-label" for="od_memo"><b>快递留言</b></label>
 					<div class="col-sm-8">
 						<textarea name="od_memo" rows=3 id="od_memo" class="form-control input-sm"></textarea>
 					</div>

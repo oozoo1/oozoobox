@@ -291,6 +291,35 @@ if ($w == '') {
     if ($old_email != $mb_email && $config['cf_use_email_certify'])
         $sql_email_certify = " , mb_email_certify = '' ";
 
+
+//////////////////    地址一   ///////////////////////////////////////
+$ex1_filed = explode(",",$mb_addr1); 
+$ext1_00  = $ex1_filed[0];
+
+$sql1 = "SELECT * FROM destoon_area WHERE areaid = '$ext1_00'";
+$result1 = sql_query($sql1);
+$row1=sql_fetch_array($result1);
+
+
+//////////////////    地址二   ///////////////////////////////////////
+$ex2_filed = explode(",",$mb_addr2); 
+$ext2_00  = $ex2_filed[0];
+
+$sql2 = "SELECT * FROM destoon_area WHERE areaid = '$ext2_00'";
+$result2 = sql_query($sql2);
+$row2=sql_fetch_array($result2);
+
+
+//////////////////    地址三   ///////////////////////////////////////
+$ex3_filed = explode(",",$mb_addr3); 
+$ext3_00  = $ex3_filed[0];
+
+$sql3 = "SELECT * FROM destoon_area WHERE areaid = '$ext3_00'";
+$result3 = sql_query($sql3);
+$row3=sql_fetch_array($result3);
+
+
+
     $sql = " update {$g5['member_table']}
                 set mb_nick = '{$mb_nick}',
                     mb_mailling = '{$mb_mailling}',
@@ -301,9 +330,9 @@ if ($w == '') {
                     mb_tel = '{$mb_tel}',
                     mb_zip1 = '{$mb_zip1}',
                     mb_zip2 = '{$mb_zip2}',
-                    mb_addr1 = '{$mb_addr1}',
-                    mb_addr2 = '{$mb_addr2}',
-                    mb_addr3 = '{$mb_addr3}',
+                    mb_addr1 = '{$row1[areaname]}',
+                    mb_addr2 = '{$row2[areaname]}',
+                    mb_addr3 = '{$row3[areaname]}',
                     mb_addr_jibeon = '{$mb_addr_jibeon}',
                     mb_signature = '{$mb_signature}',
                     mb_profile = '{$mb_profile}',

@@ -12,7 +12,190 @@ if(isset($wset['ahead']) && $wset['ahead']) {
 	$head_class = (isset($wset['acolor']) && $wset['acolor']) ? 'tr-head border-'.$wset['acolor'] : 'tr-head border-black';
 }
 
+if($_POST[type]=="new"){
+
+$ad_addr1          =$_POST[ad_addr1];
+$ad_addr2          =$_POST[ad_addr2];
+$ad_addr3          =$_POST[ad_addr3];
+$ad_jibeon         =$_POST[ad_jibeon];
+$ad_subject        =$_POST[ad_subject];
+$ad_name           =$_POST[ad_name];
+$ad_hp             =$_POST[ad_hp];
+$ad_tel            ="{$_POST[ext1_00]}-{$_POST[ext1_01]}-{$_POST[ext1_02]}";
+$mb_id             ="$member[mb_id]";
+
+
+//////////////////    地址一   ///////////////////////////////////////
+$ex1_filed = explode(",",$ad_addr1); 
+$ext1_00  = $ex1_filed[0];
+
+$sql1 = "SELECT * FROM destoon_area WHERE areaid = '$ext1_00'";
+$result1 = sql_query($sql1);
+$row1=sql_fetch_array($result1);
+
+
+//////////////////    地址二   ///////////////////////////////////////
+$ex2_filed = explode(",",$ad_addr2); 
+$ext2_00  = $ex2_filed[0];
+
+$sql2 = "SELECT * FROM destoon_area WHERE areaid = '$ext2_00'";
+$result2 = sql_query($sql2);
+$row2=sql_fetch_array($result2);
+
+
+//////////////////    地址三   ///////////////////////////////////////
+$ex3_filed = explode(",",$ad_addr3); 
+$ext3_00  = $ex3_filed[0];
+
+$sql3 = "SELECT * FROM destoon_area WHERE areaid = '$ext3_00'";
+$result3 = sql_query($sql3);
+$row3=sql_fetch_array($result3);
+
+
+$sql = " insert into g5_shop_order_address
+			set mb_id = '$mb_id',
+				 ad_addr1 = '{$row1[areaname]}',
+				 ad_addr2 = '{$row2[areaname]}',
+				 ad_addr3 = '{$row3[areaname]}',
+				 ad_jibeon = '$ad_jibeon',
+				 ad_subject = '$ad_subject',
+				 ad_name = '$ad_name',
+				 ad_hp = '$ad_hp',
+				 ad_tel = '$ad_tel'";
+sql_query($sql);	
+echo "<script>document.location.href='/shop/orderaddress.php'</script>";
+
+
+
+
+
+}
 ?>
+<!----------------------------------添加收货地址---开始------------------------------------------------------------------------------->
+<script type="text/javascript"  src="/js/ct.js"></script>  
+<style type="text/css">
+    .linetd{ padding:10px; font-size:12px;}
+	.linediv{float:left; padding-right:5px;}
+	.overlay{
+		position:fixed;
+		top:0px;
+		bottom:0px;
+		left:0px;
+		right:0px;
+		z-index:100;
+		opacity:0.3; filter: alpha(opacity=30); background-color:#000; 
+	}
+
+	.box{
+		position:fixed;
+		top:-500px;
+		left:30%;
+		right:30%;
+		background-color:#fff;
+		color:#7F7F7F;
+		padding:20px;
+		z-index:101;
+		}
+		a.boxclose{
+			float:right;
+			width:26px;
+			height:26px;				
+			margin-top:-20px;
+			cursor:pointer;
+		}
+</style>
+<a href="#" id="activator" class="btn btn-color btn-sm">添加收货地址</a>
+    <div class="overlay" id="overlay" style="display:none;"></div>
+    <div class="box" id="box">
+        <a class="boxclose" id="boxclose"> <span class="btn btn-black btn-sm">关闭</span></a>
+      <h3>添加收货地址</h3>
+        <table width="726" border="0" cellspacing="0" cellpadding="0" align="center">
+        <form name="fregisterform" action="" method="post">
+        <input type="hidden" name="type" value="new" />
+          <tr>
+            <td width="70" align="right" class="linetd">所在地区 *</td>
+            <td>
+                <div id="sel" style="width:400px;">
+                    <select onChange="getCity(this)" name="ad_addr1" required style="width:110px; border:solid 1px #cccccc; padding:10px; margin-right:5px;">
+                    <? if($member[mb_addr1]){?>
+                        <option value=""><?=$member[mb_addr1]?></option>
+                    <? }else{ ?>
+                        <option value="">请选择--省</option>
+                    <? } ?>
+                    </select>
+                    <select onChange="getCity(this)" name="ad_addr2" required style="width:110px; border:solid 1px #cccccc; padding:10px; margin-right:5px;">
+                    <? if($member[mb_addr2]){?>
+                        <option value=""><?=$member[mb_addr2]?></option>
+                    <? }else{ ?>
+                        <option value="">请选择--市</option>
+                    <? } ?>                                
+                    </select>
+                    <select onChange="getCity(this)" name="ad_addr3" required style="width:110px; border:solid 1px #cccccc; padding:10px;">
+                    <? if($member[mb_addr3]){?>
+                        <option value=""><?=$member[mb_addr3]?></option>
+                    <? }else{ ?>
+                        <option value="">请选择--镇</option>
+                    <? } ?>
+                    </select> 
+                </div>    
+            </td>
+          </tr>
+          <tr>
+            <td align="right" class="linetd">详细地址 *</td>
+            <td><textarea name="ad_jibeon" class="form-control input-sm" id="mq" required style="width:318px; height:60px;" accesskey="s" role="combobox" placeholder="建议您如实填写详细收货地址，例如街道名称，门牌号码，楼层和房间号等信息"></textarea></td>
+          </tr>
+          <tr>
+            <td align="right" class="linetd">邮政编码 *</td>
+            <td><input name="ad_subject" type="text" class="form-control input-sm" required id="mq" style="width:200px; height:20px;" accesskey="s" value="" role="combobox" placeholder="如您不清楚邮递区号，请填写000000" /></td>
+          </tr>
+          <tr>
+            <td align="right" class="linetd">收货人姓名 *</td>
+            <td><input name="ad_name" type="text" class="form-control input-sm" required id="mq" style="width:200px; height:20px;" accesskey="s" value="" role="combobox" placeholder="长度不超过25个字符" /></td>
+          </tr>
+          <tr>
+            <td align="right" class="linetd">手机号码 *</td>
+            <td><input name="ad_hp" type="text" class="form-control input-sm" required id="mq" style="width:200px; height:20px;" accesskey="s" value="" maxlength="11" role="combobox" placeholder="手机号码必须填写" /></td>
+          </tr>
+          <tr>
+            <td align="right" class="linetd">电话号码 *</td>
+            <td>
+                <div class="linediv">
+                    <input name="ext1_00" type="text" class="form-control input-sm" required id="mq" style="width:40px; height:20px;" accesskey="s" value="" maxlength="4" role="combobox" placeholder="区号" /> 
+                </div>
+                <div class="linediv">
+                    <input name="ext1_01" type="text" class="form-control input-sm" required id="mq" style="width:60px; height:20px;" accesskey="s" value="" maxlength="8" role="combobox" placeholder="电话号码" />
+                </div>
+                <div class="linediv">
+                    <input name="ext1_02" type="text" class="form-control input-sm" required id="mq" style="width:46px; height:20px;" accesskey="s" value="" maxlength="6" role="combobox" placeholder="分机" />
+                </div>    
+            </td>
+          </tr>
+          <tr>
+            <td align="right" class="linetd"></td>
+            <td height="60"><input type="submit" value=" 确认保存 " class="btn btn-color btn-sm" /></td>
+          </tr>
+        </form>
+        </table>  
+        
+    </div>                
+<script type="text/javascript">
+	$(document).ready(function () {
+		$(function () {
+			$('#activator').click(function () {
+				$('#overlay').fadeIn('fast', function () {
+					$('#box').animate({ 'top': '150px' }, 500);
+				});
+			});
+			$('#boxclose').click(function () {
+				$('#box').animate({ 'top': '-500px' }, 500, function () {
+					$('#overlay').fadeOut('fast');
+				});
+			});
+		});
+	});
+</script>
+<!----------------------------------添加收货地址--结束-------------------------------------------------------------------------------->
+
 
 <form class="form" role="form" name="forderaddress" method="post" action="<?php echo $action_url; ?>" autocomplete="off">
 <div id="sod_addr">
@@ -21,15 +204,15 @@ if(isset($wset['ahead']) && $wset['ahead']) {
 		<tbody>
 		<tr class="<?php echo $head_class;?>">
             <th scope="col">
-                <label for="chk_all" class="sound_only">전체선택</label>
+                <label for="chk_all" class="sound_only">全部选择</label>
                 <span><input type="checkbox" name="chk_all" id="chk_all"></span>
             </th>
-            <th scope="col"><span>배송지명</span></th>
-            <th scope="col"><span>기본</span></th>
-            <th scope="col"><span>이름</span></th>
-            <th scope="col"><span>전화번호</span></th>
-            <th scope="col"><span>주소</span></th>
-            <th scope="col"><span class="last">관리</span></th>
+            <th scope="col"><span>收货地址 标题</span></th>
+            <th scope="col"><span>默认</span></th>
+            <th scope="col"><span>收货人</span></th>
+            <th scope="col"><span>电话号码</span></th>
+            <th scope="col"><span>地址</span></th>
+            <th scope="col"><span class="last">管理</span></th>
         </tr>
         <?php for($i=0; $i < count($list); $i++) { ?>
 			<tr<?php echo ($i == 0) ? ' class="tr-line"' : '';?>>
