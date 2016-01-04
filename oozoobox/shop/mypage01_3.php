@@ -88,31 +88,8 @@ $skin_url = $member_skin_url;
         <!--s: RIGHT CONTENTS-->
         <div class="My_container">
         	<h4 class="Mypage_tit">
-            核实密码
+            개인정보이용내역
             </h4>
-			<div class="Change_email_inform">
-            	<span>비밀번호 재확인</span>
-                <p>
-                    안전한 사용을 위해 비밀번호를 다시 한번 입력해주세요
-                </p>
-            </div>
-            <div class="My_leave_step03">
-            	<form id="login_form">
-                	<dl>
-                    	<dt>用户名 ：</dt>
-                        <dd><input name="id" class="text" id="ID" type="text" maxlength="40" value="oozooboxID12345"></dd>
-                    	<dt>密&nbsp;&nbsp; 码 ：</dt>
-                        <dd><input name="pw" class="text" id="pw" type="password" maxlength="40" value=""></dd>
-                    </dl>
-                </form>
-                <div class="send_pw">
-                    <a href="/shop/mypage01_1_4.php">
-                        <button>
-                            <img src="/images/btn_pass_ok_02.png" alt="认证密码"/>
-                        </button>
-                    </a>
-                </div>
-            </div>            
         </div>
         <!--e: RIGHT CONTENTS-->
 	</div>

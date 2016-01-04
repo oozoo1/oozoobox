@@ -42,20 +42,20 @@ $skin_url = $member_skin_url;
                 </h4>
                 <ul class="MM_List">
                 	<li><a href="/shop/mypage01_1.php">회원정보</a></li>
-                    <li><a href="#">주소록</a></li>
-                    <li><a href="#">개인정보이용내역</a></li>
-                    <li><a href="#">회원등급</a></li>
+                    <li><a href="/shop/mypage01_2.php">주소록</a></li>
+                    <li><a href="/shop/mypage01_3.php">개인정보이용내역</a></li>
+                    <li><a href="/shop/mypage01_4.php">회원등급</a></li>
                 </ul>
             	<h4 class="MM_tit">
                 	<img src="/images/tit_myozbox02.png" alt="购买信息 Shopping Info"/>
                 </h4>
                 <ul class="MM_List">
-                	<li><a href="#">주문내역/배송조회</a></li>
-                    <li><a href="#">결제대기</a></li>
-                    <li><a href="#">주문취소내역</a></li>
-                    <li><a href="#">교환/환불내역</a></li>
-                    <li><a href="#">장바구니</a></li>
-                    <li><a href="#">위시리스트</a></li>
+                	<li><a href="/shop/mypage02_1.php">주문내역/배송조회</a></li>
+                    <li><a href="/shop/mypage02_2.php">결제대기</a></li>
+                    <li><a href="/shop/mypage02_3.php">주문취소내역</a></li>
+                    <li><a href="/shop/mypage02_4.php">교환/환불내역</a></li>
+                    <li><a href="/shop/mypage02_5.php">장바구니</a></li>
+                    <li><a href="/shop/mypage02_6.php">위시리스트</a></li>
                 </ul> 
             	<h4 class="MM_tit">
                 	<img src="/images/tit_myozbox03.png" alt="我的活动 My Activity"/>
@@ -88,7 +88,7 @@ $skin_url = $member_skin_url;
         <!--s: RIGHT CONTENTS-->
         <div class="My_container">
         	<h4 class="Mypage_tit">
-            我的基本消息
+            회원등급
             </h4>
         </div>
         <!--e: RIGHT CONTENTS-->
