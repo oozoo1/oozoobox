@@ -88,7 +88,7 @@ $skin_url = $member_skin_url;
         <!--s: RIGHT CONTENTS-->
         <div class="My_container">
         	<h4 class="Mypage_tit">
-            我的基本消息
+            
             </h4>
         </div>
         <!--e: RIGHT CONTENTS-->
