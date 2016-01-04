@@ -42,9 +42,9 @@ $skin_url = $member_skin_url;
                 </h4>
                 <ul class="MM_List">
                 	<li><a href="/shop/mypage01_1.php">회원정보</a></li>
-                    <li><a href="#">주소록</a></li>
-                    <li><a href="#">개인정보이용내역</a></li>
-                    <li><a href="#">회원등급</a></li>
+                    <li><a href="/shop/mypage01_2.php">주소록</a></li>
+                    <li><a href="/shop/mypage01_3.php">개인정보이용내역</a></li>
+                    <li><a href="/shop/mypage01_4.php">회원등급</a></li>
                 </ul>
             	<h4 class="MM_tit">
                 	<img src="/images/tit_myozbox02.png" alt="购买信息 Shopping Info"/>

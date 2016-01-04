@@ -289,6 +289,7 @@ fieldset legend{display: none;}
 .oz_wonderful_con .card_item .item_tag {position:absolute; right:0px; top:3px; width:100px;}
 .oz_wonderful_con .card_item .item_tag .wonderful_cart{float:left; width:26px; height:18px; margin-right:11px;}
 .oz_wonderful_con .card_item .item_tag .wonderful_after{float:left; width:26px; height:18px; margin-right:11px;}
+.oz_wonderful_con .card_item .item_tag .wonderful_after em{position:absolute; right:3px; top:3px; color:#999; font-size:12px;}
 
 
 @media all and (max-width:1910px)
@@ -999,7 +1000,7 @@ ul.MM_List li a:hover {color:#ea5b0c;}
 .Mypage_tit {width:100%; height:31px; background:url("/images/bg_mypage_h4.png") no-repeat; margin-top:25px; margin-bottom:23px; font-size:18px; color:#6e6e6e; position:relative; font-weight:bold; padding-left:15px; }
 
 /*******MY PAGE.01 我的基本消息*******/
-/***我的基本消息 mypage01.php***/
+/***我的基本消息 mypage01_1.php***/
 .My_Information {width:100%; font-size:14px; }
 .My_Information button {border:0}
 .My_Information tr {height:50px; border-bottom:1px solid #dfdfdf;}
@@ -1010,7 +1011,7 @@ ul.MM_List li a:hover {color:#ea5b0c;}
 .btn_wrap {position:relative; margin-top:60px; text-align:center;}
 .btn_wrap button {border:0; margin:0 5px;}
 
-/****修改电子邮件 mypage01_1.php****/
+/****修改电子邮件 mypage01_1_1.php****/
 .Change_email_inform {width:100%; height:140px; background-color:#ededed; padding:10px 0;}
 .Change_email_inform span {display:block; font-size:18px; margin:0 0 8px 15px;}
 .Change_email_inform p {display:block; font-size:14px; margin:0 0 0 15px;}
@@ -1022,7 +1023,7 @@ ul.MM_List li a:hover {color:#ea5b0c;}
 .Change_email_address .send_email dd {width:100%; text-align:center;}
 .Change_email_address dl.send_email button {border:0;}
 
-/****OOZOOBOX注销 mypage01_2.php****/
+/****OOZOOBOX注销 mypage01_1_2.php****/
 .My_leave_paragraph01 {float:left; width:730px;}
 .My_container h5{background:url("/images/ico_my_leave_orange.png") no-repeat; display:block; padding:0 0 10px 15px; font-size:16px; color:#ea5b0c;}
 .My_container p {font-size:14px; color:#777;}
@@ -1037,7 +1038,7 @@ ul.MM_List li a:hover {color:#ea5b0c;}
 .basicbtn {width:100%;  text-align:center; margin-top:40px;}
 .basicbtn button {border:0;}
 
-/****OOZOOBOX注销 Step3 核实密码 mypage01_3.php****/
+/****OOZOOBOX注销 Step3 核实密码 mypage01_1_3.php****/
 .Change_email_inform {width:100%; height:140px; background-color:#ededed; padding:10px 0;}
 .Change_email_inform span {display:block; font-size:18px; margin:0 0 8px 15px;}
 .Change_email_inform p {display:block; font-size:14px; margin:0 0 0 15px;}
@@ -1048,7 +1049,7 @@ ul.MM_List li a:hover {color:#ea5b0c;}
 .send_pw {padding-top:60px; width:100%; text-align:center;}
 .send_pw button {border:0;}
 
-/****OOZOOBOX注销 Step4 mypage01_4.php****/
+/****OOZOOBOX注销 Step4 mypage01_1_4.php****/
 .My_leave_confirm {width:100%; padding:10px 0;}
 .My_leave_confirm p {display:block; font-size:14px; margin:0 0 0 15px;}
 .confirm_info {display:inline-table; width:65%; margin:30px 0 0 15px; font-size:14px;}
@@ -1059,7 +1060,7 @@ ul.MM_List li a:hover {color:#ea5b0c;}
 .My_leave_paragraph04 li {padding:5px 0;}
 .My_leave_paragraph04 li .text {width:450px; height:25px; padding:0 5px; border:1px solid #dfdfdf; color:#6e6e6e; font-size:14px; margin-left:10px;}
 
-/****OOZOOBOX注销 Step4 mypage01_4.php****/
+/****OOZOOBOX注销 Step5 mypage01_1_5.php****/
 .My_leave_step04 {width:100%; text-align:center; color:#464646;} 
 .My_leave_step04 .msg_big {display:block; font-size:28px; font-weight:bold; padding:40px 0 10px 0;}
 .My_leave_step04 .msg_small {display:block; font-size:14px; 
@@ -1067,12 +1068,16 @@ padding:0 0 90px 0;}
 .My_leave_step04 button {border:0;}
 
 
-
-
-
-
-
-
+/****주소록 mypage01_2.php****/
+.text_box {width:100%; height:120px; background-color:#ededed; padding:10px 0;}
+.text_box p {display:block; font-size:14px; margin:0 0 0 15px;}
+.My_Page_boardlist table{width:100%; margin-top:15px;}
+.My_Page_boardlist table th {padding:8px 5px 7px; border-top:1px solid #a0c8d8; border-bottom:1px solid #a0c8d8;}
+.My_Page_boardlist table td {padding:14px 5px 11px; border-bottom:1px solid #dfdfdf;}
+.My_Page_boardlist table td a:hover {color:#ea5b0c;}
+.My_Page_boardlist .add_fix {padding:2px 5px; border:1px solid #999; border-radius:3px; color:#666;}
+.My_Page_boardlist .address_hover td{background-color:#efefef;}
+.My_Page_boardlist .address_hover .add_fix {padding:2px 5px; border:1px solid #333; border-radius:3px; background:#333; color:#fff;}
 
 
 

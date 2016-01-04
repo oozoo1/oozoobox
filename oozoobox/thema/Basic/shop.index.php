@@ -112,14 +112,20 @@ $result = sql_query($sql);
             
             <!--s: MAIN 슬라이드 상단 작은 배너-->
             <div class="small_banner_con">
-            <?php for ($i=0; $row3=sql_fetch_array($baner0_1); $i++){?>
+<?php /*?>            <?php for ($i=0; $row3=sql_fetch_array($baner0_1); $i++){?>
             	<a class="small_banner" href="<?=$row3[bn_url]?>">
                 	<img width="170" height="440" alt="" src="/data/banner/<?=$row3[bn_id]?>"/>
                     <div class="small_banner_btn">
                     	<span class="btn_object">지금투표하러가기</span>
                     </div>
                 </a>
-            <?php } ?>
+            <?php } ?><?php */?> <!--SW: pro php 다시 한번 봐주세요. ^^-->
+            	<a class="small_banner">
+                	<img width="170" height="440" alt="" src="/images/small_banner01.png"/>
+                    <div class="small_banner_btn">
+                    	<span class="btn_object">지금투표하러가기</span>
+                    </div>
+                </a>           
             </div>
             <!--e: MAIN 슬라이드 상단 작은 배너-->
     	</div>
@@ -266,6 +272,7 @@ $result = sql_query($sql);
                                         	<a href="#">
                                         		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
                                             </a>
+                                            <em>101</em>
                                         </span>
                                     </span>
                                 </span>
@@ -311,6 +318,7 @@ $result = sql_query($sql);
                                         	<a href="#">
                                         		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
                                             </a>
+                                            <em>1010</em>
                                         </span>
                                     </span>
                                 </span>
@@ -355,6 +363,7 @@ $result = sql_query($sql);
                                         	<a href="#">
                                         		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
                                             </a>
+                                            <em>1011</em>
                                         </span>
                                     </span>
                                 </span>
@@ -399,6 +408,7 @@ $result = sql_query($sql);
                                         	<a href="#">
                                         		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
                                             </a>
+                                            <em>1111</em>
                                         </span>
                                     </span>
                                 </span>
@@ -445,6 +455,7 @@ $result = sql_query($sql);
                                         	<a href="#">
                                         		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
                                             </a>
+                                            <em>102</em>
                                         </span>
                                     </span>
                                 </span>
@@ -494,6 +505,7 @@ $result = sql_query($sql);
                                         	<a href="#">
                                         		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
                                             </a>
+                                            <em>145</em>
                                         </span>
                                     </span>
                                 </span>
@@ -538,6 +550,7 @@ $result = sql_query($sql);
                                         	<a href="#">
                                         		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
                                             </a>
+                                            <em>55</em>
                                         </span>
                                     </span>
                                 </span>
@@ -582,6 +595,7 @@ $result = sql_query($sql);
                                         	<a href="#">
                                         		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
                                             </a>
+                                            <em>66</em>
                                         </span>
                                     </span>
                                 </span>
@@ -626,6 +640,7 @@ $result = sql_query($sql);
                                         	<a href="#">
                                         		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
                                             </a>
+                                            <em>445</em>
                                         </span>
                                     </span>
                                 </span>
@@ -670,6 +685,7 @@ $result = sql_query($sql);
                                         	<a href="#">
                                         		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
                                             </a>
+                                            <em>89</em>
                                         </span>
                                     </span>
                                 </span>
