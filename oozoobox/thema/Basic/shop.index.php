@@ -235,6 +235,13 @@ $result = sql_query($sql);
                                     <img width="100%" src="/images/item_pic_01.png"/>
                                 </span>
                             </a>
+                            <span class="wonderful_wish">
+                                <a href="#">
+                                    <span class="ico_wonderful_wish">	
+                                    	<em>13</em>
+                                    </span>
+                                </a>
+                            </span>                            
                             <span class="item_info">
                             	<a href="#">
                                     <span class="item_desc">
@@ -260,11 +267,6 @@ $result = sql_query($sql);
                                         		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
                                             </a>
                                         </span>
-                                        <span class="wonderful_wish">
-                                        	<a href="#">
-                                        		<img width="100%" src="/images/wonderful_wish.png" onmouseover="this.src='/images/wonderful_wish_o.png'" onmouseout="this.src='/images/wonderful_wish.png'"/>
-                                            </a>
-                                        </span>
                                     </span>
                                 </span>
                             </span>
@@ -278,6 +280,13 @@ $result = sql_query($sql);
                                     <img width="100%" src="/images/item_pic_02.png"/>
                                 </span>
                             </a>
+                            <span class="wonderful_wish">
+                                <a href="#">
+                                    <span class="ico_wonderful_wish">	
+                                    	<em>13</em>
+                                    </span>
+                                </a>
+                            </span>   
                             <span class="item_info">
                             	<a href="#">
                                     <span class="item_desc">
@@ -303,11 +312,6 @@ $result = sql_query($sql);
                                         		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
                                             </a>
                                         </span>
-                                        <span class="wonderful_wish">
-                                        	<a href="#">
-                                        		<img width="100%" src="/images/wonderful_wish.png" onmouseover="this.src='/images/wonderful_wish_o.png'" onmouseout="this.src='/images/wonderful_wish.png'"/>
-                                            </a>
-                                        </span>
                                     </span>
                                 </span>
                             </span>
@@ -320,6 +324,13 @@ $result = sql_query($sql);
                                     <img width="100%" src="/images/item_pic_03.png"/>
                                 </span>
                             </a>
+                            <span class="wonderful_wish">
+                                <a href="#">
+                                    <span class="ico_wonderful_wish">	
+                                    	<em>0</em>
+                                    </span>
+                                </a>
+                            </span>                               
                             <span class="item_info">
                             	<a href="#">
                                     <span class="item_desc">
@@ -343,11 +354,6 @@ $result = sql_query($sql);
                                         <span class="wonderful_after">
                                         	<a href="#">
                                         		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
-                                            </a>
-                                        </span>
-                                        <span class="wonderful_wish">
-                                        	<a href="#">
-                                        		<img width="100%" src="/images/wonderful_wish.png" onmouseover="this.src='/images/wonderful_wish_o.png'" onmouseout="this.src='/images/wonderful_wish.png'"/>
                                             </a>
                                         </span>
                                     </span>
@@ -362,6 +368,13 @@ $result = sql_query($sql);
                                     <img width="100%" src="/images/item_pic_04.png"/>
                                 </span>
                             </a>
+                            <span class="wonderful_wish">
+                                <a href="#">
+                                    <span class="ico_wonderful_wish">	
+                                    	<em>13</em>
+                                    </span>
+                                </a>
+                            </span>                               
                             <span class="item_info">
                             	<a href="#">
                                     <span class="item_desc">
@@ -385,11 +398,6 @@ $result = sql_query($sql);
                                         <span class="wonderful_after">
                                         	<a href="#">
                                         		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
-                                            </a>
-                                        </span>
-                                        <span class="wonderful_wish">
-                                        	<a href="#">
-                                        		<img width="100%" src="/images/wonderful_wish.png" onmouseover="this.src='/images/wonderful_wish_o.png'" onmouseout="this.src='/images/wonderful_wish.png'"/>
                                             </a>
                                         </span>
                                     </span>
@@ -406,6 +414,13 @@ $result = sql_query($sql);
                                     <img width="100%" src="/images/item_pic_05.png"/>
                                 </span>
                             </a>
+                            <span class="wonderful_wish">
+                                <a href="#">
+                                    <span class="ico_wonderful_wish">	
+                                    	<em>5</em>
+                                    </span>
+                                </a>
+                            </span>                               
                             <span class="item_info">
                             	<a href="#">
                                     <span class="item_desc">
@@ -429,11 +444,6 @@ $result = sql_query($sql);
                                         <span class="wonderful_after">
                                         	<a href="#">
                                         		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
-                                            </a>
-                                        </span>
-                                        <span class="wonderful_wish">
-                                        	<a href="#">
-                                        		<img width="100%" src="/images/wonderful_wish.png" onmouseover="this.src='/images/wonderful_wish_o.png'" onmouseout="this.src='/images/wonderful_wish.png'"/>
                                             </a>
                                         </span>
                                     </span>
@@ -453,6 +463,13 @@ $result = sql_query($sql);
                                     <img width="100%" src="/images/item_pic_06.png"/>
                                 </span>
                             </a>
+                            <span class="wonderful_wish">
+                                <a href="#">
+                                    <span class="ico_wonderful_wish">	
+                                    	<em>13</em>
+                                    </span>
+                                </a>
+                            </span>                               
                             <span class="item_info">
                             	<a href="#">
                                     <span class="item_desc">
@@ -478,11 +495,6 @@ $result = sql_query($sql);
                                         		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
                                             </a>
                                         </span>
-                                        <span class="wonderful_wish">
-                                        	<a href="#">
-                                        		<img width="100%" src="/images/wonderful_wish.png" onmouseover="this.src='/images/wonderful_wish_o.png'" onmouseout="this.src='/images/wonderful_wish.png'"/>
-                                            </a>
-                                        </span>
                                     </span>
                                 </span>
                             </span>
@@ -495,6 +507,13 @@ $result = sql_query($sql);
                                     <img width="100%" src="/images/item_pic_07.png"/>
                                 </span>
                             </a>
+                            <span class="wonderful_wish">
+                                <a href="#">
+                                    <span class="ico_wonderful_wish">	
+                                    	<em>7</em>
+                                    </span>
+                                </a>
+                            </span>                               
                             <span class="item_info">
                             	<a href="#">
                                     <span class="item_desc">
@@ -520,11 +539,6 @@ $result = sql_query($sql);
                                         		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
                                             </a>
                                         </span>
-                                        <span class="wonderful_wish">
-                                        	<a href="#">
-                                        		<img width="100%" src="/images/wonderful_wish.png" onmouseover="this.src='/images/wonderful_wish_o.png'" onmouseout="this.src='/images/wonderful_wish.png'"/>
-                                            </a>
-                                        </span>
                                     </span>
                                 </span>
                             </span>
@@ -537,6 +551,13 @@ $result = sql_query($sql);
                                     <img width="100%" src="/images/item_pic_08.png"/>
                                 </span>
                             </a>
+                            <span class="wonderful_wish">
+                                <a href="#">
+                                    <span class="ico_wonderful_wish">	
+                                    	<em>13</em>
+                                    </span>
+                                </a>
+                            </span>                               
                             <span class="item_info">
                             	<a href="#">
                                     <span class="item_desc">
@@ -560,11 +581,6 @@ $result = sql_query($sql);
                                         <span class="wonderful_after">
                                         	<a href="#">
                                         		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
-                                            </a>
-                                        </span>
-                                        <span class="wonderful_wish">
-                                        	<a href="#">
-                                        		<img width="100%" src="/images/wonderful_wish.png" onmouseover="this.src='/images/wonderful_wish_o.png'" onmouseout="this.src='/images/wonderful_wish.png'"/>
                                             </a>
                                         </span>
                                     </span>
@@ -579,6 +595,13 @@ $result = sql_query($sql);
                                     <img width="100%" src="/images/item_pic_09.png"/>
                                 </span>
                             </a>
+                            <span class="wonderful_wish">
+                                <a href="#">
+                                    <span class="ico_wonderful_wish">	
+                                    	<em>13</em>
+                                    </span>
+                                </a>
+                            </span>                               
                             <span class="item_info">
                             	<a href="#">
                                     <span class="item_desc">
@@ -602,11 +625,6 @@ $result = sql_query($sql);
                                         <span class="wonderful_after">
                                         	<a href="#">
                                         		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
-                                            </a>
-                                        </span>
-                                        <span class="wonderful_wish">
-                                        	<a href="#">
-                                        		<img width="100%" src="/images/wonderful_wish.png" onmouseover="this.src='/images/wonderful_wish_o.png'" onmouseout="this.src='/images/wonderful_wish.png'"/>
                                             </a>
                                         </span>
                                     </span>
@@ -621,6 +639,13 @@ $result = sql_query($sql);
                                     <img width="100%" src="/images/item_pic_10.png"/>
                                 </span>
                             </a>
+                            <span class="wonderful_wish">
+                                <a href="#">
+                                    <span class="ico_wonderful_wish">	
+                                    	<em>6</em>
+                                    </span>
+                                </a>
+                            </span>                               
                             <span class="item_info">
                             	<a href="#">
                                     <span class="item_desc">
@@ -644,11 +669,6 @@ $result = sql_query($sql);
                                         <span class="wonderful_after">
                                         	<a href="#">
                                         		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
-                                            </a>
-                                        </span>
-                                        <span class="wonderful_wish">
-                                        	<a href="#">
-                                        		<img width="100%" src="/images/wonderful_wish.png" onmouseover="this.src='/images/wonderful_wish_o.png'" onmouseout="this.src='/images/wonderful_wish.png'"/>
                                             </a>
                                         </span>
                                     </span>
@@ -846,15 +866,89 @@ $result = sql_query($sql);
                 </a>
             </ins>
         </div>
-        <!--e: FULL 광고 배너 03-->          
-    
-    
-    
+        <!--e: FULL 광고 배너 03-->     
+        <!--s: FOOTER_SUB-->
+        <div class="footer_sub_wrap">   
+            <div class="footer_sub">
+                <div class="footer_menu">
+                    <dl>
+                        <dt class="menu_tit">고객센터</dt>
+                        <dd><a>소비자지침서</a></dd>
+                        <dd><a>비밀번호찾기</a></dd>
+                        <dd><a>쇼핑내역</a></dd>
+                        <dd><a>회원가입하기</a></dd>
+                        <dd><a>물품구매하기</a></dd>
+                    </dl>
+                    <dl>
+                        <dt class="menu_tit">판매자센터</dt>
+                        <dd><a>입점관리</a></dd>
+                        <dd><a>추천상품등록</a></dd>
+                        <dd><a>상품올리기</a></dd>
+                        <dd><a>입점신청</a></dd>
+                    </dl>
+                    <dl>
+                        <dt class="menu_tit">지불방식</dt>
+                        <dd><a>支付宝등록안내</a></dd>
+                        <dd><a>전자거래협의서</a></dd>
+                        <dd><a>상품구매방식</a></dd>
+                    </dl>
+                    <dl>
+                        <dt class="menu_tit">애프터서비스</dt>
+                        <dd><a>교환/환불안내</a></dd>
+                        <dd><a>판매자연락처</a></dd>
+                        <dd><a>환불과정안내</a></dd>
+                        <dd><a>애프터서비스</a></dd>
+                    </dl>
+                    <dl>
+                        <dt class="menu_tit">고객센터</dt>
+                        <dd><a>FAQ</a></dd>
+                        <dd><a>서비스이용약관</a></dd>
+                        <dd><a>개인정보수정</a></dd>
+                        <dd><a>비밀번호수정</a></dd>
+                        <dd><a>배송지수정</a></dd>
+                    </dl>
+                </div>
+                <!--s: 제휴업체-->
+                <div class="oz_partners">
+                    <h3 class="oz_main_partners_tit">협력업체</h3>
+                    <div class="partner_list">
+                        <ul>
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner01.png" alt="롯데백화점"/></a></li>
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner02.png" alt="신세계"/></a></li>
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner03.png" alt="현대"/></a></li>
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner04.png" alt="겔러리아"/></a></li>
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner05.png" alt="홈플러스"/></a></li>
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner06.png" alt="CJmall"/></a></li>
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner07.png" alt="코카콜라"/></a></li>
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner08.png" alt="마이크로소프트"/></a></li>
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner09.png" alt="SK-2"/></a></li>
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner10.png" alt="현대"/></a></li> 
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner11.png" alt="국민은행"/></a></li>
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner12.png" alt="한국"/></a></li>
+                        </ul>
+                    </div>
+                </div>            
+                <!--e: 제휴업체-->
+                <!--s: 공지사항-->
+                <div class="oz_main_news">
+                    <h3 class="oz_main_news_tit">공지사항</h3>
+                    <div class="oz_main_news_list">
+                        <ul>
+                            <li><a href="#" target="_blank">【官方公告】宇宙”物流预警“邀你备战大促！</a></li>
+                            <li><a href="#" target="_blank">恭喜恭喜！EXO第二张迷你专辑获奖者名单公布！</a></li>
+                            <li><a href="#" target="_blank">系统维护</a></li>
+                            <li><a href="#" target="_blank">优秀博客 栏目正在准备中</a></li>
+                            <li><a href="#" target="_blank">关于换货及退货的公告</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+         </div>
+        <!--e: FOOTER_SUB-->    
     </div>
     <!--e:CONTENT-->
 </div>
 <!------e: 쇼핑몰 페이지-------->
-
 
 
 <script type="text/javascript">
@@ -893,3 +987,20 @@ $("#oz_main_nav .tit").slide({
       });
     });
   </script>
+  
+<script type="text/javascript">
+$(function(){
+
+//#############첫번째 샘플
+        $('.oz_main_news_list').Vnewsticker({
+			speed: 700,         //스크롤 스피드
+			pause: 4000,        //잠시 대기 시간
+			mousePause: true,   //마우스 오버시 일시정지(true=일시정지)
+			showItems: 1,       //스크롤 목록 갯수 지정(1=한줄만 보임)
+			direction : "up"    //up=위로스크롤, 공란=아래로 스크롤
+	});
+
+});
+</script>
+
+<?php  include_once('./shop/_tail.php'); ?>
