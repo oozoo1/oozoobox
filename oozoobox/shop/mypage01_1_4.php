@@ -41,7 +41,7 @@ $skin_url = $member_skin_url;
                 	<img src="/images/tit_myozbox01.png" alt="我的信息 My Information"/>
                 </h4>
                 <ul class="MM_List">
-                	<li><a href="/shop/mypage01.php">회원정보</a></li>
+                	<li><a href="/shop/mypage01_1.php">회원정보</a></li>
                     <li><a href="#">주소록</a></li>
                     <li><a href="#">개인정보이용내역</a></li>
                     <li><a href="#">회원등급</a></li>
@@ -80,7 +80,7 @@ $skin_url = $member_skin_url;
             <!--s: 고객센터 배너-->
             <div class="My_subsection">
             	<img src="/images/my_bn_cs_center.png" alt="CS_CENTER"/>
-            </div> 
+            </div>
             <!--e: 고객센터 배너-->
         </div>
         <!--e: LEFT_NAVIGATION-->
@@ -88,81 +88,53 @@ $skin_url = $member_skin_url;
         <!--s: RIGHT CONTENTS-->
         <div class="My_container">
         	<h4 class="Mypage_tit">
-            我的基本消息
+            회원탈퇴 신청
             </h4>
-            <table class="My_Information" summary="기본정보 수정 입력 폼 입니다. 이름, 아이디, 비밀번호, 이메일, 휴대폰번호, 전화번호, 생년월일을 수정하실 수 있습니다.">
+            <span class="My_leave_confirm">
+                <p>그동안 OOZOOBOX를 이용해 주셔서 감사합니다.</p>
+            </span>
+            <table class="confirm_info">
                 <colgroup>
-                	<col style="width:20%;"></col>
+                    <col width="25%"></col>
                     <col></col>
                 </colgroup>
                 <tbody>
-                	<tr style="border-top:2px solid #dfdfdf">
-                    	<th>用户名称</th>
+                    <tr>
+                        <th>탈퇴아이디 확인</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>아이디</th>
+                        <td>oozooboxID12345</td>
+                    </tr>
+                    <tr>
+                        <th>이름</th>
                         <td>KIM MI HYE</td>
                     </tr>
-                	<tr>
-                    	<th>修改密码</th>
-                        <td>
-                        	<a onClick="window.open('/shop/popup/pop01.html', '', 'width=500, height=320, scrollbars=no')"><button id="btnChangePass" type="button"><img src="/images/btn_change_pw.png" alt="修改密码"/></button></a>
-                        </td>
-                    </tr> 
-                    <tr>
-                    	<th>邮箱</th>
-                        <td>
-                        	oozoobox1234@oozoobox.com<a href="/shop/mypage01_1.php"><button id="btnChangeMail" type="button" style="margin-left:20px;"><img src="/images/btn_change_email.png" alt="修改电子邮件"/></button></a>
-                        </td>
-                    </tr>
-                    <tr>
-                    	<th>真实姓名</th>
-                        <td>
-                        	<input name="memver_OwnName" class="txt" type="text" maxlength="20" value="金美慧" title="姓名" style="width:370px"></input>
-                        </td>
-                    </tr>
-                    <tr>
-                    	<th>性别</th>
-                        <td>
-                        	<input name="member_sex" type="radio" value="3"> 保密</input>
-                            <input name="member_sex" type="radio" checked="checked"  style="margin-left:15px" value="2"> 女</input>
-                            <input name="member_sex" type="radio" style="margin-left:15px" value="1"> 男</input>
-                        </td>
-                    </tr>
-                    <tr>
-                    	<th>出生年日</th>
-                        <td>
-                        	<select name="BirthYear" title="选择出生年度" id="select_BirYear" style="width:125px"></select> 年
-                            <select name="BirthMonth" title="选择出生月" id="select_BirMonth" style="width:80px; margin-left:15px"></select> 月
-                            <select name="BirthDay" title="选择出生年日" id="select_BirDay" style="width:80px; margin-left:15px"></select> 日
-                        </td>
-                    </tr>  
-                    <tr>
-                    	<th>所在地区</th>
-                        <td><input name="memver_OwnName" class="txt" type="text" maxlength="20" value="地址" title="姓名" style="width:370px"></input><a><button id="btnChangeAdd" type="button" style="margin-left:20px;"><img src="/images/btn_change_add.png" alt="修改地址"/></button></a></td>
-                    </tr>  
-                    <tr>
-                    	<th>ＱＱ</th>
-                        <td><input name="memver_OwnName" class="txt" type="text" value="1234567" title="姓名" style="width:370px"></input></td>
-                    </tr>                                                                                                            
                 </tbody>
             </table>
-          	<div class="btn_wrap">
-            	<button class="btn_join" id="btnSubmit" type="submit">
-                	<img src="/images/btn_my_confirm.png" alt="确认"/>
-                </button>
-            	<a href="/shop/mypage.php">
-                    <button class="btn_DisAgree" id="btn_DisAgree" type="button">
-                        <img src="/images/btn_my_cancel.png" alt="取消"/>
+            <div class="My_leave_paragraph04">
+                <b>OOZOOBOX를 탈퇴하시는 이유는 무엇인가요?</b>
+                <ul class="My_leave_reason">
+                	<li><input type="radio"/> 사이트 이용빈도 낮음</li>
+                    <li><input type="radio"/> 회원가입혜택 부족</li>
+                    <li><input type="radio"/> 개인정보 유출 우려</li>
+                    <li><input type="radio"/> 가격불만</li>
+                    <li><input type="radio"/> 상품품질불만</li>
+                    <li><input type="radio"/> 배송지연</li>
+                    <li><input type="radio"/> 재 가입을 위해서</li> 
+                    <li><input type="radio"/> 기타 <input type="text" class="text"></li> 
+                </ul>
+            </div>
+            <div class="send_pw">
+                <a onClick="window.open('/shop/popup/pop02.html', '', 'width=400, height=560, scrollbars=no')"><button id="btnChangePass" type="button">
+                    <button>
+                        <img src="/images/btn_pass_ok_02.png" alt="申请注销OOZOOBOX"/>
                     </button>
                 </a>
-                <a href="/shop/mypage01_2.php">
-                    <button class="btn_join" id="btnSubmit" type="button">
-                        <img src="/images/btn_my_leave.png" alt="注销帐号"/>
-                    </button>
-                </a>                        
-            </div>
+            </div>                  
         </div>
         <!--e: RIGHT CONTENTS-->
 	</div>
 </div>
-
-
 <?php  include_once('./_tail.php'); ?>

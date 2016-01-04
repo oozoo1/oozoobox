@@ -41,7 +41,7 @@ $skin_url = $member_skin_url;
                 	<img src="/images/tit_myozbox01.png" alt="我的信息 My Information"/>
                 </h4>
                 <ul class="MM_List">
-                	<li><a href="/shop/mypage01.php">회원정보</a></li>
+                	<li><a href="/shop/mypage01_1.php">회원정보</a></li>
                     <li><a href="#">주소록</a></li>
                     <li><a href="#">개인정보이용내역</a></li>
                     <li><a href="#">회원등급</a></li>
@@ -88,30 +88,81 @@ $skin_url = $member_skin_url;
         <!--s: RIGHT CONTENTS-->
         <div class="My_container">
         	<h4 class="Mypage_tit">
-            修改电子邮件
+            我的基本消息
             </h4>
-			<div class="Change_email_inform">
-            	<span>操作提示：</span>
-                <p>
-                    1. 此邮箱将接收密码找回，订单通知等敏感性安全服务及提醒使用，请务必填写正确地址。<br>
-                    2. 设置提交后，系统将自动发送验证邮件到您绑定的信箱，您需在24小时内登录邮箱并完成验证。<br>
-                    3. 更改邮箱时，请通过安全验证后重新输入新邮箱地址绑定。
-                </p>
-            </div>
-            <div class="Change_email_address">
-            	<form id="email_form">
-                	<dl>
-                    	<dt>绑定邮箱地址：</dt>
-                        <dd><input name="email" class="text" id="email" type="text" maxlength="40" value="oozoobox1234@oozoobox.com"></dd>
-                    </dl>
-                    <dl class="send_email">
-                    	<dt></dt>
-                        <dd><button class="submit" type="button"><img src="/images/btn_My_certi.png" alt="认证邮箱地址"/></button></dd>
-                    </dl>
-                </form>
+            <table class="My_Information" summary="기본정보 수정 입력 폼 입니다. 이름, 아이디, 비밀번호, 이메일, 휴대폰번호, 전화번호, 생년월일을 수정하실 수 있습니다.">
+                <colgroup>
+                	<col style="width:20%;"></col>
+                    <col></col>
+                </colgroup>
+                <tbody>
+                	<tr style="border-top:2px solid #dfdfdf">
+                    	<th>用户名称</th>
+                        <td>KIM MI HYE</td>
+                    </tr>
+                	<tr>
+                    	<th>修改密码</th>
+                        <td>
+                        	<a onClick="window.open('/shop/popup/pop01.html', '', 'width=500, height=320, scrollbars=no')"><button id="btnChangePass" type="button"><img src="/images/btn_change_pw.png" alt="修改密码"/></button></a>
+                        </td>
+                    </tr> 
+                    <tr>
+                    	<th>邮箱</th>
+                        <td>
+                        	oozoobox1234@oozoobox.com<a href="/shop/mypage01_1_1.php"><button id="btnChangeMail" type="button" style="margin-left:20px;"><img src="/images/btn_change_email.png" alt="修改电子邮件"/></button></a>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<th>真实姓名</th>
+                        <td>
+                        	<input name="memver_OwnName" class="txt" type="text" maxlength="20" value="金美慧" title="姓名" style="width:370px"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<th>性别</th>
+                        <td>
+                        	<input name="member_sex" type="radio" value="3"> 保密</input>
+                            <input name="member_sex" type="radio" checked="checked"  style="margin-left:15px" value="2"> 女</input>
+                            <input name="member_sex" type="radio" style="margin-left:15px" value="1"> 男</input>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<th>出生年日</th>
+                        <td>
+                        	<select name="BirthYear" title="选择出生年度" id="select_BirYear" style="width:125px"></select> 年
+                            <select name="BirthMonth" title="选择出生月" id="select_BirMonth" style="width:80px; margin-left:15px"></select> 月
+                            <select name="BirthDay" title="选择出生年日" id="select_BirDay" style="width:80px; margin-left:15px"></select> 日
+                        </td>
+                    </tr>  
+                    <tr>
+                    	<th>所在地区</th>
+                        <td><input name="memver_OwnName" class="txt" type="text" maxlength="20" value="地址" title="姓名" style="width:370px"></input><a><button id="btnChangeAdd" type="button" style="margin-left:20px;"><img src="/images/btn_change_add.png" alt="修改地址"/></button></a></td>
+                    </tr>  
+                    <tr>
+                    	<th>ＱＱ</th>
+                        <td><input name="memver_OwnName" class="txt" type="text" value="1234567" title="姓名" style="width:370px"></input></td>
+                    </tr>                                                                                                            
+                </tbody>
+            </table>
+          	<div class="btn_wrap">
+            	<button class="btn_join" id="btnSubmit" type="submit">
+                	<img src="/images/btn_my_confirm.png" alt="确认"/>
+                </button>
+            	<a href="/shop/mypage.php">
+                    <button class="btn_DisAgree" id="btn_DisAgree" type="button">
+                        <img src="/images/btn_my_cancel.png" alt="取消"/>
+                    </button>
+                </a>
+                <a href="/shop/mypage01_1_2.php">
+                    <button class="btn_join" id="btnSubmit" type="button">
+                        <img src="/images/btn_my_leave.png" alt="注销帐号"/>
+                    </button>
+                </a>                        
             </div>
         </div>
         <!--e: RIGHT CONTENTS-->
 	</div>
 </div>
+
+
 <?php  include_once('./_tail.php'); ?>

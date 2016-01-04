@@ -41,7 +41,7 @@ $skin_url = $member_skin_url;
                 	<img src="/images/tit_myozbox01.png" alt="我的信息 My Information"/>
                 </h4>
                 <ul class="MM_List">
-                	<li><a href="/shop/mypage01.php">회원정보</a></li>
+                	<li><a href="/shop/mypage01_1.php">회원정보</a></li>
                     <li><a href="#">주소록</a></li>
                     <li><a href="#">개인정보이용내역</a></li>
                     <li><a href="#">회원등급</a></li>
@@ -185,7 +185,7 @@ $skin_url = $member_skin_url;
                	</table>
             </div>
             <div class="basicbtn">
-            	<a href="/shop/mypage01_3.php"><button id="btnSubmit" type="submit"><img src="/images/btn_pass_ok_02.png"/></button></a>
+            	<a href="/shop/mypage01_1_3.php"><button id="btnSubmit" type="submit"><img src="/images/btn_pass_ok_02.png"/></button></a>
             </div>
         </div>
         <!--e: RIGHT CONTENTS-->

@@ -1059,6 +1059,28 @@ ul.MM_List li a:hover {color:#ea5b0c;}
 .My_leave_paragraph04 li {padding:5px 0;}
 .My_leave_paragraph04 li .text {width:450px; height:25px; padding:0 5px; border:1px solid #dfdfdf; color:#6e6e6e; font-size:14px; margin-left:10px;}
 
+/****OOZOOBOX注销 Step4 mypage01_4.php****/
+.My_leave_step04 {width:100%; text-align:center; color:#464646;} 
+.My_leave_step04 .msg_big {display:block; font-size:28px; font-weight:bold; padding:40px 0 10px 0;}
+.My_leave_step04 .msg_small {display:block; font-size:14px; 
+padding:0 0 90px 0;}
+.My_leave_step04 button {border:0;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*************************************************/
 
 /*FOOTER*/
 #footer {float:left; width:100%; margin-top:100px; padding-bottom:0; border-top:4px solid #ff7e00; clear:both; text-align:center; background:#252525; color:#f7f7f7; font-size:12px;}

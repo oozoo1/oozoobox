@@ -41,7 +41,7 @@ $skin_url = $member_skin_url;
                 	<img src="/images/tit_myozbox01.png" alt="我的信息 My Information"/>
                 </h4>
                 <ul class="MM_List">
-                	<li><a href="/shop/mypage01.php">회원정보</a></li>
+                	<li><a href="/shop/mypage01_1.php">회원정보</a></li>
                     <li><a href="#">주소록</a></li>
                     <li><a href="#">개인정보이용내역</a></li>
                     <li><a href="#">회원등급</a></li>
@@ -80,7 +80,7 @@ $skin_url = $member_skin_url;
             <!--s: 고객센터 배너-->
             <div class="My_subsection">
             	<img src="/images/my_bn_cs_center.png" alt="CS_CENTER"/>
-            </div>
+            </div> 
             <!--e: 고객센터 배너-->
         </div>
         <!--e: LEFT_NAVIGATION-->
@@ -88,31 +88,28 @@ $skin_url = $member_skin_url;
         <!--s: RIGHT CONTENTS-->
         <div class="My_container">
         	<h4 class="Mypage_tit">
-            核实密码
+            修改电子邮件
             </h4>
 			<div class="Change_email_inform">
-            	<span>비밀번호 재확인</span>
+            	<span>操作提示：</span>
                 <p>
-                    안전한 사용을 위해 비밀번호를 다시 한번 입력해주세요
+                    1. 此邮箱将接收密码找回，订单通知等敏感性安全服务及提醒使用，请务必填写正确地址。<br>
+                    2. 设置提交后，系统将自动发送验证邮件到您绑定的信箱，您需在24小时内登录邮箱并完成验证。<br>
+                    3. 更改邮箱时，请通过安全验证后重新输入新邮箱地址绑定。
                 </p>
             </div>
-            <div class="My_leave_step03">
-            	<form id="login_form">
+            <div class="Change_email_address">
+            	<form id="email_form">
                 	<dl>
-                    	<dt>用户名 ：</dt>
-                        <dd><input name="id" class="text" id="ID" type="text" maxlength="40" value="oozooboxID12345"></dd>
-                    	<dt>密&nbsp;&nbsp; 码 ：</dt>
-                        <dd><input name="pw" class="text" id="pw" type="password" maxlength="40" value=""></dd>
+                    	<dt>绑定邮箱地址：</dt>
+                        <dd><input name="email" class="text" id="email" type="text" maxlength="40" value="oozoobox1234@oozoobox.com"></dd>
+                    </dl>
+                    <dl class="send_email">
+                    	<dt></dt>
+                        <dd><button class="submit" type="button"><img src="/images/btn_My_certi.png" alt="认证邮箱地址"/></button></dd>
                     </dl>
                 </form>
-                <div class="send_pw">
-                    <a href="/shop/mypage01_4.php">
-                        <button>
-                            <img src="/images/btn_pass_ok_02.png" alt="认证密码"/>
-                        </button>
-                    </a>
-                </div>
-            </div>            
+            </div>
         </div>
         <!--e: RIGHT CONTENTS-->
 	</div>
