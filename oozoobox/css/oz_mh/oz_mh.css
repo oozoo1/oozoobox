@@ -758,19 +758,20 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 .tab_qna_act #txtQnaKeyword{vertical-align:middle; margin-right:2px; border:1px solid #c9c9c9; width:245px; height:23px; font-size:12px;}
 .tab_qna_act .search-area {margin-right:10px;}
 #qna_write_panel {margin-bottom:13px; width:850px; margin:15px 0 0 70px;}
-.tab_content_warp .tab3_qna_write {position:relative; height:127px; margin-top:15px; border:1px solid #dadada;}
+.tab_content_warp .tab3_qna_write {position:relative; height:156px; margin-top:15px; border:1px solid #dadada;}
 .tab_content_warp .tab3_qna_write .section {border-bottom:1px solid #dadada; padding:4px 0 2px 12px;}
+.tab_content_warp .tab3_qna_write .section .select {margin-left:15px;} 
 .tab_content_warp .tab3_qna_write label {margin-right:7px; color:#464646;}
 .tab_content_warp .tab3_qna_write input.txt {height:21px; padding:2px 0 0 4px; border:1px solid #ccc; line-height:23px;}
 .tab_content_warp .tab3_qna_write .c_subject {padding:4px 0 2px 12px; }
 .tab_content_warp .tab3_qna_write .c_subject label {margin-right:7px; color:#464646;}
 .tab_content_warp .tab3_qna_write .c_subject textarea {width:695px; height:80px; padding:4px 0 0 4px; border:1px solid #ccc; vertical-align:middle;}
-.tab3_qna_write .c_subject .regist-btn {position:absolute; top:-1px; right:-1px; float:left; display:block; width:93px; height:129px; background:url('/images/bg_tab3_qna_write.png') no-repeat; text-indent:-9999em; border:0;}
+.tab3_qna_write .c_subject .regist-btn {position:absolute; top:-1px; right:-1px; float:left; display:block; width:93px; height:156px; background:url('/images/bg_tab3_qna_write.png') no-repeat; text-indent:-9999em; border:0;}
 /****QnA list****/
 .tab3_qnalist {width:850px; margin:30px 0 150px 70px;}
 .tab3_qnalist th {padding:9px 0 7px 0; border-top:1px solid #e2e2e2; border-bottom:1px solid #e2e2e2; background:#f4f4f4; color:#464646; font-weight:normal; text-align:center;}
 #tblQnAList .question td{ padding:9px 0 7px 0; border-top:1px solid #e2e2e2; border-bottom:1px solid #e2e2e2; background:#fff; color:#464646; font-weight:normal; text-align:center;}
-#tblQnAList .question .subject {text-align:left; font-weight:bold;}
+#tblQnAList .question .subject {padding-left:10px; text-align:left; font-weight:bold;}
 
 #tblQnAList .answer td {padding:0 0 5px 0; color:#464646;}
 #tblQnAList .answer p.answer_question {padding:13px 30px 7px 93px; background:url('/images/icon_question.png') no-repeat 30px 15px; line-height:1.8;}
@@ -1119,7 +1120,7 @@ a.link {padding-right:5px; color:#416de9; background:url("/images/ico_link_arrow
 .order-list-table .status .tracking:hover a {color:#ea5b0c;}
 .order-list-table td.actions {padding:9px 8px 9px 10px;}
 .order-list-table td.actions .links {float:left; margin-top:5px;}
-.order-list-table td.actions .declaration {padding-right:5px; margin-right:7px;  color:#666; background:url("/images/ico_declaration_arrow.png") no-repeat 100% 6px;}
+.order-list-table td.actions .declaration {padding-right:5px; margin-right:7px;  color:#666; background:url("/images/ico_declaration_arrow.png") no-repeat 100% 6px; font-size:11px;}
 .order-list-table td.actions .link {margin-right:5px;}
 .order-list-table td.actions .buttons {float:right; white-space:nowrap; font-size:0; letter-spacing:-1px;}
 .order-list-table td.actions .buttons .button {margin-left:5px;}

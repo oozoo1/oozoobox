@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>OOZOOBOX</title>
+<style>
+html, body, div, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select{margin:0; padding:0;}
+body, input, textarea, select, button, table{font:14px/1.5 "Microsoft YaHei",arial,"宋体",Dotum,"돋움";}
+img, fieldset{border:0;}
+
+#frmModifyPassword {font-family: "Microsoft YaHei",arial,"宋体",Dotum,"돋움";}
+#layer_wrap {overflow:hidden;}
+.pass_confirm {width:800px; height:744px; border:3px solid #e7e7e7;}
+.inner {position:relative;}
+.pop_tit {width:800px; height:110px; margin-bottom:20px; border-bottom:1px solid #e7e7e7;}
+.pop_tit h3 {width:100%; height:38px; background-color:#fa9551; font-size:18px; color:#fff; padding:5px 0 0 20px;}
+.pop_tit .pro_tit {width:100%; display:inline-block; text-align:left; margin:20px 0 0 20px;}
+.pass_confirm .passbox {margin-left:80px; height:35px; color:#666;}
+.pass_confirm span {width:115px; display:inline-block; margin-right:10px;}
+.pass_confirm input.txt {height:21px; padding:2px 0 0 4px; border:1px solid #ccc; line-height:18px;}
+.pass_confirm .ok_btn {position:absolute; width:96px; height:27px; left:200px; top:120px;}
+#btnCheckSubmit {border:0; height:27px;}
+</style>
+</head>
+
+<body>
+    <form id="frmModifyPassword">
+		<div class="pass_confirm" id="layer_wrap">
+        	<div class="pop_tit">
+            	<h3>판매자에게 문의하기</h3>
+                <p class="pro_tit">상품명: <span>천연마스크팩</span></p> 
+            </div>
+        	<div class="inner">
+            	<div class="passbox">
+                	<span>请输入现有的密码</span>
+                    <input name="opssword" class="txt" id="tbPassWord" style="width:200px;" type="password"/>
+                </div>
+            	<div class="passbox">
+                	<span>请输入新的密码</span>
+                    <input name="opssword" class="txt" id="tbPassWord1" style="width:200px;" type="password" maxlength="16"/>
+                </div>
+                <div class="passbox">
+                	<span>请再输入新的密码</span>
+                    <input name="opssword" class="txt" id="tbPassWord2" style="width:200px;" type="password" maxlength="16"/>
+                </div>
+                <div class="ok_btn">
+                	<button id="btnCheckSubmit" type="button"><img src="/images/btn_pass_ok.png" alt="确认"/></button>
+                </div>                
+            </div>
+        </div>
+    </form>
+</body>
+</html>

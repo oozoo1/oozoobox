@@ -189,7 +189,7 @@ $skin_url = $member_skin_url;
                     	<td colspan="3" class="actions">
                         	<div class="links">
                                 <a class="declaration">신고하기</a>
-                            	<a class="link">판매자문의</a>
+                            	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
                             </div>
                             <div class="buttons">
                             	<a class="button">
@@ -250,7 +250,7 @@ $skin_url = $member_skin_url;
                     	<td colspan="3" class="actions">
                         	<div class="links">
                                 <a class="declaration">신고하기</a>                            
-                            	<a class="link">판매자문의</a>
+                            	<a class="link" onClick="window.open('/shop/popup/pop02.html', '', 'width=400, height=560, scrollbars=no')">판매자문의</a>
                             </div>
                             <div class="buttons">
                             	<a class="button">

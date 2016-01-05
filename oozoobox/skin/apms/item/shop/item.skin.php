@@ -597,6 +597,13 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                         <!--s: QnA wirte-->
                         <form class="tab3_qna_write" id="qna_write_panel" style="display:none;" action="" method="post" autocomplete="off" >
                         	<p class="section">
+                            	<label for="select_subject-write">分类</label>
+                                <input type="radio" name="radio" class="select" id="1" value="1" checked="checked"/> 상품
+                                <input type="radio" name="radio" class="select" id="2" value="2" /> 배송
+                                <input type="radio" name="radio" class="select" id="3" value="3" /> 반품/취소/환불
+                                <input type="radio" name="radio" class="select" id="4" value="4" /> 기타
+                            </p>                        
+                        	<p class="section">
                             	<label for="subject-write">题目</label>
                                 <input name="subject" class="txt" id="subject-write" style="width:630px;" type="text" size="90"></input>
                             </p>
@@ -610,8 +617,9 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                         <!--s: QnA list-->
                         <table class="tab3_qnalist" summary="판매자들이 입력한 정보를 보여주는 공간입니다.">
                         	<colgroup>
-                            	<col width="90px"></col>
-                                <col width="460px"></col>
+                            	<col width="60px"></col>
+                                <col width="60px"></col>
+                                <col width="430px"></col>
                                 <col width="100px"></col>
                                 <col width="100px"></col>
                             	<col width="100px"></col>                           
@@ -619,6 +627,7 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                             <thead>
                             	<tr>
                                 	<th scope="col">번호</th>
+                                    <th scope="col">유형</th>
                                     <th scope="col">제목</th>
                                     <th scope="col">아이디</th>
                                     <th scope="col">답변상태</th>
@@ -628,6 +637,7 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                             <tbody id="tblQnAList">
                             	<tr class="question">
                                 	<td>2</td>
+                                    <td><상품></td>
                                     <td class="subject">
                                     	<a class="view-qna-detail">재입고 문의</a>
                                     </td>
@@ -654,6 +664,7 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                                 </tr>      
                             	<tr class="question">
                                 	<td>1</td>
+                                    <td><배송></td>
                                     <td class="subject">
                                     	<a class="view-qna-detail">배송문의</a>
                                     </td>
