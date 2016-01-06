@@ -605,7 +605,7 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                             </p>                        
                         	<p class="section">
                             	<label for="subject-write">题目</label>
-                                <input name="subject" class="txt" id="subject-write" style="width:630px;" type="text" size="90"/>
+                                <input name="subject" class="txt" id="subject-write" style="width:630px;" type="text" size="90"></input>
                             </p>
                         	<p class="c_subject">
                             	<label for="text-write">内容</label>
