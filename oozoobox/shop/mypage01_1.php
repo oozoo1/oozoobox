@@ -30,8 +30,6 @@ include_once('./_head.php');
 $skin_path = $member_skin_path;
 $skin_url = $member_skin_url;
 ?>
-<div id="oz_detail_wrap">
-    <div class="oz_detail_main">
 		<h3 class="mp_tit">MY OOZOOBOX <span class="mp_tit_small">고객님의 개인정보, 주문 내역 등의 이용 기록을 조회할 수 있습니다.</span></h3>
         <!--s: LEFT_NAVIGATION-->
         <div id="Left_Navigation">
@@ -161,8 +159,7 @@ $skin_url = $member_skin_url;
             </div>
         </div>
         <!--e: RIGHT CONTENTS-->
-	</div>
-</div>
+
 
 
 <?php  include_once('./_tail.php'); ?>
