@@ -1,7 +1,10 @@
 <?php
 if (!defined('_GNUBOARD_')) exit;
+if($_SERVER['HTTP_HOST']=="localhost"){
+define('G5_MYSQL_HOST', 'oozoobox.com');
+}else{
 define('G5_MYSQL_HOST', 'localhost');
-//define('G5_MYSQL_HOST', 'oozoobox.com');
+}
 define('G5_MYSQL_USER', 'oozoobox');
 define('G5_MYSQL_PASSWORD', 'akstpeoqkr2015');
 define('G5_MYSQL_DB', 'oozoobox');
