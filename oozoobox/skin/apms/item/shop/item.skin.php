@@ -142,7 +142,7 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                         <tr><th scope="row">价格</th><td>电话咨询</td></tr>
                     <?php } else { // 전화문의가 아닐 경우?>
                         <?php if ($it['it_cust_price']) { ?>
-                            <tr><th scope="row">市场价格</th><td><?php echo display_price($it['it_cust_price']); ?></td></tr>
+                            <tr><th scope="row">市场价格</th><td><?php echo $it['it_cust_price']; ?></td></tr>
                         <?php } // 시중가격 끝 ?>
                         <tr><th scope="row">价格</th><td>
                                 <?php echo display_price(get_price($it)); ?>
@@ -239,7 +239,7 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                                                 <div class="col-sm-7">
                                                     <label>
                                                         <span class="it_opt_subj"><?php echo $it['it_name']; ?></span>
-                                                        <span class="it_opt_prc"><span class="sound_only">(+0원)</span></span>
+                                                        <span class="it_opt_prc"><span class="sound_only">(+0元)</span>
                                                     </label>
                                                 </div>
                                                 <div class="col-sm-5">
