@@ -327,13 +327,6 @@ $ext1_09  = $ex1_filed[9];
 					</div>
 				</div>
 			<?php }  ?>
-
-			<div class="form-group">
-				<label class="col-sm-2 control-label"><b>验证码</b></label>
-				<div class="col-sm-8">
-					<?php echo captcha_html(); ?>
-				</div>
-			</div>
 		</div>
 	</div>
 
