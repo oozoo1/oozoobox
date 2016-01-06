@@ -156,6 +156,57 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                         </div>
                     </div>
 
+                    <!-----------------------헤더 메인이 아닐때----------------->
+                    
+                    <div class="oz_headerlayout_02"><!--@media 적용-->
+                        <div class="oz_headercontent_02">
+                            <!--s: logo-->
+                            <h1 id="oz_mallLogo_02">
+                                <span class="oz_mlogo_02">
+                                    <a title="OOZOOBOX.com" href="/"><s></s>OOZOOBOX</a>
+                                </span> 
+                            </h1>
+                            <!--e: logo-->
+                            <!--s: 검색창, 배너-->
+                            <div class="oz_header_extra_02">
+                            	<!--s: 배너-->
+                                <div class="oz_header_banner_02">
+                                    <img src="/data/banner/25" alt="广告"/>
+                                </div>
+                                <!--e: 배너-->
+                                <!--s:검색창-->
+                                <div class="oz_mall_search_02" id="oz_mallSearch_02"><!--@media 적용-->
+                                    <ul class="oz_event_query_02">
+                                    	<li><a href="/?type=month"><font <?php if($_GET[type]=="month"){?> class="ck_font"<?php }?>>本月推选</font></a></li> <!--"이달의 베스트"-->
+                                        <li><a href="/?type=sale"><font <?php if($_GET[type]=="sale"){?> class="ck_font"<?php }?>>优惠专区</font></a></li> <!--"이벤트"-->
+                                        <li class="last"><a href="/?type=share"><font <?php if($_GET[type]=="share"){?> class="ck_font"<?php }?>>相互共享</font></a></li>  <!--"커뮤니티"-->
+                                    </ul>
+
+                                    <form name="oz_searchTop" class="oz_mallSearch_form oz_clearfix_02" action="#" target="_top" acceptcharset="gbk">
+                                        <input type="hidden" name="type" value="<?php echo $_GET[type];?>">
+                                        <fieldset>
+                                            <legend>天猫搜索</legend> 
+                                            <div class="oz_mallSearch_input_02 oz_clearfix_02">
+                                                <div class="s-combobox_02">
+                                                    <div class="s-combobox-input-wrap_02">
+                                                        <input name="q" title="请输入搜索文字" class="s-combobox-input_02" id="mq_02"  role="combobox" accesskey="s" placeholder="请输入搜索文字" value="<?php echo $_GET[q];?>"></input>
+                                                    </div>
+                                                </div>
+                                                <button type="submit">搜索<s></s></button>
+                                            </div>
+                                    	</fieldset>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
                 <!--e: 로고, 검색창-->
                 
 <?php if($_SERVER['PHP_SELF']=="/index.php"){}else{ ?>
