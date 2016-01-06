@@ -289,6 +289,7 @@ fieldset legend{display: none;}
 .oz_wonderful_con .card_item .item_tag {position:absolute; right:0px; top:3px; width:100px;}
 .oz_wonderful_con .card_item .item_tag .wonderful_cart{float:left; width:26px; height:18px; margin-right:11px;}
 .oz_wonderful_con .card_item .item_tag .wonderful_after{float:left; width:26px; height:18px; margin-right:11px;}
+.oz_wonderful_con .card_item .item_tag .wonderful_after em{position:absolute; right:3px; top:3px; color:#999; font-size:12px;}
 
 
 @media all and (max-width:1910px)
@@ -757,19 +758,20 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 .tab_qna_act #txtQnaKeyword{vertical-align:middle; margin-right:2px; border:1px solid #c9c9c9; width:245px; height:23px; font-size:12px;}
 .tab_qna_act .search-area {margin-right:10px;}
 #qna_write_panel {margin-bottom:13px; width:850px; margin:15px 0 0 70px;}
-.tab_content_warp .tab3_qna_write {position:relative; height:127px; margin-top:15px; border:1px solid #dadada;}
+.tab_content_warp .tab3_qna_write {position:relative; height:156px; margin-top:15px; border:1px solid #dadada;}
 .tab_content_warp .tab3_qna_write .section {border-bottom:1px solid #dadada; padding:4px 0 2px 12px;}
+.tab_content_warp .tab3_qna_write .section .select {margin-left:15px;} 
 .tab_content_warp .tab3_qna_write label {margin-right:7px; color:#464646;}
 .tab_content_warp .tab3_qna_write input.txt {height:21px; padding:2px 0 0 4px; border:1px solid #ccc; line-height:23px;}
 .tab_content_warp .tab3_qna_write .c_subject {padding:4px 0 2px 12px; }
 .tab_content_warp .tab3_qna_write .c_subject label {margin-right:7px; color:#464646;}
 .tab_content_warp .tab3_qna_write .c_subject textarea {width:695px; height:80px; padding:4px 0 0 4px; border:1px solid #ccc; vertical-align:middle;}
-.tab3_qna_write .c_subject .regist-btn {position:absolute; top:-1px; right:-1px; float:left; display:block; width:93px; height:129px; background:url('/images/bg_tab3_qna_write.png') no-repeat; text-indent:-9999em; border:0;}
+.tab3_qna_write .c_subject .regist-btn {position:absolute; top:-1px; right:-1px; float:left; display:block; width:93px; height:156px; background:url('/images/bg_tab3_qna_write.png') no-repeat; text-indent:-9999em; border:0;}
 /****QnA list****/
 .tab3_qnalist {width:850px; margin:30px 0 150px 70px;}
 .tab3_qnalist th {padding:9px 0 7px 0; border-top:1px solid #e2e2e2; border-bottom:1px solid #e2e2e2; background:#f4f4f4; color:#464646; font-weight:normal; text-align:center;}
 #tblQnAList .question td{ padding:9px 0 7px 0; border-top:1px solid #e2e2e2; border-bottom:1px solid #e2e2e2; background:#fff; color:#464646; font-weight:normal; text-align:center;}
-#tblQnAList .question .subject {text-align:left; font-weight:bold;}
+#tblQnAList .question .subject {padding-left:10px; text-align:left; font-weight:bold;}
 
 #tblQnAList .answer td {padding:0 0 5px 0; color:#464646;}
 #tblQnAList .answer p.answer_question {padding:13px 30px 7px 93px; background:url('/images/icon_question.png') no-repeat 30px 15px; line-height:1.8;}
@@ -999,7 +1001,7 @@ ul.MM_List li a:hover {color:#ea5b0c;}
 .Mypage_tit {width:100%; height:31px; background:url("/images/bg_mypage_h4.png") no-repeat; margin-top:25px; margin-bottom:23px; font-size:18px; color:#6e6e6e; position:relative; font-weight:bold; padding-left:15px; }
 
 /*******MY PAGE.01 我的基本消息*******/
-/***我的基本消息 mypage01.php***/
+/***我的基本消息 mypage01_1.php***/
 .My_Information {width:100%; font-size:14px; }
 .My_Information button {border:0}
 .My_Information tr {height:50px; border-bottom:1px solid #dfdfdf;}
@@ -1010,7 +1012,7 @@ ul.MM_List li a:hover {color:#ea5b0c;}
 .btn_wrap {position:relative; margin-top:60px; text-align:center;}
 .btn_wrap button {border:0; margin:0 5px;}
 
-/****修改电子邮件 mypage01_1.php****/
+/****修改电子邮件 mypage01_1_1.php****/
 .Change_email_inform {width:100%; height:140px; background-color:#ededed; padding:10px 0;}
 .Change_email_inform span {display:block; font-size:18px; margin:0 0 8px 15px;}
 .Change_email_inform p {display:block; font-size:14px; margin:0 0 0 15px;}
@@ -1022,7 +1024,7 @@ ul.MM_List li a:hover {color:#ea5b0c;}
 .Change_email_address .send_email dd {width:100%; text-align:center;}
 .Change_email_address dl.send_email button {border:0;}
 
-/****OOZOOBOX注销 mypage01_2.php****/
+/****OOZOOBOX注销 mypage01_1_2.php****/
 .My_leave_paragraph01 {float:left; width:730px;}
 .My_container h5{background:url("/images/ico_my_leave_orange.png") no-repeat; display:block; padding:0 0 10px 15px; font-size:16px; color:#ea5b0c;}
 .My_container p {font-size:14px; color:#777;}
@@ -1037,7 +1039,7 @@ ul.MM_List li a:hover {color:#ea5b0c;}
 .basicbtn {width:100%;  text-align:center; margin-top:40px;}
 .basicbtn button {border:0;}
 
-/****OOZOOBOX注销 Step3 核实密码 mypage01_3.php****/
+/****OOZOOBOX注销 Step3 核实密码 mypage01_1_3.php****/
 .Change_email_inform {width:100%; height:140px; background-color:#ededed; padding:10px 0;}
 .Change_email_inform span {display:block; font-size:18px; margin:0 0 8px 15px;}
 .Change_email_inform p {display:block; font-size:14px; margin:0 0 0 15px;}
@@ -1048,7 +1050,7 @@ ul.MM_List li a:hover {color:#ea5b0c;}
 .send_pw {padding-top:60px; width:100%; text-align:center;}
 .send_pw button {border:0;}
 
-/****OOZOOBOX注销 Step4 mypage01_4.php****/
+/****OOZOOBOX注销 Step4 mypage01_1_4.php****/
 .My_leave_confirm {width:100%; padding:10px 0;}
 .My_leave_confirm p {display:block; font-size:14px; margin:0 0 0 15px;}
 .confirm_info {display:inline-table; width:65%; margin:30px 0 0 15px; font-size:14px;}
@@ -1059,25 +1061,72 @@ ul.MM_List li a:hover {color:#ea5b0c;}
 .My_leave_paragraph04 li {padding:5px 0;}
 .My_leave_paragraph04 li .text {width:450px; height:25px; padding:0 5px; border:1px solid #dfdfdf; color:#6e6e6e; font-size:14px; margin-left:10px;}
 
-/****OOZOOBOX注销 Step4 mypage01_4.php****/
+/****OOZOOBOX注销 Step5 mypage01_1_5.php****/
 .My_leave_step04 {width:100%; text-align:center; color:#464646;} 
 .My_leave_step04 .msg_big {display:block; font-size:28px; font-weight:bold; padding:40px 0 10px 0;}
 .My_leave_step04 .msg_small {display:block; font-size:14px; 
 padding:0 0 90px 0;}
 .My_leave_step04 button {border:0;}
 
+/****주소록 mypage01_2.php****/
+.text_box {width:100%; background-color:#ededed; padding:15px 0; margin-bottom:20px;}
+.text_box p {display:block; font-size:14px; margin:0 0 0 15px;}
+.My_Page_boardlist table{width:100%; margin-top:15px;}
+.My_Page_boardlist table th {padding:8px 5px 7px; border-top:1px solid #a0c8d8; border-bottom:1px solid #a0c8d8;}
+.My_Page_boardlist table td {padding:14px 5px 11px; border-bottom:1px solid #dfdfdf;}
+.My_Page_boardlist table td a:hover {color:#ea5b0c;}
+.My_Page_boardlist .add_fix {padding:2px 5px; border:1px solid #999; border-radius:3px; color:#666;}
+.My_Page_boardlist .address_hover td{background-color:#efefef;}
+.My_Page_boardlist .address_hover .add_fix {padding:2px 5px; border:1px solid #333; border-radius:3px; background:#333; color:#fff;}
 
-
-
-
-
-
-
-
-
-
-
-
+/****주문내역/배송조회****/
+.tap_view_period {width:100%; min-height:60px; border-bottom:1px solid #ddd;}
+.tap_view_period .order-period {float:left;}
+.order-period button {display:inline-block; padding:2px 8px 0 8px; background:#fff; border:1px solid #bbb; color:#999;}
+.order-period button:hover {color:#000;}
+.order-period button.on {color:#000;}
+.order-period .date {display:block; margin-top:7px; margin-bottom:4px; padding-left:7px; margin-left:3px; background:url("/images/ico_declaration_arrow.png") no-repeat 0 9px; font-size:12px;}
+.order-search {float:right;}
+.order-search .text{height:14px; padding:3px 5px;border:1px solid #dfdfdf; color:#6e6e6e; font-size:12px;}
+.order-search .btn_search {display:inline-block; width:45px; height:22px; margin:0; border:0; text-align:center; font-size:11px; letter-spacing:-1px; white-space:nowrap; background-color:#333; color:#f7f7f7; font-weight:bold;}
+.orderview-option {float:right; margin:8px 0;}
+.order-list-table {table-layout:fixed; width:100%; border-collapse:collapse; border-top:2px solid #bbb; border-bottom:1px solid #aaa;}
+.order-list-table thead th {padding:8px 0 7px; border-bottom:1px solid #ddd; background:#ececec; font-weight:normal; text-align:center;}
+.order-list-table td {padding:18px 0; border-top:1px solid #ddd; vertical-align:top;
+ text-align:center;}
+.order-list-table .separate td {border-top:1px solid #aaa;}
+.order-list-table td.date-payment-num {padding-top:18px; border-right:1px solid #ddd; text-align:left;}
+.order-list-table td.date-num {background:#fff; text-align:left;}
+.order-list-table .date-num {padding-left:9px; color:#666;}
+.order-list-table .date-num span {color:#999;}
+.order-list-table .total-charge {margin-top:16px; padding:8px 0 0 9px; border-top:1px solid #ddd; color:#666;}
+.order-list-table .charge .num{font-size:15px; color:#333;}
+.order-list-table .detail-link {margin:8px 0 0 9px;} 
+a.link {padding-right:5px; color:#416de9; background:url("/images/ico_link_arrow.gif") no-repeat 100% 5px; font:11px/15px "Microsoft YaHei",arial,"宋体",Dotum; white-space:nowrap; letter-spacing:-1px; text-decoration:underline; text-decoration:none;}
+.order-list-table td.product {position:static; padding:18px 5px 18px 20px;}
+.product-block {width:100%; text-align:left;}
+.product-block .product-thumbnail {float:left; width:60px; margin-top:2px;}
+.product-block .product-content {padding-left:77px;}
+.product-block .product-name {max-height:14px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; color:#333;}
+.product-block .product-name a:hover {color:#ea5b0c;}
+.product-block .product-option {color:#999;}
+.product-block .order-num {margin-top:12px; color:#333;}
+.product-block .order-num .mp_label {margin-right:5px; padding-right:6px; background:url("/images/bar_order_num.gif") no-repeat 100% 2px; font:11px/13px "Microsoft YaHei",arial,"宋体",Dotum;}
+.order-list-table td.status {font:11px/13px "Microsoft YaHei",arial,"宋体",Dotum; color:#666; letter-spacing:-1px;}
+.order-list-table .status .status-msg {display:block; margin-bottom:3px; color:#f20; font-size:12px;}
+.order-list-table .status .status-date {display:block;}
+.order-list-table .status .tracking {display:inline-block; margin-top:3px; padding-left:12px; background:url("/images/ico_tracking.png") no-repeat 0 2px; color:#333;}
+.order-list-table .status .tracking:hover {background:url("/images/ico_tracking_o.png") no-repeat 0 2px;}
+.order-list-table .status .tracking:hover a {color:#ea5b0c;}
+.order-list-table td.actions {padding:9px 8px 9px 10px;}
+.order-list-table td.actions .links {float:left; margin-top:5px;}
+.order-list-table td.actions .declaration {padding-right:5px; margin-right:7px;  color:#666; background:url("/images/ico_declaration_arrow.png") no-repeat 100% 6px; font-size:11px;}
+.order-list-table td.actions .link {margin-right:5px;}
+.order-list-table td.actions .buttons {float:right; white-space:nowrap; font-size:0; letter-spacing:-1px;}
+.order-list-table td.actions .buttons .button {margin-left:5px;}
+a.button span {display:inline-block; height:26px; padding:1px 11px 0 9px;letter-spacing:-1px; white-space:nowrap; font-size:12px;}
+.order-list-table button {display:inline-block; padding:2px 8px 0 8px; background:#fff; border:1px solid #bbb; color:#666; margin-left:5px;}
+.order-list-table button.orange {background-color:#ea5b0c; color:#fefefe; border:1px solid #f47a22;}
 
 
 /*************************************************/
