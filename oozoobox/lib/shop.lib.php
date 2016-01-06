@@ -585,7 +585,7 @@ function display_price($price, $tel_inq=false)
     if ($tel_inq)
         $price = '전화문의';
     else
-        $price = number_format($price, 0).'원';
+        $price = $price;
 
     return $price;
 }
@@ -601,7 +601,7 @@ function get_price($it)
 
     $price = $it['it_price'];
 
-    return (int)$price;
+    return $price;
 }
 
 
@@ -977,9 +977,9 @@ function get_item_options($it_id, $subject)
         $select .= '<option value="">선택</option>'.PHP_EOL;
         for($i=0; $row=sql_fetch_array($result); $i++) {
             if($row['io_price'] >= 0)
-                $price = '&nbsp;&nbsp;+ '.number_format($row['io_price']).'원';
+                $price = '&nbsp;&nbsp;+ '.$row['io_price'].'원';
             else
-                $price = '&nbsp;&nbsp; '.number_format($row['io_price']).'원';
+                $price = '&nbsp;&nbsp; '.$row['io_price'].'원';
 
             if($row['io_stock_qty'] < 1)
                 $soldout = '&nbsp;&nbsp;[품절]';
@@ -1026,9 +1026,9 @@ function get_item_supply($it_id, $subject)
 
         if(strlen($opt_id[1])) {
             if($row['io_price'] >= 0)
-                $price = '&nbsp;&nbsp;+ '.number_format($row['io_price']).'원';
+                $price = '&nbsp;&nbsp;+ '.$row['io_price'].'元';
             else
-                $price = '&nbsp;&nbsp; '.number_format($row['io_price']).'원';
+                $price = '&nbsp;&nbsp; '.$row['io_price'].'元';
             $io_stock_qty = get_option_stock_qty($it_id, $row['io_id'], $row['io_type']);
 
             if($io_stock_qty < 1)
@@ -1083,7 +1083,7 @@ function print_item_options($it_id, $cart_id, $pt_msg1='', $pt_msg2='', $pt_msg3
         $price_plus = '';
         if($row['io_price'] >= 0)
             $price_plus = '+';
-        $str .= '<li>'.$row['ct_option'].' '.$row['ct_qty'].'개 ('.$price_plus.display_price($row['io_price']).')';
+        $str .= '<li>'.$row['ct_option'].' '.$row['ct_qty'].'件 ('.$price_plus.display_price($row['io_price']).')';
 		if($row['pt_msg1']) {
 	        $str .= '<div class="text-muted">';
 			if($pt_msg1) $str .= $pt_msg1.' : ';
