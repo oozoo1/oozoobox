@@ -13,7 +13,7 @@ if($is_mobile_order) {
 		$page_return_url .= '?sw_direct=1';
 
 	// 결제등록 완료 체크
-	if($od_settle_case != '무통장' && $od_settle_case != '포인트' && $od_settle_case != 'KAKAOPAY') {
+	if($od_settle_case != '支付宝' && $od_settle_case != '포인트' && $od_settle_case != 'KAKAOPAY') {
 		if($default['de_pg_service'] == 'kcp' && ($_POST['tran_cd'] == '' || $_POST['enc_info'] == '' || $_POST['enc_data'] == ''))
 			alert('결제등록 요청 후 주문해 주십시오.', $page_return_url);
 
@@ -26,7 +26,7 @@ if($is_mobile_order) {
 
 	define('APMS_PGCHECK_PATH', G5_MSHOP_PATH);
 } else {
-	if(($od_settle_case != '무통장' && $od_settle_case != '포인트' && $od_settle_case != 'KAKAOPAY') && $default['de_pg_service'] == 'lg' && !$_POST['LGD_PAYKEY'])
+	if(($od_settle_case != '支付宝' && $od_settle_case != '포인트' && $od_settle_case != 'KAKAOPAY') && $default['de_pg_service'] == 'lg' && !$_POST['LGD_PAYKEY'])
 		alert('결제등록 요청 후 주문해 주십시오.');
 
 	define('APMS_PGCHECK_PATH', G5_SHOP_PATH);
@@ -300,7 +300,7 @@ $i_price = $i_price + $i_send_cost + $i_send_cost2 - $i_temp_point - $i_send_cou
 $order_price = $tot_od_price + $send_cost + $send_cost2 - $tot_sc_cp_price - $od_temp_point;
 
 $od_status = '주문';
-if ($od_settle_case == "무통장" || $od_settle_case == "포인트")
+if ($od_settle_case == "支付宝" || $od_settle_case == "포인트")
 {
     $od_receipt_point   = $i_temp_point;
     $od_receipt_price   = 0;
@@ -804,8 +804,8 @@ if($config['cf_sms_use'] && ($default['de_sms_use2'] || $default['de_sms_use3'])
             }
         }
 
-        // 무통장 입금 때 고객에게 계좌정보 보냄
-        if($od_settle_case == '무통장' && $default['de_sms_use2'] && $od_misu > 0) {
+        // 支付宝 입금 때 고객에게 계좌정보 보냄
+        if($od_settle_case == '支付宝' && $default['de_sms_use2'] && $od_misu > 0) {
             $sms_content = $od_name."님의 입금계좌입니다.\n금액:".number_format($od_misu)."원\n계좌:".$od_bank_account."\n".$default['de_admin_company_name'];
 
             $recv_number = preg_replace("/[^0-9]/", "", $od_hp);

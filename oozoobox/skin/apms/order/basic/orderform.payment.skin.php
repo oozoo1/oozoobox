@@ -1,13 +1,6 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 ?>
-
-<?php if (!$default['de_card_point']) { ?>
-	<div class="well" id="sod_frm_pt_alert">
-		<i class="fa fa-bell fa-lg"></i> <strong>무통장입금</strong> 이외의 결제 수단으로 결제하시는 경우 포인트를 적립해드리지 않습니다.
-	</div>
-<?php } ?>
-
 <section id="sod_frm_pay" class="order-payment">
 	<div class="panel panel-default">
 		<div class="panel-heading"><strong><i class="fa fa-check fa-lg"></i> 결제정보</strong></div>
@@ -40,21 +33,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 					</div>
 				</div>
 			<?php } ?>
-			<div class="form-group">
-				<label class="col-sm-2 control-label"><b>총주문금액</b></label>
-				<label class="col-sm-2 control-label">
-					<b><span id="od_tot_price"><?php echo number_format($tot_price); ?></span></b>원
-				</label>
-			</div>
-			<div class="form-group">
-				<label class="col-sm-2 control-label"><b>추가배송비</b></label>
-				<label class="col-sm-2 control-label">
-					<span id="od_send_cost2">0</span>원
-				</label>
-				<div class="col-sm-7">
-					<label class="control-label text-muted font-12">지역에 따라 추가되는 도선료 등의 배송비입니다.</label>
-				</div>
-			</div>
+			
 
 			<?php if($is_none) { ?>
 				<div class="alert alert-danger text-center">
@@ -66,7 +45,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 				</div>
 			<?php } else { ?>
 				<div class="form-group">
-					<label class="col-sm-2 control-label"><b>결제방법</b></label>
+					<label class="col-sm-2 control-label"><b>支付方式</b></label>
 					<div class="col-sm-10 radio-line">
 						<?php if($is_kakaopay) { ?>
 							 <label><input type="radio" id="od_settle_kakaopay" name="od_settle_case" value="KAKAOPAY"> <span class="kakaopay_icon">KAKAOPAY</span></label>
@@ -75,7 +54,8 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 							 <label><input type="radio" id="od_settle_point" name="od_settle_case" value="포인트"> 포인트결제</label>
 						<?php } ?>
 						<?php if($is_mu) { ?>
-							<label><input type="radio" id="od_settle_bank" name="od_settle_case" value="무통장"> 무통장입금</label>
+							<label><input name="od_settle_case" type="radio" id="od_settle_bank" value="支付宝" checked="checked"> 支付宝
+				       </label>
 						<?php } ?>
 
 						<?php if($is_vbank) { ?>
