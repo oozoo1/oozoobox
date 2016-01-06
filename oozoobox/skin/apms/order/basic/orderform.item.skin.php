@@ -68,7 +68,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 			<td class="text-center">
 				<?php if($item[$i]['is_coupon']) { ?>
 					<div class="btn-group">
-						<button type="button" class="cp_btn btn btn-black btn-xs">적용</button>
+						<button type="button" class="cp_btn btn btn-black btn-xs">使用</button>
 					</div>
 				<?php } ?>
 			</td>
@@ -81,39 +81,39 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 	</table>
 </div>
 
-<?php if ($goods_count) $goods .= ' 외 '.$goods_count.'건'; ?>
+<?php if ($goods_count) $goods .= ' 外 '.$goods_count.'件'; ?>
 
 <!-- 주문상품 합계 시작 { -->
 <div class="well">
 	<div class="row">
-		<div class="col-xs-6">주문금액</div>
+		<div class="col-xs-6">结算价格</div>
 		<div class="col-xs-6 text-right">
-			<strong><?php echo number_format($tot_sell_price); ?> 원</strong>
+			<strong><?php echo number_format($tot_sell_price); ?> 元</strong>
 		</div>
 		<?php if($it_cp_count > 0) { ?>
-			<div class="col-xs-6">쿠폰할인</div>
+			<div class="col-xs-6">代金卷</div>
 			<div class="col-xs-6 text-right">
-				<strong id="ct_tot_coupon">0 원</strong>
+				<strong id="ct_tot_coupon">0 元</strong>
 			</div>
 		<?php } ?>
-		<div class="col-xs-6">배송비</div>
+		<div class="col-xs-6">运费</div>
 		<div class="col-xs-6 text-right">
-			<strong><?php echo number_format($send_cost); ?> 원</strong>
+			<strong><?php echo number_format($send_cost); ?> 元</strong>
 		</div>
 	</div>
 
 	<div class="row">
 		<?php $tot_price = $tot_sell_price + $send_cost; // 총계 = 주문상품금액합계 + 배송비 ?>
-		<div class="col-xs-6 red"> <b>합계금액</b></div>
+		<div class="col-xs-6 red"> <b>总计金额</b></div>
 		<div class="col-xs-6 text-right red">
-			<strong id="ct_tot_price"><?php echo number_format($tot_price); ?> 원</strong>
+			<strong id="ct_tot_price"><?php echo number_format($tot_price); ?> 元</strong>
 		</div>
 	</div>
 
 	<div class="row">	
-		<div class="col-xs-6"> 포인트</div>
+		<div class="col-xs-6"> 积分</div>
 		<div class="col-xs-6 text-right">
-			<strong><?php echo number_format($tot_point); ?> 점</strong>
+			<strong><?php echo number_format($tot_point); ?> 分</strong>
 		</div>
 	</div>
 </div>

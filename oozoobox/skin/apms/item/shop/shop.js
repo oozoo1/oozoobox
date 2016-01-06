@@ -462,7 +462,7 @@ function price_calculate()
         }
     });
 
-    $("#it_tot_price").empty().html(number_format(String(total))+"원");
+    $("#it_tot_price").empty().html(number_format(String(total))+"元");
 }
 
 // php chr() 대응
