@@ -27,18 +27,35 @@ $verify_result = $alipayNotify->verifyReturn();
 if($verify_result) {//验证成功
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//请在这里加上商户的业务逻辑程序代码
+
 	
 	//——请根据您的业务逻辑来编写程序（以下代码仅作参考）——
     //获取支付宝的通知返回参数，可参考技术文档中页面跳转同步通知参数列表
 
-	//商户订单号
+	//商户订单号
+
 	$out_trade_no = $_GET['out_trade_no'];
 
-	//支付宝交易号
+	//支付宝交易号
+
 	$trade_no = $_GET['trade_no'];
 
 	//交易状态
 	$trade_status = $_GET['trade_status'];
+
+
+	
+	include_once('./_common.php');	
+	$sql = " update g5_shop_order
+				set od_receipt_price = '$_GET[price]',
+				 od_receipt_time = '".G5_TIME_YMDHIS."',
+				 od_misu = '0',
+				 od_status = '입금',
+				 od_settle_case = '支付宝'
+				 where od_id = '$out_trade_no' ";
+	$sql_query=sql_query($sql);	
+	
+	echo "<script>alert('支付成功');window.location='/shop/orderinquiryview.php?od_id={$out_trade_no}'</script>";	
 
 
     if($_GET['trade_status'] == 'WAIT_SELLER_SEND_GOODS') {
@@ -52,6 +69,9 @@ if($verify_result) {//验证成功
 		
 	echo "验证成功<br />";
 	echo "trade_no=".$trade_no;
+	echo "$out_trade_no";
+	
+	
 
 	//——请根据您的业务逻辑来编写程序（以上代码仅作参考）——
 	
