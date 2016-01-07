@@ -79,9 +79,9 @@ if($header_skin)
 			<tr>
 				<td><?php echo $item[$i]['opt'][$k]['ct_option']; ?></td>
 				<td class="text-center"><?php echo number_format($item[$i]['opt'][$k]['ct_qty']); ?></td>
-				<td class="text-right"><?php echo number_format($item[$i]['opt'][$k]['opt_price']); ?></td>
-				<td class="text-right"><?php echo number_format($item[$i]['opt'][$k]['sel_price']); ?></td>
-				<td class="text-right"><?php echo number_format($item[$i]['opt'][$k]['point']); ?></td>
+				<td class="text-right"><?php echo number_format($item[$i]['opt'][$k]['opt_price'],2); ?></td>
+				<td class="text-right"><?php echo number_format($item[$i]['opt'][$k]['ct_qty']*$item[$i]['opt'][$k]['opt_price'],2); ?></td>
+				<td class="text-right"><?php echo number_format($item[$i]['opt'][$k]['point'],2); ?></td>
 				<td class="text-center"><?php echo $item[$i]['ct_send_cost']; ?></td>
 				<td class="text-center"><?php echo $item[$i]['opt'][$k]['ct_status']; ?></td>
 			</tr>
@@ -95,57 +95,57 @@ if($header_skin)
 	<div class="row">
 		<div class="col-xs-6">주문총액</div>
 		<div class="col-xs-6 text-right">
-			<strong><?php echo number_format($od['od_cart_price']); ?> 원</strong>
+			<strong><?php echo number_format($od['od_cart_price'],2); ?> 원</strong>
 		</div>
 		<?php if($od['od_cart_coupon'] > 0) { ?>
 			<div class="col-xs-6">개별상품 쿠폰할인</div>
 			<div class="col-xs-6 text-right">
-				<strong><?php echo number_format($od['od_cart_coupon']); ?> 원</strong>
+				<strong><?php echo number_format($od['od_cart_coupon'],2); ?> 원</strong>
 			</div>
 		<?php } ?>
 		<?php if($od['od_coupon'] > 0) { ?>
 			<div class="col-xs-6">주문금액 쿠폰할인</div>
 			<div class="col-xs-6 text-right">
-				<strong><?php echo number_format($od['od_coupon']); ?> 원</strong>
+				<strong><?php echo number_format($od['od_coupon'],2); ?> 원</strong>
 			</div>
 		<?php } ?>
 
 		<?php if ($od['od_send_cost'] > 0) { ?>
 			<div class="col-xs-6">배송비</div>
 			<div class="col-xs-6 text-right">
-				<strong><?php echo number_format($od['od_send_cost']); ?> 원</strong>
+				<strong><?php echo number_format($od['od_send_cost'],2); ?> 원</strong>
 			</div>
 		<?php } ?>
 
 		<?php if($od['od_send_coupon'] > 0) { ?>
 			<div class="col-xs-6">배송비 쿠폰할인</div>
 			<div class="col-xs-6 text-right">
-				<strong><?php echo number_format($od['od_send_coupon']); ?> 원</strong>
+				<strong><?php echo number_format($od['od_send_coupon'],2); ?> 원</strong>
 			</div>
 		<?php } ?>
 
 		<?php if ($od['od_send_cost2'] > 0) { ?>
 			<div class="col-xs-6">추가배송비</div>
 			<div class="col-xs-6 text-right">
-				<strong><?php echo number_format($od['od_send_cost2']); ?> 원</strong>
+				<strong><?php echo number_format($od['od_send_cost2'],2); ?> 원</strong>
 			</div>
 		<?php } ?>
 
 		<?php if ($od['od_cancel_price'] > 0) { ?>
 			<div class="col-xs-6">취소금액</div>
 			<div class="col-xs-6 text-right">
-				<strong><?php echo number_format($od['od_cancel_price']); ?> 원</strong>
+				<strong><?php echo number_format($od['od_cancel_price'],2); ?> 원</strong>
 			</div>
 		<?php } ?>
 
 		<div class="col-xs-6 red"> <b>합계금액</b></div>
 		<div class="col-xs-6 text-right red">
-			<strong><?php echo number_format($tot_price); ?> 원</strong>
+			<strong><?php echo number_format($tot_price,2); ?> 원</strong>
 		</div>
 
 		<div class="col-xs-6"> 포인트</div>
 		<div class="col-xs-6 text-right">
-			<strong><?php echo number_format($tot_point); ?> 점</strong>
+			<strong><?php echo number_format($tot_point,2); ?> 점</strong>
 		</div>
 	</div>
 </div>
@@ -227,38 +227,40 @@ if($header_skin)
 	</div>
 </div>
 
-<?php if($is_orderform) { ?>
-	<div class="panel panel-default">
-		<div class="panel-heading"><strong><i class="fa fa-user fa-lg"></i> 주문하신 분</strong></div>
-		<div class="table-responsive">
-			<table class="div-table table bsk-tbl bg-white">
-			<col width="120">
-			<tbody>
-			<tr>
-				<th scope="row">이 름</th>
-				<td><?php echo get_text($od['od_name']); ?></td>
-			</tr>
-			<tr>
-				<th scope="row">전화번호</th>
-				<td><?php echo get_text($od['od_tel']); ?></td>
-			</tr>
-			<tr>
-				<th scope="row">핸드폰</th>
-				<td><?php echo get_text($od['od_hp']); ?></td>
-			</tr>
-			<tr>
-				<th scope="row">주 소</th>
-				<td><?php echo get_text(sprintf("(%s%s)", $od['od_zip1'], $od['od_zip2']).' '.print_address($od['od_addr1'], $od['od_addr2'], $od['od_addr3'], $od['od_addr_jibeon'])); ?></td>
-			</tr>
-			<tr>
-				<th scope="row">E-mail</th>
-				<td><?php echo get_text($od['od_email']); ?></td>
-			</tr>
-			</tbody>
-			</table>
-		</div>
-	</div>
 
+<form name=alipayment action="/alipay/alipayapi.php" method=post target="_blank">
+<input size="30" name="WIDout_trade_no" value="<?=$od_id?>" title="订单号码" />
+<input size="30" name="WIDsubject" value="OOZOOBOX" title="订单名称" />
+<input size="30" name="WIDprice" value="<?php echo number_format($tot_price,2); ?>" title="付款金额" />
+<input size="30" name="WIDbody" value="OOZOOBOX" title="订单描述"/>
+<input size="30" name="WIDshow_url" value="http://dev.oozoobox.com/shop/orderinquiryview.php?od_id=<?=$_GET[od_id]?>" title="订单地址" />
+<input size="30" name="WIDreceive_name" value="<?php echo get_text($od['od_b_name']); ?>" title="收货人" />
+<input size="30" name="WIDreceive_address" value="<?=$od['od_b_addr1']?> - <?=$od['od_b_addr2']?> - <?=$od['od_b_addr3']?> - <?=$od['od_b_addr_jibeon']?>" title="收货地址" />
+<input size="30" name="WIDreceive_zip" value="100000" title="邮政编码"/>
+<input size="30" name="WIDreceive_phone" value="<?php echo get_text($od['od_b_tel']); ?>" title="收货人电话"/>
+<input size="30" name="WIDreceive_mobile" value="<?php echo get_text($od['od_b_hp']); ?>" title="收货人手机"/>
+<button class="new-btn-login" type="submit" style="text-align:center;">确认支付</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php if($is_orderform) { ?>
 	<div class="panel panel-default">
 		<div class="panel-heading"><strong><i class="fa fa-gift fa-lg"></i> 받으시는 분</strong></div>
 		<div class="table-responsive">

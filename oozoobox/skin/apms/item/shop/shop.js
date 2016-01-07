@@ -440,7 +440,7 @@ function same_option_check(val)
 // 가격계산
 function price_calculate()
 {
-    var it_price = parseInt($("input#it_price").val());
+    var it_price = parseFloat($("input#it_price").val()); 
 
     if(isNaN(it_price))
         return;
@@ -451,7 +451,7 @@ function price_calculate()
     var price, type, qty, total = 0;
 
     $el_prc.each(function(index) {
-        price = parseInt($(this).val());
+        price = parseFloat($(this).val());
         qty = parseInt($el_qty.eq(index).val());
         type = $el_type.eq(index).val();
 

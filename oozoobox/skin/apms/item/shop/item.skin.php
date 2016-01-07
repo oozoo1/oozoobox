@@ -41,9 +41,6 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
 
 
 <!--s: 상세보기-->
-<div id="oz_detail_wrap">
-	<!--s: 상세보기 wrap-->
-    <div class="oz_detail_main">
     	<!--s: 상세보기 제품 사진, 가격정보-->
     	<div class="detail_good">
         	<!--s: 제품 사진 보기-->
@@ -239,7 +236,7 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                                                 <div class="col-sm-7">
                                                     <label>
                                                         <span class="it_opt_subj"><?php echo $it['it_name']; ?></span>
-                                                        <span class="it_opt_prc"><span class="sound_only">(+0元)</span>
+                                                        <span class="it_opt_prc"><span class="sound_only">(+0元)</span></span>
                                                     </label>
                                                 </div>
                                                 <div class="col-sm-5">
@@ -859,10 +856,6 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
         	<!-- .tab_container -->
         </div> 
         <!--e: 상세보기 제품 정보-->        
-    </div>
-    <!--e: 상세보기 wrap-->
-</div>
-<!--e: 상세보기-->
 
 
 

@@ -64,7 +64,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 				<?php } ?>
 			</td>
 			<td class="text-center"><?php echo $item[$i]['qty']; ?></td>
-			<td class="text-right"><?php echo $item[$i]['ct_price']; ?></td>
+			<td class="text-right"><?php echo number_format($item[$i]['ct_price'],2); ?></td>
 			<td class="text-center">
 				<?php if($item[$i]['is_coupon']) { ?>
 					<div class="btn-group">
@@ -88,7 +88,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 	<div class="row">
 		<div class="col-xs-6">结算价格</div>
 		<div class="col-xs-6 text-right">
-			<strong><?php echo number_format($tot_sell_price); ?> 元</strong>
+			<strong><?php echo number_format($tot_sell_price,2); ?> 元</strong>
 		</div>
 		<?php if($it_cp_count > 0) { ?>
 			<div class="col-xs-6">代金卷</div>
@@ -98,7 +98,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 		<?php } ?>
 		<div class="col-xs-6">运费</div>
 		<div class="col-xs-6 text-right">
-			<strong><?php echo number_format($send_cost); ?> 元</strong>
+			<strong><?php echo number_format($send_cost,2); ?> 元</strong>
 		</div>
 	</div>
 
@@ -106,14 +106,14 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 		<?php $tot_price = $tot_sell_price + $send_cost; // 총계 = 주문상품금액합계 + 배송비 ?>
 		<div class="col-xs-6 red"> <b>总计金额</b></div>
 		<div class="col-xs-6 text-right red">
-			<strong id="ct_tot_price"><?php echo number_format($tot_price); ?> 元</strong>
+			<strong id="ct_tot_price"><?php echo number_format($tot_price,2); ?> 元</strong>
 		</div>
 	</div>
 
 	<div class="row">	
 		<div class="col-xs-6"> 积分</div>
 		<div class="col-xs-6 text-right">
-			<strong><?php echo number_format($tot_point); ?> 分</strong>
+			<strong><?php echo number_format($tot_point,2); ?> 分</strong>
 		</div>
 	</div>
 </div>

@@ -81,9 +81,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$skin_url.'/style.css" media="scr
 			</ul>
 		</div>
 
-		<h4 style="text-align:center; margin-bottom:20px;">
-			<div id="it_tot_price"></div>
-		</h4>
 
 		<p></p>
 

@@ -106,7 +106,7 @@ if($header_skin)
                             <?php } ?>
                         </td>
                         <td class="text-center"><?php echo number_format($item[$i]['qty']); ?></td>
-                        <td class="text-right"><?php echo number_format($item[$i]['ct_price']); ?></td>
+                        <td class="text-right"><?php echo $item[$i]['ct_price']; ?></td>
                         <td class="text-right"><span id="sell_price_<?php echo $i; ?>"><?php echo number_format($item[$i]['sell_price']); ?></span></td>
                         <td class="text-right"><?php echo number_format($item[$i]['point']); ?></td>
                         <td class="text-center"><?php echo $item[$i]['ct_send_cost']; ?></td>
@@ -130,7 +130,7 @@ if($header_skin)
                         	<td class="order_sum" colspan="8">
                                 <img class="order_plus" alt="상품금액" src="/images/ico_order_plus.png"/>
                                 <span class="order_article">商品金额</span>
-                                <span class="order_price">¥<?php echo number_format($tot_price-$send_cost); ?> </span>
+                                <span class="order_price">¥<?php echo number_format($tot_price-$send_cost,2); ?> </span>
                                 <img class="order_plus" alt="상품금액" src="/images/ico_order_plus.png"/>
                                 <span class="order_article">运费</span>
                                 <span class="order_price">¥<?php echo number_format($send_cost); ?></span>
@@ -139,7 +139,7 @@ if($header_skin)
                         <tr>
                         	<td class="merge" colspan="8">
                         	<span class="order_article_b">结算总额</span>
-                            <span class="order_price"><?php echo number_format($tot_price); ?></span>
+                            <span class="order_price"><?php echo number_format($tot_price,2); ?></span>
                             <span class="order_article">元</span>
                             </td>
                         </tr>
