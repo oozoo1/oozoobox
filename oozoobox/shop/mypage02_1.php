@@ -30,13 +30,13 @@ include_once('./_head.php');
 $skin_path = $member_skin_path;
 $skin_url = $member_skin_url;
 ?>
-		<h3 class="mp_tit">MY OOZOOBOX <span class="mp_tit_small">고객님의 개인정보, 주문 내역 등의 이용 기록을 조회할 수 있습니다.</span></h3>
+		<a href="/shop/mypage.php"><h3 class="mp_tit">MY OOZOOBOX <span class="mp_tit_small">고객님의 개인정보, 주문 내역 등의 이용 기록을 조회할 수 있습니다.</span></h3></a>
 		<? include ("member_left.php");?>   
         
         <!--s: RIGHT CONTENTS-->
         <div class="My_container">
         	<h4 class="Mypage_tit">
-            주문내역/배송조회
+            주문내역/배송조회 
             </h4>
             
 			<div class="text_box">
@@ -140,9 +140,11 @@ $skin_url = $member_skin_url;
                             	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
                             </div>
                             <div class="buttons">
-                            	<a class="button">
-                                <button class="cancel">주문취소</button>
-                                <button class="orange">배송정보수정</button>
+                            	<a href="/shop/mypage02_1_1.php" class="button">
+                                	<button class="cancel">주문취소</button>
+                                </a>
+                                <a class="button">
+                                	<button class="orange">배송정보수정</button>
                                 </a>
                             </div>
                         </td>
