@@ -197,7 +197,7 @@ function fregisterform_submit(f)
 
 
 
-		<h3 class="mp_tit">MY OOZOOBOX <span class="mp_tit_small">고객님의 개인정보, 주문 내역 등의 이용 기록을 조회할 수 있습니다.</span></h3>
+		<a href="/shop/mypage.php"><h3 class="mp_tit">MY OOZOOBOX <span class="mp_tit_small">고객님의 개인정보, 주문 내역 등의 이용 기록을 조회할 수 있습니다.</span></h3></a>
 		<? include ("member_left.php");?>   
         <!--s: RIGHT CONTENTS-->
         <div class="My_container">
