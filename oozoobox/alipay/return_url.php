@@ -57,6 +57,7 @@ if($verify_result) {//验证成功
 	
 	$sql = " update g5_shop_cart
 				set ct_status = '입금',
+				pt_sale = '$_GET[price]',
 				pt_datetime  = '".G5_TIME_YMDHIS."'
 				 where od_id = '$out_trade_no' ";
 	$sql_query=sql_query($sql);	

@@ -112,7 +112,7 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 			<?php echo number_format($list[$i]['qty']); ?>
 		</td>
 		<td class="text-right">
-			<?php echo number_format($list[$i]['sale']); ?>
+			<?php echo number_format($list[$i]['sale'],2); ?>
 		</td>
 		<td class="text-right">
 			<?php echo number_format($list[$i]['commission']); ?>

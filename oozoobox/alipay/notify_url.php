@@ -55,11 +55,13 @@ if($verify_result) {//验证成功
 	
 	$sql = " update g5_shop_cart
 				set ct_status = '입금',
+				pt_sale = '$_GET[price]',
 				pt_datetime  = '".G5_TIME_YMDHIS."'
 				 where od_id = '$out_trade_no' ";
 	$sql_query=sql_query($sql);	
 	
 	echo "<script>alert('支付成功');window.location='/shop/orderinquiryview.php?od_id={$out_trade_no}'</script>";	
+
 
 	if($_POST['trade_status'] == 'WAIT_BUYER_PAY') {
 	//该判断表示买家已在支付宝交易管理中产生了交易记录，但没有付款
