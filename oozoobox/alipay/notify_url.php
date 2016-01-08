@@ -53,8 +53,9 @@ if($verify_result) {//验证成功
 				 where od_id = '$out_trade_no' ";
 	$sql_query=sql_query($sql);	
 	
-	$sql = " update g5_shop_order
-				set ct_status = '입금'
+	$sql = " update g5_shop_cart
+				set ct_status = '입금',
+				pt_datetime  = '".G5_TIME_YMDHIS."'
 				 where od_id = '$out_trade_no' ";
 	$sql_query=sql_query($sql);	
 	

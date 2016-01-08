@@ -48,7 +48,7 @@ if ($sca != "") {
     $sql_search .= " $where (b.ca_id like '$sca%' or b.ca_id2 like '$sca%' or b.ca_id3 like '$sca%') ";
 }
 
-$sql_common = " from {$g5['g5_shop_cart_table']} a, {$g5['g5_shop_item_table']} b where a.it_id = b.it_id and a.pt_id = '{$member['mb_id']}' and a.ct_status = '완료' and a.ct_select = '1' and SUBSTRING(a.pt_datetime,1,10) between '$fr_day' and '$to_day' ";
+$sql_common = " from {$g5['g5_shop_cart_table']} a, {$g5['g5_shop_item_table']} b where a.it_id = b.it_id and a.pt_id = '{$member['mb_id']}' and a.ct_status = '입금' and a.ct_select = '1' and SUBSTRING(a.pt_datetime,1,10) between '$fr_day' and '$to_day' ";
 $sql_common .= $sql_search;
 
 // 테이블의 전체 레코드수만 얻음
