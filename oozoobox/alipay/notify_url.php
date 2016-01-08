@@ -31,15 +31,34 @@ if($verify_result) {//验证成功
 	
     //获取支付宝的通知返回参数，可参考技术文档中服务器异步通知参数列表
 	
-	//商户订单号
+	//商户订单号
+
 	$out_trade_no = $_POST['out_trade_no'];
 
-	//支付宝交易号
+	//支付宝交易号
+
 	$trade_no = $_POST['trade_no'];
 
 	//交易状态
 	$trade_status = $_POST['trade_status'];
 
+
+	include_once('./_common.php');	
+	$sql = " update g5_shop_order
+				set od_receipt_price = '$_GET[price]',
+				 od_receipt_time = '".G5_TIME_YMDHIS."',
+				 od_misu = '0',
+				 od_status = '입금',
+				 od_settle_case = '支付宝'
+				 where od_id = '$out_trade_no' ";
+	$sql_query=sql_query($sql);	
+	
+	$sql = " update g5_shop_order
+				set ct_status = '입금'
+				 where od_id = '$out_trade_no' ";
+	$sql_query=sql_query($sql);	
+	
+	echo "<script>alert('支付成功');window.location='/shop/orderinquiryview.php?od_id={$out_trade_no}'</script>";	
 
 	if($_POST['trade_status'] == 'WAIT_BUYER_PAY') {
 	//该判断表示买家已在支付宝交易管理中产生了交易记录，但没有付款

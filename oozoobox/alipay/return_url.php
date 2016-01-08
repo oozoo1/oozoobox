@@ -55,6 +55,11 @@ if($verify_result) {//验证成功
 				 where od_id = '$out_trade_no' ";
 	$sql_query=sql_query($sql);	
 	
+	$sql = " update g5_shop_order
+				set ct_status = '입금'
+				 where od_id = '$out_trade_no' ";
+	$sql_query=sql_query($sql);	
+	
 	echo "<script>alert('支付成功');window.location='/shop/orderinquiryview.php?od_id={$out_trade_no}'</script>";	
 
 

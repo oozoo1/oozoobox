@@ -138,6 +138,12 @@ $list_cnt = count($list);
 
 				// 이미지
 				$img = apms_it_thumbnail($list[$i], $thumb_w, $thumb_h, false, true);
+				
+				$sql = " select count(*) as cnt FROM g5_shop_cart WHERE it_id = '{$list[$i][it_id]}' and ct_status = '입금'";
+				$rowcon = sql_fetch($sql);
+				$total_count = $rowcon['cnt'];
+
+
 
 			?>
                 <li class="<?php if($i % 4 == 3){?>list_album_item last_item<?php }else{ ?>list_album_item<?php } ?>">
@@ -176,7 +182,7 @@ $list_cnt = count($list);
                                     <span class="album_item_buy">
                                         <a href="#">
                                             <span>月成交</span>
-                                            <em>1,011</em>
+                                            <em><?=$total_count?></em>
                                             <span>笔</span>
                                         </a>
                                     </span>
