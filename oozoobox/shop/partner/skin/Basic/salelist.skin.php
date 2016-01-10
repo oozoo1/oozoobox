@@ -73,14 +73,14 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 	<?php for ($i=0; $i < count($list); $i++) { ?>
 		<tr<?php echo ($list[$i]['yoil'] == '일') ? ' style="background:#f5f5f5; font-weight:bold;"' : '';?>>
 			<td class="text-center"><?php echo str_replace("-", "/", $list[$i]['date']);?></td>
-			<td class="text-center"><?php echo number_format($list[$i]['qty']);?></td>
-			<td class="text-right"><?php echo number_format($list[$i]['sale']);?></td>
-			<td class="text-right"><?php echo number_format($list[$i]['commission']);?></td>
-			<td class="text-right"><?php echo number_format($list[$i]['point']);?></td>
-			<td class="text-right"><?php echo number_format($list[$i]['incentive']);?></td>
-			<td class="text-right"><?php echo number_format($list[$i]['netsale']);?></td>
-			<td class="text-right"><?php echo number_format($list[$i]['net']);?></td>
-			<td class="text-right"><?php echo number_format($list[$i]['vat']);?></td>
+			<td class="text-center"><?php echo number_format($list[$i]['qty'],2);?></td>
+			<td class="text-right"><?php echo number_format($list[$i]['sale'],2);?></td>
+			<td class="text-right"><?php echo number_format($list[$i]['commission'],2);?></td>
+			<td class="text-right"><?php echo number_format($list[$i]['point'],2);?></td>
+			<td class="text-right"><?php echo number_format($list[$i]['incentive'],2);?></td>
+			<td class="text-right"><?php echo number_format($list[$i]['netsale'],2);?></td>
+			<td class="text-right"><?php echo number_format($list[$i]['net'],2);?></td>
+			<td class="text-right"><?php echo number_format($list[$i]['vat'],2);?></td>
 		</tr>
 	<?php } ?>
 	<?php if ($i == 0) { ?>
@@ -88,14 +88,14 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 	<?php } else { ?>
 		<tr style="background:#f5f5f5; font-weight:bold;">
 			<td class="text-center"><b>합계</b></td>
-			<td class="text-center"><b><?php echo number_format($tot['qty']);?></b></td>
-			<td class="text-right"><b><?php echo number_format($tot['sale']);?></b></td>
-			<td class="text-right"><b><?php echo number_format($tot['commission']);?></b></td>
-			<td class="text-right"><b><?php echo number_format($tot['point']);?></b></td>
-			<td class="text-right"><b><?php echo number_format($tot['incentive']);?></b></td>
-			<td class="text-right"><b><?php echo number_format($tot['netsale']);?></b></td>
-			<td class="text-right"><b><?php echo number_format($tot['net']);?></b></td>
-			<td class="text-right"><b><?php echo number_format($tot['vat']);?></b></td>
+			<td class="text-center"><b><?php echo number_format($tot['qty'],2);?></b></td>
+			<td class="text-right"><b><?php echo number_format($tot['sale'],2);?></b></td>
+			<td class="text-right"><b><?php echo number_format($tot['commission'],2);?></b></td>
+			<td class="text-right"><b><?php echo number_format($tot['point'],2);?></b></td>
+			<td class="text-right"><b><?php echo number_format($tot['incentive'],2);?></b></td>
+			<td class="text-right"><b><?php echo number_format($tot['netsale'],2);?></b></td>
+			<td class="text-right"><b><?php echo number_format($tot['net'],2);?></b></td>
+			<td class="text-right"><b><?php echo number_format($tot['vat'],2);?></b></td>
 		</tr>
 	<?php } ?>
 	</tbody>

@@ -23,7 +23,7 @@ add_stylesheet('<link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4
 						<i class="fa fa-shopping-cart fa-5x"></i>
 					</div>
 					<div class="col-sm-8 col-xs-12 text-right">
-						<p class="announcement-heading"><?php echo number_format($today_sales);?></p>
+						<p class="announcement-heading"><?php echo number_format($today_sales,2);?></p>
 						<p class="announcement-text">Today's Sales</p>
 					</div>
 				</div>
@@ -50,7 +50,7 @@ add_stylesheet('<link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4
 						<i class="fa fa-comment fa-5x"></i>
 					</div>
 					<div class="col-xs-8 text-right">
-						<p class="announcement-heading"><?php echo number_format($today_comments);?></p>
+						<p class="announcement-heading"><?php echo number_format($today_comments,2);?></p>
 						<p class="announcement-text">Today's Comments</p>
 					</div>
 				</div>
@@ -77,7 +77,7 @@ add_stylesheet('<link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4
 						<i class="fa fa-question-circle fa-5x"></i>
 					</div>
 					<div class="col-xs-8 text-right">
-						<p class="announcement-heading"><?php echo number_format($today_questions);?></p>
+						<p class="announcement-heading"><?php echo number_format($today_questions,2);?></p>
 						<p class="announcement-text">Today's Questions</p>
 					</div>
 				</div>
@@ -104,7 +104,7 @@ add_stylesheet('<link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4
 						<i class="fa fa-star fa-5x"></i>
 					</div>
 					<div class="col-xs-8 text-right">
-						<p class="announcement-heading"><?php echo number_format($today_reviews);?></p>
+						<p class="announcement-heading"><?php echo number_format($today_reviews,2);?></p>
 						<p class="announcement-text">Today's Reviews</p>
 					</div>
 				</div>
@@ -235,7 +235,7 @@ add_stylesheet('<link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4
 							<td class="text-center"><?php echo $account[$i]['pp_confirm'];?></td>
 							<td class="text-center"><?php echo $account[$i]['pp_date'];?></td>
 							<td class="text-center"><?php echo $account[$i]['pp_no'];?></td>
-							<td class="text-right"><?php echo number_format($account[$i]['pp_amount']);?></td>
+							<td class="text-right"><?php echo number_format($account[$i]['pp_amount'],2);?></td>
 							<td class="text-center"><?php echo $account[$i]['pp_means'];?></td>
 						</tr>
 					<?php } ?>

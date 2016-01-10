@@ -16,62 +16,62 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 		</tr>
 		<tr>
 			<td>① 총판매액</td>
-			<td class="text-right"><nobr><?php echo number_format($account['sale']);?></nobr></td>
+			<td class="text-right"><nobr><?php echo number_format($account['sale'],2);?></nobr></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td>② 총수수료</td>
-			<td class="text-right"><?php echo number_format($account['commission']);?></td>
+			<td class="text-right"><?php echo number_format($account['commission'],2);?></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td>③ 총포인트</td>
-			<td class="text-right"><?php echo number_format($account['point']);?></td>
+			<td class="text-right"><?php echo number_format($account['point'],2);?></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td><nobr>④ 총인센티브</nobr></td>
-			<td class="text-right"><?php echo number_format($account['intensive']);?></td>
+			<td class="text-right"><?php echo number_format($account['intensive'],2);?></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td>⑤ 총매출액</td>
-			<td class="text-right"><?php echo number_format($account['netsale']);?></td>
+			<td class="text-right"><?php echo number_format($account['netsale'],2);?></td>
 			<td>①-②-③+④</td>
 		</tr>
 		<tr>
 			<td>⑥ 총배송비</td>
-			<td class="text-right"><?php echo number_format($account['sendcost']);?></td>
+			<td class="text-right"><?php echo number_format($account['sendcost'],2);?></td>
 			<td></td>
 		</tr>
 		<tr class="active">
 			<td><b>⑦ 총적립액</b></td>
-			<td class="text-right"><b><?php echo number_format($account['netgross']);?></b></td>
+			<td class="text-right"><b><?php echo number_format($account['netgross'],2);?></b></td>
 			<td>⑤+⑥</td>
 		</tr>
 		<tr>
 			<td>⑧ 총지급액</td>
-			<td class="text-right"><?php echo number_format($account['payment']);?></td>
+			<td class="text-right"><?php echo number_format($account['payment'],2);?></td>
 			<td>신청금액 기준</td>
 		</tr>
 		<tr>
 			<td>⑨ 지급요청</td>
-			<td class="text-right"><?php echo number_format($account['request']);?></td>
+			<td class="text-right"><?php echo number_format($account['request'],2);?></td>
 			<td>신청금액 기준</td>
 		</tr>
 		<tr class="success">
 			<td><b>⑩ 현재잔액</b></td>
-			<td class="text-right"><b><?php echo number_format($account['balance']);?></b></td>
+			<td class="text-right"><b><?php echo number_format($account['balance'],2);?></b></td>
 			<td>⑦-⑧-⑨</td>
 		</tr>
 		<tr>
 			<td>⑪ 출금기준</td>
-			<td class="text-right"><b><?php echo number_format($account['deposit']);?></b></td>
+			<td class="text-right"><b><?php echo number_format($account['deposit'],2);?></b></td>
 			<td>이상 잔액</td>
 		</tr>
 		<tr class="warning">
 			<td><b>⑫ 출금가능</b></td>
-			<td class="text-right"><b><?php echo number_format($account['possible']);?></b></td>
+			<td class="text-right"><b><?php echo number_format($account['possible'],2);?></b></td>
 			<td>⑩-⑪</td>
 		</tr>
 		</tbody>
@@ -230,11 +230,11 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 			<td class="text-center"><?php echo $list[$i]['pp_date'];?></td>
 			<td class="text-center"><?php echo $list[$i]['pp_means'];?></td>
 			<td class="text-center"><?php echo $list[$i]['pp_company'];?></td>
-			<td class="text-right"><?php echo number_format($list[$i]['pp_amount']);?></td>
-			<td class="text-right"><?php echo number_format($list[$i]['pp_net']);?></td>
-			<td class="text-right"><?php echo number_format($list[$i]['pp_vat']);?></td>
-			<td class="text-right"><?php echo number_format($list[$i]['pp_tax']);?></td>
-			<td class="text-right"><?php echo number_format($list[$i]['pp_pay']);?></td>
+			<td class="text-right"><?php echo number_format($list[$i]['pp_amount'],2);?></td>
+			<td class="text-right"><?php echo number_format($list[$i]['pp_net'],2);?></td>
+			<td class="text-right"><?php echo number_format($list[$i]['pp_vat'],2);?></td>
+			<td class="text-right"><?php echo number_format($list[$i]['pp_tax'],2);?></td>
+			<td class="text-right"><?php echo number_format($list[$i]['pp_pay'],2);?></td>
 			<td class="text-center">
 				<?php if($list[$i]['pp_memo']) { ?>
 					<a class="cursor" role="button" data-container="body" data-toggle="popover" data-placement="top" data-html="true" data-content="<span class='font-12'><?php echo $list[$i]['pp_memo'];?></span>">

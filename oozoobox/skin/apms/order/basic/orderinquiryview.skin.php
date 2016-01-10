@@ -228,19 +228,25 @@ if($header_skin)
 </div>
 
 
-<form name=alipayment action="/alipay/alipayapi.php" method=post target="_blank">
-<input size="30" name="WIDout_trade_no" value="<?=$od_id?>" title="订单号码" />
-<input size="30" name="WIDsubject" value="OOZOOBOX" title="订单名称" />
-<input size="30" name="WIDprice" value="<?php echo number_format($tot_price,2); ?>" title="付款金额" />
-<input size="30" name="WIDbody" value="OOZOOBOX" title="订单描述"/>
-<input size="30" name="WIDshow_url" value="http://dev.oozoobox.com/shop/orderinquiryview.php?od_id=<?=$_GET[od_id]?>" title="订单地址" />
-<input size="30" name="WIDreceive_name" value="<?php echo get_text($od['od_b_name']); ?>" title="收货人" />
-<input size="30" name="WIDreceive_address" value="<?=$od['od_b_addr1']?> - <?=$od['od_b_addr2']?> - <?=$od['od_b_addr3']?> - <?=$od['od_b_addr_jibeon']?>" title="收货地址" />
-<input size="30" name="WIDreceive_zip" value="100000" title="邮政编码"/>
-<input size="30" name="WIDreceive_phone" value="<?php echo get_text($od['od_b_tel']); ?>" title="收货人电话"/>
-<input size="30" name="WIDreceive_mobile" value="<?php echo get_text($od['od_b_hp']); ?>" title="收货人手机"/>
-<button class="new-btn-login" type="submit" style="text-align:center;">确认支付</button>
-</form>
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td height="90">
+        <form name=alipayment action="/alipay/alipayapi.php" method=post target="_blank">
+        <input type="hidden" size="30" name="WIDout_trade_no" value="<?=$od_id?>" title="订单号码" />
+        <input type="hidden" size="30" name="WIDsubject" value="OOZOOBOX" title="订单名称" />
+        <input type="hidden" size="30" name="WIDprice" value="<?php echo number_format($tot_price,2); ?>" title="付款金额" />
+        <input type="hidden" size="30" name="WIDbody" value="OOZOOBOX" title="订单描述"/>
+        <input type="hidden" size="30" name="WIDshow_url" value="http://dev.oozoobox.com/shop/orderinquiryview.php?od_id=<?=$_GET[od_id]?>" title="订单地址" />
+        <input type="hidden" size="30" name="WIDreceive_name" value="<?php echo get_text($od['od_b_name']); ?>" title="收货人" />
+        <input type="hidden" size="30" name="WIDreceive_address" value="<?=$od['od_b_addr1']?> - <?=$od['od_b_addr2']?> - <?=$od['od_b_addr3']?> - <?=$od['od_b_addr_jibeon']?>" title="收货地址" />
+        <input type="hidden" size="30" name="WIDreceive_zip" value="100000" title="邮政编码"/>
+        <input type="hidden" size="30" name="WIDreceive_phone" value="<?php echo get_text($od['od_b_tel']); ?>" title="收货人电话"/>
+        <input type="hidden" size="30" name="WIDreceive_mobile" value="<?php echo get_text($od['od_b_hp']); ?>" title="收货人手机"/>
+        <button class="btn btn-black btn-sm" type="submit" style="text-align:center; padding:10px 20px 10px 20px;">确认支付</button>
+        </form>        
+    </td>
+  </tr>
+</table>
 
 
 
