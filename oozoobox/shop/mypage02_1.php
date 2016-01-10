@@ -203,7 +203,7 @@ $skin_url = $member_skin_url;
                             	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
                             </div>
                             <div class="buttons">
-                            	<a class="button">
+                            	<a href="/shop/mypage02_1_4.php" class="button">
                                 <button class="cancel">주문취소요청</button>
                                 </a>
                             </div>
