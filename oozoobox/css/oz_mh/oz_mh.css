@@ -1000,7 +1000,8 @@ span.mp_tit_small {padding-left:15px; font-size:14px; font-weight:normal; color:
 .MyMenu {display:block; background-color:#ffeee1; margin-top:16px;}
 .MM_tit {border-top:1px solid #dfdfdf; border-bottom:1px solid #dfdfdf;}
 ul.MM_List {padding:10px 0 20px 0;}
-ul.MM_List li {padding:5px 0; margin-left:23px; font-size:14px; color:#7e7e7e;}
+ul.MM_List li {width:210px; display:block; padding:5px 0; font-size:14px; color:#7e7e7e;}
+ul.MM_List li a{width:185px; display:block; padding-left:23px;}
 ul.MM_List li a:hover {color:#ea5b0c;}
 .My_subsection {margin-top:30px;}
 
@@ -1209,6 +1210,56 @@ td.pro li {padding:3px 0; color:#676767; }
 
 
 
+
+
+
+/*******************CS CENTER*********************/
+/***CS CENTER LEFT MENU***/
+.CSMenu {display:block; background-color:#f1f1f1; margin-top:16px;}
+.CS_menu ul.MM_List {display:none;}
+.Quickmenu li{width:210px; height:25px; display:block; background:#f1f1f1; padding:10px 0;} 
+.Quickmenu li:hover {background:#e4e4e4;}
+.Quickmenu li a {width:100%; height:45px; display:block;  padding-left:25px;}
+.Quickmenu i {float:left; width:24px; height:24px; display:block; margin-right:10px;}
+.Quickmenu i.quick01 {background:url("/images/ico_cscenter_quick.png") no-repeat 0 0;}
+.Quickmenu i.quick02 {background:url("/images/ico_cscenter_quick.png") no-repeat -24px 0;}
+.Quickmenu i.quick03 {background:url("/images/ico_cscenter_quick.png") no-repeat -48px 0;}
+.Quickmenu i.quick04 {background:url("/images/ico_cscenter_quick.png") no-repeat -72px 0;}
+.Quickmenu i.quick05 {background:url("/images/ico_cscenter_quick.png") no-repeat -96px 0;}
+.Quickmenu i.quick06 {background:url("/images/ico_cscenter_quick.png") no-repeat -120px 0;}
+/***CS CENTER Right-Content***/
+.cscenter_main_tit {width:100%; margin-top:17px; margin-bottom:23px; }
+.inquiry-search {overflow:hidden; height:48px; padding:15px 19px 0; border:1px solid #ccc; border-right:1px solid #aeaeae; border-bottom:1px solid #9d9d9d; margin:30px 0;}
+.inquiry-search dt {float:left; margin-right:14px; padding-top:4px;}
+.inquiry-search label {font-weight:bold; padding:0 10px 0 30px; font-size:20px; background:url("/images/ico_cs_search.png") no-repeat 0 3px;}
+.inquiry-search .search-input {overflow:hidden; float:left; width:400px; margin-top:4px;}
+.inquiry-search .input-box .txt {float:left; display:inline-block; vertical-align:middle; width:300px; ime-mode:active; height:24px; padding:2px 0 0 4px; border:1px solid #ccc;  font-family:"Microsoft YaHei",arial,"宋体",Dotum; line-height:23px;}
+.inquiry-search .search-input .btn_search {float:left; width:70px; height:28px;background-color:#353b4c; font-size:13px; font-weight:bold; color:#fff; text-align:center; border:0; }
+
+/***CS_Main_FAQ***/
+.cs_main_faq {position:relative; float:left; width:100%; margin-bottom:50px;}
+h3.cs_main_title {padding:0 6px 12px ; border-bottom:2px solid #a5a5a5; font-size:18px; line-height:8px;}
+.cs_main_faq ul {list-style:none; width:100%; margin-top:5px;}
+.cs_main_faq ul li {position:relative; overflow:hidden; padding:14px 0; border-bottom:1px solid #cacaca; color:#333; line-height:14px;}
+.cs_main_faq ul li .faq_subject {float:left; width:550px; padding: 0 0 0 15px; background:url("/images/bg_cs_main_faq_list.gif") no-repeat 6px 50%;}
+.cs_main_faq ul li .faq_subject:hover {color:#ea5b0c;}
+.cs_main_faq ul li .category {width:120px; height:12px; position:absolute; top:50%; right:15px; margin-top:-6px; text-align:right;}
+/***CS_Main_Notice & CS_1:1 상담신청***/
+.cs_main_etc {position:relative; float:left; width:100%; margin-bottom:70px;}
+.cs_main_notice {position:relative; float:left; width:365px; margin-right:10px;}
+.cs_main_notice ul {list-style:none; width:100%; margin-top:5px;}
+.cs_main_notice ul li {position:relative; overflow:hidden; padding:14px 0; border-bottom:1px solid #cacaca; color:#333; line-height:14px;}
+.cs_main_notice ul li .cs_subject {float:left; width:230px; padding: 0 0 0 15px; background:url("/images/bg_cs_main_faq_list.gif") no-repeat 6px 50%; }
+.cs_main_notice ul li .cs_subject:hover {color:#ea5b0c;}
+.cs_main_notice ul li .cs_category {width:100px; height:12px; position:absolute; top:50%; right:8px; margin-top:-6px; text-align:right;}
+.cs_box_counsel {float:right; width:350px; margin:0; padding:17px 0 23px 15px; border:1px solid #c9c9c9;}
+.cs_box_counsel h3{font-size:24px; text-align:center; font-weight:bold; border:0; margin:10px 0 15px;}
+.cs_box_counsel p {font-size:14px; line-height:1.4; padding-bottom:15px; letter-spacing:-0.5px;}
+.btn_request button {display:block; width:166px; height:28px; border:0; margin:0 auto; background:#14518c; color:#f1f1f1;}
+.explain p.attention {color:#c5575c;}
+
+#MainEvent {width:990px; margin:0 auto; background:#f5f5f5; padding-bottom:30px;}
+.EventList {width:210px; height:320px; backgroudn:#fff; margin:15px;}
 
 
 /*************************************************/

@@ -98,7 +98,7 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                                 </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <li class="oz_sn_customcenter">
-                                    <a href="#">客户服务</a><!--"고객센터"-->
+                                    <a href="/shop/cscenter.php">客户服务</a><!--"고객센터"-->
                                 </li>
                             </ul>
                         </div>

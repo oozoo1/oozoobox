@@ -94,7 +94,7 @@ $skin_url = $member_skin_url;
                             </span>
                         </td>
                         <td class="status">
-                        	<strong class="status-msg">결제완료</strong>
+                        	<strong class="status-msg">상품준비중</strong>
                         </td>
                     </tr>
                     <!-------e: 취소할 상품 선택---------->
