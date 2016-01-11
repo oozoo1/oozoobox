@@ -1,6 +1,8 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가 
 if($is_demo) @include_once(THEMA_PATH.'/assets/demo.php'); // 데모
+include_once(THEMA_PATH.'/assets/thema.php');
+include_once(THEMA_PATH.'/sidebar.php'); // 사이드바
 
 echo '<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10">'.PHP_EOL; //김미혜: 반응형 viewport 설정
 

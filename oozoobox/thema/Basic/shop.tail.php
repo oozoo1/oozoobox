@@ -42,23 +42,19 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 						<div class="avatar_box">
 							<p class="avatar_imgbox"><img src="/shop/images/no-img_mid_.jpg" /></p>
 							<ul class="user_info">
-								<li>用户名：sl19931003</li>
+								<li>用户名：<?=$member[mb_name]?></li>
 								<li>级&nbsp;别：普通会员</li>
 							</ul>
 						</div>
 						<div class="login_btnbox">
-							<a href="#" class="login_order">我的订单</a>
-							<a href="#" class="login_favorite">我的收藏</a>
+							<a href="/shop/orderinquiry.php" class="login_order">我的订单</a>
+							<a href="/shop/wishlist.php" class="login_favorite">我的收藏</a>
 						</div>
 						<i class="icon_arrow_white"></i>
 					</div>
 				</li>
 				<li id="shopCart">
 					<a href="#" class="message_list" ><i class="message"></i><div class="span">购物车</div><span class="cart_num">0</span></a>
-				</li>
-				<li>
-					<a href="#" class="history_list"><i class="view"></i></a>
-					<div class="mp_tooltip" style=" visibility:hidden;">我的资产<i class="icon_arrow_right_black"></i></div>
 				</li>
 				<li>
 					<a href="#" class="mpbtn_histroy"><i class="zuji"></i></a>
@@ -150,14 +146,11 @@ if (eleFlyElement && eleShopCart) {
 <!-- JavaScript -->
 <script type="text/javascript" src="<?php echo THEMA_URL;?>/assets/bs3/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo THEMA_URL;?>/assets/js/jquery.bootstrap-hover-dropdown.min.js"></script>
-<script type="text/javascript" src="<?php echo THEMA_URL;?>/assets/js/jquery.ui.totop.min.js"></script>
-<script type="text/javascript" src="<?php echo THEMA_URL;?>/assets/js/jquery.custom.js"></script>
 <?php if($at_set['header']) { ?>
 <script type="text/javascript" src="<?php echo THEMA_URL;?>/assets/js/jquery.sticky.js"></script>
 <script type="text/javascript" src="<?php echo THEMA_URL;?>/assets/js/jquery.custom.sticky.js"></script>
 <?php } ?>
 
-<?php if($is_admin || $is_demo) include_once(THEMA_PATH.'/assets/switcher.php'); //Style Switcher ?>
 
 <!--[if lt IE 9]>
 <script type="text/javascript" src="<?php echo THEMA_URL;?>/assets/js/respond.js"></script>

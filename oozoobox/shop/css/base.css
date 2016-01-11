@@ -3,11 +3,6 @@
 * fengbuy.com
 * 2013.06.06
 */
-body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td{margin:0;padding:0;}
-h1, h2, h3, h4, h5, h6{font-size:100%;}
-ul,li{list-style-type:none;margin:0;padding:0;}
-body{background:#f9f9f9;font:12px/1.5 "\5FAE\8F6F\96C5\9ED1",Arial,HELVETICA;min-width:1200px;_background-image:url(about:blank);_background-attachment:fixed;}
-img{border:0;}
 ol, ul{list-style:none;}
 :link, :visited, ins{text-decoration:none;}
 table{border-collapse:collapse;border-spacing:0;}
@@ -619,5 +614,5 @@ background-position:0 -253px;
 .shoping-small{
 	width:119px;
 }
-.fly_item{border:1px solid #000;width:38px;height:38px;overflow:hidden;position:absolute;visibility:hidden;opacity:.5;filter:alpha(opacity=50);}
+.fly_item{border:1px solid #000;width:38px;height:38px;overflow:hidden;position:absolute;visibility:hidden;opacity:.5;filter:alpha(opacity=50); z-index:999999;}
 .shop_cart{width:106px;height:25px;line-height:25px;padding-top:8px; font-family:'microsoft yahei';font-size:12px;text-indent:34px;color:#000;position:absolute;right:50px;top:240px;}
