@@ -105,7 +105,21 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                     <col width="120">
                     <tbody>
                     <?php if ($it['it_use_avg']) { ?>
-                        <tr><th scope="row">满意度</th><td><?php echo apms_get_star($it['it_use_avg'],'fa-lg red'); //평균별점 ?></td></tr>
+                        <tr>
+                            <th scope="row">满意度</th>
+                            <td><?php echo apms_get_star($it['it_use_avg'],'fa-lg red'); //평균별점 ?>
+                            	<div class="u_like_module">
+                                	<a class="btn_u_like" href="#">
+                                    	<span class="ico_u"></span>
+                                        <em class="u_cnt">1,852</em> <!--누르기 전-->
+                                    </a>
+                                	<a class="btn_u_like on" href="#">
+                                    	<span class="ico_u"></span>
+                                        <em class="u_cnt">1,853</em> <!--누른 후-->
+                                    </a>                                    
+                                </div>
+                            </td>
+                        </tr>
                     <?php } ?>
                         <tr class="good_info_scrap"><th scope="row">分享</th><td>
                             <a href="#">
