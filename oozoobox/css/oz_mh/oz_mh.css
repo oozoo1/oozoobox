@@ -754,6 +754,11 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 .detail_good_info .good_info_satisfy .good_info_satisfy_grade {font-size:18px; font-weight:bold;}
 .detail_good_info .good_info_satisfy .good_info_satisfy_star {position:absolute; top:7px; left:135px; width:84px; height:15px; background:url("/images/good_info_satisfy_star.png") no-repeat 0 0; display:block;}
 .detail_good_info .good_info_satisfy .good_info_satisfy_star span {width:84px; height:15px; background:url("/images/good_info_satisfy_star.png") no-repeat 0px -15px; color:transparent;}
+.detail_good_info .div-table .u_like_module {display:inline-block; margin-right:1px; vertical-align:top; margin-left:10px; }
+.u_like_module .btn_u_like {height:27px; padding:0 12px; border:1px solid #ddd; background:#fff; display:inline-block; min-width:55px; margin:0; vertical-align:top;}
+.u_like_module .btn_u_like .ico_u {display:inline-block; overflow:hidden; width:16px; height:15px; margin:7px 4px 0 0; vertical-align:top; line-height:0; font-size:0; background:url("/images/ico_like.png")no-repeat;}
+.u_like_module .on .ico_u {display:inline-block; overflow:hidden; width:16px; height:15px; margin:7px 4px 0 0; vertical-align:top; line-height:0; font-size:0; background:url("/images/ico_like_o.png")no-repeat;}
+.u_like_module .btn_u_like .u_cnt {display:inline-block; line-height:28px; font-size:12px; font-weight:bold; text-align:left;}
 .detail_good_info .good_info_scrap .space {margin-left:15px;}
 .detail_good_info th.option-select {vertical-align:text-top; padding-top:12px;}
 .detail_good_info .position-relative {position:relative;}
@@ -1259,7 +1264,10 @@ h3.cs_main_title {padding:0 6px 12px ; border-bottom:2px solid #a5a5a5; font-siz
 .explain p.attention {color:#c5575c;}
 
 #MainEvent {width:990px; margin:0 auto; background:#f5f5f5; padding-bottom:30px;}
-.EventList {width:210px; height:320px; backgroudn:#fff; margin:15px;}
+.EventList {position:relative; width:210px; height:320px; backgroudn:#fff; margin:20px 0 0 30px;}
+
+
+
 
 
 /*************************************************/
