@@ -1,5 +1,16 @@
 <?php
 include_once('./cs_head.php');
+
+//////////////////////////공지사항///////////////////////////////////////
+$sql_faq = "SELECT * FROM `g5_write_buyerfaq` ORDER BY `g5_write_buyerfaq`.`wr_datetime` DESC LIMIT 0 , 10";
+$faq = sql_query($sql_faq);
+
+
+
+//////////////////////////공지사항///////////////////////////////////////
+$sql = "SELECT * FROM `g5_write_notice` ORDER BY `g5_write_notice`.`wr_datetime` DESC LIMIT 0 , 5";
+$result = sql_query($sql);
+
 ?>
             	<img src="/images/cs_main_title.png" alt="客户服务 1544-1234 AM 9:00 ~ PM 4:30 점심시간 PM 1:00 ~ PM 2:00
 토/일/공휴일 휴무"/>
@@ -21,46 +32,12 @@ include_once('./cs_head.php');
 			<div class="cs_main_faq">
             	<h3 class="cs_main_title">FAQ</h3>
 				<ul>
+                    <?php for ($i=0; $row_faq=sql_fetch_array($faq); $i++){ $dr_memo = cut_str($row_faq[wr_subject],36);?>
                 	<li>
-                    	<a><p class="faq_subject">회원가입은 어디서 하나요?</p></a>
-                        <p class="category">[加入]</p>
+                    	<a><p class="faq_subject"><?=$dr_memo?></p></a>
+                        <p class="category">[<?=$row_faq[ca_name]?>]</p>
                     </li>
-                    <li>
-                        <a><p class="faq_subject">怎样注册为会员呢？</p></a>
-                        <p class="category">[加入]</p>
-                    </li>                    
-                    <li>
-                        <a><p class="faq_subject">怎样注册为会员呢？</p></a>
-                        <p class="category">[加入]</p>                    
-                    </li>
-                    <li>
-                        <a><p class="faq_subject">怎样注册为会员呢？</p></a>
-                        <p class="category">[加入]</p>                    
-                    </li>
-                    <li>
-                        <a><p class="faq_subject">怎样注册为会员呢？</p></a>
-                        <p class="category">[加入]</p>                    
-                    </li>
-                    <li>
-                        <a><p class="faq_subject">怎样注册为会员呢？</p></a>
-                        <p class="category">[加入]</p>                    
-                    </li>
-                    <li>
-                        <a><p class="faq_subject">怎样注册为会员呢？</p></a>
-                        <p class="category">[加入]</p>                    
-                    </li>
-                    <li>
-                        <a><p class="faq_subject">怎样注册为会员呢？</p></a>
-                        <p class="category">[加入]</p>                    
-                    </li>
-                    <li>
-                        <a><p class="faq_subject">怎样注册为会员呢？</p></a>
-                        <p class="category">[加入]</p>                    
-                    </li>
-                    <li>
-                        <a><p class="faq_subject">怎样注册为会员呢？</p></a>
-                        <p class="category">[加入]</p>                    
-                    </li>                    
+                    <? } ?>                 
                 </ul>
             </div>
             <!--e: CS_Main_FAQ-->
@@ -70,26 +47,12 @@ include_once('./cs_head.php');
                 <div class="cs_main_notice">
                     <h3 class="cs_main_title">공지사항</h3>
                     <ul>
+                        <?php for ($i=0; $row=sql_fetch_array($result); $i++){ $dr_memo = cut_str($row[wr_subject],16);?>
                         <li>
-                            <a><p class="cs_subject">우주박스오픈</p></a>
-                            <p class="cs_category">[OOZOOBOX]</p>                    
+                            <a><p class="cs_subject"><?=$dr_memo?></p></a>
+                            <p class="cs_category"><?=$row[wr_name]?></p>                    
                         </li>
-                        <li>
-                            <a><p class="cs_subject">怎样注册为会员呢？</p></a>
-                            <p class="cs_category">[이벤트]</p>                    
-                        </li>
-                        <li>
-                            <a><p class="cs_subject">우주박스오픈</p></a>
-                            <p class="cs_category">[OOZOOBOX]</p>                    
-                        </li>
-                        <li>
-                            <a><p class="cs_subject">怎样注册为会员呢？</p></a>
-                            <p class="cs_category">[이벤트]</p>                    
-                        </li>
-                         <li>
-                            <a><p class="cs_subject">우주박스오픈</p></a>
-                            <p class="cs_category">[OOZOOBOX]</p>                    
-                        </li>                              
+                        <? } ?>                             
                     </ul>
                 </div>
                 <!--e: CS_Main_Notice-->

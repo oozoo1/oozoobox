@@ -1,8 +1,6 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가 
 if($is_demo) @include_once(THEMA_PATH.'/assets/demo.php'); // 데모
-include_once(THEMA_PATH.'/assets/thema.php');
-include_once(THEMA_PATH.'/sidebar.php'); // 사이드바
 
 echo '<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10">'.PHP_EOL; //김미혜: 반응형 viewport 설정
 
@@ -16,6 +14,10 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
 <script src="/oz_js/jquery.als-1.7.min.js"></script>
 <script src="/oz_js/jquery.newsticker.js"></script>
 
+
+<link rel="stylesheet" type="text/css" href="/shop/css/base.css" />
+<script type="text/javascript" src="/shop/js/common.js"></script>
+<script type="text/javascript" src="/shop/js/quick_links.js"></script>
 
 <?php if($_SERVER['PHP_SELF']=="/index.php"){}else{ ?>
 <script src="/oz_js/jquery.min.js"></script><!--list global menu-->

@@ -34,7 +34,7 @@ $sql = " select *
 $result = sql_query($sql);
 
 if(!sql_num_rows($result))
-    alert_close('배송지 목록 자료가 없습니다.');
+    echo "<script>alert('没有 地址信息 请填写 地址信息');window.location='./member_address.php'</script>";
 
 $list = array();
 
