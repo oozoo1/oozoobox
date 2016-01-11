@@ -35,7 +35,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 <div class="mui-mbar-tabs">
 	<div class="quick_link_mian">
 		<div class="quick_links_panel">
-			<div id="quick_links" class="quick_links">
+			<div class="quick_links">
 				<li>
 					<a href="#" class="my_qlinks"><i class="setting"></i></a>
 					<div class="ibar_login_box status_login">
@@ -61,12 +61,8 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 					<div class="mp_tooltip">我的足迹<i class="icon_arrow_right_black"></i></div>
 				</li>
 				<li>
-					<a href="#" class="mpbtn_wdsc"><i class="wdsc"></i></a>
+					<a href="/shop/wishlist.php" class="mpbtn_wdsc"><i class="wdsc"></i></a>
 					<div class="mp_tooltip">我的收藏<i class="icon_arrow_right_black"></i></div>
-				</li>
-				<li>
-					<a href="#" class="mpbtn_recharge"><i class="chongzhi"></i></a>
-					<div class="mp_tooltip">我要充值<i class="icon_arrow_right_black"></i></div>
 				</li>
 			</div>
 			<div class="quick_toggle">
@@ -81,6 +77,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 				<li><a href="#top" class="return_top"><i class="top"></i></a></li>
 			</div>
 		</div>
+		<div id="quick_links_pop" class="quick_links_pop hide"></div>
 	</div>
 </div>
 
@@ -89,7 +86,20 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 <script src="js/ieBetter.js"></script>
 <![endif]-->
 
+<script type="text/javascript" src="/shop/js/parabola.js"></script>
+<script type="text/javascript">
+	$(".quick_links_panel li").mouseenter(function(){
+		$(this).children(".mp_tooltip").animate({left:-92,queue:true});
+		$(this).children(".mp_tooltip").css("visibility","visible");
+		$(this).children(".ibar_login_box").css("display","block");
+	});
+	$(".quick_links_panel li").mouseleave(function(){
+		$(this).children(".mp_tooltip").css("visibility","hidden");
+		$(this).children(".mp_tooltip").animate({left:-121,queue:true});
+		$(this).children(".ibar_login_box").css("display","none");
+	});
 
+</script>
 
 
 

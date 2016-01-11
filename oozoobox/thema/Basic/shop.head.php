@@ -19,7 +19,6 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
 
 <link rel="stylesheet" type="text/css" href="/shop/css/base.css" />
 <script type="text/javascript" src="/shop/js/common.js"></script>
-<script type="text/javascript" src="/shop/js/quick_links.js"></script>
 
 <?php if($_SERVER['PHP_SELF']=="/index.php"){}else{ ?>
 <script src="/oz_js/jquery.min.js"></script><!--list global menu-->
