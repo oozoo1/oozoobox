@@ -9,8 +9,8 @@ table{border-collapse:collapse;border-spacing:0;}
 sub, sup{font-size:100%;vertical-align:baseline;}
 blockquote, q{quotes:"\201C" "\201D" "\2018" "\2019";}
 blockquote:before, blockquote:after, q:before, q:after{content:"";content:none;}
-input, button, textarea, select, optgroup, option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
-button, input, select, textarea{font-family:inherit;font-size:100%;margin:0;}
+input,  textarea, select, optgroup, option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+input, select, textarea{font-family:inherit;font-size:100%;margin:0;}
 button::-moz-focus-inner, input::-moz-focus-inner{border:0;padding:0;}
 textarea{overflow:auto;resize:vertical;vertical-align:top;}
 i, cite, em, address{font-style:normal;}
