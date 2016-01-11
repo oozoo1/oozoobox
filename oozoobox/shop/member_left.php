@@ -20,8 +20,8 @@
                     <li><a href="/shop/mypage02_2.php">결제대기</a></li>
                     <li><a href="/shop/mypage02_3.php">주문취소내역</a></li>
                     <li><a href="/shop/mypage02_4.php">교환/환불내역</a></li>
-                    <li><a href="/shop/mypage02_5.php">장바구니</a></li>
-                    <li><a href="/shop/mypage02_6.php">위시리스트</a></li>
+                    <li><a href="/shop/cart.php">장바구니</a></li>
+                    <li><a href="/shop/wishlist.php">위시리스트</a></li>
                 </ul> 
             	<h4 class="MM_tit">
                 	<img src="/images/tit_myozbox03.png" alt="我的活动 My Activity"/>

@@ -67,7 +67,7 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <?php } ?>
                                 <li>
-                                    <a href="/shop/member_confirm.php" target="_top">信息修改</a> <!--"자료수정"-->
+                                    <a href="/shop/mypage.php" target="_top">我的信息</a> <!--"자료수정"-->
                                 </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <li class="oz_sn_join">

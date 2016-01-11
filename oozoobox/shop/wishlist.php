@@ -38,12 +38,12 @@ if(!defined('THEMA_PATH')) {
 }
 
 $g5['title'] = "위시리스트";
-include_once('./_head.php');
+include_once('./mypage_head.php');
 
 $skin_path = $member_skin_path;
 $skin_url = $member_skin_url;
 
 include_once($skin_path.'/wishlist.skin.php');
-include_once('./_tail.php');
+include_once('./mypage_tail.php');
 
 ?>
