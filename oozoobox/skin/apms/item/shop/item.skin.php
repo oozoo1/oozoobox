@@ -46,9 +46,10 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
         	<!--s: 제품 사진 보기-->
         	<div class="detail_good_pic">
                 <div class="item-image">
--                <div id="flyItem" class="fly_item"><img src="images/item-pic.jpg" width="40" height="40"></div>
-                
-                    <? if($it[it_1]){?>
+
+                <div id="flyItem" class="fly_item"><img src="images/item-pic.jpg" width="40" height="40"></div>
+
+                <? if($it[it_1]){?>
                     <iframe height=409 width=409 src="http://player.youku.com/embed/<?=$it[it_1]?>==" frameborder=0 allowfullscreen></iframe>           
                     <? }else{ ?>
                     <a href="<?php echo $item_image_href;?>" id="item_image_href" class="popup_item_image" target="_blank">
@@ -112,7 +113,7 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                             	<div class="u_like_module">
                                 	<a class="btn_u_like" href="#">
                                     	<span class="ico_u"></span>
-                                        <em class="u_cnt">1,852</em> <!--누르기 전--> 
+                                        <em class="u_cnt">1,852</em> <!--누르기 전-->
                                     </a>
                                 	<a class="btn_u_like on" href="#">
                                     	<span class="ico_u"></span>
@@ -303,7 +304,8 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                     <?php if ($is_orderable) { ?>
                         <div class="choice-control">
                             <input type="image" onclick="document.pressed=this.value;" src="/images/detail_btn_01.png" value="바로구매">
--                            <input type="image" onclick="document.pressed=this.value;" src="/images/detail_btn_02.png" onclick="javascript:;" value="장바구니">
+                            <input type="image" onclick="document.pressed=this.value;" src="/images/detail_btn_02.png" onclick="javascript:;" value="장바구니">
+
                             <a href="#" onclick="apms_wishlist('<?php echo $it['it_id']; ?>'); return false;">
                                 <button id="btnAddToWishList" type="button">
                                     <img alt="MD询问(MD에게 묻기)" src="/images/detail_btn_03.png" title="MD询问(MD에게 묻기)"/>

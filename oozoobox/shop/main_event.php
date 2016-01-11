@@ -134,19 +134,22 @@ input[type=radio]#button-5:checked~.arrows#arrow-4 { left: -73px }
         </div>
     </div>
     
-    <div class="EventList">
-    	<div class="EventGoods">
-        	<a class="EventPic"><img src="/images/event01_goods_01.png" alt="SK_2"/></a>
-            <div class="EventGood_info">
-            	<span class="price"></span><span class="like"></span>
-                <span class="text"></span>
-            </div>
-			<span class="Event_url_detail"></span>
+
+    <div class="EventGoods">
+        <a class="EventPic"><img src="/images/event01_goods_01.png" alt="SK_2"/></a>
+        <div class="EventGood_info">
+            <span class="price"></span><span class="like"></span>
+            <a><span class="text">SK-2护肤面膜贴 SK-2化妆品 朴水保10片装</span></a>
         </div>
+        <span class="Event_url_detail"><a><img src="/images/event01_url_01.png" alt="SK_2 자세히보기"/></a></span>
     </div>
-
-
+        
+        
+        
+        
 </div>
+
+
 
         
 <?php  include_once('./_tail.php'); ?>
