@@ -101,9 +101,6 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 </script>
 
-
-
-
 <!-- JavaScript -->
 <script type="text/javascript" src="<?php echo THEMA_URL;?>/assets/bs3/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo THEMA_URL;?>/assets/js/jquery.bootstrap-hover-dropdown.min.js"></script>
