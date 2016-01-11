@@ -10,7 +10,20 @@ add_stylesheet('<link rel="stylesheet" href="/css/oz_mh/oz_mh.css" type="text/cs
 $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒霜！ 〉〉〉去看看防晒霜";
 ?>
 
-<SCRIPT LANGUAGE="JavaScript" src=http://float2006.tq.cn/floatcard?adminid=9706835&sort=0 ></SCRIPT>
+<script type='text/javascript'>
+    (function(m, ei, q, i, a, j, s) {
+        m[a] = m[a] || function() {
+            (m[a].a = m[a].a || []).push(arguments)
+        };
+        j = ei.createElement(q),
+            s = ei.getElementsByTagName(q)[0];
+        j.async = true;
+        j.charset = 'UTF-8';
+        j.src = i;
+        s.parentNode.insertBefore(j, s)
+    })(window, document, 'script', '//eco-api.meiqia.com/dist/meiqia.js', '_MEIQIA');
+    _MEIQIA('entId', 5768);
+</script>
 <script src="/oz_js/jquery.SuperSlide.2.1.1.js" type="text/javascript"></script>
 <script src="/oz_js/jquery.slides.min.js"></script>
 <script src="/oz_js/jquery.als-1.7.min.js"></script>
