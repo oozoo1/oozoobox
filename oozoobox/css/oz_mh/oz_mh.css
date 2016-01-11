@@ -48,7 +48,7 @@ fieldset legend{display: none;}
 
 /**HEADER**/
 #oz_mallpage #oz_header {background: rgb(255, 255, 255); margin-bottom: 0px; min-width: 990px;}
-#oz_header {width:auto !important; height: 145px; margin-top: -26px !important; position: relative; z-index: 1000; margin-right: auto; margin-left: auto;}
+#oz_header {width:auto !important; height: 145px; margin-top: -26px !important; position: relative; z-index:99; margin-right: auto; margin-left: auto;}
 .oz_headerlayout {margin: 0px auto; width: 990px; padding-top: 26px;}
 .oz_headercontent::after {overflow: hidden; display: table; content: "";}
 .oz_headercontent::before {overflow: hidden; display: table; content: "";}
