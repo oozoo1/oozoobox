@@ -748,7 +748,7 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 
 .detail_good_info{float:left; width:524px; margin:10px 0 0 33px; }
 .detail_good_info h3 {font-size:18px; font-weight:600;}
-.detail_good_info .detail_good_etc {margin-top:30px; position:relative; font:14px/1.8 Tahoma, '微软雅黑',"돋움",dotum;}
+.detail_good_info .detail_good_etc {margin-top:30px; position:relative; font:14px/1.8 Tahoma, '微软雅黑',"돋움",dotum;} 
 .detail_good_info tr {height:30px;}
 .detail_good_info .good_info_satisfy span{float:left;}
 .detail_good_info .good_info_satisfy .good_info_satisfy_grade {font-size:18px; font-weight:bold;}
