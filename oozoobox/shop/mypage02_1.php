@@ -266,10 +266,8 @@ $skin_url = $member_skin_url;
                             	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
                             </div>
                             <div class="buttons">
-                            	<a class="button">
-                                <button class="cancel">반품 / 취소요청</button>
-                                <button class="orange">상품평 | 구매결정</button>                                                                
-                                </a>
+                                <a href="/shop/mypage02_1_5.php" class="button"><button class="cancel">반품 / 취소요청</button></a>
+                                <a class="button"><button class="orange">상품평 | 구매결정</button></a>
                             </div>
                         </td>
                     </tr>                    
@@ -342,7 +340,142 @@ $skin_url = $member_skin_url;
                         </td>
                     </tr>
 					<!-------e: 04.배송완료일때---------->
-                    <!-------s: 05.거래완료일때---------->
+                    <!-------s: 05.미수령을 눌렀을때---------->
+                    <tr class="separate">
+                    	<td rowspan="2" class="date-payment-num">
+                        	<div class="date-num">
+                            	<strong>2016-01-04</strong>
+                                <a>( <span>887634010</span> )</a>
+                            </div>
+                            <div class="total-charge">
+                            결제금액
+                            	<strong class="charge">
+                                	¥<span class="num">121</span>
+                                </strong>
+                            </div>
+                            <div class="detail-link">
+                            	<a class="link">주문상세보기</a>
+                            </div>
+                        </td>
+                        <td class="product">
+                        	<div class="product-block">
+                            	<a class="product-thumbnail">
+                                	<img src="/images/mypage_oder_list01.png" style="width:60px; height:60px" alt="상품01"/>
+                                </a>
+                                <div class="product-content">
+                                	<div class="product-name">
+                                    	<a>ddddddddddddddddddddd</a>
+                                    </div>
+                                    <div class="product-option">
+                                    aaaaaaaaaaaaaaaaaaa
+                                    </div>
+                                    <div class="order-num">
+                                        <span class="mp_label">주문번호</span>
+                                    123456789
+                                    </div>
+                            	</div>
+                            </div>
+                        </td>
+                        <td class="seller">
+                        	<span class="seller-info">
+                            	베이비제이
+                            </span>
+                        </td>
+                        <td class="status">
+                        	<strong class="status-msg">거래완료</strong>
+                            <span class="status-date">
+                            구매결정일자
+                            <br>
+                            ( <span class="num">12-30</span>
+                            결정 )
+                            </span>
+                            <br>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td colspan="3" class="actions">
+                        	<div class="links">
+                                <a class="declaration">신고하기</a>                            
+                            	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
+                            </div>
+                            <div class="buttons">
+                            	<a class="button">
+                                <button class="cancel">미수령신고철회</button>
+                                <button class="cancel">반품신청</button>
+                                <button class="orange">상품평 | 구매결정</button>                                                               
+                                </a>
+                            </div>
+                        </td>
+                    </tr>                                          
+                    <!-------e: 05.미수령을 눌렀을때---------->    
+                    <!-------s: 06.반품정보를 눌렀을때---------->
+                    <tr class="separate">
+                    	<td rowspan="2" class="date-payment-num">
+                        	<div class="date-num">
+                            	<strong>2016-01-04</strong>
+                                <a>( <span>887634010</span> )</a>
+                            </div>
+                            <div class="total-charge">
+                            결제금액
+                            	<strong class="charge">
+                                	¥<span class="num">121</span>
+                                </strong>
+                            </div>
+                            <div class="detail-link">
+                            	<a class="link">주문상세보기</a>
+                            </div>
+                        </td>
+                        <td class="product">
+                        	<div class="product-block">
+                            	<a class="product-thumbnail">
+                                	<img src="/images/mypage_oder_list01.png" style="width:60px; height:60px" alt="상품01"/>
+                                </a>
+                                <div class="product-content">
+                                	<div class="product-name">
+                                    	<a>ddddddddddddddddddddd</a>
+                                    </div>
+                                    <div class="product-option">
+                                    aaaaaaaaaaaaaaaaaaa
+                                    </div>
+                                    <div class="order-num">
+                                        <span class="mp_label">주문번호</span>
+                                    123456789
+                                    </div>
+                            	</div>
+                            </div>
+                        </td>
+                        <td class="seller">
+                        	<span class="seller-info">
+                            	베이비제이
+                            </span>
+                        </td>
+                        <td class="status">
+                        	<strong class="status-msg">거래완료</strong>
+                            <span class="status-date">
+                            구매결정일자
+                            <br>
+                            ( <span class="num">12-30</span>
+                            결정 )
+                            </span>
+                            <br>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td colspan="3" class="actions">
+                        	<div class="links">
+                                <a class="declaration">신고하기</a>                            
+                            	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
+                            </div>
+                            <div class="buttons">
+                            	<a class="button">
+                                <button class="cancel">반품철회</button>
+                                <button class="orange">반품정보수정</button>                                                               
+                                </a>
+                            </div>
+                        </td>
+                    </tr>                                          
+                    <!-------e: 06.반품정보를 눌렀을때---------->
+                    <!-------s: 07.거래완료일때---------->
                     <tr class="separate">
                     	<td rowspan="2" class="date-payment-num">
                         	<div class="date-num">
@@ -407,7 +540,7 @@ $skin_url = $member_skin_url;
                             </div>
                         </td>
                     </tr>                                          
-                    <!-------e: 05.거래완료일때---------->                                 
+                    <!-------e: 07.거래완료일때---------->                                                     
                 </tbody>
             </table>
             
