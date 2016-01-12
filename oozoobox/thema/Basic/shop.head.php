@@ -628,7 +628,7 @@ $(function(){
         </div>
             <!------e: 쇼핑몰 페이지-------->
     
-<?php if($_SERVER['PHP_SELF']=="/index.php" || $_SERVER['PHP_SELF']=="/shop/list.php"){}else{ ?>
+<?php if($_SERVER['PHP_SELF']=="/index.php" || $_SERVER['PHP_SELF']=="/shop/list.php" || $_SERVER['PHP_SELF']=="/bbs/login.php"){}else{ ?>
 <div id="oz_detail_wrap">
 	<div class="oz_detail_main">
 <? } ?>

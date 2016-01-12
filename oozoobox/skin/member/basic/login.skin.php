@@ -1,147 +1,86 @@
 <?php
-if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
+if (!defined('_GNUBOARD_')) exit; //禁止单独访问此页
 
-// add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
-add_stylesheet('<link rel="stylesheet" href="'.$skin_url.'/style.css" media="screen">', 0);
-
-if($header_skin)
-	include_once('./header.php');
-
+// add_stylesheet('css 文本', 显示顺序); 数字越小的优先显示
+add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 0);
 ?>
-
-<div class="row">
-	<div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
-		<div class="form-box">
-			<div class="form-header">
-				<h2><b><i class="fa fa-smile-o"></i> Have a Nice Day!</b></h2>
-			</div>
-			<div class="form-body">
-			    <form class="form" role="form" name="flogin" action="<?php echo $login_action_url ?>" onsubmit="return flogin_submit(this);" method="post">
-			    <input type="hidden" name="url" value='<?php echo $login_url ?>'>
-					<div class="form-group has-feedback">
-						<label for="login_id"><b>아이디</b><strong class="sound_only"> 필수</strong></label>
-						<input type="text" name="mb_id" id="login_id" required class="form-control input-sm" size="20" maxLength="20">
-						<span class="fa fa-user form-control-feedback"></span>
-					</div>
-					<div class="form-group has-feedback">
-				        <label for="login_pw"><b>비밀번호</b><strong class="sound_only"> 필수</strong></label>
-				        <input type="password" name="mb_password" id="login_pw" required class="form-control input-sm" size="20" maxLength="20">
-						<span class="fa fa-lock form-control-feedback"></span>
-					</div>
-					<div class="row">
-						<div class="col-xs-6">
-							<label class="remember-me">
-								<input type="checkbox" name="auto_login" id="login_auto_login"> 자동로그인
-							</label>
-						</div>
-						<div class="col-xs-6">
-							<button type="submit" class="btn btn-color pull-right">Sign In</button>
-						</div>
-					</div>
-				</form>
-			</div>
-			<div class="form-footer">
-				<p class="text-center">
-					<a href="./register.php"><i class="fa fa-sign-in"></i> 회원가입</a>
-					<a href="<?php echo G5_BBS_URL ?>/password_lost.php" target="_blank" id="login_password_lost"><i class="fa fa-search"></i> 정보찾기</a>
-				</p>
-			</div>
-		</div>
-	</div>
-</div>
-
-<?php if ($default['de_level_sell'] == 1) { // 상품구입 권한 ?>
-
-	<!-- 주문하기, 신청하기 -->
-	<?php if (preg_match("/orderform.php/", $url)) { ?>
-
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
-				<div class="form-box">
-					<div class="form-header">
-						<h2><b>비회원 구매</b></h2>
-					</div>
-					<div class="form-body">
-						<p>비회원으로 주문하시는 경우 포인트는 지급하지 않습니다.</p>
-
-						<div class="condition">
-							<?php echo $default['de_guest_privacy']; ?>
-						</div>
-
-						<label for="agree"><input type="checkbox" id="agree" value="1"> 개인정보수집에 대한 내용을 읽었으며 이에 동의합니다.</label>
-						
-						<br><br>
-
-						<a href="javascript:guest_submit(document.flogin);" class="btn btn-color btn-block">비회원으로 구매하기</a>
-
-						<script>
-						function guest_submit(f) {
-							if (document.getElementById('agree')) {
-								if (!document.getElementById('agree').checked) {
-									alert("개인정보수집에 대한 내용을 읽고 이에 동의하셔야 합니다.");
-									return;
-								}
-							}
-
-							f.url.value = "<?php echo $url; ?>";
-							f.action = "<?php echo $url; ?>";
-							f.submit();
-						}
-						</script>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	<?php } else if (preg_match("/orderinquiry.php$/", $url)) { ?>
-
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
-				<div class="form-box">
-					<div class="form-header">
-						<h2><b>비회원 주문조회</b></h2>
-					</div>
-					<div class="form-body">
-						<p>메일로 발송해드린 주문서의 <strong>주문번호</strong> 및 주문 시 입력하신 <strong>비밀번호</strong>를 정확히 입력해주십시오.</p>
-
-						<form class="form" role="form" name="forderinquiry" method="post" action="<?php echo urldecode($url); ?>" autocomplete="off">
-							<div class="form-group has-feedback">
-								<label for="od_id" class="od_id"><b>주문서번호</b><strong class="sound_only"> 필수</strong></label>
-								<input type="text" name="od_id" value="<?php echo $od_id; ?>" id="od_id" required class="form-control input-sm" size="20">
-								<span class="fa fa-user form-control-feedback"></span>
-							</div>
-							<div class="form-group has-feedback">
-								<label for="id_pwd" class="od_pwd"><b>비밀번호</b><strong class="sound_only"> 필수</strong></label>
-								<input type="password" name="od_pwd" size="20" id="od_pwd" required class="form-control input-sm">
-								<span class="fa fa-lock form-control-feedback"></span>
-							</div>
-
-							<button type="submit" class="btn btn-color btn-block">확인하기</button>
-
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	<?php } ?>
-<?php } ?>
-
-<div class="text-center" style="margin:30px 0px;">
-	<a href="<?php echo G5_URL ?>/" class="btn btn-black btn-sm" role="button">메인으로</a>
-</div>
-
+<script type="text/javascript">
+// 엠파스 로긴 참고
+var bReset = true;
+function chkReset(f)
+{
+    if (bReset) { if ( f.mb_id.value == '请输入用户名' ) f.mb_id.value = ''; bReset = false; }
+    document.getElementById("pw1").style.display = "none";
+    document.getElementById("pw2").style.display = "";
+}
+</script>
+<!-- 登录开始 { -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td height="760" style="background:url(/images/login_bg.png) no-repeat center center; background-color:#f6c801;">    
+        <table width="914" border="0" cellspacing="0" cellpadding="0" align="center">          
+          <tr>
+            <td width="624">&nbsp;</td>
+            <td width="380" height="487" valign="top" bgcolor="#ffffff" style="position:static; box-shadow:1px 1px 1px 1px #000; padding:38px;">
+                <table width="300" border="0" cellspacing="0" cellpadding="0" align="center">
+                <form name="flogin" action="<?php echo $login_action_url ?>" onsubmit="return flogin_submit(this);" method="post">
+                <input type="hidden" name="url" value='<?php echo $login_url ?>'>
+                  <tr>
+                    <td width="100" height="24" style="color:#555; font-size:2.0em;">欢迎登录</td>
+                    <td width="20"></td>
+                    <td><div style="border-bottom:solid 1px #555; width:100%;"></div></td>
+                  </tr>
+                  <tr>
+                    <td height="22" colspan="3"></td>
+                  </tr>
+                  <tr>
+                    <td height="41" colspan="3">
+                    <input id="mb_id" name="mb_id" type="text" class="input" value='请输入用户名' style="border:solid 1px #dedede; background-image:url(/images/login_id_bg.png); color:#aaaaaa; width:300px; height:40px; padding-left:50px;"  onMouseOver='chkReset(this.form);' onFocus='chkReset(this.form);'/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td height="27" colspan="3"></td>
+                  </tr>
+                  <tr>
+                    <td height="41" colspan="3" id=pw1>
+                    <input id="mb_password" name="mb_password" type="text" class="input" value='请输入密码' style="border:solid 1px #dedede; background-image:url(/images/login_pw_bg.png); color:#aaaaaa; width:300px; height:40px; padding-left:50px;" onMouseOver='chkReset(this.form);' onfocus='chkReset(this.form);'/>
+                    </td>
+                    <td height="41" colspan="3" id=pw2 style='display:none;'>
+                    <input id="mb_password" name="mb_password" type="password" class="input" style="border:solid 1px #dedede; background-image:url(/images/login_pw_bg.png); color:#aaaaaa; width:300px; height:40px; padding-left:50px;"/>
+                    </td>
+                  </tr>                  
+                  <tr>
+                    <td height="27" colspan="3"></td>
+                  </tr>
+                  <tr>
+                    <td height="41" colspan="3"><input type="submit" value="  登  录  " class="left"  style="background-color:#fd5c02; width:300px; height:40px; border:0; font-weight:bold; color:#fff;"/></td>
+                  </tr>
+                  </form>
+                </table>
+                <table width="300" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td align="left" height="45"><a href="./register.php" style="color:#4d4b4c;">还没有帐号?立即注册</a></td>
+                    <td align="right"><a href="<?php echo G5_BBS_URL ?>/password_lost.php" style="color:#4d4b4c;" target="_blank" >忘记密码</a></td>
+                  </tr>
+                </table>                
+            </td>
+          </tr>
+        </table>
+    </td>
+  </tr>
+</table>
 <script>
 $(function(){
     $("#login_auto_login").click(function(){
         if (this.checked) {
-            this.checked = confirm("자동로그인을 사용하시면 다음부터 회원아이디와 비밀번호를 입력하실 필요가 없습니다.\n\n공공장소에서는 개인정보가 유출될 수 있으니 사용을 자제하여 주십시오.\n\n자동로그인을 사용하시겠습니까?");
+            this.checked = confirm("开启自动登录功能后系统将会记住您的登录信息.\n\n请勿在网吧等公共场所设备上开启此功能\n\n点击确定开启自动登录功能");
         }
     });
 });
 
-function flogin_submit(f) {
+function flogin_submit(f)
+{
     return true;
 }
 </script>
-<!-- } 로그인 끝 -->
+<!-- } 登录结束 -->
