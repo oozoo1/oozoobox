@@ -80,7 +80,11 @@ $list_cnt = count($list);
 				<?php } ?>
 				<div class="list-row">
 					<div class="list-item">
-						<?php if($thumb_h > 0) { ?>
+						<?php if($thumb_h > 0) { 
+							$sql1 = "SELECT it_id , it_img1 FROM g5_shop_item WHERE it_id = '{$list[$i][wr_10]}'";
+							$result1 = sql_query($sql1);
+							$row_item=sql_fetch_array($result1);
+						?>
 							<div class="imgframe">
 								<div class="img-wrap" style="padding-bottom:<?php echo $img_h;?>%;">
 									<div class="img-item">
@@ -91,7 +95,7 @@ $list_cnt = count($list);
 											</div>	
 										<?php } ?>
 										<a href="<?php echo $list[$i]['href'];?>">
-											<img src="<?php echo $img['src'];?>" alt="<?php echo $img['alt'];?>">
+											<img src="/data/item/<?=$row_item[it_img1]?>" alt="<?php echo $img['alt'];?>">
 										</a>
 									</div>
 								</div>

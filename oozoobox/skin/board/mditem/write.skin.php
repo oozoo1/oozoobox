@@ -87,6 +87,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
       </tr>
       <? } ?>
       <tr>
+        <td class="wheight"><input type="text" name="wr_10" value="<?php echo $write[wr_10] ?>" id="wr_10" required class="winput" size="50" maxlength="255" placeholder="   请输入商品 it_id"></td>
+      </tr>
+      <tr>
         <td class="wheight"><input type="text" name="wr_subject" value="<?php echo $subject ?>" id="wr_subject" required class="winput" size="50" maxlength="255" placeholder="   请输入标题"></td>
       </tr>
       <tr>

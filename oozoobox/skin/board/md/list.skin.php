@@ -48,7 +48,7 @@ $content_height = 100;
             </span>
             <ul class="gall_con">
                 <li class="gall_href">
-                    <a href="<?php echo $list[$i]['href'] ?>">
+                    <a href="/bbs/board.php?bo_table=mditem&sca=<?=urlencode("{$list[$i][ca_name]}")?>">
                     <?php
                     if ($list[$i]['is_notice']) { // 공지사항  ?>
                         <strong style="width:<?php echo $board['bo_gallery_width'] ?>px;height:<?php echo $board['bo_gallery_height'] ?>px">공지</strong>
@@ -68,7 +68,7 @@ $content_height = 100;
                     </a>
                 </li>
                 <li class="gall_text_href" style="width:<?php echo $board['bo_gallery_width'] ?>px">
-                    <a href="<?php echo $list[$i]['href'] ?>"><?php echo $list[$i]['subject'] ?></a>                     
+                    <a href="/bbs/board.php?bo_table=mditem&sca=<?=urlencode("{$list[$i][ca_name]}")?>"><?php echo $list[$i]['subject'] ?></a>                     
                     
                     
 					<?php
