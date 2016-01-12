@@ -69,7 +69,6 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 			<th width="100" class="text-right" scope="col"><?php echo subject_sort_link('it_price', 'mode=list&amp;sca='.$sca); ?>가격</a></th>
 			<th width="80" class="text-right" scope="col"><?php echo subject_sort_link('it_point', 'mode=list&amp;sca='.$sca); ?>포인트</a></th>
 			<th width="80" class="text-right" scope="col"><?php echo subject_sort_link('it_stock_qty', 'mode=list&amp;sca='.$sca); ?>재고</a></th>
-			<th width="80" class="text-center" scope="col"><?php echo subject_sort_link('it_use', 'mode=list&amp;sca='.$sca); ?>판매</a></th>
 			<th width="60" class="text-center" scope="col"><?php echo subject_sort_link('it_soldout', 'mode=list&amp;sca='.$sca); ?>품절</a></th>
 			<th width="60" class="text-center" scope="col">관리</th>
 			<th width="60" class="text-center" scope="col">비고</th>
@@ -113,10 +112,6 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 			<td class="text-right">
 				<?php echo number_format($list[$i]['it_stock_qty']); ?>
 			</td>
-	        <td class="text-center">
-		        <label for="use_<?php echo $i; ?>" class="sound_only">판매여부</label>
-			    <input type="checkbox" name="it_use[<?php echo $i; ?>]" <?php echo ($list[$i]['it_use'] ? 'checked' : ''); ?> value="1" id="use_<?php echo $i; ?>">
-	        </td>
 		    <td class="text-center">
 			    <label for="soldout_<?php echo $i; ?>" class="sound_only">품절</label>
 	            <input type="checkbox" name="it_soldout[<?php echo $i; ?>]" <?php echo ($list[$i]['it_soldout'] ? 'checked' : ''); ?> value="1" id="soldout_<?php echo $i; ?>">

@@ -14,19 +14,34 @@ function chkReset(f)
     document.getElementById("pw2").style.display = "";
 }
 </script>
-<!-- 登录开始 { -->
+<!-- 登录开始 { --><style type="text/css">
+<!--
+body,td,th {
+	font-size: 12px;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	 background-color:#f6c801;
+}
+
+-->
+</style>
+
 <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
   <tr>
-    <td height="760" style="background:url(/images/login_bg.png) no-repeat center center; background-color:#f6c801;">    
+    <td height="760" style="background:url(/images/login_bg.png) no-repeat center bottom;">    
         <table width="914" border="0" cellspacing="0" cellpadding="0" align="center">          
           <tr>
-            <td width="624">&nbsp;</td>
-            <td width="380" height="487" valign="top" bgcolor="#ffffff" style="position:static; box-shadow:1px 1px 1px 1px #000; padding:38px;">
+            <td width="624" bgcolor="#ffffff">&nbsp;</td>
+      <td width="380" height="487" valign="top" bgcolor="#ffffff" style="position:static; box-shadow:1px 1px 1px 1px #cccccc; padding:38px;">
                 <table width="300" border="0" cellspacing="0" cellpadding="0" align="center">
                 <form name="flogin" action="<?php echo $login_action_url ?>" onsubmit="return flogin_submit(this);" method="post">
                 <input type="hidden" name="url" value='<?php echo $login_url ?>'>
                   <tr>
-                    <td width="100" height="24" style="color:#555; font-size:2.0em;">欢迎登录</td>
+                    <td width="100" height="24" style="color:#555; font-size:1.3em;">欢迎登录</td>
                     <td width="20"></td>
                     <td><div style="border-bottom:solid 1px #555; width:100%;"></div></td>
                   </tr>

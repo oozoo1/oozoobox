@@ -204,13 +204,6 @@ $pg_anchor .='</ul>';
 			</tr>
 		<?php } // 관리자 끝 ?>
 		<tr>
-            <th scope="row"><label for="it_use">판매가능</label></th>
-            <td>
-                <?php echo help("잠시 판매를 중단하거나 재고가 없을 경우에 체크를 해제해 놓으면 출력되지 않으며, 주문도 받지 않습니다."); ?>
-                <label><input type="checkbox" name="it_use" value="1" id="it_use" <?php echo ($it['it_use']) ? "checked" : ""; ?>> 예</label>
-            </td>
-        </tr>
-		<tr>
             <th scope="row">상품설명</th>
             <td>
 				<a href="<?php echo G5_BBS_URL;?>/helper.php" target="_blank" class="btn_frmline win_scrap">기능안내</a>

@@ -24,7 +24,6 @@ $mb_signature = ($member['mb_signature']) ? apms_content(conv_content($member['m
 
 
 
-$g5['title'] = get_text($member['mb_name']).'님 마이페이지';
 include_once('./_head.php');
 
 $skin_path = $member_skin_path;
@@ -94,7 +93,7 @@ $skin_url = $member_skin_url;
                         <img src="/images/tit_cscenter_quick.png" alt="Quick Finds"/>
                     </h4>
                     <ul class="Quickmenu">
-                        <li><a><i class="quick01"></i>문의하기</a></li>
+                        <li><a href="/bbs/write.php?bo_table=qa"><i class="quick01"></i>문의하기</a></li>
                         <li><a><i class="quick02"></i>문의내역</a></li>
                         <li><a><i class="quick03"></i>내 ID찾기</a></li>
                         <li><a><i class="quick04"></i>비밀번호찾기</a></li>

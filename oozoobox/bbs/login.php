@@ -8,8 +8,7 @@ if(!defined('THEMA_PATH')) {
 	include_once(G5_LIB_PATH.'/apms.thema.lib.php');
 }
 
-$g5['title'] = '로그인';
-include_once('./_head.php');
+
 
 $skin_path = $member_skin_path;
 $skin_url = $member_skin_url;
@@ -45,5 +44,5 @@ if (!is_file($login_file))
 
 include_once($skin_path.'/login.skin.php');
 
-include_once('./_tail.php');
+
 ?>
