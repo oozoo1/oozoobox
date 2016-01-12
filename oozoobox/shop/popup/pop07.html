@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>OOZOOBOX</title>
+<style>
+html, body, div, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select{margin:0; padding:0;}
+body, input, textarea, select, button, table{font:14px/16px "Microsoft YaHei",arial,"宋体",Dotum,"돋움";}
+img, fieldset{border:0;}
+a{text-decoration:none;}
+a, a:hover, a:active{cursor: pointer;}
+table{border-collapse:collapse; border:0 none;}
+
+#pop07_wrap {width:600px; height:760px; color:#666; border:2px solid #fa9551;}
+.pop07_tit {width:100%px; border-bottom:1px solid #e7e7e7;}
+.pop07_tit h3 {width:100%; height:38px; background-color:#fa9551; font-size:18px; color:#fff; padding:10px 0 0 20px; line-height:1.5;}
+.pop07_content {position:relative; width:548px; height:708px; padding:25px; }
+.pop07_content .after_tit {width:100%}
+.pop07_content .after_tit img {float:left; width:108px; height:108px; border:1px solid #bebebe;}
+.pop07_content .tit_txt {float:left; margin-left:20px;}
+.pop07_content .tit_txt h4 {font-size:16px; color:#333;}
+.pop07_content .tit_txt p {padding-top:18px; line-height:22px;}
+.pop07_content .tit_txt p a {color:#0272c9;}
+.pop07_content .tit_txt p a:hover {color:#fa9551;}
+.satisfy_after {float:left; margin:30px 0 20px 0; width:100%;}
+.satisfy_after p {display:block;}
+.satisfy_after select {margin-top:5px;}
+.write_after {width:100%; float:left; border:1px solid #ddd;}
+.write_after tr {border:1px solid #bbb;}
+.write_after th {background:#e8e8e8; text-align:left; padding:5px 11px;}
+.write_after th input {height:24px; border:1px solid #bbb;}
+.writer_info {width:100%; float:left; list-style:none; margin-top:10px;}
+.writer_info li{padding:3px 0;}
+.writer_info input {border:1px solid #bbb;}
+span.red {color:#FA4A4D; }
+.btns {float:left; width:100%; text-align:center; margin-top:50px;}
+</style>
+</head>
+
+<body>
+
+<div class="pass_confirm" id="pop07_wrap">
+    <div class="pop07_tit">
+        <h3>구매후기 작성하기</h3>
+    </div>
+    
+    <div class="pop07_content">
+        <div class="after_tit">
+			<img src="/images/pop07_product.png" alt="상품이름"/>
+            <span class="tit_txt">
+                <h4>제품후기</h4>
+                <p>제품상세보기 화면으로 이동하시려면 <a href="#"><!--상페보기페이지링크--><span class="blue">여기를 클릭하세요.</span></a><br>
+                <a href="#"><!--상페보기페이지링크--><span class="blue">여기서</span></a> 후기에 관한 중요 정보를 확인하실 수 있습니다.</p>
+            </span>
+        </div>
+        <div class="satisfy_after">
+        	<p>제품평점 <span class="red">(필수사항)</span></p>
+            <select style="width:250px;">
+            	<option>선택하세요</option>
+                <option>별다섯개</option>
+                <option>별네개</option>
+                <option>별세개</option>
+                <option>별두개</option>
+                <option>별한개</option>
+            </select>
+        </div>
+
+        <table class="write_after">
+            <colgroup>
+                <col style="width:70px"/>
+                <col style="width:200px"/>
+                <col style="width:70px"/>
+                <col style="width:200px"/>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>제목</th>
+                    <th colspan="3"><input type="text" style="width:435px;"/></th>
+                </tr>
+                <tr>
+                    <th>닉네임</th><th><input type="text" style="width:160px;"/></th><th>거주지</th><th><input type="text" style="width:160px;"/></th>
+                </tr>
+                <tr>
+                    <td colspan="4" style="height:160px;">
+                    글 작성하는 곳!!!<br>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <ul class="writer_info">
+        	<li><strong>작성자정보</strong> (선택사항)</li>
+            <li>직업 <input type="text" style="width:180px; margin-left:10px;"/></li>
+            <li>나이 <input type="text" style="width:180px; margin-left:10px;"/></li>
+            <li>성별 <input type="text" style="width:180px; margin-left:10px;"/></li>
+            <li>사용빈도 <input type="text" style="width:180px; margin-left:10px;"/></li>
+        </ul>
+
+        
+        
+        <div class="btns">
+        	<a href="/shop/popup/pop08.html"  'width=600, height=400, scrollbars=no'><img src="/images/btn_pass_ok.png" alt="确认"/></a>
+            <a><img src="/images/btn_popup03_c.png" alt="取消"/></a> <!--클릭하면 "구매후기 작성을 취소하시겠습니까"라는 경고창이 나옴-->
+    	</div> 
+    </div> 
+               
+</div>                            
+                        
+
+
+</body>
+</html>

@@ -333,7 +333,7 @@ $skin_url = $member_skin_url;
                             <div class="buttons">
                             	
                                 <a class="button"><button class="cancel">미수령</button></a>
-                                <a href="/shop/mypage02_1_5.php" class="button">><button class="cancel">반품신청</button></a>
+                                <a href="/shop/mypage02_1_5.php" class="button"><button class="cancel">반품신청</button></a>
                                 <a onClick="window.open('/shop/popup/pop05.html', '', 'width=660, height=535, scrollbars=no')" class="button"><button class="orange">상품평 | 구매결정</button></a>                                                               
                                 </a>
                             </div>
@@ -528,7 +528,7 @@ $skin_url = $member_skin_url;
                             	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
                             </div>
                             <div class="buttons">
-                            	<a class="button">
+                            	<a class="button" onClick="window.open('/shop/popup/pop07.html', '', 'width=600, height=760, scrollbars=no')" >
                                 <button class="cancel">상품평작성하기</button>
                                 </a>
                             </div>
