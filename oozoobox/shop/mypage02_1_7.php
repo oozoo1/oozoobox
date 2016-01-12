@@ -36,168 +36,20 @@ $skin_url = $member_skin_url;
         <!--s: RIGHT CONTENTS-->
         <div class="My_container">
         	<h4 class="Mypage_tit">
-            주문취소
+            환불신청
             </h4>
-            
-			<div class="Cancel_Step">
-            	<img src="/images/mypage02_1_1_step01.png" alt="Step01"/>
+            <div class="My_leave_step04">
+            	<span class="msg_big">
+                <span class="red">환불신청</span>이 완료되었습니다.
+                </span>
+                <span class="msg_small">
+               판매자가 반품승인하면 고객님께 환불됩니다. 
+                </span>
+                <div class="basicbtns">
+                    <a href="/shop/mypage02_1.php"><button><img src="/images/btn_Gomypage02_1.png" alt="Go mypage02_1"/></button></a>
+                    <a href="/"><button><img src="/images/btn_Gohome.png" alt="首页"/></button></a>
+                </div>    
             </div>
-           
-            <h4 class="strapline">1. 취소할 상품 선택 <span class="explain">(함께 결제하신 상품들입니다. 취소하고자하는 상품을 선택해주세요.)</span></h4>
-			<!-------s: 취소할 상품 선택---------->
-            <table class="order-list-table order-cancel-table">
-            	<colgroup>
-                	<col style="width:9%"/>
-                	<col/>
-                    <col style="width:16%"/>
-                    <col style="width:20%"/>
-                    <col style="width:16%"/>
-                </colgroup>
-                <thead>
-                	<tr>
-                    	<th class="first">
-                        	<span class="checkbox-wrap">
-                            	<input type="checkbox"/>
-                            </span>
-                        </th>
-                        <th>주문일(결제번호)</th>
-                        <th>결제금액</th>
-                        <th>판매자</th>
-                        <th>주문상태</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="separate">
-                    	<td>
-                            <span class="checkbox-wrap">
-                                <input type="checkbox"/>
-                            </span>
-                        </td>
-                        <td class="pro">
-                            <a>ddddddddddddddddddddd</a>
-                            <div class="product-block">
-                                <div class="product-option">
-                                	aaaaaaaaaaaaaaaaaaa
-                                </div>
-                                <div class="order-num">
-                                    <span class="mp_label">주문번호</span>
-                                    123456789
-                                </div>
-                            </div>
-                            <span class="pro-btn">
-                            	<a onClick="showlayernormalclick("rtTblayer"); return false; href=""">
-                                판매자반품정보
-                                </a>
-                            </span>
-                            <div class="uxc-rtlayer" id="rtTblayer">
-                            	<div class="uxc-rtlaytercont">
-                                	<div class="uxc-rtlayertit">
-                                    </div>
-                                    <div class="uxc-rtlayertable1">
-                                    	<table>
-                                        	<colgroup>
-                                            	<col style="width:44%"/>
-                                                <col/>
-                                            </colgroup>
-                                            <tbody>
-                                            	<tr>
-                                                	<th>판매자이름</th>
-                                                    <td>베이비제이</td>
-                                                </tr>
-                                            	<tr>
-                                                	<th>연락처</th>
-                                                    <td>1234567</td>
-                                                </tr>
-                                            	<tr>
-                                                	<th>반품/택배비</th>
-                                                    <td>46元</td>
-                                                </tr>                                                
-                                            	<tr>
-                                                	<th>반품주소</th>
-                                                    <td>인천 연수구 송도2동 더샵센트럴파크1차아파트 101동 1005호</td>
-                                                </tr>
-                                            	<tr>
-                                                	<th>주의사항</th>
-                                                    <td>ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</td>
-                                                </tr>                                                
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="pay">
-                            	1347
-                        </td>                        
-                        <td class="seller">
-                        	<span class="seller-info">
-                            	베이비제이
-                            </span>
-                        </td>
-                        <td class="status">
-                        	<strong class="status-msg">결제완료</strong>
-                        </td>
-                    </tr>
-                    <!-------e: 취소할 상품 선택---------->
-                </tbody>
-            </table>
-            <h4 class="strapline">2. 취소사유 <span class="explain">(포인트가 적용 되었던 결제금액으로 환불되며, 전체 취소할 경우 포인트는 자동환불 됩니다.)</span></h4>    
-            <table class="order-list-table order-cancel-table">
-            	<colgroup>
-                	<col style="width:50%"/>
-                    <col/>
-                </colgroup>
-                <thead>
-                	<tr>
-                        <th class="first">취소사유</th>
-                        <th>상품취소 상세내용 입력</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="separate">
-                    	<td class="pro">
-                        	<ul>
-                            	<li>
-                                    <span class="radio-wrap">
-                                        <input type="radio"/> OOZOOBOX내 다른 상품으로 재 주문
-                                    </span>
-                                </li>
-                            	<li>
-                                    <span class="radio-wrap">
-                                        <input type="radio"/> 타사이트 상품 주문
-                                    </span>
-                                </li>
-                            	<li>
-                                    <span class="radio-wrap">
-                                        <input type="radio"/> 구매의사가 없어짐
-                                    </span>
-                                </li>
-                            	<li>
-                                    <span class="radio-wrap">
-                                        <input type="radio"/> 동일 상품 재 주문 (주문정보수정)
-                                    </span>
-                                </li>
-                            	<li>
-                                    <span class="radio-wrap">
-                                        <input type="radio"/> 기타(구매자 책임 사유)
-                                    </span>
-                                </li>
-                            </ul>
-                        </td>
-                        <td class="pro">
-                        	<div class="cancel_textbox">
-                            	<textarea class="cancel_textbox" type="text"></textarea>
-                            </div>
-                        </td>
-                    </tr>
-                    <!-------e: 취소할 상품 선택---------->
-                </tbody>
-            </table>
-            <div class="basicbtns">
-            	<a><button><img src="/images/btn_pass_ok_02.png"></button></a>
-                <a><button><img src="/images/btn_my_cancel.png"></button></a>
-            </div>                    
-            
         </div>
         <!--e: RIGHT CONTENTS-->
 
