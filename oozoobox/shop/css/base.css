@@ -92,8 +92,8 @@ a.disabled, a.disabled:hover{cursor:default;pointer-events:none;}
 .quick_links_panel .mp_qrcode{
 	padding:10px;
 	width:148px;
-	height:175px;
-	top:-157px;
+	height:148px;
+	top:-107px;
 	background:#fff;
 	box-shadow:0 0 5px rgba(0,0,0,.4);
 	border-radius:5px 0 0 5px;
@@ -109,7 +109,7 @@ a.disabled, a.disabled:hover{cursor:default;pointer-events:none;}
 .quick_links_panel .icon_arrow_white{
 	position:absolute;
 	right:-5px;
-	top:172px;
+	top:120px;
 	width:5px;
 	height:9px;
 	background-position:0 -253px;
@@ -147,7 +147,7 @@ a.disabled, a.disabled:hover{cursor:default;pointer-events:none;}
 	
 }
 .quick_links_min .quick_links_panel{right:280px;}
-.quick_links li,.quick_toggle li{position:relative;display:block;left:0;top:0px;}
+.quick_links li,.quick_toggle li{position:relative;display:block;left:0;top:-150px;}
 .history_list,.leave_message,.mpbtn_histroy,.mpbtn_wdsc,.mpbtn_recharge{margin-bottom:6px;}
 
 .quick_links a:hover, .quick_links a.current,.quick_toggle a:hover{background:#ed145b;text-decoration:none;}
