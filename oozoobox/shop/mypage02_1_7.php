@@ -30,6 +30,10 @@ include_once('./_head.php');
 $skin_path = $member_skin_path;
 $skin_url = $member_skin_url;
 ?>
+
+
+
+
 		<a href="/shop/mypage.php"><h3 class="mp_tit">MY OOZOOBOX <span class="mp_tit_small">고객님의 개인정보, 주문 내역 등의 이용 기록을 조회할 수 있습니다.</span></h3></a>
 		<? include ("member_left.php");?>   
         
@@ -46,8 +50,8 @@ $skin_url = $member_skin_url;
                판매자가 반품승인하면 고객님께 환불됩니다. 
                 </span>
                 <div class="basicbtns">
-                    <a href="/shop/mypage02_1.php"><button><img src="/images/btn_Gomypage02_1.png" alt="Go mypage02_1"/></button></a>
-                    <a href="/"><button><img src="/images/btn_Gohome.png" alt="首页"/></button></a>
+                    <a href="/shop/mypage02_1.php"><img src="/images/btn_Gomypage02_1.png" alt="Go mypage02_1"/></a>
+                    <a href="/shop/mypage.php"><img src="/images/btn_Gohome.png" alt="Mypage首页"/></a>
                 </div>    
             </div>
         </div>

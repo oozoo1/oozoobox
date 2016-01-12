@@ -267,7 +267,7 @@ $skin_url = $member_skin_url;
                             </div>
                             <div class="buttons">
                                 <a href="/shop/mypage02_1_5.php" class="button"><button class="cancel">반품 / 취소요청</button></a>
-                                <a class="button"><button class="orange">상품평 | 구매결정</button></a>
+                                <a onClick="window.open('/shop/popup/pop05.html', '', 'width=660, height=535, scrollbars=no')" class="button"><button class="orange">상품평 | 구매결정</button></a>
                             </div>
                         </td>
                     </tr>                    
@@ -331,10 +331,10 @@ $skin_url = $member_skin_url;
                             	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
                             </div>
                             <div class="buttons">
-                            	<a class="button">
-                                <button class="cancel">미수령</button>
-                                <button class="cancel">반품신청</button>
-                                <button class="orange">상품평 | 구매결정</button>                                                               
+                            	
+                                <a class="button"><button class="cancel">미수령</button></a>
+                                <a href="/shop/mypage02_1_5.php" class="button">><button class="cancel">반품신청</button></a>
+                                <a onClick="window.open('/shop/popup/pop05.html', '', 'width=660, height=535, scrollbars=no')" class="button"><button class="orange">상품평 | 구매결정</button></a>                                                               
                                 </a>
                             </div>
                         </td>
@@ -382,12 +382,9 @@ $skin_url = $member_skin_url;
                             </span>
                         </td>
                         <td class="status">
-                        	<strong class="status-msg">거래완료</strong>
-                            <span class="status-date">
-                            구매결정일자
-                            <br>
-                            ( <span class="num">12-30</span>
-                            결정 )
+                        	<strong class="status-msg">미수령신고</strong>
+                            <span class="tracking">
+	                            <a>배송추척</a>
                             </span>
                             <br>
                         </td>
@@ -408,7 +405,7 @@ $skin_url = $member_skin_url;
                         </td>
                     </tr>                                          
                     <!-------e: 05.미수령을 눌렀을때---------->    
-                    <!-------s: 06.반품정보를 눌렀을때---------->
+                    <!-------s: 06.반품신청을 눌렀을때---------->
                     <tr class="separate">
                     	<td rowspan="2" class="date-payment-num">
                         	<div class="date-num">
@@ -450,12 +447,9 @@ $skin_url = $member_skin_url;
                             </span>
                         </td>
                         <td class="status">
-                        	<strong class="status-msg">거래완료</strong>
-                            <span class="status-date">
-                            구매결정일자
-                            <br>
-                            ( <span class="num">12-30</span>
-                            결정 )
+                        	<strong class="status-msg">반품신청</strong>
+                            <span class="tracking">
+	                            <a>배송추척</a>
                             </span>
                             <br>
                         </td>
@@ -468,13 +462,13 @@ $skin_url = $member_skin_url;
                             </div>
                             <div class="buttons">
                             	<a class="button">
-                                <button class="cancel">반품철회</button>
+                                <button class="cancel">반품신청철회</button>
                                 <button class="orange">반품정보수정</button>                                                               
                                 </a>
                             </div>
                         </td>
                     </tr>                                          
-                    <!-------e: 06.반품정보를 눌렀을때---------->
+                    <!-------e: 06.반품신청을 눌렀을때---------->
                     <!-------s: 07.거래완료일때---------->
                     <tr class="separate">
                     	<td rowspan="2" class="date-payment-num">

@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>OOZOOBOX</title>
+<style>
+html, body, div, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select{margin:0; padding:0;}
+body, input, textarea, select, button, table{font:12px/16px "Microsoft YaHei",arial,"宋体",Dotum,"돋움";}
+img, fieldset{border:0;}
+a, a:hover, a:active{cursor: pointer;}
+table{border-collapse:collapse; border:0 none;}
+
+#pop05_wrap {width:660px; height:535px; color:#666;}
+.pop05_tit {width:660px; border-bottom:1px solid #e7e7e7;}
+.pop05_tit h3 {width:100%; height:38px; background-color:#fa9551; font-size:18px; color:#fff; padding:10px 0 0 20px; line-height:1.5;}
+
+.pop05_content {position:relative; padding:25px; width:610px; height:535px; }
+.evaluation_info {overflow:hidden;}
+.evaluation_info .info-img {width:60px; height:60px; float:left;}
+.evaluation_info .info_item {float:left; height:60px; padding-left:20px; width:480px;}
+.info_item .item-name {font-size:12px; line-height:16px; padding-bottom:4px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}
+.info_item .item-option {font-size:11px; line-height:15px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}
+.evaluation_star {width:610px; margin-top:20px; border-top:1px solid #ddd;}
+.evaluation_star h4 {font-size:16px; padding:10px 0 7px 25px; margin-top:20px; background:url("/images/bg_popup05_smile.png") no-repeat 0 10px; color:#333333; font-weight:bold; line-height:20px;}
+.evaluation_star h4 .small {font-size:12px; font-weight:normal; color:#666;}
+.select_star {margin:0 0 7px 25px; border:1px solid #ddd; width:200px; height:20px; }
+.buy-agree input {margin:5px 5px 0 30px;}
+.buy-agree .red {color:#FA4A4D; font-weight:bold;}
+.buy-agree .darkred {color:#999;}
+span.auto-agree {display:block; padding:2px 0 7px 48px;}
+span.auto-agree em {font-style:normal; font-weight:bold;}
+.explain {margin:20px 0 7px 25px; padding:10px; border:1px solid #ddd; width:550px; line-height:18px;}
+.btns {text-align:center; margin-top:40px;}
+.btns a{margin:0 3px;}
+</style>
+</head>
+
+<body>
+
+<div class="pass_confirm" id="pop05_wrap">
+    <div class="pop05_tit">
+        <h3>상품평 | 구매결정</h3>
+    </div>
+    
+    <div class="pop05_content">
+    	<div class="evaluation_info">
+            <div class="info-img">
+            	<img src="/images/popup05_1.png" width="58" height="58" style="border:1px solid #ddd;" alt="상품이름"/>
+            </div> 
+            <div class="info_item">
+            	<p class="item-name">ddddddddddddddddddddd</p>
+                <p class="item-option">aaaaaaaaaaaaaaaaaaaaa</p>
+            </div>
+        </div>
+        <div class="evaluation_star">
+        	<h4>상품에 대한 만족도를 선택해주세요.<br>
+            <span class="small">고객님의 평가는 상품페이지의 제품만족점수에 반영이 됩니다.</span></h4>
+            <select class="select_star">
+            	<option>평가해주세요</option>
+                <option>별다섯개</option>
+                <option>별네개</option>
+                <option>별셋</option>
+                <option>별둘</option>
+                <option>별하나</option>
+            </select>
+        </div>
+        <div class="buy-agree">
+            <p class="explain"><b>구매결정이란?</b><br>
+            상품을 받고 거래 종료와 함께 구매하겠다는 의사를 표시하는 것으로, <br>
+            구매결정 시 판매자에게 상품대금이 송금되어, 반품/교환이 불가합니다.<br> 
+            배송완료 후 7일 이내 구매결정을 하지 않은 상품은 자동으로 구매결정 됩니다. </p>
+        	<input type="checkbox"/><b>구매결정</b> (OOZOOBOX포인트 <span class="red">200</span> 적립)<span class="darkred"> 구매결정 시 반품/교환이 불가</span> 
+            <span class="auto-agree">자동구매결정 예정일 : <em>2015-12-26</em></span>        </div>
+        <div class="btns">
+            <a href="/shop/popup/pop06.html"><img src="/images/btn_pass_ok.png" alt="确认"/></a>
+            <a onClick="window.close()"><img src="/images/btn_popup03_c.png" alt="取消"/></a>
+    	</div> 
+    </div> 
+               
+</div>                            
+                        
+
+
+</body>
+</html>

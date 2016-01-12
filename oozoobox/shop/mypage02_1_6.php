@@ -111,8 +111,8 @@ $skin_url = $member_skin_url;
             
             
             <div class="basicbtns">
-            	<a href="/shop/mypage02_1_7.php"><button><img src="/images/btn_pass_ok_02.png"></button></a>
-                <a href="/shop/mypage02_1.php"><button><img src="/images/btn_my_cancel.png"></button></a>
+            	<a href="/shop/mypage02_1.php"><img src="/images/btn_my_before.png"></a>
+                <a href="/shop/mypage02_1_7.php"><img src="/images/btn_my_next.png"></a>
             </div>                    
             
         </div>
