@@ -647,6 +647,12 @@ $(function(){
 	var secondWidth = $('#oz_glo2 #nav .second').width();
 
 	var indexNo = <?php echo $ca_id?> / 10;
+	//메뉴순서가 변경되어 있음 (10 || 20 || 30 || 50 || 40)
+	if(indexNo == 4){
+		indexNo = 5;
+	}else if(indexNo == 5){
+		indexNo = 4;
+	}	
 	//탑메뉴 초기 선택 S ==========================
 	$(eval("on_cho_ko"+indexNo)).addClass('on');
 	//탑메뉴 초기 선택 E ==========================
