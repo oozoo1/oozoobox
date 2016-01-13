@@ -542,14 +542,14 @@ $od_zip2          = substr($od_zip, 3);
 $od_addr1         = clean_xss_tags($od_addr1);
 $od_addr2         = clean_xss_tags($od_addr2);
 $od_addr3         = clean_xss_tags($od_addr3);
-$od_addr_jibeon   = preg_match("/^(N|R)$/", $od_addr_jibeon) ? $od_addr_jibeon : '';
+$od_addr_jibeon   = $_POST[$od_addr_jibeon];
 $od_b_name        = clean_xss_tags($od_b_name);
 $od_b_tel         = clean_xss_tags($od_b_tel);
 $od_b_hp          = clean_xss_tags($od_b_hp);
 $od_b_addr1       = clean_xss_tags($od_b_addr1);
 $od_b_addr2       = clean_xss_tags($od_b_addr2);
 $od_b_addr3       = clean_xss_tags($od_b_addr3);
-$od_b_addr_jibeon = preg_match("/^(N|R)$/", $od_b_addr_jibeon) ? $od_b_addr_jibeon : '';
+$od_b_addr_jibeon = $_POST[od_b_addr_jibeon];
 $od_memo          = clean_xss_tags($od_memo);
 $od_deposit_name  = clean_xss_tags($od_deposit_name);
 $od_tax_flag      = $default['de_tax_flag_use'];
@@ -610,7 +610,6 @@ $sql = " insert {$g5['g5_shop_order_table']}
                 od_settle_case    = '$od_settle_case'
                 ";
 $result = sql_query($sql, false);
-
 // 주문정보 입력 오류시 결제 취소
 if(!$result) {
     if($tno) {
