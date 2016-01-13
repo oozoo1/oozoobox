@@ -646,14 +646,14 @@ $(function(){
 	var liWidth = $('#oz_glo2 #nav li').width();
 	var secondWidth = $('#oz_glo2 #nav .second').width();
 
-	var indexNo = <?php echo $ca_id?> / 10 - 1;
+	var indexNo = <?php echo $ca_id?> / 10;
 	//탑메뉴 초기 선택 S ==========================
 	$(eval("on_cho_ko"+indexNo)).addClass('on');
 	//탑메뉴 초기 선택 E ==========================
 	
 	//탑메뉴 하단 삼각형 초기 이동 S ==========================
 	$('#oz_glo2 .dot span').stop().animate({
-		left:liWidth*indexNo+'px'
+		left:liWidth*(indexNo-1)+'px'
 	},200);
 	//탑메뉴 하단 삼각형 초기 이동 E ==========================
 	
