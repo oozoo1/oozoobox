@@ -156,9 +156,9 @@ $skin_url = $member_skin_url;
                 
                 <h4 class="strapline">3. 반품할 물건을 이미 보내셨나요?</h4>    	            
                 <div class="rtstit-radio">
-                     <label><input type="radio" name="type" id="Radio_btn" onclick="Rradio_OnOff('Radio_On');"  /> 예</label>
-                     <label><input type="radio"  name="type" id="Radio_btn" onclick="Rradio_OnOff('Radio_Off');" checked /> 아니오</label>                 
-                     <span id="Radio_On" height="30" style="display:none">
+                     <label><input type="radio" name="type" id="Radio_btn" onclick="Rradio_OnOff('Radio_On');"  checked/> 예</label>
+                     <label><input type="radio"  name="type" id="Radio_btn" onclick="Rradio_OnOff('Radio_Off');" /> 아니오</label>                 
+                     <span id="Radio_On" height="30" >
                          <p style="font-size:12px; padding-top:10px;">이용하신 EMS 운송번호 기재하시면 상품 위치추적을 할 수 있으며, 신속하게 환불해 드릴 수 있습니다.</p>
                          <select class="SelDelivery">
                             <option value="0">발송방법선택</option>

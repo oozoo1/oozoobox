@@ -332,7 +332,7 @@ $skin_url = $member_skin_url;
                             </div>
                             <div class="buttons">
                             	
-                                <a class="button"><button class="cancel">미수령</button></a>
+                                <a onClick="window.open('/shop/popup/pop09.html', '', 'width=500, height=530, scrollbars=no')" class="button"><button class="cancel">미수령</button></a>
                                 <a href="/shop/mypage02_1_5.php" class="button"><button class="cancel">반품신청</button></a>
                                 <a onClick="window.open('/shop/popup/pop05.html', '', 'width=660, height=535, scrollbars=no')" class="button"><button class="orange">상품평 | 구매결정</button></a>                                                               
                                 </a>
@@ -396,11 +396,10 @@ $skin_url = $member_skin_url;
                             	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
                             </div>
                             <div class="buttons">
-                            	<a class="button">
-                                <button class="cancel">미수령신고철회</button>
-                                <button class="cancel">반품신청</button>
-                                <button class="orange">상품평 | 구매결정</button>                                                               
-                                </a>
+                            	
+                                <a class="button"><button class="cancel">미수령신고철회</button></a> <!--경고창 : "미수령신고를 철회하시겠습니?"-->
+                                <a href="/shop/mypage02_1_5.php" class="button"><button class="cancel">반품신청</button></a>
+                                <a onClick="window.open('/shop/popup/pop05.html', '', 'width=660, height=535, scrollbars=no')" class="button"><button class="orange">상품평 | 구매결정</button></a>
                             </div>
                         </td>
                     </tr>                                          
@@ -461,10 +460,10 @@ $skin_url = $member_skin_url;
                             	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
                             </div>
                             <div class="buttons">
-                            	<a class="button">
-                                <button class="cancel">반품신청철회</button>
-                                <button class="orange">반품정보수정</button>                                                               
-                                </a>
+                            	
+                                <a class="button"><button class="cancel">반품신청철회</button></a> <!--경고창 : 반품신청을 철회하시겠습니까?"-->
+                                <a href="/shop/mypage02_1_8.php" class="button"><button class="orange">반품정보수정</button></a>                                                               
+                                
                             </div>
                         </td>
                     </tr>                                          
