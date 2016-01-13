@@ -273,7 +273,7 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
 	<div class="oz_glo2_bg">
     	<div class="oz_glo2_navbg">
             <ul id="nav">
-                <li class="on">
+                <li id="on_cho_ko1">
                     <a href="/shop/list.php?ca_id=10" class="first glo_1">给宝宝最好的</a>
                     <div class="second">
                     	<dl class="second_left">
@@ -345,7 +345,7 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                         <!--e:GLOBAL2 MD추천상품-->         
                     </div>
                 </li>
-                <li>
+                <li id="on_cho_ko2">
                     <a href="/shop/list.php?ca_id=20" class="glo_2">白滑牛奶皮</a>
                     <div class="second">
                     	<dl class="second_left">
@@ -417,7 +417,7 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                         <!--e:GLOBAL2 MD추천상품-->                                               
                     </div>
                 </li>
-                <li>
+                <li id="on_cho_ko3">
                     <a href="/shop/list.php?ca_id=30" class="glo_3">津津有味</a>
                     <div class="second">
                     	<dl class="second_left">
@@ -489,7 +489,7 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                         <!--e:GLOBAL2 MD추천상품-->                                                                              
                     </div>
                 </li>
-                <li>
+                <li id="on_cho_ko4">
                     <a href="/shop/list.php?ca_id=50" class="glo_4">小生活必备</a>
                     <div class="second">
                     	<dl class="second_left">
@@ -560,7 +560,7 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                         <!--e:GLOBAL2 MD추천상품-->                                                      
                     </div>
                 </li>
-                <li>
+                <li id="on_cho_ko5">
                     <a href="/shop/list.php?ca_id=40" class="glo_5">美丽的穿着</a>
                     <div class="second">
                      	<dl class="second_left">
@@ -644,7 +644,25 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
 <script>
 $(function(){
 	var liWidth = $('#oz_glo2 #nav li').width();
-	var secondWidth = $('#oz_glo2 #nav .second').width();	
+	var secondWidth = $('#oz_glo2 #nav .second').width();
+
+	var indexNo = <?php echo $ca_id?> / 10;
+	//메뉴순서가 변경되어 있음 (10 || 20 || 30 || 50 || 40)
+	if(indexNo == 4){
+		indexNo = 5;
+	}else if(indexNo == 5){
+		indexNo = 4;
+	}	
+	//탑메뉴 초기 선택 S ==========================
+	$(eval("on_cho_ko"+indexNo)).addClass('on');
+	//탑메뉴 초기 선택 E ==========================
+	
+	//탑메뉴 하단 삼각형 초기 이동 S ==========================
+	$('#oz_glo2 .dot span').stop().animate({
+		left:liWidth*(indexNo-1)+'px'
+	},200);
+	//탑메뉴 하단 삼각형 초기 이동 E ==========================
+	
 	$('#oz_glo2 #nav li').hover(function(){
 		var index = $(this).index();
 		$('#oz_glo2 .dot span').stop().animate({
