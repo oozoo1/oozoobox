@@ -647,6 +647,12 @@ $(function(){
 	var secondWidth = $('#oz_glo2 #nav .second').width();
 
 	var indexNo = <?php echo $ca_id?> / 10;
+	
+	//2뎁스 메뉴로 내려갈시 ca_id가 4자리로 나와서 변경처리 함.
+	if(indexNo > 99){
+		indexNo = Math.floor(indexNo / 100);
+	}
+	
 	//메뉴순서가 변경되어 있음 (10 || 20 || 30 || 50 || 40)
 	if(indexNo == 4){
 		indexNo = 5;
