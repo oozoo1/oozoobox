@@ -18,6 +18,42 @@ if($header_skin)
 
 ?>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="well well-sm">
 	<i class="fa fa-bell fa-lg"></i> 주문서번호 링크를 누르시면 주문상세내역을 조회하실 수 있습니다.
 </div>
