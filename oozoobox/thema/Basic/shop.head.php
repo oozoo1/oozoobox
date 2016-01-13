@@ -205,10 +205,6 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                                     <a href="/shop/orderinquiry.php" target="_top">我的购物信息 </a><!--"내 쇼핑 정보"-->
                                     <!--SW: display:none 으로 되어 있는데 아마도 판매자로 로그인 하면 display:block으로 되지 않을까??-->
                                 </li>
-                                <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->                        
-                                <li class="oz_sn_delivery ">
-                                    <a href="/shop/orderinquiry.php" target="_top">订单跟踪 </a><!--"배송정보"--> 
-                                </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <li class="oz_sn_customcenter">
                                     <a href="/shop/cscenter.php">客户服务</a><!--"고객센터"-->

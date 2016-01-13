@@ -105,14 +105,26 @@ if($_GET[oldtime]=="7"){ $od_time="and od_time <'$time366'";}
 
 
 
+if($_GET[sc]){
+$sc=$_GET[sc];
+ 	$sql = " select a.*
+	from g5_shop_order a
+	, g5_shop_cart b
+	where a.od_id = b.od_id
+	and b.it_name like '%$sc%'
+	and b.mb_id = '$member[mb_id]' 
+	order by od_id desc
+	$limit ";
 
+}else{
 
-echo $sql = " select *
-		   from {$g5['g5_shop_order_table']}
-		  where mb_id = '{$member['mb_id']}' $od_status $od_time 
-		  order by od_id desc
-		  $limit ";
-		  
+	$sql = " select *
+	from {$g5['g5_shop_order_table']}
+	where mb_id = '{$member['mb_id']}' $od_status $od_time 
+	order by od_id desc
+	$limit ";
+
+}
 		  
 		  
 		  
@@ -132,10 +144,10 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
 			$od_status = '상품준비중';
 			break;
 		case '배송':
-			$od_status = '상품배송';
+			$od_status = '상품배송중';
 			break;
 		case '완료':
-			$od_status = '배송완료';
+			$od_status = '거래완료';
 			break;
 		default:
 			$od_status = '주문취소';
@@ -205,8 +217,10 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                     <span class="date">2015-10-06 ~ 2016-01-05</span>
                 </div>
                 <div class="order-search">
-                    <input class="text" type="text" style="width:138px"/>
+                <form method="get">
+                    <input class="text" name="sc" value="<?=$_GET[sc]?>" type="text" style="width:138px; height:22px;"/>
                     <input class="btn_search" type="submit" value="조회"/>
+                </form>
                 </div>
             </div>
             <div class="orderview-option">
@@ -310,6 +324,19 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
 																}
                               ?>
                           </strong>
+                          <? if($list[$i][od_status]=="상품배송중"){?>
+                            <span class="tracking">
+                                <a>배송추척</a>
+                            </span>
+                          <? } ?>
+                          <? if($list[$i][od_status]=="거래완료"){?>
+                            <span class="status-date">
+                            구매결정일자
+                            <br>
+                            ( <span class="num">12-30</span>
+                            결정 )
+                            </span>
+                          <? } ?>
                           
                           <? if($list[$i][od_status]=="결제대기중"){?>
                           <br><br>
@@ -336,864 +363,36 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                             	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
                             </div>
                             <div class="buttons">
-                            	<a href="/shop/mypage02_1_1.php" class="button">
-                                	<button class="cancel">주문취소</button>
-                                </a>
-                                <a class="button">
-                                	<button class="orange">배송정보수정</button>
-                                </a>
+                            
+                            <? if($list[$i][od_status]=="결제대기중" || $list[$i][od_status]=="상품준비중" || $list[$i][od_status]=="결제완료"){ ?>
+                              <a href="/shop/mypage02_1_1.php" class="button">
+                              	<button class="cancel">주문취소요청</button>
+                              </a>
+                              <a class="button">
+                               	<button class="orange">배송정보수정</button>
+                              </a>
+                            <? } ?>
+                            
+                            <? if($list[$i][od_status]=="상품배송중"){ ?>
+                            	<a onClick="window.open('/shop/popup/pop05.html', '', 'width=660, height=535, scrollbars=no')" class="button"><button class="orange">상품평 | 구매결정</button></a>
+                            <? } ?>
+														
+                            <? if($list[$i][od_status]=="거래완료"){ ?>
+                              <a class="button" onClick="window.open('/shop/popup/pop07.html', '', 'width=600, height=760, scrollbars=no')" >
+                              <button class="cancel">상품평작성하기</button>
+                              </a>
+                            <? } ?>
+
+														<? if($list[$i][od_status]=="상품배송중"){ ?>
+                           	 <a href="/shop/mypage02_1_5.php" class="button"><button class="cancel">반품 / 취소요청</button></a>
+                            <? } ?>
+                            
                             </div>
                         </td>
                     </tr>                   
 
 <!-------------------s: 02.상품준비중일때 (1개)----------------------->
-                    <? } ?>
-                    <tr class="separate">
-                    	<td rowspan="2" class="date-payment-num">
-                        	<div class="date-num">
-                            	<strong>2016-01-04</strong>
-                                <a>( <span>887634010</span> )</a>
-                            </div>
-                            <div class="total-charge">
-                            결제금액
-                            	<strong class="charge">
-                                	¥<span class="num">121</span>
-                                </strong>
-                            </div>
-                            <div class="detail-link">
-                            	<a class="link">주문상세보기</a>
-                            </div>
-                        </td>
-                        <td class="product">
-                        	<div class="product-block">
-                            	<a class="product-thumbnail">
-                                	<img src="/images/mypage_oder_list01.png" style="width:60px; height:60px" alt="상품01"/>
-                                </a>
-                                <div class="product-content">
-                                	<div class="product-name">
-                                    	<a>ddddddddddddddddddddd</a>
-                                    </div>
-                                    <div class="product-option">
-                                    aaaaaaaaaaaaaaaaaaa
-                                    </div>
-                                    <div class="order-num">
-                                        <span class="mp_label">주문번호</span>
-                                    123456789
-                                    </div>
-                            	</div>
-                            </div>
-                        </td>
-                        <td class="seller">
-                        	<span class="seller-info">
-                            	베이비제이
-                            </span>
-                        </td>
-                        <td class="status">
-                        	<strong class="status-msg">상품준비중</strong>
-                            <span class="status-date">
-                        </td>
-                    </tr>
-                    <tr>
-                    	<td colspan="3" class="actions">
-                        	<div class="links">
-                                <a class="declaration">신고하기</a>                            
-                            	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
-                            </div>
-                            <div class="buttons">
-                            	<a href="/shop/mypage02_1_4.php" class="button">
-                                <button class="cancel">주문취소요청</button>
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
-<!-------------------e: 02.상품준비중일때 (1개)----------------------->
-<!-------------------s: 02.상품준비중일때 (2개이상)--------------------->
-                    <tr class="separate">
-                    	<td rowspan="4" class="date-payment-num"> <!--상품수*2해주세요-->
-                        	<div class="date-num">
-                            	<strong>2016-01-04</strong>
-                                <a>( <span>887634010</span> )</a>
-                            </div>
-                            <div class="total-charge">
-                            결제금액
-                            	<strong class="charge">
-                                	¥<span class="num">121</span>
-                                </strong>
-                            </div>
-                            <div class="detail-link">
-                            	<a class="link">주문상세보기</a>
-                            </div>
-                        </td>
-                        <!--상품1.-->
-                        <td class="product">
-                        	<div class="product-block">
-                            	<a class="product-thumbnail">
-                                	<img src="/images/mypage_oder_list01.png" style="width:60px; height:60px" alt="상품01"/>
-                                </a>
-                                <div class="product-content">
-                                	<div class="product-name">
-                                    	<a>ddddddddddddddddddddd</a>
-                                    </div>
-                                    <div class="product-option">
-                                    aaaaaaaaaaaaaaaaaaa
-                                    </div>
-                                    <div class="order-num">
-                                        <span class="mp_label">주문번호</span>
-                                    123456789
-                                    </div>
-                            	</div>
-                            </div>
-                        </td>
-                        <td class="seller">
-                        	<span class="seller-info">
-                            	베이비제이
-                            </span>
-                        </td>
-                        <td class="status">
-                        	<strong class="status-msg">상품준비중</strong>
-                            <span class="status-date">
-                        </td>
-                    </tr>
-                    <tr>
-                    	<td colspan="3" class="actions">
-                        	<div class="links">
-                                <a class="declaration">신고하기</a>                            
-                            	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
-                            </div>
-                            <div class="buttons">
-                            	<a href="/shop/mypage02_1_4.php" class="button">
-                                <button class="cancel">주문취소요청</button>
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
- 						<td class="product">
-                        	<div class="product-block">
-                            	<a class="product-thumbnail">
-                                	<img src="/images/mypage_oder_list01.png" style="width:60px; height:60px" alt="상품01"/>
-                                </a>
-                                <div class="product-content">
-                                	<div class="product-name">
-                                    	<a>ddddddddddddddddddddd</a>
-                                    </div>
-                                    <div class="product-option">
-                                    aaaaaaaaaaaaaaaaaaa
-                                    </div>
-                                    <div class="order-num">
-                                        <span class="mp_label">주문번호</span>
-                                    123456789
-                                    </div>
-                            	</div>
-                            </div>
-                        </td>
-                        <td class="seller">
-                        	<span class="seller-info">
-                            	베이비제이
-                            </span>
-                        </td>
-                        <td class="status">
-                        	<strong class="status-msg">상품준비중</strong>
-                            <span class="status-date">
-                        </td>
-                    </tr>
-                    <tr>
-                    	<td colspan="3" class="actions">
-                        	<div class="links">
-                                <a class="declaration">신고하기</a>                            
-                            	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
-                            </div>
-                            <div class="buttons">
-                            	<a href="/shop/mypage02_1_4.php" class="button">
-                                <button class="cancel">주문취소요청</button>
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
-<!-------------------e: 02.상품준비중일때 (2개이상)--------------------->
-
-
-<!-------------------s: 03.배송중일때 (1개) --------------------------->
-                    <tr class="separate">
-                    	<td rowspan="2" class="date-payment-num">
-                        	<div class="date-num">
-                            	<strong>2016-01-04</strong>
-                                <a>( <span>887634010</span> )</a>
-                            </div>
-                            <div class="total-charge">
-                            결제금액
-                            	<strong class="charge">
-                                	¥<span class="num">121</span>
-                                </strong>
-                            </div>
-                            <div class="detail-link">
-                            	<a class="link">주문상세보기</a>
-                            </div>
-                        </td>
-                        <td class="product">
-                        	<div class="product-block">
-                            	<a class="product-thumbnail">
-                                	<img src="/images/mypage_oder_list01.png" style="width:60px; height:60px" alt="상품01"/>
-                                </a>
-                                <div class="product-content">
-                                	<div class="product-name">
-                                    	<a>ddddddddddddddddddddd</a>
-                                    </div>
-                                    <div class="product-option">
-                                    aaaaaaaaaaaaaaaaaaa
-                                    </div>
-                                    <div class="order-num">
-                                        <span class="mp_label">주문번호</span>
-                                    123456789
-                                    </div>
-                            	</div>
-                            </div>
-                        </td>
-                        <td class="seller">
-                        	<span class="seller-info">
-                            	베이비제이
-                            </span>
-                        </td>
-                        <td class="status">
-                        	<strong class="status-msg">배송중</strong>
-                            <span class="tracking">
-	                            <a>배송추척</a>
-                            </span>
-                            <br>
-                        </td>
-                    </tr>
-                    <tr>
-                    	<td colspan="3" class="actions">
-                        	<div class="links">
-                                <a class="declaration">신고하기</a>                            
-                            	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
-                            </div>
-                            <div class="buttons">
-                                <a href="/shop/mypage02_1_5.php" class="button"><button class="cancel">반품 / 취소요청</button></a>
-                                <a onClick="window.open('/shop/popup/pop05.html', '', 'width=660, height=535, scrollbars=no')" class="button"><button class="orange">상품평 | 구매결정</button></a>
-                            </div>
-                        </td>
-                    </tr>                    
-<!-------------------s: 03.배송중일때 (1개) --------------------------->
-<!-------------------s: 03.배송중일때 (2개 이상) --------------------------->
-                    <tr class="separate">
-                    	<td rowspan="4" class="date-payment-num"><!--상품수*2-->
-                        	<div class="date-num">
-                            	<strong>2016-01-04</strong>
-                                <a>( <span>887634010</span> )</a>
-                            </div>
-                            <div class="total-charge">
-                            결제금액
-                            	<strong class="charge">
-                                	¥<span class="num">121</span>
-                                </strong>
-                            </div>
-                            <div class="detail-link">
-                            	<a class="link">주문상세보기</a>
-                            </div>
-                        </td>
-                        <!--상품.1-->
-                        <td class="product">
-                        	<div class="product-block">
-                            	<a class="product-thumbnail">
-                                	<img src="/images/mypage_oder_list01.png" style="width:60px; height:60px" alt="상품01"/>
-                                </a>
-                                <div class="product-content">
-                                	<div class="product-name">
-                                    	<a>ddddddddddddddddddddd</a>
-                                    </div>
-                                    <div class="product-option">
-                                    aaaaaaaaaaaaaaaaaaa
-                                    </div>
-                                    <div class="order-num">
-                                        <span class="mp_label">주문번호</span>
-                                    123456789
-                                    </div>
-                            	</div>
-                            </div>
-                        </td>
-                        <td class="seller">
-                        	<span class="seller-info">
-                            	베이비제이
-                            </span>
-                        </td>
-                        <td class="status">
-                        	<strong class="status-msg">배송중</strong>
-                            <span class="tracking">
-	                            <a>배송추척</a>
-                            </span>
-                            <br>
-                        </td>
-                    </tr>
-                    <tr>
-                    	<td colspan="3" class="actions">
-                        	<div class="links">
-                                <a class="declaration">신고하기</a>                            
-                            	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
-                            </div>
-                            <div class="buttons">
-                                <a href="/shop/mypage02_1_5.php" class="button"><button class="cancel">반품 / 취소요청</button></a>
-                                <a onClick="window.open('/shop/popup/pop05.html', '', 'width=660, height=535, scrollbars=no')" class="button"><button class="orange">상품평 | 구매결정</button></a>
-                            </div>
-                        </td>
-                    </tr>
-                    <!--상품.2 -->   
-                    <tr>
-                       <td class="product">
-                        	<div class="product-block">
-                            	<a class="product-thumbnail">
-                                	<img src="/images/mypage_oder_list01.png" style="width:60px; height:60px" alt="상품01"/>
-                                </a>
-                                <div class="product-content">
-                                	<div class="product-name">
-                                    	<a>ddddddddddddddddddddd</a>
-                                    </div>
-                                    <div class="product-option">
-                                    aaaaaaaaaaaaaaaaaaa
-                                    </div>
-                                    <div class="order-num">
-                                        <span class="mp_label">주문번호</span>
-                                    123456789
-                                    </div>
-                            	</div>
-                            </div>
-                        </td>
-                        <td class="seller">
-                        	<span class="seller-info">
-                            	베이비제이
-                            </span>
-                        </td>
-                        <td class="status">
-                        	<strong class="status-msg">배송중</strong>
-                            <span class="tracking">
-	                            <a>배송추척</a>
-                            </span>
-                            <br>
-                        </td>
-                    </tr>
-                     <tr>
-                    	<td colspan="3" class="actions">
-                        	<div class="links">
-                                <a class="declaration">신고하기</a>                            
-                            	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
-                            </div>
-                            <div class="buttons">
-                                <a href="/shop/mypage02_1_5.php" class="button"><button class="cancel">반품 / 취소요청</button></a>
-                                <a onClick="window.open('/shop/popup/pop05.html', '', 'width=660, height=535, scrollbars=no')" class="button"><button class="orange">상품평 | 구매결정</button></a>
-                            </div>
-                        </td>
-                    </tr>                                                          
-<!-------------------s: 03.배송중일때 (2개이상) --------------------------->
-
-<!-------------------s: 04.배송완료일때 (1개) ----------------------------->
-                    <tr class="separate">
-                    	<td rowspan="2" class="date-payment-num">
-                        	<div class="date-num">
-                            	<strong>2016-01-04</strong>
-                                <a>( <span>887634010</span> )</a>
-                            </div>
-                            <div class="total-charge">
-                            결제금액
-                            	<strong class="charge">
-                                	¥<span class="num">121</span>
-                                </strong>
-                            </div>
-                            <div class="detail-link">
-                            	<a class="link">주문상세보기</a>
-                            </div>
-                        </td>
-                        <td class="product">
-                        	<div class="product-block">
-                            	<a class="product-thumbnail">
-                                	<img src="/images/mypage_oder_list01.png" style="width:60px; height:60px" alt="상품01"/>
-                                </a>
-                                <div class="product-content">
-                                	<div class="product-name">
-                                    	<a>ddddddddddddddddddddd</a>
-                                    </div>
-                                    <div class="product-option">
-                                    aaaaaaaaaaaaaaaaaaa
-                                    </div>
-                                    <div class="order-num">
-                                        <span class="mp_label">주문번호</span>
-                                    123456789
-                                    </div>
-                            	</div>
-                            </div>
-                        </td>
-                        <td class="seller">
-                        	<span class="seller-info">
-                            	베이비제이
-                            </span>
-                        </td>
-                        <td class="status">
-                        	<strong class="status-msg">배송완료</strong>
-                            <span class="status-date">
-								<span class="num">12-30</span>결정
-                            </span>
-                            <span class="tracking">
-	                            <a>배송추척</a>
-                            </span>                            
-                            <br>
-                        </td>
-                    </tr>
-                    <tr>
-                    	<td colspan="3" class="actions">
-                        	<div class="links">
-                                <a class="declaration">신고하기</a>                            
-                            	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
-                            </div>
-                            <div class="buttons">
-                            	
-                                <a onClick="window.open('/shop/popup/pop09.html', '', 'width=500, height=530, scrollbars=no')" class="button"><button class="cancel">미수령</button></a>
-                                <a href="/shop/mypage02_1_5.php" class="button"><button class="cancel">반품신청</button></a>
-                                <a onClick="window.open('/shop/popup/pop05.html', '', 'width=660, height=535, scrollbars=no')" class="button"><button class="orange">상품평 | 구매결정</button></a>                                                               
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
-<!-------------------e: 04.배송완료일때 (1개) ----------------------------->
-
-<!-------------------s: 04.배송완료일때 (2개 이상) ----------------------------->
-                    <tr class="separate">
-                    	<td rowspan="4" class="date-payment-num"> <!--상품수*2-->
-                        	<div class="date-num">
-                            	<strong>2016-01-04</strong>
-                                <a>( <span>887634010</span> )</a>
-                            </div>
-                            <div class="total-charge">
-                            결제금액
-                            	<strong class="charge">
-                                	¥<span class="num">121</span>
-                                </strong>
-                            </div>
-                            <div class="detail-link">
-                            	<a class="link">주문상세보기</a>
-                            </div>
-                        </td>
-                        <!--상품.1-->
-                        <td class="product">
-                        	<div class="product-block">
-                            	<a class="product-thumbnail">
-                                	<img src="/images/mypage_oder_list01.png" style="width:60px; height:60px" alt="상품01"/>
-                                </a>
-                                <div class="product-content">
-                                	<div class="product-name">
-                                    	<a>ddddddddddddddddddddd</a>
-                                    </div>
-                                    <div class="product-option">
-                                    aaaaaaaaaaaaaaaaaaa
-                                    </div>
-                                    <div class="order-num">
-                                        <span class="mp_label">주문번호</span>
-                                    123456789
-                                    </div>
-                            	</div>
-                            </div>
-                        </td>
-                        <td class="seller">
-                        	<span class="seller-info">
-                            	베이비제이
-                            </span>
-                        </td>
-                        <td class="status">
-                        	<strong class="status-msg">배송완료</strong>
-                            <span class="status-date">
-								<span class="num">12-30</span>결정
-                            </span>
-                            <span class="tracking">
-	                            <a>배송추척</a>
-                            </span>                            
-                            <br>
-                        </td>
-                    </tr>
-                    <tr>
-                    	<td colspan="3" class="actions">
-                        	<div class="links">
-                                <a class="declaration">신고하기</a>                            
-                            	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
-                            </div>
-                            <div class="buttons">
-                            	
-                                <a onClick="window.open('/shop/popup/pop09.html', '', 'width=500, height=530, scrollbars=no')" class="button"><button class="cancel">미수령</button></a>
-                                <a href="/shop/mypage02_1_5.php" class="button"><button class="cancel">반품신청</button></a>
-                                <a onClick="window.open('/shop/popup/pop05.html', '', 'width=660, height=535, scrollbars=no')" class="button"><button class="orange">상품평 | 구매결정</button></a>                                                               
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                    <!--상품2-->
-                         <td class="product">
-                        	<div class="product-block">
-                            	<a class="product-thumbnail">
-                                	<img src="/images/mypage_oder_list01.png" style="width:60px; height:60px" alt="상품01"/>
-                                </a>
-                                <div class="product-content">
-                                	<div class="product-name">
-                                    	<a>ddddddddddddddddddddd</a>
-                                    </div>
-                                    <div class="product-option">
-                                    aaaaaaaaaaaaaaaaaaa
-                                    </div>
-                                    <div class="order-num">
-                                        <span class="mp_label">주문번호</span>
-                                    123456789
-                                    </div>
-                            	</div>
-                            </div>
-                        </td>
-                        <td class="seller">
-                        	<span class="seller-info">
-                            	베이비제이
-                            </span>
-                        </td>
-                        <td class="status">
-                        	<strong class="status-msg">배송완료</strong>
-                            <span class="status-date">
-								<span class="num">12-30</span>결정
-                            </span>
-                            <span class="tracking">
-	                            <a>배송추척</a>
-                            </span>                            
-                            <br>
-                        </td>
-                    </tr>
-                    <tr>
-                    	<td colspan="3" class="actions">
-                        	<div class="links">
-                                <a class="declaration">신고하기</a>                            
-                            	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
-                            </div>
-                            <div class="buttons">
-                            	
-                                <a onClick="window.open('/shop/popup/pop09.html', '', 'width=500, height=530, scrollbars=no')" class="button"><button class="cancel">미수령</button></a>
-                                <a href="/shop/mypage02_1_5.php" class="button"><button class="cancel">반품신청</button></a>
-                                <a onClick="window.open('/shop/popup/pop05.html', '', 'width=660, height=535, scrollbars=no')" class="button"><button class="orange">상품평 | 구매결정</button></a>                                                               
-                                </a>
-                            </div>
-                        </td>
-                    </tr>                   
-<!-------------------e: 04.배송완료일때 (2개이상) ----------------------------->
-
-
-<!-------------------s: 05.미수령을 눌렀을때 (1개)------------------------------>
-                    <tr class="separate">
-                    	<td rowspan="2" class="date-payment-num">
-                        	<div class="date-num">
-                            	<strong>2016-01-04</strong>
-                                <a>( <span>887634010</span> )</a>
-                            </div>
-                            <div class="total-charge">
-                            결제금액
-                            	<strong class="charge">
-                                	¥<span class="num">121</span>
-                                </strong>
-                            </div>
-                            <div class="detail-link">
-                            	<a class="link">주문상세보기</a>
-                            </div>
-                        </td>
-                        <td class="product">
-                        	<div class="product-block">
-                            	<a class="product-thumbnail">
-                                	<img src="/images/mypage_oder_list01.png" style="width:60px; height:60px" alt="상품01"/>
-                                </a>
-                                <div class="product-content">
-                                	<div class="product-name">
-                                    	<a>ddddddddddddddddddddd</a>
-                                    </div>
-                                    <div class="product-option">
-                                    aaaaaaaaaaaaaaaaaaa
-                                    </div>
-                                    <div class="order-num">
-                                        <span class="mp_label">주문번호</span>
-                                    123456789
-                                    </div>
-                            	</div>
-                            </div>
-                        </td>
-                        <td class="seller">
-                        	<span class="seller-info">
-                            	베이비제이
-                            </span>
-                        </td>
-                        <td class="status">
-                        	<strong class="status-msg">미수령신고</strong>
-                            <span class="tracking">
-	                            <a>배송추척</a>
-                            </span>
-                            <br>
-                        </td>
-                    </tr>
-                    <tr>
-                    	<td colspan="3" class="actions">
-                        	<div class="links">
-                                <a class="declaration">신고하기</a>                            
-                            	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
-                            </div>
-                            <div class="buttons">
-                            	
-                                <a class="button"><button class="cancel">미수령신고철회</button></a> <!--경고창 : "미수령신고를 철회하시겠습니?"-->
-                                <a href="/shop/mypage02_1_5.php" class="button"><button class="cancel">반품신청</button></a>
-                                <a onClick="window.open('/shop/popup/pop05.html', '', 'width=660, height=535, scrollbars=no')" class="button"><button class="orange">상품평 | 구매결정</button></a>
-                            </div>
-                        </td>
-                    </tr>                                          
-<!-------------------e: 05.미수령을 눌렀을때 (1개)------------------------------>
-
-<!-------------------s: 05.미수령을 눌렀을때 (2개이상)------------------------------>
-                    <tr class="separate">
-                    	<td rowspan="4" class="date-payment-num"> <!--상품수*2-->
-                        	<div class="date-num">
-                            	<strong>2016-01-04</strong>
-                                <a>( <span>887634010</span> )</a>
-                            </div>
-                            <div class="total-charge">
-                            결제금액
-                            	<strong class="charge">
-                                	¥<span class="num">121</span>
-                                </strong>
-                            </div>
-                            <div class="detail-link">
-                            	<a class="link">주문상세보기</a>
-                            </div>
-                        </td>
-                        <!--상품1-->
-                        <td class="product">
-                        	<div class="product-block">
-                            	<a class="product-thumbnail">
-                                	<img src="/images/mypage_oder_list01.png" style="width:60px; height:60px" alt="상품01"/>
-                                </a>
-                                <div class="product-content">
-                                	<div class="product-name">
-                                    	<a>ddddddddddddddddddddd</a>
-                                    </div>
-                                    <div class="product-option">
-                                    aaaaaaaaaaaaaaaaaaa
-                                    </div>
-                                    <div class="order-num">
-                                        <span class="mp_label">주문번호</span>
-                                    123456789
-                                    </div>
-                            	</div>
-                            </div>
-                        </td>
-                        <td class="seller">
-                        	<span class="seller-info">
-                            	베이비제이
-                            </span>
-                        </td>
-                        <td class="status">
-                        	<strong class="status-msg">미수령신고</strong>
-                            <span class="tracking">
-	                            <a>배송추척</a>
-                            </span>
-                            <br>
-                        </td>
-                    </tr>
-                    <tr>
-                    	<td colspan="3" class="actions">
-                        	<div class="links">
-                                <a class="declaration">신고하기</a>                            
-                            	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
-                            </div>
-                            <div class="buttons">
-                            	
-                                <a class="button"><button class="cancel">미수령신고철회</button></a> <!--경고창 : "미수령신고를 철회하시겠습니?"-->
-                                <a href="/shop/mypage02_1_5.php" class="button"><button class="cancel">반품신청</button></a>
-                                <a onClick="window.open('/shop/popup/pop05.html', '', 'width=660, height=535, scrollbars=no')" class="button"><button class="orange">상품평 | 구매결정</button></a>
-                            </div>
-                        </td>
-                    </tr>  
-                    <!--상품 2-->
-                    <tr>   
-                        <td class="product">
-                        	<div class="product-block">
-                            	<a class="product-thumbnail">
-                                	<img src="/images/mypage_oder_list01.png" style="width:60px; height:60px" alt="상품01"/>
-                                </a>
-                                <div class="product-content">
-                                	<div class="product-name">
-                                    	<a>ddddddddddddddddddddd</a>
-                                    </div>
-                                    <div class="product-option">
-                                    aaaaaaaaaaaaaaaaaaa
-                                    </div>
-                                    <div class="order-num">
-                                        <span class="mp_label">주문번호</span>
-                                    123456789
-                                    </div>
-                            	</div>
-                            </div>
-                        </td>
-                        <td class="seller">
-                        	<span class="seller-info">
-                            	베이비제이
-                            </span>
-                        </td>
-                        <td class="status">
-                        	<strong class="status-msg">미수령신고</strong>
-                            <span class="tracking">
-	                            <a>배송추척</a>
-                            </span>
-                            <br>
-                        </td>
-                    </tr>
-                    <tr>
-                    	<td colspan="3" class="actions">
-                        	<div class="links">
-                                <a class="declaration">신고하기</a>                            
-                            	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
-                            </div>
-                            <div class="buttons">
-                            	
-                                <a class="button"><button class="cancel">미수령신고철회</button></a> <!--경고창 : "미수령신고를 철회하시겠습니?"-->
-                                <a href="/shop/mypage02_1_5.php" class="button"><button class="cancel">반품신청</button></a>
-                                <a onClick="window.open('/shop/popup/pop05.html', '', 'width=660, height=535, scrollbars=no')" class="button"><button class="orange">상품평 | 구매결정</button></a>
-                            </div>
-                        </td>
-                    </tr>                                                                  
-<!-------------------e: 05.미수령을 눌렀을때 (2개이상)------------------------------>
-
-
-
-
-
-<!-------------------s: 06.반품신청을 눌렀을때 (1개)---------------------------------->
-                    <tr class="separate">
-                    	<td rowspan="2" class="date-payment-num">
-                        	<div class="date-num">
-                            	<strong>2016-01-04</strong>
-                                <a>( <span>887634010</span> )</a>
-                            </div>
-                            <div class="total-charge">
-                            결제금액
-                            	<strong class="charge">
-                                	¥<span class="num">121</span>
-                                </strong>
-                            </div>
-                            <div class="detail-link">
-                            	<a class="link">주문상세보기</a>
-                            </div>
-                        </td>
-                        <td class="product">
-                        	<div class="product-block">
-                            	<a class="product-thumbnail">
-                                	<img src="/images/mypage_oder_list01.png" style="width:60px; height:60px" alt="상품01"/>
-                                </a>
-                                <div class="product-content">
-                                	<div class="product-name">
-                                    	<a>ddddddddddddddddddddd</a>
-                                    </div>
-                                    <div class="product-option">
-                                    aaaaaaaaaaaaaaaaaaa
-                                    </div>
-                                    <div class="order-num">
-                                        <span class="mp_label">주문번호</span>
-                                    123456789
-                                    </div>
-                            	</div>
-                            </div>
-                        </td>
-                        <td class="seller">
-                        	<span class="seller-info">
-                            	베이비제이
-                            </span>
-                        </td>
-                        <td class="status">
-                        	<strong class="status-msg">반품신청</strong>
-                            <span class="tracking">
-	                            <a>배송추척</a>
-                            </span>
-                            <br>
-                        </td>
-                    </tr>
-                    <tr>
-                    	<td colspan="3" class="actions">
-                        	<div class="links">
-                                <a class="declaration">신고하기</a>                            
-                            	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
-                            </div>
-                            <div class="buttons">
-                            	
-                                <a class="button"><button class="cancel">반품신청철회</button></a> <!--경고창 : 반품신청을 철회하시겠습니까?"-->
-                                <a href="/shop/mypage02_1_8.php" class="button"><button class="orange">반품정보수정</button></a>                                                               
-                                
-                            </div>
-                        </td>
-                    </tr>                                          
-<!------------------e: 06.반품신청을 눌렀을때 (1개)---------------------------------->
-
-
-
-
-                    <!-------s: 07.거래완료일때---------->
-                    <tr class="separate">
-                    	<td rowspan="2" class="date-payment-num">
-                        	<div class="date-num">
-                            	<strong>2016-01-04</strong>
-                                <a>( <span>887634010</span> )</a>
-                            </div>
-                            <div class="total-charge">
-                            결제금액
-                            	<strong class="charge">
-                                	¥<span class="num">121</span>
-                                </strong>
-                            </div>
-                            <div class="detail-link">
-                            	<a class="link">주문상세보기</a>
-                            </div>
-                        </td>
-                        <td class="product">
-                        	<div class="product-block">
-                            	<a class="product-thumbnail">
-                                	<img src="/images/mypage_oder_list01.png" style="width:60px; height:60px" alt="상품01"/>
-                                </a>
-                                <div class="product-content">
-                                	<div class="product-name">
-                                    	<a>ddddddddddddddddddddd</a>
-                                    </div>
-                                    <div class="product-option">
-                                    aaaaaaaaaaaaaaaaaaa
-                                    </div>
-                                    <div class="order-num">
-                                        <span class="mp_label">주문번호</span>
-                                    123456789
-                                    </div>
-                            	</div>
-                            </div>
-                        </td>
-                        <td class="seller">
-                        	<span class="seller-info">
-                            	베이비제이
-                            </span>
-                        </td>
-                        <td class="status">
-                        	<strong class="status-msg">거래완료</strong>
-                            <span class="status-date">
-                            구매결정일자
-                            <br>
-                            ( <span class="num">12-30</span>
-                            결정 )
-                            </span>
-                            <br>
-                        </td>
-                    </tr>
-                    <tr>
-                    	<td colspan="3" class="actions">
-                        	<div class="links">
-                                <a class="declaration">신고하기</a>                            
-                            	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
-                            </div>
-                            <div class="buttons">
-                            	<a class="button" onClick="window.open('/shop/popup/pop07.html', '', 'width=600, height=760, scrollbars=no')" >
-                                <button class="cancel">상품평작성하기</button>
-                                </a>
-                            </div>
-                        </td>
-                    </tr>                                          
-                    <!-------e: 07.거래완료일때---------->                                                     
+                    <? } ?>                                             
                 </tbody>
             </table>
             

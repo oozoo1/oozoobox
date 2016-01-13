@@ -16,7 +16,7 @@
                 	<img src="/images/tit_myozbox02.png" alt="购买信息 Shopping Info"/>
                 </h4>
                 <ul class="MM_List">
-                	<li><a href="/shop/mypage02_1.php">我的订单/快递跟踪</a></li>
+                	<li><a href="/shop/orderinquiry.php">我的订单/快递跟踪</a></li>
                     <li><a href="/shop/mypage02_2.php">等待付款</a></li>
                     <li><a href="/shop/mypage02_3.php">订单取消记录</a></li>
                     <li><a href="/shop/mypage02_4.php">交换/退货</a></li>

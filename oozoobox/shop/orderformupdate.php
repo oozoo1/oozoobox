@@ -593,7 +593,7 @@ $sql = " insert {$g5['g5_shop_order_table']}
                 od_bank_account   = '$od_bank_account',
                 od_receipt_time   = '$od_receipt_time',
                 od_misu           = '$od_misu',
-                od_pg             = '$od_pg',
+                od_pg             = 'alipay',
                 od_tno            = '$od_tno',
                 od_app_no         = '$od_app_no',
                 od_escrow         = '$od_escrow',
@@ -601,7 +601,7 @@ $sql = " insert {$g5['g5_shop_order_table']}
                 od_tax_mny        = '$od_tax_mny',
                 od_vat_mny        = '$od_vat_mny',
                 od_free_mny       = '$od_free_mny',
-                od_status         = '$od_status',
+                od_status         = '주문',
                 od_mobile         = '$od_mobile',
                 od_shop_memo      = '',
                 od_hope_date      = '$od_hope_date',
@@ -650,7 +650,7 @@ if ($od_receipt_price > 0 && !$default['de_card_point']) {
 }
 $sql = "update {$g5['g5_shop_cart_table']}
            set od_id = '$od_id',
-               ct_status = '$cart_status'
+               ct_status = '주문'
                $sql_card_point
          where od_id = '$tmp_cart_id'
            and ct_select = '1' ";
