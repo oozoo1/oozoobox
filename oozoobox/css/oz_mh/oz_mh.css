@@ -87,7 +87,7 @@ fieldset legend{display: none;}
 #oz_mallSearch .s-combobox {height: 30px;}
 #oz_mallSearch #mq {font: 16px/22px arial; font-size-adjust: none; font-stretch: normal; background:url('/images/bg_oz_mallSearch.png') repeat-x;}
 
-@media screen and (-ms-high-contrast:active), all and (-ms-high-contrast:none)
+/*@media screen and (-ms-high-contrast:active), all and (-ms-high-contrast:none)
 { #oz_site_nav .oz_sn_container { top: 1px;}
 }
 
@@ -106,67 +106,10 @@ fieldset legend{display: none;}
 }
 @media all and (max-width:1260px)
 {#oz_sn_bd { width: 1004px;}
-.oz_headerlayout {width: 1004px;}
+.oz_headerlayout {width: 1004px;}*/
 }
 
-/************** 헤더 메인이 아닐때*******************/
-.oz_headerlayout_02 {margin: 0px auto; width: 990px; padding-top: 26px;}
-.oz_headercontent_02::after {overflow: hidden; display: table; content: "";}
-.oz_headercontent_02::before {overflow: hidden; display: table; content: "";}
-.oz_headercontent_02::after {clear: both;}
-.oz_headercontent_02 {-ms-zoom: 1;}
-
-/***logo***/
-#oz_mallLogo_02 {float:left; z-index:9; padding-top:50px; width:280px; height:64px; line-height:64px; position:relative;}
-#oz_mallLogo_02 a {color: rgb(255, 255, 255); text-indent: 0px !important; display: block; position: relative;}
-#oz_mallLogo_02 s {position:absolute; display:block; top:0; cursor:pointer;}
-#oz_mallLogo_02 .oz_mlogo_02 {padding: 0px; margin-right: 10px; float: left;}
-#oz_mallLog_02o .oz_mlogo_02 a {width: 190px; height:30px; overflow: hidden; font-size: 22px;}
-#oz_mallLogo_02 .oz_mlogo_02 s {background: url('/images/oz_logo.png') no-repeat 0px 0px; width: 190px; height: 28px; }
-
-/***배너***/
-.oz_header_extra_02 {overflow: hidden;}
-.oz_header_banner_02 {float:right; padding:30px 10px 0 100px;}
-
-/***검색창***/
-.oz_event_query_02 {height:18px; display:inline-block; font-size:14px; width:100%; font-family: "Microsoft YaHei",arial,"宋体"; margin-left:-12px;}
-.oz_event_query_02 li{display:inline-block; border-right:1px solid rgb(204,204,204); line-height:1.1; padding:0 18px;}
-.oz_event_query_02 li a{color:rgb(80,80,80);}
-.oz_event_query_02 li a:hover{color:rgb(218, 32, 32);}
-.oz_event_query_02 li.last {border-right:0;}
-#oz_mallSearch_02 {width: 390px; overflow: hidden; padding-top: 25px; float: right;}
-.oz_mallSearch_02_form {border-width: 3px 0px 3px 3px; border-style: solid; border-color: rgb(243, 156, 18); border-image: none;}
-#oz_mallSearch_02 legend {display: none;}
-#oz_mallSearch_02 fieldset {position: relative;}
-.oz_clearfix_02::after {overflow: hidden; display: table; content: "";}
-.oz_clearfix_02::before {overflow: hidden; display: table; content: "";}
-.oz_clearfix_02::after {clear: both;}
-
-#oz_mallSearch_02 #mq_02 { margin: 0px; padding: 5px 3px 5px 5px; outline: 0px; border: 0px currentColor; border-image: none; width: 289px; height: 20px; color: rgb(130, 130, 130); line-height: 20px; font-weight: 900; position: relative; z-index: 2; box-sizing: content-box; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; _height: 18px; _line-height: 18px;}
-.oz_mallSearch_input_02 {background: rgb(255, 255, 255); height: 30px; position: relative;}
-#oz_mallSearch_02 button {border: 0px currentColor; border-image: none; top: 0px; width: 90px; height: 30px; right: 0px; color: rgb(255, 255, 255); letter-spacing: 4px; overflow: hidden; font-family: "Microsoft YaHei",arial,"宋体"; font-size: 16px; position: absolute; cursor: pointer; background-color: rgb(243, 156, 18); _right: -1px;}
-#oz_mallSearch_02 .s-combobox_02 {height: 30px;}
-#oz_mallSearch_02 #mq_02 {font: 16px/22px arial; font-size-adjust: none; font-stretch: normal; background:url('/images/bg_oz_mallSearch.png') repeat-x;}
-
-@media all and (min-width:1910px)
-{
-#oz_site_nav_02 #oz_sn_bd_02 { left: -15px;}
-#oz_sn_bd_02 { width: 1200px;}
-.oz_headerlayout_02 {width: 1200px;}
-#oz_header #oz_mallSearch_02 {width: 500px;}
-#oz_header #oz_mallSearch_02 #mq_02 {width: 399px;}
-}
-@media all and (max-width:1910px) and (min-width:1261px)
-{#oz_site_nav_02 #oz_sn_bd_02 { left: -15px;}
-#oz_sn_bd_02 { width: 1200px;}
-.oz_headerlayout_02 {width: 1200px;}
-#oz_header #oz_mallSearch_02 {width: 500px;}
-#oz_header #oz_mallSearch_02 #mq_02 {width: 399px;}
-}
-@media all and (max-width:1260px)
-{#oz_sn_bd_02 { width: 1004px;}
-.oz_headerlayout_02 {width: 1004px;}
-}
+/*******************************************************/
 
 #oz_mallpage2 {width: auto; min-width: 990px; background-color: transparent;}
 /**CONTENT**/
@@ -493,7 +436,7 @@ fieldset legend{display: none;}
 #oz_glo2 #slide{ width:100%; height:0; background:#ffffff; overflow:hidden; position:absolute; top:42px; z-index:10;}
 
 
-@media all and (min-width:1260px)
+/*@media all and (min-width:1260px)
 { .oz_glo2_navbg {width:1190px; position:relative;}
 #oz_glo2 ul li{ width:238px; }
 #oz_glo2 ul li a{ width:238px;}
@@ -510,7 +453,7 @@ fieldset legend{display: none;}
 #oz_glo2 .dot ul{width:1190px; height:8px; line-height:8px; position:relative;}
 #oz_glo2 .dot ul span{ width:238px; height:8px; background:url('/images/dot.png') no-repeat center center; display:block; position:absolute; left:0; top:0;}
 
-}
+}*/
 
 
 .whatbuy-head {float:left; width:780px; margin: 0px auto;}
@@ -547,10 +490,10 @@ fieldset legend{display: none;}
 .whatbuy-head .satisfy-area .rating span.star-rating {width:80px; background: url('/images/btn_top_glo_md_star.png') no-repeat 0px 0px;}
 .whatbuy-head .satisfy-area .rating span.star-rating span {background:url('/images/btn_top_glo_md_star.png') no-repeat 0px -15px; color:transparent;}
 
-@media all and (min-width:1260px)
+/*@media all and (min-width:1260px)
 { .whatbuy-head {width:830px;}
 .whatbuy-head .title {width:800px;}
-}
+}*/
 
 
 /* LIST*/
