@@ -462,7 +462,24 @@ function price_calculate()
         }
     });
 
-    $("#it_tot_price").empty().html(number_format(String(total))+"元");
+    $("#it_tot_price").empty().html(getNumber(String(total))+"元");
+}
+
+//숫자 1000단위 콤마 찍기
+function getNumber(str) {  
+  var str = "" + str.replace(/,/gi,''); // 콤마 제거  
+  var regx = new RegExp(/(-?\d+)(\d{3})/);  
+  var bExists = str.indexOf(".",0);  
+  var strArr = str.split('.');  
+  while(regx.test(strArr[0])){  
+    strArr[0] = strArr[0].replace(regx,"$1,$2");  
+  }  
+  if (bExists > -1)  
+    num = Number((strArr[0] + "." + strArr[1])).toFixed(2);  
+  else  
+    num = strArr[0];  
+
+  return num;
 }
 
 // php chr() 대응
