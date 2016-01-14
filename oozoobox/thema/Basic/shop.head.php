@@ -642,40 +642,53 @@ $(function(){
 	var liWidth = $('#oz_glo2 #nav li').width();
 	var secondWidth = $('#oz_glo2 #nav .second').width();
 
-	var indexNo = <?php echo $ca_id?> / 10;
+	var ca_idNo = <?php echo $ca_id?>;
+	if(ca_idNo > 999){
+		//2뎁스 메뉴로 내려갈시 ca_id가 4자리임.(2010 || 2020 || 3010)
+		ca_idNo = Math.floor(ca_idNo / 1000);
+	}else{
+		//1뎁스 메뉴일경우 ca_id가 2자리임.(10 || 20 || 30)
+		ca_idNo = Math.floor(ca_idNo / 10);
+	}
+
 	//메뉴순서가 변경되어 있음 (10 || 20 || 30 || 50 || 40)
-	if(indexNo == 4){
-		indexNo = 5;
-	}else if(indexNo == 5){
-		indexNo = 4;
-	}	
-	//탑메뉴 초기 선택 S ==========================
-	$(eval("on_cho_ko"+indexNo)).addClass('on');
-	//탑메뉴 초기 선택 E ==========================
+	if(ca_idNo == 4){
+		ca_idNo = 5;
+	}else if(ca_idNo == 5){
+		ca_idNo = 4;
+	}
 	
-	//탑메뉴 하단 삼각형 초기 이동 S ==========================
+	//탑메뉴 초기 선택 S ================================================================
+	//메뉴선택 표시 설정 
+	$(eval("on_cho_ko"+ca_idNo)).addClass('on');
+	
+	//하단 삼각형 백그라운드 left위치 설정 
 	$('#oz_glo2 .dot span').stop().animate({
-		left:liWidth*(indexNo-1)+'px'
+		left:liWidth*(ca_idNo-1)+'px'
 	},200);
-	//탑메뉴 하단 삼각형 초기 이동 E ==========================
+	//탑메뉴 초기 선택 E ================================================================
 	
-	$('#oz_glo2 #nav li').hover(function(){
-		var index = $(this).index();
-		$('#oz_glo2 .dot span').stop().animate({
-			left:liWidth*index+'px'
-		},200);
-		$(this).addClass('on').siblings().removeClass('on');
-		$(this).find('.second').fadeIn(200);
-		$('#oz_glo2, #slide').stop().animate({
-			height:'340px'
-		},200);
-	},function(){
-		$(this).find('.second').fadeOut(200);
-		$('#oz_glo2, #slide').stop().animate({
-			height:'43px'
-		},200);
+	$('#oz_glo2 #nav li').hover(
+		function(){
+			//마우스 오버시
+			var index = $(this).index();
+			$('#oz_glo2 .dot span').stop().animate({
+				left:liWidth*index+'px'
+			},200);
+			$(this).addClass('on').siblings().removeClass('on');
+			$(this).find('.second').fadeIn(200);
+			$('#oz_glo2, #slide').stop().animate({
+				height:'340px'
+			},200);
+		},
+		function(){
+			//마우스 아웃시
+			$(this).find('.second').fadeOut(200);
+			$('#oz_glo2, #slide').stop().animate({
+				height:'43px'
+			},200);
+		});
 	});
-});
 </script>
 
 
