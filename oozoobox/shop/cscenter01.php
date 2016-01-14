@@ -94,8 +94,8 @@ $skin_url = $member_skin_url;
                         <img src="/images/tit_cscenter_quick.png" alt="Quick Finds"/>
                     </h4>
                     <ul class="Quickmenu">
-                        <li><a><i class="quick01"></i>문의하기</a></li>
-                        <li><a><i class="quick02"></i>문의내역</a></li>
+                        <!--<li><a><i class="quick01"></i>건의하기</a></li>-->
+                        <li><a><i class="quick02"></i>意见返顾</a></li> <!-- CS CENTER에 상품취소 환불등을 건의 할 때-->
                         <li><a><i class="quick03"></i>내 ID찾기</a></li>
                         <li><a><i class="quick04"></i>비밀번호찾기</a></li>
                         <li><a><i class="quick05"></i>배송조회</a></li>

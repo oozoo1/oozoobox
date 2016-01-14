@@ -28,19 +28,19 @@
                 </h4>
                 <ul class="MM_List">
                 	<li><a href="/bbs/board.php?bo_table=mditem">MD介绍</a></li>
-                    <li><a href="#">商品咨询</a></li>
-                    <li><a href="#">我的评论管理</a></li>
-                    <li><a href="#">填写商品评论</a></li>
-                    <li><a href="#">意见返顾</a></li>
-                    <li><a href="#">举报/投诉 管理</a></li>
+                    <!--<li><a href="/shop/mypage03_1.php">商品咨询</a></li>--> <!--채팅창이 있으므로 필요없음-->
+                    <li><a href="/shop/mypage03_2.php">我的评论管理</a></li>
+                    <li><a href="/shop/mypage03_3.php">填写商品评论</a></li>
+                    <li><a href="/shop/mypage03_4.php">意见返顾</a></li> <!-- CS CENTER에 상품취소 환불등을 건의 할 때-->
+                    <li><a href="/shop/mypage03_5.php">举报/投诉 管理</a></li> <!-- CS CENTER에 판매자를 신고할 때-->
                 </ul>  
             	<h4 class="MM_tit">
                 	<img src="/images/tit_myozbox04.png" alt="我的优惠 OOZOOBOX Event"/>
                 </h4>
                 <ul class="MM_List">
-                	<li><a href="#">优惠券</a></li>
-                    <li><a href="#">积分</a></li>
-                    <li><a href="#">获奖列表</a></li>
+                	<li><a href="/shop/mypage04_1.php">优惠券</a></li>
+                    <li><a href="/shop/mypage04_2.php">积分</a></li>
+                    <li><a href="/shop/mypage04_3.php">获奖列表</a></li>
                 </ul> 
 			</div>
             <!--e: MypageMenu-->

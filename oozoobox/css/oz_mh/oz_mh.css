@@ -106,8 +106,8 @@ fieldset legend{display: none;}
 }
 @media all and (max-width:1260px)
 {#oz_sn_bd { width: 1004px;}
-.oz_headerlayout {width: 1004px;}*/
-}
+.oz_headerlayout {width: 1004px;}
+}*/
 
 /*******************************************************/
 
@@ -1166,6 +1166,45 @@ td.pro li {padding:3px 0; color:#676767; }
 .refund-table th{padding:10px 20px 7px 0; background-color:#f7f7f7; text-align:center; border-bottom:1px solid #E2E2E2;}
 .refund-table td {padding:10px 0 7px; text-align:center; border-bottom:1px solid #E2E2E2;}
 .refund-table td.payment {padding-left:21px; border-left:1px solid #e2e2e2; line-height:16px; color:#777777; text-align:left;}
+
+/* 판매자 신고하기 =====================================
+=================================================*/
+#pop03_wrap {width:800px; height:650px; color:#333;}
+.pop_tit {width:800px; height:130px; margin-bottom:20px; border-bottom:1px solid #e7e7e7;}
+.pop_tit h3 {width:100%; height:38px; background:url("/images/ico_popup03.png") no-repeat 20px 13px; background-color:#fa9551; font-size:18px; color:#fff; padding:10px 0 0 50px;}
+.pop_tit .pro_tit {width:100%; text-align:left; margin:20px 0 0 20px; line-height:20px;}
+.pop_tit .pro_tit span {color:#416de9;}
+.pop_tit .pro_tit span:hover {color:#ea5b0c;}
+.pop03_content {width:750px; margin-left:25px;}
+.pop03_content h4 {font-size:14px;}
+.pop03_content h4 span {font-weight:normal;}
+.pop03_qna {width:100%; margin-top:10px; border-top:1px solid #666666; border-bottom:1px solid #666666;}
+.pop03_qna tr {border-bottom:1px solid #e1e1e1;}
+.pop03_qna th {background:#ececec; border-right:solid 1px #e1e1e1; padding:10px 0; font-weight:normal;}
+.pop03_qna td {padding:0 15px;}
+.pop03_qna td .select {margin-left:15px;}
+.pop03_qna input.txt {width:100%; height:21px; padding:2px 0 0 4px; border:1px solid #ccc; line-height:23px;}
+.pop03_qna .text {width:100%; height:200px; margin:15px 0; padding:4px 0 0 4px; border:1px solid #ccc;}
+::-webkit-input-placeholder { color: #ec4f4a; } /* Webkit */
+:-moz-placeholder { color: #ec4f4a; } /* Firefox 4-18 */
+::-moz-placeholder { color: #ec4f4a; } /* Firefox 19+ */
+:-ms-input-placeholder { color: #ec4f4a; } /* IE10+ */
+.pop03_qna .receive_email {margin:10px 0; vertical-align:top;}
+.pop03_qna .receive_email p {display:block; padding-bottom:5px;}
+.pop03_qna .receive_email select {height:25px; padding:2px 0 0 4px; border:1px solid #ccc; line-height:23px;}
+
+.sec_secret {margin-top:17px;}
+.sec_secret #inp_secret {vertical-align:middle;}
+.sec_secret .lbe_secret {margin-left:2px; font-weight:bold; font-size:12px;}
+.sec_secret .txt_commt {margin-top:5px; margin-left:19px; font-size:12px;}
+
+.pass_confirm .ok_btn {width:100%; text-align:center; margin-top:25px; padding-top:15px; border-top:2px solid #ddd; }
+#pop03_wrap #btnCheckSubmit {border:0; height:27px;}
+#pop03_wrap #btnCancel {margin-left:5px; border:0; height:27px;}
+
+
+
+
 
 /*******************CS CENTER*********************/
 /***CS CENTER LEFT MENU***/

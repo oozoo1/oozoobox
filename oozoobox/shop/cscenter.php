@@ -69,7 +69,7 @@ $result = sql_query($sql);
                             빠른 시간내에 답변을 드리겠습니다.</p>
                         </div>
                         <a class="btn_request">
-                        	<button>1:1상담신청</button>
+                        	<button>1:1상담신청</button> <!-----------채팅창 생성------------------>
                         </a>
                     </div>
                 <!--e: CS_1:1 상담신청--> 
