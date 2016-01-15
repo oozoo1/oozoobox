@@ -195,7 +195,7 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
         <!--s: RIGHT CONTENTS-->
         <div class="My_container">
         	<h4 class="Mypage_tit">
-            주문내역/배송조회 
+            举报/投诉 管理
             </h4>
             
             <img src="/images/comingsoon.png" alt="현재 페이지는 준비중입니다. 빠른 시일내 오픈하겠습니다."/>
