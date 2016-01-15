@@ -1,6 +1,30 @@
-
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
+$s_cart_id = get_session('ss_cart_id');
+$sql = " select a.ct_id,
+				a.it_id,
+				a.it_name,
+				a.ct_price,
+				a.ct_point,
+				a.ct_qty,
+				a.ct_status,
+				a.ct_send_cost,
+				a.it_sc_type,
+				b.ca_id,
+				b.ca_id2,
+				b.ca_id3,
+				b.pt_it,
+				b.pt_msg1,
+				b.pt_msg2,
+				b.pt_msg3
+		   from {$g5['g5_shop_cart_table']} a left join {$g5['g5_shop_item_table']} b on ( a.it_id = b.it_id )
+		  where a.od_id = '$s_cart_id' ";
+$sql .= " group by a.it_id ";
+$sql .= " order by a.ct_id ";
+$result = sql_query($sql);
+
+$cart_count = sql_num_rows($result);
+
 ?>
 <!-- .wrapper -->
 <?php if($_SERVER['PHP_SELF']=="/index.php" || $_SERVER['PHP_SELF']=="/shop/list.php" || $_SERVER['PHP_SELF']=="/bbs/login.php"){}else{ ?>
@@ -47,7 +71,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 					</div>
 				</li>
 				<li>
-					<a href="/shop/cart.php" class="message_list" ><i class="message"></i><div class="span">购物车</div><span class="cart_num">0</span></a>
+					<a href="/shop/cart.php" class="message_list" ><i class="message"></i><div class="span">购物车</div><span class="cart_num"><?=$cart_count?></span></a>
 				</li>
 				<li>
 					<a href="/shop/member_todayview.php" class="mpbtn_histroy"><i class="zuji"></i></a>

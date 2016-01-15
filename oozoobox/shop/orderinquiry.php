@@ -214,7 +214,15 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                      <a href="<?=$_SERVER['PHP_SELF']?>?type=<?=$_GET[type]?>&oldtime=6"><button<? if($oldtime=="6"){?> class="on"<? } ?>>12개월</button></a>    
                      <a href="<?=$_SERVER['PHP_SELF']?>?type=<?=$_GET[type]?>&oldtime=7"><button<? if($oldtime=="7"){?> class="on"<? } ?>>이전 주문내역</button></a>                    
                     </div>
-                    <span class="date">2015-10-06 ~ 2016-01-05</span>
+                    <span class="date">
+											<? if($oldtime=="1"){?><?=$todaytime?> ~ <?=$todaytime?><? } ?>
+                      <? if($oldtime=="2"){?><?=$time7?> ~ <?=$todaytime?><? } ?>
+                      <? if($oldtime=="3"){?><?=$time30?> ~ <?=$todaytime?><? } ?>
+                      <? if($oldtime=="4"){?><?=$time90?> ~ <?=$todaytime?><? } ?>
+                      <? if($oldtime=="5"){?><?=$time184?> ~ <?=$todaytime?><? } ?>
+                      <? if($oldtime=="6"){?><?=$time366?> ~ <?=$todaytime?><? } ?>
+                      <? if($oldtime=="7"){?><?=$member[mb_datetime]?> ~ <?=$time366?><? } ?>
+                    </span>
                 </div>
                 <div class="order-search">
                 <form method="get">
@@ -253,6 +261,12 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
 										<?php
                     for ($i=0; $i < count($list); $i++) { 
                     ?>
+                    <div class="modal" id="<?=$list[$i][od_id]?>">                    
+                    <iframe src="/shop/popup/oderview.php?od_id=<?=$list[$i][od_id]?>" width="800" height="600" style="border:solid 0px;" scrolling="no"></iframe>
+                    	<div style="text-align:center">
+                    		<a data-dismiss="modal"><img src="/images/btn_popup04_close.png" alt="关闭"/></a>
+                    	</div>
+                    </div>
                     <tr class="separate">
                     	<td rowspan="2" class="date-payment-num"> <!--상품수 *2해주세요-->
                         	<div class="date-num">
@@ -266,7 +280,7 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                                 </strong>
                             </div>
                             <div class="detail-link">
-                            	<a class="link" onClick="window.open('/shop/popup/pop04.html', '', 'width=800, height=744, scrollbars=no')">주문상세보기</a>
+                            	<a class="link" data-toggle="modal" href="#<?=$list[$i][od_id]?>">test</a>
                             </div>
                         </td>
                         <!--상품1-->

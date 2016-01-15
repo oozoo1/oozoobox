@@ -623,3 +623,66 @@ background-position:0 -253px;
 }
 .fly_item{border:1px solid #000;width:38px;height:38px;overflow:hidden;position:absolute;visibility:hidden;opacity:.5;filter:alpha(opacity=50); z-index:999999;}
 .shop_cart{width:106px;height:25px;line-height:25px;padding-top:8px; font-family:'microsoft yahei';font-size:12px;text-indent:34px;color:#000;position:absolute;right:50px;top:240px;}
+
+
+
+/* modal */
+.modal-backdrop{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1040;background-color:#000000;opacity:0.6;filter:alpha(opacity=60)}
+.modal{position:fixed;top:40%;left:40%;right:40%; bottom:10%; z-index:1050;width:800px;margin:-250px 0 0 -280px;background-color:#ffffff;border:1px solid #999;border:1px solid rgba(0,0,0,0.3);*border:1px solid #999;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;outline:none;-webkit-box-shadow:0 3px 7px rgba(0,0,0,0.3);-moz-box-shadow:0 3px 7px rgba(0,0,0,0.3);box-shadow:0 3px 7px rgba(0,0,0,0.3);-webkit-background-clip:padding-box;-moz-background-clip:padding-box;background-clip:padding-box}
+
+
+.close{cursor:pointer;padding:2px 3px;cursor:pointer;padding:2px 3px;position:absolute;right:10px;top:14px}
+.close:hover{background-color:grey;color:#ffffff}
+
+.button-blue{display:block;float:left;padding:5px 0;width:80px;margin-right:10px;color:#fff;background:#407acc;text-align:center;cursor:pointer}
+.button-blue:hover{background:#084b91;text-decoration:none;color:#ffffff}
+
+.button-grey{display:block;float:left;padding:5px 0;width:80px;color:#fff;background:#ccc;text-align:center;cursor:pointer}
+.button-grey:hover{background:#aaa;text-decoration:none}
+
+
+.login-form .form-arrow,.signup-form .form-arrow,.forgot-form .form-arrow{display:block;width:30px;height:15px;background:url(/static/img/arrow.png?2013033000) no-repeat;position:absolute;left:95px;top:-15px}
+.login-form input,.signup-form input,.forgot-form input{padding:9px 9px 9px 9px;margin-bottom:20px;width:94%}
+.login-form .forgot,.login-form .login,.login-form .reg,.signup-form .forgot,.signup-form .login,.signup-form .reg,.forgot-form .forgot,.forgot-form .login,.forgot-form .reg{width:302px;padding:0;margin:0 0 10px 0;height:35px;font-size:18px;cursor:pointer}
+.login-form label.remember,.signup-form label.remember,.forgot-form label.remember{font-size:13px}
+.login-form input[type="checkbox"],.signup-form input[type="checkbox"],.forgot-form input[type="checkbox"]{width:auto;height:auto;padding:0;margin:3px 5px 0 0}
+.login-form a.forgot,.signup-form a.forgot,.forgot-form a.forgot{font-size:13px;float:right;margin-top:2px;width:auto;cursor:pointer}
+.login-form p.error,.signup-form p.error,.forgot-form p.error{font-size:13px;margin-bottom:5px;color:#b22d2d}
+#signup-modal,#login-modal,#forgetform,.modal{display:none;width:800px;padding:5px;background:white;border:5px solid rgba(0,0,0,0.2);margin-left:-190px;border-radius:10px;overflow:hidden;margin-bottom:40px;box-shadow:0 1px 0 white inset;margin-top:-267px}
+
+
+
+
+#pop04_wrap {width:800px; height:650px; color:#666;}
+.pop_tit {width:800px; height:105px; margin-bottom:20px; border-bottom:1px solid #e7e7e7;}
+.pop_tit h3 {width:100%; height:38px; background:url("/images/ico_popup04_h3.png") no-repeat 20px 12px; background-color:#fa9551; font-size:18px; color:#fff; padding:10px 0 0 50px; line-height:1.5;}
+.pop_tit .pro_tit {width:100%; text-align:left; margin:20px 0 0 20px; line-height:20px;}
+.pop_tit .pro_tit span {color:#416de9;}
+.pop_tit .pro_tit span:hover {color:#ea5b0c;}
+
+.pop04_content {position:relative; padding-right:8px; margin:18px 3px 0 13px; width:770px; height:550px; background:#fff;
+overflow-y:scroll; scrollbar-face-color:#eee; scrollbar-highlight-color:#b8b8b8; scrollbar-3dlight-color:#fff; scrollbar-darkshadow-color:#fff; scrollbar-shadow-color:#b8b8b8; scrollbar-arrow-color:#b7b7b7; scrollbar-track-color:#eee;}
+.order_detail_con {width:750px;}
+.tbl_order_detail {table-layout:fixed; word-break:brake-word; word-wrap:break-word; width:100%; border-top:1px solid #999; border-bottom:1px solid #999;}
+.tbl_order_detail thead th {padding:13px 0 6px; background:#eee;}
+.tbl_order_detail tbody th {padding:9px 12px 7px 10px; border-top:1px solid #ddd; letter-spacing:-1px; text-align:left; vertical-align:top;}
+.tbl_order_detail th {border-left: 1px solid #ddd; background:#eee;}
+.tbl_order_detail th.first {border-left:0;}
+.tbl_order_detail td {padding:9px 12px 7px 10px; border-top:1px solid #ddd; border-left:1px solid #ddd; vertical-align:top;}
+.tbl_order_detail a {text-decoration:none; color:#333;}
+.tbl_order_detail a.order_tit:hover {color:#ea5b0c;}
+.tbl_order_detail td.price {padding-right:12px; padding-left:0px; color:#333; text-align:right;}
+.tbl_order_detail td.seller {padding-right:0; padding-left:0px; text-align:center;}
+.tbl_order_detail td.status {padding-right:0; padding-left:0px; text-align:center;}
+.tbl_order_detail td.status .order_tracking {display:inline-block; margin-top:3px; padding-left:12px; background:url("/images/ico_tracking.png") no-repeat 0 3px; letter-spacing:-1px;}
+.tbl_order_detail td.status .order_tracking:hover {background:url("/images/ico_tracking_o.png") no-repeat 0 3px;}
+.tbl_order_detail td.status .order_tracking:hover a {color:#ea5b0c;}
+.tbl_order_detail .order-number {color:#999; font-size:11px;}
+.tbl_order_detail td.price .amount {margin-top:2px; padding-left:12px; text-align:right;}
+.status_msg {display:block; margin-bottom:3px; color:#ec4f4a;}
+.myoz_layer_column_left {float:left; width:368px;}
+h4.in-layer-tit {font-size:14px; height:24px; margin:28px 0 0; padding-left:12px; border:0; color:#333;}
+.myoz_layer_column_right {float:right; width:368px;}
+
+.btn_close {text-align:center; margin-top:19px;}
+.btn_close button {border:0;}

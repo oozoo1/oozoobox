@@ -181,7 +181,7 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                                 </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <li class="oz_sn_join">
-                                    <a href="<?php echo $at_href['logout'];?>" target="_top" rel="nofollow">退出登录</a><!--"로그아웃"-->
+                                    <a href="/bbs/logout.php?url=<?=urlencode("{$_SERVER[PHP_SELF]}?{$_SERVER[QUERY_STRING]}")?>" target="_top" rel="nofollow">退出登录</a><!--"로그아웃"-->
                                 </li>
                             <?php }else{ ?>
                                 <li>
@@ -189,7 +189,7 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                                 </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <li>
-                                    <a href="/bbs/login.php" target="_top">请登录</a> <!--"로그인하세요"-->
+                                    <a href="/bbs/login.php?url=<?=urlencode("{$_SERVER[PHP_SELF]}?{$_SERVER[QUERY_STRING]}")?>" target="_top">请登录</a> <!--"로그인하세요"-->
                                 </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <li class="oz_sn_join">
@@ -198,7 +198,11 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                             <?php } ?>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <li class="sn-cart">
+                                <? if($member[mb_id]){?>
                                     <a href="/shop/cart.php" target="_top" rel="nofollow">购物车</a> <!--"장바구니"-->
+                                <? }else{ ?>
+                                <a href="#" onClick="javascript:if(confirm('您还不是网站会员 是否要登陆网站？')){document.location.href='/bbs/login.php?url=<?=urlencode("/shop/cart.php")?>'};">购物车</a> <!--"장바구니"-->
+                                <? } ?>
                                 </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <li class="oz_sn_myshopping">
