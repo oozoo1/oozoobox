@@ -75,14 +75,20 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
 }
 
 @media all and (min-width:1910px)
+{
+#oz_sn_bd { width: 1640px;}
+}
+
+/*@media all and (min-width:1910px)
 {#oz_site_nav #oz_sn_bd { left: -15px;}
 #oz_sn_bd { width: 1200px;}
 .oz_headerlayout {width: 1200px;}
 #oz_mallSearch {width: 500px;}
 #oz_mallSearch #mq {width: 399px;}
-}
+}*/
+
 @media all and (max-width:1910px) and (min-width:1261px)
-{#oz_site_nav #oz_sn_bd { left: -15px;}
+{#oz_site_nav #oz_sn_bd { left:0;}
 #oz_sn_bd { width: 1200px;}
 .oz_headerlayout {width: 1200px;}
  #oz_mallSearch {width: 500px;}
@@ -125,11 +131,14 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
 }
 
 @media all and (min-width:1910px)
-{#oz_sn_bd { width: 1004px;}
-.oz_headerlayout {width: 1004px;}
+{
+#oz_sn_bd { width: 1640px;}
 }
+
+
 @media all and (max-width:1910px) and (min-width:1261px)
-{#oz_sn_bd { width: 1004px;}
+{#oz_site_nav #oz_sn_bd { left:0;}
+#oz_sn_bd { width: 1200px;}
 .oz_headerlayout {width: 1004px;}
 }
 @media all and (max-width:1260px)
