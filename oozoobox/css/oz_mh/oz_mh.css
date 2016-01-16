@@ -88,7 +88,7 @@ fieldset legend{display: none;}
 #oz_mallSearch .s-combobox {height: 30px;}
 #oz_mallSearch #mq {font: 16px/22px arial; font-size-adjust: none; font-stretch: normal; background:url('/images/bg_oz_mallSearch.png') repeat-x;}
 
-/*@media screen and (-ms-high-contrast:active), all and (-ms-high-contrast:none)
+@media screen and (-ms-high-contrast:active), all and (-ms-high-contrast:none)
 { #oz_site_nav .oz_sn_container { top: 1px;}
 }
 
@@ -108,7 +108,7 @@ fieldset legend{display: none;}
 @media all and (max-width:1260px)
 {#oz_sn_bd { width: 1004px;}
 .oz_headerlayout {width: 1004px;}
-}*/
+}
 
 /*******************************************************/
 
@@ -410,7 +410,7 @@ fieldset legend{display: none;}
 
 /** 글로벌메뉴2**/
 #oz_glo2{ width:100%; height:43px; overflow:hidden; position:relative; margin-top:5px;}
-.oz_glo2_bg {width:100%; height:42px; background:#ea5b0c;}
+.oz_glo2_bg {width:100%; height:42px; background:/*#ea5b0c*/#f47a22;}
 .oz_glo2_navbg {width:990px; height:42px; margin:0 auto; background:#f47a22; position:relative;}
 #oz_glo2 ul{ width:100%; overflow:hidden; height:330px; z-index:30;}
 #oz_glo2 ul li{float:left; width:198px; height:42px; text-align:center;}
@@ -1117,7 +1117,9 @@ padding:0 0 90px 0;}
 .order-list-table .charge .num{font-size:15px; color:#333;}
 .order-list-table .detail-link {margin:8px 0 0 9px;} 
 a.link {padding-right:5px; color:#416de9; background:url("/images/ico_link_arrow.gif") no-repeat 100% 5px; font:11px/15px "Microsoft YaHei",arial,"宋体",Dotum; white-space:nowrap; letter-spacing:-1px; text-decoration:underline; text-decoration:none;}
-.order-list-table td.product {position:static; padding:18px 5px 18px 20px;}
+.order-list-table td.product {position:static; padding:18px 5px 0px 0px;}
+.order-list-table td.product .product-block {padding: 0 0 20px 20px; border-bottom:1px solid #ddd;}
+.order-list-table td.product div.product-block:last-child {border-bottom:0;}
 .product-block {width:100%; text-align:left;}
 .product-block .product-thumbnail {float:left; width:60px; margin-top:2px;}
 .product-block .product-content {padding-left:77px;}

@@ -41,7 +41,7 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
 
 <div class="wrapper <?php echo $at_set['font'];?><?php echo (G5_IS_MOBILE) ? ' mobile-font' : '';?> <?php echo $at_set['layout'];?>">
 
-<?php if($_SERVER['PHP_SELF']=="/index.php"){?>
+<?php /*?><?php if($_SERVER['PHP_SELF']=="/index.php"){?>
 
 <style>
 @media screen and (-ms-high-contrast:active), all and (-ms-high-contrast:none)
@@ -66,8 +66,9 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
 .oz_headerlayout {width: 1004px;}
 }
 </style>
+<?php */?>
 
-<? }else if($_SERVER['PHP_SELF']=="/shop/list.php"){?>
+<?php /*?><? }else if($_SERVER['PHP_SELF']=="/shop/list.php"){?>
 
 <style>
 @media screen and (-ms-high-contrast:active), all and (-ms-high-contrast:none)
@@ -79,16 +80,8 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
 #oz_sn_bd { width: 1640px;}
 }
 
-/*@media all and (min-width:1910px)
-{#oz_site_nav #oz_sn_bd { left: -15px;}
-#oz_sn_bd { width: 1200px;}
-.oz_headerlayout {width: 1200px;}
-#oz_mallSearch {width: 500px;}
-#oz_mallSearch #mq {width: 399px;}
-}*/
-
 @media all and (max-width:1910px) and (min-width:1261px)
-{#oz_site_nav #oz_sn_bd { left:0;}
+{#oz_site_nav #oz_sn_bd { left:-15px;}
 #oz_sn_bd { width: 1200px;}
 .oz_headerlayout {width: 1200px;}
  #oz_mallSearch {width: 500px;}
@@ -99,7 +92,6 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
 .oz_headerlayout {width: 1004px;}
 }
 
-/**가로형 글로벌 메뉴**/
 @media all and (min-width:1260px)
 { .oz_glo2_navbg {width:1190px; position:relative;}
 #oz_glo2 ul li{ width:238px; }
@@ -121,10 +113,10 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
 { .whatbuy-head {width:830px;}
 .whatbuy-head .title {width:800px;}
 }
-</style>
+</style><?php */?>
 
 
-<? }else{?>
+<?php /*?><? }else{?>
 <style>
 @media screen and (-ms-high-contrast:active), all and (-ms-high-contrast:none)
 { #oz_site_nav .oz_sn_container { top: 1px;}
@@ -146,7 +138,8 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
 .oz_headerlayout {width: 1004px;}
 }
 </style>
-<? } ?>
+<? } ?><?php */?>
+
 
 	<!--s: top광고--> <!--SW: 광고가 바뀔때마다 인라인 스타일 수정, 이미지 경로 수정 --->
     <div class="oz_top_con" style="height:90px; display:block; position:relative;">
