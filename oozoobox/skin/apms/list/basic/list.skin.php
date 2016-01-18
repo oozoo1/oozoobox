@@ -98,26 +98,24 @@ $list_cnt = count($list);
             <a title="点击后恢复默认排序" class="<?php if($_GET[sort]==''){?>filter_sort_on first<?php }else{ ?>filter_sort first<?php } ?>" href="<?php echo $list_sort_href; ?>&l_type=<?php $_GET[l_type] ?>#nv_list">综合
                 <i class="f_ico_arrow_d"></i>
             </a>     
-            <a title="点击后按人气从高到低" class="<?php if($_GET[sort]=='it_type4'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?>" href="<?php echo $list_sort_href; ?>it_type4&amp;sortodr=desc&l_type=<?php $_GET[l_type] ?>#nv_list">人气
+            <a title="点击后按人气从高到低" class="<?php if($_GET[sort]=='it_type4'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?>" href="<?php echo $list_sort_href; ?>it_type4&sortodr=desc&l_type=<?php $_GET[l_type] ?>#nv_list">人气
                 <i class="f_ico_arrow_d"></i>
             </a>
-            <a class="<?php if($_GET[sort]=='it_type3'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?>" href="<?php echo $list_sort_href; ?>it_type3&amp;sortodr=desc&l_type=<?php $_GET[l_type] ?>#nv_list" >新品
+            <a class="<?php if($_GET[sort]=='it_type3'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?>" href="<?php echo $list_sort_href; ?>it_type3&sortodr=desc&l_type=<?php $_GET[l_type] ?>#nv_list" >新品
                 <i class="f_ico_arrow_d"></i>
             </a>
-            <a title="点击后按月销量从高到低" class="<?php if($_GET[sort]=='it_sum_qty'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?>" href="<?php echo $list_sort_href; ?>it_sum_qty&amp;sortodr=desc&l_type=<?php $_GET[l_type] ?>#nv_list">销量
+            <a title="点击后按月销量从高到低" class="<?php if($_GET[sort]=='it_sum_qty'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?>" href="<?php echo $list_sort_href; ?>it_sum_qty&sortodr=desc&l_type=<?php $_GET[l_type] ?>#nv_list">销量
                 <i class="f_ico_arrow_d"></i>
             </a>
-            <a title="点击后按价格从低到高" class=<?php if($_GET[sort]=='it_price' and $_GET[sortodr]=='asc'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?> href="<?php echo $list_sort_href; ?>it_price&amp;sortodr=asc&l_type=<?php $_GET[l_type] ?>#nv_list">价格
+            <a title="点击后按价格从低到高" class=<?php if($_GET[sort]=='it_price' and $_GET[sortodr]=='asc'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?> href="<?php echo $list_sort_href; ?>it_price&sortodr=asc&l_type=<?php $_GET[l_type] ?>#nv_list">价格
                 <i class="f_ico_arrow_d"></i>
             </a>               
-            <a title="点击后按价格从高到低" class="<?php if($_GET[sort]=='it_price' and $_GET[sortodr]=='desc'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?>" href="<?php echo $list_sort_href; ?>it_price&amp;sortodr=des&l_type=<?php $_GET[l_type] ?>c#nv_list">价格
+            <a title="点击后按价格从高到低" class="<?php if($_GET[sort]=='it_price' and $_GET[sortodr]=='desc'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?>" href="<?php echo $list_sort_href; ?>it_price&sortodr=des&l_type=<?php $_GET[l_type] ?>c#nv_list">价格
                 <i class="f_ico_arrow_u"></i>
-            </a>   
-            <!-- 
-            <a class="filter_type_store" href="<?php echo $list_sort_href; ?>&l_type=album#nv_list">店铺
-                <i class="ico_filter_type_store"></i>
             </a> 
-             -->   
+            <a class="filter_type_store" href="<?php echo $list_sort_href; ?>&l_type=album#nv_list"><!-- 店铺 -->
+                <i class="ico_filter_type_store"></i>
+            </a>    
             <a class="filter_type_big<?php if($_GET[l_type]!="list"){?>_on<?php } ?>" href="<?php echo $list_sort_href; ?>&sort=<?php $_GET[sort] ?>&sortodr=<?php $_GET[sortodr] ?>&l_type=album#nv_list">大图
                 <i class="ico_filter_type_big"></i>
             </a>
@@ -149,18 +147,18 @@ $list_cnt = count($list);
 
 			?>
                 <li class="<?php if($i % 4 == 3){?>list_album_item last_item<?php }else{ ?>list_album_item<?php } ?>">
-                    <div class="album_card">
+                    <div class="album_card"><!-- 이미지 -->
                         <span class="album_item_pic">
                             <a href="<?php echo $list[$i]['href'];?>">
                             	<img width="100%" src="<?php echo $img['src'];?>" alt="<?php echo $list[$i]['it_name'];?>" title="<?php echo $list[$i]['it_name'];?>"/>
                             </a>                                
                         </span>
-                        <a href="#" class="album_wish_plus">
+                        <a href="#" class="album_wish_plus"><!-- 하트갯수 -->
                             <span class="album_ico_wish">
                                 <em>13</em>
                             </span>
                         </a>
-                        <span class="album_info">
+                        <span class="album_info"><!-- 상품명 -->
                             <a href="<?php echo $list[$i]['href'];?>">
                                 <span class="album_item_desc">
                                     <em title="<?php echo $list[$i]['it_name'];?>" class="album_item_name"><?php echo $list[$i]['it_name'];?></em>
@@ -169,18 +167,18 @@ $list_cnt = count($list);
                             <?php 
                             ?>
                             <a href="#">
-                                <span class="album_item_shop">
+                                <span class="album_item_shop"><!-- 판매자id -->
                                     <em title="捞鱼猫旗舰店" class="album_ item_shop_name"><?php echo $list[$i]['pt_id'];?></em>
                                 </span>
                             </a>
-                            <span class="album_item_detail">
+                            <span class="album_item_detail"><!-- 가격 -->
                                 <a href="#">
                                     <span class="album_item_price">
                                         <i class="album_price_rmb">¥</i>
                                         <span class="album_price_integer"><?php echo ($list[$i]['it_tel_inq']) ? 'Call' : $list[$i]['it_price'];?></span>
                                     </span>
                                 </a>
-                                <span class="album_item_tag">
+                                <span class="album_item_tag"><!-- 구매갯수 -->
                                     <span class="album_item_buy">
                                         <a href="#">
                                             <span>月成交</span>
@@ -188,7 +186,7 @@ $list_cnt = count($list);
                                             <span>笔</span>
                                         </a>
                                     </span>
-                                    <span class="album_item_after">
+                                    <span class="album_item_after"><!-- 상품평갯수 -->
                                         <a href="#">
                                             <span>评价</span>
                                             <em>8,141</em>
