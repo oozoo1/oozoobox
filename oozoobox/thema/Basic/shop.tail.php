@@ -40,7 +40,7 @@ $cart_count = sql_num_rows($result);
     	<li><a>제휴문의</a></li>   
     	<li><a>채용안내</a></li>
     	<li><a>客户服务</a></li>
-    	<li><a>买家会员协议</a></li>         
+    	<li><a>服务协议</a></li>         
     </ul>
     <div class="footer_info">
     	<p>
