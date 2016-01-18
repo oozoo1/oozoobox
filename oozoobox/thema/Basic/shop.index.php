@@ -226,7 +226,7 @@ $result = sql_query($sql);
         <!--s: MAIN热门商品 인기상품-->
         <div class="oz_wonderful_con">
         	<div class="wonderful_title">
-            	特色市场
+            	热门商品 
                 <b class="title_deco">
                 </b>
             </div>
