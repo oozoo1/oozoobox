@@ -1,6 +1,7 @@
-<!doctype html>
-<html>
-<head>
+<? 
+	include_once('./_common.php');
+echo $_POST[mb_10];
+?>
 <meta charset="utf-8">
 <title>OOZOOBOX-注销</title>
 <style>
@@ -70,5 +71,3 @@ table{border-collapse:collapse; border:0 none;}
             
         </div>
     </form>
-</body>
-</html>

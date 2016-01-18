@@ -30,7 +30,7 @@ include_once('./_head.php');
 $skin_path = $member_skin_path;
 $skin_url = $member_skin_url;
 ?>
-		<a href="/shop/mypage.php"><h3 class="mp_tit">MY OOZOOBOX <span class="mp_tit_small">고객님의 개인정보, 주문 내역 등의 이용 기록을 조회할 수 있습니다.</span></h3></a>
+		<a href="/shop/mypage.php"><h3 class="mp_tit">MY OOZOOBOX <span class="mp_tit_small">可以查到 您的个人信息 订单历史记录。</span></h3></a>
 		<? include ("member_left.php");?>   
         
         <!--s: RIGHT CONTENTS-->
@@ -39,27 +39,27 @@ $skin_url = $member_skin_url;
             核实密码
             </h4>
 			<div class="Change_email_inform">
-            	<span>비밀번호 재확인</span>
+            	<span>个人信息安全确认</span>
                 <p>
-                    안전한 사용을 위해 비밀번호를 다시 한번 입력해주세요
+                    为了您的 个人信息安全 再次确认你的个人信息
                 </p>
             </div>
             <div class="My_leave_step03">
-            	<form id="login_form">
+            	<form method="post" action="member_out_form.php">
                 	<dl>
                     	<dt>用户名 ：</dt>
-                        <dd><input name="id" class="text" id="ID" type="text" maxlength="40" value="oozooboxID12345"></dd>
+                        <dd><input name="mb_id" class="text" id="ID" type="text" maxlength="40" value="<?=$member[mb_id]?>" disabled></dd>
                     	<dt>密&nbsp;&nbsp; 码 ：</dt>
-                        <dd><input name="pw" class="text" id="pw" type="password" maxlength="40" value=""></dd>
+                        <dd><input name="mb_password" class="text" id="pw" type="password" maxlength="40"></dd>
                     </dl>
-                </form>
-                <div class="send_pw">
-                    <a href="/shop/mypage01_1_4.php">
+                 
+                 <div class="send_pw">
                         <button>
                             <img src="/images/btn_pass_ok_02.png" alt="认证密码"/>
                         </button>
-                    </a>
-                </div>
+                </div>   
+                </form>
+                
             </div>            
         </div>
         <!--e: RIGHT CONTENTS-->
