@@ -1,6 +1,8 @@
 <?php
 $menu['menu100'] = array (
     array('100000', '환경설정', G5_ADMIN_URL.'/config_form.php',   'config'),
+		array('', '오늘한마디구분', G5_ADMIN_URL.'/todaytext_ct.php',   'config'),
+		array('', '오늘한마디', G5_ADMIN_URL.'/todaytext.php',   'config'),
     array('', '기본환경설정', G5_ADMIN_URL.'/config_form.php',   'cf_basic'),
     array('', '관리권한설정', G5_ADMIN_URL.'/auth_list.php',     'cf_auth'),
     array('', '테마설정', G5_ADMIN_URL.'/theme.php',     'cf_theme', 1),
