@@ -10,7 +10,7 @@
                     <li><a href="/shop/member_address.php">地址管理</a></li>
                     <li><a href="/shop/mypage01_3.php">个人信息使用内容</a></li>
                     <li><a href="/shop/mypage01_4.php">会员等级</a></li>
-                    <li><a href="/shop/mypage01_1_2.php">注销会员</a></li>
+                    <li><a href="/shop/member_out_ck.php">注销会员</a></li>
                 </ul>
             	<h4 class="MM_tit">
                 	<img src="/images/tit_myozbox02.png" alt="购买信息 Shopping Info"/>

@@ -7,7 +7,28 @@ include_once(THEMA_PATH.'/sidebar.php'); // 사이드바
 echo '<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10">'.PHP_EOL; //김미혜: 반응형 viewport 설정
 
 add_stylesheet('<link rel="stylesheet" href="/css/oz_mh/oz_mh.css" type="text/css" media="screen" >',0); //김미혜: css추가 및 경로 설정
+
+$t_day     =date('Y-m-d');
+
+
+
+
+
+$sqltoday = " select a.*
+from todaytext a
+	 , todaytext_ct b
+where a.t_ct = b.id
+and b.ct_date = '$t_day' LIMIT 0 , 1";
+$todaytext = sql_query($sqltoday);
+$today=sql_fetch_array($todaytext);
+
+if($today[id]){
+$top_message="$today[t_content]";
+$today_link="$today[t_link]";
+}else{
 $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒霜！ 〉〉〉去看看防晒霜";
+$today_link="/shop/list.php?ca_id=10";
+}
 ?>
 
 <!--<script type='text/javascript'>
@@ -157,7 +178,7 @@ $top_message="情爱的客户， 今天紫外线太强了，必须使用防晒�
                     <div id="oz_sn_bd"> <!----- @media  있음------>
                         <div class="oz_sn_container">
                             <p class="oz_sn_prm_info">
-                            	<em><a href="#"><?php echo "$top_message";?></a></em> <!--"고객님, 오늘은 자외선이 강하네요. 외출할때 반드시 썬크림을 사용하세요>>>썬크림보러가기"  SW: php가 필요할지도.. -->
+                            	<em><a href="<?=$today_link?>" <? if($today[t_target]){?>target="_blank"<? } ?>><?php echo "$top_message";?></a></em> <!--"고객님, 오늘은 자외선이 강하네요. 외출할때 반드시 썬크림을 사용하세요>>>썬크림보러가기"  SW: php가 필요할지도.. -->
                             </p>
                             <ul class="oz_sn_quick_menu">
                             <?php if($member[mb_id]){?>
