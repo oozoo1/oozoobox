@@ -95,31 +95,33 @@ $list_cnt = count($list);
 <!-----------------------------s: album형식------------------------->
         <!--s: LIST filter-->
         <div class="oz_filter" id="nv_list">
-            <a title="点击后恢复默认排序" class="<?php if($_GET[sort]==''){?>filter_sort_on first<?php }else{ ?>filter_sort first<?php } ?>" href="<?php echo $list_sort_href; ?>#nv_list">综合
+            <a title="点击后恢复默认排序" class="<?php if($_GET[sort]==''){?>filter_sort_on first<?php }else{ ?>filter_sort first<?php } ?>" href="<?php echo $list_sort_href; ?>&l_type=<?php $_GET[l_type] ?>#nv_list">综合
                 <i class="f_ico_arrow_d"></i>
             </a>     
-            <a title="点击后按人气从高到低" class="<?php if($_GET[sort]=='it_type4'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?>" href="<?php echo $list_sort_href; ?>it_type4&amp;sortodr=desc#nv_list">人气
+            <a title="点击后按人气从高到低" class="<?php if($_GET[sort]=='it_type4'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?>" href="<?php echo $list_sort_href; ?>it_type4&amp;sortodr=desc&l_type=<?php $_GET[l_type] ?>#nv_list">人气
                 <i class="f_ico_arrow_d"></i>
             </a>
-            <a class="<?php if($_GET[sort]=='it_type3'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?>" href="<?php echo $list_sort_href; ?>it_type3&amp;sortodr=desc#nv_list" >新品
+            <a class="<?php if($_GET[sort]=='it_type3'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?>" href="<?php echo $list_sort_href; ?>it_type3&amp;sortodr=desc&l_type=<?php $_GET[l_type] ?>#nv_list" >新品
                 <i class="f_ico_arrow_d"></i>
             </a>
-            <a title="点击后按月销量从高到低" class="<?php if($_GET[sort]=='it_sum_qty'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?>" href="<?php echo $list_sort_href; ?>it_sum_qty&amp;sortodr=desc#nv_list">销量
+            <a title="点击后按月销量从高到低" class="<?php if($_GET[sort]=='it_sum_qty'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?>" href="<?php echo $list_sort_href; ?>it_sum_qty&amp;sortodr=desc&l_type=<?php $_GET[l_type] ?>#nv_list">销量
                 <i class="f_ico_arrow_d"></i>
             </a>
-            <a title="点击后按价格从低到高" class=<?php if($_GET[sort]=='it_price' and $_GET[sortodr]=='asc'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?> href="<?php echo $list_sort_href; ?>it_price&amp;sortodr=asc#nv_list">价格
+            <a title="点击后按价格从低到高" class=<?php if($_GET[sort]=='it_price' and $_GET[sortodr]=='asc'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?> href="<?php echo $list_sort_href; ?>it_price&amp;sortodr=asc&l_type=<?php $_GET[l_type] ?>#nv_list">价格
                 <i class="f_ico_arrow_d"></i>
             </a>               
-            <a title="点击后按价格从高到低" class="<?php if($_GET[sort]=='it_price' and $_GET[sortodr]=='desc'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?>" href="<?php echo $list_sort_href; ?>it_price&amp;sortodr=desc#nv_list">价格
+            <a title="点击后按价格从高到低" class="<?php if($_GET[sort]=='it_price' and $_GET[sortodr]=='desc'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?>" href="<?php echo $list_sort_href; ?>it_price&amp;sortodr=des&l_type=<?php $_GET[l_type] ?>c#nv_list">价格
                 <i class="f_ico_arrow_u"></i>
             </a>   
+            <!-- 
             <a class="filter_type_store" href="<?php echo $list_sort_href; ?>&l_type=album#nv_list">店铺
                 <i class="ico_filter_type_store"></i>
-            </a>    
-            <a class="filter_type_big<?php if($_GET[l_type]!="list"){?>_on<?php } ?>" href="<?php echo $list_sort_href; ?>&l_type=album#nv_list">大图
+            </a> 
+             -->   
+            <a class="filter_type_big<?php if($_GET[l_type]!="list"){?>_on<?php } ?>" href="<?php echo $list_sort_href; ?>&sort=<?php $_GET[sort] ?>&sortodr=<?php $_GET[sortodr] ?>&l_type=album#nv_list">大图
                 <i class="ico_filter_type_big"></i>
             </a>
-            <a class="filter_type_small<?php if($_GET[l_type]=="list"){?>_on<?php } ?>" href="<?php echo $list_sort_href; ?>&l_type=list#nv_list">小图
+            <a class="filter_type_small<?php if($_GET[l_type]=="list"){?>_on<?php } ?>" href="<?php echo $list_sort_href; ?>&sort=<?php $_GET[sort] ?>&sortodr=<?php $_GET[sortodr] ?>&l_type=list#nv_list">小图
                 <i class="ico_filter_type_small"></i>
             </a>  
             <p class="ui-page-s">
