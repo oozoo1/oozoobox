@@ -888,12 +888,12 @@ $result = sql_query($sql);
             <div class="footer_sub">
                 <div class="footer_menu">
                     <dl>
-                        <dt class="menu_tit">고객센터</dt>
-                        <dd><a>소비자지침서</a></dd>
-                        <dd><a>비밀번호찾기</a></dd>
-                        <dd><a>쇼핑내역</a></dd>
-                        <dd><a>회원가입하기</a></dd>
-                        <dd><a>물품구매하기</a></dd>
+                        <dt class="menu_tit">客户服务</dt>
+                        <dd><a>消费者须知</a></dd>
+                        <dd><a>忘记密码</a></dd>
+                        <dd><a>查看已购买商品</a></dd>
+                        <dd><a>如何注册成为会员</a></dd>
+                        <dd><a>我要买</a></dd>
                     </dl>
                     <dl>
                         <dt class="menu_tit">판매자센터</dt>
@@ -903,34 +903,34 @@ $result = sql_query($sql);
                         <dd><a>입점신청</a></dd>
                     </dl>
                     <dl>
-                        <dt class="menu_tit">지불방식</dt>
-                        <dd><a>支付宝등록안내</a></dd>
-                        <dd><a>전자거래협의서</a></dd>
-                        <dd><a>상품구매방식</a></dd>
+                        <dt class="menu_tit">支付方式 </dt>
+                        <dd><a>如何注册支付宝</a></dd>
+                        <dd><a>支付协议</a></dd>
+                        <dd><a>支付方式</a></dd>
                     </dl>
                     <dl>
-                        <dt class="menu_tit">애프터서비스</dt>
-                        <dd><a>교환/환불안내</a></dd>
-                        <dd><a>판매자연락처</a></dd>
-                        <dd><a>환불과정안내</a></dd>
-                        <dd><a>애프터서비스</a></dd>
+                        <dt class="menu_tit">售后服务</dt>
+                        <dd><a>换货/退款政策</a></dd>
+                        <dd><a>联系卖家</a></dd>
+                        <dd><a>退换货流程</a></dd>
+                        <dd><a>售后服务</a></dd>
                     </dl>
                     <dl>
-                        <dt class="menu_tit">고객센터</dt>
+                        <dt class="menu_tit">客服中心</dt>
                         <dd><a>FAQ</a></dd>
-                        <dd><a>서비스이용약관</a></dd>
-                        <dd><a>개인정보수정</a></dd>
-                        <dd><a>비밀번호수정</a></dd>
-                        <dd><a>배송지수정</a></dd>
+                        <dd><a>服务协议</a></dd>
+                        <dd><a>会员修改个人资料</a></dd>
+                        <dd><a>会员修改密码</a></dd>
+                        <dd><a>修改收货地址</a></dd>
                     </dl>
                 </div>
                 <!--s: 제휴업체-->
                 <div class="oz_partners">
-                    <h3 class="oz_main_partners_tit">협력업체</h3>
+                    <h3 class="oz_main_partners_tit">合作企业</h3>
                     <div class="partner_list">
                         <ul>
-                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner01.png" alt="롯데백화점"/></a></li>
-                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner02.png" alt="신세계"/></a></li>
+                            <li><a href="http://www.oozoo.co.kr" target="_blank"><img src="/images/partners/list_partner13.png" alt="롯데백화점"/></a></li>
+                            <!--<li><a href="#" target="_blank"><img src="/images/partners/list_partner02.png" alt="신세계"/></a></li>
                             <li><a href="#" target="_blank"><img src="/images/partners/list_partner03.png" alt="현대"/></a></li>
                             <li><a href="#" target="_blank"><img src="/images/partners/list_partner04.png" alt="겔러리아"/></a></li>
                             <li><a href="#" target="_blank"><img src="/images/partners/list_partner05.png" alt="홈플러스"/></a></li>
@@ -940,14 +940,14 @@ $result = sql_query($sql);
                             <li><a href="#" target="_blank"><img src="/images/partners/list_partner09.png" alt="SK-2"/></a></li>
                             <li><a href="#" target="_blank"><img src="/images/partners/list_partner10.png" alt="현대"/></a></li> 
                             <li><a href="#" target="_blank"><img src="/images/partners/list_partner11.png" alt="국민은행"/></a></li>
-                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner12.png" alt="한국"/></a></li>
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner12.png" alt="한국"/></a></li>-->
                         </ul>
                     </div>
                 </div>            
                 <!--e: 제휴업체-->
                 <!--s: 공지사항-->
                 <div class="oz_main_news">
-                    <h3 class="oz_main_news_tit">공지사항</h3>
+                    <h3 class="oz_main_news_tit">公告</h3>
                     <div class="oz_main_news_list">
                         <ul>
                             <li><a href="#" target="_blank">【官方公告】宇宙”物流预警“邀你备战大促！</a></li>
