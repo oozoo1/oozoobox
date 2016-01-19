@@ -40,7 +40,7 @@ if($_GET['e_mail'])
 								}
 									else
 								{
-									echo "<img src=\"images/member_ck_ok.gif\" class=\"t1\"/>";
+									echo "<img src=\"/bbs/images/member_ck_ok.gif\" class=\"t1\"/>";
 								}
 								
 					 }
@@ -53,7 +53,9 @@ if($_GET['mail'])
 
 						if (!preg_match("/([0-9a-zA-Z_-]+)@([0-9a-zA-Z_-]+)\.([0-9a-zA-Z_-]+)/", $mb_email)){
 								echo "<font color=red>格式不正确</font>";
-						}
+						}else{
+									echo "<img src=\"/bbs/images/member_ck_ok.gif\" class=\"t1\"/>";
+								}
 
 }
 ?>

@@ -1,6 +1,10 @@
 <?php
 	header("Content-Type:text/html; charset=utf-8");
+if($_SERVER['HTTP_HOST']=="localhost"){
 	$conn = mysql_connect('oozoobox.com','oozoobox','akstpeoqkr2015');
+}else{
+	$conn = mysql_connect('localhost','oozoobox','akstpeoqkr2015');
+}	
 	mysql_select_db('oozoobox');
 	if(isset($_POST['parentid'])){
 		$sql = "select areaid,areaname,parentid,arrparentid,child,arrchildid,listorder  from  destoon_area  where parentid=".$_POST['parentid']."  order by  areaid asc ";

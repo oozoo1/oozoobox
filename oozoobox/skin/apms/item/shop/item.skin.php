@@ -120,7 +120,7 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                                         <em class="u_cnt">1,853</em> <!--누른 후-->
                                     </a>                                    
                                 </div>
-                                <a><img src="/images/detail_btn_wishlist.png" onMouseOver="this.src='/images/detail_btn_wishlist_o.png'"  onMouseOut="this.src='/images/detail_btn_wishlist.png'" alt="收藏关注商品"/></a>
+                                <a href="#" onclick="apms_wishlist('<?php echo $it['it_id']; ?>'); return false;"><img src="/images/detail_btn_wishlist.png" onMouseOver="this.src='/images/detail_btn_wishlist_o.png'"  onMouseOut="this.src='/images/detail_btn_wishlist.png'" alt="收藏关注商品"/></a>
                             </td>
                         </tr>
                     <?php } ?>
@@ -156,7 +156,7 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                         <tr><th scope="row">价格</th><td>电话咨询</td></tr>
                     <?php } else { // 전화문의가 아닐 경우?>
                         <?php if ($it['it_cust_price']) { ?>
-                            <tr><th scope="row">市场价格</th><td><?php echo $it['it_cust_price']; ?></td></tr>
+                            <tr><th scope="row">市场价格</th><td><?php echo number_format($it['it_cust_price'],2); ?></td></tr>
                         <?php } // 시중가격 끝 ?>
                         <tr><th scope="row">价格</th><td>
                                 <?php echo display_price(get_price($it)); ?>
@@ -314,25 +314,23 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                                     <img alt="MD询问(MD에게 묻기)" src="/images/detail_btn_03.png" title="MD询问(MD에게 묻기)"/>
                                 </button>
                             </a>
-                            <a href="#" onclick="apms_recommend('<?php echo $it['it_id']; ?>', '<?php echo $ca_id; ?>'); return false;">
-                                <button id="btnAddToSend" type="button">
-                                    <img alt="软磨硬泡(조르기)" src="/images/detail_btn_04.png" title="软磨硬泡(조르기)"/>
-                                </button>
+                            <a href="/shop/itemrecommend.php?it_id=<?php echo $it['it_id']; ?>&ca_id=<?php echo $ca_id; ?>">
+                                    <img alt="找人付款" src="/images/detail_btn_04.png" title="找人付款"/>
                             </a>                                      
                         </div>                        
                       <? }else{ ?>
                         <div class="choice-control">
                             <a href="#" onClick="javascript:if(confirm('您还不是网站会员 是否要登陆网站？')){document.location.href='/bbs/login.php?url=<?=urlencode("{$_SERVER[PHP_SELF]}?{$_SERVER[QUERY_STRING]}")?>'};">
                                 <button id="btnAddToWishList" type="button">
-                                    <img alt="바로구매" src="/images/detail_btn_01.png" title="바로구매"/>
+                                    <img alt="立即购买" src="/images/detail_btn_01.png" title="立即购买"/>
                                 </button>
                             </a>
                             <a href="#" onClick="javascript:if(confirm('您还不是网站会员 是否要登陆网站？')){document.location.href='/bbs/login.php?url=<?=urlencode("{$_SERVER[PHP_SELF]}?{$_SERVER[QUERY_STRING]}")?>'};">
                                 <button id="btnAddToWishList" type="button">
-                                    <img alt="장바구니" src="/images/detail_btn_02.png" title="장바구니"/>
+                                    <img alt="载入购物车" src="/images/detail_btn_02.png" title="购物车"/>
                                 </button>
                             </a>
-                            <a href="#" onClick="javascript:if(confirm('您还不是网站会员 是否要登陆网站？')){document.location.href='/bbs/login.php?url=<?=urlencode("{$_SERVER[PHP_SELF]}?{$_SERVER[QUERY_STRING]}")?>'};">
+                            <a href="#" onclick="apms_wishlist('<?php echo $it['it_id']; ?>'); return false;">
                                 <button id="btnAddToWishList" type="button">
                                     <img alt="MD询问(MD에게 묻기)" src="/images/detail_btn_03.png" title="MD询问(MD에게 묻기)"/>
                                 </button>
