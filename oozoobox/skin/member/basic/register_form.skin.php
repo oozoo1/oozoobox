@@ -135,8 +135,8 @@ body {
                 </tr>
                 <tr>
                   <td width="100" height="50"><img src="<?=$skin_url?>/images/join_title_02.png"></td>
-                  <td><input type="text" id="reg_mb_name" name="mb_name" <?php echo $required ?> <?php echo $readonly; ?> class="r_input" size="10" placeholder="请输入真实姓名"></td>
-                  <td width="70" align="left"><span id="chk"></span></td>
+                  <td><input type="text" id="reg_mb_name" name="mb_name" <?php echo $required ?> <?php echo $readonly; ?> class="r_input" size="10" placeholder="请输入真实姓名" onKeyUp="check()" ></td>
+                  <td width="70" align="left"><span id="mbname"></span></td>
                 </tr>
                 <tr>
                   <td height="50"><img src="<?=$skin_url?>/images/join_title_03.png"></td>
@@ -192,6 +192,17 @@ body {
 				}
 				else {
 						document.getElementById("tishi").innerHTML="<font color=red>两次不同</font>";
+					document.getElementById("submit").disabled = true;
+				}
+		}
+		
+		function check() {
+				if(!/^[\u4e00-\u9fa5]+$/gi.test(document.getElementById("reg_mb_name").value)) {
+						document.getElementById("mbname").innerHTML="<font color=red>请输入中文</font>";
+						document.getElementById("submit").disabled = false;
+				}
+				else {
+						document.getElementById("mbname").innerHTML="<img src=\"images/member_ck_ok.gif\" class=\"t1\"/>";
 					document.getElementById("submit").disabled = true;
 				}
 		}
