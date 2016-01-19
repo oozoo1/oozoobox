@@ -143,7 +143,7 @@ $result = sql_query($sql);
                 <a class="interact-item" href="#">
                     <img src="images/main_promise_03.png" alt=""/> 
                 </a>
-                <a class="interact-item" href="#" style="margin-right:0">
+                <a class="interact-item" href="/shop/cscenter.php" style="margin-right:0">
                     <img src="images/main_promise_04.png" alt=""/> 
                 </a>
             </div>
