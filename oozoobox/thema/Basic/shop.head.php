@@ -675,7 +675,14 @@ $(function(){
 	var liWidth = $('#oz_glo2 #nav li').width();
 	var secondWidth = $('#oz_glo2 #nav .second').width();
 
-	var ca_idNo = <?php echo $ca_id?>;
+
+	var ca_idNo = <?php if($ca_id){
+							echo $ca_id;
+						}else{
+							echo "10";
+						}
+					?>;
+						
 	if(ca_idNo > 999){
 		//2뎁스 메뉴로 내려갈시 ca_id가 4자리임.(2010 || 2020 || 3010)
 		ca_idNo = Math.floor(ca_idNo / 1000);
