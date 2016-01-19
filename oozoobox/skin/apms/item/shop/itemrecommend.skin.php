@@ -48,13 +48,13 @@ include_once('./mypage_head.php');
       <input type="hidden" name="token" value="<?php echo $token; ?>">
       <input type="hidden" name="it_id" value="<?php echo $it_id; ?>">
       <tr>
-        <td height="40" background="/images/title_bg.png" align="center"><span style="font-size:16px; font-weight:bold; color:#fff;">找朋友付款-看看你们的关系如何?</span></td>
+        <td height="40" background="/images/title_bg_01.png" align="center"><span style="font-size:16px; font-weight:bold; color:#fff;">找朋友付款-看看你们的关系如何?</span></td>
       </tr>
       <tr>
         <td height="40">
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
-              <td width="100" height="100" align="center"><a href="/shop/item.php?it_id=<?=$_GET[it_id]?>&ca_id=<?=$_GET[ca_id]?>"><img src="/data/item/<?php echo $it['it_img1']; ?>" width="80" height="80"></a></td>
+              <td width="100" height="100" align="center"><a href="/shop/item.php?it_id=<?=$_GET[it_id]?>&ca_id=<?=$_GET[ca_id]?>"><img src="/data/item/<?php echo $it['it_img1']; ?>" width="80" height="80" style="border:solid 1px #ddd;"></a></td>
               <td valign="top" style="line-height:20px; padding-top:10px;"><a href="/shop/item.php?it_id=<?=$_GET[it_id]?>&ca_id=<?=$_GET[ca_id]?>"><?php echo $it['it_name']; ?></a><br><?php echo $it['it_price']; ?> 元</td>
             </tr>
           </table>	
@@ -86,7 +86,7 @@ include_once('./mypage_head.php');
         <td class="wheight" height="100" align="center">
           <div class="text-center">
             <button type="submit" id="btn_submit" class="btn btn-color btn-sm">发送</button>
-            <button type="button" class="btn btn-black btn-sm" onclick="window.close();">关闭</button>
+            <a href="/shop/item.php?it_id=<?=$_GET[it_id]?>&ca_id=<?=$_GET[ca_id]?>" class="btn btn-black btn-sm">取消</a>
           </div>
         </td>
       </tr>
