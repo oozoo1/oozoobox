@@ -19,6 +19,27 @@ if($_GET['user'])
 		echo "<img src=\"images/member_ck_ok.gif\" class=\"t1\"/>";
 	}
 }
+
+
+//GET方式获取数据（取决于异步提交时提交方式）
+if($_GET['old_pass'])
+{
+  $user=$_GET['old_pass']; 
+	$mb_password = get_encrypt_string($user); 
+    //此处可进行数据库匹配，本次省略直接判断
+	$sql="select mb_id , mb_password from g5_member where mb_id='$member[mb_id]'";//判断用户是否已经存在
+	$result=sql_query($sql);
+	$num_rows=sql_fetch_array($result);	
+    if($mb_password=="$num_rows[mb_password]")
+	{		
+		echo "<img src=\"/bbs/images/member_ck_ok.gif\" class=\"t1\"/>";
+	}
+    else
+	{
+		echo "<img src=\"/bbs/images/member_ck_no.gif\" class=\"t1\"/>";
+	}
+}
+
 	
 if($_GET['e_mail'])
 {
