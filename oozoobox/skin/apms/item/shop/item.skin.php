@@ -603,10 +603,8 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                             <!--s: 후기 리스트-->                        
                         </div>
                     </div>
-                    <a href="#">
-                        <button id="btnAfter" type="submit">
-                            <img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
-                        </button>
+                     <a class="btnAfter" href="#detail_tab1">
+                        <img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
                     </a>         
                 </div>
                 <!--e: #tab2 用户评价 "상품후기" -->
@@ -793,10 +791,8 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                             </tbody>
                         </table>
                     </div>
-                    <a href="#">
-                        <button id="btnAfter" type="submit">
-                            <img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
-                        </button>
+                    <a class="btnAfter" href="#detail_tab2">
+                        <img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
                     </a>                    
                 </div>
                 <!--e: #tab4 卖家信息 "판매자 정보"-->
@@ -894,10 +890,8 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                         </ul>
                         <br><br><br><br><br>
                     </div>
-                    <a href="#">
-                        <button id="btnAfter" type="submit">
-                            <img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
-                        </button>
+                    <a class="btnAfter" href="#detail_tab2">
+                        <img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
                     </a>                 
                 </div>
                 <!--e: #tab5 取消/换货/退货 "교환/환불정책"-->              
