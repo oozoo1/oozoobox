@@ -18,7 +18,6 @@ if(!defined('THEMA_PATH')) {
 $mb['mb_name'] = get_text($mb['mb_name']); 
 
 $g5['title'] = '회원가입이 완료되었습니다.';
-include_once('./_head.php');
 
 $skin_path = $member_skin_path;
 $skin_url = $member_skin_url;
@@ -32,5 +31,4 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
 }
 
 include_once($skin_path.'/register_result.skin.php');
-include_once('./_tail.php');
 ?>

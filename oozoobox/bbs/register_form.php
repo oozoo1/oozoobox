@@ -114,8 +114,6 @@ if(!defined('THEMA_PATH')) {
 	include_once(G5_LIB_PATH.'/apms.thema.lib.php');
 }
 
-include_once('./_head.php');
-
 $skin_path = $member_skin_path;
 $skin_url = $member_skin_url;
 
@@ -146,5 +144,4 @@ if ($config['cf_use_addr'])
     add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
 
 include_once($skin_path.'/register_form.skin.php');
-include_once('./_tail.php');
 ?>

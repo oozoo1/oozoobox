@@ -8,40 +8,126 @@ if($header_skin)
 	include_once('./header.php');
 
 ?>
-
+<style type="text/css">
+<!--
+html { overflow-y: scroll; }
+body,td,th {
+	font-size: 12px; font-family:微软雅黑;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-image: url(<?=$skin_url?>/images/login_bg.jpg);
+	background-repeat: repeat-x;
+	background-color: #eeeeee;
+}
+/*** 기본버튼 **/
+.btn.btn-color { 
+	border: 1px solid #f47a22; 
+	border-image: none; 
+	color: rgb(255, 255, 255) !important; 
+	background-color: #f5944f; 
+	background-image: none;
+	padding:10px 20px 10px 20px;
+}
+.btn.active.btn-color, .btn.btn-color:hover, .btn.btn-color:focus, .btn.btn-color:active { 
+	border-color: #f47a22; 
+	color: rgb(255, 255, 255) !important; 
+	background-color: #f47a22; 
+	background-image: none; 
+	padding:10px 20px 10px 20px;
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+.r_input{border:solid 1px #d9d9d9; width:240px; height:31px; color:#bdbdbd;}
+-->
+</style>
+<script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script> 
+<script type="text/javascript"><!--自动检查账号是否被注册-->
+	$(
+	  function()
+	  	{    
+		//账号   jQuery(普通应用时推荐，简单易用)
+    	$("#reg_mb_id").blur(function()
+								 {        //文本框鼠标焦点消失事件
+			 						$.get("./member_ck_id.php?user="+$("#reg_mb_id").val(),null,function(data)   //此处get方式 可换为post方式按需求调整，其他无需修改使用方式一样
+      		 					 	{
+          		  						$("#chk").html(data);   //向ID为chk的元素内添加html代码
+       		 						}
+			 						);
+       	 						}
+						)		
+						
+		//邮箱   jQuery(普通应用时推荐，简单易用)
+    	$("#reg_mb_email").blur(function()
+								 {        //文本框鼠标焦点消失事件
+			 						$.get("./member_ck_id.php?e_mail="+$("#reg_mb_email").val(),null,function(data)   //此处get方式 可换为post方式按需求调整，其他无需修改使用方式一样
+      		 					 	{
+          		  						$("#email").html(data);   //向ID为chk的元素内添加html代码
+       		 						}
+			 						);
+       	 						}
+						)		
+			
+						
+						     
+		}
+	)
+</script> 
+<table width="990" border="0" cellspacing="0" cellpadding="0" align="center">
 <form class="form-horizontal" role="form" method="post" name="fregister_email" action="<?php echo $action_url; ?>" onsubmit="return fregister_email_submit(this);">
 	<input type="hidden" name="mb_id" value="<?php echo $mb_id; ?>">
-	<div class="panel panel-default">
-		<div class="panel-heading"><strong><i class="fa fa-microphone fa-lg"></i> 메일인증을 받지 못한 경우 회원정보의 메일주소를 변경 할 수 있습니다.</strong></div>
-		<div class="panel-body">
-
-			<div class="form-group has-feedback">
-				<label class="col-sm-2 control-label" for="reg_mb_email"><b>E-mail</b><strong class="sound_only">필수</strong></label>
-				<div class="col-sm-8">
-					<input type="text" name="mb_email" id="reg_mb_email" required class="form-control input-sm email" size="50" maxlength="100" value="<?php echo $mb['mb_email']; ?>">
-					<span class="fa fa-envelope form-control-feedback"></span>
-				</div>
-			</div>
-
-			<div class="form-group has-feedback">
-				<label class="col-sm-2 control-label"><b>자동등록방지</b><strong class="sound_only">필수</strong></label>
-				<div class="col-sm-8">
-					<?php echo captcha_html(); ?>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="text-center" style="margin:30px 0px;">
-		<button type="submit" id="btn_submit" class="btn btn-color">인증메일변경</button>
-	    <a href="<?php echo G5_URL ?>" class="btn btn-black" role="button">취소</a>
-	</div>
+  <tr>
+    <td height="162" colspan="2" valign="top" style="padding-top:20px;"><a href="/"><img src="<?=$skin_url?>/images/join_logo.png" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="559" height="438" valign="top" background="<?=$skin_url?>/images/join_box_bg.png" style="padding-top:35px;">
+        <table width="420" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr>
+            <td><font style="font-family:微软雅黑; font-size:18px; color:#888888; font-weight:bold;">变更邮箱地址</font></td>
+            <td align="right"></td>
+          </tr>
+        </table>
+        <table width="420" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr>
+            <td height="55"></td>
+          </tr>
+          <tr>
+            <td height="230" valign="top" style="line-height:25px;">
+            		亲爱的 <strong>用户</strong> 如果您收不到 邮箱验证信息 请你变更邮箱地址.<br>
+                请输入新的邮箱地址<br>
+                <input type="text" name="mb_email" id="reg_mb_email" required class="r_input" size="50" maxlength="100" value="" placeholder="<?php echo $mb['mb_email']; ?>"> <span id="email"></span><br>
+                变更后 请重新登入您的邮箱 验证身份!
+            </td>
+          </tr>
+          <tr>
+            <td height="30"></td>
+          </tr>
+        </table>
+        <table width="420" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr>
+            <td align="right"><button type="submit" id="btn_submit" class="btn btn-color">变更邮箱地址</button>
+	    <a href="<?php echo G5_URL ?>" class="btn btn-color" role="button">取消</a></td>
+          </tr>
+        </table>
+    </td>
+    <td align="center" valign="top"><img src="<?=$skin_url?>/images/join_font.png"></td>
+  </tr>
+  <tr>
+    <td align="center" height="50"><img src="<?=$skin_url?>/images/join_bottom_img.png"></td>
+    <td></td>
+  </tr>
 </form>
-
-<script>
-function fregister_email_submit(f) {
-    <?php echo chk_captcha_js();  ?>
-
-    return true;
-}
-</script>
+</table>

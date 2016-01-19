@@ -20,7 +20,6 @@ if(!defined('THEMA_PATH')) {
 $is_register = true;
 
 $g5['title'] = '会员注册协议';
-include_once('./_head.php');
 
 // 약관 등
 $provision = $privacy = '';
@@ -69,6 +68,4 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
 
 $action_url = G5_BBS_URL.'/register_form.php';
 include_once($skin_path.'/register.skin.php');
-
-include_once('./_tail.php');
 ?>
