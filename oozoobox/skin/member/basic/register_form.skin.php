@@ -8,17 +8,6 @@ if($header_skin)
 	include_once('./header.php');
 
 
-
-
-
-
-
-
-
-
-
-
-
 $ex1_filed = explode("|",$write[wr_1]); 
 $ext1_00  = $ex1_filed[0];
 $ext1_01  = $ex1_filed[1];
@@ -32,12 +21,84 @@ $ext1_08  = $ex1_filed[8];
 $ext1_09  = $ex1_filed[9];
 ?>
 <script type="text/javascript"  src="/js/ct.js"></script>  
+<script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script> 
 <script src="<?php echo G5_JS_URL ?>/jquery.register_form.js"></script>
 <?php if($config['cf_cert_use'] && ($config['cf_cert_ipin'] || $config['cf_cert_hp'])) { ?>
 	<script src="<?php echo G5_JS_URL ?>/certify.js"></script>
 <?php } ?>
 
+
+
+
+
+<style type="text/css">
+<!--
+html { overflow-y: scroll; }
+body,td,th {
+	font-size: 12px; font-family:微软雅黑;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-image: url(<?=$skin_url?>/images/login_bg.jpg);
+	background-repeat: repeat-x;
+	background-color: #eeeeee;
+}
+/*** 기본버튼 **/
+.btn.btn-color { 
+	border: 1px solid #f47a22; 
+	border-image: none; 
+	color: rgb(255, 255, 255) !important; 
+	background-color: #f5944f; 
+	background-image: none;
+	padding:10px 20px 10px 20px;
+}
+.btn.active.btn-color, .btn.btn-color:hover, .btn.btn-color:focus, .btn.btn-color:active { 
+	border-color: #f47a22; 
+	color: rgb(255, 255, 255) !important; 
+	background-color: #f47a22; 
+	background-image: none; 
+	padding:10px 20px 10px 20px;
+}
+.r_input{border:solid 1px #d9d9d9; width:240px; height:31px; color:#bdbdbd;}
+-->
+</style>
+<script type="text/javascript"><!--自动检查账号是否被注册-->
+	$(
+	  function()
+	  	{    
+		//账号   jQuery(普通应用时推荐，简单易用)
+    	$("#reg_mb_id").blur(function()
+								 {        //文本框鼠标焦点消失事件
+			 						$.get("./member_ck_id.php?user="+$("#reg_mb_id").val(),null,function(data)   //此处get方式 可换为post方式按需求调整，其他无需修改使用方式一样
+      		 					 	{
+          		  						$("#chk").html(data);   //向ID为chk的元素内添加html代码
+       		 						}
+			 						);
+       	 						}
+						)		
+						
+		//邮箱   jQuery(普通应用时推荐，简单易用)
+    	$("#reg_mb_email").blur(function()
+								 {        //文本框鼠标焦点消失事件
+			 						$.get("./member_ck_id.php?e_mail="+$("#reg_mb_email").val(),null,function(data)   //此处get方式 可换为post方式按需求调整，其他无需修改使用方式一样
+      		 					 	{
+          		  						$("#email").html(data);   //向ID为chk的元素内添加html代码
+       		 						}
+			 						);
+       	 						}
+						)		
+			
+						
+						     
+		}
+	)
+</script> 
+<table width="990" border="0" cellspacing="0" cellpadding="0" align="center">
 <form class="form-horizontal register-form" role="form" id="fregisterform" name="fregisterform" action="<?php echo $action_url ?>" onsubmit="return fregisterform_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off">
+	<input type="hidden" name="mb_nick" value="<? echo date("Ymdhis");?>">
 	<input type="hidden" name="w" value="<?php echo $w ?>">
 	<input type="hidden" name="url" value="<?php echo $urlencode ?>">
 	<input type="hidden" name="agree" value="<?php echo $agree ?>">
@@ -49,294 +110,94 @@ $ext1_09  = $ex1_filed[9];
 		<input type="hidden" name="mb_nick_default" value="<?php echo get_text($member['mb_nick']) ?>">
 		<input type="hidden" name="mb_nick" value="<?php echo get_text($member['mb_nick']) ?>">
 	<?php }  ?>
-
-	<div class="panel panel-default">
-		<div class="panel-heading"><strong><i class="fa fa-star fa-lg"></i> 网站注册内容</strong></div>
-		<div class="panel-body">
-
-			<div class="form-group has-feedback text-gap">
-				<label class="col-sm-2 control-label" for="reg_mb_id"><b>아이디</b><strong class="sound_only">必填项</strong></label>
-				<div class="col-sm-3">
-					<input type="text" name="mb_id" value="<?php echo $member['mb_id'] ?>" id="reg_mb_id" <?php echo $required ?> <?php echo $readonly ?> class="form-control input-sm" minlength="3" maxlength="20">
-					<span class="fa fa-check form-control-feedback"></span>
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-8 text-muted">
-					<div id="msg_mb_id"></div>
-					只能输入 英文, 数字, _ 符号 . 请输入 最少 3字符以上.
-				</div>
-			</div>
-
-			<div class="form-group has-feedback">
-				<label class="col-sm-2 control-label" for="reg_mb_password"><b>密码</b><strong class="sound_only">必填项</strong></label>
-				<div class="col-sm-3">
-					<input type="password" name="mb_password" id="reg_mb_password" <?php echo $required ?> class="form-control input-sm" minlength="3" maxlength="20">
-					<span class="fa fa-lock form-control-feedback"></span>
-				</div>
-				<label class="col-sm-2 control-label" for="reg_mb_password_re"><b>密码确认</b><strong class="sound_only">必填项</strong></label>
-				<div class="col-sm-3">
-					<input type="password" name="mb_password_re" id="reg_mb_password_re" <?php echo $required ?> class="form-control input-sm" minlength="3" maxlength="20">
-					<span class="fa fa-check form-control-feedback"></span>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="panel panel-default">
-		<div class="panel-heading"><strong><i class="fa fa-user fa-lg"></i> 个人资料</strong></div>
-		<div class="panel-body">
-
-			<div class="form-group has-feedback text-gap">
-				<label class="col-sm-2 control-label" for="reg_mb_name"><b>姓名</b><strong class="sound_only">必填项</strong></label>
-				<div class="col-sm-3">
-					<input type="text" id="reg_mb_name" name="mb_name" value="<?php echo get_text($member['mb_name']) ?>" <?php echo $required ?> <?php echo $readonly; ?> class="form-control input-sm" size="10">
-					<span class="fa fa-check form-control-feedback"></span>
-				</div>
-				<?php if($config['cf_cert_use']) { ?>
-					<div class="col-sm-7">
-						<div class="cert-btn">
-							<?php 
-								if($config['cf_cert_ipin'])
-									echo '<button type="button" id="win_ipin_cert" class="btn btn-black btn-sm">아이핀 본인확인</button>'.PHP_EOL;
-								if($config['cf_cert_hp'])
-									echo '<button type="button" id="win_hp_cert" class="btn btn-black btn-sm">휴대폰 본인확인</button>'.PHP_EOL;
-							?>
-						</div>
-					</div>
-				<?php } ?>
-			</div>
-
-			<?php if($config['cf_cert_use']) { ?>
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-8 text-muted">
-						<?php
-						if ($config['cf_cert_use'] && $member['mb_certify']) {
-							if($member['mb_certify'] == 'ipin')
-								$mb_cert = '아이핀';
-							else
-								$mb_cert = '휴대폰';
-						?>
-							<span class="black" id="msg_certify">
-								[<strong><?php echo $mb_cert; ?> 본인확인</strong><?php if ($member['mb_adult']) { ?> 및 <strong>성인인증</strong><?php } ?> 완료]
-							</span>
-						<?php } ?>
-						아이핀 본인확인 후에는 이름이 자동 입력되고 휴대폰 본인확인 후에는 이름과 휴대폰번호가 자동 입력되어 수동으로 입력할수 없게 됩니다.
-						<noscript>본인확인을 위해서는 자바스크립트 사용이 가능해야합니다.</noscript>
-					</div>
-				</div>
-			<?php } ?>
-
-			<?php if ($req_nick) {  ?>
-				<div class="form-group has-feedback text-gap">
-					<label class="col-sm-2 control-label" for="reg_mb_nick"><b>昵称</b><strong class="sound_only">必填项</strong></label>
-					<div class="col-sm-3">
-						<input type="hidden" name="mb_nick_default" value="<?php echo isset($member['mb_nick']) ? get_text($member['mb_nick']) : ''; ?>">
-						<input type="text" name="mb_nick" value="<?php echo isset($member['mb_nick']) ? get_text($member['mb_nick']) : ''; ?>" id="reg_mb_nick" required class="form-control input-sm nospace" size="10" maxlength="20">
-						<span class="fa fa-user form-control-feedback"></span>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-8 text-muted">
-						<div id="msg_mb_nick"></div>
-						为了避免 邮件遗失 请输入真实姓名 <?php echo (int)$config['cf_nick_modify'] ?>日内 你将无法修改 姓名.
-					</div>
-				</div>
-			<?php }  ?>
-
-			<div class="form-group has-feedback<?php echo ($config['cf_use_email_certify']) ? ' text-gap' : '';?>">
-				<label class="col-sm-2 control-label" for="reg_mb_email"><b>E-mail</b><strong class="sound_only">必填项</strong></label>
-				<div class="col-sm-5">
-					<input type="hidden" name="old_email" value="<?php echo $member['mb_email'] ?>">
-					<input type="text" name="mb_email" value="<?php echo isset($member['mb_email'])?$member['mb_email']:''; ?>" id="reg_mb_email" required class="form-control input-sm email" size="70" maxlength="100">
-					<span class="fa fa-envelope form-control-feedback"></span>
-				</div>
-			</div>
-			<?php if ($config['cf_use_email_certify']) {  ?>
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-8 text-muted">
-						<?php if ($w=='') { echo "E-mail 로 발송된 내용을 확인한 후 인증하셔야 회원가입이 완료됩니다."; }  ?>
-						<?php if ($w=='u') { echo "E-mail 주소를 변경하시면 다시 인증하셔야 합니다."; }  ?>
-					</div>
-				</div>
-			<?php }  ?>
-
-			<?php if ($config['cf_use_homepage']) {  ?>
-				<div class="form-group has-feedback">
-					<label class="col-sm-2 control-label" for="reg_mb_homepage"><b>个人主页</b><?php if ($config['cf_req_homepage']){ ?><strong class="sound_only">必填项</strong><?php } ?></label>
-					<div class="col-sm-5">
-						<input type="text" name="mb_homepage" value="<?php echo get_text($member['mb_homepage']) ?>" id="reg_mb_homepage" <?php echo $config['cf_req_homepage']?"required":""; ?> class="form-control input-sm" size="70" maxlength="255">
-						<span class="fa fa-home form-control-feedback"></span>
-					</div>
-				</div>
-			<?php }  ?>
-
-			<?php if ($config['cf_use_tel']) {  ?>
-				<div class="form-group has-feedback">
-					<label class="col-sm-2 control-label" for="reg_mb_tel"><b>电话号码</b><?php if ($config['cf_req_tel']) { ?><strong class="sound_only">必填项</strong><?php } ?></label>
-					<div class="col-sm-3">
-						<input type="text" name="mb_tel" value="<?php echo get_text($member['mb_tel']) ?>" id="reg_mb_tel" <?php echo $config['cf_req_tel']?"required":""; ?> class="form-control input-sm" maxlength="20">
-						<span class="fa fa-phone form-control-feedback"></span>
-					</div>
-				</div>
-			<?php }  ?>
-
-			<?php if ($config['cf_use_hp'] || $config['cf_cert_hp']) {  ?>
-				<div class="form-group has-feedback">
-					<label class="col-sm-2 control-label" for="reg_mb_hp"><b>手机号码</b><?php if ($config['cf_req_hp']) { ?><strong class="sound_only">必填项</strong><?php } ?></label>
-					<div class="col-sm-3">
-						<input type="text" name="mb_hp" value="<?php echo get_text($member['mb_hp']) ?>" id="reg_mb_hp" <?php echo ($config['cf_req_hp'])?"required":""; ?> class="form-control input-sm" maxlength="20">
-						<span class="fa fa-mobile form-control-feedback"></span>
-						<?php if ($config['cf_cert_use'] && $config['cf_cert_hp']) { ?>
-							<input type="hidden" name="old_mb_hp" value="<?php echo get_text($member['mb_hp']) ?>">
-						<?php } ?>
-					</div>
-				</div>
-			<?php }  ?>
-            <? if($w=="u"){?>
-				<div class="form-group has-feedback">
-					<label class="col-sm-2 control-label"><b>地址</b><strong class="sound_only">필수</strong></label>
-					<div class="col-sm-8">
-                        <div id="sel" style="width:400px;">
-                            <select onChange="getCity(this)" name="mb_addr1" required style="width:110px; border:solid 1px #cccccc; padding:10px; margin-right:5px;">
-                            <? if($member[mb_addr1]){?>
-                                <option value=""><?=$member[mb_addr1]?></option>
-                            <? }else{ ?>
-                                <option value="">请选择--省</option>
-                            <? } ?>
-                            </select>
-                            <select onChange="getCity(this)" name="mb_addr2" required style="width:110px; border:solid 1px #cccccc; padding:10px; margin-right:5px;">
-                            <? if($member[mb_addr2]){?>
-                                <option value=""><?=$member[mb_addr2]?></option>
-                            <? }else{ ?>
-                                <option value="">请选择--市</option>
-                            <? } ?>                                
-                            </select>
-                            <select onChange="getCity(this)" name="mb_addr3" required style="width:110px; border:solid 1px #cccccc; padding:10px;">
-                            <? if($member[mb_addr3]){?>
-                                <option value=""><?=$member[mb_addr3]?></option>
-                            <? }else{ ?>
-                                <option value="">请选择--镇</option>
-                            <? } ?>
-                            </select> 
-                        </div>
-					</div>
-				</div>
-             <? } ?>   
-                
-
-		</div>
-	</div>
-
-	<div class="panel panel-default">
-		<div class="panel-heading"><strong><i class="fa fa-cog fa-lg"></i> 其他内容</strong></div>
-		<div class="panel-body">
-
-			<?php if ($config['cf_use_signature']) {  ?>
-				<div class="form-group">
-					<label class="col-sm-2 control-label" for="reg_mb_signature"><b>心情一句话</b><?php if ($config['cf_req_signature']){ ?><strong class="sound_only">必填项</strong><?php } ?></label>
-					<div class="col-sm-8">
-						<textarea name="mb_signature" rows=5 id="reg_mb_signature" <?php echo $config['cf_req_signature']?"required":""; ?> class="form-control input-sm"><?php echo $member['mb_signature'] ?></textarea>
-					</div>
-				</div>
-			<?php }  ?>
-
-			<?php if ($config['cf_use_profile']) {  ?>
-				<div class="form-group">
-					<label class="col-sm-2 control-label" for="reg_mb_profile"><b>个人简介</b><?php if ($config['cf_req_profile']){ ?><strong class="sound_only">必填项</strong><?php } ?></label>
-					<div class="col-sm-8">
-						<textarea name="mb_profile" rows=5 id="reg_mb_profile" <?php echo $config['cf_req_profile']?"required":""; ?> class="form-control input-sm"><?php echo $member['mb_profile'] ?></textarea>
-					</div>
-				</div>
-			<?php }  ?>
-
-			<?php if ($config['cf_use_member_icon'] && $member['mb_level'] >= $config['cf_icon_level']) {  ?>
-				<div class="form-group">
-					<label class="col-sm-2 control-label" for="reg_mb_profile"><b>회원아이콘</b></label>
-					<div class="col-sm-8">
-						<input type="file" name="mb_icon" id="reg_mb_icon">
-						<?php if ($w == 'u' && file_exists($mb_icon_path)) {  ?>
-							<label for="del_mb_icon">
-								<img src="<?php echo $mb_icon_url ?>" alt="회원아이콘">
-								<input type="checkbox" name="del_mb_icon" value="1" id="del_mb_icon"> 삭제
-							</label>
-						<?php }  ?>
-						<span class="help-block">
-							이미지 크기는 가로 <?php echo $config['cf_member_icon_width'] ?>픽셀, 세로 <?php echo $config['cf_member_icon_height'] ?>픽셀 이하로 해주세요.
-							gif만 가능하며 용량 <?php echo number_format($config['cf_member_icon_size']) ?>바이트 이하만 등록됩니다.
-						</span>
-					</div>
-				</div>
-			<?php }  ?>
-
-			<div class="form-group">
-				<label class="col-sm-2 control-label" for="reg_mb_mailling"><b>邮件服务</b></label>
-				<div class="col-sm-8">
-					<label class="control-label">
-						<input type="checkbox" name="mb_mailling" value="1" id="reg_mb_mailling" <?php echo ($w=='' || $member['mb_mailling'])?'checked':''; ?>>
-						同意接收邮件服务.
-					</label>
-				</div>
-			</div>
-
-			<?php if ($config['cf_use_hp']) {  ?>
-				<div class="form-group">
-					<label class="col-sm-2 control-label" for="reg_mb_sms"><b>短信服务</b></label>
-					<div class="col-sm-8">
-						<label class="control-label">
-							<input type="checkbox" name="mb_sms" value="1" id="reg_mb_sms" <?php echo ($w=='' || $member['mb_sms'])?'checked':''; ?>>
-							同意接收短信服务.
-						</label>
-					</div>
-				</div>
-			<?php }  ?>
-
-			<?php if (isset($member['mb_open_date']) && $member['mb_open_date'] <= date("Y-m-d", G5_SERVER_TIME - ($config['cf_open_modify'] * 86400)) || empty($member['mb_open_date'])) { // 정보공개 수정일이 지났다면 수정가능  ?>
-				<div class="form-group">
-					<label class="col-sm-2 control-label" for="reg_mb_open"><b>公开个人信息</b></label>
-					<div class="col-sm-8">
-						<label class="control-label">
-							<input type="hidden" name="mb_open_default" value="<?php echo $member['mb_open'] ?>">
-							<input type="checkbox" name="mb_open" value="1" <?php echo ($w=='' || $member['mb_open'])?'checked':''; ?> id="reg_mb_open">
-							其他会员 可看到您的个人信息.
-						</label>
-						<span class="help-block">
-							公开个人信息后将 <?php echo (int)$config['cf_open_modify'] ?>日内 无法关闭公开内容.
-						</span>
-					</div>
-				</div>
-			<?php } else {  ?>
-				<div class="form-group">
-					<label class="col-sm-2 control-label"><b>정보공개</b></label>
-					<div class="col-sm-8">
-						<span class="help-block">
-							정보공개는 수정후 <?php echo (int)$config['cf_open_modify'] ?>일 이내, <?php echo date("Y년 m월 j일", isset($member['mb_open_date']) ? strtotime("{$member['mb_open_date']} 00:00:00")+$config['cf_open_modify']*86400:G5_SERVER_TIME+$config['cf_open_modify']*86400); ?> 까지는 변경이 안됩니다.<br>
-							이렇게 하는 이유는 잦은 정보공개 수정으로 인하여 쪽지를 보낸 후 받지 않는 경우를 막기 위해서 입니다.
-						</span>
-						<input type="hidden" name="mb_open" value="<?php echo $member['mb_open'] ?>">
-					</div>
-				</div>
-			<?php } ?>
-
-			<?php if ($w == "" && $config['cf_use_recommend']) {  ?>
-				<div class="form-group has-feedback">
-					<label class="col-sm-2 control-label" for="reg_mb_recommend"><b>推荐人账号</b></label>
-					<div class="col-sm-3">
-						<input type="text" name="mb_recommend" id="reg_mb_recommend" class="form-control input-sm">
-						<span class="fa fa-user form-control-feedback"></span>
-					</div>
-				</div>
-			<?php }  ?>
-		</div>
-	</div>
-
-	<div class="text-center" style="margin:30px 0px;">
-		<button type="submit" id="btn_submit" class="btn btn-color" accesskey="s"><?php echo $w==''?'会员注册':'信息修改'; ?></button>
-		<a href="<?php echo G5_URL ?>" class="btn btn-black" role="button">取消</a>
-	</div>
-
+  <tr>
+    <td height="162" colspan="2" valign="top" style="padding-top:20px;"><a href="/"><img src="<?=$skin_url?>/images/join_logo.png" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="559" height="438" valign="top" background="<?=$skin_url?>/images/join_box_bg.png" style="padding-top:35px;">
+        <table width="420" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr>
+            <td><font style="font-family:微软雅黑; font-size:18px; color:#888888; font-weight:bold;">基本注册信息</font></td>
+            <td align="right"><a href="/bbs/login.php"><img src="<?=$skin_url?>/images/join_login_bt.png" border="0"></a></td>
+          </tr>
+        </table>
+        <table width="420" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr>
+            <td height="35"></td>
+          </tr>
+          <tr>
+            <td>
+              <table width="420" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="100" height="50"><img src="<?=$skin_url?>/images/join_title_01.png"></td>
+                  <td><input type="text" name="mb_id" value="<?php echo $member['mb_id'] ?>" id="reg_mb_id" <?php echo $required ?> <?php echo $readonly ?> minlength="3" maxlength="20" class="r_input" placeholder="请输入,英文,数字,用户名"></td>
+                  <td width="70" align="left"><span id="chk"></span></td>
+                </tr>
+                <tr>
+                  <td width="100" height="50"><img src="<?=$skin_url?>/images/join_title_02.png"></td>
+                  <td><input type="text" id="reg_mb_name" name="mb_name" <?php echo $required ?> <?php echo $readonly; ?> class="r_input" size="10" placeholder="请输入真实姓名"></td>
+                  <td width="70" align="left"><span id="chk"></span></td>
+                </tr>
+                <tr>
+                  <td height="50"><img src="<?=$skin_url?>/images/join_title_03.png"></td>
+                  <td><input type="password" name="mb_password" id="reg_mb_password" <?php echo $required ?> class="r_input" minlength="3" maxlength="20" placeholder="请输入密码"></td>
+                  <td align="left">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td height="50"><img src="<?=$skin_url?>/images/join_title_04.png"></td>
+                  <td><input type="password" name="mb_password_re" id="reg_mb_password_re" <?php echo $required ?> class="r_input" minlength="3" maxlength="20" onKeyUp="validate()"  placeholder="请再次输入密码"></td>
+                  <td align="left"><span id="tishi"></span></td>
+                </tr>
+                <tr>
+                  <td height="50"><img src="<?=$skin_url?>/images/join_title_05.png"></td>
+                  <td><input type="text" name="mb_email" value="<?php echo isset($member['mb_email'])?$member['mb_email']:''; ?>" id="reg_mb_email" required class="r_input" size="70" maxlength="100" placeholder="请输入E-mail地址"></td>
+                  <td><span id="email"></span></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td height="30"></td>
+          </tr>
+        </table>
+        <table width="420" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr>
+            <td style="color:#727272;" align="left">
+              <label>
+                <input name="mb_mailling" type="checkbox" id="reg_mb_mailling" value="1" checked="checked">
+                同意接收邮件服务.
+              </label>
+              <label>
+                <input name="mb_open" type="checkbox" id="reg_mb_open" value="1" checked="checked">
+                其他会员 可看到您的个人信息.
+              </label>
+            </td>
+            <td align="right"><button type="submit" class="btn btn-color">下一步</button></td>
+          </tr>
+        </table>
+    </td>
+    <td align="center" valign="top"><img src="<?=$skin_url?>/images/join_font.png"></td>
+  </tr>
+  <tr>
+    <td align="center" height="50"><img src="<?=$skin_url?>/images/join_bottom_img.png"></td>
+    <td></td>
+  </tr>
+<script>
+		function validate() {
+				var pw1 = document.getElementById("reg_mb_password").value;
+				var pw2 = document.getElementById("reg_mb_password_re").value;
+				if(pw1 == pw2) {
+						document.getElementById("tishi").innerHTML="<img src=\"images/member_ck_ok.gif\" class=\"t1\"/>";
+						document.getElementById("submit").disabled = false;
+				}
+				else {
+						document.getElementById("tishi").innerHTML="<font color=red>两次不同</font>";
+					document.getElementById("submit").disabled = true;
+				}
+		}
+</script>
 </form>
-
+</table>
 <script>
 $(function() {
 	$("#reg_zip_find").css("display", "inline-block");

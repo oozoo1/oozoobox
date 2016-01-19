@@ -1974,16 +1974,16 @@ ul.div-ring p {
 
 /*** 기본버튼 **/
 .btn.btn-color { 
-	border: 1px solid rgb(223, 17, 25); 
+	border: 1px solid #f47a22; 
 	border-image: none; 
 	color: rgb(255, 255, 255) !important; 
-	background-color: rgb(233, 27, 35); 
-	background-image: none; 
+	background-color: #f5944f; 
+	background-image: none;
 }
 .btn.active.btn-color, .btn.btn-color:hover, .btn.btn-color:focus, .btn.btn-color:active { 
-	border-color: rgb(213, 7, 15); 
+	border-color: #f47a22; 
 	color: rgb(255, 255, 255) !important; 
-	background-color: rgb(213, 7, 15); 
+	background-color: #f47a22; 
 	background-image: none; 
 }
 .btn.btn-dark { 
