@@ -44,17 +44,16 @@ if($_GET['e_mail'])
 								}
 								
 					 }
-/*POST方式获取数据（取决于异步提交时提交方式）
-if($_POST['user'])
+
+}
+if($_GET['mail'])
 {
-    $user=$_POST['user'];    
+  $mb_email=$_GET['mail'];    
     //此处可进行数据库匹配，本次省略直接判断
-    if($user=="admin")
-    echo "<font color=red>用户名已被注册！</font>";
-    else
-    echo "<font color=red>用户名可以使用</font>";
-    
-}else{}
-*/
+
+						if (!preg_match("/([0-9a-zA-Z_-]+)@([0-9a-zA-Z_-]+)\.([0-9a-zA-Z_-]+)/", $mb_email)){
+								echo "<font color=red>格式不正确</font>";
+						}
+
 }
 ?>
