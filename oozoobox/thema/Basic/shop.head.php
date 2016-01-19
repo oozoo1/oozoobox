@@ -15,19 +15,25 @@ $t_day     =date('Y-m-d');
 
 
 $sqltoday = " select a.*
-from todaytext a
-	 , todaytext_ct b
-where a.t_ct = b.id
-and b.ct_date = '$t_day' LIMIT 0 , 1";
+				from todaytext a
+				   , todaytext_ct b
+			   where a.t_ct = b.id
+				 and b.ct_date = '$t_day' LIMIT 0 , 1";
 $todaytext = sql_query($sqltoday);
 $today=sql_fetch_array($todaytext);
 
 if($today[id]){
-$top_message="$today[t_content]";
-$today_link="$today[t_link]";
+	$top_message="$today[t_content]";
+	$today_link="$today[t_link]";
 }else{
-$top_message="情爱的客户， 今天紫外线太强了，必须使用防晒霜！ 〉〉〉去看看防晒霜";
-$today_link="/shop/list.php?ca_id=10";
+	$top_message="情爱的客户， 今天紫外线太强了，必须使用防晒霜！ 〉〉〉去看看防晒霜";
+	$today_link="/shop/list.php?ca_id=10";
+	
+	//주소뒤에 붙는 파리미터.
+	$get_sort     = "sort=" .$_GET[sort];							//정렬기준
+	$get_sortodr  = "sortodr=" .$_GET[sortodr];						//정렬방법
+	$get_l_type   = "l_type=" .$_GET[l_type];						//앨범형,리스트형
+	$get_parm_all = $get_sort."&".$get_sortodr."&".$get_l_type;		//종합
 }
 ?>
 
@@ -297,14 +303,14 @@ $today_link="/shop/list.php?ca_id=10";
     	<div class="oz_glo2_navbg">
             <ul id="nav">
                 <li id="on_cho_ko1">
-                    <a href="/shop/list.php?ca_id=10" class="first glo_1">给宝宝最好的</a>
+                    <a href="/shop/list.php?ca_id=10&<?php echo $get_parm_all?>" class="first glo_1">给宝宝最好的</a>
                     <div class="second">
                     	<dl class="second_left">
-                        	<dd><a href="/shop/list.php?ca_id=1010" class="glo2_local">尿片</a></dd>
-                            <dd><a href="/shop/list.php?ca_id=1020" class="glo2_local">食品</a></dd>
-                            <dd><a href="/shop/list.php?ca_id=1030" class="glo2_local">保健食品</a></dd>
-                            <dd><a href="/shop/list.php?ca_id=1040" class="glo2_local">童装</a></dd>
-                            <dd><a href="/shop/list.php?ca_id=1050" class="glo2_local">母婴用品</a></dd>
+                        	<dd><a href="/shop/list.php?ca_id=1010&<?php echo $get_parm_all?>" class="glo2_local">尿片</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=1020&<?php echo $get_parm_all?>" class="glo2_local">食品</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=1030&<?php echo $get_parm_all?>" class="glo2_local">保健食品</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=1040&<?php echo $get_parm_all?>" class="glo2_local">童装</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=1050&<?php echo $get_parm_all?>" class="glo2_local">母婴用品</a></dd>
                         </dl>
                         <!--s:GLOBAL2 MD추천상품-->
                         <div class="gol2_md_pro">
@@ -369,14 +375,14 @@ $today_link="/shop/list.php?ca_id=10";
                     </div>
                 </li>
                 <li id="on_cho_ko2">
-                    <a href="/shop/list.php?ca_id=20" class="glo_2">白滑牛奶皮</a>
+                    <a href="/shop/list.php?ca_id=20&<?php echo $get_parm_all?>" class="glo_2">白滑牛奶皮</a>
                     <div class="second">
                     	<dl class="second_left">
-                        	<dd><a href="/shop/list.php?ca_id=2010" class="glo2_local">面膜</a></dd>
-                            <dd><a href="/shop/list.php?ca_id=2020" class="glo2_local">化妆水/乳液</a></dd>
-                            <dd><a href="/shop/list.php?ca_id=2030" class="glo2_local">精华/护肤霜 </a></dd>
-                            <dd><a href="/shop/list.php?ca_id=2040" class="glo2_local">彩妆</a></dd>
-                            <dd><a href="/shop/list.php?ca_id=2050" class="glo2_local">套妆</a></dd>
+                        	<dd><a href="/shop/list.php?ca_id=2010&<?php echo $get_parm_all?>" class="glo2_local">面膜</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=2020&<?php echo $get_parm_all?>" class="glo2_local">化妆水/乳液</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=2030&<?php echo $get_parm_all?>" class="glo2_local">精华/护肤霜 </a></dd>
+                            <dd><a href="/shop/list.php?ca_id=2040&<?php echo $get_parm_all?>" class="glo2_local">彩妆</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=2050&<?php echo $get_parm_all?>" class="glo2_local">套妆</a></dd>
                         </dl> 
                         <!--s:GLOBAL2 MD추천상품-->
                         <div class="gol2_md_pro">
@@ -441,14 +447,14 @@ $today_link="/shop/list.php?ca_id=10";
                     </div>
                 </li>
                 <li id="on_cho_ko3">
-                    <a href="/shop/list.php?ca_id=30" class="glo_3">津津有味</a>
+                    <a href="/shop/list.php?ca_id=30&<?php echo $get_parm_all?>" class="glo_3">津津有味</a>
                     <div class="second">
                     	<dl class="second_left">
-                        	<dd><a href="/shop/list.php?ca_id=3010" class="glo2_local">调料</a></dd>
-                            <dd><a href="/shop/list.php?ca_id=3020" class="glo2_local">面类</a></dd>
-                            <dd><a href="/shop/list.php?ca_id=3030" class="glo2_local">营养</a></dd>
-                            <dd><a href="/shop/list.php?ca_id=3040" class="glo2_local">健康</a></dd>
-                            <dd><a href="/shop/list.php?ca_id=3050" class="glo2_local">饼干</a></dd>
+                        	<dd><a href="/shop/list.php?ca_id=3010&<?php echo $get_parm_all?>" class="glo2_local">调料</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=3020&<?php echo $get_parm_all?>" class="glo2_local">面类</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=3030&<?php echo $get_parm_all?>" class="glo2_local">营养</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=3040&<?php echo $get_parm_all?>" class="glo2_local">健康</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=3050&<?php echo $get_parm_all?>" class="glo2_local">饼干</a></dd>
                         </dl>
 <!--s:GLOBAL2 MD추천상품-->
                         <div class="gol2_md_pro">
@@ -513,13 +519,13 @@ $today_link="/shop/list.php?ca_id=10";
                     </div>
                 </li>
                 <li id="on_cho_ko4">
-                    <a href="/shop/list.php?ca_id=50" class="glo_4">小生活必备</a>
+                    <a href="/shop/list.php?ca_id=50&<?php echo $get_parm_all?>" class="glo_4">小生活必备</a>
                     <div class="second">
                     	<dl class="second_left">
-                        	<dd><a href="/shop/list.php?ca_id=5010" class="glo2_local">女士</a></dd>
-                            <dd><a href="/shop/list.php?ca_id=5020" class="glo2_local">厨房</a></dd>
-                            <dd><a href="/shop/list.php?ca_id=5030" class="glo2_local">洗澡</a></dd>
-                            <dd><a href="/shop/list.php?ca_id=5040" class="glo2_local">其他</a></dd>                            
+                        	<dd><a href="/shop/list.php?ca_id=5010&<?php echo $get_parm_all?>" class="glo2_local">女士</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=5020&<?php echo $get_parm_all?>" class="glo2_local">厨房</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=5030&<?php echo $get_parm_all?>" class="glo2_local">洗澡</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=5040&<?php echo $get_parm_all?>" class="glo2_local">其他</a></dd>                            
                         </dl>
 <!--s:GLOBAL2 MD추천상품-->
                         <div class="gol2_md_pro">
@@ -584,13 +590,13 @@ $today_link="/shop/list.php?ca_id=10";
                     </div>
                 </li>
                 <li id="on_cho_ko5">
-                    <a href="/shop/list.php?ca_id=40" class="glo_5">美丽的穿着</a>
+                    <a href="/shop/list.php?ca_id=40&<?php echo $get_parm_all?>" class="glo_5">美丽的穿着</a>
                     <div class="second">
                      	<dl class="second_left">
-                        	<dd><a href="/shop/list.php?ca_id=4010" class="glo2_local">女装</a></dd>
-                            <dd><a href="/shop/list.php?ca_id=4020" class="glo2_local">男装</a></dd>
-                            <dd><a href="/shop/list.php?ca_id=4030" class="glo2_local">儿童</a></dd>
-                            <dd><a href="/shop/list.php?ca_id=4040" class="glo2_local">内衣</a></dd>
+                        	<dd><a href="/shop/list.php?ca_id=4010&<?php echo $get_parm_all?>" class="glo2_local">女装</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=4020&<?php echo $get_parm_all?>" class="glo2_local">男装</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=4030&<?php echo $get_parm_all?>" class="glo2_local">儿童</a></dd>
+                            <dd><a href="/shop/list.php?ca_id=4040&<?php echo $get_parm_all?>" class="glo2_local">内衣</a></dd>
                         </dl> 
 <!--s:GLOBAL2 MD추천상품-->
                         <div class="gol2_md_pro">
