@@ -129,6 +129,7 @@ $list_cnt = count($list);
             </p>
         </div>
 		<!--e: LIST filter-->
+        <!-- 앨벌형스킨 -->
         <?php if($_GET[l_type]!="list"){?>
         <!--s: album-->
         <div class="list_type_album">
@@ -166,9 +167,16 @@ $list_cnt = count($list);
                             </a>
                             <?php 
                             ?>
-                            <a href="#">
+                            <!--
+                            <a href="./myshop.php?id=<?php echo $list[$i]['pt_id'];?>">
                                 <span class="album_item_shop">
                                     <em title="捞鱼猫旗舰店" class="album_ item_shop_name"><?php echo $list[$i]['pt_id'];?></em>
+                                </span>
+                            </a>
+                            -->
+                            <a href="./myshop.php?id=<?php echo $list[$i]['pt_id'];?>">
+                                <span class="album_item_shop">
+                                    <em class="album_ item_shop_name"><?php echo $list[$i]['it_basic'];?></em>
                                 </span>
                             </a>
                             <span class="album_item_detail">
@@ -202,6 +210,7 @@ $list_cnt = count($list);
             </ul>
         </div>
         <!--e: album-->
+        <!-- 리스트형 -->
         <?php }else{  ?>
 <!--s: LIST-->
         <div class="list_type_list">
@@ -216,23 +225,30 @@ $list_cnt = count($list);
                 <li class="<?php if($i % 2 == 1){?>list_list_item last_item<?php }else{ ?>list_list_item<?php } ?>">
                     <div class="list_card">
                         <span class="list_item_pic">
-                            <a href="#">
+                            <a href="<?php echo $list[$i]['href'];?>">
                             	<img width="100%" src="<?php echo $img['src'];?>" alt="<?php echo $list[$i]['it_name'];?>" title="<?php echo $list[$i]['it_name'];?>"/>
                             </a>                                
                         </span>
                         <span class="list_info">
-                            <a href="#">
+                        <!--
+                            <a href="./myshop.php?id=<?php echo $list[$i]['pt_id'];?>">
                                 <span class="list_item_shop">
                                     <em title="捞鱼猫旗舰店" class="list_ item_shop_name">捞鱼猫旗舰店</em>
                                 </span>
                             </a>                        
-                            <a href="#">
-                                <span class="list_item_desc">
+                       -->
+                            <a href="<?php echo $list[$i]['href'];?>">
+                                <span class="list_item_shop">
                                     <em title="<?php echo $list[$i]['it_name'];?>" class="list_item_name"><?php echo $list[$i]['it_name'];?></em>
+                                </span>
+                            </a>                        
+                            <a href="<?php echo $list[$i]['href'];?>">
+                                <span class="list_item_desc">
+                                    <em title="<?php echo $list[$i]['it_name'];?>" class="list_item_name"><?php echo $list[$i]['it_basic'];?></em>
                                 </span>
                             </a>
                             <span class="list_item_detail">
-                                <a href="#">
+                                <a href="<?php echo $list[$i]['href'];?>">
                                     <span class="list_item_price">
                                         <i class="list_price_rmb">¥</i>
                                         <span class="list_price_integer"><?php echo ($list[$i]['it_tel_inq']) ? 'Call' : number_format($list[$i]['it_price']);?></span>
@@ -241,7 +257,7 @@ $list_cnt = count($list);
                             </span>
                             <span class="list_item_tag">
                                 <span class="list_item_buy">
-                                    <a href="#">
+                                    <a href="<?php echo $list[$i]['href'];?>">
                                     	<span class="list_ico_buy"></span>
                                         <span>月成交</span>
                                         <em>1,011</em>
@@ -249,7 +265,7 @@ $list_cnt = count($list);
                                     </a>
                                 </span>
                                 <span class="list_item_after">
-                                    <a href="#">
+                                    <a href="<?php echo $list[$i]['href'];?>">
                                     	<span class="list_ico_after"></span>
                                         <span>评价</span>
                                         <em>8,141</em>
@@ -257,7 +273,7 @@ $list_cnt = count($list);
                                     </a>
                                 </span>
                                 <span class="list_item_wish">
-                                    <a href="#">
+                                    <a href="<?php echo $list[$i]['href'];?>">
                                     	<span class="list_ico_wish"></span>
                                         <span>喜欢</span>
                                         <em>8,141</em>
