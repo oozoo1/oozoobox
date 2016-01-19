@@ -23,25 +23,8 @@ $mb_signature = ($member['mb_signature']) ? apms_content(conv_content($member['m
 
 $g5['title'] = get_text($member['mb_name']).'今天浏览的足迹';
 include_once('./_head.php');
-
 ?>
-<!----------------------------------添加收货地址---开始------------------------------------------------------------------------------->
-
-
-		<a href="/shop/mypage.php"><h3 class="mp_tit">MY OOZOOBOX <span class="mp_tit_small">고객님의 개인정보, 주문 내역 등의 이용 기록을 조회할 수 있습니다.</span></h3></a>
-		<? include ("member_left.php");?>   
-        
-        <!--s: RIGHT CONTENTS-->
-        <div class="My_container">
-        	<h4 class="Mypage_tit">
-            我的足迹
-            </h4>
-            <div class="text_box">
-            	<p>
-                	자주 사용하시는 배송지를 주소록에 등록해두시면 보다 편리하게 이용할 수 있습니다.<br>
-                    최대 20개까지 등록하실 수 있습니다.
-                </p>
-            </div>
+<!----------------------------------我的足迹---开始------------------------------------------------------------------------------->
 <?php
 $tv_idx = get_session("ss_tv_idx");
 
@@ -56,6 +39,7 @@ $tv_div['img_length'] = 100; // 한번에 보여줄 이미지 수
 .imgline{ float:left; margin:5px; text-align:center;}
 .txtline{ line-height:40px;}
 </style>
+<div style="height:600px;">
 <!-- 오늘 본 상품 시작 { -->
         <?php if ($tv_idx) { // 오늘 본 상품이 1개라도 있을 때 ?>
         <?php
@@ -101,8 +85,5 @@ $tv_div['img_length'] = 100; // 한번에 보여줄 이미지 수
         <p>없음</p>
 
         <?php } ?>
-
-<!-- } 오늘 본 상품 끝 -->
-        </div>
-        <!--e: RIGHT CONTENTS-->
+</div>
 <?php  include_once('./_tail.php'); ?>
