@@ -200,11 +200,11 @@ $today_link="/shop/list.php?ca_id=10";
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <?php } ?>
                                 <li>
-                                    <a href="/shop/mypage.php" target="_top">我的信息</a> <!--"자료수정"-->
+                                    <a class="top_quick01" href="/shop/mypage.php" target="_top">我的信息</a> <!--"자료수정"-->
                                 </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <li class="oz_sn_join">
-                                    <a href="/bbs/logout.php?url=<?=urlencode("{$_SERVER[PHP_SELF]}?{$_SERVER[QUERY_STRING]}")?>" target="_top" rel="nofollow">退出登录</a><!--"로그아웃"-->
+                                    <a class="top_quick02" href="/bbs/logout.php?url=<?=urlencode("{$_SERVER[PHP_SELF]}?{$_SERVER[QUERY_STRING]}")?>" target="_top" rel="nofollow">退出登录</a><!--"로그아웃"-->
                                 </li>
                             <?php }else{ ?>
                                 <li>
@@ -212,29 +212,29 @@ $today_link="/shop/list.php?ca_id=10";
                                 </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <li>
-                                    <a href="/bbs/login.php?url=<?=urlencode("{$_SERVER[PHP_SELF]}?{$_SERVER[QUERY_STRING]}")?>" target="_top">请登录</a> <!--"로그인하세요"-->
+                                    <a class="top_quick03" href="/bbs/login.php?url=<?=urlencode("{$_SERVER[PHP_SELF]}?{$_SERVER[QUERY_STRING]}")?>" target="_top">请登录</a> <!--"로그인하세요"-->
                                 </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <li class="oz_sn_join">
-                                    <a href="/bbs/register.php" target="_top" rel="nofollow">免费注册</a><!--"회원가입하기"-->
+                                    <a class="top_quick04" href="/bbs/register.php" target="_top" rel="nofollow">免费注册</a><!--"회원가입하기"-->
                                 </li>
                             <?php } ?>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <li class="sn-cart">
                                 <? if($member[mb_id]){?>
-                                    <a href="/shop/cart.php" target="_top" rel="nofollow">购物车</a> <!--"장바구니"-->
+                                    <a class="top_quick05" href="/shop/cart.php" target="_top" rel="nofollow">购物车</a> <!--"장바구니"-->
                                 <? }else{ ?>
-                                <a href="#" onClick="javascript:if(confirm('您还不是网站会员 是否要登陆网站？')){document.location.href='/bbs/login.php?url=<?=urlencode("/shop/cart.php")?>'};">购物车</a> <!--"장바구니"-->
+                                <a class="top_quick05" href="#" onClick="javascript:if(confirm('您还不是网站会员 是否要登陆网站？')){document.location.href='/bbs/login.php?url=<?=urlencode("/shop/cart.php")?>'};">购物车</a> <!--"장바구니"-->
                                 <? } ?>
                                 </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <li class="oz_sn_myshopping">
-                                    <a href="/shop/orderinquiry.php" target="_top">我的购物信息 </a><!--"내 쇼핑 정보"-->
+                                    <a class="top_quick06" href="/shop/orderinquiry.php" target="_top">我的购物信息 </a><!--"내 쇼핑 정보"-->
                                     <!--SW: display:none 으로 되어 있는데 아마도 판매자로 로그인 하면 display:block으로 되지 않을까??-->
                                 </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <li class="oz_sn_customcenter">
-                                    <a href="/shop/cscenter.php">客户服务</a><!--"고객센터"-->
+                                    <a class="top_quick07" href="/shop/cscenter.php">客户服务</a><!--"고객센터"-->
                                 </li>
                             </ul>
                         </div>

@@ -44,7 +44,29 @@ fieldset legend{display: none;}
 #oz_site_nav .oz_sn_container { height: 32px;}
 #oz_site_nav .oz_sn_prm_info { height: 32px; line-height: 32px; display:inline-block; position:relative;}
 #oz_site_nav .oz_sn_quick_menu { height: 32px; line-height: 32px; position:absolute; right:0; top:0;}
-#oz_site_nav .oz_sn_quick_menu li {float:left; position:relative; padding:0 10px;}
+#oz_site_nav .oz_sn_quick_menu li {float:left; position:relative;}
+#oz_site_nav .oz_sn_quick_menu li a{padding:0 10px 0 20px;}
+/*我的信息*/
+#oz_site_nav a.top_quick01 {background:url("/images/top_quick01.png") no-repeat 2px 2px;}
+#oz_site_nav a.top_quick01:hover {background:url("/images/top_quick01_o.png") no-repeat 2px 2px;}
+/*退出登录*/
+#oz_site_nav a.top_quick02 {background:url("/images/top_quick02.png") no-repeat 2px 2px;}
+#oz_site_nav a.top_quick02:hover {background:url("/images/top_quick02_o.png") no-repeat 2px 2px;}
+/*请登录*/
+#oz_site_nav a.top_quick03 {background:url("/images/top_quick03.png") no-repeat 2px 2px;}
+#oz_site_nav a.top_quick03:hover {background:url("/images/top_quick03_o.png") no-repeat 2px 2px;}
+/*免费注册*/
+#oz_site_nav a.top_quick04 {background:url("/images/top_quick04.png") no-repeat 3px 1px;}
+#oz_site_nav a.top_quick04:hover {background:url("/images/top_quick04_o.png") no-repeat 3px 1px;}
+/*购物车*/
+#oz_site_nav a.top_quick05 {background:url("/images/top_quick05.png") no-repeat 2px 1px;}
+#oz_site_nav a.top_quick05:hover {background:url("/images/top_quick05_o.png") no-repeat 2px 1px;}
+/*我的购物信息*/
+#oz_site_nav a.top_quick06 {background:url("/images/top_quick06.png") no-repeat 3px 2px;}
+#oz_site_nav a.top_quick06:hover {background:url("/images/top_quick06_o.png") no-repeat 3px 2px;}
+/*客户服务*/
+#oz_site_nav a.top_quick07 {background:url("/images/top_quick07.png") no-repeat 3px 1px;}
+#oz_site_nav a.top_quick07:hover {background:url("/images/top_quick07_o.png") no-repeat 3px 1px;}
 #oz_site_nav .oz_sn_quick_menu .oz_sn_separator {float:left; top: 9px; display:inline-block; padding:0; width:0; height:14px; line-height:14px; vertical-align:top; position:relative; left:0; font-size:0px; border-left:1px solid #ccc; margin:0 2px 0 5px;} /*sw: oz_site_nav의 세로줄*/
 
 /**HEADER**/

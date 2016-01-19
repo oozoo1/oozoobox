@@ -312,7 +312,6 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                                     </div>
                             	</div>
                             </div>
-                            <div style="border-bottom:solid 1px #ddd; height:10px; "></div>
                         <? echo "<br>"; } ?>
                         </td>
                         <td class="seller">
