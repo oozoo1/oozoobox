@@ -154,7 +154,7 @@ $list_cnt = count($list);
                             	<img width="100%" src="<?php echo $img['src'];?>" alt="<?php echo $list[$i]['it_name'];?>" title="<?php echo $list[$i]['it_name'];?>"/>
                             </a>                                
                         </span>
-                        <a href="#" class="album_wish_plus">
+                        <a href="<?php echo $list[$i]['href'];?>" class="album_wish_plus">
                             <span class="album_ico_wish">
                                 <em>13</em>
                             </span>
@@ -174,7 +174,7 @@ $list_cnt = count($list);
                                 </span>
                             </a>
                             -->
-                            <a href="./myshop.php?id=<?php echo $list[$i]['pt_id'];?>">
+                            <a href="<?php echo $list[$i]['href'];?>">
                                 <span class="album_item_shop">
                                     <em class="album_ item_shop_name"><?php echo $list[$i]['it_basic'];?></em>
                                 </span>
