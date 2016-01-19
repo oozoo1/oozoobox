@@ -743,22 +743,23 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 /**상세보기 제품 정보, 게시판**/
 #detail_container{float:left; width:990px; margin-top:30px;}
 .detail_tabs {width:990px; height:40px; border-top:1px solid #ddd; font:bold 14px/32px Tahoma, '微软雅黑', sans-serif;}
-.detail_tabs li {cursor:pointer; float:left; width:178px; margin:0 10px; border-top:3px solid #fff; text-align:center;}
+.detail_tabs li {cursor:pointer; float:left; width:220px; margin:0 13px; border-top:3px solid #fff; text-align:center;}
 .detail_tabs .active{color:#f47a22; border-top:2px solid #f47a22;}
 .detail_tabs .tap_no {font-size:12px; font-weight:normal;}
 .detail_tab_content {float:left; position:relative;}
-.tab_content_warp {float:left; width:988px; border:1px solid #ddd; position:relative;}
-.detail_tab_content h4.description {margin:50px auto 10px; text-align:center; padding:10px 0; width:850px; font-size:20px; border-bottom:2px solid #ddd; font-weight:bold; color:#727272;}
+.tab_content_warp {float:left; width:850px; padding:15px 69px; border:1px solid #ddd; position:relative;}
+.detail_tab_content h4.description {margin:50px auto 25px; text-align:center; padding:10px 0; width:850px; font-size:20px; border-bottom:2px solid #ddd; font-weight:bold; color:#727272;}
 .detail_tab_content h4 span.strap {font-size:16px; margin-left:15px; color:#999999; font-weight:bold;}
 .detail_tab_content h4.tab_content_tit {margin:50px auto 10px; text-align:left; padding:10px 0; width:850px; font-size:20px; border-bottom:2px solid #ddd; font-weight:bold; color:#727272;}
 .detail_tab_content h4 span.strap {font-size:16px; margin-left:15px; color:#999999; font-weight:bold;}
+#detail_tab1 img {width:100%;}
 
 /***#tab2 用户评价 "상품후기" ***/
 #detail_tab2 {font:14px/1.8 Tahoma, '微软雅黑',"돋움",dotum;}
-#detail_container .tab2_titcomment {width:850px; margin:0 0 20px 70px;}
+#detail_container .tab2_titcomment {width:850px; margin:0 0 20px 0;}
 #detail_container a.linkmyafter {color:#f47a22;}
 #detail_container a:hover {color:#9bdbe1;}
-.tab_content_warp .tab2_view_after {width:850px; margin:15px 0 0 70px;}
+.tab_content_warp .tab2_view_after {width:850px; margin:15px 0 0 0;}
 #btnWriteAfter {border:0; float:right; margin-right:10px; margin-bottom:30px;} 
 /**** 후기 리스트****/
 #tab2_after_comment li {display:inline-block; position:relative; width:100%; margin-top:10px;}
@@ -780,11 +781,12 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 #tab2_after_comment .after_satisfy_grade {float:left; width:90px; font-size:14px;}
 #tab2_after_comment .after_satisfy_star {float:left; width:90px; height:12px; margin-bottom:7px; background:url("/images/after_satisfy_star.png") no-repeat 0 -12px; display:block;}
 
-
+/* 현재 불필요
+===========================================================*/
 /***#tab3 询问/回复 "질문과 답변"***/
-#detail_tab3 {font:14px Tahoma, '微软雅黑';}
+/*#detail_tab3 {font:14px Tahoma, '微软雅黑';}*/
 /****QnA wirte****/
-#btnWriteQna {border:0}
+/*#btnWriteQna {border:0}
 #btnQnaSearch {border:0}
 #btnFilter {border:0}
 #btnWriteQna {border:0}
@@ -801,9 +803,9 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 .tab_content_warp .tab3_qna_write .c_subject {padding:4px 0 2px 12px; }
 .tab_content_warp .tab3_qna_write .c_subject label {margin-right:7px; color:#464646;}
 .tab_content_warp .tab3_qna_write .c_subject textarea {width:695px; height:80px; padding:4px 0 0 4px; border:1px solid #ccc; vertical-align:middle;}
-.tab3_qna_write .c_subject .regist-btn {position:absolute; top:-1px; right:-1px; float:left; display:block; width:93px; height:156px; background:url('/images/bg_tab3_qna_write.png') no-repeat; text-indent:-9999em; border:0;}
+.tab3_qna_write .c_subject .regist-btn {position:absolute; top:-1px; right:-1px; float:left; display:block; width:93px; height:156px; background:url('/images/bg_tab3_qna_write.png') no-repeat; text-indent:-9999em; border:0;}*/
 /****QnA list****/
-.tab3_qnalist {width:850px; margin:30px 0 150px 70px;}
+/*.tab3_qnalist {width:850px; margin:30px 0 150px 70px;}
 .tab3_qnalist th {padding:9px 0 7px 0; border-top:1px solid #e2e2e2; border-bottom:1px solid #e2e2e2; background:#f4f4f4; color:#464646; font-weight:normal; text-align:center;}
 #tblQnAList .question td{ padding:9px 0 7px 0; border-top:1px solid #e2e2e2; border-bottom:1px solid #e2e2e2; background:#fff; color:#464646; font-weight:normal; text-align:center;}
 #tblQnAList .question .subject {padding-left:10px; text-align:left; font-weight:bold;}
@@ -811,26 +813,34 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 #tblQnAList .answer td {padding:0 0 5px 0; color:#464646;}
 #tblQnAList .answer p.answer_question {padding:13px 30px 7px 93px; background:url('/images/icon_question.png') no-repeat 30px 15px; line-height:1.8;}
 #tblQnAList .answer .answer_wrap {padding-top:5px; border-top:1px dashed #d4d4d4;}
-#tblQnAList .answer .answer_wrap p.answer_answer {padding:9px 30px 7px 93px; background:#f3f5fb url('/images/icon_answer.png') no-repeat 30px 15px; line-height:1.8;}
+#tblQnAList .answer .answer_wrap p.answer_answer {padding:9px 30px 7px 93px; background:#f3f5fb url('/images/icon_answer.png') no-repeat 30px 15px; line-height:1.8;}*/ 
+
  
 /***#tab4 卖家信息 "판매자 정보"***/
 #detail_tab4 {font:14px/1.8em Tahoma, '微软雅黑';}
-.tab_content_warp .tab_seller {width:850px; margin:30px 0 150px 70px; color:#696969; border-top:6px solid #dbdbdb; border-bottom:6px solid #dbdbdb;}
+.tab_content_warp .tab_seller {width:850px; margin:30px 0 150px 0; color:#696969; border-top:6px solid #dbdbdb; border-bottom:6px solid #dbdbdb;}
 .tab_content_warp .tab_seller th {border-right:1px solid #d5d5d5; padding:17px 0 14px 20px; border-bottom:1px solid #d5d5d5;}
 .tab_content_warp .tab_seller td {border-bottom:1px solid #d5d5d5; padding-left:55px;}
 
 /***#tab5 取消/换货/退货 "교환/환불정책"***/
 #detail_tab5 {font:14px/1.8em Tahoma, '微软雅黑';}
-.tab_content_warp .return_title {font-size:14px; font-weight:bold; display:inline-block; padding:5px 10px; margin:20px 0 10px 70px; color:#696969; border:2px solid #e8e8e8;}
-.tab_content_warp .detail_tab_return {width:840px; display:block; margin:0 0 0px 70px; color:#555; }
+.tab_content_warp .return_title {font-size:14px; font-weight:bold; display:inline-block; padding:5px 10px; margin:20px 0 10px 0; color:#696969; border:2px solid #e8e8e8;}
+.tab_content_warp .detail_tab_return {width:840px; display:block; margin:0; color:#555; }
 .tab_content_warp .detail_tab_return p.tab_return_paragraph {margin-top:7px;}
 .tab_content_warp .detail_tab_return li { background:url('/images/bg_detail_return.png') no-repeat 0 10px; padding-left:15px; color:#767676;}
 .tab_content_warp hr {width:850px; display:block; margin:20px auto 5px; border-bottom:1px dotted #ddd;}
-#btnAfter {float:left; width:200px; height:50px; margin:10px 0 0 400px; }
+#detail_container a.btnAfter {float:left; display:inline-block; width:200px; height:50px; margin:30px 0 50px 400px; }
 
 /***상세보기 qna***/
 .question { background-color: #ccc; cursor: pointer; padding: 5px; margin-bottom: 10px; border-bottom: 1px solid #000; }
 .answer { padding: 5px; }
+
+/***상세보기 관련상품***/
+#detail_container .relation-area {float:left; width:880px;}
+#detail_container .relation-area h3 {font-size:18px; font-weight:600;}
+#detail_container .relation-area ul {width:880px; margin-top:25px;}
+#detail_container .relation-area li {float:left; margin-right:15px;}
+#detail_container .relation-area img {width:156px; height:156px; border:1px solid #bbb;}
 
 /*MY PAGE*/
 /**장바구니**/
