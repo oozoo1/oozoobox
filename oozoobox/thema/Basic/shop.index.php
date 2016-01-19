@@ -898,7 +898,7 @@ $result = sql_query($sql);
                     <dl>
                         <dt class="menu_tit">판매자센터</dt>
                         <dd><a>입점관리</a></dd>
-                        <dd><a>추천상품등록</a></dd>
+                        <dd><a>관련상품등록</a></dd>
                         <dd><a>상품올리기</a></dd>
                         <dd><a>입점신청</a></dd>
                     </dl>

@@ -91,7 +91,7 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
             <!--s: 제품 가격 정보-->
             <div class="detail_good_info">
                 <div class="detail_good_info">
-                    <h1><?php echo stripslashes($it['it_name']); // 상품명 ?></h1>
+                    <h3><?php echo stripslashes($it['it_name']); // 상품명 ?></h3>
                     <?php if($it['it_basic']) { // 기본설명 ?>
                         <p class="help-block"><?php echo $it['it_basic']; ?></p>
                     <?php } ?>
@@ -120,6 +120,7 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                                         <em class="u_cnt">1,853</em> <!--누른 후-->
                                     </a>                                    
                                 </div>
+                                <a><img src="/images/detail_btn_wishlist.png" onMouseOver="this.src='/images/detail_btn_wishlist_o.png'"  onMouseOut="this.src='/images/detail_btn_wishlist.png'" alt="收藏关注商品"/></a>
                             </td>
                         </tr>
                     <?php } ?>
@@ -345,11 +346,13 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                       <? } ?>  
                         
                         
+						<?php /*?>     
                         <div class="detail_seller_store" style="padding-left: 3px;"><br>
                             <a href="<?php echo $at_href['myshop'];?>?id=<?php echo $author['mb_id'];?>">
                                 <img alt="进入店铺" src="/images/btn_allitem_thisshop.png"/>
                             </a>          
-                        </div>                        
+                        </div><?php */?>  <!--상점 가기-->     
+                                         
                     <?php } if(!$is_orderable && $it['it_soldout'] && $it['it_stock_sms']) { ?>
                         <div style="text-align:center; padding:12px 0;">
                             <button type="button" onclick="popup_stocksms('<?php echo $it['it_id']; ?>','<?php echo $ca_id; ?>');" class="btn btn-primary">재입고알림(SMS)</button>
@@ -495,7 +498,7 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
             <ul class="detail_tabs">
                 <li class="active" rel="detail_tab1">商品详情</li>
                 <li rel="detail_tab2">用户评价 <span class="tap_no">(110)</span></li>
-                <li rel="detail_tab3">询问/回复</li>
+                <!--<li rel="detail_tab3">询问/回复</li>-->
                 <li rel="detail_tab4">卖家信息</li>
                 <li rel="detail_tab5">取消/换货/退货 <span class="tap_no">(18)</span></li>
             </ul>
@@ -504,15 +507,14 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
             	<!--s: #tab1 商品详情 "상품상세보기" -->
                 <div id="detail_tab1" class="detail_tab_content">
 					<div class="tab_content_warp">
+                    	<h4 class="description">商品详情 <span class="strap">Description</span></h4>
 						<?php if ($it['pt_explan']) { // 구매회원에게만 추가로 보이는 상세설명 ?>
                             <div class="well"><?php echo apms_explan($it['pt_explan']); ?></div>
                         <?php } ?>
                         <?php echo apms_explan($it['it_explan']); ?>
                     </div>
-                    <a href="#">
-                        <button id="btnAfter" type="submit">
-                            <img alt="去看看用户评价(후기보러가기)" src="/images/detail_btn_tab1.png" title="去看看用户评价(후기보러가기)"/>
-                        </button>
+                    <a class="btnAfter" href="#detail_tab2">
+                        <img alt="去看看用户评价(후기보러가기)" src="/images/detail_btn_tab1.png" title="去看看用户评价(후기보러가기)"/>
                     </a>
                 </div>
                 <!--e: #tab1 商品详情 "상품상세보기" -->
@@ -522,11 +524,9 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                         <h4 class="tab_content_tit">用户评价 <span class="strap">Comment</span></h4>
                         <p class="tab2_titcomment">상품평은 구매완료 후 <a href="#" class="linkmyafter">수취확인</a>에서 작성하실 수 있습니다. 광고, 비방 제품과 관계없는 애용, 타 사이트 및 가격비교, 기타 통신예절에 어긋나거나 OOZOO BOX의 취지와 맞지 않은 글은 예고없이 삭제 및 수정될 수 있습니다.</p>
                         <div class="tab2_view_after">
-                            <a href="#">
-                                <button id="btnWriteAfter" type="submit">
-                                    <img alt="去制作用户评价(후기작성하러가기)" src="/images/btn_tab2_writeafter.png" title="去制作用户评价(후기작성하러가기)"/>
-                                </button>
-                            </a>
+                        	
+                            <a href="#"><img alt="去制作用户评价(후기작성하러가기)" src="/images/btn_tab2_writeafter.png" title="去制作用户评价(후기작성하러가기)"/></a>
+                            
                             <!--s: 후기 리스트-->
                             <ul id="tab2_after_comment">
                             	<!-- 후기 1--->
@@ -610,12 +610,14 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                     </a>         
                 </div>
                 <!--e: #tab2 用户评价 "상품후기" -->
+                
+<!---------------------------불필요-------------------------------->                
                 <!--s: #tab3 询问/回复 "질문과 답변"-->
-                <div id="detail_tab3" class="detail_tab_content">
+                <!--<div id="detail_tab3" class="detail_tab_content">
 					<div class="tab_content_warp">
                         <h4 class="tab_content_tit">询问/回复  <span class="strap">Question & Answer</span></h4>
 						<!--s: QnA search 버튼-->
-                        <div class="tab_qna_act">
+                        <!--<div class="tab_qna_act">
                         	<button id="btnWriteQna" type="button">
                             	<img src="/images/detail_btn_tab3_qna.png" alt="询问 질문하기"/>
                             </button>
@@ -634,10 +636,10 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                                 	<img src="/images/detail_btn_tab3_allquestion.png" alt="察看全部 QnA 전부보기"/>
                                 </button>
                             </form>
-                        </div>
+                        </div>-->
                         <!--e: QnA search 버튼-->
                         <!--s: QnA wirte-->
-                        <form class="tab3_qna_write" id="qna_write_panel" style="display:none;" action="" method="post" autocomplete="off" >
+                        <!--<form class="tab3_qna_write" id="qna_write_panel" style="display:none;" action="" method="post" autocomplete="off" >
                         	<p class="section">
                             	<label for="select_subject-write">分类</label>
                                 <input type="radio" name="radio" class="select" id="1" value="1" checked="checked"/> 상품
@@ -654,10 +656,10 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                                 <textarea name="body" id="text-write" rows="6" cols="120"></textarea>
                                 <button class="regist-btn" type="">提问</button>
                             </p>                            
-                        </form>
+                        </form>-->
                         <!--e: QnA wirte-->
                         <!--s: QnA list-->
-                        <table class="tab3_qnalist" summary="판매자들이 입력한 정보를 보여주는 공간입니다.">
+                        <!--<table class="tab3_qnalist" summary="판매자들이 입력한 정보를 보여주는 공간입니다.">
                         	<colgroup>
                             	<col width="60px"></col>
                                 <col width="60px"></col>
@@ -729,16 +731,19 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                                     </td>
                                 </tr>                                
                             </tbody>
-                        </table>
+                        </table>-->
                         <!--e: QnA list-->
-                    </div>
+                    <!--</div>
                     <a href="#">
                         <button id="btnAfter" type="submit">
                             <img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
                         </button>
                     </a>                             
-                </div>
+                </div>-->
                 <!--e: #tab3 询问/回复 "질문과 답변"-->
+<!-----------------------여기까지 불필요------------------------->                
+                
+                
                 <!--s: #tab4 卖家信息 "판매자 정보"-->
                 <div id="detail_tab4" class="detail_tab_content">
                 	<div class="tab_content_warp">
@@ -899,6 +904,24 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                 
             </div>
         	<!-- .tab_container -->
+            
+            <div class="relation-area">
+            	<h3>相关推荐</h3>
+                <ul class="relation-pro">
+                	<li>
+                    	<a href="#"><img src="/images/detail_rel01.png" alt="관련상품01"/></a>
+                    </li>
+                	<li>
+                    	<a href="#"><img src="/images/detail_rel01.png" alt="관련상품01"/></a>
+                    </li>
+                	<li>
+                    	<a href="#"><img src="/images/detail_rel01.png" alt="관련상품01"/></a>
+                    </li> 
+                	<li>
+                    	<a href="#"><img src="/images/detail_rel01.png" alt="관련상품01"/></a>
+                    </li>               
+                </ul>
+            </div>
         </div> 
         <!--e: 상세보기 제품 정보-->        
 
@@ -970,7 +993,10 @@ $(function () {
         $("#" + activeTab).fadeIn()
     });
 });
+	
 </script>
+
+
 
 
 
