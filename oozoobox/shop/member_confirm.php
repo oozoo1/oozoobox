@@ -1,5 +1,6 @@
 <?php
 include_once('./_common.php');
+include_once(G5_LIB_PATH.'/mailer.lib.php');
 if (!$is_member)
     goto_url(G5_BBS_URL."/login.php?url=".urlencode(G5_SHOP_URL."/member_confirm.php"));
 
@@ -65,7 +66,7 @@ if($_POST[type]=="pass"){
 
 
 if($_POST[type]=="email"){	
-
+$mb_id               =$member[mb_id];
 $mb_email            =$_POST[mb_email];
 $mb_email_certify    ="0000-00-00 00:00:00";
 
@@ -86,7 +87,7 @@ $sql = " update g5_member
 							$certify_href = G5_BBS_URL.'/email_certify.php?mb_id='.$mb_id.'&amp;mb_md5='.$mb_md5;
 					
 							ob_start();
-							include_once ('./register_form_update_mail3.php');
+							include_once (G5_BBS_PATH.'/register_form_update_mail3.php');
 							$content = ob_get_contents();
 							ob_end_clean();
 					
