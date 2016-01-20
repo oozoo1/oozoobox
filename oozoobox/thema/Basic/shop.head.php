@@ -57,12 +57,6 @@ if($today[id]){
 
 <link rel="stylesheet" type="text/css" href="/shop/css/base.css" />
 <script type="text/javascript" src="/shop/js/common.js"></script>
-
-<?php if($_SERVER['PHP_SELF']=="/index.php"){}else{ ?>
-<script src="/oz_js/jquery.min.js"></script><!--list global menu-->
-<script src="/oz_js/slider.js"></script><!--list bn01-->
-<script type="text/javascript" src="/oz_js/jquery.als-1.7.min.js"></script>
-<? } ?>
 <div class="wrapper <?php echo $at_set['font'];?><?php echo (G5_IS_MOBILE) ? ' mobile-font' : '';?> <?php echo $at_set['layout'];?>">
 
 <?php /*?><?php if($_SERVER['PHP_SELF']=="/index.php"){?>
@@ -324,7 +318,7 @@ function getCookie(name){
 
                 <!--e: 로고, 검색창-->
                 
-<?php if($_SERVER['PHP_SELF']=="/index.php"){}else{ ?>
+<?php if($_SERVER['PHP_SELF']=="/index.php" || $_SERVER['PHP_SELF']=="/write_html.php" || $_SERVER['PHP_SELF']=="/shop/index.php"){}else{ ?>
 
 <div id="oz_glo2">
 	<div class="oz_glo2_bg">
@@ -768,7 +762,7 @@ $(function(){
         </div>
             <!------e: 쇼핑몰 페이지-------->
     
-<?php if($_SERVER['PHP_SELF']=="/index.php" || $_SERVER['PHP_SELF']=="/shop/list.php" || $_SERVER['PHP_SELF']=="/bbs/login.php"){}else{ ?>
+<?php if($_SERVER['PHP_SELF']=="/index.php" || $_SERVER['PHP_SELF']=="/write_html.php" || $_SERVER['PHP_SELF']=="/shop/index.php" || $_SERVER['PHP_SELF']=="/shop/list.php" || $_SERVER['PHP_SELF']=="/bbs/login.php"){}else{ ?>
 <div id="oz_detail_wrap">
 	<div class="oz_detail_main">
 <? } ?>

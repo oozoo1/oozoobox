@@ -1,20 +1,20 @@
 <?php
 if (!defined('_GNUBOARD_')) exit;
-$bo_subject='공지사항';
+$bo_subject='판매자FAQ';
 $list=array (
   0 => 
   array (
-    'wr_id' => '5',
-    'wr_num' => '-5',
+    'wr_id' => '18',
+    'wr_num' => '-18',
     'wr_reply' => '',
-    'wr_parent' => '5',
+    'wr_parent' => '18',
     'wr_is_comment' => '0',
     'wr_comment' => '0',
     'wr_comment_reply' => '',
-    'ca_name' => '이벤트',
-    'wr_option' => '',
-    'wr_subject' => 'OOZOOBOX 오픈기념 이벤트',
-    'wr_content' => '테스트입니다.',
+    'ca_name' => '회원관리',
+    'wr_option' => 'html1',
+    'wr_subject' => 'test',
+    'wr_content' => 'testset<p>&nbsp;</p>',
     'wr_link1' => '',
     'wr_link2' => '',
     'wr_link1_hit' => '0',
@@ -27,10 +27,10 @@ $list=array (
     'wr_name' => '최고관리자',
     'wr_email' => 'admin@domain.com',
     'wr_homepage' => '',
-    'wr_datetime' => '2016-01-11 08:49:50',
+    'wr_datetime' => '2016-01-17 23:31:15',
     'wr_file' => '0',
-    'wr_last' => '2016-01-11 08:49:50',
-    'wr_ip' => '121.131.39.245',
+    'wr_last' => '2016-01-17 23:31:15',
+    'wr_ip' => '210.205.129.143',
     'wr_facebook_user' => '',
     'wr_twitter_user' => '',
     'wr_1' => '',
@@ -65,21 +65,21 @@ $list=array (
     'as_icon' => '',
     'as_update' => '0000-00-00 00:00:00',
     'is_notice' => false,
-    'subject' => 'OOZOOBOX 오픈기념 이벤트',
+    'subject' => 'test',
     'comment_cnt' => '',
-    'datetime' => '2016-01-11',
-    'datetime2' => '01-11',
-    'date' => 1452469790,
+    'datetime' => '2016-01-17',
+    'datetime2' => '01-17',
+    'date' => 1453041075,
     'update' => 0,
-    'last' => '2016-01-11',
-    'last2' => '01-11',
+    'last' => '2016-01-17',
+    'last2' => '01-17',
     'name' => '<span class="sv_member">최고관리자</span>',
     'reply' => 0,
     'icon_reply' => '',
     'icon_link' => '',
-    'ca_name_href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;sca=%EC%9D%B4%EB%B2%A4%ED%8A%B8',
-    'href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;wr_id=5',
-    'comment_href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;wr_id=5',
+    'ca_name_href' => 'http://localhost/bbs/board.php?bo_table=sellerfaq&amp;sca=%ED%9A%8C%EC%9B%90%EA%B4%80%EB%A6%AC',
+    'href' => 'http://localhost/bbs/board.php?bo_table=sellerfaq&amp;wr_id=18',
+    'comment_href' => 'http://localhost/bbs/board.php?bo_table=sellerfaq&amp;wr_id=18',
     'icon_new' => '',
     'icon_hot' => '',
     'is_lock' => false,
@@ -94,8 +94,8 @@ $list=array (
     ),
     'link_href' => 
     array (
-      1 => 'http://localhost/bbs/link.php?bo_table=notice&amp;wr_id=5&amp;no=1',
-      2 => 'http://localhost/bbs/link.php?bo_table=notice&amp;wr_id=5&amp;no=2',
+      1 => 'http://localhost/bbs/link.php?bo_table=sellerfaq&amp;wr_id=18&amp;no=1',
+      2 => 'http://localhost/bbs/link.php?bo_table=sellerfaq&amp;wr_id=18&amp;no=2',
     ),
     'link_hit' => 
     array (
@@ -109,17 +109,25 @@ $list=array (
   ),
   1 => 
   array (
-    'wr_id' => '4',
-    'wr_num' => '-4',
+    'wr_id' => '17',
+    'wr_num' => '-17',
     'wr_reply' => '',
-    'wr_parent' => '4',
+    'wr_parent' => '17',
     'wr_is_comment' => '0',
     'wr_comment' => '0',
     'wr_comment_reply' => '',
-    'ca_name' => 'OOZOOBOX소식',
+    'ca_name' => '광고/기획전',
     'wr_option' => '',
-    'wr_subject' => 'OOZOOBOX오픈!',
-    'wr_content' => '테스트입니다',
+    'wr_subject' => '스마트 클릭광고는 무엇이고 어떻게 이용할 수 있나요?',
+    'wr_content' => '스마트 클릭 광고는 카테고리 페이지 및 검색결과 상단에 노출되는 광고입니다. 
+G마켓과 옥션 광고를 동시에 관리할 수 있으며, 광고 전문가의 지원을 받을 수 있어 뛰어난 광고 효과를 얻을 수 있습니다.
+ 
+스마트 클릭 광고 등록 및 자세한 정보 확인은 엔비스타 키워드광고에서 가능합니다.
+ 
+▶ 엔비스타 키워드광고 고객센터
+     -  전화번호 : 1661-8200
+     -  운영시간 : 평일 09:00 ~ 18:00 (토/일, 공휴일 휴무)
+     -  문의메일 : help@nvista.co.kr',
     'wr_link1' => '',
     'wr_link2' => '',
     'wr_link1_hit' => '0',
@@ -132,10 +140,10 @@ $list=array (
     'wr_name' => '최고관리자',
     'wr_email' => 'admin@domain.com',
     'wr_homepage' => '',
-    'wr_datetime' => '2016-01-11 08:48:54',
+    'wr_datetime' => '2016-01-11 03:25:23',
     'wr_file' => '0',
-    'wr_last' => '2016-01-11 08:48:54',
-    'wr_ip' => '121.131.39.245',
+    'wr_last' => '2016-01-11 03:25:23',
+    'wr_ip' => '122.46.251.104',
     'wr_facebook_user' => '',
     'wr_twitter_user' => '',
     'wr_1' => '',
@@ -170,11 +178,11 @@ $list=array (
     'as_icon' => '',
     'as_update' => '0000-00-00 00:00:00',
     'is_notice' => false,
-    'subject' => 'OOZOOBOX오픈!',
+    'subject' => '스마트 클릭광고는 무엇이고 어떻게 이용할 수 …',
     'comment_cnt' => '',
     'datetime' => '2016-01-11',
     'datetime2' => '01-11',
-    'date' => 1452469734,
+    'date' => 1452450323,
     'update' => 0,
     'last' => '2016-01-11',
     'last2' => '01-11',
@@ -182,9 +190,9 @@ $list=array (
     'reply' => 0,
     'icon_reply' => '',
     'icon_link' => '',
-    'ca_name_href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;sca=OOZOOBOX%EC%86%8C%EC%8B%9D',
-    'href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;wr_id=4',
-    'comment_href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;wr_id=4',
+    'ca_name_href' => 'http://localhost/bbs/board.php?bo_table=sellerfaq&amp;sca=%EA%B4%91%EA%B3%A0%2F%EA%B8%B0%ED%9A%8D%EC%A0%84',
+    'href' => 'http://localhost/bbs/board.php?bo_table=sellerfaq&amp;wr_id=17',
+    'comment_href' => 'http://localhost/bbs/board.php?bo_table=sellerfaq&amp;wr_id=17',
     'icon_new' => '',
     'icon_hot' => '',
     'is_lock' => false,
@@ -199,8 +207,8 @@ $list=array (
     ),
     'link_href' => 
     array (
-      1 => 'http://localhost/bbs/link.php?bo_table=notice&amp;wr_id=4&amp;no=1',
-      2 => 'http://localhost/bbs/link.php?bo_table=notice&amp;wr_id=4&amp;no=2',
+      1 => 'http://localhost/bbs/link.php?bo_table=sellerfaq&amp;wr_id=17&amp;no=1',
+      2 => 'http://localhost/bbs/link.php?bo_table=sellerfaq&amp;wr_id=17&amp;no=2',
     ),
     'link_hit' => 
     array (
@@ -214,27 +222,37 @@ $list=array (
   ),
   2 => 
   array (
-    'wr_id' => '3',
-    'wr_num' => '-3',
+    'wr_id' => '16',
+    'wr_num' => '-16',
     'wr_reply' => '',
-    'wr_parent' => '3',
+    'wr_parent' => '16',
     'wr_is_comment' => '0',
     'wr_comment' => '0',
     'wr_comment_reply' => '',
-    'ca_name' => '이벤트당첨',
+    'ca_name' => '광고/기획전',
     'wr_option' => '',
-    'wr_subject' => '恭喜恭喜！EXO演唱会门票获奖者名单公布！',
-    'wr_content' => '恭喜您已成为3名幸运获奖者之一！！ 
+    'wr_subject' => 'OOZOOBOX에 배너광고를 하고 싶어요',
+    'wr_content' => '플러스 상품이란?
+키워드와 각 카테고리 페이지를 검색하였을 때, 페이지 상단에 전시되는 광고 상품으로 판매자님께서
+원하는 검색 키워드나 카테고리를 지정하여 광고 전시 신청을 하실 수 있습니다.
 
-hele**** ada**** yongli**** 
-
-Gmarket将通过EXO演唱会门票获奖者的电子邮件提示大家。
-获奖者请务必提供Gmarket的ID及个人有效证件，
-同时请确保跟人有效证件上的姓名与Gmarket Global上个人注册信息相一致。
-每位获奖者将随机获得两个座位。无哦一请务必同时提供他/她的个人有效证件以换取门票。
-Gmarket建议访问韩国首尔之前，请先仔细参考演唱会公告。
-（ http://gpromotion.gmarket.co.kr/Plan/PlanView?sid=124588） 
-再次感谢大家的关心与支持。',
+- 카테고리 플러스 : 등록상품이 속하는 카테고리(대분류, 중분류, 소분류) 에 플러스상품으로 
+                        전시되어 상위 노출됩니다.
+- 키워드 플러스 : 선택한 키워드로 검색 시 등록 상품이 결과페이지 상단에 플러스상품으로 
+                     전시되어 상위 노출됩니다.
+ 
+카테고리/검색어 광고 구매는 경매 입찰과정을 통해 이루어집니다.
+ 
+자세한 내용은 [광고/부가서비스 > G마켓 광고 관리]를 확인하여 주시기 바랍니다.
+ 
+판매자 광고를 이용하시는 판매자분들에게 보다 편리한 양질의 서비스를 제공하기 위해 G마켓에서는
+판매자 광고센터를 아래와 같이 운영하고 있습니다.
+ 
+- 전화번호 : 1577 - 8134
+- 운영시간 : 평일 09:00 ~ 18:00
+- 문의메일 : gsellerad@corp.gmarket.co.kr
+ 
+광고 이용에 참고하여 주시기 바랍니다.',
     'wr_link1' => '',
     'wr_link2' => '',
     'wr_link1_hit' => '0',
@@ -247,9 +265,9 @@ Gmarket建议访问韩国首尔之前，请先仔细参考演唱会公告。
     'wr_name' => '최고관리자',
     'wr_email' => 'admin@domain.com',
     'wr_homepage' => '',
-    'wr_datetime' => '2016-01-11 03:32:46',
+    'wr_datetime' => '2016-01-11 03:24:37',
     'wr_file' => '0',
-    'wr_last' => '2016-01-11 03:32:46',
+    'wr_last' => '2016-01-11 03:24:37',
     'wr_ip' => '122.46.251.104',
     'wr_facebook_user' => '',
     'wr_twitter_user' => '',
@@ -285,11 +303,11 @@ Gmarket建议访问韩国首尔之前，请先仔细参考演唱会公告。
     'as_icon' => '',
     'as_update' => '0000-00-00 00:00:00',
     'is_notice' => false,
-    'subject' => '恭喜恭喜！EXO演唱会门票获奖者名单公布！',
+    'subject' => 'OOZOOBOX에 배너광고를 하고 싶어요',
     'comment_cnt' => '',
     'datetime' => '2016-01-11',
     'datetime2' => '01-11',
-    'date' => 1452450766,
+    'date' => 1452450277,
     'update' => 0,
     'last' => '2016-01-11',
     'last2' => '01-11',
@@ -297,9 +315,9 @@ Gmarket建议访问韩国首尔之前，请先仔细参考演唱会公告。
     'reply' => 0,
     'icon_reply' => '',
     'icon_link' => '',
-    'ca_name_href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;sca=%EC%9D%B4%EB%B2%A4%ED%8A%B8%EB%8B%B9%EC%B2%A8',
-    'href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;wr_id=3',
-    'comment_href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;wr_id=3',
+    'ca_name_href' => 'http://localhost/bbs/board.php?bo_table=sellerfaq&amp;sca=%EA%B4%91%EA%B3%A0%2F%EA%B8%B0%ED%9A%8D%EC%A0%84',
+    'href' => 'http://localhost/bbs/board.php?bo_table=sellerfaq&amp;wr_id=16',
+    'comment_href' => 'http://localhost/bbs/board.php?bo_table=sellerfaq&amp;wr_id=16',
     'icon_new' => '',
     'icon_hot' => '',
     'is_lock' => false,
@@ -314,8 +332,8 @@ Gmarket建议访问韩国首尔之前，请先仔细参考演唱会公告。
     ),
     'link_href' => 
     array (
-      1 => 'http://localhost/bbs/link.php?bo_table=notice&amp;wr_id=3&amp;no=1',
-      2 => 'http://localhost/bbs/link.php?bo_table=notice&amp;wr_id=3&amp;no=2',
+      1 => 'http://localhost/bbs/link.php?bo_table=sellerfaq&amp;wr_id=16&amp;no=1',
+      2 => 'http://localhost/bbs/link.php?bo_table=sellerfaq&amp;wr_id=16&amp;no=2',
     ),
     'link_hit' => 
     array (
@@ -329,39 +347,37 @@ Gmarket建议访问韩国首尔之前，请先仔细参考演唱会公告。
   ),
   3 => 
   array (
-    'wr_id' => '2',
-    'wr_num' => '-2',
+    'wr_id' => '15',
+    'wr_num' => '-15',
     'wr_reply' => '',
-    'wr_parent' => '2',
+    'wr_parent' => '15',
     'wr_is_comment' => '0',
     'wr_comment' => '0',
     'wr_comment_reply' => '',
-    'ca_name' => '공지',
+    'ca_name' => '광고/기획전',
     'wr_option' => '',
-    'wr_subject' => '系统维护',
-    'wr_content' => '您好，欢迎访问gmarket。
+    'wr_subject' => '플러스 상품이란 무엇인가요?',
+    'wr_content' => '플러스 상품이란?
+키워드와 각 카테고리 페이지를 검색하였을 때, 페이지 상단에 전시되는 광고 상품으로 판매자님께서
+원하는 검색 키워드나 카테고리를 지정하여 광고 전시 신청을 하실 수 있습니다.
 
-由于当前系统处于维护期间，因此Gmarket的所有服务将临时中断。
-
-
-
-系统维护时间：2013年11月2日（星期六）04:00 ~06:00. 
-
-维护区域：临时中断gmarket网站的使用
-
-
-
-依据实际网站维护的情况，有可能会发生延迟。
-
-
-
-给您带来不便敬请谅解。 
-
-Gmarket会尽最大的努力为您提供更好的服务。
-
-
-
-谢谢.',
+- 카테고리 플러스 : 등록상품이 속하는 카테고리(대분류, 중분류, 소분류) 에 플러스상품으로 
+                        전시되어 상위 노출됩니다.
+- 키워드 플러스 : 선택한 키워드로 검색 시 등록 상품이 결과페이지 상단에 플러스상품으로 
+                     전시되어 상위 노출됩니다.
+ 
+카테고리/검색어 광고 구매는 경매 입찰과정을 통해 이루어집니다.
+ 
+자세한 내용은 [광고/부가서비스 > G마켓 광고 관리]를 확인하여 주시기 바랍니다.
+ 
+판매자 광고를 이용하시는 판매자분들에게 보다 편리한 양질의 서비스를 제공하기 위해 G마켓에서는
+판매자 광고센터를 아래와 같이 운영하고 있습니다.
+ 
+- 전화번호 : 1577 - 8134
+- 운영시간 : 평일 09:00 ~ 18:00
+- 문의메일 : gsellerad@corp.gmarket.co.kr
+ 
+광고 이용에 참고하여 주시기 바랍니다.',
     'wr_link1' => '',
     'wr_link2' => '',
     'wr_link1_hit' => '0',
@@ -374,9 +390,9 @@ Gmarket会尽最大的努力为您提供更好的服务。
     'wr_name' => '최고관리자',
     'wr_email' => 'admin@domain.com',
     'wr_homepage' => '',
-    'wr_datetime' => '2016-01-11 03:32:08',
+    'wr_datetime' => '2016-01-11 03:23:42',
     'wr_file' => '0',
-    'wr_last' => '2016-01-11 03:32:08',
+    'wr_last' => '2016-01-11 03:23:42',
     'wr_ip' => '122.46.251.104',
     'wr_facebook_user' => '',
     'wr_twitter_user' => '',
@@ -412,11 +428,11 @@ Gmarket会尽最大的努力为您提供更好的服务。
     'as_icon' => '',
     'as_update' => '0000-00-00 00:00:00',
     'is_notice' => false,
-    'subject' => '系统维护',
+    'subject' => '플러스 상품이란 무엇인가요?',
     'comment_cnt' => '',
     'datetime' => '2016-01-11',
     'datetime2' => '01-11',
-    'date' => 1452450728,
+    'date' => 1452450222,
     'update' => 0,
     'last' => '2016-01-11',
     'last2' => '01-11',
@@ -424,9 +440,9 @@ Gmarket会尽最大的努力为您提供更好的服务。
     'reply' => 0,
     'icon_reply' => '',
     'icon_link' => '',
-    'ca_name_href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;sca=%EA%B3%B5%EC%A7%80',
-    'href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;wr_id=2',
-    'comment_href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;wr_id=2',
+    'ca_name_href' => 'http://localhost/bbs/board.php?bo_table=sellerfaq&amp;sca=%EA%B4%91%EA%B3%A0%2F%EA%B8%B0%ED%9A%8D%EC%A0%84',
+    'href' => 'http://localhost/bbs/board.php?bo_table=sellerfaq&amp;wr_id=15',
+    'comment_href' => 'http://localhost/bbs/board.php?bo_table=sellerfaq&amp;wr_id=15',
     'icon_new' => '',
     'icon_hot' => '',
     'is_lock' => false,
@@ -441,8 +457,8 @@ Gmarket会尽最大的努力为您提供更好的服务。
     ),
     'link_href' => 
     array (
-      1 => 'http://localhost/bbs/link.php?bo_table=notice&amp;wr_id=2&amp;no=1',
-      2 => 'http://localhost/bbs/link.php?bo_table=notice&amp;wr_id=2&amp;no=2',
+      1 => 'http://localhost/bbs/link.php?bo_table=sellerfaq&amp;wr_id=15&amp;no=1',
+      2 => 'http://localhost/bbs/link.php?bo_table=sellerfaq&amp;wr_id=15&amp;no=2',
     ),
     'link_hit' => 
     array (
@@ -456,17 +472,33 @@ Gmarket会尽最大的努力为您提供更好的服务。
   ),
   4 => 
   array (
-    'wr_id' => '1',
-    'wr_num' => '-1',
+    'wr_id' => '14',
+    'wr_num' => '-14',
     'wr_reply' => '',
-    'wr_parent' => '1',
+    'wr_parent' => '14',
     'wr_is_comment' => '0',
     'wr_comment' => '0',
     'wr_comment_reply' => '',
-    'ca_name' => '공지',
+    'ca_name' => '배송/취소/환불',
     'wr_option' => '',
-    'wr_subject' => '关于换货及退货的公告',
-    'wr_content' => '在商品到达物流中心的前一个配送状态时，可以申请换货及退货。换货>虽然在网站上无法申请换货，但在海外配送前，向卖家确认后，可以换货。退货>在网站上可以申请退货。但，海外配送进行后，则无法在网上申请。 “海外配送中”状态下，无法申请换货/退货。收货后，如需要换货/退货，请发送E-mail至客服中心咨询。',
+    'wr_subject' => '구매자가 교환요청 시 어떻게 처리해야 하나요?',
+    'wr_content' => '구매자가 교환을 요청하는 경우 ESM Plus에서 다음 과정을 거쳐 교환처리가 가능합니다.
+
+① 클레임 관리 > 교환관리에서 교환요청된 주문건을 확인합니다. 
+
+② 주문건을 선택한 후 [교환처리] 버튼을 클릭합니다. 
+
+③ 교환상품의 입고 여부 및 교환재발송 정보를 입력합니다. 
+    ※ 교환배송비나 기타 사유로 문제가 발생한 경우에는 교환상품 입고 여부를 [아니요]로 선택 후 교환 보류를 설정합니다.
+
+④ [확인] 버튼을 누르시면 교환처리가 완료됩니다.
+
+ 
+
+※ 구매자는 상품수령 후 7일 이내까지 교환요청을 할 수 있으며, 처리되지 않는 교환요청건은 임의 반품처리될 수 있으므로 
+   빠른 시일 내에 처리하여 주시기 바랍니다. 
+※ 교환요청건을 반품으로 변경할 경우 반드시 구매자와 협의하여 빠른 시일 내에 문제를 해결하셔야 하며, 
+   이와 관련된 클레임 발생 시 판매자에게 패널티가 부과될 수 있습니다. 교환건 반품 변경 방법 보기',
     'wr_link1' => '',
     'wr_link2' => '',
     'wr_link1_hit' => '0',
@@ -479,9 +511,9 @@ Gmarket会尽最大的努力为您提供更好的服务。
     'wr_name' => '최고관리자',
     'wr_email' => 'admin@domain.com',
     'wr_homepage' => '',
-    'wr_datetime' => '2016-01-11 03:31:41',
+    'wr_datetime' => '2016-01-11 03:21:47',
     'wr_file' => '0',
-    'wr_last' => '2016-01-11 03:31:41',
+    'wr_last' => '2016-01-11 03:21:47',
     'wr_ip' => '122.46.251.104',
     'wr_facebook_user' => '',
     'wr_twitter_user' => '',
@@ -517,11 +549,11 @@ Gmarket会尽最大的努力为您提供更好的服务。
     'as_icon' => '',
     'as_update' => '0000-00-00 00:00:00',
     'is_notice' => false,
-    'subject' => '关于换货及退货的公告',
+    'subject' => '구매자가 교환요청 시 어떻게 처리해야 하나요?',
     'comment_cnt' => '',
     'datetime' => '2016-01-11',
     'datetime2' => '01-11',
-    'date' => 1452450701,
+    'date' => 1452450107,
     'update' => 0,
     'last' => '2016-01-11',
     'last2' => '01-11',
@@ -529,9 +561,9 @@ Gmarket会尽最大的努力为您提供更好的服务。
     'reply' => 0,
     'icon_reply' => '',
     'icon_link' => '',
-    'ca_name_href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;sca=%EA%B3%B5%EC%A7%80',
-    'href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;wr_id=1',
-    'comment_href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;wr_id=1',
+    'ca_name_href' => 'http://localhost/bbs/board.php?bo_table=sellerfaq&amp;sca=%EB%B0%B0%EC%86%A1%2F%EC%B7%A8%EC%86%8C%2F%ED%99%98%EB%B6%88',
+    'href' => 'http://localhost/bbs/board.php?bo_table=sellerfaq&amp;wr_id=14',
+    'comment_href' => 'http://localhost/bbs/board.php?bo_table=sellerfaq&amp;wr_id=14',
     'icon_new' => '',
     'icon_hot' => '',
     'is_lock' => false,
@@ -546,8 +578,8 @@ Gmarket会尽最大的努力为您提供更好的服务。
     ),
     'link_href' => 
     array (
-      1 => 'http://localhost/bbs/link.php?bo_table=notice&amp;wr_id=1&amp;no=1',
-      2 => 'http://localhost/bbs/link.php?bo_table=notice&amp;wr_id=1&amp;no=2',
+      1 => 'http://localhost/bbs/link.php?bo_table=sellerfaq&amp;wr_id=14&amp;no=1',
+      2 => 'http://localhost/bbs/link.php?bo_table=sellerfaq&amp;wr_id=14&amp;no=2',
     ),
     'link_hit' => 
     array (

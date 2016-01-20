@@ -23,7 +23,7 @@ $result = sql_query($sql);
 <div id="oz_mallpage2">
 	<!--s: CONTENT-->
 	<div id="oz_content">
-<?php if($_SERVER['PHP_SELF']=="/index.php"){?>    	
+<?php if($_SERVER['PHP_SELF']=="/index.php" || $_SERVER['PHP_SELF']=="/write_html.php" || $_SERVER['PHP_SELF']=="/shop/index.php"){?>    	
         <!--s: MAIN 글로벌메뉴&MAIN 배너 슬라이드-->
         <div class="category-con">
             <div class="category-inner-con">
@@ -592,5 +592,3 @@ $(function(){
 
 });
 </script>
-
-<?php  include_once('./shop/_tail.php'); ?>

@@ -1,25 +1,27 @@
 <?php
 if (!defined('_GNUBOARD_')) exit;
-$bo_subject='공지사항';
+$bo_subject='구매자FAQ';
 $list=array (
   0 => 
   array (
-    'wr_id' => '5',
-    'wr_num' => '-5',
+    'wr_id' => '44',
+    'wr_num' => '-43',
     'wr_reply' => '',
-    'wr_parent' => '5',
+    'wr_parent' => '44',
     'wr_is_comment' => '0',
     'wr_comment' => '0',
     'wr_comment_reply' => '',
-    'ca_name' => '이벤트',
+    'ca_name' => '기타',
     'wr_option' => '',
-    'wr_subject' => 'OOZOOBOX 오픈기념 이벤트',
-    'wr_content' => '테스트입니다.',
+    'wr_subject' => '为什么我购买的商品没有任何通知就被取消了呢？',
+    'wr_content' => '我们Gmarket商品是Gmarket内每位卖家自行登陆进行销售的，
+因此商品根据卖家库存量不足,
+会被卖家任意取消的情况，这点望您谅解。',
     'wr_link1' => '',
     'wr_link2' => '',
     'wr_link1_hit' => '0',
     'wr_link2_hit' => '0',
-    'wr_hit' => '1',
+    'wr_hit' => '2',
     'wr_good' => '0',
     'wr_nogood' => '0',
     'mb_id' => 'admin',
@@ -27,10 +29,10 @@ $list=array (
     'wr_name' => '최고관리자',
     'wr_email' => 'admin@domain.com',
     'wr_homepage' => '',
-    'wr_datetime' => '2016-01-11 08:49:50',
+    'wr_datetime' => '2016-01-11 02:38:47',
     'wr_file' => '0',
-    'wr_last' => '2016-01-11 08:49:50',
-    'wr_ip' => '121.131.39.245',
+    'wr_last' => '2016-01-11 02:38:47',
+    'wr_ip' => '122.46.251.104',
     'wr_facebook_user' => '',
     'wr_twitter_user' => '',
     'wr_1' => '',
@@ -65,11 +67,11 @@ $list=array (
     'as_icon' => '',
     'as_update' => '0000-00-00 00:00:00',
     'is_notice' => false,
-    'subject' => 'OOZOOBOX 오픈기념 이벤트',
+    'subject' => '为什么我购买的商品没有任何通知就被取消了呢？',
     'comment_cnt' => '',
     'datetime' => '2016-01-11',
     'datetime2' => '01-11',
-    'date' => 1452469790,
+    'date' => 1452447527,
     'update' => 0,
     'last' => '2016-01-11',
     'last2' => '01-11',
@@ -77,9 +79,9 @@ $list=array (
     'reply' => 0,
     'icon_reply' => '',
     'icon_link' => '',
-    'ca_name_href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;sca=%EC%9D%B4%EB%B2%A4%ED%8A%B8',
-    'href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;wr_id=5',
-    'comment_href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;wr_id=5',
+    'ca_name_href' => 'http://localhost/bbs/board.php?bo_table=buyerfaq&amp;sca=%EA%B8%B0%ED%83%80',
+    'href' => 'http://localhost/bbs/board.php?bo_table=buyerfaq&amp;wr_id=44',
+    'comment_href' => 'http://localhost/bbs/board.php?bo_table=buyerfaq&amp;wr_id=44',
     'icon_new' => '',
     'icon_hot' => '',
     'is_lock' => false,
@@ -94,8 +96,8 @@ $list=array (
     ),
     'link_href' => 
     array (
-      1 => 'http://localhost/bbs/link.php?bo_table=notice&amp;wr_id=5&amp;no=1',
-      2 => 'http://localhost/bbs/link.php?bo_table=notice&amp;wr_id=5&amp;no=2',
+      1 => 'http://localhost/bbs/link.php?bo_table=buyerfaq&amp;wr_id=44&amp;no=1',
+      2 => 'http://localhost/bbs/link.php?bo_table=buyerfaq&amp;wr_id=44&amp;no=2',
     ),
     'link_hit' => 
     array (
@@ -109,17 +111,20 @@ $list=array (
   ),
   1 => 
   array (
-    'wr_id' => '4',
-    'wr_num' => '-4',
+    'wr_id' => '43',
+    'wr_num' => '-42',
     'wr_reply' => '',
-    'wr_parent' => '4',
+    'wr_parent' => '43',
     'wr_is_comment' => '0',
     'wr_comment' => '0',
     'wr_comment_reply' => '',
-    'ca_name' => 'OOZOOBOX소식',
+    'ca_name' => '기타',
     'wr_option' => '',
-    'wr_subject' => 'OOZOOBOX오픈!',
-    'wr_content' => '테스트입니다',
+    'wr_subject' => '有问题想要咨询时怎么办？',
+    'wr_content' => 'Gmarket客服中心现支持韩文、中文、英文咨询服务。
+烦请您点击以下链接地址，填写相关内容后咨询问题。
+ 
+咨询中文客服点击▶点击',
     'wr_link1' => '',
     'wr_link2' => '',
     'wr_link1_hit' => '0',
@@ -132,10 +137,10 @@ $list=array (
     'wr_name' => '최고관리자',
     'wr_email' => 'admin@domain.com',
     'wr_homepage' => '',
-    'wr_datetime' => '2016-01-11 08:48:54',
+    'wr_datetime' => '2016-01-11 02:38:27',
     'wr_file' => '0',
-    'wr_last' => '2016-01-11 08:48:54',
-    'wr_ip' => '121.131.39.245',
+    'wr_last' => '2016-01-11 02:38:27',
+    'wr_ip' => '122.46.251.104',
     'wr_facebook_user' => '',
     'wr_twitter_user' => '',
     'wr_1' => '',
@@ -170,11 +175,11 @@ $list=array (
     'as_icon' => '',
     'as_update' => '0000-00-00 00:00:00',
     'is_notice' => false,
-    'subject' => 'OOZOOBOX오픈!',
+    'subject' => '有问题想要咨询时怎么办？',
     'comment_cnt' => '',
     'datetime' => '2016-01-11',
     'datetime2' => '01-11',
-    'date' => 1452469734,
+    'date' => 1452447507,
     'update' => 0,
     'last' => '2016-01-11',
     'last2' => '01-11',
@@ -182,9 +187,9 @@ $list=array (
     'reply' => 0,
     'icon_reply' => '',
     'icon_link' => '',
-    'ca_name_href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;sca=OOZOOBOX%EC%86%8C%EC%8B%9D',
-    'href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;wr_id=4',
-    'comment_href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;wr_id=4',
+    'ca_name_href' => 'http://localhost/bbs/board.php?bo_table=buyerfaq&amp;sca=%EA%B8%B0%ED%83%80',
+    'href' => 'http://localhost/bbs/board.php?bo_table=buyerfaq&amp;wr_id=43',
+    'comment_href' => 'http://localhost/bbs/board.php?bo_table=buyerfaq&amp;wr_id=43',
     'icon_new' => '',
     'icon_hot' => '',
     'is_lock' => false,
@@ -199,8 +204,8 @@ $list=array (
     ),
     'link_href' => 
     array (
-      1 => 'http://localhost/bbs/link.php?bo_table=notice&amp;wr_id=4&amp;no=1',
-      2 => 'http://localhost/bbs/link.php?bo_table=notice&amp;wr_id=4&amp;no=2',
+      1 => 'http://localhost/bbs/link.php?bo_table=buyerfaq&amp;wr_id=43&amp;no=1',
+      2 => 'http://localhost/bbs/link.php?bo_table=buyerfaq&amp;wr_id=43&amp;no=2',
     ),
     'link_hit' => 
     array (
@@ -214,27 +219,21 @@ $list=array (
   ),
   2 => 
   array (
-    'wr_id' => '3',
-    'wr_num' => '-3',
+    'wr_id' => '42',
+    'wr_num' => '-41',
     'wr_reply' => '',
-    'wr_parent' => '3',
+    'wr_parent' => '42',
     'wr_is_comment' => '0',
     'wr_comment' => '0',
     'wr_comment_reply' => '',
-    'ca_name' => '이벤트당첨',
+    'ca_name' => '기타',
     'wr_option' => '',
-    'wr_subject' => '恭喜恭喜！EXO演唱会门票获奖者名单公布！',
-    'wr_content' => '恭喜您已成为3名幸运获奖者之一！！ 
-
-hele**** ada**** yongli**** 
-
-Gmarket将通过EXO演唱会门票获奖者的电子邮件提示大家。
-获奖者请务必提供Gmarket的ID及个人有效证件，
-同时请确保跟人有效证件上的姓名与Gmarket Global上个人注册信息相一致。
-每位获奖者将随机获得两个座位。无哦一请务必同时提供他/她的个人有效证件以换取门票。
-Gmarket建议访问韩国首尔之前，请先仔细参考演唱会公告。
-（ http://gpromotion.gmarket.co.kr/Plan/PlanView?sid=124588） 
-再次感谢大家的关心与支持。',
+    'wr_subject' => '订单被取消了，收到的退款因为汇率关系跟我支付的金额不同。',
+    'wr_content' => '订单被取消了，收到的退款因为汇率关系跟我支付的金额不同。
+-  订单被取消了，收到的退款因为汇率关系跟我支付的金额不同。
+商品退款金额和支付金额可能会不同。
+原因是我们Gmarket根据自测的汇率进行退款，支付日与退款日当天的汇率不同，会出现一定的汇率差。
+望您谅解。',
     'wr_link1' => '',
     'wr_link2' => '',
     'wr_link1_hit' => '0',
@@ -247,9 +246,9 @@ Gmarket建议访问韩国首尔之前，请先仔细参考演唱会公告。
     'wr_name' => '최고관리자',
     'wr_email' => 'admin@domain.com',
     'wr_homepage' => '',
-    'wr_datetime' => '2016-01-11 03:32:46',
+    'wr_datetime' => '2016-01-11 02:38:04',
     'wr_file' => '0',
-    'wr_last' => '2016-01-11 03:32:46',
+    'wr_last' => '2016-01-11 02:38:04',
     'wr_ip' => '122.46.251.104',
     'wr_facebook_user' => '',
     'wr_twitter_user' => '',
@@ -285,11 +284,11 @@ Gmarket建议访问韩国首尔之前，请先仔细参考演唱会公告。
     'as_icon' => '',
     'as_update' => '0000-00-00 00:00:00',
     'is_notice' => false,
-    'subject' => '恭喜恭喜！EXO演唱会门票获奖者名单公布！',
+    'subject' => '订单被取消了，收到的退款因为汇率关系跟我支付的金额…',
     'comment_cnt' => '',
     'datetime' => '2016-01-11',
     'datetime2' => '01-11',
-    'date' => 1452450766,
+    'date' => 1452447484,
     'update' => 0,
     'last' => '2016-01-11',
     'last2' => '01-11',
@@ -297,9 +296,9 @@ Gmarket建议访问韩国首尔之前，请先仔细参考演唱会公告。
     'reply' => 0,
     'icon_reply' => '',
     'icon_link' => '',
-    'ca_name_href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;sca=%EC%9D%B4%EB%B2%A4%ED%8A%B8%EB%8B%B9%EC%B2%A8',
-    'href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;wr_id=3',
-    'comment_href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;wr_id=3',
+    'ca_name_href' => 'http://localhost/bbs/board.php?bo_table=buyerfaq&amp;sca=%EA%B8%B0%ED%83%80',
+    'href' => 'http://localhost/bbs/board.php?bo_table=buyerfaq&amp;wr_id=42',
+    'comment_href' => 'http://localhost/bbs/board.php?bo_table=buyerfaq&amp;wr_id=42',
     'icon_new' => '',
     'icon_hot' => '',
     'is_lock' => false,
@@ -314,8 +313,8 @@ Gmarket建议访问韩国首尔之前，请先仔细参考演唱会公告。
     ),
     'link_href' => 
     array (
-      1 => 'http://localhost/bbs/link.php?bo_table=notice&amp;wr_id=3&amp;no=1',
-      2 => 'http://localhost/bbs/link.php?bo_table=notice&amp;wr_id=3&amp;no=2',
+      1 => 'http://localhost/bbs/link.php?bo_table=buyerfaq&amp;wr_id=42&amp;no=1',
+      2 => 'http://localhost/bbs/link.php?bo_table=buyerfaq&amp;wr_id=42&amp;no=2',
     ),
     'link_hit' => 
     array (
@@ -329,39 +328,42 @@ Gmarket建议访问韩国首尔之前，请先仔细参考演唱会公告。
   ),
   3 => 
   array (
-    'wr_id' => '2',
-    'wr_num' => '-2',
+    'wr_id' => '41',
+    'wr_num' => '-40',
     'wr_reply' => '',
-    'wr_parent' => '2',
+    'wr_parent' => '41',
     'wr_is_comment' => '0',
     'wr_comment' => '0',
     'wr_comment_reply' => '',
-    'ca_name' => '공지',
+    'ca_name' => '기타',
     'wr_option' => '',
-    'wr_subject' => '系统维护',
-    'wr_content' => '您好，欢迎访问gmarket。
+    'wr_subject' => '支付错误编码',
+    'wr_content' => '<错误代码2>
+出现这种错误，这不是因Gmarket系统问题，而是因安全交易问题所出现的，烦请您咨询相关银行确认后，重新订购试试。
+ 
+<错误代码13>
+该代码是因您输入地址过多而出现的情况，烦请您简单输入必要项目。
+ 
+<错误代码122>
+购物车内若有优惠活动期限已过的商品，会出现相关错误，烦请您将问题商品删除之后，重新操作。
+ 
+<错误代码344/-3017>
+这是在特定电脑上发生的现象，在网页还未100%加载完成时，进行支付，会出现的错误代码。请在网页加载完成后，进行支付。
+ 
+<错误代码710>
+在商品选择/选项栏中输入特定单词时,所出现的问题，麻烦请您更改相关内容后再次确认。
+ 
+<错误代码739>
+支付金额超出商品金额或者同一件商品的订购量突然剧增，导致商品缺货时，会出现这种情况。望您谅解。
+ 
+<错误代码 745/746/710>
+选择/选项信息数据出现乱码时发生的现象。望您修改选项信息后重新进行付款。
+ 
+<错误代码 367>
+请在支付页面加载完成后进行付款。若出现其他错误代码或上述问题重试后，依然出现错误，
+烦请您将相关页面截图后咨询我们的Gmarket中文客服中心。
 
-由于当前系统处于维护期间，因此Gmarket的所有服务将临时中断。
-
-
-
-系统维护时间：2013年11月2日（星期六）04:00 ~06:00. 
-
-维护区域：临时中断gmarket网站的使用
-
-
-
-依据实际网站维护的情况，有可能会发生延迟。
-
-
-
-给您带来不便敬请谅解。 
-
-Gmarket会尽最大的努力为您提供更好的服务。
-
-
-
-谢谢.',
+咨询中文客服点击▶点击',
     'wr_link1' => '',
     'wr_link2' => '',
     'wr_link1_hit' => '0',
@@ -374,9 +376,9 @@ Gmarket会尽最大的努力为您提供更好的服务。
     'wr_name' => '최고관리자',
     'wr_email' => 'admin@domain.com',
     'wr_homepage' => '',
-    'wr_datetime' => '2016-01-11 03:32:08',
+    'wr_datetime' => '2016-01-11 02:37:40',
     'wr_file' => '0',
-    'wr_last' => '2016-01-11 03:32:08',
+    'wr_last' => '2016-01-11 02:37:40',
     'wr_ip' => '122.46.251.104',
     'wr_facebook_user' => '',
     'wr_twitter_user' => '',
@@ -412,11 +414,11 @@ Gmarket会尽最大的努力为您提供更好的服务。
     'as_icon' => '',
     'as_update' => '0000-00-00 00:00:00',
     'is_notice' => false,
-    'subject' => '系统维护',
+    'subject' => '支付错误编码',
     'comment_cnt' => '',
     'datetime' => '2016-01-11',
     'datetime2' => '01-11',
-    'date' => 1452450728,
+    'date' => 1452447460,
     'update' => 0,
     'last' => '2016-01-11',
     'last2' => '01-11',
@@ -424,9 +426,9 @@ Gmarket会尽最大的努力为您提供更好的服务。
     'reply' => 0,
     'icon_reply' => '',
     'icon_link' => '',
-    'ca_name_href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;sca=%EA%B3%B5%EC%A7%80',
-    'href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;wr_id=2',
-    'comment_href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;wr_id=2',
+    'ca_name_href' => 'http://localhost/bbs/board.php?bo_table=buyerfaq&amp;sca=%EA%B8%B0%ED%83%80',
+    'href' => 'http://localhost/bbs/board.php?bo_table=buyerfaq&amp;wr_id=41',
+    'comment_href' => 'http://localhost/bbs/board.php?bo_table=buyerfaq&amp;wr_id=41',
     'icon_new' => '',
     'icon_hot' => '',
     'is_lock' => false,
@@ -441,8 +443,8 @@ Gmarket会尽最大的努力为您提供更好的服务。
     ),
     'link_href' => 
     array (
-      1 => 'http://localhost/bbs/link.php?bo_table=notice&amp;wr_id=2&amp;no=1',
-      2 => 'http://localhost/bbs/link.php?bo_table=notice&amp;wr_id=2&amp;no=2',
+      1 => 'http://localhost/bbs/link.php?bo_table=buyerfaq&amp;wr_id=41&amp;no=1',
+      2 => 'http://localhost/bbs/link.php?bo_table=buyerfaq&amp;wr_id=41&amp;no=2',
     ),
     'link_hit' => 
     array (
@@ -456,17 +458,24 @@ Gmarket会尽最大的努力为您提供更好的服务。
   ),
   4 => 
   array (
-    'wr_id' => '1',
-    'wr_num' => '-1',
+    'wr_id' => '40',
+    'wr_num' => '-39',
     'wr_reply' => '',
-    'wr_parent' => '1',
+    'wr_parent' => '40',
     'wr_is_comment' => '0',
     'wr_comment' => '0',
     'wr_comment_reply' => '',
-    'ca_name' => '공지',
+    'ca_name' => '포인트',
     'wr_option' => '',
-    'wr_subject' => '关于换货及退货的公告',
-    'wr_content' => '在商品到达物流中心的前一个配送状态时，可以申请换货及退货。换货>虽然在网站上无法申请换货，但在海外配送前，向卖家确认后，可以换货。退货>在网站上可以申请退货。但，海外配送进行后，则无法在网上申请。 “海外配送中”状态下，无法申请换货/退货。收货后，如需要换货/退货，请发送E-mail至客服中心咨询。',
+    'wr_subject' => '填写了经典评论，但没有收到G章。',
+    'wr_content' => '填写了经典评论，但没有收到G章。
+经典评论是指可以上传照片和视频的购买后记最多可得到两个G章（只要填写就能得到一个G章、前五个经典评论追加赠送一个G章）的优惠。
+
+※ 填写经典评论时的注意事项
+1) 以交易编码为基准，只可填写一次。
+2) 填写一般评论后最多在30日内可填写商品评论一定要上传直接使用/穿戴的照片或者视频才可。
+3) 填写商品评论时需填写30字以上，同一词语，文章重复时，则无法登陆或不能收到奖励的G章。
+※但是. 只能在商品网页ON的状态下购物后，购买适用G章的商品或填写评论时根据顾客的选择赠送G章。',
     'wr_link1' => '',
     'wr_link2' => '',
     'wr_link1_hit' => '0',
@@ -479,9 +488,9 @@ Gmarket会尽最大的努力为您提供更好的服务。
     'wr_name' => '최고관리자',
     'wr_email' => 'admin@domain.com',
     'wr_homepage' => '',
-    'wr_datetime' => '2016-01-11 03:31:41',
+    'wr_datetime' => '2016-01-11 02:36:20',
     'wr_file' => '0',
-    'wr_last' => '2016-01-11 03:31:41',
+    'wr_last' => '2016-01-11 02:36:20',
     'wr_ip' => '122.46.251.104',
     'wr_facebook_user' => '',
     'wr_twitter_user' => '',
@@ -517,11 +526,11 @@ Gmarket会尽最大的努力为您提供更好的服务。
     'as_icon' => '',
     'as_update' => '0000-00-00 00:00:00',
     'is_notice' => false,
-    'subject' => '关于换货及退货的公告',
+    'subject' => '填写了经典评论，但没有收到G章。',
     'comment_cnt' => '',
     'datetime' => '2016-01-11',
     'datetime2' => '01-11',
-    'date' => 1452450701,
+    'date' => 1452447380,
     'update' => 0,
     'last' => '2016-01-11',
     'last2' => '01-11',
@@ -529,9 +538,9 @@ Gmarket会尽最大的努力为您提供更好的服务。
     'reply' => 0,
     'icon_reply' => '',
     'icon_link' => '',
-    'ca_name_href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;sca=%EA%B3%B5%EC%A7%80',
-    'href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;wr_id=1',
-    'comment_href' => 'http://localhost/bbs/board.php?bo_table=notice&amp;wr_id=1',
+    'ca_name_href' => 'http://localhost/bbs/board.php?bo_table=buyerfaq&amp;sca=%ED%8F%AC%EC%9D%B8%ED%8A%B8',
+    'href' => 'http://localhost/bbs/board.php?bo_table=buyerfaq&amp;wr_id=40',
+    'comment_href' => 'http://localhost/bbs/board.php?bo_table=buyerfaq&amp;wr_id=40',
     'icon_new' => '',
     'icon_hot' => '',
     'is_lock' => false,
@@ -546,8 +555,8 @@ Gmarket会尽最大的努力为您提供更好的服务。
     ),
     'link_href' => 
     array (
-      1 => 'http://localhost/bbs/link.php?bo_table=notice&amp;wr_id=1&amp;no=1',
-      2 => 'http://localhost/bbs/link.php?bo_table=notice&amp;wr_id=1&amp;no=2',
+      1 => 'http://localhost/bbs/link.php?bo_table=buyerfaq&amp;wr_id=40&amp;no=1',
+      2 => 'http://localhost/bbs/link.php?bo_table=buyerfaq&amp;wr_id=40&amp;no=2',
     ),
     'link_hit' => 
     array (

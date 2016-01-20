@@ -1,0 +1,1126 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=10,chrome=1">
+<title>oozoobox</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" /> 
+
+
+<link rel="stylesheet" href="http://localhost/css/default_shop.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,300,500,500italic,700,900,400italic,700italic">
+<link rel="stylesheet" href="http://localhost/thema/Basic/assets/bs3/css/bootstrap.min.css" type="text/css" media="screen" class="thema-mode">
+<link rel="stylesheet" href="http://localhost/thema/Basic/colorset/Basic/colorset.css" type="text/css" media="screen" class="thema-colorset">
+<link rel="stylesheet" href="/css/oz_mh/oz_mh.css" type="text/css" media="screen" >
+<link rel="stylesheet" href="http://localhost/css/apms.css">
+<link rel="stylesheet" href="http://localhost/css/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://localhost/css/level/basic.css">
+<!--[if lte IE 8]>
+<script src="http://localhost/js/html5.js"></script>
+<![endif]-->
+<script>
+// 자바스크립트에서 사용하는 전역변수 선언
+var g5_url       = "http://localhost";
+var g5_bbs_url   = "http://localhost/bbs";
+var g5_is_member = "1";
+var g5_is_admin  = "super";
+var g5_is_mobile = "";
+var g5_bo_table  = "";
+var g5_sca       = "";
+var g5_pim       = "";
+var g5_editor    = "";
+var g5_responsive    = "1";
+var g5_cookie_domain = "";
+var g5_admin_url = "http://localhost/adm";
+</script>
+<script src="http://localhost/js/jquery-1.8.3.min.js"></script>
+<script src="http://localhost/js/common.js"></script>
+<script src="http://localhost/js/wrest.js"></script>
+<script src="http://localhost/js/apms.js"></script>
+</head>
+<body class="responsive is-pc">
+<style> 
+	body { 
+		background-color: ;
+					background-repeat: no-repeat; background-position: 50% 50%; background-attachment: fixed; background-size:cover;
+				background-image: none; 
+	}
+</style>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10">
+<script src="/oz_js/jquery.SuperSlide.2.1.1.js" type="text/javascript"></script>
+<script src="/oz_js/jquery.slides.min.js"></script>
+<script src="/oz_js/jquery.als-1.7.min.js"></script>
+<script src="/oz_js/jquery.newsticker.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/shop/css/base.css" />
+<script type="text/javascript" src="/shop/js/common.js"></script>
+<div class="wrapper ko ">
+
+
+
+
+
+	<!--s: top광고--> <!--SW: 광고가 바뀔때마다 인라인 스타일 수정, 이미지 경로 수정 --->   
+    <div class="oz_top_con" style="height:80px; display:block; position:relative;" id="float_mask">
+        <div style="position:absolute; z-index:999999999; width: 60px;margin-top: 25px; right:10%; float:right;">
+                <a onClick="closeFootAd()" href="#" title="我知道了"><img src="/images/close.png"></a>
+        </div>
+        <div style="background: rgb(255, 204, 1); left: 0px; width: 50%; height: 100%; position: absolute;"></div>
+        <div style="background: rgb(255, 204, 1); width: 50%; height: 100%; right: 0px; position: absolute;"></div>      
+        <img width="990" height="80" style="margin: 0px auto; top: 0px; position: relative; z-index: 10;" src="/data/banner/20160120161127_1.png" alt="广告"/>
+        <a style="left: 0px ; top: 0px; width: 100%; height: 100%; display: block; position: absolute; z-index: 100;"  href="/shop/bannerhit.php?bn_id=1&url=http%3A%2F%2Fwww.oozoobox.com" > <img width="100%" height="100%" src="/images/s.png"></a>
+    </div>   
+<script>
+//////////////////////////////////////////////////顶部广告代码
+window.onload = function(){
+	if(getCookie("footad")==0){
+		document.getElementById("float_mask").style.display="none";
+	}else{
+		document.getElementById("float_mask").style.display="block";
+	}
+}
+//关闭底部广告
+function closeFootAd() {
+	document.getElementById("float_mask").style.display="none";
+	setCookie("footad","0"); 
+}
+   
+//设置cookie 
+function setCookie(name,value){ 
+    var exp = new Date();  
+    exp.setTime(exp.getTime() + 1*60*60*1000);//有效期1小时 
+    document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString(); 
+} 
+//取cookies函数 
+function getCookie(name){ 
+    var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)")); 
+    if(arr != null) return unescape(arr[2]); return null; 
+} 
+//////////////////////////////////////////////////顶部广告代码
+</script>
+<!-------------------------------------------------------------顶固广告样式--------------------------------------------------------------------> 
+    <!--e: top광고-->
+    
+            <!------s: 쇼핑몰 페이지--------><!--SW: 메인 전체를 감싸는 div가 있어야 함-->
+            <div id="oz_mallpage">
+                <!------s: top 상단 메뉴-------->
+                <div id="oz_site_nav" role="navigation">
+                    <div id="oz_sn_bd"> <!----- @media  있음------>
+                        <div class="oz_sn_container">
+                            <p class="oz_sn_prm_info">
+                            	<em><a href="/shop/list.php?ca_id=10" >情爱的客户， 今天紫外线太强了，必须使用防晒霜！ 〉〉〉去看看防晒霜</a></em> <!--"고객님, 오늘은 자외선이 강하네요. 외출할때 반드시 썬크림을 사용하세요>>>썬크림보러가기"  SW: php가 필요할지도.. -->
+                            </p>
+                            <ul class="oz_sn_quick_menu">
+                                                                                            <li>
+                                    <a href="http://localhost/adm" target="_top">관리자+</a> <!--"관리자페이지"-->
+                                </li>
+                                <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
+                                                                                                <li>
+                                    <a href="/shop/partner/" target="_top">마이샵</a> <!--"마이샵관리페이지"-->
+                                </li>
+                                <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
+                                                                <li>
+                                    <a class="top_quick01" href="/shop/mypage.php" target="_top">我的信息</a> <!--"자료수정"-->
+                                </li>
+                                <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
+                                <li class="oz_sn_join">
+                                    <a class="top_quick02" href="/bbs/logout.php?url=%2Fwrite_html.php%3F" target="_top" rel="nofollow">退出登录</a><!--"로그아웃"-->
+                                </li>
+                                                            <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
+                                <li class="sn-cart">
+                                                                    <a class="top_quick05" href="/shop/cart.php" target="_top" rel="nofollow">购物车</a> <!--"장바구니"-->
+                                                                </li>
+                                <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
+                                <li class="oz_sn_myshopping">
+                                    <a class="top_quick06" href="/shop/orderinquiry.php" target="_top">我的购物信息 </a><!--"내 쇼핑 정보"-->
+                                    <!--SW: display:none 으로 되어 있는데 아마도 판매자로 로그인 하면 display:block으로 되지 않을까??-->
+                                </li>
+                                <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
+                                <li class="oz_sn_customcenter">
+                                    <a class="top_quick07" href="/shop/cscenter.php">客户服务</a><!--"고객센터"-->
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>                
+                <!------e: top 상단 메뉴-------->
+                
+                <!--s: logo, 검색창-->
+                <div id="oz_header">
+                    <div class="oz_headerlayout"><!--@media 적용-->
+                        <div class="oz_headercontent">
+                            <!--s: logo-->
+                            <h1 id="oz_mallLogo">
+                                <span class="oz_mlogo">
+                                    <a title="OOZOOBOX.com" href="/"><s></s>OOZOOBOX</a>
+                                </span> 
+                            </h1>
+                            <!--e: logo-->
+                            <!--s: 검색창, 배너-->
+                            <div class="oz_header_extra">
+                            	<!--s: 배너-->
+                                <div class="oz_header_banner">
+                                    <a href="/shop/bannerhit.php?bn_id=2&url=http%3A%2F%2Fwww.oozoobox.com" ><img src="/data/banner/20160120164825_1.png" alt="广告"/></a>
+                                </div>
+                                <!--e: 배너-->
+                                <!--s:검색창-->
+                                <div class="oz_mall_search" id="oz_mallSearch"><!--@media 적용-->
+                                    <ul class="oz_event_query">
+                                    	<li><a href="/shop/main_event02.php"><font >本月推选</font></a></li> <!--"이달의 베스트"-->
+                                        <li><a href="/shop/main_event03.php"><font >优惠专区</font></a></li> <!--"이벤트"-->
+                                        <li class="last"><a href="/shop/main_event04.php"><font >相互共享</font></a></li>  <!--"커뮤니티"-->
+                                    </ul>
+
+                                    <form name="oz_searchTop" class="oz_mallSearch_form oz_clearfix" action="#" target="_top" acceptcharset="gbk">
+                                        <input type="hidden" name="type" value="">
+                                        <fieldset>
+                                            <legend>天猫搜索</legend> 
+                                            <div class="oz_mallSearch_input oz_clearfix">
+                                                <div class="s-combobox">
+                                                    <div class="s-combobox-input-wrap">
+                                                        <input name="q" title="请输入搜索文字" class="s-combobox-input" id="mq"  role="combobox" accesskey="s" placeholder="请输入搜索文字" value=""></input>
+                                                    </div>
+                                                </div>
+                                                <button type="submit">搜索<s></s></button>
+                                            </div>
+                                    	</fieldset>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!--e: 로고, 검색창-->
+                
+      
+
+ 
+            </div> 
+            <!-----------e: HEADER-------------->    
+        </div>
+            <!------e: 쇼핑몰 페이지-------->
+    
+
+<!------s: 쇼핑몰 페이지--------><!--SW: main 전체를 감싸는 div-->
+<div id="oz_mallpage2">
+	<!--s: CONTENT-->
+	<div id="oz_content">
+    	
+        <!--s: MAIN 글로벌메뉴&MAIN 배너 슬라이드-->
+        <div class="category-con">
+            <div class="category-inner-con">
+                <!--s: MAIN 글로벌메뉴-->
+                <div id="oz_main_nav">
+                
+                    <ul class="tit">
+                                            <li class="mod_cate">
+                            <a href="/shop/list.php?ca_id=10" class="main_global_list"><h2><i class="oz_main_glo_ico"><img src="/images/glo_icon_01.png" alt="给宝宝最好的 icon"/></i><span>给宝宝最好的</span></h2></a><!--"내 아이에게 주고 싶은 가장 좋은 것"-->
+                            <div class="mod_subcate">
+                                <div class="mod_subcate_main">
+                                                                    <dl>
+                                        <dt><a href="/shop/list.php?ca_id=1010">尿片</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                     <dl>
+                                        <dt><a href="/shop/list.php?ca_id=1020">食品</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                     <dl>
+                                        <dt><a href="/shop/list.php?ca_id=1030">保健食品</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                     <dl>
+                                        <dt><a href="/shop/list.php?ca_id=1040">童装</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                     <dl>
+                                        <dt><a href="/shop/list.php?ca_id=1050">母婴用品</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                 </div>
+                                <div class="mod_subcate_side">
+                                    <div class="mod_subcate_side_hd"></div>
+                                                                        <a class="mod_subcate_gg"  href="/shop/bannerhit.php?bn_id=8&url=http%3A%2F%2Fwww.oozoobox.com" ><img src="/data/banner/20160120171526_1.png"/></a>
+                                                                                                                                                                                                                    </div>
+                            </div>
+                        </li>
+                                                <li class="mod_cate">
+                            <a href="/shop/list.php?ca_id=20" class="main_global_list"><h2><i class="oz_main_glo_ico"><img src="/images/glo_icon_02.png" alt="给宝宝最好的 icon"/></i><span>白滑牛奶皮肤</span></h2></a><!--"내 아이에게 주고 싶은 가장 좋은 것"-->
+                            <div class="mod_subcate">
+                                <div class="mod_subcate_main">
+                                                                    <dl>
+                                        <dt><a href="/shop/list.php?ca_id=2010">面膜</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                     <dl>
+                                        <dt><a href="/shop/list.php?ca_id=2020">化妆水/乳液</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                     <dl>
+                                        <dt><a href="/shop/list.php?ca_id=2030">精华/护肤霜</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                     <dl>
+                                        <dt><a href="/shop/list.php?ca_id=2040">彩妆</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                     <dl>
+                                        <dt><a href="/shop/list.php?ca_id=2050">套妆</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                 </div>
+                                <div class="mod_subcate_side">
+                                    <div class="mod_subcate_side_hd"></div>
+                                                                                                            <a class="mod_subcate_gg"  href="/shop/bannerhit.php?bn_id=9&url=http%3A%2F%2Fwww.oozoobox.com" ><img src="/data/banner/20160120171549_1.png"/></a>
+                                                                                                                                                                                </div>
+                            </div>
+                        </li>
+                                                <li class="mod_cate">
+                            <a href="/shop/list.php?ca_id=30" class="main_global_list"><h2><i class="oz_main_glo_ico"><img src="/images/glo_icon_03.png" alt="给宝宝最好的 icon"/></i><span>津津有味</span></h2></a><!--"내 아이에게 주고 싶은 가장 좋은 것"-->
+                            <div class="mod_subcate">
+                                <div class="mod_subcate_main">
+                                                                    <dl>
+                                        <dt><a href="/shop/list.php?ca_id=3010">调料</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                     <dl>
+                                        <dt><a href="/shop/list.php?ca_id=3020">面类</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                     <dl>
+                                        <dt><a href="/shop/list.php?ca_id=3030">营养</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                     <dl>
+                                        <dt><a href="/shop/list.php?ca_id=3040">健康</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                     <dl>
+                                        <dt><a href="/shop/list.php?ca_id=3050">饼干</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                 </div>
+                                <div class="mod_subcate_side">
+                                    <div class="mod_subcate_side_hd"></div>
+                                                                                                                                                <a class="mod_subcate_gg"  href="/shop/bannerhit.php?bn_id=10&url=http%3A%2F%2Fwww.oozoobox.com" ><img src="/data/banner/20160120171609_1.png"/></a>
+                                                                                                                                            </div>
+                            </div>
+                        </li>
+                                                <li class="mod_cate">
+                            <a href="/shop/list.php?ca_id=40" class="main_global_list"><h2><i class="oz_main_glo_ico"><img src="/images/glo_icon_04.png" alt="给宝宝最好的 icon"/></i><span>美丽的穿着</span></h2></a><!--"내 아이에게 주고 싶은 가장 좋은 것"-->
+                            <div class="mod_subcate">
+                                <div class="mod_subcate_main">
+                                                                    <dl>
+                                        <dt><a href="/shop/list.php?ca_id=4010">女装</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                     <dl>
+                                        <dt><a href="/shop/list.php?ca_id=4020">男装</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                     <dl>
+                                        <dt><a href="/shop/list.php?ca_id=4030">儿童</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                     <dl>
+                                        <dt><a href="/shop/list.php?ca_id=4040">内衣</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                 </div>
+                                <div class="mod_subcate_side">
+                                    <div class="mod_subcate_side_hd"></div>
+                                                                                                                                                                                    <a class="mod_subcate_gg"  href="/shop/bannerhit.php?bn_id=11&url=http%3A%2F%2Fwww.oozoobox.com" ><img src="/data/banner/20160120171632_1.png"/></a>
+                                                                                                        </div>
+                            </div>
+                        </li>
+                                                <li class="mod_cate">
+                            <a href="/shop/list.php?ca_id=50" class="main_global_list"><h2><i class="oz_main_glo_ico"><img src="/images/glo_icon_05.png" alt="给宝宝最好的 icon"/></i><span>小生活必备</span></h2></a><!--"내 아이에게 주고 싶은 가장 좋은 것"-->
+                            <div class="mod_subcate">
+                                <div class="mod_subcate_main">
+                                                                    <dl>
+                                        <dt><a href="/shop/list.php?ca_id=5010">女士</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                     <dl>
+                                        <dt><a href="/shop/list.php?ca_id=5020">厨房</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                     <dl>
+                                        <dt><a href="/shop/list.php?ca_id=5030">洗澡</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                     <dl>
+                                        <dt><a href="/shop/list.php?ca_id=5040">其他</a></dt><!--"기저귀"-->
+                                        <!--<dd>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴</a>
+                                            <i class="mod_subcate_line"></i>
+                                            <a href="http://sc.admin5.com/">로컬하위메뉴>하위메뉴</a>
+                                        </dd>--><!--로컬 하위 메뉴 (추후 추가시 *css 수정 요)-->
+                                    </dl>
+                                                                 </div>
+                                <div class="mod_subcate_side">
+                                    <div class="mod_subcate_side_hd"></div>
+                                                                                                                                                                                                                        <a class="mod_subcate_gg"  href="/shop/bannerhit.php?bn_id=12&url=http%3A%2F%2Fwww.oozoobox.com" ><img src="/data/banner/20160120171701_1.png"/></a>
+                                                                    </div>
+                            </div>
+                        </li>
+                                            </ul>
+                    <div class="mod_cate2">
+                    </div> 
+                </div> 
+            </div>   
+            <!--e: MAIN 글로벌메뉴-->
+            
+            <!--s: MAIN 배너 슬라이드-->
+           <div class="oz_main_bn">
+                <div id="slides">                
+                  
+                  <a href="/shop/bannerhit.php?bn_id=4&url=http%3A%2F%2Fwww.oozoobox.com"  style="background:#ffcc00;">
+                      <div class="main_bn_con">
+                          <div class="main_bn_con2">                               
+                                                              <b class="back_bn" style="background: url('/data/banner/20160120165923_1.jpg') no-repeat left;">
+                               </b>   
+                          </div>
+                      </div>
+                  </a>
+                  
+                  <a href="/shop/bannerhit.php?bn_id=5&url=http%3A%2F%2Fwww.oozoobox.com"  style="background:#e8e8e8;">
+                      <div class="main_bn_con">
+                          <div class="main_bn_con2">                               
+                                                              <b class="text_bn" style="background: url('/data/banner/20160120170933_2.png') no-repeat left; ">
+                               </b>
+                                                              <b class="back_bn" style="background: url('/data/banner/20160120170933_1.jpg') no-repeat left;">
+                               </b>   
+                          </div>
+                      </div>
+                  </a>
+                  
+                  <a href="/shop/bannerhit.php?bn_id=6&url=http%3A%2F%2Fwww.oozoobox.com"  style="background:#013077;">
+                      <div class="main_bn_con">
+                          <div class="main_bn_con2">                               
+                                                              <b class="text_bn" style="background: url('/data/banner/20160120171105_2.png') no-repeat left; ">
+                               </b>
+                                                              <b class="back_bn" style="background: url('/data/banner/20160120171105_1.jpg') no-repeat left;">
+                               </b>   
+                          </div>
+                      </div>
+                  </a>
+                  
+                  <a href="/shop/bannerhit.php?bn_id=7&url=http%3A%2F%2Fwww.oozoobox.com"  style="background:#e8e8e8;">
+                      <div class="main_bn_con">
+                          <div class="main_bn_con2">                               
+                                                              <b class="back_bn" style="background: url('/data/banner/20160120171144_1.jpg') no-repeat left;">
+                               </b>   
+                          </div>
+                      </div>
+                  </a>
+                  
+                </div>
+            </div>
+            <!--e: MAIN 배너 슬라이드-->
+            
+            <!--s: MAIN 슬라이드 상단 작은 배너-->
+            <div class="small_banner_con">
+ <!--SW: pro php 다시 한번 봐주세요. ^^-->
+            	<a class="small_banner" href="/shop/bannerhit.php?bn_id=13&url=http%3A%2F%2Fwww.oozoobox.com" >
+                	<img width="170" height="440" alt="" src="/data/banner/20160120171947_1.png"/>
+                    <div class="small_banner_btn">
+                    	<span class="btn_object">现在就去投票吧!</span>
+                    </div>
+                </a>           
+            </div>
+            <!--e: MAIN 슬라이드 상단 작은 배너-->
+    	</div>
+        <!--e: MAIN 글로벌메뉴&MAIN 배너 슬라이드-->
+                <!--s: MAIN 네가지 약속--> 
+        <div class="interact-con">
+            <div class="module-body">
+                <a class="interact-item" href="/shop/bannerhit.php?bn_id=14&url=http%3A%2F%2Fwww.oozoobox.com" >
+                    <img src="/data/banner/20160120172402_1.png" onmouseover="this.src='/data/banner/20160120194242_2.png'" onmouseout="this.src='/data/banner/20160120172402_1.png'" alt=""/> 
+                </a>
+                <a class="interact-item" href="/shop/bannerhit.php?bn_id=15&url=http%3A%2F%2Fwww.oozoobox.com" >
+                    <img src="/data/banner/20160120172853_1.png" onmouseover="this.src='/data/banner/20160120194916_2.png'" onmouseout="this.src='/data/banner/20160120172853_1.png'" alt=""/> 
+                </a>
+                <a class="interact-item" href="/shop/bannerhit.php?bn_id=16&url=http%3A%2F%2Fwww.oozoobox.com" >
+                    <img src="/data/banner/20160120172906_1.png" onmouseover="this.src='/data/banner/20160120193946_2.png'" onmouseout="this.src='/data/banner/20160120172906_1.png'" alt=""/> 
+                </a>
+                <a class="interact-item" href="/shop/bannerhit.php?bn_id=17&url=%2Fshop%2Fcscenter.php"  style="margin-right:0">
+                    <img src="/data/banner/20160120172924_1.png" onmouseover="this.src='/data/banner/20160120194000_2.png'" onmouseout="this.src='/data/banner/20160120172924_1.png'" alt=""/> 
+                </a>
+            </div>
+    	</div>
+        <!--e: MAIN 네가지 약속--> 
+        
+        <!--s: MAIN 特色市场 특별매장-->
+        <div class="oz_channel_con">
+        	<div class="module_title">
+            	特色市场
+                <b class="title_deco">
+                </b>
+            </div>
+            <div class="module_body">
+            	<a class="big_chn" href="/shop/bannerhit.php?bn_id=18&url=%2Fshop%2Flist.php%3Fca_id%3D10" >
+                	<img src="/data/banner/20160120173203_1.png"/>
+                </a>
+                <div class="small_chn_con">
+                	<a class="small_chn" href="/shop/bannerhit.php?bn_id=19&url=%2Fshop%2Flist.php%3Fca_id%3D40" >
+                    	<div class="title_chn">
+                        	<h3 class="title">时尚</h3>
+                            <h4 class="info">为您实时解析<br>
+韩国最新时尚<br>
+流行服饰</h4>
+                        </div>
+                        <img class="chn_pic_right" src="/data/banner/20160120173212_1.png"/>
+                    </a>
+                    <s class="seprate"></s> 
+                    <a class="small_chn" href="/shop/bannerhit.php?bn_id=20&url=%2Fshop%2Flist.php%3Fca_id%3D30" >
+                    	<div class="title_chn">
+                        	<h3 class="title">食品</h3>
+                            <h4 class="info">您今天的晚餐桌<br>
+将变得更加丰富。<br>
+关于美食的一切</h4>
+                        </div>
+                        <img class="chn_pic_right" src="/data/banner/20160120173257_1.png"/>
+                    </a>
+                    <s class="seprate hidden_990"></s> 
+                    <a class="small_chn hidden_990 last_chn" href="/shop/bannerhit.php?bn_id=21&url=http%3A%2F%2Fwww.oozoobox.com" >
+                    	<div class="title_chn">
+                        	<h3 class="title">推荐商品</h3>
+                            <h4 class="info">为了独一无二的<br>
+您的定制商品！<br>
+现在开始向您推荐！</h4>
+                        </div>
+                        <img class="chn_pic_right" src="/data/banner/20160120173327_1.png"/>
+                    </a>
+                    <a class="small_chn under_chn" href="/shop/bannerhit.php?bn_id=22&url=%2Fshop%2Flist.php%3Fca_id%3D20" >
+                        <img class="chn_pic_left" src="/data/banner/20160120173349_1.png"/>
+                        <div class="title_chn_right">
+                            <h3 class="title_right">化妆品</h3>
+                            <h4 class="info_right">为了让尊贵的您<br>
+变得更与众不同</h4>
+                        </div>
+                    </a>
+                    <s class="seprate "></s> 
+                    <a class="small_chn under_chn" href="/shop/bannerhit.php?bn_id=23&url=%2Fshop%2Flist.php%3Fca_id%3D50" >
+                        <img class="chn_pic_left" src="/data/banner/20160120173410_1.png"/>
+                        <div class="title_chn_right">
+                            <h3 class="title_right">日常用品</h3>
+                            <h4 class="info_right">从细节开始<br>
+改变您的日常生活</h4>
+                        </div>                      
+                    </a>
+                    <s class="seprate hidden_990"></s> 
+                    <a class="small_chn hidden_990 under_chn" href="/shop/bannerhit.php?bn_id=24&url=http%3A%2F%2Fwww.oozoobox.com" >
+                        <img class="chn_pic_left" src="/data/banner/20160120173439_1.png"/>
+                        <div class="title_chn_right">
+                            <h3 class="title_right">特价</h3>
+                            <h4 class="info_right">请不要错过<br>
+OOZOOBOX物<br>
+美价廉的特别商品企划!</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--e: MAIN 특별매장-->
+
+        <!--s: FULL 광고 배너-->
+		<div class="oz_full_banner" style="margin-top:30px;">
+        	<ins id="oz_full_banner_outer" style="margin:0; padding:0; width:1620px; height:90px; display:inline-block;">
+            	<a href="/shop/bannerhit.php?bn_id=25&url=http%3A%2F%2Fwww.oozoobox.com" >
+                	<img width="1620" height="90" src="/data/banner/20160120173457_1.jpg" border="0"/>
+                </a>
+            </ins>
+        </div>
+        <!--e: FULL 광고 배너-->
+        
+        <!--s: MAIN热门商品 인기상품-->
+        <div class="oz_wonderful_con">
+        	<div class="wonderful_title">
+            	热门商品 
+                <b class="title_deco">
+                </b>
+            </div>
+            <div class="module_content">
+ <!-------------------- 허걸 : s: UL 반복2번---------------- ------->
+            	<ul class="wonderful_line">
+ <!-------------------- 허걸:  s: 반복4번  마지막 하나만 다름------------->     
+                             
+                  	<li class="wonderful_item">
+                    	<div class="card_item" href="#">
+                        	<a href="/shop/item.php?it_id=1453288170&ca_id=10">
+                                <span class="item_pic">
+                                    <img width="100%" src="/data/item/1453288170/201.JPG" height="314"/>
+                                </span>
+                            </a>
+                            <span class="wonderful_wish">
+                                <a href="/shop/item.php?it_id=1453288170&ca_id=10">
+                                    <span class="ico_wonderful_wish">	
+                                    	<em>13</em>
+                                    </span>
+                                </a>
+                            </span>                            
+                            <span class="item_info">
+                            	<a href="/shop/item.php?it_id=1453288170&ca_id=10">
+                                    <span class="item_desc">
+                                        <em title="CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水" class="item_name">CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水</em>
+                                    </span>
+                                </a>
+                                <span class="item_detail">
+                                	<a href="/shop/item.php?it_id=1453288170&ca_id=10">
+                                        <span class="item_price">
+                                            <i class="price_rmb">¥</i>
+                                            <span class="price_integer">93.00</span>
+                                        </span>
+                                    </a>
+                                    <span class="item_tag">
+                                    	<span class="wonderful_cart">
+                                        	<a href="#">
+                                            	<img width="100%" src="/images/wonderful_cart.png" onmouseover="this.src='/images/wonderful_cart_o.png'" onmouseout="this.src='/images/wonderful_cart.png'"/>
+                                            </a>
+                                        </span>
+                                        <span class="wonderful_after">
+                                        	<a href="#">
+                                        		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
+                                            </a>
+                                            <em>101</em>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                       </div>
+                    </li> 
+                    <!--------------------------허걸 s: 마지막 하나------------------------------->        
+                </ul>
+ <!----------------------허걸: UL 반복 삭제해도 됨-------------------------->               
+            </div>
+        </div>
+        <!--e: MAIN热门商品 인기상품-->
+        
+         <!--s: FULL 광고 배너 02-->
+		<div class="oz_full_banner" style="margin-top:10px;">
+        	<ins id="oz_full_banner_outer" style="margin:0; padding:0; width:1620px; height:90px; display:inline-block;">
+            	<a href="/shop/bannerhit.php?bn_id=26&url=http%3A%2F%2Fwww.oozoobox.com" >
+                	<img width="1620" height="90" src="/data/banner/20160120173508_1.jpg" border="0"/>
+                </a>
+            </ins>
+        </div>
+        <!--e: FULL 광고 배너 02-->       
+        
+    	<!--s: MD 추천 상품-->
+        <div class="oz_market_con">
+        	<div class="market_title">
+            	采购员推存
+                <b class="title_deco">
+                </b>
+            </div>
+            <div class="module_body">
+            	<div class="market_line">
+                	<div class="market_item">
+                    	<a class="main_pic" href="#">
+                        	<img src="/images/md_01.png"/>
+                        </a>
+                        <a class="market_info" href="#">
+                            气温突降的寒夜里，<br>
+                            今天晚餐来碗<br>
+                            热气腾腾的拉面怎么样？
+                        </a>
+                        <a class="market_good" href="#">
+                                <span class="market_good_no">2,501</span>
+                        </a>
+                        <div class="market_right">
+                            <a href="#">
+                                <img width="100%" src="/images/md_go_01.png" onmouseover="this.src='/images/md_go_01_o.png'" onmouseout="this.src='/images/md_go_01.png'"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="market_item">
+                    	<a class="main_pic" href="#">
+                        	<img src="/images/md_02.png"/>
+                        </a>
+                        <a class="market_info" href="#">
+                            回家的路上买上辛拉面回去吃？<br>
+                            今天爸爸下班回家的脚步<br>
+                            声格外轻快。
+                        </a>
+                        <a class="market_good" href="#">
+                                <span class="market_good_no">2,501</span>
+                        </a>
+                        <div class="market_right">
+                            <a href="#">
+                                <img width="100%" src="/images/md_go_02.png" onmouseover="this.src='/images/md_go_02_o.png'" onmouseout="this.src='/images/md_go_02.png'"/>
+                            </a>
+                        </div>
+                    </div>
+                	<div class="market_item">
+                    	<a class="main_pic" href="#">
+                        	<img src="/images/md_03.png"/>
+                        </a>
+                        <a class="market_info" href="#">
+                            宝宝干爽的小屁屁，<br>
+                            看这笑得格外开怀的小脸，<br>
+                            看来今天的心情也很好呢！
+                        </a>
+                        <a class="market_good" href="#">
+                                <span class="market_good_no">2,501</span>
+                        </a>
+                        <div class="market_right">
+                            <a href="#">
+                                <img width="100%" src="/images/md_go_03.png" onmouseover="this.src='/images/md_go_03_o.png'" onmouseout="this.src='/images/md_go_03.png'"/>
+                            </a>
+                        </div>
+                    </div>                    
+                	<div class="market_item last_990">
+                    	<a class="main_pic" href="#">
+                        	<img src="/images/md_04.png"/>
+                        </a>
+                        <a class="market_info" href="#">
+                        为了您的健康，<br>
+                        供应新鲜的黄色食品和红色食品。
+                        </a>
+                        <a class="market_good" href="#">
+                                <span class="market_good_no">2,501</span>
+                        </a>
+                        <div class="market_right">
+                            <a href="#">
+                                <img width="100%" src="/images/md_go_04.png" onmouseover="this.src='/images/md_go_04_o.png'" onmouseout="this.src='/images/md_go_04.png'"/>
+                            </a>
+                        </div>
+                    </div>                    
+                </div>
+<!-------------------------허걸: 아래는 반복--------------------------->
+                <div class="market_line">
+                	<div class="market_item">
+                    	<a class="main_pic" href="#">
+                        	<img src="/images/md_01.png"/>
+                        </a>
+                        <a class="market_info" href="#">
+                            气温突降的寒夜里，<br>
+                            今天晚餐来碗<br>
+                            热气腾腾的拉面怎么样？
+                        </a>
+                        <a class="market_good" href="#">
+                                <span class="market_good_no">2,501</span>
+                        </a>
+                        <div class="market_right">
+                            <a href="#">
+                                <img width="100%" src="/images/md_go_01.png" onmouseover="this.src='/images/md_go_01_o.png'" onmouseout="this.src='/images/md_go_01.png'"/>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="market_item">
+                    	<a class="main_pic" href="#">
+                        	<img src="/images/md_02.png"/>
+                        </a>
+                        <a class="market_info" href="#">
+                            回家的路上买上辛拉面回去吃？<br>
+                            今天爸爸下班回家的脚步<br>
+                            声格外轻快。
+                        </a>
+                        <a class="market_good" href="#">
+                                <span class="market_good_no">2,501</span>
+                        </a>
+                        <div class="market_right">
+                            <a href="#">
+                                <img width="100%" src="/images/md_go_02.png" onmouseover="this.src='/images/md_go_02_o.png'" onmouseout="this.src='/images/md_go_02.png'"/>
+                            </a>
+                        </div>
+                    </div>
+                	
+                    <div class="market_item">
+                    	<a class="main_pic" href="#">
+                        	<img src="/images/md_03.png"/>
+                        </a>
+                        <a class="market_info" href="#">
+                        为了您的健康，<br>
+                        供应新鲜的黄色食品和红色食品。
+                        </a>
+                        <a class="market_good" href="#">
+                                <span class="market_good_no">2,501</span>
+                        </a>
+                        <div class="market_right">
+                            <a href="#">
+                                <img width="100%" src="/images/md_go_03.png" onmouseover="this.src='/images/md_go_03_o.png'" onmouseout="this.src='/images/md_go_03.png'"/>
+                            </a>
+                        </div>
+                    </div>                    
+                	<div class="market_item last_990">
+                    	<a class="main_pic" href="#">
+                        	<img src="/images/md_04.png"/>
+                        </a>
+                        <a class="market_info" href="#">
+                        为了您的健康，<br>
+                        供应新鲜的黄色食品和红色食品。
+                        </a>
+                        <a class="market_good" href="#">
+                                <span class="market_good_no">2,501</span>
+                        </a>
+                        <div class="market_right">
+                            <a href="#">
+                                <img width="100%" src="/images/md_go_04.png" onmouseover="this.src='/images/md_go_04_o.png'" onmouseout="this.src='/images/md_go_04.png'"/>
+                            </a>
+                        </div>
+                    </div>                    
+                </div>
+<!------------------------------여기까지 반복--------------------------->                
+            </div>
+        </div>
+        <!--e: MD 추천 상품-->
+
+         <!--s: FULL 광고 배너 03-->
+		<div class="oz_full_banner" style="margin-top:10px;">
+        	<ins id="oz_full_banner_outer" style="margin:0; padding:0; width:1620px; height:90px; display:inline-block;">
+            	<a href="/shop/bannerhit.php?bn_id=27&url=http%3A%2F%2Fwww.oozoobox.com" >
+                	<img width="1620" height="90" src="/data/banner/20160120173522_1.jpg" border="0"/>
+                </a>
+            </ins>
+        </div>
+        <!--e: FULL 광고 배너 03-->     
+        <!--s: FOOTER_SUB-->
+        <div class="footer_sub_wrap">   
+            <div class="footer_sub">
+                <div class="footer_menu">
+                    <dl>
+                        <dt class="menu_tit">客户服务</dt>
+                        <dd><a>消费者须知</a></dd>
+                        <dd><a>忘记密码</a></dd>
+                        <dd><a>查看已购买商品</a></dd>
+                        <dd><a>如何注册成为会员</a></dd>
+                        <dd><a>我要买</a></dd>
+                    </dl>
+                    <dl>
+                        <dt class="menu_tit">판매자센터</dt>
+                        <dd><a>입점관리</a></dd>
+                        <dd><a>관련상품등록</a></dd>
+                        <dd><a>상품올리기</a></dd>
+                        <dd><a>입점신청</a></dd>
+                    </dl>
+                    <dl>
+                        <dt class="menu_tit">支付方式 </dt>
+                        <dd><a>如何注册支付宝</a></dd>
+                        <dd><a>支付协议</a></dd>
+                        <dd><a>支付方式</a></dd>
+                    </dl>
+                    <dl>
+                        <dt class="menu_tit">售后服务</dt>
+                        <dd><a>换货/退款政策</a></dd>
+                        <dd><a>联系卖家</a></dd>
+                        <dd><a>退换货流程</a></dd>
+                        <dd><a>售后服务</a></dd>
+                    </dl>
+                    <dl>
+                        <dt class="menu_tit">客服中心</dt>
+                        <dd><a>FAQ</a></dd>
+                        <dd><a>服务协议</a></dd>
+                        <dd><a>会员修改个人资料</a></dd>
+                        <dd><a>会员修改密码</a></dd>
+                        <dd><a>修改收货地址</a></dd>
+                    </dl>
+                </div>
+                <!--s: 제휴업체-->
+                <div class="oz_partners">
+                    <h3 class="oz_main_partners_tit">合作企业</h3>
+                    <div class="partner_list">
+                        <ul>
+                            <li><a href="http://www.oozoo.co.kr" target="_blank"><img src="/images/partners/list_partner13.png" alt="롯데백화점"/></a></li>
+                            <!--<li><a href="#" target="_blank"><img src="/images/partners/list_partner02.png" alt="신세계"/></a></li>
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner03.png" alt="현대"/></a></li>
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner04.png" alt="겔러리아"/></a></li>
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner05.png" alt="홈플러스"/></a></li>
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner06.png" alt="CJmall"/></a></li>
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner07.png" alt="코카콜라"/></a></li>
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner08.png" alt="마이크로소프트"/></a></li>
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner09.png" alt="SK-2"/></a></li>
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner10.png" alt="현대"/></a></li> 
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner11.png" alt="국민은행"/></a></li>
+                            <li><a href="#" target="_blank"><img src="/images/partners/list_partner12.png" alt="한국"/></a></li>-->
+                        </ul>
+                    </div>
+                </div>            
+                <!--e: 제휴업체-->
+                <!--s: 공지사항-->
+                <div class="oz_main_news">
+                    <h3 class="oz_main_news_tit">公告</h3>
+                    <div class="oz_main_news_list">
+                        <ul>
+                            <li><a href="#" target="_blank">【官方公告】宇宙”物流预警“邀你备战大促！</a></li>
+                            <li><a href="#" target="_blank">恭喜恭喜！EXO第二张迷你专辑获奖者名单公布！</a></li>
+                            <li><a href="#" target="_blank">系统维护</a></li>
+                            <li><a href="#" target="_blank">优秀博客 栏目正在准备中</a></li>
+                            <li><a href="#" target="_blank">关于换货及退货的公告</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+         </div>
+        <!--e: FOOTER_SUB-->    
+    </div>
+    <!--e:CONTENT-->
+</div>
+<!------e: 쇼핑몰 페이지-------->
+
+
+<script type="text/javascript">
+$("#oz_main_nav .tit").slide({
+	type:"menu",
+	titCell:".mod_cate",
+	targetCell:".mod_subcate",
+	delayTime:0,
+	triggerTime:10,
+	defaultPlay:false,
+	returnDefault:true
+});
+</script>
+
+
+  <script>
+    $(function() {
+      $('#slides').slidesjs({
+        width: 823,
+        height: 500,
+        navigation: {
+          effect: "fade"
+        },
+		  play: {
+          auto: true,
+		  effect:"fade"
+        },
+        pagination: {
+          effect: "fade"
+        },
+        effect: {
+          fade: {
+            speed: 600
+          }
+        }
+      });
+    });
+  </script>
+  
+<script type="text/javascript">
+$(function(){
+
+//#############첫번째 샘플
+        $('.oz_main_news_list').Vnewsticker({
+			speed: 700,         //스크롤 스피드
+			pause: 4000,        //잠시 대기 시간
+			mousePause: true,   //마우스 오버시 일시정지(true=일시정지)
+			showItems: 1,       //스크롤 목록 갯수 지정(1=한줄만 보임)
+			direction : "up"    //up=위로스크롤, 공란=아래로 스크롤
+	});
+
+});
+</script><script src="http://localhost/js/sns.js"></script>
+<!-- .wrapper -->
+<div id="footer">
+	<ul class="footer_link">
+    	<li><a>首页</a></li>
+    	<li><a>公司介绍</a></li>    
+    	<li><a>联系我们</a></li>
+    	<li><a>配送方式 </a></li>
+    	<li><a>제휴문의</a></li>   
+    	<li><a>채용안내</a></li>
+    	<li><a>客户服务</a></li>
+    	<li><a>服务协议</a></li>         
+    </ul>
+    <div class="footer_info">
+    	<p>
+        OOZOOBOX | 대표：이하준 | 地址 : 913/101 38, Uisadang-daero, Yeongdeungpo-gu, Seoul, Korea | 邮政编码 ：07236 <br>
+        联系电话 ：+82-2-1234-1234 / +82-70-1234-1234 | FAX : +82-50-1234-1234 <br>
+        发货和退货地址：（07236) 10F 21, Gukhoe-daero 62-gil, Yeongdeungpo-gu, Seoul, Korea <br>
+        公司营业执照号 ：107-86-81797 | 通信销售申报号码 ：제2015-서울영등포-1249호 <br>
+        服务时间: 周一到周六 08:00 ~ 17:00 | 服务热线 : +82-2-1234-1234<br>
+         Copyright © 2015 OZOOBOX.com 版权所有 
+        </p>
+    </div>
+
+</div>
+
+<!--右侧贴边导航quick_links.js控制-->
+<div class="mui-mbar-tabs">
+	<div class="quick_link_mian">
+		<div class="quick_links_panel">
+			<div class="quick_links">
+				<li>
+					<a href="#" class="my_qlinks"><i class="setting"></i></a>
+					<div class="ibar_login_box status_login">
+						<div class="login_btnbox">
+							<a href="/shop/orderinquiry.php" class="login_order">我的订单</a>
+							<a href="/shop/wishlist.php" class="login_favorite">我的收藏</a>
+						</div>
+						<i class="icon_arrow_white"></i>
+					</div>
+				</li>
+				<li>
+					<a href="/shop/cart.php" class="message_list" ><i class="message"></i><div class="span">购物车</div><span class="cart_num">0</span></a>
+				</li>
+				<li>
+					<a href="/shop/member_todayview.php" class="mpbtn_histroy"><i class="zuji"></i></a>
+					<div class="mp_tooltip">我的足迹<i class="icon_arrow_right_black"></i></div>
+				</li>
+				<li>
+					<a href="/shop/wishlist.php" class="mpbtn_wdsc"><i class="wdsc"></i></a>
+					<div class="mp_tooltip">我的收藏<i class="icon_arrow_right_black"></i></div>
+				</li>
+			</div>
+			<div class="quick_toggle">
+				<li>
+					<a href="/shop/cscenter.php"><i class="kfzx"></i></a>
+					<div class="mp_tooltip">客服中心<i class="icon_arrow_right_black"></i></div>
+				</li>
+				<li>
+					<a href="#none"><i class="mpbtn_qrcode"></i></a>
+					<div class="mp_qrcode" style="display:none;"><img src="/shop/images/weixin_code_145.png" width="148" height="148" title="扫描微信公众平台 关注我们 可以随时联系到我们在线客服！" /><i class="icon_arrow_white"></i></div>
+				</li>
+				<li><a href="#top" class="return_top"><i class="top"></i></a></li>
+			</div>
+		</div>
+		<div id="quick_links_pop" class="quick_links_pop hide"></div>
+	</div>
+</div>
+
+
+<!--[if lte IE 8]>
+<script src="js/ieBetter.js"></script>
+<![endif]-->
+
+<script type="text/javascript" src="/shop/js/parabola.js"></script>
+<script type="text/javascript">
+	$(".quick_links_panel li").mouseenter(function(){
+		$(this).children(".mp_tooltip").animate({left:-92,queue:true});
+		$(this).children(".mp_tooltip").css("visibility","visible");
+		$(this).children(".ibar_login_box").css("display","block");
+	});
+	$(".quick_links_panel li").mouseleave(function(){
+		$(this).children(".mp_tooltip").css("visibility","hidden");
+		$(this).children(".mp_tooltip").animate({left:-121,queue:true});
+		$(this).children(".ibar_login_box").css("display","none");
+	});
+	$(".quick_toggle li").mouseover(function(){
+		$(this).children(".mp_qrcode").show();
+	});
+	$(".quick_toggle li").mouseleave(function(){
+		$(this).children(".mp_qrcode").hide();
+	});
+
+</script>
+
+<!-- JavaScript -->
+<script type="text/javascript" src="http://localhost/thema/Basic/assets/bs3/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://localhost/thema/Basic/assets/js/jquery.bootstrap-hover-dropdown.min.js"></script>
+
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="http://localhost/thema/Basic/assets/js/respond.js"></script>
+<![endif]--><!-- oozoobox -->
+
+<!-- <div style='float:left; text-align:center;'>RUN TIME : 0.173761129379<br></div> -->
+<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+<!--[if lte IE 7]>
+<script>
+$(function() {
+    var $sv_use = $(".sv_use");
+    var count = $sv_use.length;
+
+    $sv_use.each(function() {
+        $(this).css("z-index", count);
+        $(this).css("position", "relative");
+        count = count - 1;
+    });
+});
+</script>
+<![endif]-->
+<!-- oozoobox -->
+</body>
+</html>
