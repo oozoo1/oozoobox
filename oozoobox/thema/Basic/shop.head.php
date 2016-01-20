@@ -3,14 +3,12 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 if($is_demo) @include_once(THEMA_PATH.'/assets/demo.php'); // 데모
 include_once(THEMA_PATH.'/assets/thema.php');
 include_once(THEMA_PATH.'/sidebar.php'); // 사이드바
-
+include_once(G5_LIB_PATH.'/banner.lib.php');//배너
 echo '<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10">'.PHP_EOL; //김미혜: 반응형 viewport 설정
 
 add_stylesheet('<link rel="stylesheet" href="/css/oz_mh/oz_mh.css" type="text/css" media="screen" >',0); //김미혜: css추가 및 경로 설정
 
 $t_day     =date('Y-m-d');
-
-
 
 
 
@@ -65,10 +63,6 @@ if($today[id]){
 <script src="/oz_js/slider.js"></script><!--list bn01-->
 <script type="text/javascript" src="/oz_js/jquery.als-1.7.min.js"></script>
 <? } ?>
-
-
-
-
 <div class="wrapper <?php echo $at_set['font'];?><?php echo (G5_IS_MOBILE) ? ' mobile-font' : '';?> <?php echo $at_set['layout'];?>">
 
 <?php /*?><?php if($_SERVER['PHP_SELF']=="/index.php"){?>
@@ -170,9 +164,6 @@ if($today[id]){
 </style>
 <? } ?><?php */?>
 
-
-
-
 	<!--s: top광고--> <!--SW: 광고가 바뀔때마다 인라인 스타일 수정, 이미지 경로 수정 --->   
     <div class="oz_top_con" style="height:80px; display:block; position:relative;" id="float_mask">
         <div style="position:absolute; z-index:999999999; width: 60px;margin-top: 25px; right:10%; float:right;">
@@ -180,10 +171,9 @@ if($today[id]){
         </div>
         <div style="background: rgb(255, 204, 1); left: 0px; width: 50%; height: 100%; position: absolute;"></div>
         <div style="background: rgb(255, 204, 1); width: 50%; height: 100%; right: 0px; position: absolute;"></div>      
-        <img width="990" height="80" style="margin: 0px auto; top: 0px; position: relative; z-index: 10;" src="/images/oz_prm_151112.png" alt="广告"/>
-        <a style="left: 0px ; top: 0px; width: 100%; height: 100%; display: block; position: absolute; z-index: 100;"  href="#"> <img width="100%" height="100%" src="/images/s.png"></a>
+        <img width="990" height="80" style="margin: 0px auto; top: 0px; position: relative; z-index: 10;" src="<? if($baner1[bn_img1]){?>/data/banner/<?=$baner1[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>" alt="广告"/>
+        <a style="left: 0px ; top: 0px; width: 100%; height: 100%; display: block; position: absolute; z-index: 100;"  href="/shop/bannerhit.php?bn_id=<?=$baner1['bn_id']?>&url=<?=urlencode($baner1['bn_url'])?>" <? if($baner1[bn_new_win]=="1"){?>target="_blank"<? } ?>> <img width="100%" height="100%" src="/images/s.png"></a>
     </div>   
-    
 <script>
 //////////////////////////////////////////////////顶部广告代码
 window.onload = function(){
@@ -301,7 +291,7 @@ function getCookie(name){
                             <div class="oz_header_extra">
                             	<!--s: 배너-->
                                 <div class="oz_header_banner">
-                                    <img src="/data/banner/25" alt="广告"/>
+                                    <a href="/shop/bannerhit.php?bn_id=<?=$baner2['bn_id']?>&url=<?=urlencode($baner2['bn_url'])?>" <? if($baner2[bn_new_win]=="1"){?>target="_blank"<? } ?>><img src="<? if($baner2[bn_img1]){?>/data/banner/<?=$baner2[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>" alt="广告"/></a>
                                 </div>
                                 <!--e: 배너-->
                                 <!--s:검색창-->

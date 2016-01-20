@@ -18,7 +18,7 @@ else
     $html_title .= ' 입력';
     $bn['bn_url']        = "http://www.oozoobox.com";
     $bn['bn_begin_time'] = date("Y-m-d 00:00:00", time());
-    $bn['bn_end_time']   = date("Y-m-d 00:00:00", time()+(60*60*24*365));
+    $bn['bn_end_time']   = date("Y-m-d 00:00:00", time()+(60*60*24*31));
 }
 
 // 접속기기 필드 추가

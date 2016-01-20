@@ -19,8 +19,6 @@ $sql = "SELECT * FROM g5_shop_category WHERE ca_id = '10' or ca_id = '20'  or ca
 $result = sql_query($sql);
 ?>
 
-
-
 <!------s: 쇼핑몰 페이지--------><!--SW: main 전체를 감싸는 div-->
 <div id="oz_mallpage2">
 	<!--s: CONTENT-->
@@ -33,9 +31,9 @@ $result = sql_query($sql);
                 <div id="oz_main_nav">
                 
                     <ul class="tit">
-                    <?php $k=1; $a=2; for ($i=0; $row=sql_fetch_array($result); $i++){?>
+                    <?php $a=1; for ($k=0; $row=sql_fetch_array($result); $k++){?>
                         <li class="mod_cate">
-                            <a href="/shop/list.php?ca_id=<?=$row[ca_id]?>" class="main_global_list"><h2><i class="oz_main_glo_ico"><img src="/images/glo_icon_0<?=$k++?>.png" alt="给宝宝最好的 icon"/></i><span><?=$row[ca_name]?></span></h2></a><!--"내 아이에게 주고 싶은 가장 좋은 것"-->
+                            <a href="/shop/list.php?ca_id=<?=$row[ca_id]?>" class="main_global_list"><h2><i class="oz_main_glo_ico"><img src="/images/glo_icon_0<?=$a++?>.png" alt="给宝宝最好的 icon"/></i><span><?=$row[ca_name]?></span></h2></a><!--"내 아이에게 주고 싶은 가장 좋은 것"-->
                             <div class="mod_subcate">
                                 <div class="mod_subcate_main">
                                 <?php 
@@ -55,7 +53,21 @@ $result = sql_query($sql);
                                 </div>
                                 <div class="mod_subcate_side">
                                     <div class="mod_subcate_side_hd"></div>
-                                    <a class="mod_subcate_gg" href="/shop/list.php?ca_id=<?=$row[ca_id]?>"><img src="/data/banner/<?=$a++?>"/></a>
+                                    <? if($k=="0"){?>
+                                    <a class="mod_subcate_gg"  href="/shop/bannerhit.php?bn_id=<?=$baner4['bn_id']?>&url=<?=urlencode($baner1['bn_url'])?>" <? if($baner4[bn_new_win]=="1"){?>target="_blank"<? } ?>><img src="<? if($baner4[bn_img1]){?>/data/banner/<?=$baner4[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/></a>
+                                    <? } ?>
+                                    <? if($k=="1"){?>
+                                    <a class="mod_subcate_gg"  href="/shop/bannerhit.php?bn_id=<?=$baner5['bn_id']?>&url=<?=urlencode($baner1['bn_url'])?>" <? if($baner5[bn_new_win]=="1"){?>target="_blank"<? } ?>><img src="<? if($baner5[bn_img1]){?>/data/banner/<?=$baner5[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/></a>
+                                    <? } ?>
+                                    <? if($k=="2"){?>
+                                    <a class="mod_subcate_gg"  href="/shop/bannerhit.php?bn_id=<?=$baner6['bn_id']?>&url=<?=urlencode($baner1['bn_url'])?>" <? if($baner6[bn_new_win]=="1"){?>target="_blank"<? } ?>><img src="<? if($baner6[bn_img1]){?>/data/banner/<?=$baner6[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/></a>
+                                    <? } ?>
+                                    <? if($k=="3"){?>
+                                    <a class="mod_subcate_gg"  href="/shop/bannerhit.php?bn_id=<?=$baner7['bn_id']?>&url=<?=urlencode($baner1['bn_url'])?>" <? if($baner7[bn_new_win]=="1"){?>target="_blank"<? } ?>><img src="<? if($baner7[bn_img1]){?>/data/banner/<?=$baner7[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/></a>
+                                    <? } ?>
+                                    <? if($k=="4"){?>
+                                    <a class="mod_subcate_gg"  href="/shop/bannerhit.php?bn_id=<?=$baner8['bn_id']?>&url=<?=urlencode($baner1['bn_url'])?>" <? if($baner8[bn_new_win]=="1"){?>target="_blank"<? } ?>><img src="<? if($baner8[bn_img1]){?>/data/banner/<?=$baner8[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/></a>
+                                    <? } ?>
                                 </div>
                             </div>
                         </li>
@@ -69,43 +81,21 @@ $result = sql_query($sql);
             
             <!--s: MAIN 배너 슬라이드-->
            <div class="oz_main_bn">
-                <div id="slides">
-                  <a href="#" style="background:rgb(255,204,0);">
+                <div id="slides">                
+                <? for ($i=0; $baner3=sql_fetch_array($resultb3); $i++){ ?>  
+                  <a href="/shop/bannerhit.php?bn_id=<?=$baner3['bn_id']?>&url=<?=urlencode($baner3['bn_url'])?>" <? if($baner3[bn_new_win]=="1"){?>target="_blank"<? } ?> style="background:<?=$baner3[bn_bg_color]?>;">
                       <div class="main_bn_con">
-                          <div class="main_bn_con2">
-                               <b class="back_bn" style="background: url('/images/main_bn_back01.jpg') no-repeat left;">
+                          <div class="main_bn_con2">                               
+                               <? if($baner3[bn_img2]){?>
+                               <b class="text_bn" style="background: url('<? if($baner3[bn_img2]){?>/data/banner/<?=$baner3[bn_img2]?><? }else{ ?>/images/ad_no.jpg<? } ?>') no-repeat left; ">
                                </b>
+                               <? } ?>
+                               <b class="back_bn" style="background: url('<? if($baner3[bn_img1]){?>/data/banner/<?=$baner3[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>') no-repeat left;">
+                               </b>   
                           </div>
                       </div>
                   </a>
-                  <a href="#" style="background:rgb(232,232,232);">
-                      <div class="main_bn_con">
-                          <div class="main_bn_con2">
-                               <b class="text_bn" style="background: url('/images/main_bn_text02.png') no-repeat left; ">
-                               </b>
-                               <b class="back_bn" style="background: url('/images/main_bn_back02.jpg') no-repeat left;">
-                               </b>
-                          </div>
-                      </div>
-                  </a>
-                  <a href="#" style="background:rgb(1,48,119);">
-                      <div class="main_bn_con">
-                          <div class="main_bn_con2">
-                               <b class="text_bn" style="background: url('/images/main_bn_text03.png') no-repeat left;">
-                               </b>
-                               <b class="back_bn" style="background: url('/images/main_bn_back03.jpg') no-repeat left;">
-                               </b>
-                          </div>
-                      </div>
-                  </a>
-                  <a href="#" style="background:rgb(232,232,232);">
-                      <div class="main_bn_con">
-                          <div class="main_bn_con2">
-                               <b class="back_bn" style="background: url('/images/main_bn_back04.jpg') no-repeat left;">
-                               </b>
-                          </div>
-                      </div>
-                  </a>
+                <? } ?>  
                 </div>
             </div>
             <!--e: MAIN 배너 슬라이드-->
@@ -120,8 +110,8 @@ $result = sql_query($sql);
                     </div>
                 </a>
             <?php } ?><?php */?> <!--SW: pro php 다시 한번 봐주세요. ^^-->
-            	<a class="small_banner">
-                	<img width="170" height="440" alt="" src="/images/small_banner01.png"/>
+            	<a class="small_banner" href="/shop/bannerhit.php?bn_id=<?=$baner9['bn_id']?>&url=<?=urlencode($baner9['bn_url'])?>" <? if($baner9[bn_new_win]=="1"){?>target="_blank"<? } ?>>
+                	<img width="170" height="440" alt="" src="<? if($baner9[bn_img1]){?>/data/banner/<?=$baner9[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
                     <div class="small_banner_btn">
                     	<span class="btn_object">现在就去投票吧!</span>
                     </div>
@@ -134,17 +124,17 @@ $result = sql_query($sql);
         <!--s: MAIN 네가지 약속--> 
         <div class="interact-con">
             <div class="module-body">
-                <a class="interact-item" href="#">
-                    <img src="images/main_promise_01.png" alt=""/> 
+                <a class="interact-item" href="/shop/bannerhit.php?bn_id=<?=$baner10['bn_id']?>&url=<?=urlencode($baner10['bn_url'])?>" <? if($baner10[bn_new_win]=="1"){?>target="_blank"<? } ?>>
+                    <img src="/data/banner/<?=$baner10[bn_img1]?>" onmouseover="this.src='/data/banner/<?=$baner10[bn_img2]?>'" onmouseout="this.src='/data/banner/<?=$baner10[bn_img1]?>'" alt=""/> 
                 </a>
-                <a class="interact-item" href="#">
-                    <img src="images/main_promise_02.png" alt=""/> 
+                <a class="interact-item" href="/shop/bannerhit.php?bn_id=<?=$baner11['bn_id']?>&url=<?=urlencode($baner11['bn_url'])?>" <? if($baner11[bn_new_win]=="1"){?>target="_blank"<? } ?>>
+                    <img src="/data/banner/<?=$baner11[bn_img1]?>" onmouseover="this.src='/data/banner/<?=$baner11[bn_img2]?>'" onmouseout="this.src='/data/banner/<?=$baner11[bn_img1]?>'" alt=""/> 
                 </a>
-                <a class="interact-item" href="#">
-                    <img src="images/main_promise_03.png" alt=""/> 
+                <a class="interact-item" href="/shop/bannerhit.php?bn_id=<?=$baner12['bn_id']?>&url=<?=urlencode($baner12['bn_url'])?>" <? if($baner12[bn_new_win]=="1"){?>target="_blank"<? } ?>>
+                    <img src="/data/banner/<?=$baner12[bn_img1]?>" onmouseover="this.src='/data/banner/<?=$baner12[bn_img2]?>'" onmouseout="this.src='/data/banner/<?=$baner12[bn_img1]?>'" alt=""/> 
                 </a>
-                <a class="interact-item" href="/shop/cscenter.php" style="margin-right:0">
-                    <img src="images/main_promise_04.png" alt=""/> 
+                <a class="interact-item" href="/shop/bannerhit.php?bn_id=<?=$baner13['bn_id']?>&url=<?=urlencode($baner13['bn_url'])?>" <? if($baner13[bn_new_win]=="1"){?>target="_blank"<? } ?> style="margin-right:0">
+                    <img src="/data/banner/<?=$baner13[bn_img1]?>" onmouseover="this.src='/data/banner/<?=$baner13[bn_img2]?>'" onmouseout="this.src='/data/banner/<?=$baner13[bn_img1]?>'" alt=""/> 
                 </a>
             </div>
     	</div>
@@ -158,54 +148,54 @@ $result = sql_query($sql);
                 </b>
             </div>
             <div class="module_body">
-            	<a class="big_chn" href="#">
-                	<img src="/images/big_chn_01.png"/>
+            	<a class="big_chn" href="/shop/bannerhit.php?bn_id=<?=$baner14['bn_id']?>&url=<?=urlencode($baner14['bn_url'])?>" <? if($baner14[bn_new_win]=="1"){?>target="_blank"<? } ?>>
+                	<img src="<? if($baner14[bn_img1]){?>/data/banner/<?=$baner14[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
                 </a>
                 <div class="small_chn_con">
-                	<a class="small_chn">
+                	<a class="small_chn" href="/shop/bannerhit.php?bn_id=<?=$baner15['bn_id']?>&url=<?=urlencode($baner15['bn_url'])?>" <? if($baner15[bn_new_win]=="1"){?>target="_blank"<? } ?>>
                     	<div class="title_chn">
-                        	<h3 class="title">时尚</h3>
-                            <h4 class="info">为您实时解析<br>韩国最新时尚<br>流行服饰</h4>
+                        	<h3 class="title"><?=$baner15[bn_alt]?></h3>
+                            <h4 class="info"><?=$baner15[bn_memo]?></h4>
                         </div>
-                        <img class="chn_pic_right" src="/images/small_chn_01.png"/>
+                        <img class="chn_pic_right" src="<? if($baner15[bn_img1]){?>/data/banner/<?=$baner15[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
                     </a>
                     <s class="seprate"></s> 
-                    <a class="small_chn">
+                    <a class="small_chn" href="/shop/bannerhit.php?bn_id=<?=$baner16['bn_id']?>&url=<?=urlencode($baner16['bn_url'])?>" <? if($baner16[bn_new_win]=="1"){?>target="_blank"<? } ?>>
                     	<div class="title_chn">
-                        	<h3 class="title">食品</h3>
-                            <h4 class="info">您今天的晚餐桌<br>将变得更加丰富。<br>关于美食的一切</h4>
+                        	<h3 class="title"><?=$baner16[bn_alt]?></h3>
+                            <h4 class="info"><?=$baner16[bn_memo]?></h4>
                         </div>
-                        <img class="chn_pic_right" src="/images/small_chn_02.png"/>
+                        <img class="chn_pic_right" src="<? if($baner16[bn_img1]){?>/data/banner/<?=$baner16[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
                     </a>
                     <s class="seprate hidden_990"></s> 
-                    <a class="small_chn hidden_990 last_chn">
+                    <a class="small_chn hidden_990 last_chn" href="/shop/bannerhit.php?bn_id=<?=$baner17['bn_id']?>&url=<?=urlencode($baner17['bn_url'])?>" <? if($baner17[bn_new_win]=="1"){?>target="_blank"<? } ?>>
                     	<div class="title_chn">
-                        	<h3 class="title">推荐商品</h3>
-                            <h4 class="info">为了独一无二的<br>您的定制商品！<br>现在开始向您推荐！</h4>
+                        	<h3 class="title"><?=$baner17[bn_alt]?></h3>
+                            <h4 class="info"><?=$baner17[bn_memo]?></h4>
                         </div>
-                        <img class="chn_pic_right" src="/images/small_chn_03.png"/>
+                        <img class="chn_pic_right" src="<? if($baner17[bn_img1]){?>/data/banner/<?=$baner17[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
                     </a>
-                    <a class="small_chn under_chn">
-                        <img class="chn_pic_left" src="/images/small_chn_04.png"/>
+                    <a class="small_chn under_chn" href="/shop/bannerhit.php?bn_id=<?=$baner18['bn_id']?>&url=<?=urlencode($baner18['bn_url'])?>" <? if($baner18[bn_new_win]=="1"){?>target="_blank"<? } ?>>
+                        <img class="chn_pic_left" src="<? if($baner18[bn_img1]){?>/data/banner/<?=$baner18[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
                         <div class="title_chn_right">
-                            <h3 class="title_right">化妆品</h3>
-                            <h4 class="info_right">为了让尊贵的您<br>变得更与众不同</h4>
+                            <h3 class="title_right"><?=$baner18[bn_alt]?></h3>
+                            <h4 class="info_right"><?=$baner18[bn_memo]?></h4>
                         </div>
                     </a>
                     <s class="seprate "></s> 
-                    <a class="small_chn under_chn">
-                        <img class="chn_pic_left" src="/images/small_chn_05.png"/>
+                    <a class="small_chn under_chn" href="/shop/bannerhit.php?bn_id=<?=$baner19['bn_id']?>&url=<?=urlencode($baner19['bn_url'])?>" <? if($baner19[bn_new_win]=="1"){?>target="_blank"<? } ?>>
+                        <img class="chn_pic_left" src="<? if($baner19[bn_img1]){?>/data/banner/<?=$baner19[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
                         <div class="title_chn_right">
-                            <h3 class="title_right">日常用品</h3>
-                            <h4 class="info_right">从细节开始<br>改变您的日常生活</h4>
+                            <h3 class="title_right"><?=$baner19[bn_alt]?></h3>
+                            <h4 class="info_right"><?=$baner19[bn_memo]?></h4>
                         </div>                      
                     </a>
                     <s class="seprate hidden_990"></s> 
-                    <a class="small_chn hidden_990 under_chn">
-                        <img class="chn_pic_left" src="/images/small_chn_06.png"/>
+                    <a class="small_chn hidden_990 under_chn" href="/shop/bannerhit.php?bn_id=<?=$baner20['bn_id']?>&url=<?=urlencode($baner20['bn_url'])?>" <? if($baner20[bn_new_win]=="1"){?>target="_blank"<? } ?>>
+                        <img class="chn_pic_left" src="<? if($baner20[bn_img1]){?>/data/banner/<?=$baner20[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
                         <div class="title_chn_right">
-                            <h3 class="title_right">特价</h3>
-                            <h4 class="info_right">请不要错过<br>OOZOOBOX物<br>美价廉的特别商品企划!</h4>
+                            <h3 class="title_right"><?=$baner20[bn_alt]?></h3>
+                            <h4 class="info_right"><?=$baner20[bn_memo]?></h4>
                         </div>
                     </a>
                 </div>
@@ -216,8 +206,8 @@ $result = sql_query($sql);
         <!--s: FULL 광고 배너-->
 		<div class="oz_full_banner" style="margin-top:30px;">
         	<ins id="oz_full_banner_outer" style="margin:0; padding:0; width:1620px; height:90px; display:inline-block;">
-            	<a href="#" targer="_blank">
-                	<img width="1620" height="90" src="/images/full_banner_02.jpg" border="0"/>
+            	<a href="/shop/bannerhit.php?bn_id=<?=$baner21['bn_id']?>&url=<?=urlencode($baner21['bn_url'])?>" <? if($baner21[bn_new_win]=="1"){?>target="_blank"<? } ?>>
+                	<img width="1620" height="90" src="<? if($baner21[bn_img1]){?>/data/banner/<?=$baner21[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>" border="0"/>
                 </a>
             </ins>
         </div>
@@ -701,8 +691,8 @@ $result = sql_query($sql);
          <!--s: FULL 광고 배너 02-->
 		<div class="oz_full_banner" style="margin-top:10px;">
         	<ins id="oz_full_banner_outer" style="margin:0; padding:0; width:1620px; height:90px; display:inline-block;">
-            	<a href="#" targer="_blank">
-                	<img width="1620" height="90" src="/images/full_banner_03.jpg" border="0"/>
+            	<a href="/shop/bannerhit.php?bn_id=<?=$baner22['bn_id']?>&url=<?=urlencode($baner22['bn_url'])?>" <? if($baner22[bn_new_win]=="1"){?>target="_blank"<? } ?>>
+                	<img width="1620" height="90" src="<? if($baner22[bn_img1]){?>/data/banner/<?=$baner22[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>" border="0"/>
                 </a>
             </ins>
         </div>
@@ -872,8 +862,8 @@ $result = sql_query($sql);
          <!--s: FULL 광고 배너 03-->
 		<div class="oz_full_banner" style="margin-top:10px;">
         	<ins id="oz_full_banner_outer" style="margin:0; padding:0; width:1620px; height:90px; display:inline-block;">
-            	<a href="#" targer="_blank">
-                	<img width="1620" height="90" src="/images/full_banner_01.jpg" border="0"/>
+            	<a href="/shop/bannerhit.php?bn_id=<?=$baner23['bn_id']?>&url=<?=urlencode($baner23['bn_url'])?>" <? if($baner23[bn_new_win]=="1"){?>target="_blank"<? } ?>>
+                	<img width="1620" height="90" src="<? if($baner23[bn_img1]){?>/data/banner/<?=$baner23[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>" border="0"/>
                 </a>
             </ins>
         </div>

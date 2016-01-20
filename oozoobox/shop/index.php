@@ -1,7 +1,9 @@
 <?php
 define("_INDEX_", TRUE);
 include_once('./_common.php');
-
+if($_SERVER['PHP_SELF']=="/shop/index.php"){
+echo "<script>window.location='/'</script>";
+}
 if(!$page_id) {
 	$page_id = 'index';
 }
