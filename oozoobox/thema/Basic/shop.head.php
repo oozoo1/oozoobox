@@ -57,7 +57,6 @@ if($today[id]){
 <script src="/oz_js/jquery.als-1.7.min.js"></script>
 <script src="/oz_js/jquery.newsticker.js"></script>
 
-
 <link rel="stylesheet" type="text/css" href="/shop/css/base.css" />
 <script type="text/javascript" src="/shop/js/common.js"></script>
 
@@ -66,6 +65,9 @@ if($today[id]){
 <script src="/oz_js/slider.js"></script><!--list bn01-->
 <script type="text/javascript" src="/oz_js/jquery.als-1.7.min.js"></script>
 <? } ?>
+
+
+
 
 <div class="wrapper <?php echo $at_set['font'];?><?php echo (G5_IS_MOBILE) ? ' mobile-font' : '';?> <?php echo $at_set['layout'];?>">
 
@@ -169,13 +171,48 @@ if($today[id]){
 <? } ?><?php */?>
 
 
-	<!--s: top광고--> <!--SW: 광고가 바뀔때마다 인라인 스타일 수정, 이미지 경로 수정 --->
-    <div class="oz_top_con" style="height:90px; display:block; position:relative;">
-	    <div style="background: rgb(255, 204, 1); left: 0px; width: 50%; height: 100%; position: absolute;"></div>
-	    <div style="background: rgb(255, 204, 1); width: 50%; height: 100%; right: 0px; position: absolute;"></div>
-	    <img width="990" height="90" style="margin: 0px auto; top: 0px; position: relative; z-index: 10;" src="/data/banner/1" alt="广告"/>
-	    <a style="left: 0px ; top: 0px; width: 100%; height: 100%; display: block; position: absolute; z-index: 100;"  href="#"> <img width="100%" height="100%" src="/images/s.png"></a>
-    </div>
+
+
+	<!--s: top광고--> <!--SW: 광고가 바뀔때마다 인라인 스타일 수정, 이미지 경로 수정 --->   
+    <div class="oz_top_con" style="height:80px; display:block; position:relative;" id="float_mask">
+        <div style="position:absolute; z-index:999999999; width: 60px;margin-top: 25px; right:10%; float:right;">
+                <a onClick="closeFootAd()" href="#" title="我知道了"><img src="/images/close.png"></a>
+        </div>
+        <div style="background: rgb(255, 204, 1); left: 0px; width: 50%; height: 100%; position: absolute;"></div>
+        <div style="background: rgb(255, 204, 1); width: 50%; height: 100%; right: 0px; position: absolute;"></div>      
+        <img width="990" height="80" style="margin: 0px auto; top: 0px; position: relative; z-index: 10;" src="/images/oz_prm_151112.png" alt="广告"/>
+        <a style="left: 0px ; top: 0px; width: 100%; height: 100%; display: block; position: absolute; z-index: 100;"  href="#"> <img width="100%" height="100%" src="/images/s.png"></a>
+    </div>   
+    
+<script>
+//////////////////////////////////////////////////顶部广告代码
+window.onload = function(){
+	if(getCookie("footad")==0){
+		document.getElementById("float_mask").style.display="none";
+	}else{
+		document.getElementById("float_mask").style.display="block";
+	}
+}
+//关闭底部广告
+function closeFootAd() {
+	document.getElementById("float_mask").style.display="none";
+	setCookie("footad","0"); 
+}
+   
+//设置cookie 
+function setCookie(name,value){ 
+    var exp = new Date();  
+    exp.setTime(exp.getTime() + 1*60*60*1000);//有效期1小时 
+    document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString(); 
+} 
+//取cookies函数 
+function getCookie(name){ 
+    var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)")); 
+    if(arr != null) return unescape(arr[2]); return null; 
+} 
+//////////////////////////////////////////////////顶部广告代码
+</script>
+<!-------------------------------------------------------------顶固广告样式--------------------------------------------------------------------> 
     <!--e: top광고-->
     
             <!------s: 쇼핑몰 페이지--------><!--SW: 메인 전체를 감싸는 div가 있어야 함-->
