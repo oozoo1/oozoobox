@@ -195,8 +195,8 @@ fieldset legend{display: none;}
 .banner-con .banner-slider .small-_banner_con {margin: -486px auto 0px; width: 1620px; height: 0px; padding-right: 30px; position: relative;}
 .category-con .small_banner_con .small_banner {top: 27px; width: 170px; height: 440px; right:165px; position: absolute; z-index: 100;}
 .small_banner_con .small_banner .small_banner_btn {position: absolute; top:390px; right:28px; width:114px; height:30px; background:rgb(237,50,85); display:inline-block;}
-.small_banner_con .small_banner .small_banner_btn :hover{width:114px; height:30px; background:rgb(243,156,18); display:inline-block;}
-.small_banner_con .small_banner .small_banner_btn .btn_object {color:rgb(255,255,255); font-size:14px; line-height:26px;}
+.small_banner_con .small_banner .small_banner_btn:hover{background:rgb(243,156,18);}
+.small_banner_con .small_banner .small_banner_btn .btn_object {color:rgb(255,255,255); font-size:14px; line-height:26px; padding-left:6px}
 
 @media all and (max-width:1910px)
 {

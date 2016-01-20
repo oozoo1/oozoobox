@@ -123,7 +123,7 @@ $result = sql_query($sql);
             	<a class="small_banner">
                 	<img width="170" height="440" alt="" src="/images/small_banner01.png"/>
                     <div class="small_banner_btn">
-                    	<span class="btn_object">现在就去投票吧</span>
+                    	<span class="btn_object">现在就去投票吧!</span>
                     </div>
                 </a>           
             </div>
@@ -722,9 +722,9 @@ $result = sql_query($sql);
                         	<img src="/images/md_01.png"/>
                         </a>
                         <a class="market_info" href="#">
-                            날이 많이 추워졌어요.<br>
-                            김이 모락모락 나는 라면 한 그릇과<br>
-                            오늘 저녁은 함께 할래요! 
+                            气温突降的寒夜里，<br>
+                            今天晚餐来碗<br>
+                            热气腾腾的拉面怎么样？
                         </a>
                         <a class="market_good" href="#">
                                 <span class="market_good_no">2,501</span>
@@ -740,10 +740,9 @@ $result = sql_query($sql);
                         	<img src="/images/md_02.png"/>
                         </a>
                         <a class="market_info" href="#">
-                            집에 돌아가는 길에 <br>
-                            신라면 어떠세요?<br>
-                            오늘 아빠의 퇴근길은<br>
-                            발걸음이 유난히 가볍습니다.   
+                            回家的路上买上辛拉面回去吃？<br>
+                            今天爸爸下班回家的脚步<br>
+                            声格外轻快。
                         </a>
                         <a class="market_good" href="#">
                                 <span class="market_good_no">2,501</span>
@@ -759,9 +758,9 @@ $result = sql_query($sql);
                         	<img src="/images/md_03.png"/>
                         </a>
                         <a class="market_info" href="#">
-                            보송보송한 아기 엉덩이<br>
-                            오늘도 기분이 좋은지<br>
-                            샤방샤방한 미소를 지어요 
+                            宝宝干爽的小屁屁，<br>
+                            看这笑得格外开怀的小脸，<br>
+                            看来今天的心情也很好呢！
                         </a>
                         <a class="market_good" href="#">
                                 <span class="market_good_no">2,501</span>
@@ -777,9 +776,8 @@ $result = sql_query($sql);
                         	<img src="/images/md_04.png"/>
                         </a>
                         <a class="market_info" href="#">
-                            당신의 건강을 지켜 줄<br>
-                            옐로푸드 레드푸드<br>
-                            함께해요~
+                        为了您的健康，<br>
+                        供应新鲜的黄色食品和红色食品。
                         </a>
                         <a class="market_good" href="#">
                                 <span class="market_good_no">2,501</span>
@@ -798,9 +796,9 @@ $result = sql_query($sql);
                         	<img src="/images/md_01.png"/>
                         </a>
                         <a class="market_info" href="#">
-                            날이 많이 추워졌어요.<br>
-                            김이 모락모락 나는 라면 한 그릇과<br>
-                            오늘 저녁은 함께 할래요! 
+                            气温突降的寒夜里，<br>
+                            今天晚餐来碗<br>
+                            热气腾腾的拉面怎么样？
                         </a>
                         <a class="market_good" href="#">
                                 <span class="market_good_no">2,501</span>
@@ -817,10 +815,9 @@ $result = sql_query($sql);
                         	<img src="/images/md_02.png"/>
                         </a>
                         <a class="market_info" href="#">
-                            집에 돌아가는 길에 <br>
-                            신라면 어떠세요?<br>
-                            오늘 아빠의 퇴근길은<br>
-                            발걸음이 유난히 가볍습니다.   
+                            回家的路上买上辛拉面回去吃？<br>
+                            今天爸爸下班回家的脚步<br>
+                            声格外轻快。
                         </a>
                         <a class="market_good" href="#">
                                 <span class="market_good_no">2,501</span>
@@ -837,9 +834,8 @@ $result = sql_query($sql);
                         	<img src="/images/md_03.png"/>
                         </a>
                         <a class="market_info" href="#">
-                            보송보송한 아기 엉덩이<br>
-                            오늘도 기분이 좋은지<br>
-                            샤방샤방한 미소를 지어요 
+                        为了您的健康，<br>
+                        供应新鲜的黄色食品和红色食品。
                         </a>
                         <a class="market_good" href="#">
                                 <span class="market_good_no">2,501</span>
@@ -855,9 +851,8 @@ $result = sql_query($sql);
                         	<img src="/images/md_04.png"/>
                         </a>
                         <a class="market_info" href="#">
-                            당신의 건강을 지켜 줄<br>
-                            옐로푸드 레드푸드<br>
-                            함께해요~
+                        为了您的健康，<br>
+                        供应新鲜的黄色食品和红色食品。
                         </a>
                         <a class="market_good" href="#">
                                 <span class="market_good_no">2,501</span>
