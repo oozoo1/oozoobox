@@ -71,8 +71,8 @@ fieldset legend{display: none;}
 
 /**HEADER**/
 #oz_mallpage #oz_header {background: rgb(255, 255, 255); margin-bottom: 0px; min-width: 990px;}
-#oz_header {width:auto !important; height: 145px; margin-top: -26px !important; position: relative; z-index:99; margin-right: auto; margin-left: auto;}
-.oz_headerlayout {margin: 0px auto; width: 990px; padding-top: 26px;}
+#oz_header {width:auto !important; height: 145px; /*margin-top: -26px !important;*/ position: relative; z-index:99; margin-right: auto; margin-left: auto;}
+.oz_headerlayout {margin: 0px auto; width: 990px; padding-top: 10px; height:135px;}
 .oz_headercontent::after {overflow: hidden; display: table; content: "";}
 .oz_headercontent::before {overflow: hidden; display: table; content: "";}
 .oz_headercontent::after {clear: both;}
@@ -439,7 +439,7 @@ fieldset legend{display: none;}
 }
 
 /** 글로벌메뉴2**/
-#oz_glo2{ width:100%; height:43px; overflow:hidden; position:relative; margin-top:5px;}
+#oz_glo2{ width:100%; height:43px; overflow:hidden; position:relative;}
 .oz_glo2_bg {width:100%; height:42px; background:/*#ea5b0c*/#f47a22;}
 .oz_glo2_navbg {width:990px; height:42px; margin:0 auto; background:#f47a22; position:relative;}
 #oz_glo2 ul{ width:100%; overflow:hidden; height:330px; z-index:30;}
