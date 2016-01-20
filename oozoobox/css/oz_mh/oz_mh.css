@@ -242,9 +242,9 @@ fieldset legend{display: none;}
 .oz_channel_con .module_body .small_chn_con { width: 75%; height: 420px; line-height: 50%; float: left;}
 .oz_channel_con .module_body .small_chn_con .seprate { width: 1px; height: 140px; margin-top: 35px; float: left; display: block; background-color: rgb(231, 231, 231);}
 .oz_channel_con .module_body .small_chn_con .hidden-1920.seprate { clear: both; display: none;}
-.oz_channel_con .module_body .small_chn_con .small_chn { width: 33%; height: 50%; overflow: hidden; float: left;}
+.oz_channel_con .module_body .small_chn_con .small_chn {width:33.279%; height: 50%; overflow: hidden; float: left;}
 .oz_channel_con .module_body .small_chn_con .small_chn .title_chn { margin: 10px 0px 0px 20px; width: 120px; height: 100%; overflow: hidden; float: left;}
-.oz_channel_con .module_body .small_chn_con .small_chn .title_chn_right { margin: 20px 20px 0px 0px; width: 120px; height: 100%; float: right;}
+.oz_channel_con .module_body .small_chn_con .small_chn .title_chn_right { margin: 20px 20px 0px 0px; width: 120px; height: 90%; float: right;}
 
 .oz_channel_con .module_body .small_chn_con .small_chn .title_chn .title { color: rgb(47, 47, 47); line-height: 100%; padding-top: 16px; font-size: 19px; font-weight: 700; white-space: nowrap;}
 .oz_channel_con .module_body .small_chn_con .small_chn .title_chn_right .title_right {float:right; color: rgb(47, 47, 47); line-height: 100%; padding-top: 16px; font-size: 19px; font-weight: 700; white-space: nowrap;}
@@ -257,7 +257,7 @@ fieldset legend{display: none;}
 .oz_channel_con .module_body { height: 318px; overflow: hidden;}
 .oz_channel_con .module_body .small_chn_con { height: 318px; overflow: hidden;}
 .oz_channel_con .module_body .small_chn_con .seprate { height: 115px;}
-.oz_channel_con .module_body .small_chn_con .small_chn { height: 48%;}
+.oz_channel_con .module_body .small_chn_con .small_chn { width:33.25%; height: 48%;}
 .oz_channel_con .module_body .small_chn_con .small_chn .title_con { width: 106px; display: inline;}
 .oz_channel_con .module_body .small_chn_con .small_chn .chn_pic_right { width: 136px; height: 150px; overflow:hidden;}
 .oz_channel_con .module_body .small_chn_con .small_chn .chn_pic_left { width: 136px; height: 150px; overflow:hidden;}
@@ -270,7 +270,7 @@ fieldset legend{display: none;}
 .oz_channel_con .module_body .small_chn_con { width: 67%; height: 351px;}
 .oz_channel_con .module_body .small_chn_con .seprate { height: 115px;}
 .oz_channel_con .module_body .small_chn_con .hidden_990.seprate { display: none;}
-.oz_channel_con .module_body .small_chn_con .small_chn { width: 49%; height: 48%;}
+.oz_channel_con .module_body .small_chn_con .small_chn { width: 49.8%; height: 48%;}
 .oz_channel_con .module_body .small_chn_con .small_chn .hn_pic_right { width: 168px; height: 185px; float: left; display: block; z-index: 10000;}
 .oz_channel_con .module_body .small_chn_con .small_chn .hn_pic_left { width: 168px; height: 185px; float: left; display: block; z-index: 10000;}
 .oz_channel_con .module_body .small_chn_con .hidden_990.small_chn { display: none;}

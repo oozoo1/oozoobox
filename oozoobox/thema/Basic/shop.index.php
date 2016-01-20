@@ -178,7 +178,7 @@ $result = sql_query($sql);
                         <img class="chn_pic_right" src="/images/small_chn_02.png"/>
                     </a>
                     <s class="seprate hidden_990"></s> 
-                    <a class="small_chn hidden_990">
+                    <a class="small_chn hidden_990 last_chn">
                     	<div class="title_chn">
                         	<h3 class="title">推荐商品</h3>
                             <h4 class="info">당신만을 위한<br>맞춤상품!<br>지금 추천해 드려요</h4>
