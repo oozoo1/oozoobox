@@ -37,6 +37,11 @@ $it_qa_cnt = ($item_qa_count > 0) ? ' <b class="orangered en">'.number_format($i
 // 판매자
 $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : false;
 
+
+$sql = " select wi_id from {$g5['g5_shop_wish_table']}
+          where mb_id = '{$member['mb_id']}' and it_id = '$it_id' ";
+$row = sql_fetch($sql);
+
 ?>
 
 
@@ -120,7 +125,10 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                                         <em class="u_cnt">1,853</em> <!--누른 후-->
                                     </a>                                    
                                 </div>
-                                <a><img src="/images/detail_btn_wishlist.png" onMouseOver="this.src='/images/detail_btn_wishlist_o.png'"  onMouseOut="this.src='/images/detail_btn_wishlist.png'" alt="收藏关注商品"/></a>
+                                <? if (!$row['wi_id']) {?>
+                                <a href="#" onclick="apms_wishlist('<?php echo $it['it_id']; ?>'); return false;"><img src="/images/detail_btn_wishlist.png" onMouseOver="this.src='/images/detail_btn_wishlist_o.png'"  onMouseOut="this.src='/images/detail_btn_wishlist.png'" alt="收藏关注商品"/></a><? }else{ ?>
+                                <img src="/images/detail_btn_wishlist_o.png" alt="收藏关注商品"/>
+                                <? } ?>
                             </td>
                         </tr>
                     <?php } ?>
@@ -156,7 +164,7 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                         <tr><th scope="row">价格</th><td>电话咨询</td></tr>
                     <?php } else { // 전화문의가 아닐 경우?>
                         <?php if ($it['it_cust_price']) { ?>
-                            <tr><th scope="row">市场价格</th><td><?php echo $it['it_cust_price']; ?></td></tr>
+                            <tr><th scope="row">市场价格</th><td><?php echo number_format($it['it_cust_price'],2); ?></td></tr>
                         <?php } // 시중가격 끝 ?>
                         <tr><th scope="row">价格</th><td>
                                 <?php echo display_price(get_price($it)); ?>
@@ -314,25 +322,23 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                                     <img alt="MD询问(MD에게 묻기)" src="/images/detail_btn_03.png" title="MD询问(MD에게 묻기)"/>
                                 </button>
                             </a>
-                            <a href="#" onclick="apms_recommend('<?php echo $it['it_id']; ?>', '<?php echo $ca_id; ?>'); return false;">
-                                <button id="btnAddToSend" type="button">
-                                    <img alt="软磨硬泡(조르기)" src="/images/detail_btn_04.png" title="软磨硬泡(조르기)"/>
-                                </button>
+                            <a href="/shop/itemrecommend.php?it_id=<?php echo $it['it_id']; ?>&ca_id=<?php echo $ca_id; ?>">
+                                    <img alt="找人付款" src="/images/detail_btn_04.png" title="找人付款"/>
                             </a>                                      
                         </div>                        
                       <? }else{ ?>
                         <div class="choice-control">
                             <a href="#" onClick="javascript:if(confirm('您还不是网站会员 是否要登陆网站？')){document.location.href='/bbs/login.php?url=<?=urlencode("{$_SERVER[PHP_SELF]}?{$_SERVER[QUERY_STRING]}")?>'};">
                                 <button id="btnAddToWishList" type="button">
-                                    <img alt="바로구매" src="/images/detail_btn_01.png" title="바로구매"/>
+                                    <img alt="立即购买" src="/images/detail_btn_01.png" title="立即购买"/>
                                 </button>
                             </a>
                             <a href="#" onClick="javascript:if(confirm('您还不是网站会员 是否要登陆网站？')){document.location.href='/bbs/login.php?url=<?=urlencode("{$_SERVER[PHP_SELF]}?{$_SERVER[QUERY_STRING]}")?>'};">
                                 <button id="btnAddToWishList" type="button">
-                                    <img alt="장바구니" src="/images/detail_btn_02.png" title="장바구니"/>
+                                    <img alt="载入购物车" src="/images/detail_btn_02.png" title="购物车"/>
                                 </button>
                             </a>
-                            <a href="#" onClick="javascript:if(confirm('您还不是网站会员 是否要登陆网站？')){document.location.href='/bbs/login.php?url=<?=urlencode("{$_SERVER[PHP_SELF]}?{$_SERVER[QUERY_STRING]}")?>'};">
+                            <a href="#" onclick="apms_wishlist('<?php echo $it['it_id']; ?>'); return false;">
                                 <button id="btnAddToWishList" type="button">
                                     <img alt="MD询问(MD에게 묻기)" src="/images/detail_btn_03.png" title="MD询问(MD에게 묻기)"/>
                                 </button>
@@ -459,7 +465,7 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                         // Wishlist
                         function apms_wishlist(it_id) {
                             if(!it_id) {
-                                alert("코드가 올바르지 않습니다.");
+                                alert("商品信息有误.");
                                 return false;
                             }
         
@@ -468,7 +474,7 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                                     alert(error.replace(/\\n/g, "\n"));
                                     return false;
                                 } else {
-                                    if(confirm("위시리스트에 담겼습니다.\n\n바로 확인하시겠습니까?")) {
+                                    if(confirm("已添加到收藏夹.\n\n是否要进入收藏夹?")) {
                                         document.location.href = "./wishlist.php";
                                     }
                                 }
@@ -480,7 +486,7 @@ $is_seller = ($it['pt_id'] && $it['pt_id'] != $config['cf_admin']) ? true : fals
                         // Recommend
                         function apms_recommend(it_id, ca_id) {
                             if (!g5_is_member) {
-                                alert("회원만 추천하실 수 있습니다.");
+                                alert("只有会员才可以推荐.");
                             } else {
                                 url = "./itemrecommend.php?it_id=" + it_id + "&ca_id=" + ca_id;
                                 opt = "scrollbars=yes,width=616,height=420,top=10,left=10";

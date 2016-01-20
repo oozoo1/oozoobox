@@ -37,7 +37,7 @@ if(!defined('THEMA_PATH')) {
 	include_once(G5_LIB_PATH.'/apms.thema.lib.php');
 }
 
-$g5['title'] = "위시리스트";
+$g5['title'] = "我的收藏夹";
 include_once('./mypage_head.php');
 
 $skin_path = $member_skin_path;

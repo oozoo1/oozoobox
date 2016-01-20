@@ -3,7 +3,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<title><?php echo $config['cf_title']; ?> - <?php echo $from_name; ?> 의 상품 추천 메일</title>
+<title><?php echo $config['cf_title']; ?> - 您的朋友 <?php echo $from_name; ?> 找您付款 购买此商品</title>
 </head>
 
 <?php
@@ -20,10 +20,10 @@ $ft_a_st = 'display:block;padding:30px 0;background:#484848;color:#fff;text-alig
 <div style="margin:30px auto;width:600px;border:10px solid #f7f7f7">
     <div style="border:1px solid #dedede">
         <h1 style="margin:0 0 20px;padding:30px 30px 20px;background:#f7f7f7;color:#555;font-size:1.4em">
-            <?php echo $config['cf_title'];?> - 상품 추천 메일
+            <?php echo $config['cf_title'];?> - OOZOOBOX 找人付款功能
         </h1>
 
-        <p style="<?php echo $cont_st; ?>"><b><?php echo $from_name; ?></b> 님께서 추천하신 상품입니다.</p>
+        <p style="<?php echo $cont_st; ?>">您的朋友 <b><?php echo $from_name; ?></b> 找你付款.</p>
 
         <div style="margin:0 0 10px;text-align:center">
             <a href="<?php echo G5_SHOP_URL.'/item.php?it_id='.$it_id; ?>" target="_blank" style="display:inline-block;margin:0 0 10px"><?php echo $it_mimg; ?></a><br>
@@ -37,7 +37,7 @@ $ft_a_st = 'display:block;padding:30px 0;background:#484848;color:#fff;text-alig
 
         <p style="<?php echo $cont_st; ?>"><?php echo $content; ?></p>
 
-        <a href="<?php echo G5_SHOP_URL.'/item.php?it_id='.$it_id; ?>" target="_blank" style="<?php echo $ft_a_st; ?>">상품 자세히 보기</a>
+        <a href="<?php echo G5_SHOP_URL.'/item.php?it_id='.$it_id; ?>" target="_blank" style="<?php echo $ft_a_st; ?>">进入OOZOOBOX查看商品</a>
 
     </div>
 </div>

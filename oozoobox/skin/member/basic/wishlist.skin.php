@@ -17,12 +17,12 @@ if($header_skin)
 <div class="wishlist-skin">
 	<table class="div-table table bg-white">
 	<tbody>
-	<tr class="bg-black">
-		<th class="text-center" scope="col" width="60">선택</th>
-		<th class="text-center" scope="col">이미지</th>
-		<th class="text-center" scope="col">상품명</th>
-		<th class="text-center" scope="col">보관일시</th>
-		<th class="text-center" scope="col">삭제</th>
+	<tr class="bg-black" style="height:40px; background-color:#f47a22;">
+		<th class="text-center" scope="col" width="60">选择</th>
+		<th class="text-center" scope="col">图片</th>
+		<th class="text-center" scope="col">商品名称</th>
+		<th class="text-center" scope="col">收藏日期</th>
+		<th class="text-center" scope="col">删除</th>
 	</tr>
 	<?php 
 	for($i=0; $i < count($list);$i++) { 
@@ -31,7 +31,7 @@ if($header_skin)
 		<tr>
 			<td class="text-center">
 				<?php if($list[$i]['is_soldout']) { // 품절검사 ?>
-					품절
+					断货
 				<?php } else { //품절이 아니면 체크할수 있도록한다 ?>
 					<label for="chk_it_id_<?php echo $i; ?>" class="sound_only"><?php echo $list[$i]['it_name']; ?></label>
 					<input type="checkbox" name="chk_it_id[<?php echo $i; ?>]" value="1" id="chk_it_id_<?php echo $i; ?>" onclick="out_cd_check(this, '<?php echo $list[$i]['out_cd']; ?>');">
@@ -53,11 +53,11 @@ if($header_skin)
 			</td>
 			<td><a href="./item.php?it_id=<?php echo $list[$i]['it_id']; ?>"><?php echo stripslashes($list[$i]['it_name']); ?></a></td>
 			<td class="text-center"><?php echo $list[$i]['wi_time']; ?></td>
-			<td class="text-center"><a href="./wishupdate.php?w=d&amp;wi_id=<?php echo $list[$i]['wi_id']; ?>">삭제</a></td>
+			<td class="text-center"><a href="./wishupdate.php?w=d&amp;wi_id=<?php echo $list[$i]['wi_id']; ?>">删除</a></td>
 		</tr>
 	<?php } ?>
 	<?php if ($i == 0) { ?>
-		<tr><td colspan="5" class="text-center text-muted" height="150">보관함이 비었습니다.</td></tr>
+		<tr><td colspan="5" class="text-center text-muted" height="150">收藏夹已空.</td></tr>
 	<?php } ?>
 	</tr>
 	</tbody>
@@ -65,8 +65,8 @@ if($header_skin)
 </div>
 
 <p class="text-center">
-	<button type="submit" class="btn btn-black btn-sm" onclick="return fwishlist_check(document.fwishlist,'');">장바구니 담기</button>
-	<button type="submit" class="btn btn-color btn-sm" onclick="return fwishlist_check(document.fwishlist,'direct_buy');">주문하기</button>
+	<button type="submit" class="btn btn-black btn-sm" onclick="return fwishlist_check(document.fwishlist,'');">添加到购物车</button>
+	<button type="submit" class="btn btn-color btn-sm" onclick="return fwishlist_check(document.fwishlist,'direct_buy');">立即购买</button>
 </p>
 </form>
 
@@ -75,13 +75,13 @@ if($header_skin)
 <script>
     function out_cd_check(fld, out_cd) {
         if (out_cd == 'no'){
-            alert("옵션이 있습니다.\n\n클릭하여 상세내용페이지에서 옵션을 선택한 후 주문하십시오.");
+            alert("有套餐选项.\n\n请进入商品后 选择套餐后 进行购买.");
             fld.checked = false;
             return;
         }
 
         if (out_cd == 'tel'){
-            alert("전화로 문의해 주십시오.\n\n장바구니에 담아 구입하실 수 없습니다.");
+            alert("电话下订单.\n\n电话下订单 无法载入购物车.");
             fld.checked = false;
             return;
         }
@@ -98,7 +98,7 @@ if($header_skin)
         }
 
         if(k == 0) {
-            alert("하나 이상 체크 하십시오");
+            alert("请选择 一个以上的产品");
             return false;
         }
 

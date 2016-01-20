@@ -1,35 +1,10 @@
 <?php
 include_once('./_common.php');
-
+include_once(G5_LIB_PATH.'/mailer.lib.php');
 if (!$is_member)
-    goto_url(G5_BBS_URL."/login.php?url=".urlencode(G5_SHOP_URL."/mypage.php"));
+    goto_url(G5_BBS_URL."/login.php?url=".urlencode(G5_SHOP_URL."/member_confirm.php"));
 
-// 쿠폰
-$cp_count = 0;
-$sql = " select cp_id
-            from {$g5['g5_shop_coupon_table']}
-            where mb_id IN ( '{$member['mb_id']}', '전체회원' )
-              and cp_start <= '".G5_TIME_YMD."'
-              and cp_end >= '".G5_TIME_YMD."' ";
-$res = sql_query($sql);
-
-for($k=0; $cp=sql_fetch_array($res); $k++) {
-    if(!is_used_coupon($member['mb_id'], $cp['cp_id']))
-        $cp_count++;
-}
-
-$mb_homepage = set_http(get_text(clean_xss_tags($member['mb_homepage'])));
-$mb_profile = ($member['mb_profile']) ? conv_content($member['mb_profile'],0) : '';
-$mb_signature = ($member['mb_signature']) ? apms_content(conv_content($member['mb_signature'], 1)) : '';
-
-
-
-$g5['title'] = get_text($member['mb_name']).'님 마이페이지';
-include_once('./_head.php');
-
-$skin_path = $member_skin_path;
-$skin_url = $member_skin_url;
-
+$g5['title'] = get_text($member['mb_name']).'的个人信息修改';
 
 ///////////////////////////////////获取默认地址////////////////////////////////////////////////////////////////////////////
 $sql = "SELECT * FROM g5_shop_order_address WHERE mb_id = '$member[mb_id]' and ad_default = '1'";
@@ -62,12 +37,75 @@ if($_POST[type]=="update"){
 }
 //////////////////////////////////////数据输入////////////////////////////////////////////////////////////////////////////
 
+//////////////////////////////////////密码修改////////////////////////////////////////////////////////////////////////////
+if($_POST[type]=="pass"){
+
+		
+					$mb_id             =$member[mb_id];
+					$mb_password       =$_POST[mb_password];
+					$old_password 			 = get_encrypt_string($_POST[old_mb_password]); 
+					
+		if($member[mb_password]=="$old_password"){	
+		
+					$sql = " update g5_member
+								set mb_password = '".get_encrypt_string($mb_password)."'
+								 where mb_id = '$mb_id' ";
+					$sql_query=sql_query($sql);						
+					echo "<script>alert('密码修改成功');window.location='./member_confirm.php'</script>";
+					
+		}else{
+		
+					echo "<script>alert('您输入的现有密码错误');window.location='./member_confirm.php'</script>";
+			
+		}
+
+}
+//////////////////////////////////////修改密码////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////修改邮箱////////////////////////////////////////////////////////////////////////////
+
+
+if($_POST[type]=="email"){	
+$mb_id               =$member[mb_id];
+$mb_email            =$_POST[mb_email];
+$mb_email_certify    ="0000-00-00 00:00:00";
+
+$sql = " update g5_member
+			set mb_email = '$mb_email',
+				 mb_email_certify = '$mb_email_certify'
+			 where mb_id = '$member[mb_id]' ";
+			$sql_query=sql_query($sql);
+
+
+      				
+					// 发送认证邮件
+					if ($member['mb_email_certify']=="0000-00-00 00:00:00") {
+							$subject = '['.$config['cf_title'].'] 邮件地址认证邮件';
+					
+							$mb_datetime = $member['mb_datetime'] ? $member['mb_datetime'] : G5_TIME_YMDHIS;
+							$mb_md5 = md5($mb_id.$mb_email.$mb_datetime);
+							$certify_href = G5_BBS_URL.'/email_certify.php?mb_id='.$mb_id.'&amp;mb_md5='.$mb_md5;
+					
+							ob_start();
+							include_once (G5_BBS_PATH.'/register_form_update_mail3.php');
+							$content = ob_get_contents();
+							ob_end_clean();
+					
+							mailer($config['cf_title'], $config['cf_admin_email'], $mb_email, $subject, $content, 1);
+					}
+			echo "<script>alert('邮箱修改成功 请验证您的邮箱');window.location='./member_confirm.php'</script>";
+					
+
+}
+//////////////////////////////////////修改邮箱////////////////////////////////////////////////////////////////////////////
+
 //////////////////////////////////////生日分段////////////////////////////////////////////////////////////////////////////
 $ex1_filed = explode("|",$member[mb_birth]); 
 $birth_y  = $ex1_filed[0];
 $birth_m  = $ex1_filed[1];
 $birth_d  = $ex1_filed[2];
 //////////////////////////////////////生日分段////////////////////////////////////////////////////////////////////////////
+include_once('./_head.php');
 ?>
 <!----------------------------------添加收货地址---开始------------------------------------------------------------------------------->
 <style type="text/css">
@@ -112,36 +150,84 @@ $birth_d  = $ex1_filed[2];
 .pass_confirm .ok_btn {position:absolute; width:96px; height:27px; left:200px; top:120px;}
 #btnCheckSubmit {border:0; height:27px;}
 </style>
+<script type="text/javascript"><!--自动检查账号是否被注册-->
+	$(
+	  function()
+	  	{    
+		//账号   jQuery(普通应用时推荐，简单易用)
+    	$("#old_mb_password").blur(function()
+								 {        //文本框鼠标焦点消失事件
+			 						$.get("/bbs/member_ck_id.php?old_pass="+$("#old_mb_password").val(),null,function(data)   //此处get方式 可换为post方式按需求调整，其他无需修改使用方式一样
+      		 					 	{
+          		  						$("#oldpass").html(data);   //向ID为chk的元素内添加html代码
+       		 						}
+			 						);
+       	 						}
+						)		
+						
+		
+								
+		//邮箱   jQuery(普通应用时推荐，简单易用)
+    	$("#mb_email").blur(function()
+								 {        //文本框鼠标焦点消失事件
+			 						$.get("/bbs/member_ck_id.php?mail="+$("#mb_email").val(),null,function(data)   //此处get方式 可换为post方式按需求调整，其他无需修改使用方式一样
+      		 					 	{
+          		  						$("#email").html(data);   //向ID为chk的元素内添加html代码
+       		 						}
+			 						);
+       	 						}
+						)		
+			
+						
+						     
+		}
+	)
+</script>   
     <div class="overlay" id="overlay" style="display:none;"></div>
     <div class="box" id="box">
-        
+      
 	<form id="fregisterform" name="fregisterform" action="" onsubmit="return fregisterform_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off">
+  <input type="hidden" name="type" value="pass">
 		<div class="pass_confirm" id="layer_wrap">
         	<div class="pop_tit">
             	<h3>修改登陆密码</h3><a class="boxclose" id="boxclose"> 关闭</a>
-                <p>띄어쓰기 없는 영문 대문자, 영문 소문자, 숫자,<br>
-                특수기호 포함 8~16자 사용가능</p> 
+                <p>密码请输入没有空白的 英文大写,英文小写,数字,
+                特殊符号 8~16 字符</p> 
             </div>
         	<div class="inner">
             	<div class="passbox">
                 	<span>请输入现有的密码</span>
-                    <input name="old_mb_password" class="txt" id="old_mb_password" required style="width:200px;" type="password"/>
+                    <input name="old_mb_password" class="txt" id="old_mb_password" required style="width:145px;" type="password"/> <span id="oldpass"></span>
                 </div>
             	<div class="passbox">
                 	<span>请输入新的密码</span>
-                    <input name="mb_password" class="txt" id="reg_mb_password" style="width:200px;" required type="password" minlength="8" maxlength="16"/ title="密码">
+                    <input name="mb_password" class="txt" id="reg_mb_password" style="width:145px;" required type="password" minlength="4" maxlength="16"/ title="密码">
                 </div>
                 <div class="passbox">
                 	<span>请再输入新的密码</span>
-                    <input name="mb_password_re" class="txt" id="reg_mb_password_re" style="width:200px;" required type="password" minlength="8" maxlength="16" title="密码"/>
-                </div>
-                <div class="ok_btn">
+                    <input name="mb_password_re" class="txt" id="reg_mb_password_re" style="width:145px;" required type="password" minlength="4" maxlength="16" title="密码" onKeyUp="validate()"/> <span id="tishi"></span>
+                </div><br />
+
+                <div style="text-align:center;">
                     <input type="image" src="/images/btn_pass_ok.png"  id="btn_submit" accesskey="s" />
                 </div>                
             </div>
         </div>
     </form>
-        
+<script>
+	function validate() {
+			var pw1 = document.getElementById("reg_mb_password").value;
+			var pw2 = document.getElementById("reg_mb_password_re").value;
+			if(pw1 == pw2) {
+					document.getElementById("tishi").innerHTML="<img src=\"/bbs/images/member_ck_ok.gif\" class=\"t1\"/>";
+					document.getElementById("submit").disabled = false;
+			}
+			else {
+					document.getElementById("tishi").innerHTML="<font color=red>两次不同</font>";
+				document.getElementById("submit").disabled = true;
+			}
+	}
+</script>       
     </div>                
 <script type="text/javascript">
 	$(document).ready(function () {
@@ -225,7 +311,14 @@ function fregisterform_submit(f)
                     <tr>
                     	<th>邮箱</th>
                         <td>
-                        	<?=$member[mb_email]?><a href="/shop/mypage01_1_1.php"><button id="btnChangeMail" type="button" style="margin-left:20px;"><img src="/images/btn_change_email.png" alt="修改电子邮件"/></button></a>
+                        <? if($_GET[type]=="email"){?>
+                          <form action="" method="post">
+                            <input type="hidden" name="type" value="email" />
+                            <input name="mb_email" class="txt" style="height:30px;" id="mb_email" type="text" maxlength="40"> <span id="email"></span> <button type="submit" class="btn btn-color">确认修改</button>
+                          </form>
+                        <? }else{ ?>
+                        	<?=$member[mb_email]?><a href="/shop/member_confirm.php?type=email" style="margin-left:20px;"> <img src="/images/btn_change_email.png" alt="修改电子邮件"/></a>
+                        <? } ?>
                         </td>
                     </tr>
                     <tr>

@@ -7,16 +7,16 @@ if(USE_G5_THEME && defined('G5_THEME_PATH')) {
 }
 
 if (!$is_member)
-    alert_close('회원만 메일을 발송할 수 있습니다.');
+    alert_close('只有会员才可以使用此功能.');
 
 // 스팸을 발송할 수 없도록 세션에 아무값이나 저장하여 hidden 으로 넘겨서 다음 페이지에서 비교함
 $token = md5(uniqid(rand(), true));
 set_session("ss_token", $token);
 
-$sql = " select it_name, ca_id from {$g5['g5_shop_item_table']} where it_id='$it_id' ";
+$sql = " select it_name, ca_id , it_img1 , it_price from {$g5['g5_shop_item_table']} where it_id='$it_id' ";
 $it = sql_fetch($sql);
 if (!$it['it_name'])
-    alert_close("자료가 없습니다.");
+    alert_close("没有内容.");
 
 $ca_id = ($ca_id) ? $ca_id : $it['ca_id'];
 if(!defined('THEMA_PATH')) {
@@ -39,7 +39,7 @@ if(!defined('THEMA_PATH')) {
 	$item_skin_url = G5_SKIN_URL.'/apms/item/'.$item_skin;
 }
 
-$g5['title'] =  $it['it_name'].' - 추천하기';
+$g5['title'] =  $it['it_name'].' - 找人付款';
 include_once(G5_PATH.'/head.sub.php');
 @include_once(THEMA_PATH.'/head.sub.php');
 include_once($item_skin_path.'/itemrecommend.skin.php');

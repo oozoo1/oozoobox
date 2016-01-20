@@ -655,7 +655,7 @@ background-position:0 -253px;
 
 #pop04_wrap {width:800px; height:650px; color:#666;}
 .pop_tit {width:800px; height:105px; margin-bottom:20px; border-bottom:1px solid #e7e7e7;}
-.pop_tit h3 {width:100%; height:38px; background:url("/images/ico_popup04_h3.png") no-repeat 20px 12px; background-color:#fa9551; font-size:18px; color:#fff; padding:10px 0 0 50px; line-height:1.5;}
+.pop_tit h3 {width:100%; height:38px; background-color:#fa9551; font-size:18px; color:#fff; padding:10px 0 0 50px; line-height:1.5;}
 .pop_tit .pro_tit {width:100%; text-align:left; margin:20px 0 0 20px; line-height:20px;}
 .pop_tit .pro_tit span {color:#416de9;}
 .pop_tit .pro_tit span:hover {color:#ea5b0c;}
