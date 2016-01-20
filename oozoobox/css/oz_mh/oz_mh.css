@@ -624,14 +624,14 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 .list_type_album {float:left; width: 990px; margin-left:5px;}
 .list_type_album .list_album {height: 310px;}
 .list_type_album .list_album_item {float: left; margin-right: 15px;}
-.list_type_album .album_card {border:1px solid #fff; width:233px; height: 100%; overflow: hidden; margin-bottom: 20px; display: block; position: relative; background-color: #fff;}
+.list_type_album .album_card {border:1px solid #fff; width:233px; height: 100%; overflow: hidden; display: block; position: relative; background-color: #fff;}
 .list_type_album .album_card:hover{border:1px solid #df121a;}
 .list_type_album .album_ico_wish {width:33px; height:33px; display:block; border:1px solid #efefef; background:url('/images/bg_album_ico_wish.png') no-repeat; position:absolute; top:0; left:0; color:#ea5b0c; text-align:center;}
 .list_type_album .album_ico_wish em {overflow:hidden; width:33px; display:block; margin:0 auto; padding-top:14px;}
 .list_type_album .album_wish_plus:hover .album_ico_wish{ background:url('/images/bg_album_ico_wish.png') no-repeat -33px 0; color:#000;}
 .list_type_album .last_item {margin-right: 0px;}
 
-.list_type_album .album_card .album_item_pic {width: 100%; height:233px; display: block;}
+.list_type_album .album_card .album_item_pic {width:231px; height:231px; display: block; border:1px solid #efefef;}
 .list_type_album .album_card .album_info {padding:7px 6px 0px 6px; text-align: left; display: block;}
 .list_type_album .album_card .album_item_desc {font-size:12px; height:14px; line-height: 16px; overflow: hidden; display: block;}
 .list_type_album .album_card .album_item_shop{font-size:12px; color:#999; line-height:16px; display:block; overflow:hidden; height:14px; margin-top:3px;}
@@ -657,7 +657,7 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 .list_type_album .list_album_item  {width: 283px; margin-right: 16px; margin-bottom: 20px;}
 .list_type_album .album_card {width: 283px; height: 375px;}
 .list_type_album .last_item {margin-right: 0px;}
-.list_type_album .album_card .album_item_pic {height: 283px;}
+.list_type_album .album_card .album_item_pic {width:281px; height: 281px;}
 .list_type_album .album_card .album_item_tag .album_item_buy {margin-right:6px;}
 .oz_wonderful_con .card_item .item_tag .wonderful_after{margin-right:6px;}
 .list_type_album .album_card .album_item_tag {font-size:12px;}
@@ -670,7 +670,7 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 .list_type_list .list_list {height: 133px; }
 .list_type_list .list_list_item {float:left; margin-right:13px; width:487px; }
 .list_list .last_item {margin-right: 0px;}
-.list_type_list .list_card {border: 1px solid #fff; width:487px; height: 100%; overflow: hidden; margin-bottom: 20px; display: block; position: relative; background-color: #fff; border-bottom:1px solid #ddd;}
+.list_type_list .list_card {border: 1px solid #fff; width:487px; height: 100%; overflow: hidden; margin-bottom: 8px; display: block; position: relative; background-color: #fff; border-bottom:1px solid #ddd;}
 .list_type_list .list_card:hover{border: 1px solid #df121a;}
 .list_type_list .list_card .list_item_pic {float:left; width:102px; margin:10px 0 17px 10px; height:102px; display: block;}
 .list_type_list .list_card .list_info {float:left; width: 355px; padding: 10px 10px 0px 10px; text-align: left; display: block;}
@@ -705,8 +705,8 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 @media all and (min-width:1260px)
 {.list_type_list {width: 1190px;}
 .list_type_list .list_list {height:142px;}
-.list_type_list .list_list_item  {width:570px; margin-right:37px; margin-bottom: 20px;}
-.list_type_list .list_card {width:100%; height:142px;}
+.list_type_list .list_list_item  {width:570px; margin-right:37px; margin-bottom: 0;}
+.list_type_list .list_card {width:100%; height:150px;}
 .list_type_list .last_item {margin-right: 0px;}
 .list_type_list .list_card .list_item_pic {width:120px; height:120px;}
 }
