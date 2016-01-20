@@ -155,7 +155,7 @@ fieldset legend{display: none;}
 
 #oz_main_nav .mod_cate2{height:131px; overflow:hidden; background:url('/images/main_glo06.png'); border:0}
 #oz_main_nav .mod_subcate{display:none;width:800px;height:500px; border:1px #ddd solid; background:#FFFFFF; position:absolute; top:0px; z-index:99; left:230px; overflow:hidden;}
-#oz_main_nav .mod_subcate_main{width:230px;padding:0px 20px 450px 20px;margin-bottom:-450px;border-right:1px #ddd solid;float:left;}
+#oz_main_nav .mod_subcate_main{width:230px;padding:0px 20px 0px 20px;margin-bottom:0px;border-right:1px #ddd solid;float:left;}
 #oz_main_nav .mod_subcate_line{width:100%;height:1px;clear:both;font-size:0px;margin-bottom:5px;border-top:5px #fff solid;border-bottom:1px #dadada dotted;overflow:hidden;display:block;}
 #oz_main_nav .mod_subcate_main dl{padding:19px 0 18px 65px;border-bottom:1px #e5e5e5 solid;overflow:hidden;}
 #oz_main_nav .mod_subcate_main dl dt a{width:230px;font-size:15px; color:#666;line-height:32px;font-style:normal;font-variant:normal;margin-left:-65px;float:left;font-size-adjust:none;font-stretch:normal; }
@@ -448,7 +448,7 @@ fieldset legend{display: none;}
 #oz_glo2 ul li.on a{ color:#ffdbc1;}
 
 #oz_glo2 ul li .second{ width:990px; height:300px; position:absolute; top:42px; left:0px; display:none; z-index:50;}
-#oz_glo2 ul li .second .second_left {float:left; width:168px; padding-left:30px;}
+#oz_glo2 ul li .second .second_left {float:left; width:168px; padding-left:30px; margin-top:10px;}
 #oz_glo2 ul li .second .second_left dd {float:left; height:40px; text-align:left;}
 #oz_glo2 ul li .second .second_left dd a.glo2_local{ text-align:left; font-size:14px; color:#333; font-weight:500;}
 #oz_glo2 ul li .second .second_left dd a:hover{color:#f47a22;}
@@ -479,13 +479,13 @@ fieldset legend{display: none;}
 }*/
 
 
-.whatbuy-head {float:left; width:780px; margin: 0px auto;}
-.whatbuy-head .title {height:20px; width:765px; float: left; padding:0px 0 0 15px; margin-top:10px; background-color: #f1f1f1; text-align:left;}
+.whatbuy-head {float:right; width:750px; margin: 0px auto;}
+.whatbuy-head .title {height:20px; width:735px; float: left; padding:0px 0 0 15px; margin-top:20px; background-color: #f1f1f1; text-align:left;}
 .whatbuy-head .img-box {position:relative; float:left; margin:26px 0px 0px 27px; display:block;}
 .whatbuy-head .img-box img {height:200px; width:260px;}
 .whatbuy-head .img-box .icon-check {position: absolute; left: -23px; top: -13px;}
 .whatbuy-head .img-box .icon-check img {height: 106px; width: 87px;}
-.whatbuy-head .rating-area {float:left; height: 250px; width: 407px; position: relative; margin: 20px 0px 0px 70px;  text-align:left;}
+.whatbuy-head .rating-area {float:left; height: 240px; width: 407px; position: relative; margin: 20px 0px 0px 70px;  text-align:left;}
 .whatbuy-head .rating-area > p.tit {overflow:hidden; height:32px; color:#666; font:12px/1.3 Tahoma, '微软雅黑', sans-serif; letter-spacing:-1px;}
 .whatbuy-head .rating-area p.price {color:#333; font:bold 22px/1.3 Tahoma, '微软雅黑', sans-serif; margin-top:5px; letter-spacing:-1px;}
 .whatbuy-head .rating-area p.price span {vertical-align:1px; font:bold 12px/1.25 Tahoma, '微软雅黑', sans-serif; padding:3px;}
@@ -713,7 +713,7 @@ b.ui-page-s-len {background:0; line-height:20px; font-weight:400;}
 .detail_good_slide_small li.last {margin-right:0;}
 
 .detail_good_info{float:left; width:524px; margin:10px 0 0 20px; }
-.detail_good_info h3 {font-size:18px; font-weight:600;}
+.detail_good_info h3 {font-size:16px; font-weight:600;}
 .detail_good_info .detail_good_etc {margin-top:30px; position:relative; font:14px/1.8 Tahoma, '微软雅黑',"돋움",dotum;} 
 .detail_good_info tr {height:30px;}
 .detail_good_info .good_info_satisfy span{float:left;}
@@ -1207,6 +1207,7 @@ td.pro li {padding:3px 0; color:#676767; }
 #pop03_wrap {width:800px; height:650px; color:#333;}
 .pop_tit {width:800px; height:130px; margin-bottom:20px; border-bottom:1px solid #e7e7e7;}
 .pop_tit h3 {width:100%; height:38px; background:url("/images/ico_popup03.png") no-repeat 20px 13px; background-color:#fa9551; font-size:18px; color:#fff; padding:10px 0 0 50px;}
+/*.pop_tit h3 {width:100%; height:38px; background-color:#fa9551; font-size:18px; color:#fff; padding:10px 0 0 50px;}*/
 .pop_tit .pro_tit {width:100%; text-align:left; margin:20px 0 0 20px; line-height:20px;}
 .pop_tit .pro_tit span {color:#416de9;}
 .pop_tit .pro_tit span:hover {color:#ea5b0c;}
@@ -1292,7 +1293,9 @@ h3.cs_main_title {padding:0 6px 12px ; border-bottom:2px solid #a5a5a5; font-siz
 #Radio_On .SelDelivery {border:1px solid #ddd; height:24px;}
 .nonWrite {margin-top:5px; color:#c5575c;}
 
-
+/*COMING SOON*/
+#MainEvent02 {width:990px; margin:0 auto; background:#fff; padding-bottom:30px;}
+#MainEvent02 .mainevent_btn {width:142px; height:44px; display:block; margin:25px auto;}
 
 /*************************************************/
 
