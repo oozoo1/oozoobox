@@ -166,12 +166,12 @@ $flist = apms_form(1,0);
     <tr>
         <th scope="col" rowspan="3">
             <label for="chkall" class="sound_only">상품 전체</label>
-            <input type="checkbox" name="chkall" value="1" id="chkall" onclick="check_all(this.form)">
-        </th>
+            <input type="checkbox" name="chkall" value="1" id="chkall" onclick="check_all(this.form)">        </th>
         <th scope="col" rowspan="3"><?php echo subject_sort_link('it_id', 'sca='.$sca); ?>상품코드</a></th>
         <th scope="col" colspan="8">분류</th>
         <th scope="col" rowspan="3"><?php echo subject_sort_link('it_order', 'sca='.$sca); ?>순서</a></th>
         <th scope="col" rowspan="3"><?php echo subject_sort_link('it_use', 'sca='.$sca, 1); ?>판매</a></th>
+        <th scope="col" rowspan="3"><?php echo subject_sort_link('it_10', 'sca='.$sca, 1); ?>메인</a></th>
         <th scope="col" rowspan="3"><?php echo subject_sort_link('it_soldout', 'sca='.$sca, 1); ?>품절</a></th>
         <th scope="col" rowspan="3"><?php echo subject_sort_link('it_hit', 'sca='.$sca, 1); ?>조회</a></th>
         <th scope="col" rowspan="3">관리</th>
@@ -211,8 +211,7 @@ $flist = apms_form(1,0);
     <tr class="<?php echo $bg; ?>">
         <td rowspan="3" class="td_chk">
             <label for="chk_<?php echo $i; ?>" class="sound_only"><?php echo get_text($row['it_name']); ?></label>
-            <input type="checkbox" name="chk[]" value="<?php echo $i ?>" id="chk_<?php echo $i; ?>">
-        </td>
+            <input type="checkbox" name="chk[]" value="<?php echo $i ?>" id="chk_<?php echo $i; ?>">        </td>
 		<!-- APMS - 2014.07.20 -->
 		<td rowspan="3" class="td_num" style="white-space:nowrap">
             <input type="hidden" name="it_id[<?php echo $i; ?>]" value="<?php echo $row['it_id']; ?>">
@@ -222,8 +221,7 @@ $flist = apms_form(1,0);
 			<b><?php echo $row['it_id']; ?></b>
 			<?php if($row['pt_id']) { ?>
 				<div style="font-size:11px; letter-spacing:-1px;"><?php echo $row['pt_id'];?></div>
-			<?php } ?>
-        </td>
+			<?php } ?>        </td>
 		<!-- // -->
 		<td colspan="8">
             <label for="ca_id_<?php echo $i; ?>" class="sound_only"><?php echo get_text($row['it_name']); ?> 기본분류</label>
@@ -237,78 +235,67 @@ $flist = apms_form(1,0);
             <label for="ca_id3_<?php echo $i; ?>" class="sound_only"><?php echo get_text($row['it_name']); ?> 3차분류</label>
             <select name="ca_id3[<?php echo $i; ?>]" id="ca_id3_<?php echo $i; ?>">
                 <?php echo conv_selected_option($ca_list, $row['ca_id3']); ?>
-            </select>
-        </td>
+            </select>        </td>
         <td rowspan="3" class="td_mngsmall">
             <label for="order_<?php echo $i; ?>" class="sound_only">순서</label>
-            <input type="text" name="it_order[<?php echo $i; ?>]" value="<?php echo $row['it_order']; ?>" id="order_<?php echo $i; ?>" class="frm_input" size="3">
-        </td>
+            <input type="text" name="it_order[<?php echo $i; ?>]" value="<?php echo $row['it_order']; ?>" id="order_<?php echo $i; ?>" class="frm_input" size="3">        </td>
         <td rowspan="3" class="td_chk">
             <label for="use_<?php echo $i; ?>" class="sound_only">판매여부</label>
-            <input type="checkbox" name="it_use[<?php echo $i; ?>]" <?php echo ($row['it_use'] ? 'checked' : ''); ?> value="1" id="use_<?php echo $i; ?>">
+            <input type="checkbox" name="it_use[<?php echo $i; ?>]" <?php echo ($row['it_use'] ? 'checked' : ''); ?> value="1" id="use_<?php echo $i; ?>">        </td>
+        <td rowspan="3" class="td_chk">
+            <label for="it_10_<?php echo $i; ?>" class="sound_only">메인</label>
+            <input type="checkbox" name="it_10[<?php echo $i; ?>]" <?php echo ($row['it_10'] ? 'checked' : ''); ?> value="1" id="it_10_<?php echo $i; ?>"> 
         </td>
         <td rowspan="3" class="td_chk">
             <label for="soldout_<?php echo $i; ?>" class="sound_only">품절</label>
-            <input type="checkbox" name="it_soldout[<?php echo $i; ?>]" <?php echo ($row['it_soldout'] ? 'checked' : ''); ?> value="1" id="soldout_<?php echo $i; ?>">
-        </td>
+            <input type="checkbox" name="it_soldout[<?php echo $i; ?>]" <?php echo ($row['it_soldout'] ? 'checked' : ''); ?> value="1" id="soldout_<?php echo $i; ?>">        </td>
         <td rowspan="3" class="td_num"><?php echo $row['it_hit']; ?></td>
         <td rowspan="3" class="td_mng">
             <a href="./itemform.php?w=u&amp;it_id=<?php echo $row['it_id']; ?>&amp;fn=<?php echo $row['pt_form'];?>&amp;ca_id=<?php echo $row['ca_id']; ?>&amp;<?php echo $qstr; ?>"><span class="sound_only"><?php echo htmlspecialchars2(cut_str($row['it_name'],250, "")); ?> </span>수정</a>
             <a href="./itemcopy.php?it_id=<?php echo $row['it_id']; ?>&amp;ca_id=<?php echo $row['ca_id']; ?>" class="itemcopy" target="_blank"><span class="sound_only"><?php echo htmlspecialchars2(cut_str($row['it_name'],250, "")); ?> </span>복사</a>
-            <a href="<?php echo $href; ?>"><span class="sound_only"><?php echo htmlspecialchars2(cut_str($row['it_name'],250, "")); ?> </span>보기</a>
-        </td>
+            <a href="<?php echo $href; ?>"><span class="sound_only"><?php echo htmlspecialchars2(cut_str($row['it_name'],250, "")); ?> </span>보기</a>        </td>
     </tr>
     <tr class="<?php echo $bg; ?>">
         <td rowspan="2" class="td_img"><a href="<?php echo $href; ?>"><?php echo get_it_image($row['it_id'], 50, 50); ?></a></td>
         <td headers="th_pc_title" rowspan="2" class="td_input">
 			<?php echo help(apms_form_option('name', $flist, $row['pt_form']));?>
             <label for="name_<?php echo $i; ?>" class="sound_only">상품명</label>
-            <input type="text" name="it_name[<?php echo $i; ?>]" value="<?php echo htmlspecialchars2(cut_str($row['it_name'],250, "")); ?>" id="name_<?php echo $i; ?>" required class="frm_input required" size="30">
-        </td>
+            <input type="text" name="it_name[<?php echo $i; ?>]" value="<?php echo htmlspecialchars2(cut_str($row['it_name'],250, "")); ?>" id="name_<?php echo $i; ?>" required class="frm_input required" size="30">        </td>
         <td headers="th_amt" class="td_numbig td_input">
             <label for="price_<?php echo $i; ?>" class="sound_only">판매가격</label>
-            <input type="text" name="it_price[<?php echo $i; ?>]" value="<?php echo $row['it_price']; ?>" id="price_<?php echo $i; ?>" class="frm_input sit_amt" size="7">
-        </td>
+            <input type="text" name="it_price[<?php echo $i; ?>]" value="<?php echo $row['it_price']; ?>" id="price_<?php echo $i; ?>" class="frm_input sit_amt" size="7">        </td>
         <td headers="th_camt" class="td_numbig td_input">
             <label for="cust_price_<?php echo $i; ?>" class="sound_only">시중가격</label>
-            <input type="text" name="it_cust_price[<?php echo $i; ?>]" value="<?php echo $row['it_cust_price']; ?>" id="cust_price_<?php echo $i; ?>" class="frm_input sit_camt" size="7">
-        </td>
+            <input type="text" name="it_cust_price[<?php echo $i; ?>]" value="<?php echo $row['it_cust_price']; ?>" id="cust_price_<?php echo $i; ?>" class="frm_input sit_camt" size="7">        </td>
 		<td headers="th_amt" class="td_numbig td_input">
 			<label for="commission_<?php echo $i; ?>" class="sound_only">수수료</label>
-			<input type="text" name="pt_commission[<?php echo $i; ?>]" value="<?php echo $row['pt_commission']; ?>" id="commission_<?php echo $i; ?>" class="frm_input sit_amt" size="3">
-		</td>
+			<input type="text" name="pt_commission[<?php echo $i; ?>]" value="<?php echo $row['pt_commission']; ?>" id="commission_<?php echo $i; ?>" class="frm_input sit_amt" size="3">		</td>
 		<td headers="th_amt" class="td_num">
-			<?php echo ($default['pt_reserve_cache'] > 0 && $row['pt_reserve_use'] && $row['pt_reserve']) ? date("Y.m.d", $row['pt_reserve']) : '-'; ?>
-		</td>
+			<?php echo ($default['pt_reserve_cache'] > 0 && $row['pt_reserve_use'] && $row['pt_reserve']) ? date("Y.m.d", $row['pt_reserve']) : '-'; ?>		</td>
 		<td headers="th_amt" class="td_num">
 			<?php if(!$row['pt_it']) $row['pt_it'] = 1; ?>
 			<select name="pt_it[<?php echo $i; ?>]" id="pt_it_[<?php echo $i; ?>]" style="width:74px;">
 				<option value="">종류선택</option>
 				<?php echo apms_pt_it($row['pt_it']); ?>
-			</select>
-		</td>
+			</select>		</td>
     </tr>
     <tr class="<?php echo $bg; ?>">
         <td headers="th_pt" class="td_numbig td_input"><?php echo $it_point; ?></td>
         <td headers="th_qty" class="td_numbig td_input">
             <label for="stock_qty_<?php echo $i; ?>" class="sound_only">재고</label>
-            <input type="text" name="it_stock_qty[<?php echo $i; ?>]" value="<?php echo $row['it_stock_qty']; ?>" id="stock_qty_<?php echo $i; ?>" class="frm_input sit_qty" size="7">
-        </td>
+            <input type="text" name="it_stock_qty[<?php echo $i; ?>]" value="<?php echo $row['it_stock_qty']; ?>" id="stock_qty_<?php echo $i; ?>" class="frm_input sit_qty" size="7">        </td>
 		<!-- APMS - 2014.07.14 -->
 			<td headers="th_amt" class="td_numbig td_input">
 				<label for="incentive_<?php echo $i; ?>" class="sound_only">인센티브</label>
-				<input type="text" name="pt_incentive[<?php echo $i; ?>]" value="<?php echo $row['pt_incentive']; ?>" id="incentive_<?php echo $i; ?>" class="frm_input sit_camt" size="3">
-			</td>
+				<input type="text" name="pt_incentive[<?php echo $i; ?>]" value="<?php echo $row['pt_incentive']; ?>" id="incentive_<?php echo $i; ?>" class="frm_input sit_camt" size="3">			</td>
 			<td headers="th_amt" class="td_num">
-				<?php echo ($default['pt_reserve_cache'] > 0 && $row['pt_end']) ? date("Y.m.d", $row['pt_end']) : '-'; ?>
-			</td>
+				<?php echo ($default['pt_reserve_cache'] > 0 && $row['pt_end']) ? date("Y.m.d", $row['pt_end']) : '-'; ?>			</td>
 			<td headers="th_amt" class="td_num">
 				<select name="pt_comment_use[<?php echo $i; ?>]" id="pt_comment_use_<?php echo $i; ?>" style="width:74px;">
 					<option value="0"<?php echo get_selected('0', $row['pt_comment_use']); ?>>사용안함</option>
 					<option value="1"<?php echo get_selected('1', $row['pt_comment_use']); ?>>모두등록</option>
 					<option value="2"<?php echo get_selected('2', $row['pt_comment_use']); ?>>나만등록</option>
-				</select>
-			</td>
+				</select>			</td>
 		<!-- // -->
     </tr>
     <?php

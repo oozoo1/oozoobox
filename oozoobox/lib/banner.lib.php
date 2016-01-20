@@ -99,4 +99,8 @@ $baner23=sql_fetch_array($resultb23);
 
 // 쇼핑몰 배너 모음 끝
 //==============================================================================
+// 쇼핑몰 메인출력
+$sqlmain = " select * from g5_shop_item where it_10 = '1' ORDER BY `g5_shop_item`.`it_order` ASC LIMIT 0 , 10";
+$resultmain = sql_query($sqlmain);
+
 ?>
