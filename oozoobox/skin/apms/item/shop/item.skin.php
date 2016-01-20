@@ -520,7 +520,7 @@ $row = sql_fetch($sql);
                         <?php echo apms_explan($it['it_explan']); ?>
                     </div>
                     <a class="btnAfter" href="#detail_container">
-                        <img alt="去看看用户评价(후기보러가기)" src="/images/detail_btn_tab1.png" title="去看看用户评价(후기보러가기)" onclick="fn_CtlDsp('detail_tab1','detail_tab2', 'li_2')"/>
+                        <img alt="去看看用户评价(후기보러가기)" src="/images/detail_btn_tab1.png" title="去看看用户评价(후기보러가기)" onclick="fn_CtlDsp('detail_tab1','detail_tab2','li_2')"/>
                     </a>
                 </div>
                 <!--e: #tab1 商品详情 "상품상세보기" -->
@@ -532,7 +532,7 @@ $row = sql_fetch($sql);
                         <div class="tab2_view_after">
                         	
                             <a href="#detail_container">
-                            	<img alt="去制作用户评价(후기작성하러가기)" src="/images/btn_tab2_writeafter.png" title="去制作用户评价(후기작성하러가기)" onclick="fn_CtlDsp('detail_tab2','detail_tab1', 'li_1')"/>
+                            	<img alt="去制作用户评价(후기작성하러가기)" src="/images/btn_tab2_writeafter.png" title="去制作用户评价(후기작성하러가기)" onclick="fn_CtlDsp('detail_tab2','detail_tab1','li_1')"/>
                             </a>
                             
                             <!--s: 후기 리스트-->
@@ -611,8 +611,8 @@ $row = sql_fetch($sql);
                             <!--s: 후기 리스트-->                        
                         </div>
                     </div>
-                     <a class="btnAfter" href="#detail_tab1">
-                        <img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
+                     <a class="btnAfter" href="#detail_container">
+                        <img alt="상품 설명 보기" src="/images/detail_btn_tab2.png" onclick="fn_CtlDsp('detail_tab2','detail_tab1', 'li_1')"/>
                     </a>         
                 </div>
                 <!--e: #tab2 用户评价 "상품후기" -->
@@ -799,8 +799,8 @@ $row = sql_fetch($sql);
                             </tbody>
                         </table>
                     </div>
-                    <a class="btnAfter" href="detail_container">
-                        <img alt="상품 설명 보기" src="/images/detail_btn_tab2.png" onclick="fn_CtlDsp('detail_tab4','detail_tab1', li_1)"/>
+                    <a class="btnAfter" href="#detail_container">
+                        <img alt="상품 설명 보기" src="/images/detail_btn_tab2.png" onclick="fn_CtlDsp('detail_tab4','detail_tab1','li_1')"/>
                     </a>                    
                 </div>
                 <!--e: #tab4 卖家信息 "판매자 정보"-->
@@ -898,8 +898,8 @@ $row = sql_fetch($sql);
                         </ul>
                         <br><br><br><br><br>
                     </div>
-                    <a class="btnAfter" href="detail_container">
-                        <img alt="상품 설명 보기" src="/images/detail_btn_tab2.png" onclick="fn_CtlDsp('detail_tab5','detail_tab1', li_1)"/>
+                    <a class="btnAfter" href="#detail_container">
+                        <img alt="상품 설명 보기" src="/images/detail_btn_tab2.png" onclick="fn_CtlDsp('detail_tab5','detail_tab1','li_1')"/>
                     </a>                 
                 </div>
                 <!--e: #tab5 取消/换货/退货 "교환/환불정책"-->              
