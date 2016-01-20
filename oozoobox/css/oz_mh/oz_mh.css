@@ -244,10 +244,10 @@ fieldset legend{display: none;}
 .oz_channel_con .module_body .small_chn_con .hidden-1920.seprate { clear: both; display: none;}
 .oz_channel_con .module_body .small_chn_con .small_chn {width:33.279%; height: 50%; overflow: hidden; float: left;}
 .oz_channel_con .module_body .small_chn_con .small_chn .title_chn { margin: 10px 0px 0px 20px; width: 120px; height: 100%; overflow: hidden; float: left;}
-.oz_channel_con .module_body .small_chn_con .small_chn .title_chn_right { margin: 20px 20px 0px 0px; width: 120px; height: 90%; float: right;}
+.oz_channel_con .module_body .small_chn_con .small_chn .title_chn_right { margin: 20px 20px 0px 0px; width: 180px; height: 90%; float: right;}
 
 .oz_channel_con .module_body .small_chn_con .small_chn .title_chn .title { color: rgb(47, 47, 47); line-height: 100%; padding-top: 16px; font-size: 19px; font-weight: 700; white-space: nowrap;}
-.oz_channel_con .module_body .small_chn_con .small_chn .title_chn_right .title_right {float:right; color: rgb(47, 47, 47); line-height: 100%; padding-top: 16px; font-size: 19px; font-weight: 700; white-space: nowrap;}
+.oz_channel_con .module_body .small_chn_con .small_chn .title_chn_right .title_right {float:right; color: rgb(47, 47, 47); line-height: 100%; padding-top: 16px; font-size: 19px; font-weight: 700; white-space: nowrap; width:100%; text-align:right;}
 .oz_channel_con .module_body .small_chn_con .small_chn .title_chn .info { color: rgb(102, 102, 102); line-height: 120%; font-size: 13px; margin-top: 6px; white-space: nowrap;}
 .oz_channel_con .module_body .small_chn_con .small_chn .title_chn_right .info_right {float:right; color: rgb(102, 102, 102); line-height: 120%; font-size: 13px; margin-top: 6px; white-space: nowrap; text-align:right;}
 .oz_channel_con .module_body .small_chn_con .small_chn .chn_pic_right { width: 190px; height: 210px; float: right;}
@@ -276,7 +276,7 @@ fieldset legend{display: none;}
 .oz_channel_con .module_body .small_chn_con .hidden_990.small_chn { display: none;}
 }
 
-.oz_full_banner {margin: 0px auto; left: -3px; width: 100%; height: 90px; overflow: hidden; display: block; position: relative;}
+.oz_full_banner {margin: 0px auto 20px; left: -3px; width: 100%; height: 90px; overflow: hidden; display: block; position: relative;}
 .oz_full_banner img {width: 1620px; height: 90px; display: block;}
 
 @media all and (min-width:1910px)

@@ -214,7 +214,7 @@ $result = sql_query($sql);
         <!--e: MAIN 특별매장-->
 
         <!--s: FULL 광고 배너-->
-		<div class="oz_full_banner" style="margin-top:10px;">
+		<div class="oz_full_banner" style="margin-top:30px;">
         	<ins id="oz_full_banner_outer" style="margin:0; padding:0; width:1620px; height:90px; display:inline-block;">
             	<a href="#" targer="_blank">
                 	<img width="1620" height="90" src="/images/full_banner_02.jpg" border="0"/>
