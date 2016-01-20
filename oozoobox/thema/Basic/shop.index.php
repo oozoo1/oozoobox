@@ -123,7 +123,7 @@ $result = sql_query($sql);
             	<a class="small_banner">
                 	<img width="170" height="440" alt="" src="/images/small_banner01.png"/>
                     <div class="small_banner_btn">
-                    	<span class="btn_object">지금투표하러가기</span>
+                    	<span class="btn_object">现在就去投票吧</span>
                     </div>
                 </a>           
             </div>
@@ -165,7 +165,7 @@ $result = sql_query($sql);
                 	<a class="small_chn">
                     	<div class="title_chn">
                         	<h3 class="title">时尚</h3>
-                            <h4 class="info">한국은 지금<br>어떤 옷이 유행할까</h4>
+                            <h4 class="info">为您实时解析<br>韩国最新时尚<br>流行服饰</h4>
                         </div>
                         <img class="chn_pic_right" src="/images/small_chn_01.png"/>
                     </a>
@@ -173,7 +173,7 @@ $result = sql_query($sql);
                     <a class="small_chn">
                     	<div class="title_chn">
                         	<h3 class="title">食品</h3>
-                            <h4 class="info">오늘 저녁 밥상이<br>다채로워 진다<br>음식의 모든 것</h4>
+                            <h4 class="info">您今天的晚餐桌<br>将变得更加丰富。<br>关于美食的一切</h4>
                         </div>
                         <img class="chn_pic_right" src="/images/small_chn_02.png"/>
                     </a>
@@ -181,31 +181,31 @@ $result = sql_query($sql);
                     <a class="small_chn hidden_990 last_chn">
                     	<div class="title_chn">
                         	<h3 class="title">推荐商品</h3>
-                            <h4 class="info">당신만을 위한<br>맞춤상품!<br>지금 추천해 드려요</h4>
+                            <h4 class="info">为了独一无二的<br>您的定制商品！<br>现在开始向您推荐！</h4>
                         </div>
                         <img class="chn_pic_right" src="/images/small_chn_03.png"/>
                     </a>
-                    <a class="small_chn">
+                    <a class="small_chn under_chn">
                         <img class="chn_pic_left" src="/images/small_chn_04.png"/>
                         <div class="title_chn_right">
                             <h3 class="title_right">化妆品</h3>
-                            <h4 class="info_right">소중한 당신을<br>더욱 특별하게</h4>
+                            <h4 class="info_right">为了让尊贵的您<br>变得更与众不同</h4>
                         </div>
                     </a>
                     <s class="seprate "></s> 
-                    <a class="small_chn">
+                    <a class="small_chn under_chn">
                         <img class="chn_pic_left" src="/images/small_chn_05.png"/>
                         <div class="title_chn_right">
                             <h3 class="title_right">日常用品</h3>
-                            <h4 class="info_right">작은 변화가<br>일상을 바꾸다</h4>
+                            <h4 class="info_right">从细节开始<br>改变您的日常生活</h4>
                         </div>                      
                     </a>
                     <s class="seprate hidden_990"></s> 
-                    <a class="small_chn hidden_990">
+                    <a class="small_chn hidden_990 under_chn">
                         <img class="chn_pic_left" src="/images/small_chn_06.png"/>
                         <div class="title_chn_right">
                             <h3 class="title_right">特价</h3>
-                            <h4 class="info_right">OOZOOBOX의 특가제품을<br>만나는 특별한 기회를<br>놓치지 마세요</h4>
+                            <h4 class="info_right">请不要错过<br>OOZOOBOX物<br>美价廉的特别商品企划!</h4>
                         </div>
                     </a>
                 </div>
