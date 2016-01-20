@@ -502,11 +502,11 @@ $row = sql_fetch($sql);
         <!--s:상세보기 제품 정보, 게시판-->
         <div id="detail_container">
             <ul class="detail_tabs">
-                <li class="active" rel="detail_tab1">商品详情</li>
-                <li rel="detail_tab2">用户评价 <span class="tap_no">(110)</span></li>
-                <!--<li rel="detail_tab3">询问/回复</li>-->
-                <li rel="detail_tab4">卖家信息</li>
-                <li rel="detail_tab5">取消/换货/退货 <span class="tap_no">(18)</span></li>
+                <li id="li_1" class="active" rel="detail_tab1">商品详情</li>
+                <li id="li_2" rel="detail_tab2">用户评价 <span class="tap_no">(110)</span></li>
+                <!--<li id="li_3" rel="detail_tab3">询问/回复</li>-->
+                <li id="li_4" rel="detail_tab4">卖家信息</li>
+                <li id="li_5" rel="detail_tab5">取消/换货/退货 <span class="tap_no">(18)</span></li>
             </ul>
                         
             <div class="detail_tab_container">
@@ -519,8 +519,8 @@ $row = sql_fetch($sql);
                         <?php } ?>
                         <?php echo apms_explan($it['it_explan']); ?>
                     </div>
-                    <a class="btnAfter" href="#detail_tab2">
-                        <img alt="去看看用户评价(후기보러가기)" src="/images/detail_btn_tab1.png" title="去看看用户评价(후기보러가기)"/>
+                    <a class="btnAfter" href="#detail_container">
+                        <img alt="去看看用户评价(후기보러가기)" src="/images/detail_btn_tab1.png" title="去看看用户评价(후기보러가기)" onclick="fn_CtlDsp('detail_tab1','detail_tab2', 'li_2')"/>
                     </a>
                 </div>
                 <!--e: #tab1 商品详情 "상품상세보기" -->
@@ -531,7 +531,9 @@ $row = sql_fetch($sql);
                         <p class="tab2_titcomment">상품평은 구매완료 후 <a href="#" class="linkmyafter">수취확인</a>에서 작성하실 수 있습니다. 광고, 비방 제품과 관계없는 애용, 타 사이트 및 가격비교, 기타 통신예절에 어긋나거나 OOZOO BOX의 취지와 맞지 않은 글은 예고없이 삭제 및 수정될 수 있습니다.</p>
                         <div class="tab2_view_after">
                         	
-                            <a href="#"><img alt="去制作用户评价(후기작성하러가기)" src="/images/btn_tab2_writeafter.png" title="去制作用户评价(후기작성하러가기)"/></a>
+                            <a href="#detail_container">
+                            	<img alt="去制作用户评价(후기작성하러가기)" src="/images/btn_tab2_writeafter.png" title="去制作用户评价(후기작성하러가기)" onclick="fn_CtlDsp('detail_tab2','detail_tab1', 'li_1')"/>
+                            </a>
                             
                             <!--s: 후기 리스트-->
                             <ul id="tab2_after_comment">
@@ -797,8 +799,8 @@ $row = sql_fetch($sql);
                             </tbody>
                         </table>
                     </div>
-                    <a class="btnAfter" href="#detail_tab2">
-                        <img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
+                    <a class="btnAfter" href="detail_container">
+                        <img alt="상품 설명 보기" src="/images/detail_btn_tab2.png" onclick="fn_CtlDsp('detail_tab4','detail_tab1', li_1)"/>
                     </a>                    
                 </div>
                 <!--e: #tab4 卖家信息 "판매자 정보"-->
@@ -896,8 +898,8 @@ $row = sql_fetch($sql);
                         </ul>
                         <br><br><br><br><br>
                     </div>
-                    <a class="btnAfter" href="#detail_tab2">
-                        <img alt="상품 설명 보기" src="/images/detail_btn_tab2.png"/>
+                    <a class="btnAfter" href="detail_container">
+                        <img alt="상품 설명 보기" src="/images/detail_btn_tab2.png" onclick="fn_CtlDsp('detail_tab5','detail_tab1', li_1)"/>
                     </a>                 
                 </div>
                 <!--e: #tab5 取消/换货/退货 "교환/환불정책"-->              
@@ -993,6 +995,21 @@ $(function () {
         $("#" + activeTab).fadeIn()
     });
 });
+	
+	
+function fn_CtlDsp(NtabID,TtabID,li_ID){
+	// 하단 바로가기 버튼 클릭시 상황에 맞게 div 및 탭텍스트 색상 컨트롤
+	// NtabID : 현재탭의 ID, TtabID : 타겟탭의 ID, li_ID : 타겟li의 ID
+
+	//해당탭의 div를 활서화 시킨다.
+	document.getElementById(NtabID).style.display = "none";
+	document.getElementById(TtabID).style.display = "block";
+	//$("#" + TtabID).fadeIn()	;			//rel값의 탭을 활성화 시킨다.
+	
+	//전체 탭의 색을 없앤 후 해당 ID의 탭만 색을 준단.
+	$("ul.detail_tabs li").removeClass("active").css({"color": "#333", "border-top":"3px solid #fff"});
+	$("#"+li_ID).addClass("active").css({"color": "#f47a22", "border-top":"3px solid #f47a22"});
+}
 	
 </script>
 
