@@ -36,8 +36,8 @@ if($today[id]){
 	$get_parm_all = $get_sort."&".$get_sortodr."&".$get_l_type;		//종합
 }
 ?>
-
-<!--<script type='text/javascript'>
+<? if($_SERVER['HTTP_HOST']=="localhost"){}else{?>
+<script type='text/javascript'>
     (function(m, ei, q, i, a, j, s) {
         m[a] = m[a] || function() {
             (m[a].a = m[a].a || []).push(arguments)
@@ -50,7 +50,8 @@ if($today[id]){
         s.parentNode.insertBefore(j, s)
     })(window, document, 'script', '//eco-api.meiqia.com/dist/meiqia.js', '_MEIQIA');
     _MEIQIA('entId', 5768);
-</script>-->
+</script>
+<? } ?>
 <script src="/oz_js/jquery.SuperSlide.2.1.1.js" type="text/javascript"></script>
 <script src="/oz_js/jquery.slides.min.js"></script>
 <script src="/oz_js/jquery.als-1.7.min.js"></script>
