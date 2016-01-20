@@ -113,20 +113,22 @@ $list_cnt = count($list);
             <a title="点击后按价格从高到低" class="<?php if($_GET[sort]=='it_price' and $_GET[sortodr]=='desc'){?>filter_sort_on<?php }else{ ?>filter_sort<?php } ?>" href="<?php echo $list_sort_href; ?>it_price&amp;sortodr=desc&<?php echo $get_l_type ?>#nv_list">价格
                 <i class="f_ico_arrow_u"></i>
             </a>   
-            <a class="filter_type_store" href="<?php echo $list_sort_href; ?>&l_type=album#nv_list">店铺
-                <i class="ico_filter_type_store"></i>
-            </a>    
-            <a class="filter_type_big<?php if($_GET[l_type]!="list"){?>_on<?php } ?>" href="<?php echo $list_sort_href; ?>&<?php echo $get_sort ?>&<?php echo $get_sortodr ?>&l_type=album#nv_list">大图
-                <i class="ico_filter_type_big"></i>
-            </a>
-            <a class="filter_type_small<?php if($_GET[l_type]=="list"){?>_on<?php } ?>" href="<?php echo $list_sort_href; ?>&<?php echo $get_sort ?>&<?php echo $get_sortodr ?>&l_type=list#nv_list">小图
-                <i class="ico_filter_type_small"></i>
-            </a>  
-            <p class="ui-page-s">
+            <div class="filter_right">
+                <!--<a class="filter_type_store" href="<?php echo $list_sort_href; ?>&l_type=album#nv_list">店铺
+                    <i class="ico_filter_type_store"></i>
+                </a>-->    
+                <a class="filter_type_big<?php if($_GET[l_type]!="list"){?>_on<?php } ?>" href="<?php echo $list_sort_href; ?>&<?php echo $get_sort ?>&<?php echo $get_sortodr ?>&l_type=album#nv_list">大图
+                    <i class="ico_filter_type_big"></i>
+                </a>
+                <a class="filter_type_small<?php if($_GET[l_type]=="list"){?>_on<?php } ?>" href="<?php echo $list_sort_href; ?>&<?php echo $get_sort ?>&<?php echo $get_sortodr ?>&l_type=list#nv_list">小图
+                    <i class="ico_filter_type_small"></i>
+                </a> 
+            </div> 
+            <!--<p class="ui-page-s">
                 <b class="ui-page-s-len"><?php echo $page?>/<?php echo $total_page?></b>
                 <!----a href="" title="上一页" class="ui-page-s-prev">&lt;</a> 
                 <a href="" title="下一页" class="ui-page-s-next" href="#">&gt;</a!---->
-            </p>
+            <!--</p>-->
         </div>
 		<!--e: LIST filter-->
         <!-- 앨벌형스킨 -->
