@@ -49,7 +49,7 @@ $cart_count = sql_num_rows($result);
         发货和退货地址：（07236) 10F 21, Gukhoe-daero 62-gil, Yeongdeungpo-gu, Seoul, Korea <br>
         公司营业执照号 ：107-86-81797 | 通信销售申报号码 ：제2015-서울영등포-1249호 <br>
         服务时间: 周一到周六 08:00 ~ 17:00 | 服务热线 : +82-2-1234-1234<br>
-         Copyright © 2015 OZOOBOX.com 版权所有 
+         Copyright © 2015 OZOOBOX.com 版权所有 &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://m.kuaidi100.com" target="_blank" style="color:#fff">快递查询</a>
         </p>
     </div>
 
