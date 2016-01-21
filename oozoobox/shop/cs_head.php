@@ -16,7 +16,7 @@ $skin_url = $member_skin_url;
                             <img src="/images/tit_cscenter01.png" alt="消费者帮助 Buyer FAQ"/>
                         </h4>
                         <ul class="MM_List" <? if($_GET[bo_table]=="buyerfaq" || $_SERVER['PHP_SELF']=="/shop/cscenter.php"){?>style="display:block"<? } ?>>
-                            <li><a href="/bbs/board.php?bo_table=buyerfaq&sca=<?=urlencode('회원관리')?>">会员管理</a></li>
+                            <li><a href="/bbs/board.php?bo_table=buyerfaq&sca=<?=urlencode('회원관리')?>">会员信息</a></li>
                             <li><a href="/bbs/board.php?bo_table=buyerfaq&sca=<?=urlencode('주문')?>">订单</a></li>
                             <li><a href="/bbs/board.php?bo_table=buyerfaq&sca=<?=urlencode('결제')?>">结算</a></li>
                             <li><a href="/bbs/board.php?bo_table=buyerfaq&sca=<?=urlencode('배송')?>">发货</a></li>
@@ -30,12 +30,12 @@ $skin_url = $member_skin_url;
                             <img src="/images/tit_cscenter02.png" alt="商家帮助 Seller FAQ"/>
                         </h4>
                         <ul class="MM_List" <? if($_GET[bo_table]=="sellerfaq"){?>style="display:block"<? } ?>>
-                            <li><a href="/bbs/board.php?bo_table=sellerfaq&sca=<?=urlencode('회원관리')?>">会员管理</a></li>
-                            <li><a href="/bbs/board.php?bo_table=sellerfaq&sca=<?=urlencode('상품관리')?>">商品管理</a></li>
-                            <li><a href="/bbs/board.php?bo_table=sellerfaq&sca=<?=urlencode('배송')?>">发货</a></li>
-                            <li><a href="/bbs/board.php?bo_table=sellerfaq&sca=<?=urlencode('배송/취소/환불')?>">取消/退款</a></li>
-                            <li><a href="/bbs/board.php?bo_table=sellerfaq&sca=<?=urlencode('이용료/정산/부가세')?>">使用价格/结算/税金</a></li>
-                            <li><a href="/bbs/board.php?bo_table=sellerfaq&sca=<?=urlencode('광고/기획전')?>">广告/策划</a></li>
+                            <li><a href="/bbs/board.php?bo_table=sellerfaq&sca=<?=urlencode('회원관리')?>">회원관리</a></li>
+                            <li><a href="/bbs/board.php?bo_table=sellerfaq&sca=<?=urlencode('상품관리')?>">상품관리</a></li>
+                            <li><a href="/bbs/board.php?bo_table=sellerfaq&sca=<?=urlencode('배송')?>">배송</a></li>
+                            <li><a href="/bbs/board.php?bo_table=sellerfaq&sca=<?=urlencode('배송/취소/환불')?>">취소/환불</a></li>
+                            <li><a href="/bbs/board.php?bo_table=sellerfaq&sca=<?=urlencode('이용료/정산/부가세')?>">이용료/정산/부가세</a></li>
+                            <li><a href="/bbs/board.php?bo_table=sellerfaq&sca=<?=urlencode('광고/기획전')?>">광고/기획전</a></li>
                         </ul>
                     </li>
                     <!--<li class="CS_menu"> 

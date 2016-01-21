@@ -96,58 +96,152 @@ input[type=radio]#button-5:checked~.arrows#arrow-4 { left: -73px }
 </style>
 
 
-<div id="MainEvent">
-    <div id="slideshow-wrap">
-        <input type="radio" id="button-1" name="controls" checked="checked"/>
-        <label for="button-1"></label>
-        <input type="radio" id="button-2" name="controls"/>
-        <label for="button-2"></label>
-        <input type="radio" id="button-3" name="controls"/>
-        <label for="button-3"></label>
-        <input type="radio" id="button-4" name="controls"/>
-        <label for="button-4"></label>
-        <input type="radio" id="button-5" name="controls"/>
-        <label for="button-5"></label>
-        <label for="button-1" class="arrows" id="arrow-1">></label>
-        <label for="button-2" class="arrows" id="arrow-2">></label>
-        <label for="button-3" class="arrows" id="arrow-3">></label>
-        <label for="button-4" class="arrows" id="arrow-4">></label>
-        <label for="button-5" class="arrows" id="arrow-5">></label>
-        <div id="slideshow-inner">
+        <div id="slideshow-wrap">
+            <input type="radio" id="button-1" name="controls" checked="checked"/>
+            <label for="button-1"></label>
+            <input type="radio" id="button-2" name="controls"/>
+            <label for="button-2"></label>
+            <input type="radio" id="button-3" name="controls"/>
+            <label for="button-3"></label>
+            <input type="radio" id="button-4" name="controls"/>
+            <label for="button-4"></label>
+            <input type="radio" id="button-5" name="controls"/>
+            <label for="button-5"></label>
+            <label for="button-1" class="arrows" id="arrow-1">></label>
+            <label for="button-2" class="arrows" id="arrow-2">></label>
+            <label for="button-3" class="arrows" id="arrow-3">></label>
+            <label for="button-4" class="arrows" id="arrow-4">></label>
+            <label for="button-5" class="arrows" id="arrow-5">></label>
+            <div id="slideshow-inner">
+                <ul>
+                    <li id="slide1">
+                        <img src="/images/bn_event_main01.png" />
+                    </li>
+                    <li id="slide2">
+                        <img src="/images/bn_event_main02.png" />
+                    </li>
+                    <li id="slide3">
+                        <img src="/images/bn_event_main01.png" />
+                    </li>
+                    <li id="slide4">
+                        <img src="/images/bn_event_main02.png" />
+                    </li>
+                    <li id="slide5">
+                        <img src="/images/bn_event_main01.png" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    
+        <div class="EventGoods">
             <ul>
-                <li id="slide1">
-                    <img src="/images/bn_event_main01.png" />
+                <li class="Event_List">
+                    <div class="EventPic"><img src="/images/event01_goods_01.png" alt="SK_2"/></div>
+                    <div class="EventGood_info">
+                        <span class="price">
+                            <span class="original_price">¥ 150</span>
+                            <del>¥ 183</del>
+                        </span>
+                        <span class="like">1,231</span>
+                        <span class="text">SK-2护肤面膜贴 SK-2化妆品 朴水保10片装</span>
+                    </div>
+                    <span class="Event_go_detail"><img src="/images/event01_url_01.png" alt="SK_2 자세히보기"/></span>
+                    <a class="Event_link_url" title="상품자세히보기연결"></a>
                 </li>
-                <li id="slide2">
-                    <img src="/images/bn_event_main02.png" />
+                <li class="Event_List">
+                    <div class="EventPic"><img src="/images/event01_goods_01.png" alt="SK_2"/></div>
+                    <div class="EventGood_info">
+                        <span class="price">
+                            <span class="original_price">¥ 150</span>
+                            <del>¥ 183</del>
+                        </span>
+                        <span class="like">1,231</span>
+                        <span class="text">SK-2护肤面膜贴 SK-2化妆品 朴水保10片装</span>
+                    </div>
+                    <span class="Event_go_detail"><img src="/images/event01_url_01.png" alt="SK_2 자세히보기"/></span>
+                    <a class="Event_link_url" title="상품자세히보기연결"></a>
                 </li>
-                <li id="slide3">
-                    <img src="/images/bn_event_main01.png" />
+                <li class="Event_List">
+                    <div class="EventPic"><img src="/images/event01_goods_01.png" alt="SK_2"/></div>
+                    <div class="EventGood_info">
+                        <span class="price">
+                            <span class="original_price">¥ 150</span>
+                            <del>¥ 183</del>
+                        </span>
+                        <span class="like">1,231</span>
+                        <span class="text">SK-2护肤面膜贴 SK-2化妆品 朴水保10片装</span>
+                    </div>
+                    <span class="Event_go_detail"><img src="/images/event01_url_01.png" alt="SK_2 자세히보기"/></span>
+                    <a class="Event_link_url" title="상품자세히보기연결"></a>
                 </li>
-                <li id="slide4">
-                    <img src="/images/bn_event_main02.png" />
+                <li class="Event_List">
+                    <div class="EventPic"><img src="/images/event01_goods_01.png" alt="SK_2"/></div>
+                    <div class="EventGood_info">
+                        <span class="price">
+                            <span class="original_price">¥ 150</span>
+                            <del>¥ 183</del>
+                        </span>
+                        <span class="like">1,231</span>
+                        <span class="text">SK-2护肤面膜贴 SK-2化妆品 朴水保10片装</span>
+                    </div>
+                    <span class="Event_go_detail"><img src="/images/event01_url_01.png" alt="SK_2 자세히보기"/></span>
+                    <a class="Event_link_url" title="상품자세히보기연결"></a>
+                </li>  
+                <li class="Event_List">
+                    <div class="EventPic"><img src="/images/event01_goods_01.png" alt="SK_2"/></div>
+                    <div class="EventGood_info">
+                        <span class="price">
+                            <span class="original_price">¥ 150</span>
+                            <del>¥ 183</del>
+                        </span>
+                        <span class="like">1,231</span>
+                        <span class="text">SK-2护肤面膜贴 SK-2化妆品 朴水保10片装</span>
+                    </div>
+                    <span class="Event_go_detail"><img src="/images/event01_url_01.png" alt="SK_2 자세히보기"/></span>
+                    <a class="Event_link_url" title="상품자세히보기연결"></a>
                 </li>
-                <li id="slide5">
-                    <img src="/images/bn_event_main01.png" />
+                <li class="Event_List">
+                    <div class="EventPic"><img src="/images/event01_goods_01.png" alt="SK_2"/></div>
+                    <div class="EventGood_info">
+                        <span class="price">
+                            <span class="original_price">¥ 150</span>
+                            <del>¥ 183</del>
+                        </span>
+                        <span class="like">1,231</span>
+                        <span class="text">SK-2护肤面膜贴 SK-2化妆品 朴水保10片装</span>
+                    </div>
+                    <span class="Event_go_detail"><img src="/images/event01_url_01.png" alt="SK_2 자세히보기"/></span>
+                    <a class="Event_link_url" title="상품자세히보기연결"></a>
                 </li>
+                <li class="Event_List">
+                    <div class="EventPic"><img src="/images/event01_goods_01.png" alt="SK_2"/></div>
+                    <div class="EventGood_info">
+                        <span class="price">
+                            <span class="original_price">¥ 150</span>
+                            <del>¥ 183</del>
+                        </span>
+                        <span class="like">1,231</span>
+                        <span class="text">SK-2护肤面膜贴 SK-2化妆品 朴水保10片装</span>
+                    </div>
+                    <span class="Event_go_detail"><img src="/images/event01_url_01.png" alt="SK_2 자세히보기"/></span>
+                    <a class="Event_link_url" title="상품자세히보기연결"></a>
+                </li>
+                <li class="Event_List">
+                    <div class="EventPic"><img src="/images/event01_goods_01.png" alt="SK_2"/></div>
+                    <div class="EventGood_info">
+                        <span class="price">
+                            <span class="original_price">¥ 150</span>
+                            <del>¥ 183</del>
+                        </span>
+                        <span class="like">1,231</span>
+                        <span class="text">SK-2护肤面膜贴 SK-2化妆品 朴水保10片装</span>
+                    </div>
+                    <span class="Event_go_detail"><img src="/images/event01_url_01.png" alt="SK_2 자세히보기"/></span>
+                    <a class="Event_link_url" title="상품자세히보기연결"></a>
+                </li> 
             </ul>
         </div>
-    </div>
-    
-
-    <div class="EventGoods">
-        <a class="EventPic"><img src="/images/event01_goods_01.png" alt="SK_2"/></a>
-        <div class="EventGood_info">
-            <span class="price"></span><span class="like"></span>
-            <a><span class="text">SK-2护肤面膜贴 SK-2化妆品 朴水保10片装</span></a>
-        </div>
-        <span class="Event_url_detail"><a><img src="/images/event01_url_01.png" alt="SK_2 자세히보기"/></a></span>
-    </div>
-        
-        
-        
-        
-</div>
 
 
 

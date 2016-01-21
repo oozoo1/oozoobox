@@ -45,7 +45,7 @@ $result = sql_query($sql);
             <div class="cs_main_etc">
                 <!--s: CS_Main_Notice-->
                 <div class="cs_main_notice">
-                    <h3 class="cs_main_title">공지사항</h3>
+                    <h3 class="cs_main_title">公告</h3>
                     <ul>
                         <?php for ($i=0; $row=sql_fetch_array($result); $i++){ $dr_memo = cut_str($row[wr_subject],16);?>
                         <li>
@@ -59,14 +59,10 @@ $result = sql_query($sql);
                
                 <!--s: CS_1:1 상담신청-->
                     <div class="cs_box_counsel">
-                        <h3 class="cs_main_title">1:1 <span class="blue">상담</span> 신청하기</h3>
+                        <h3 class="cs_main_title">申请<span class="blue">1:1</span>商谈服务</h3>
 						<div class="explain">
-                        	<p>광고, 비방 제품과 관계없는 애용, 타 사이트와의 가격<br>
-                            비교, 기타 통신 예절에 어긋나거나 OOZOOBOX의<br>
-                            취지에 맞지 않는 글은 예고없이 삭제 될 수 있습니다.</p>
-                        	<p class="attention">한번 등록한 상담내용은 수정이 불가능 합니다.<br>
-                            1:1상담은 24시간 신청가능하며 접수된 내용은<br>
-                            빠른 시간내에 답변을 드리겠습니다.</p>
+                        	<p>广告、不文明用语、和其他网站的价格比较，与商品无关的内容，以及违反通信礼仪或违反OOZOOBOX规定的留言，将会被无通知删除。</p>
+                        	<p class="attention">已经上传的商谈留言内容，将不能修改。1:1商谈全天24小时都可以进行申请，我们将尽快竭诚为您解答。</p>
                         </div>
                         <a class="btn_request">
                         	<button>1:1상담신청</button> <!-----------채팅창 생성------------------>
