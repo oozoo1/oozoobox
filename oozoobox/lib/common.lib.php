@@ -1887,7 +1887,7 @@ function referer_check($url='')
 // 한글 요일
 function get_yoil($date, $full=0)
 {
-    $arr_yoil = array ('일', '월', '화', '수', '목', '금', '토');
+    $arr_yoil = array ('星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六');
 
     $yoil = date("w", strtotime($date));
     $str = $arr_yoil[$yoil];

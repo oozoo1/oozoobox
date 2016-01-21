@@ -30,7 +30,7 @@ if($today[id]){
                             </p>
                             <ul class="oz_sn_quick_menu">
                             <?php if($member[mb_id]){?>
-                                <?php if($member['admin']) {?>
+                                <?php if($member[mb_id]=="admin") {?>
                                 <li>
                                     <a href="<?php echo G5_ADMIN_URL;?>" target="_parent">관리자+</a> <!--"관리자페이지"-->
                                 </li>

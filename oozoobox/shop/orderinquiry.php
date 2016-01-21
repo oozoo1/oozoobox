@@ -69,6 +69,8 @@ if($_GET[type]=="2"){ $od_status="and od_status='입금'";}
 if($_GET[type]=="3"){ $od_status="and od_status='준비'";}
 if($_GET[type]=="4"){ $od_status="and od_status='배송'";}
 if($_GET[type]=="5"){ $od_status="and od_status='완료'";}
+if($_GET[type]=="6"){ $od_status="and od_status='취소'";}
+if($_GET[type]=="7"){ $od_status="and od_status='반품'";}
 
 
 ///////////////////////////时间搜索/////////////////////////////////////////////////////////////////////////////////////////
@@ -135,22 +137,25 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
 
 	switch($row['od_status']) {
 		case '주문':
-			$od_status = '결제대기중';
+			$od_status = '等待付款';
 			break;
 		case '입금':
-			$od_status = '결제완료';
+			$od_status = '已付款';
 			break;
 		case '준비':
-			$od_status = '상품준비중';
+			$od_status = '商品准备中';
 			break;
 		case '배송':
-			$od_status = '상품배송중';
+			$od_status = '商品运输中';
 			break;
 		case '완료':
-			$od_status = '거래완료';
+			$od_status = '完成交易';
+			break;
+		case '반품':
+			$od_status = '退货';
 			break;
 		default:
-			$od_status = '주문취소';
+			$od_status = '取消订单';
 			break;
 	}
 	
@@ -206,13 +211,13 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
             <div class="tap_view_period">
                 <div class="order-period">
                     <div class="select_period">
-                     <a href="<?=$_SERVER['PHP_SELF']?>?type=<?=$_GET[type]?>&oldtime=1"><button<? if($oldtime=="1"){?> class="on"<? } ?>>오늘</button></a>
-                     <a href="<?=$_SERVER['PHP_SELF']?>?type=<?=$_GET[type]?>&oldtime=2"><button<? if($oldtime=="2"){?> class="on"<? } ?>>1주일</button></a>
-                     <a href="<?=$_SERVER['PHP_SELF']?>?type=<?=$_GET[type]?>&oldtime=3"><button<? if($oldtime=="3"){?> class="on"<? } ?>>1개월</button></a>    
-                     <a href="<?=$_SERVER['PHP_SELF']?>?type=<?=$_GET[type]?>&oldtime=4"><button<? if($oldtime=="4"){?> class="on"<? } ?>>3개월</button></a>    <!--클릭했을 class명을 "on"으로 바꿔주면 됩니다-->
-                     <a href="<?=$_SERVER['PHP_SELF']?>?type=<?=$_GET[type]?>&oldtime=5"><button<? if($oldtime=="5"){?> class="on"<? } ?>>6개월</button></a>    
-                     <a href="<?=$_SERVER['PHP_SELF']?>?type=<?=$_GET[type]?>&oldtime=6"><button<? if($oldtime=="6"){?> class="on"<? } ?>>12개월</button></a>    
-                     <a href="<?=$_SERVER['PHP_SELF']?>?type=<?=$_GET[type]?>&oldtime=7"><button<? if($oldtime=="7"){?> class="on"<? } ?>>이전 주문내역</button></a>                    
+                     <a href="<?=$_SERVER['PHP_SELF']?>?type=<?=$_GET[type]?>&oldtime=1"><button<? if($oldtime=="1"){?> class="on"<? } ?>>今天</button></a>
+                     <a href="<?=$_SERVER['PHP_SELF']?>?type=<?=$_GET[type]?>&oldtime=2"><button<? if($oldtime=="2"){?> class="on"<? } ?>>一星期</button></a>
+                     <a href="<?=$_SERVER['PHP_SELF']?>?type=<?=$_GET[type]?>&oldtime=3"><button<? if($oldtime=="3"){?> class="on"<? } ?>>一个月</button></a>    
+                     <a href="<?=$_SERVER['PHP_SELF']?>?type=<?=$_GET[type]?>&oldtime=4"><button<? if($oldtime=="4"){?> class="on"<? } ?>>三个月</button></a>    <!--클릭했을 class명을 "on"으로 바꿔주면 됩니다-->
+                     <a href="<?=$_SERVER['PHP_SELF']?>?type=<?=$_GET[type]?>&oldtime=5"><button<? if($oldtime=="5"){?> class="on"<? } ?>>六个月</button></a>    
+                     <a href="<?=$_SERVER['PHP_SELF']?>?type=<?=$_GET[type]?>&oldtime=6"><button<? if($oldtime=="6"){?> class="on"<? } ?>>一年</button></a>    
+                     <a href="<?=$_SERVER['PHP_SELF']?>?type=<?=$_GET[type]?>&oldtime=7"><button<? if($oldtime=="7"){?> class="on"<? } ?>>之前订单查询</button></a>                    
                     </div>
                     <span class="date">
 											<? if($oldtime=="1"){?><?=$todaytime?> ~ <?=$todaytime?><? } ?>
@@ -227,18 +232,19 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                 <div class="order-search">
                 <form method="get">
                     <input class="text" name="sc" value="<?=$_GET[sc]?>" type="text" style="width:138px; height:22px;"/>
-                    <input class="btn_search" type="submit" value="조회"/>
+                    <input class="btn_search" type="submit" value="查询"/>
                 </form>
                 </div>
             </div>
             <div class="orderview-option">
             	<select language=javascript onchange= "location.href=this.value"> 
-                	<option value="<?=$_SERVER['PHP_SELF']?>?type=1&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="1"){echo "selected";}?>>입금확인중</option>
-                    <option value="<?=$_SERVER['PHP_SELF']?>?type=2&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="2"){echo "selected";}?>>결제완료</option>
-                    <option value="<?=$_SERVER['PHP_SELF']?>?type=3&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="3"){echo "selected";}?>>상품준비중</option>
-                    <option value="<?=$_SERVER['PHP_SELF']?>?type=4&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="4"){echo "selected";}?>>배송중/배송출발</option>
-                    <option value="<?=$_SERVER['PHP_SELF']?>?type=5&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="5"){echo "selected";}?>>배송완료</option>
-                    <option value="<?=$_SERVER['PHP_SELF']?>?type=6&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="6"){echo "selected";}?>>거래완료</option>
+                		<option value="<?=$_SERVER['PHP_SELF']?>?oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="1"){echo "selected";}?>>查看全部</option>
+                    <option value="<?=$_SERVER['PHP_SELF']?>?type=1&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="1"){echo "selected";}?>>等待付款</option>
+                    <option value="<?=$_SERVER['PHP_SELF']?>?type=2&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="2"){echo "selected";}?>>已付款</option>
+                    <option value="<?=$_SERVER['PHP_SELF']?>?type=3&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="3"){echo "selected";}?>>商品准备中</option>
+                    <option value="<?=$_SERVER['PHP_SELF']?>?type=4&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="4"){echo "selected";}?>>商品运输中</option>
+                    <option value="<?=$_SERVER['PHP_SELF']?>?type=5&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="5"){echo "selected";}?>>确认交易</option>
+                    <option value="<?=$_SERVER['PHP_SELF']?>?type=6&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="6"){echo "selected";}?>>交易完成</option>
                 </select>
             </div>
             <table class="order-list-table">
@@ -250,10 +256,10 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                 </colgroup>
                 <thead>
                 	<tr>
-                    	<th class="first">주문일(결제번호)</th>
-                        <th>상품평/주문옵션/주문번호</th>
-                        <th>판매자</th>
-                        <th>주문상태</th>
+                    	<th class="first">订单日期/帐单号码</th>
+                        <th>商品名称/订单号码</th>
+                        <th>商家信息</th>
+                        <th>状态</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -274,7 +280,7 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                                 <a>( <span><?=$list[$i][od_id]?></span> )</a>
                             </div>
                             <div class="total-charge">
-                            결제금액
+                            结算金额
                             	<strong class="charge">
                                 	¥<span class="num"><?=$list[$i][od_cart_price]?></span>
                                 </strong>
@@ -307,7 +313,7 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                                     <?=$row_item[it_name]?>
                                     </div>
                                     <div class="order-num">
-                                        <span class="mp_label">주문번호</span>
+                                        <span class="mp_label">订单号码</span>
                                     <?=$row_item[it_id]?>
                                     </div>
                             	</div>
@@ -331,27 +337,27 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
 																$time9=date('Y-m-d', $time_9); 
 																
 																if($todaytime =="$time8" || $todaytime =="$time9"){
-                                echo  "미수령신고";
+                                echo  "未收到商品";
 																}else{
 																echo  $list[$i][od_status];
 																}
                               ?>
                           </strong>
-                          <? if($list[$i][od_status]=="상품배송중"){?>
+                          <? if($list[$i][od_status]=="商品运输中"){?>
                             <span class="tracking">
-                                <a>배송추척</a>
+                                <a>快递跟中</a>
                             </span>
                           <? } ?>
-                          <? if($list[$i][od_status]=="거래완료"){?>
+                          <? if($list[$i][od_status]=="交易完成"){?>
                             <span class="status-date">
-                            구매결정일자
+                            交易完成日期
                             <br>
                             ( <span class="num">12-30</span>
-                            결정 )
+                            完成 )
                             </span>
                           <? } ?>
                           
-                          <? if($list[$i][od_status]=="결제대기중"){?>
+                          <? if($list[$i][od_status]=="等待付款"){?>
                           <br><br>
                               <form name=alipayment action="/alipay/alipayapi.php" method=post target="_blank">
                               <input type="hidden" size="30" name="WIDout_trade_no" value="<?=$list[$i][od_id]?>" title="订单号码" />
@@ -372,32 +378,32 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                     <tr>
                     	<td colspan="3" class="actions">
                         	<div class="links">
-                                <a class="declaration">신고하기</a>
-                            	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">판매자문의</a>
+                                <a class="declaration">投诉商品</a>
+                            	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">商品咨询</a>
                             </div>
                             <div class="buttons">
                             
-                            <? if($list[$i][od_status]=="결제대기중" || $list[$i][od_status]=="상품준비중" || $list[$i][od_status]=="결제완료"){ ?>
+                            <? if($list[$i][od_status]=="等待付款" || $list[$i][od_status]=="商品准备中" || $list[$i][od_status]=="交易完成"){ ?>
                               <a href="/shop/mypage02_1_1.php" class="button">
-                              	<button class="cancel">주문취소요청</button>
+                              	<button class="cancel">取消订单</button>
                               </a>
                               <a class="button">
-                               	<button class="orange">배송정보수정</button>
+                               	<button class="orange">修改收货地址</button>
                               </a>
                             <? } ?>
                             
-                            <? if($list[$i][od_status]=="상품배송중"){ ?>
-                            	<a onClick="window.open('/shop/popup/pop05.html', '', 'width=660, height=535, scrollbars=no')" class="button"><button class="orange">상품평 | 구매결정</button></a>
+                            <? if($list[$i][od_status]=="商品运输中"){ ?>
+                            	<a onClick="window.open('/shop/popup/pop05.html', '', 'width=660, height=535, scrollbars=no')" class="button"><button class="orange">确认收货</button></a>
                             <? } ?>
 														
-                            <? if($list[$i][od_status]=="거래완료"){ ?>
+                            <? if($list[$i][od_status]=="交易完成"){ ?>
                               <a class="button" onClick="window.open('/shop/popup/pop07.html', '', 'width=600, height=760, scrollbars=no')" >
-                              <button class="cancel">상품평작성하기</button>
+                              <button class="cancel">好评/差评</button>
                               </a>
                             <? } ?>
 
-														<? if($list[$i][od_status]=="상품배송중"){ ?>
-                           	 <a href="/shop/mypage02_1_5.php" class="button"><button class="cancel">반품 / 취소요청</button></a>
+														<? if($list[$i][od_status]=="商品运输中"){ ?>
+                           	 <a href="/shop/mypage02_1_5.php" class="button"><button class="cancel">退货/取消订单 申请</button></a>
                             <? } ?>
                             
                             </div>

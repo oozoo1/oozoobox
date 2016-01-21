@@ -17,9 +17,9 @@
                 </h4>
                 <ul class="MM_List">
                 	<li><a href="/shop/orderinquiry.php">我的订单/快递跟踪</a></li>
-                    <li><a href="/shop/mypage02_2.php">等待付款</a></li>
-                    <li><a href="/shop/mypage02_3.php">订单取消记录</a></li>
-                    <li><a href="/shop/mypage02_4.php">交换/退货</a></li>
+                    <li><a href="/shop/orderinquiry.php?type=1&oldtime=">等待付款</a></li>
+                    <li><a href="/shop/orderinquiry.php?type=6&oldtime=">订单取消记录</a></li>
+                    <li><a href="/shop/orderinquiry.php?type=7&oldtime=">交换/退货</a></li>
                     <li><a href="/shop/cart.php">购物车</a></li>
                     <li><a href="/shop/wishlist.php">我的收藏</a></li>
                 </ul> 
