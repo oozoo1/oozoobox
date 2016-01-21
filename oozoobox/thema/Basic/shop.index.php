@@ -229,7 +229,7 @@ $result = sql_query($sql);
                     	<div class="<? if($i=="4" || $i=="9"){?>card_item last_1920<? }else{ ?>card_item<? } ?>" href="#">
                         	<a href="/shop/item.php?it_id=<?=$row_main[it_id]?>&ca_id=<?=$row_main[ca_id]?>">
                                 <span class="item_pic">
-                                    <img width="100%" src="http://data.oozoobox.com/data/item/<?=$row_main[it_img1]?>" height="314"/>
+                                    <img width="100%" src="http://data.oozoobox.com/data/item/<?=$row_main[it_img1]?>"/>
                                 </span>
                             </a>
                             <span class="wonderful_wish">
