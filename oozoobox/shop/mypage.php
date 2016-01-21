@@ -1,5 +1,9 @@
 <?php
 include_once('./mypage_head.php');
+
+$sql1 = " select count(*) as cnt " . $sql_common;
+$row1 = sql_fetch($sql1);
+$row1['cnt'];
 ?>
 
             	<div class="My_info_bar">
@@ -9,17 +13,17 @@ include_once('./mypage_head.php');
                         </a>
                         <span class="My_nickname">
                         	<a href="#">
-                            	<em>MEI HUI<!--별명--></em>(sapiens11)<!--ID-->
+                            	<em><?=$member[mb_name]?><!--별명--></em>(<?=$member[mb_id]?>)<!--ID-->
                             </a>
                         </span>
                         <span class="My_grade">
                         	<a href="#">
                             	<img src="/images/my_grade_vip.png" alt="vip"/>
-                                <em>您是在<b>VIP</b>会员呢！</em>
+                                <em>您的等级<b> <?=$member[mb_level]?> </b>级</em>
                             </a>
                         </span>
 					</div>
-                    <a class="My_address" href="#"> <!--주소수정하는 창으로-->
+                    <a class="My_address" href="/shop/member_address.php"> <!--주소수정하는 창으로-->
                         <em>我的收货地址</em>
                         <i></i>
                     </a>	                    
@@ -56,70 +60,23 @@ include_once('./mypage_head.php');
                 <div class="guess_like_content">
                 	<div class="inner_content">
 <!------------------------s: 반복------------------------>
+												<? for ($i=0; $row_my=sql_fetch_array($resultmy); $i++){ ?>
                         <div class="guess_like_item">
                         	<div class="guess_pic">
-                            	<a class="guess_pic_link">
-                                 	<img src="/images/guess_pic_01.png" alt="상품사진01"/>
+                            	<a class="guess_pic_link" href="/shop/item.php?it_id=<?=$row_my[it_id]?>&ca_id=<?=$row_my[ca_id]?>">
+                                 	<img src="http://data.oozoobox.com/data/item/<?=$row_my[it_img1]?>" alt="상품사진01"/>
                                 </a>
                             </div>
                             <div class="guess_item">
-                            	<a class="guess_tit">nici纸巾抽纸巾盒车内车载纸巾收纳盒居家装饰纸抽可爱卡通手纸盒</a>
-                                <a class="guess_subtit">正品思埠天使之魅蓝莓面膜戴莱美</a>
-                                <span class="guess_price">¥118</span>
+                            	<a class="guess_tit"><?=$row_my[it_name]?></a>
+                                <a class="guess_subtit"><?=$row_my[it_basic]?></a>
+                                <span class="guess_price">¥<?php echo number_format($row_my['it_price'],2); ?></span>
                             </div>
                         </div>
+                        <? } ?>
 <!------------------------e: 반복------------------------>
                         
-                        <!------------------------ s: 날리기------------------------->
-                        <div class="guess_like_item">
-                        	<div class="guess_pic">
-                            	<a class="guess_pic_link">
-                                 	<img src="/images/guess_pic_01.png" alt="상품사진01"/>
-                                </a>
-                            </div>
-                            <div class="guess_item">
-                            	<a class="guess_tit">nici纸巾抽纸巾盒车内车载纸巾收纳盒居家装饰纸抽可爱卡通手纸盒</a>
-                                <a class="guess_subtit">正品思埠天使之魅蓝莓面膜戴莱美</a>
-                                <span class="guess_price">¥118</span>
-                            </div>
-                        </div>
-                        <div class="guess_like_item">
-                        	<div class="guess_pic">
-                            	<a class="guess_pic_link">
-                                 	<img src="/images/guess_pic_01.png" alt="상품사진01"/>
-                                </a>
-                            </div>
-                            <div class="guess_item">
-                            	<a class="guess_tit">nici纸巾抽纸巾盒车内车载纸巾收纳盒居家装饰纸抽可爱卡通手纸盒</a>
-                                <a class="guess_subtit">正品思埠天使之魅蓝莓面膜戴莱美</a>
-                                <span class="guess_price">¥118</span>
-                            </div>
-                        </div>
-                        <div class="guess_like_item">
-                        	<div class="guess_pic">
-                            	<a class="guess_pic_link">
-                                 	<img src="/images/guess_pic_01.png" alt="상품사진01"/>
-                                </a>
-                            </div>
-                            <div class="guess_item">
-                            	<a class="guess_tit">nici纸巾抽纸巾盒车内车载纸巾收纳盒居家装饰纸抽可爱卡通手纸盒</a>
-                                <a class="guess_subtit">正品思埠天使之魅蓝莓面膜戴莱美</a>
-                                <span class="guess_price">¥118</span>
-                            </div>
-                        </div>
-                        <div class="guess_like_item">
-                        	<div class="guess_pic">
-                            	<a class="guess_pic_link">
-                                 	<img src="/images/guess_pic_01.png" alt="상품사진01"/>
-                                </a>
-                            </div>
-                            <div class="guess_item">
-                            	<a class="guess_tit">nici纸巾抽纸巾盒车内车载纸巾收纳盒居家装饰纸抽可爱卡通手纸盒</a>
-                                <a class="guess_subtit">正品思埠天使之魅蓝莓面膜戴莱美</a>
-                                <span class="guess_price">¥118</span>
-                            </div>
-                        </div>   
-                        <!------------------------ e: 날리기------------------------->                      
+                                          
                     </div>
                 </div>
             </div>           

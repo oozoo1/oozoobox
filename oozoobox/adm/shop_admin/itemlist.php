@@ -171,6 +171,7 @@ $flist = apms_form(1,0);
         <th scope="col" colspan="8">분류</th>
         <th scope="col" rowspan="3"><?php echo subject_sort_link('it_order', 'sca='.$sca); ?>순서</a></th>
         <th scope="col" rowspan="3"><?php echo subject_sort_link('it_use', 'sca='.$sca, 1); ?>판매</a></th>
+        <th scope="col" rowspan="3"><?php echo subject_sort_link('it_9', 'sca='.$sca, 1); ?>관심추천</a></th>
         <th scope="col" rowspan="3"><?php echo subject_sort_link('it_10', 'sca='.$sca, 1); ?>메인</a></th>
         <th scope="col" rowspan="3"><?php echo subject_sort_link('it_soldout', 'sca='.$sca, 1); ?>품절</a></th>
         <th scope="col" rowspan="3"><?php echo subject_sort_link('it_hit', 'sca='.$sca, 1); ?>조회</a></th>
@@ -243,9 +244,12 @@ $flist = apms_form(1,0);
             <label for="use_<?php echo $i; ?>" class="sound_only">판매여부</label>
             <input type="checkbox" name="it_use[<?php echo $i; ?>]" <?php echo ($row['it_use'] ? 'checked' : ''); ?> value="1" id="use_<?php echo $i; ?>">        </td>
         <td rowspan="3" class="td_chk">
-            <label for="it_10_<?php echo $i; ?>" class="sound_only">메인</label>
-            <input type="checkbox" name="it_10[<?php echo $i; ?>]" <?php echo ($row['it_10'] ? 'checked' : ''); ?> value="1" id="it_10_<?php echo $i; ?>"> 
+            <label for="it_9_<?php echo $i; ?>" class="sound_only">메인</label>
+            <input type="checkbox" name="it_9[<?php echo $i; ?>]" <?php echo ($row['it_9'] ? 'checked' : ''); ?> value="1" id="it_9_<?php echo $i; ?>"> 
         </td>
+        <td rowspan="3" class="td_chk">
+            <label for="it_10_<?php echo $i; ?>" class="sound_only">메인</label>
+            <input type="checkbox" name="it_10[<?php echo $i; ?>]" <?php echo ($row['it_10'] ? 'checked' : ''); ?> value="1" id="it_10_<?php echo $i; ?>">        </td>
         <td rowspan="3" class="td_chk">
             <label for="soldout_<?php echo $i; ?>" class="sound_only">품절</label>
             <input type="checkbox" name="it_soldout[<?php echo $i; ?>]" <?php echo ($row['it_soldout'] ? 'checked' : ''); ?> value="1" id="soldout_<?php echo $i; ?>">        </td>

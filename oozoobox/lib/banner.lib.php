@@ -103,4 +103,9 @@ $baner23=sql_fetch_array($resultb23);
 $sqlmain = " select * from g5_shop_item where it_10 = '1' ORDER BY `g5_shop_item`.`it_order` ASC LIMIT 0 , 10";
 $resultmain = sql_query($sqlmain);
 
+// 관심상품 출력
+$num=rand(5,6);
+$sqlmy = " select * from g5_shop_item where it_9 = '1' order by rand() limit $num";
+$resultmy = sql_query($sqlmy);
+
 ?>

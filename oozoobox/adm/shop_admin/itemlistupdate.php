@@ -27,6 +27,7 @@ if ($_POST['act_button'] == "선택수정") {
                        it_stock_qty   = '{$_POST['it_stock_qty'][$k]}',
                        it_use         = '{$_POST['it_use'][$k]}',
                        it_soldout     = '{$_POST['it_soldout'][$k]}',
+											 it_9          = '{$_POST['it_9'][$k]}',
 											 it_10          = '{$_POST['it_10'][$k]}',
                        it_order       = '{$_POST['it_order'][$k]}',
                        pt_commission  = '{$_POST['pt_commission'][$k]}',

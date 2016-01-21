@@ -242,7 +242,7 @@ $result = sql_query($sql);
                             <span class="item_info">
                             	<a href="/shop/item.php?it_id=<?=$row_main[it_id]?>&ca_id=<?=$row_main[ca_id]?>">
                                     <span class="item_desc">
-                                        <em title="CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水" class="item_name">CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水</em>
+                                        <em title="CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水" class="item_name"><?=$row_my[it_name]?></em>
                                     </span>
                                 </a>
                                 <span class="item_detail">
