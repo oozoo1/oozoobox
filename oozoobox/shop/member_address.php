@@ -306,7 +306,7 @@ $result = sql_query($sql);
 <? } ?>
 <!----------------------------------添加收货地址--结束-------------------------------------------------------------------------------->
 
-		<a href="/shop/mypage.php"><h3 class="mp_tit">MY OOZOOBOX <span class="mp_tit_small">고객님의 개인정보, 주문 내역 등의 이용 기록을 조회할 수 있습니다.</span></h3></a>
+		<a href="/shop/mypage.php"><h3 class="mp_tit">MY OOZOOBOX <span class="mp_tit_small">顾客的个人情报及订单详情等使用记录可以查询。</span></h3></a>
 		<? include ("member_left.php");?>   
         
         <!--s: RIGHT CONTENTS-->
@@ -316,8 +316,8 @@ $result = sql_query($sql);
             </h4>
             <div class="text_box">
             	<p>
-                	자주 사용하시는 배송지를 주소록에 등록해두시면 보다 편리하게 이용할 수 있습니다.<br>
-                    최대 20개까지 등록하실 수 있습니다.
+                	经常使用的配送地址可以在通讯录中登陆，以方便使用。<br>
+                    最多可以登录20个地址。
                 </p>
             </div>
             <? 

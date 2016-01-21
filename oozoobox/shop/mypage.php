@@ -15,7 +15,7 @@ include_once('./mypage_head.php');
                         <span class="My_grade">
                         	<a href="#">
                             	<img src="/images/my_grade_vip.png" alt="vip"/>
-                                <em>회원님은  현재 VIP회원입니다.</em>
+                                <em>您是在<b>VIP</b>会员呢！</em>
                             </a>
                         </span>
 					</div>

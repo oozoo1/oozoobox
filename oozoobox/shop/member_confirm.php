@@ -283,7 +283,7 @@ function fregisterform_submit(f)
 
 
 
-		<a href="/shop/mypage.php"><h3 class="mp_tit">MY OOZOOBOX <span class="mp_tit_small">고객님의 개인정보, 주문 내역 등의 이용 기록을 조회할 수 있습니다.</span></h3></a>
+		<a href="/shop/mypage.php"><h3 class="mp_tit">MY OOZOOBOX <span class="mp_tit_small">顾客的个人情报及订单详情等使用记录可以查询。</span></h3></a>
 		<? include ("member_left.php");?>   
         <!--s: RIGHT CONTENTS-->
         <div class="My_container">
@@ -292,7 +292,7 @@ function fregisterform_submit(f)
             </h4>
             <form action="" method="post">
             <input type="hidden" name="type" value="update" />
-            <table class="My_Information" summary="기본정보 수정 입력 폼 입니다. 이름, 아이디, 비밀번호, 이메일, 휴대폰번호, 전화번호, 생년월일을 수정하실 수 있습니다.">
+            <table class="My_Information">
                 <colgroup>
                 	<col style="width:20%;"></col>
                     <col></col>

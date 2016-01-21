@@ -30,14 +30,17 @@ include_once('./_head.php');
 $skin_path = $member_skin_path;
 $skin_url = $member_skin_url;
 ?>
-		<a href="/shop/mypage.php"><h3 class="mp_tit">MY OOZOOBOX <span class="mp_tit_small">고객님의 개인정보, 주문 내역 등의 이용 기록을 조회할 수 있습니다.</span></h3></a>
+		<a href="/shop/mypage.php"><h3 class="mp_tit">MY OOZOOBOX <span class="mp_tit_small">顾客的个人情报及订单详情等使用记录可以查询。</span></h3></a>
 		<? include ("member_left.php");?>   
         
         <!--s: RIGHT CONTENTS-->
         <div class="My_container">
         	<h4 class="Mypage_tit">
-            회원등급
+            会员等级
             </h4>
+            
+            <img src="/images/comingsoon.png" alt="현재 페이지는 준비중입니다. 빠른 시일내 오픈하겠습니다."/>            
+            
         </div>
         <!--e: RIGHT CONTENTS-->
 <?php  include_once('./_tail.php'); ?>
