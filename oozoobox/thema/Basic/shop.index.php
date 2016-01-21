@@ -54,19 +54,19 @@ $result = sql_query($sql);
                                 <div class="mod_subcate_side">
                                     <div class="mod_subcate_side_hd"></div>
                                     <? if($k=="0"){?>
-                                    <a class="mod_subcate_gg"  href="/shop/bannerhit.php?bn_id=<?=$baner4['bn_id']?>&url=<?=urlencode($baner1['bn_url'])?>" <? if($baner4[bn_new_win]=="1"){?>target="_blank"<? } ?>><img src="<? if($baner4[bn_img1]){?>/data/banner/<?=$baner4[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/></a>
+                                    <a class="mod_subcate_gg"  href="/shop/bannerhit.php?bn_id=<?=$baner4['bn_id']?>&url=<?=urlencode($baner1['bn_url'])?>" <? if($baner4[bn_new_win]=="1"){?>target="_blank"<? } ?>><img src="<? if($baner4[bn_img1]){?>http://data.oozoobox.com/data/banner/<?=$baner4[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/></a>
                                     <? } ?>
                                     <? if($k=="1"){?>
-                                    <a class="mod_subcate_gg"  href="/shop/bannerhit.php?bn_id=<?=$baner5['bn_id']?>&url=<?=urlencode($baner1['bn_url'])?>" <? if($baner5[bn_new_win]=="1"){?>target="_blank"<? } ?>><img src="<? if($baner5[bn_img1]){?>/data/banner/<?=$baner5[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/></a>
+                                    <a class="mod_subcate_gg"  href="/shop/bannerhit.php?bn_id=<?=$baner5['bn_id']?>&url=<?=urlencode($baner1['bn_url'])?>" <? if($baner5[bn_new_win]=="1"){?>target="_blank"<? } ?>><img src="<? if($baner5[bn_img1]){?>http://data.oozoobox.com/data/banner/<?=$baner5[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/></a>
                                     <? } ?>
                                     <? if($k=="2"){?>
-                                    <a class="mod_subcate_gg"  href="/shop/bannerhit.php?bn_id=<?=$baner6['bn_id']?>&url=<?=urlencode($baner1['bn_url'])?>" <? if($baner6[bn_new_win]=="1"){?>target="_blank"<? } ?>><img src="<? if($baner6[bn_img1]){?>/data/banner/<?=$baner6[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/></a>
+                                    <a class="mod_subcate_gg"  href="/shop/bannerhit.php?bn_id=<?=$baner6['bn_id']?>&url=<?=urlencode($baner1['bn_url'])?>" <? if($baner6[bn_new_win]=="1"){?>target="_blank"<? } ?>><img src="<? if($baner6[bn_img1]){?>http://data.oozoobox.com/data/banner/<?=$baner6[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/></a>
                                     <? } ?>
                                     <? if($k=="3"){?>
-                                    <a class="mod_subcate_gg"  href="/shop/bannerhit.php?bn_id=<?=$baner7['bn_id']?>&url=<?=urlencode($baner1['bn_url'])?>" <? if($baner7[bn_new_win]=="1"){?>target="_blank"<? } ?>><img src="<? if($baner7[bn_img1]){?>/data/banner/<?=$baner7[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/></a>
+                                    <a class="mod_subcate_gg"  href="/shop/bannerhit.php?bn_id=<?=$baner7['bn_id']?>&url=<?=urlencode($baner1['bn_url'])?>" <? if($baner7[bn_new_win]=="1"){?>target="_blank"<? } ?>><img src="<? if($baner7[bn_img1]){?>http://data.oozoobox.com/data/banner/<?=$baner7[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/></a>
                                     <? } ?>
                                     <? if($k=="4"){?>
-                                    <a class="mod_subcate_gg"  href="/shop/bannerhit.php?bn_id=<?=$baner8['bn_id']?>&url=<?=urlencode($baner1['bn_url'])?>" <? if($baner8[bn_new_win]=="1"){?>target="_blank"<? } ?>><img src="<? if($baner8[bn_img1]){?>/data/banner/<?=$baner8[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/></a>
+                                    <a class="mod_subcate_gg"  href="/shop/bannerhit.php?bn_id=<?=$baner8['bn_id']?>&url=<?=urlencode($baner1['bn_url'])?>" <? if($baner8[bn_new_win]=="1"){?>target="_blank"<? } ?>><img src="<? if($baner8[bn_img1]){?>http://data.oozoobox.com/data/banner/<?=$baner8[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/></a>
                                     <? } ?>
                                 </div>
                             </div>
@@ -87,10 +87,10 @@ $result = sql_query($sql);
                       <div class="main_bn_con">
                           <div class="main_bn_con2">                               
                                <? if($baner3[bn_img2]){?>
-                               <b class="text_bn" style="background: url('<? if($baner3[bn_img2]){?>/data/banner/<?=$baner3[bn_img2]?><? }else{ ?>/images/ad_no.jpg<? } ?>') no-repeat left; ">
+                               <b class="text_bn" style="background: url('<? if($baner3[bn_img2]){?>http://data.oozoobox.com/data/banner/<?=$baner3[bn_img2]?><? }else{ ?>/images/ad_no.jpg<? } ?>') no-repeat left; ">
                                </b>
                                <? } ?>
-                               <b class="back_bn" style="background: url('<? if($baner3[bn_img1]){?>/data/banner/<?=$baner3[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>') no-repeat left;">
+                               <b class="back_bn" style="background: url('<? if($baner3[bn_img1]){?>http://data.oozoobox.com/data/banner/<?=$baner3[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>') no-repeat left;">
                                </b>   
                           </div>
                       </div>
@@ -104,14 +104,14 @@ $result = sql_query($sql);
             <div class="small_banner_con">
 <?php /*?>            <?php for ($i=0; $row3=sql_fetch_array($baner0_1); $i++){?>
             	<a class="small_banner" href="<?=$row3[bn_url]?>">
-                	<img width="170" height="440" alt="" src="/data/banner/<?=$row3[bn_id]?>"/>
+                	<img width="170" height="440" alt="" src="http://data.oozoobox.com/data/banner/<?=$row3[bn_id]?>"/>
                     <div class="small_banner_btn">
                     	<span class="btn_object">지금투표하러가기</span>
                     </div>
                 </a>
             <?php } ?><?php */?> <!--SW: pro php 다시 한번 봐주세요. ^^-->
             	<a class="small_banner" href="/shop/bannerhit.php?bn_id=<?=$baner9['bn_id']?>&url=<?=urlencode($baner9['bn_url'])?>" <? if($baner9[bn_new_win]=="1"){?>target="_blank"<? } ?>>
-                	<img width="170" height="440" alt="" src="<? if($baner9[bn_img1]){?>/data/banner/<?=$baner9[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
+                	<img width="170" height="440" alt="" src="<? if($baner9[bn_img1]){?>http://data.oozoobox.com/data/banner/<?=$baner9[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
                     <div class="small_banner_btn">
                     	<span class="btn_object">现在就去投票吧!</span>
                     </div>
@@ -125,16 +125,16 @@ $result = sql_query($sql);
         <div class="interact-con">
             <div class="module-body">
                 <a class="interact-item" href="/shop/bannerhit.php?bn_id=<?=$baner10['bn_id']?>&url=<?=urlencode($baner10['bn_url'])?>" <? if($baner10[bn_new_win]=="1"){?>target="_blank"<? } ?>>
-                    <img src="/data/banner/<?=$baner10[bn_img1]?>" onmouseover="this.src='/data/banner/<?=$baner10[bn_img2]?>'" onmouseout="this.src='/data/banner/<?=$baner10[bn_img1]?>'" alt=""/> 
+                    <img src="http://data.oozoobox.com/data/banner/<?=$baner10[bn_img1]?>" onmouseover="this.src='http://data.oozoobox.com/data/banner/<?=$baner10[bn_img2]?>'" onmouseout="this.src='http://data.oozoobox.com/data/banner/<?=$baner10[bn_img1]?>'" alt=""/> 
                 </a>
                 <a class="interact-item" href="/shop/bannerhit.php?bn_id=<?=$baner11['bn_id']?>&url=<?=urlencode($baner11['bn_url'])?>" <? if($baner11[bn_new_win]=="1"){?>target="_blank"<? } ?>>
-                    <img src="/data/banner/<?=$baner11[bn_img1]?>" onmouseover="this.src='/data/banner/<?=$baner11[bn_img2]?>'" onmouseout="this.src='/data/banner/<?=$baner11[bn_img1]?>'" alt=""/> 
+                    <img src="http://data.oozoobox.com/data/banner/<?=$baner11[bn_img1]?>" onmouseover="this.src='http://data.oozoobox.com/data/banner/<?=$baner11[bn_img2]?>'" onmouseout="this.src='http://data.oozoobox.com/data/banner/<?=$baner11[bn_img1]?>'" alt=""/> 
                 </a>
                 <a class="interact-item" href="/shop/bannerhit.php?bn_id=<?=$baner12['bn_id']?>&url=<?=urlencode($baner12['bn_url'])?>" <? if($baner12[bn_new_win]=="1"){?>target="_blank"<? } ?>>
-                    <img src="/data/banner/<?=$baner12[bn_img1]?>" onmouseover="this.src='/data/banner/<?=$baner12[bn_img2]?>'" onmouseout="this.src='/data/banner/<?=$baner12[bn_img1]?>'" alt=""/> 
+                    <img src="http://data.oozoobox.com/data/banner/<?=$baner12[bn_img1]?>" onmouseover="this.src='http://data.oozoobox.com/data/banner/<?=$baner12[bn_img2]?>'" onmouseout="this.src='http://data.oozoobox.com/data/banner/<?=$baner12[bn_img1]?>'" alt=""/> 
                 </a>
                 <a class="interact-item" href="/shop/bannerhit.php?bn_id=<?=$baner13['bn_id']?>&url=<?=urlencode($baner13['bn_url'])?>" <? if($baner13[bn_new_win]=="1"){?>target="_blank"<? } ?> style="margin-right:0">
-                    <img src="/data/banner/<?=$baner13[bn_img1]?>" onmouseover="this.src='/data/banner/<?=$baner13[bn_img2]?>'" onmouseout="this.src='/data/banner/<?=$baner13[bn_img1]?>'" alt=""/> 
+                    <img src="http://data.oozoobox.com/data/banner/<?=$baner13[bn_img1]?>" onmouseover="this.src='http://data.oozoobox.com/data/banner/<?=$baner13[bn_img2]?>'" onmouseout="this.src='http://data.oozoobox.com/data/banner/<?=$baner13[bn_img1]?>'" alt=""/> 
                 </a>
             </div>
     	</div>
@@ -149,7 +149,7 @@ $result = sql_query($sql);
             </div>
             <div class="module_body">
             	<a class="big_chn" href="/shop/bannerhit.php?bn_id=<?=$baner14['bn_id']?>&url=<?=urlencode($baner14['bn_url'])?>" <? if($baner14[bn_new_win]=="1"){?>target="_blank"<? } ?>>
-                	<img src="<? if($baner14[bn_img1]){?>/data/banner/<?=$baner14[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
+                	<img src="<? if($baner14[bn_img1]){?>http://data.oozoobox.com/data/banner/<?=$baner14[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
                 </a>
                 <div class="small_chn_con">
                 	<a class="small_chn" href="/shop/bannerhit.php?bn_id=<?=$baner15['bn_id']?>&url=<?=urlencode($baner15['bn_url'])?>" <? if($baner15[bn_new_win]=="1"){?>target="_blank"<? } ?>>
@@ -157,7 +157,7 @@ $result = sql_query($sql);
                         	<h3 class="title"><?=$baner15[bn_alt]?></h3>
                             <h4 class="info"><?=$baner15[bn_memo]?></h4>
                         </div>
-                        <img class="chn_pic_right" src="<? if($baner15[bn_img1]){?>/data/banner/<?=$baner15[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
+                        <img class="chn_pic_right" src="<? if($baner15[bn_img1]){?>http://data.oozoobox.com/data/banner/<?=$baner15[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
                     </a>
                     <s class="seprate"></s> 
                     <a class="small_chn" href="/shop/bannerhit.php?bn_id=<?=$baner16['bn_id']?>&url=<?=urlencode($baner16['bn_url'])?>" <? if($baner16[bn_new_win]=="1"){?>target="_blank"<? } ?>>
@@ -165,7 +165,7 @@ $result = sql_query($sql);
                         	<h3 class="title"><?=$baner16[bn_alt]?></h3>
                             <h4 class="info"><?=$baner16[bn_memo]?></h4>
                         </div>
-                        <img class="chn_pic_right" src="<? if($baner16[bn_img1]){?>/data/banner/<?=$baner16[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
+                        <img class="chn_pic_right" src="<? if($baner16[bn_img1]){?>http://data.oozoobox.com/data/banner/<?=$baner16[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
                     </a>
                     <s class="seprate hidden_990"></s> 
                     <a class="small_chn hidden_990 last_chn" href="/shop/bannerhit.php?bn_id=<?=$baner17['bn_id']?>&url=<?=urlencode($baner17['bn_url'])?>" <? if($baner17[bn_new_win]=="1"){?>target="_blank"<? } ?>>
@@ -173,10 +173,10 @@ $result = sql_query($sql);
                         	<h3 class="title"><?=$baner17[bn_alt]?></h3>
                             <h4 class="info"><?=$baner17[bn_memo]?></h4>
                         </div>
-                        <img class="chn_pic_right" src="<? if($baner17[bn_img1]){?>/data/banner/<?=$baner17[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
+                        <img class="chn_pic_right" src="<? if($baner17[bn_img1]){?>http://data.oozoobox.com/data/banner/<?=$baner17[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
                     </a>
                     <a class="small_chn under_chn" href="/shop/bannerhit.php?bn_id=<?=$baner18['bn_id']?>&url=<?=urlencode($baner18['bn_url'])?>" <? if($baner18[bn_new_win]=="1"){?>target="_blank"<? } ?>>
-                        <img class="chn_pic_left" src="<? if($baner18[bn_img1]){?>/data/banner/<?=$baner18[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
+                        <img class="chn_pic_left" src="<? if($baner18[bn_img1]){?>http://data.oozoobox.com/data/banner/<?=$baner18[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
                         <div class="title_chn_right">
                             <h3 class="title_right"><?=$baner18[bn_alt]?></h3>
                             <h4 class="info_right"><?=$baner18[bn_memo]?></h4>
@@ -184,7 +184,7 @@ $result = sql_query($sql);
                     </a>
                     <s class="seprate "></s> 
                     <a class="small_chn under_chn" href="/shop/bannerhit.php?bn_id=<?=$baner19['bn_id']?>&url=<?=urlencode($baner19['bn_url'])?>" <? if($baner19[bn_new_win]=="1"){?>target="_blank"<? } ?>>
-                        <img class="chn_pic_left" src="<? if($baner19[bn_img1]){?>/data/banner/<?=$baner19[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
+                        <img class="chn_pic_left" src="<? if($baner19[bn_img1]){?>http://data.oozoobox.com/data/banner/<?=$baner19[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
                         <div class="title_chn_right">
                             <h3 class="title_right"><?=$baner19[bn_alt]?></h3>
                             <h4 class="info_right"><?=$baner19[bn_memo]?></h4>
@@ -192,7 +192,7 @@ $result = sql_query($sql);
                     </a>
                     <s class="seprate hidden_990"></s> 
                     <a class="small_chn hidden_990 under_chn" href="/shop/bannerhit.php?bn_id=<?=$baner20['bn_id']?>&url=<?=urlencode($baner20['bn_url'])?>" <? if($baner20[bn_new_win]=="1"){?>target="_blank"<? } ?>>
-                        <img class="chn_pic_left" src="<? if($baner20[bn_img1]){?>/data/banner/<?=$baner20[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
+                        <img class="chn_pic_left" src="<? if($baner20[bn_img1]){?>http://data.oozoobox.com/data/banner/<?=$baner20[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
                         <div class="title_chn_right">
                             <h3 class="title_right"><?=$baner20[bn_alt]?></h3>
                             <h4 class="info_right"><?=$baner20[bn_memo]?></h4>
@@ -207,7 +207,7 @@ $result = sql_query($sql);
 		<div class="oz_full_banner" style="margin-top:30px;">
         	<ins id="oz_full_banner_outer" style="margin:0; padding:0; width:1620px; height:90px; display:inline-block;">
             	<a href="/shop/bannerhit.php?bn_id=<?=$baner21['bn_id']?>&url=<?=urlencode($baner21['bn_url'])?>" <? if($baner21[bn_new_win]=="1"){?>target="_blank"<? } ?>>
-                	<img width="1620" height="90" src="<? if($baner21[bn_img1]){?>/data/banner/<?=$baner21[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>" border="0"/>
+                	<img width="1620" height="90" src="<? if($baner21[bn_img1]){?>http://data.oozoobox.com/data/banner/<?=$baner21[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>" border="0"/>
                 </a>
             </ins>
         </div>
@@ -281,7 +281,7 @@ $result = sql_query($sql);
 		<div class="oz_full_banner" style="margin-top:10px;">
         	<ins id="oz_full_banner_outer" style="margin:0; padding:0; width:1620px; height:90px; display:inline-block;">
             	<a href="/shop/bannerhit.php?bn_id=<?=$baner22['bn_id']?>&url=<?=urlencode($baner22['bn_url'])?>" <? if($baner22[bn_new_win]=="1"){?>target="_blank"<? } ?>>
-                	<img width="1620" height="90" src="<? if($baner22[bn_img1]){?>/data/banner/<?=$baner22[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>" border="0"/>
+                	<img width="1620" height="90" src="<? if($baner22[bn_img1]){?>http://data.oozoobox.com/data/banner/<?=$baner22[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>" border="0"/>
                 </a>
             </ins>
         </div>
@@ -452,7 +452,7 @@ $result = sql_query($sql);
 		<div class="oz_full_banner" style="margin-top:10px;">
         	<ins id="oz_full_banner_outer" style="margin:0; padding:0; width:1620px; height:90px; display:inline-block;">
             	<a href="/shop/bannerhit.php?bn_id=<?=$baner23['bn_id']?>&url=<?=urlencode($baner23['bn_url'])?>" <? if($baner23[bn_new_win]=="1"){?>target="_blank"<? } ?>>
-                	<img width="1620" height="90" src="<? if($baner23[bn_img1]){?>/data/banner/<?=$baner23[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>" border="0"/>
+                	<img width="1620" height="90" src="<? if($baner23[bn_img1]){?>http://data.oozoobox.com/data/banner/<?=$baner23[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>" border="0"/>
                 </a>
             </ins>
         </div>
