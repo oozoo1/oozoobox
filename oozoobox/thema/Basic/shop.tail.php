@@ -33,7 +33,7 @@ $cart_count = sql_num_rows($result);
 <? } ?>
 <div id="footer">
 	<ul class="footer_link">
-    	<li><a>首页</a></li>
+    	<li><a href="/">首页</a></li>
     	<li><a>公司介绍</a></li>    
     	<li><a>联系我们</a></li>
     	<li><a>配送方式 </a></li>
