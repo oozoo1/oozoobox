@@ -1,9 +1,24 @@
 <?php
 include_once('./mypage_head.php');
 
-$sql1 = " select count(*) as cnt " . $sql_common;
+$sql1 = " select count(*) as cnt from g5_shop_order where mb_id = '$member[mb_id]' and od_status='주문'";
 $row1 = sql_fetch($sql1);
-$row1['cnt'];
+
+$sql2 = " select count(*) as cnt from g5_shop_order where mb_id = '$member[mb_id]' and od_status='결제'";
+$row2 = sql_fetch($sql2);
+
+$sql3 = " select count(*) as cnt from g5_shop_order where mb_id = '$member[mb_id]' and od_status='배송'";
+$row3 = sql_fetch($sql3);
+
+$sql4 = " select count(*) as cnt from g5_shop_order where mb_id = '$member[mb_id]' and od_status='완료'";
+$row4 = sql_fetch($sql4);
+
+$sql5 = " select count(*) as cnt from g5_shop_order where mb_id = '$member[mb_id]' and od_status='취소'";
+$row5 = sql_fetch($sql5);
+
+
+
+
 ?>
 
             	<div class="My_info_bar">
@@ -31,114 +46,26 @@ $row1['cnt'];
                 <div class="My_Shopping_info">
                     <ul>
                         <li>
-                        	<a href="#"><span>待付款<em>1</em></span></a>
+                        	<a href="/shop/orderinquiry.php?type=1&oldtime="><span>待付款<em><?=$row1['cnt'];?></em></span></a>
                         </li>
                         <li>
-                        	<a href="#"><span>待发货<em>2</em></span></a>
+                        	<a href="/shop/orderinquiry.php?type=2&oldtime="><span>待发货<em><?=$row2['cnt'];?></em></span></a>
                         </li>
                         <li>
-                        	<a href="#"><span>待收货<em>1</em></span></a>
+                        	<a href="/shop/orderinquiry.php?type=4&oldtime="><span>待收货<em><?=$row3['cnt'];?></em></span></a>
                         </li>
                         <li>
-                        	<a href="#"><span>待评价<em>1</em></span></a>
+                        	<a href="/shop/orderinquiry.php?type=5&oldtime="><span>待评价<em><?=$row4['cnt'];?></em></span></a>
                         </li>
                         <li>
-                        	<a href="#"><span>退款<em>1</em></span></a>
+                        	<a href="/shop/orderinquiry.php?type=7&oldtime="><span>退款<em><?=$row5['cnt'];?></em></span></a>
                         </li>
                     </ul>
                 </div>                
             </div>
             <!--e: 내 정보 BAR-->
-            <!--s: 猜你喜欢-->
-			<div class="oz_guess_like">
-            	<div class="right_tit_bar"> 
-            		<span class="light_orange">OOZOOBOX</span> 猜你喜欢
-                    <a class="more_item">
-                    	<span><i></i>换一组</span>
-                    </a>                	
-                </div>
-                <div class="guess_like_content">
-                	<div class="inner_content">
-<!------------------------s: 반복------------------------>
-												<? for ($i=0; $row_my=sql_fetch_array($resultmy); $i++){ ?>
-                        <div class="guess_like_item">
-                        	<div class="guess_pic">
-                            	<a class="guess_pic_link" href="/shop/item.php?it_id=<?=$row_my[it_id]?>&ca_id=<?=$row_my[ca_id]?>">
-                                 	<img src="http://data.oozoobox.com/data/item/<?=$row_my[it_img1]?>" alt="상품사진01"/>
-                                </a>
-                            </div>
-                            <div class="guess_item">
-                            	<a class="guess_tit"><?=$row_my[it_name]?></a>
-                                <a class="guess_subtit"><?=$row_my[it_basic]?></a>
-                                <span class="guess_price">¥<?php echo number_format($row_my['it_price'],2); ?></span>
-                            </div>
-                        </div>
-                        <? } ?>
-<!------------------------e: 반복------------------------>
-                        
-                                          
-                    </div>
-                </div>
-            </div>           
-            <!--e: 猜你喜欢-->
+            <iframe runat="server" src="/myhit.php" width="100%" height="750" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
 
             <!--s:OOZOOBOX推荐-->
-			<div class="oz_selection">
-            	<div class="right_tit_bar"> 
-            		<span class="light_orange">OOZOOBOX</span> 的跟单员为你量身推荐 
-                    <a class="more_item">
-                    	<span><i></i>换一组</span>
-                    </a>                	
-                </div>
-                <div class="guess_like_content">
-                	<div class="inner_content">
-<!------------------------s: 반복------------------------>
-                        <div class="selection_like_item">
-                        	<div class="selection_pic">
-                            	<a class="selection_pic_link">
-                                 	<img src="/images/guess_pic_01.png" alt="상품사진01"/>
-                                </a>
-                            </div>
-                            <div class="selection_item">                       
-                            	<a class="selection_tit">nici纸巾抽纸巾盒车内车载纸巾收纳盒</a>
-                                <div class="md_selection">
-                                    <img src="/images/md_selection_pic_01.png" alt="MD照片"/>
-                                    <a class="selection_txt">正品思埠天使之魅蓝莓面膜戴莱美正品思埠天使之魅蓝莓面膜戴莱美正品思埠天使之魅蓝莓面膜戴莱美正品思埠天使之魅蓝莓面膜戴莱美</a>
-                                </div>
-                            </div>
-                        </div>
-<!------------------------e: 반복------------------------>
-                        
-                        <!------------------------ s: 날리기------------------------->
-                        <div class="selection_like_item">
-                        	<div class="selection_pic">
-                            	<a class="selection_pic_link">
-                                 	<img src="/images/guess_pic_01.png" alt="상품사진01"/>
-                                </a>
-                            </div>
-                            <div class="selection_item">                       
-                            	<a class="selection_tit">nici纸巾抽纸巾盒车内车载纸巾收纳盒</a>
-                                <div class="md_selection">
-                                    <img src="/images/md_selection_pic_02.png" alt="MD照片"/>
-                                    <a class="selection_txt">正品思埠天使之魅蓝莓面膜戴莱美正品思埠天使之魅蓝莓面膜戴莱美正品思埠天使之魅蓝莓面膜戴莱美正品思埠天使之魅蓝莓面膜戴莱美</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="selection_like_item">
-                        	<div class="selection_pic">
-                            	<a class="selection_pic_link">
-                                 	<img src="/images/guess_pic_01.png" alt="상품사진01"/>
-                                </a>
-                            </div>
-                            <div class="selection_item">                       
-                            	<a class="selection_tit">nici纸巾抽纸巾盒车内车载纸巾收纳盒</a>
-                                <div class="md_selection">
-                                    <img src="/images/md_selection_pic_03.png" alt="MD照片"/>
-                                    <a class="selection_txt">正品思埠天使之魅蓝莓面膜戴莱美正品思埠天使之魅蓝莓面膜戴莱美正品思埠天使之魅蓝莓面膜戴莱美正品思埠天使之魅蓝莓面膜戴莱美</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!------------------------ e: 날리기------------------------->                      
-                    </div>
-                </div>
+						<iframe runat="server" src="/mdhit.php" width="100%" height="420" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
 <?php  include_once('./mypage_tail.php'); ?>
