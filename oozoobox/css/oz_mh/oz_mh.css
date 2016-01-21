@@ -114,13 +114,13 @@ fieldset legend{display: none;}
 { #oz_site_nav .oz_sn_container { top: 1px;}
 }
 
-@media all and (min-width:1910px)
+@media all and (min-width:1896px)
 {#oz_sn_bd { width: 1640px;}
 .oz_headerlayout {width: 1640px;}
 #oz_mallSearch {width: 900px !important; margin-right: 40px;}
 #oz_mallSearch #mq {width: 799px !important;}
 }
-@media all and (max-width:1910px) and (min-width:1261px)
+@media all and (max-width:1896px) and (min-width:1261px)
 {#oz_site_nav #oz_sn_bd { left: -15px;}
 #oz_sn_bd { width: 1200px;}
 .oz_headerlayout {width: 1200px;}

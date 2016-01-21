@@ -62,6 +62,8 @@ var g5_admin_url = "http://localhost/adm";
 
 
 	<!--s: top광고--> <!--SW: 광고가 바뀔때마다 인라인 스타일 수정, 이미지 경로 수정 --->   
+	<div id="tableDiv"></div>    
+    <!-- 
     <div class="oz_top_con" style="height:80px; display:block; position:relative;" id="float_mask">
         <div style="position:absolute; z-index:999999999; width: 60px;margin-top: 25px; right:10%; float:right;">
                 <a onClick="closeFootAd()" href="#" title="我知道了"><img src="/images/close.png"></a>
@@ -70,16 +72,37 @@ var g5_admin_url = "http://localhost/adm";
         <div style="background: rgb(255, 204, 1); width: 50%; height: 100%; right: 0px; position: absolute;"></div>      
         <img width="990" height="80" style="margin: 0px auto; top: 0px; position: relative; z-index: 10;" src="/data/banner/20160120161127_1.png" alt="广告"/>
         <a style="left: 0px ; top: 0px; width: 100%; height: 100%; display: block; position: absolute; z-index: 100;"  href="/shop/bannerhit.php?bn_id=1&url=http%3A%2F%2Fwww.oozoobox.com" > <img width="100%" height="100%" src="/images/s.png"></a>
+    -->
     </div>   
 <script>
 //////////////////////////////////////////////////顶部广告代码
-window.onload = function(){
-	if(getCookie("footad")==0){
-		document.getElementById("float_mask").style.display="none";
-	}else{
-		document.getElementById("float_mask").style.display="block";
-	}
+//window.onload = function(){
+//	if(getCookie("footad")==0){
+//		document.getElementById("float_mask").style.display="none";
+//	}else{
+//		document.getElementById("float_mask").style.display="block";
+//	}
+//}
+
+//상단 광고배너를 동적으로 생성 S ==============================
+var str = '';
+str += '        <!--s: top광고--> <!--SW: 광고가 바뀔때마다 인라인 스타일 수정, 이미지 경로 수정 --->   ';
+if(getCookie("footad")==0){
+	str += '        <div class="oz_top_con" style="height:80px; display:none; position:relative;" id="float_mask">';
+}else{
+	str += '        <div class="oz_top_con" style="height:80px; display:block; position:relative;" id="float_mask">';
 }
+str += '            <div style="position:absolute; z-index:999999999; width: 60px;margin-top: 25px; right:10%; float:right;">';
+str += '                    <a onClick="closeFootAd()" href="#" title="我知道了"><img src="/images/close.png"></a>';
+str += '            </div>';
+str += '            <div style="background: rgb(255, 204, 1); left: 0px; width: 50%; height: 100%; position: absolute;"></div>';
+str += '            <div style="background: rgb(255, 204, 1); width: 50%; height: 100%; right: 0px; position: absolute;"></div>      ';
+str += '            <img width="990" height="80" style="margin: 0px auto; top: 0px; position: relative; z-index: 10;" src="/data/banner/20160120161127_1.png" alt="广告"/>';
+str += '            <a style="left: 0px ; top: 0px; width: 100%; height: 100%; display: block; position: absolute; z-index: 100;"  href="/shop/bannerhit.php?bn_id=1&url=http%3A%2F%2Fwww.oozoobox.com" > <img width="100%" height="100%" src="/images/s.png"></a>';
+str += '        </div>';
+$("#tableDiv").html(str);
+//상단 광고배너를 동적으로 생성 E ==============================
+	
 //关闭底部广告
 function closeFootAd() {
 	document.getElementById("float_mask").style.display="none";
@@ -103,47 +126,8 @@ function getCookie(name){
     <!--e: top광고-->
     
             <!------s: 쇼핑몰 페이지--------><!--SW: 메인 전체를 감싸는 div가 있어야 함-->
-            <div id="oz_mallpage">
-                <!------s: top 상단 메뉴-------->
-                <div id="oz_site_nav" role="navigation">
-                    <div id="oz_sn_bd"> <!----- @media  있음------>
-                        <div class="oz_sn_container">
-                            <p class="oz_sn_prm_info">
-                            	<em><a href="/shop/list.php?ca_id=10" >情爱的客户， 今天紫外线太强了，必须使用防晒霜！ 〉〉〉去看看防晒霜</a></em> <!--"고객님, 오늘은 자외선이 강하네요. 외출할때 반드시 썬크림을 사용하세요>>>썬크림보러가기"  SW: php가 필요할지도.. -->
-                            </p>
-                            <ul class="oz_sn_quick_menu">
-                                                                                            <li>
-                                    <a href="http://localhost/adm" target="_top">관리자+</a> <!--"관리자페이지"-->
-                                </li>
-                                <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
-                                                                                                <li>
-                                    <a href="/shop/partner/" target="_top">마이샵</a> <!--"마이샵관리페이지"-->
-                                </li>
-                                <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
-                                                                <li>
-                                    <a class="top_quick01" href="/shop/mypage.php" target="_top">我的信息</a> <!--"자료수정"-->
-                                </li>
-                                <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
-                                <li class="oz_sn_join">
-                                    <a class="top_quick02" href="/bbs/logout.php?url=%2Fwrite_html.php%3F" target="_top" rel="nofollow">退出登录</a><!--"로그아웃"-->
-                                </li>
-                                                            <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
-                                <li class="sn-cart">
-                                                                    <a class="top_quick05" href="/shop/cart.php" target="_top" rel="nofollow">购物车</a> <!--"장바구니"-->
-                                                                </li>
-                                <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
-                                <li class="oz_sn_myshopping">
-                                    <a class="top_quick06" href="/shop/orderinquiry.php" target="_top">我的购物信息 </a><!--"내 쇼핑 정보"-->
-                                    <!--SW: display:none 으로 되어 있는데 아마도 판매자로 로그인 하면 display:block으로 되지 않을까??-->
-                                </li>
-                                <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
-                                <li class="oz_sn_customcenter">
-                                    <a class="top_quick07" href="/shop/cscenter.php">客户服务</a><!--"고객센터"-->
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>                
+								 <iframe runat="server" src="/top.php" width="100%" height="33" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
+   
                 <!------e: top 상단 메뉴-------->
                 
                 <!--s: logo, 검색창-->
@@ -526,16 +510,16 @@ function getCookie(name){
         <div class="interact-con">
             <div class="module-body">
                 <a class="interact-item" href="/shop/bannerhit.php?bn_id=14&url=http%3A%2F%2Fwww.oozoobox.com" >
-                    <img src="/data/banner/20160120172402_1.png" onmouseover="this.src='/data/banner/20160120194242_2.png'" onmouseout="this.src='/data/banner/20160120172402_1.png'" alt=""/> 
+                    <img src="/data/banner/20160121120551_1.png" onmouseover="this.src='/data/banner/20160121120551_2.png'" onmouseout="this.src='/data/banner/20160121120551_1.png'" alt=""/> 
                 </a>
                 <a class="interact-item" href="/shop/bannerhit.php?bn_id=15&url=http%3A%2F%2Fwww.oozoobox.com" >
-                    <img src="/data/banner/20160120172853_1.png" onmouseover="this.src='/data/banner/20160120194916_2.png'" onmouseout="this.src='/data/banner/20160120172853_1.png'" alt=""/> 
+                    <img src="/data/banner/20160121120637_1.png" onmouseover="this.src='/data/banner/20160121120637_2.png'" onmouseout="this.src='/data/banner/20160121120637_1.png'" alt=""/> 
                 </a>
                 <a class="interact-item" href="/shop/bannerhit.php?bn_id=16&url=http%3A%2F%2Fwww.oozoobox.com" >
-                    <img src="/data/banner/20160120172906_1.png" onmouseover="this.src='/data/banner/20160120193946_2.png'" onmouseout="this.src='/data/banner/20160120172906_1.png'" alt=""/> 
+                    <img src="/data/banner/20160121120704_1.png" onmouseover="this.src='/data/banner/20160121120704_2.png'" onmouseout="this.src='/data/banner/20160121120704_1.png'" alt=""/> 
                 </a>
                 <a class="interact-item" href="/shop/bannerhit.php?bn_id=17&url=%2Fshop%2Fcscenter.php"  style="margin-right:0">
-                    <img src="/data/banner/20160120172924_1.png" onmouseover="this.src='/data/banner/20160120194000_2.png'" onmouseout="this.src='/data/banner/20160120172924_1.png'" alt=""/> 
+                    <img src="/data/banner/20160121120733_1.png" onmouseover="this.src='/data/banner/20160121120733_2.png'" onmouseout="this.src='/data/banner/20160121120733_1.png'" alt=""/> 
                 </a>
             </div>
     	</div>
@@ -638,6 +622,231 @@ OOZOOBOX物<br>
                              
                   	<li class="wonderful_item">
                     	<div class="card_item" href="#">
+                        	<a href="/shop/item.php?it_id=1453296046&ca_id=50">
+                                <span class="item_pic">
+                                    <img width="100%" src="/data/item/1453296046/201.JPG" height="314"/>
+                                </span>
+                            </a>
+                            <span class="wonderful_wish">
+                                <a href="/shop/item.php?it_id=1453296046&ca_id=50">
+                                    <span class="ico_wonderful_wish">	
+                                    	<em>13</em>
+                                    </span>
+                                </a>
+                            </span>                            
+                            <span class="item_info">
+                            	<a href="/shop/item.php?it_id=1453296046&ca_id=50">
+                                    <span class="item_desc">
+                                        <em title="CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水" class="item_name">CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水</em>
+                                    </span>
+                                </a>
+                                <span class="item_detail">
+                                	<a href="/shop/item.php?it_id=1453296046&ca_id=50">
+                                        <span class="item_price">
+                                            <i class="price_rmb">¥</i>
+                                            <span class="price_integer">122.00</span>
+                                        </span>
+                                    </a>
+                                    <span class="item_tag">
+                                    	<span class="wonderful_cart">
+                                        	<a href="#">
+                                            	<img width="100%" src="/images/wonderful_cart.png" onmouseover="this.src='/images/wonderful_cart_o.png'" onmouseout="this.src='/images/wonderful_cart.png'"/>
+                                            </a>
+                                        </span>
+                                        <span class="wonderful_after">
+                                        	<a href="#">
+                                        		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
+                                            </a>
+                                            <em>101</em>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                       </div>
+                    </li> 
+                             
+                  	<li class="wonderful_item">
+                    	<div class="card_item" href="#">
+                        	<a href="/shop/item.php?it_id=1453293251&ca_id=10">
+                                <span class="item_pic">
+                                    <img width="100%" src="/data/item/1453293251/501.JPG" height="314"/>
+                                </span>
+                            </a>
+                            <span class="wonderful_wish">
+                                <a href="/shop/item.php?it_id=1453293251&ca_id=10">
+                                    <span class="ico_wonderful_wish">	
+                                    	<em>13</em>
+                                    </span>
+                                </a>
+                            </span>                            
+                            <span class="item_info">
+                            	<a href="/shop/item.php?it_id=1453293251&ca_id=10">
+                                    <span class="item_desc">
+                                        <em title="CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水" class="item_name">CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水</em>
+                                    </span>
+                                </a>
+                                <span class="item_detail">
+                                	<a href="/shop/item.php?it_id=1453293251&ca_id=10">
+                                        <span class="item_price">
+                                            <i class="price_rmb">¥</i>
+                                            <span class="price_integer">183.00</span>
+                                        </span>
+                                    </a>
+                                    <span class="item_tag">
+                                    	<span class="wonderful_cart">
+                                        	<a href="#">
+                                            	<img width="100%" src="/images/wonderful_cart.png" onmouseover="this.src='/images/wonderful_cart_o.png'" onmouseout="this.src='/images/wonderful_cart.png'"/>
+                                            </a>
+                                        </span>
+                                        <span class="wonderful_after">
+                                        	<a href="#">
+                                        		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
+                                            </a>
+                                            <em>101</em>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                       </div>
+                    </li> 
+                             
+                  	<li class="wonderful_item">
+                    	<div class="card_item" href="#">
+                        	<a href="/shop/item.php?it_id=1453295379&ca_id=50">
+                                <span class="item_pic">
+                                    <img width="100%" src="/data/item/1453295379/101.JPG" height="314"/>
+                                </span>
+                            </a>
+                            <span class="wonderful_wish">
+                                <a href="/shop/item.php?it_id=1453295379&ca_id=50">
+                                    <span class="ico_wonderful_wish">	
+                                    	<em>13</em>
+                                    </span>
+                                </a>
+                            </span>                            
+                            <span class="item_info">
+                            	<a href="/shop/item.php?it_id=1453295379&ca_id=50">
+                                    <span class="item_desc">
+                                        <em title="CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水" class="item_name">CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水</em>
+                                    </span>
+                                </a>
+                                <span class="item_detail">
+                                	<a href="/shop/item.php?it_id=1453295379&ca_id=50">
+                                        <span class="item_price">
+                                            <i class="price_rmb">¥</i>
+                                            <span class="price_integer">176.00</span>
+                                        </span>
+                                    </a>
+                                    <span class="item_tag">
+                                    	<span class="wonderful_cart">
+                                        	<a href="#">
+                                            	<img width="100%" src="/images/wonderful_cart.png" onmouseover="this.src='/images/wonderful_cart_o.png'" onmouseout="this.src='/images/wonderful_cart.png'"/>
+                                            </a>
+                                        </span>
+                                        <span class="wonderful_after">
+                                        	<a href="#">
+                                        		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
+                                            </a>
+                                            <em>101</em>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                       </div>
+                    </li> 
+                             
+                  	<li class="wonderful_item">
+                    	<div class="card_item" href="#">
+                        	<a href="/shop/item.php?it_id=1453292668&ca_id=10">
+                                <span class="item_pic">
+                                    <img width="100%" src="/data/item/1453292668/301.JPG" height="314"/>
+                                </span>
+                            </a>
+                            <span class="wonderful_wish">
+                                <a href="/shop/item.php?it_id=1453292668&ca_id=10">
+                                    <span class="ico_wonderful_wish">	
+                                    	<em>13</em>
+                                    </span>
+                                </a>
+                            </span>                            
+                            <span class="item_info">
+                            	<a href="/shop/item.php?it_id=1453292668&ca_id=10">
+                                    <span class="item_desc">
+                                        <em title="CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水" class="item_name">CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水</em>
+                                    </span>
+                                </a>
+                                <span class="item_detail">
+                                	<a href="/shop/item.php?it_id=1453292668&ca_id=10">
+                                        <span class="item_price">
+                                            <i class="price_rmb">¥</i>
+                                            <span class="price_integer">28.00</span>
+                                        </span>
+                                    </a>
+                                    <span class="item_tag">
+                                    	<span class="wonderful_cart">
+                                        	<a href="#">
+                                            	<img width="100%" src="/images/wonderful_cart.png" onmouseover="this.src='/images/wonderful_cart_o.png'" onmouseout="this.src='/images/wonderful_cart.png'"/>
+                                            </a>
+                                        </span>
+                                        <span class="wonderful_after">
+                                        	<a href="#">
+                                        		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
+                                            </a>
+                                            <em>101</em>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                       </div>
+                    </li> 
+                             
+                  	<li class="wonderful_item hidden_1366">
+                    	<div class="card_item last_1920" href="#">
+                        	<a href="/shop/item.php?it_id=1453291935&ca_id=10">
+                                <span class="item_pic">
+                                    <img width="100%" src="/data/item/1453291935/101.JPG" height="314"/>
+                                </span>
+                            </a>
+                            <span class="wonderful_wish">
+                                <a href="/shop/item.php?it_id=1453291935&ca_id=10">
+                                    <span class="ico_wonderful_wish">	
+                                    	<em>13</em>
+                                    </span>
+                                </a>
+                            </span>                            
+                            <span class="item_info">
+                            	<a href="/shop/item.php?it_id=1453291935&ca_id=10">
+                                    <span class="item_desc">
+                                        <em title="CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水" class="item_name">CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水</em>
+                                    </span>
+                                </a>
+                                <span class="item_detail">
+                                	<a href="/shop/item.php?it_id=1453291935&ca_id=10">
+                                        <span class="item_price">
+                                            <i class="price_rmb">¥</i>
+                                            <span class="price_integer">109.00</span>
+                                        </span>
+                                    </a>
+                                    <span class="item_tag">
+                                    	<span class="wonderful_cart">
+                                        	<a href="#">
+                                            	<img width="100%" src="/images/wonderful_cart.png" onmouseover="this.src='/images/wonderful_cart_o.png'" onmouseout="this.src='/images/wonderful_cart.png'"/>
+                                            </a>
+                                        </span>
+                                        <span class="wonderful_after">
+                                        	<a href="#">
+                                        		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
+                                            </a>
+                                            <em>101</em>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                       </div>
+                    </li> 
+                             
+                  	<li class="wonderful_item">
+                    	<div class="card_item" href="#">
                         	<a href="/shop/item.php?it_id=1453288170&ca_id=10">
                                 <span class="item_pic">
                                     <img width="100%" src="/data/item/1453288170/201.JPG" height="314"/>
@@ -661,6 +870,186 @@ OOZOOBOX物<br>
                                         <span class="item_price">
                                             <i class="price_rmb">¥</i>
                                             <span class="price_integer">93.00</span>
+                                        </span>
+                                    </a>
+                                    <span class="item_tag">
+                                    	<span class="wonderful_cart">
+                                        	<a href="#">
+                                            	<img width="100%" src="/images/wonderful_cart.png" onmouseover="this.src='/images/wonderful_cart_o.png'" onmouseout="this.src='/images/wonderful_cart.png'"/>
+                                            </a>
+                                        </span>
+                                        <span class="wonderful_after">
+                                        	<a href="#">
+                                        		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
+                                            </a>
+                                            <em>101</em>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                       </div>
+                    </li> 
+                             
+                  	<li class="wonderful_item">
+                    	<div class="card_item" href="#">
+                        	<a href="/shop/item.php?it_id=1453287787&ca_id=10">
+                                <span class="item_pic">
+                                    <img width="100%" src="/data/item/1453287787/101.JPG" height="314"/>
+                                </span>
+                            </a>
+                            <span class="wonderful_wish">
+                                <a href="/shop/item.php?it_id=1453287787&ca_id=10">
+                                    <span class="ico_wonderful_wish">	
+                                    	<em>13</em>
+                                    </span>
+                                </a>
+                            </span>                            
+                            <span class="item_info">
+                            	<a href="/shop/item.php?it_id=1453287787&ca_id=10">
+                                    <span class="item_desc">
+                                        <em title="CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水" class="item_name">CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水</em>
+                                    </span>
+                                </a>
+                                <span class="item_detail">
+                                	<a href="/shop/item.php?it_id=1453287787&ca_id=10">
+                                        <span class="item_price">
+                                            <i class="price_rmb">¥</i>
+                                            <span class="price_integer">299.00</span>
+                                        </span>
+                                    </a>
+                                    <span class="item_tag">
+                                    	<span class="wonderful_cart">
+                                        	<a href="#">
+                                            	<img width="100%" src="/images/wonderful_cart.png" onmouseover="this.src='/images/wonderful_cart_o.png'" onmouseout="this.src='/images/wonderful_cart.png'"/>
+                                            </a>
+                                        </span>
+                                        <span class="wonderful_after">
+                                        	<a href="#">
+                                        		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
+                                            </a>
+                                            <em>101</em>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                       </div>
+                    </li> 
+                             
+                  	<li class="wonderful_item">
+                    	<div class="card_item" href="#">
+                        	<a href="/shop/item.php?it_id=1453287205&ca_id=10">
+                                <span class="item_pic">
+                                    <img width="100%" src="/data/item/1453287205/6riw7KCA6reA401.jpg" height="314"/>
+                                </span>
+                            </a>
+                            <span class="wonderful_wish">
+                                <a href="/shop/item.php?it_id=1453287205&ca_id=10">
+                                    <span class="ico_wonderful_wish">	
+                                    	<em>13</em>
+                                    </span>
+                                </a>
+                            </span>                            
+                            <span class="item_info">
+                            	<a href="/shop/item.php?it_id=1453287205&ca_id=10">
+                                    <span class="item_desc">
+                                        <em title="CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水" class="item_name">CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水</em>
+                                    </span>
+                                </a>
+                                <span class="item_detail">
+                                	<a href="/shop/item.php?it_id=1453287205&ca_id=10">
+                                        <span class="item_price">
+                                            <i class="price_rmb">¥</i>
+                                            <span class="price_integer">224.00</span>
+                                        </span>
+                                    </a>
+                                    <span class="item_tag">
+                                    	<span class="wonderful_cart">
+                                        	<a href="#">
+                                            	<img width="100%" src="/images/wonderful_cart.png" onmouseover="this.src='/images/wonderful_cart_o.png'" onmouseout="this.src='/images/wonderful_cart.png'"/>
+                                            </a>
+                                        </span>
+                                        <span class="wonderful_after">
+                                        	<a href="#">
+                                        		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
+                                            </a>
+                                            <em>101</em>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                       </div>
+                    </li> 
+                             
+                  	<li class="wonderful_item">
+                    	<div class="card_item" href="#">
+                        	<a href="/shop/item.php?it_id=1453286621&ca_id=10">
+                                <span class="item_pic">
+                                    <img width="100%" src="/data/item/1453286621/6riw7KCA6reA301.jpg" height="314"/>
+                                </span>
+                            </a>
+                            <span class="wonderful_wish">
+                                <a href="/shop/item.php?it_id=1453286621&ca_id=10">
+                                    <span class="ico_wonderful_wish">	
+                                    	<em>13</em>
+                                    </span>
+                                </a>
+                            </span>                            
+                            <span class="item_info">
+                            	<a href="/shop/item.php?it_id=1453286621&ca_id=10">
+                                    <span class="item_desc">
+                                        <em title="CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水" class="item_name">CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水</em>
+                                    </span>
+                                </a>
+                                <span class="item_detail">
+                                	<a href="/shop/item.php?it_id=1453286621&ca_id=10">
+                                        <span class="item_price">
+                                            <i class="price_rmb">¥</i>
+                                            <span class="price_integer">116.80</span>
+                                        </span>
+                                    </a>
+                                    <span class="item_tag">
+                                    	<span class="wonderful_cart">
+                                        	<a href="#">
+                                            	<img width="100%" src="/images/wonderful_cart.png" onmouseover="this.src='/images/wonderful_cart_o.png'" onmouseout="this.src='/images/wonderful_cart.png'"/>
+                                            </a>
+                                        </span>
+                                        <span class="wonderful_after">
+                                        	<a href="#">
+                                        		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
+                                            </a>
+                                            <em>101</em>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                       </div>
+                    </li> 
+                             
+                  	<li class="wonderful_item hidden_1366">
+                    	<div class="card_item last_1920" href="#">
+                        	<a href="/shop/item.php?it_id=1453212843&ca_id=50">
+                                <span class="item_pic">
+                                    <img width="100%" src="/data/item/1453212843/10166as7Iqk7Yq4.JPG" height="314"/>
+                                </span>
+                            </a>
+                            <span class="wonderful_wish">
+                                <a href="/shop/item.php?it_id=1453212843&ca_id=50">
+                                    <span class="ico_wonderful_wish">	
+                                    	<em>13</em>
+                                    </span>
+                                </a>
+                            </span>                            
+                            <span class="item_info">
+                            	<a href="/shop/item.php?it_id=1453212843&ca_id=50">
+                                    <span class="item_desc">
+                                        <em title="CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水" class="item_name">CHANDO/自然堂【双11】雪润皙白水乳套装爽肤水乳液面膜 美白补水</em>
+                                    </span>
+                                </a>
+                                <span class="item_detail">
+                                	<a href="/shop/item.php?it_id=1453212843&ca_id=50">
+                                        <span class="item_price">
+                                            <i class="price_rmb">¥</i>
+                                            <span class="price_integer">38.00</span>
                                         </span>
                                     </a>
                                     <span class="item_tag">
@@ -1105,7 +1494,7 @@ $(function(){
 <script type="text/javascript" src="http://localhost/thema/Basic/assets/js/respond.js"></script>
 <![endif]--><!-- oozoobox -->
 
-<!-- <div style='float:left; text-align:center;'>RUN TIME : 0.173761129379<br></div> -->
+<!-- <div style='float:left; text-align:center;'>RUN TIME : 0.8962931633<br></div> -->
 <!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
 <!--[if lte IE 7]>
 <script>
