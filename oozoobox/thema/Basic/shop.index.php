@@ -465,7 +465,7 @@ $result = sql_query($sql);
                         <dt class="menu_tit">客户服务</dt>
                         <dd><a href="/bbs/board.php?bo_table=faq&wr_id=2">消费者须知</a></dd>
                         <dd><a href="/bbs/board.php?bo_table=faq&wr_id=3">忘记密码</a></dd>
-                        <dd><a>查看已购买商品</a></dd>
+                        <dd><a href="/bbs/board.php?bo_table=faq&wr_id=5">查看已购买商品</a></dd>
                         <dd><a href="/bbs/board.php?bo_table=faq&wr_id=4">如何注册成为会员</a></dd>
                         <dd><a>我要买</a></dd>
                     </dl>
