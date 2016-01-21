@@ -39,6 +39,12 @@ add_stylesheet('<link rel="stylesheet" href="/css/oz_mh/oz_mh.css" type="text/cs
 <script type="text/javascript" src="/shop/js/common.js"></script>
 <div class="wrapper <?php echo $at_set['font'];?><?php echo (G5_IS_MOBILE) ? ' mobile-font' : '';?> <?php echo $at_set['layout'];?>">
 
+<?php if($_SERVER['PHP_SELF']=="/index.html"){}else{ ?>
+<script src="/oz_js/jquery.min.js"></script><!--list global menu-->
+<script src="/oz_js/slider.js"></script><!--list bn01-->
+<script type="text/javascript" src="/oz_js/jquery.als-1.7.min.js"></script>
+<? } ?>
+
 <?php /*?><?php if($_SERVER['PHP_SELF']=="/index.php"){?>
 
 <style>
