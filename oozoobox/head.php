@@ -35,11 +35,6 @@ if($is_member) thema_member();
 //Statistics
 $stats = apms_stats();
 
-if($is_main && !$hid && !$gid ) {
-	$newwin_path = (G5_IS_MOBILE) ? G5_MOBILE_PATH : G5_BBS_PATH;
-	@include_once ($newwin_path.'/newwin.inc.php'); // 팝업레이어
-}
-
 if(IS_YC) {
 	if(IS_SHOP) {
 		if(file_exists(THEMA_PATH.'/shop.head.php')) {

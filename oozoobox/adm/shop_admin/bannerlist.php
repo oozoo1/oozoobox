@@ -1,5 +1,5 @@
 <?php
-$sub_menu = '500500';
+$sub_menu = '100000';
 include_once('./_common.php');
 
 auth_check($auth[$sub_menu], "r");
@@ -7,7 +7,11 @@ auth_check($auth[$sub_menu], "r");
 $g5['title'] = '배너관리';
 include_once (G5_ADMIN_PATH.'/admin.head.php');
 
-$sql_common = " from {$g5['g5_shop_banner_table']} ";
+if($_GET[type]){
+	$type="WHERE bn_position = '{$_GET[type]}'";
+}
+
+$sql_common = " from {$g5['g5_shop_banner_table']} $type";
 
 // 테이블의 전체 레코드수만 얻음
 $sql = " select count(*) as cnt " . $sql_common;
@@ -19,13 +23,21 @@ $total_page  = ceil($total_count / $rows);  // 전체 페이지 계산
 if ($page < 1) { $page = 1; } // 페이지가 없으면 첫 페이지 (1 페이지)
 $from_record = ($page - 1) * $rows; // 시작 열을 구함
 ?>
-
+<style>
+.bt_type_off{padding:10px 15px 10px 15px; background-color:#eee; border:solid 1px #ccc; margin-left:5px;}
+.bt_type_on{padding:10px 15px 10px 15px; background-color:#ddd; border:solid 1px #ccc; margin-left:5px;}
+</style>
 <div class="local_ov01 local_ov">
     등록된 배너 <?php echo $total_count; ?>개
 </div>
-
+<div style="float:left; padding:8px;"></div>
+<? for ($i=1; $i<=23; $i++) { ?>
+  <div class="<? if($_GET[type]=="a$i"){?>bt_type_on<? }else{ ?>bt_type_off<? } ?>" style="float:left;" >
+      <a href="./bannerlist.php?type=a<?=$i?>">A-<?=$i?></a>
+  </div>
+<? } ?>
 <div class="btn_add01 btn_add">
-    <a href="./bannerform.php">배너추가</a>
+    <a href="./bannerform.php?ct=<?=$_GET[type]?>">배너추가</a>
 </div>
 
 <div class="tbl_head02 tbl_wrap">
@@ -33,8 +45,8 @@ $from_record = ($page - 1) * $rows; // 시작 열을 구함
     <caption><?php echo $g5['title']; ?> 목록</caption>
     <thead>
     <tr>
-        <th scope="col" rowspan="2" id="th_id">ID</th>
-        <th scope="col" id="th_dvc">접속기기</th>
+        <th scope="col" id="th_id">ID</th>
+        <th scope="col" id="th_dvc">이미지</th>
         <th scope="col" id="th_loc">위치</th>
         <th scope="col" id="th_st">시작일시</th>
         <th scope="col" id="th_end">종료일시</th>
@@ -42,13 +54,10 @@ $from_record = ($page - 1) * $rows; // 시작 열을 구함
         <th scope="col" id="th_hit">조회</th>
         <th scope="col" id="th_mng">관리</th>
     </tr>
-    <tr>
-        <th scope="col" colspan="7" id="th_img">이미지</th>
-    </tr>
     </thead>
     <tbody>
     <?php
-    $sql = " select * from {$g5['g5_shop_banner_table']}
+    $sql = " select * from {$g5['g5_shop_banner_table']} $type
           order by bn_order, bn_id desc
           limit $from_record, $rows  ";
     $result = sql_query($sql);
@@ -58,18 +67,18 @@ $from_record = ($page - 1) * $rows; // 시작 열을 구함
         // 새창 띄우기인지
         $bn_new_win = ($row['bn_new_win']) ? 'target="_blank"' : '';
 
-        $bimg = G5_DATA_PATH.'/banner/'.$row['bn_id'];
+        $bimg = G5_DATA_PATH.'/banner/'.$row['bn_img1'];
         if(file_exists($bimg)) {
             $size = @getimagesize($bimg);
-            if($size[0] && $size[0] > 800)
-                $width = 800;
+            if($size[0] && $size[0] > 400)
+                $width = 300;
             else
                 $width = $size[0];
 
             $bn_img = "";
             if ($row['bn_url'] && $row['bn_url'] != "http://")
                 $bn_img .= '<a href="'.$row['bn_url'].'" '.$bn_new_win.'>';
-            $bn_img .= '<img src="'.G5_DATA_URL.'/banner/'.$row['bn_id'].'" width="'.$width.'" alt="'.$row['bn_alt'].'"></a>';
+            $bn_img .= '<img src="'.G5_DATA_URL.'/banner/'.$row['bn_img1'].'" width="'.$width.'" alt="'.$row['bn_alt'].'"></a>';
         }
 
         switch($row['bn_device']) {
@@ -91,9 +100,9 @@ $from_record = ($page - 1) * $rows; // 시작 열을 구함
     ?>
 
     <tr class="<?php echo $bg; ?>">
-        <td headers="th_id" rowspan="2" class="td_num"><?php echo $row['bn_id']; ?></td>
-        <td headers="th_dvc"><?php echo $row[bn_alt]; ?></td>
-        <td headers="th_loc"><?php echo $row['bn_position']; ?></td>
+        <td headers="th_id" class="td_num"><?php echo $row['bn_id']; ?></td>
+        <td headers="th_dvc"><?php echo $bn_img; ?></td>
+        <td headers="th_loc" align="center"><?php echo $row['bn_position']; ?></td>
         <td headers="th_st" class="td_datetime"><?php echo $bn_begin_time; ?></td>
         <td headers="th_end" class="td_datetime"><?php echo $bn_end_time; ?></td>
         <td headers="th_odr" class="td_num"><?php echo $row['bn_order']; ?></td>
@@ -103,13 +112,6 @@ $from_record = ($page - 1) * $rows; // 시작 열을 구함
             <a href="./bannerformupdate.php?w=d&amp;bn_id=<?php echo $row['bn_id']; ?>" onclick="return delete_confirm();">삭제</a>
         </td>
     </tr>
-    <tr class="<?php echo $bg; ?>">
-        <td headers="th_img" colspan="7" class="td_img_view sbn_img">
-            <div class="sbn_image"><?php echo $bn_img; ?></div>
-            <button type="button" class="sbn_img_view btn_frmline">이미지확인</button>
-        </td>
-    </tr>
-
     <?php
     }
     if ($i == 0) {

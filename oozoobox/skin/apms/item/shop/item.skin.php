@@ -133,18 +133,12 @@ $row = sql_fetch($sql);
                         </tr>
                     <?php } ?>
                         <tr class="good_info_scrap"><th scope="row">分享</th><td>
-                            <a href="#">
-                                <img alt="qq" src="/images/detail_sns_01.png"/>
-                            </a> 
-                            <a href="#">
-                                <img class="space" alt="人人网" src="/images/detail_sns_02.png"/>
-                            </a>
-                            <a href="#">
-                                <img class="space" alt="微博" src="/images/detail_sns_03.png"/>
-                            </a> 
-                            <a href="#">
-                                <img class="space" alt="微信" src="/images/detail_sns_04.png"/>
-                            </a> 
+                            <div class="bshare-custom">
+                            <a title="分享到QQ空间" class="bshare-qzone">QQ空间</a><a title="分享到新浪微博" class="bshare-sinaminiblog">新浪微博</a>
+                            <a title="分享到人人网" class="bshare-renren">人人网</a><a title="分享到腾讯微博" class="bshare-qqmb">腾讯微博</a>
+                            <a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>
+                            <script src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh" type="text/javascript" charset="utf-8"></script>
+                            <script src="http://static.bshare.cn/b/bshareC0.js" type="text/javascript" charset="utf-8"></script>
                         </td></tr>
                     <?php if ($it['it_maker']) { ?>
                         <tr><th scope="row">制造商</th><td><?php echo $it['it_maker']; ?></td></tr>

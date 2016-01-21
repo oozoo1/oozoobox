@@ -1,7 +1,6 @@
 <?php
 define("_INDEX_", TRUE);
 include_once('./_common.php');
-
 if(!$page_id) {
 	$page_id = 'index';
 }
