@@ -1027,7 +1027,7 @@ ul.MM_List li a:hover {color:#ea5b0c;}
 .right_tit_bar .more_item span {display:inline; float:left;}
 .right_tit_bar .more_item:hover {color:#ea5b0c;}
 .right_tit_bar .more_item:hover i{ background:url("/images/ico_my_rotate.png") no-repeat 0 0; transition:all .2s linear; }
-.guess_like_content {float:left; border:1px solid #dadada; border-top:0; background-color:#f5f5f5; padding:26px 0 0;}
+.guess_like_content {float:left; width:100%; border:1px solid #dadada; border-top:0; background-color:#f5f5f5; padding:26px 0 0;}
 .inner_content {margin:0 8px;}
 .guess_like_item {position:relative; margin:0 12px 20px; width:218px; height:313px; float:left; background:#fff; border:1px solid #ddd;}
 .guess_pic {width:218px; height:218px; overflow:hidden; position:relative;}
