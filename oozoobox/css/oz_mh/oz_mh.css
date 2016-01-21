@@ -1270,7 +1270,7 @@ td.pro li {padding:3px 0; color:#676767; }
 .cscenter_main_tit {width:100%; margin-top:17px; margin-bottom:23px; }
 .inquiry-search {overflow:hidden; height:48px; padding:15px 19px 0; border:1px solid #ccc; border-right:1px solid #aeaeae; border-bottom:1px solid #9d9d9d; margin:30px 0;}
 .inquiry-search dt {float:left; margin-right:14px; padding-top:4px;}
-.inquiry-search label {font-weight:bold; padding:0 10px 0 30px; font-size:20px; background:url("/images/ico_cs_search.png") no-repeat 0 3px;}
+.inquiry-search label {font-weight:bold; padding:0 10px 0 30px; font-size:18px; background:url("/images/ico_cs_search.png") no-repeat 0 3px;}
 .inquiry-search .search-input {overflow:hidden; float:left; width:400px; margin-top:4px;}
 .inquiry-search .input-box .txt {float:left; display:inline-block; vertical-align:middle; width:300px; ime-mode:active; height:24px; padding:2px 0 0 4px; border:1px solid #ccc;  font-family:"Microsoft YaHei",arial,"宋体",Dotum; line-height:23px;}
 .inquiry-search .search-input .btn_search {float:left; width:70px; height:28px;background-color:#353b4c; font-size:13px; font-weight:bold; color:#fff; text-align:center; border:0; }

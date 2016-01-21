@@ -18,19 +18,19 @@ $result = sql_query($sql);
             <dl class="inquiry-search">
                 <dt>
                     <label for="inquirySearch">
-                        자주찾는 문의
+                        请在下面输入您的问题
                     </label>
                 </dt>
                 <dd class="search-input" sizcache="5" sizset="49">
                     <p class="input-box">
-                        <input name="" title="자주찾는 문의" class="txt" type="text" placeholder="문의사항을 입력하세요"/>
+                        <input name="" title="请简单完整的输入您的问题" class="txt" type="text" placeholder="请简单完整的输入您的问题"/>
                     </p>
                     <a><button class="btn_search">검색</button></a>
                 </dd>
             </dl>
             <!--s: CS_Main_FAQ-->
 			<div class="cs_main_faq">
-            	<h3 class="cs_main_title">FAQ</h3>
+            	<h3 class="cs_main_title">FAQ 常见问题</h3>
 				<ul>
                     <?php for ($i=0; $row_faq=sql_fetch_array($faq); $i++){ $dr_memo = cut_str($row_faq[wr_subject],36);?>
                 	<li>
@@ -45,7 +45,7 @@ $result = sql_query($sql);
             <div class="cs_main_etc">
                 <!--s: CS_Main_Notice-->
                 <div class="cs_main_notice">
-                    <h3 class="cs_main_title">公告</h3>
+                    <h3 class="cs_main_title">最新公告</h3>
                     <ul>
                         <?php for ($i=0; $row=sql_fetch_array($result); $i++){ $dr_memo = cut_str($row[wr_subject],16);?>
                         <li>
