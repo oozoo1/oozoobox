@@ -296,7 +296,7 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                         $result = sql_query($sql_cart);
                         
                         for ($k=0; $row=sql_fetch_array($result); $k++){
-                        $sql1 = "SELECT it_id , it_img1 , it_name , pt_id FROM g5_shop_item WHERE it_id = '{$row[it_id]}'";
+                        $sql1 = "SELECT it_id , it_img1 , it_name , pt_id, it_basic FROM g5_shop_item WHERE it_id = '{$row[it_id]}'";
                         $result1 = sql_query($sql1);
                         $row_item=sql_fetch_array($result1);
                         
@@ -310,7 +310,7 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                                     	<a href="/shop/item.php?it_id=<?=$row_item[it_id]?>"><?=$row_item[it_name]?></a>
                                     </div>
                                     <div class="product-option">
-                                    <?=$row_item[it_name]?>
+                                    <?=$row_item[it_basic]?>
                                     </div>
                                     <div class="order-num">
                                         <span class="mp_label">订单号码</span>
@@ -318,7 +318,7 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                                     </div>
                             	</div>
                             </div>
-                        <? echo "<br>"; } ?>
+                        <?  } ?>
                         </td>
                         <td class="seller">
                         	<span class="seller-info">
@@ -358,7 +358,7 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                           <? } ?>
                           
                           <? if($list[$i][od_status]=="等待付款"){?>
-                          <br><br>
+                          <!--<br><br>-->
                               <form name=alipayment action="/alipay/alipayapi.php" method=post target="_blank">
                               <input type="hidden" size="30" name="WIDout_trade_no" value="<?=$list[$i][od_id]?>" title="订单号码" />
                               <input type="hidden" size="30" name="WIDsubject" value="OOZOOBOX" title="订单名称" />

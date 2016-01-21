@@ -1159,13 +1159,13 @@ padding:0 0 90px 0;}
 .order-list-table .charge .num{font-size:15px; color:#333;}
 .order-list-table .detail-link {margin:8px 0 0 9px;} 
 a.link {padding-right:5px; color:#416de9; background:url("/images/ico_link_arrow.gif") no-repeat 100% 5px; font:11px/15px "Microsoft YaHei",arial,"宋体",Dotum; white-space:nowrap; letter-spacing:-1px; text-decoration:underline; text-decoration:none;}
-.order-list-table td.product {position:static; padding:18px 5px 0px 0px;}
-.order-list-table td.product .product-block {padding: 0 0 20px 20px; border-bottom:1px solid #ddd;}
+.order-list-table td.product {position:static; padding:0px 5px 0px 0px;}
+.order-list-table td.product .product-block {padding: 20px 0 20px 20px; border-bottom: 1px dotted #ccc;}
 .order-list-table td.product div.product-block:last-child {border-bottom:0;}
 .product-block {width:100%; text-align:left;}
 .product-block .product-thumbnail {float:left; width:60px; margin-top:2px;}
 .product-block .product-content {padding-left:77px;}
-.product-block .product-name {max-height:14px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; color:#333;}
+.product-block .product-name {max-height:16px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; color:#333;}
 .product-block .product-name a:hover {color:#ea5b0c;}
 .product-block .product-option {color:#999;}
 .product-block .order-num {margin-top:12px; color:#333;}
