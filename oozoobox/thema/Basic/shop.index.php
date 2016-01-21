@@ -464,17 +464,17 @@ $result = sql_query($sql);
                     <dl>
                         <dt class="menu_tit">客户服务</dt>
                         <dd><a>消费者须知</a></dd>
-                        <dd><a>忘记密码</a></dd>
+                        <dd><a href="http://dev.oozoobox.com/bbs/board.php?bo_table=faq&wr_id=3">忘记密码</a></dd>
                         <dd><a>查看已购买商品</a></dd>
                         <dd><a>如何注册成为会员</a></dd>
                         <dd><a>我要买</a></dd>
                     </dl>
                     <dl>
                         <dt class="menu_tit">판매자센터</dt>
-                        <dd><a>입점관리</a></dd>
-                        <dd><a>관련상품등록</a></dd>
-                        <dd><a>상품올리기</a></dd>
-                        <dd><a>입점신청</a></dd>
+                        <dd>입점관리</dd>
+                        <dd>관련상품등록</dd>
+                        <dd>상품올리기</dd>
+                        <dd>입점신청</dd>
                     </dl>
                     <dl>
                         <dt class="menu_tit">支付方式 </dt>
