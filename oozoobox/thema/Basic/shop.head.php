@@ -30,16 +30,19 @@ add_stylesheet('<link rel="stylesheet" href="/css/oz_mh/oz_mh.css" type="text/cs
     _MEIQIA('entId', 5768);
 </script>
 <? } ?>
-<script src="/oz_js/jquery.SuperSlide.2.1.1.js" type="text/javascript"></script>
-<script src="/oz_js/jquery.slides.min.js"></script>
-<script src="/oz_js/jquery.als-1.7.min.js"></script>
-<script src="/oz_js/jquery.newsticker.js"></script>
+
 
 <link rel="stylesheet" type="text/css" href="/shop/css/base.css" />
 <script type="text/javascript" src="/shop/js/common.js"></script>
 <div class="wrapper <?php echo $at_set['font'];?><?php echo (G5_IS_MOBILE) ? ' mobile-font' : '';?> <?php echo $at_set['layout'];?>">
 
-<?php if($_SERVER['PHP_SELF']=="/index.html"){}else{ ?>
+<?php if($_SERVER['PHP_SELF']=="/index.php"){?>
+	<script src="/oz_js/jquery.SuperSlide.2.1.1.js" type="text/javascript"></script>
+	<script src="/oz_js/jquery.slides.min.js"></script>
+	<script src="/oz_js/jquery.als-1.7.min.js"></script>
+	<script src="/oz_js/jquery.newsticker.js"></script>
+
+<?php }else{ ?>
 <script src="/oz_js/jquery.min.js"></script><!--list global menu-->
 <script src="/oz_js/slider.js"></script><!--list bn01-->
 <script type="text/javascript" src="/oz_js/jquery.als-1.7.min.js"></script>
