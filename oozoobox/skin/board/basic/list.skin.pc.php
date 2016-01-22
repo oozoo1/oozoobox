@@ -29,22 +29,22 @@ $list_cnt = count($list);
 			<input type="checkbox" id="chkall" onclick="if (this.checked) all_checked(true); else all_checked(false);">
 		</th>
 		<?php } ?>
-		<th scope="col">번호</th>
+		<th scope="col">编码</th>
 		<?php if($boset['img']) { $icon = apms_fa($boset['icon']); //포토용 아이콘 ?>
-			<th scope="col">포토</th>
+			<th scope="col">图片</th>
 		<?php } ?>
 		<?php if($is_category) { ?>
-			<th scope="col">분류</th>
+			<th scope="col">分类</th>
 		<?php } ?>
-		<th scope="col">제목</th>
-		<th scope="col">글쓴이</th>
-		<th scope="col"><?php echo subject_sort_link('wr_datetime', $qstr2, 1) ?>날짜</a></th>
-		<th scope="col"><?php echo subject_sort_link('wr_hit', $qstr2, 1) ?><nobr>조회</nobr></a></th>
+		<th scope="col">标题</th>
+		<th scope="col">发布人</th>
+		<th scope="col"><?php echo subject_sort_link('wr_datetime', $qstr2, 1) ?>日期</a></th>
+		<th scope="col"><?php echo subject_sort_link('wr_hit', $qstr2, 1) ?><nobr>浏览</nobr></a></th>
 		<?php if($is_good) { ?>
-			<th scope="col"><?php echo subject_sort_link('wr_good', $qstr2, 1) ?><nobr>추천</nobr></a></th>
+			<th scope="col"><?php echo subject_sort_link('wr_good', $qstr2, 1) ?><nobr>攒</nobr></a></th>
 		<?php } ?>
 		<?php if($is_nogood) { ?>
-			<th scope="col"><?php echo subject_sort_link('wr_nogood', $qstr2, 1) ?><nobr>비추</nobr></a></th>
+			<th scope="col"><?php echo subject_sort_link('wr_nogood', $qstr2, 1) ?><nobr>不攒</nobr></a></th>
 		<?php } ?>
 	</tr>
 	</thead>
@@ -113,7 +113,7 @@ $list_cnt = count($list);
 				<?php echo $wr_icon;?>
 				<?php echo $list[$i]['subject']; ?>
 				<?php if ($list[$i]['comment_cnt']) { ?>
-					<span class="sound_only">댓글</span><span class="count orangered"><?php echo $list[$i]['comment_cnt']; ?></span><span class="sound_only">개</span>
+					<span class="sound_only">跟帖</span><span class="count orangered"><?php echo $list[$i]['comment_cnt']; ?></span><span class="sound_only">个</span>
 				<?php } ?>
 			</a>
 		</td>
@@ -129,7 +129,7 @@ $list_cnt = count($list);
 	</tr>
 	<?php } ?>
 	<?php if (!$is_list) { ?>
-		<tr><td colspan="<?php echo $colspan;?>" class="text-center text-muted list-none">게시물이 없습니다.</td></tr>
+		<tr><td colspan="<?php echo $colspan;?>" class="text-center text-muted list-none">没有内容.</td></tr>
 	<?php } ?>
 	</tbody>
 	</table>

@@ -70,10 +70,10 @@ $skin_url = $member_skin_url;
                     </h4>
                     <ul class="Quickmenu">
                         <li><a href="/bbs/write.php?bo_table=qa"><i class="quick01"></i>在线咨询</a></li>
-                        <li><a><i class="quick02"></i>咨询记录</a></li>
+                        <li><a href="/bbs/board.php?bo_table=qa&sca=&sop=and&sfl=mb_id%2C1&stx=<?=$member[mb_id]?>"><i class="quick02"></i>咨询记录</a></li>
                         <li><a href="/bbs/password_lost.php"><i class="quick03"></i>查找账号/密码</a></li>
-                        <li><a><i class="quick05"></i>查询快递</a></li>
-                        <li><a><i class="quick06"></i>修改我的资料</a></li>
+                        <!---li><a><i class="quick05"></i>查询快递</a></li-->
+                        <li><a href="/shop/member_confirm.php"><i class="quick06"></i>修改我的资料</a></li>
                     </ul> 
                 </div>
             </ul>

@@ -45,8 +45,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
 									<li><a href="./board.php?bo_table=<?php echo $bo_table;?>&amp;sca=<?php echo urlencode($sca);?>">초기화</a></li>
 								</ul>
 							<?php } ?>
-							<?php if ($list_href) { ?><a href="<?php echo $list_href ?>" class="btn btn-black btn-sm"><i class="fa fa-bars"></i><span>목록</span></a><?php } ?>
-							<?php if ($write_href) { ?><a href="<?php echo $write_href ?>" class="btn btn-color btn-sm"><i class="fa fa-pencil"></i><span>글쓰기</span></a><?php } ?>
+							<?php if ($list_href) { ?><a href="<?php echo $list_href ?>" class="btn btn-black btn-sm"><i class="fa fa-bars"></i><span>目录</span></a><?php } ?>
+							<?php if ($write_href) { ?><a href="<?php echo $write_href ?>" class="btn btn-color btn-sm"><i class="fa fa-pencil"></i><span>发布</span></a><?php } ?>
 						</div>
 					</div>
 				<?php } ?>
@@ -110,20 +110,20 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
 							<input type="hidden" name="sca" value="<?php echo $sca ?>">
 							<input type="hidden" name="sop" value="and">
 							<div class="form-group">
-								<label for="sfl" class="sound_only">검색대상</label>
+								<label for="sfl" class="sound_only">搜索对象</label>
 								<select name="sfl" id="sfl" class="form-control input-sm">
-									<option value="wr_subject"<?php echo get_selected($sfl, 'wr_subject', true); ?>>제목</option>
-									<option value="wr_content"<?php echo get_selected($sfl, 'wr_content'); ?>>내용</option>
-									<option value="wr_subject||wr_content"<?php echo get_selected($sfl, 'wr_subject||wr_content'); ?>>제목+내용</option>
-									<option value="mb_id,1"<?php echo get_selected($sfl, 'mb_id,1'); ?>>회원아이디</option>
-									<option value="mb_id,0"<?php echo get_selected($sfl, 'mb_id,0'); ?>>회원아이디(코)</option>
-									<option value="wr_name,1"<?php echo get_selected($sfl, 'wr_name,1'); ?>>글쓴이</option>
-									<option value="wr_name,0"<?php echo get_selected($sfl, 'wr_name,0'); ?>>글쓴이(코)</option>
+									<option value="wr_subject"<?php echo get_selected($sfl, 'wr_subject', true); ?>>标题</option>
+									<option value="wr_content"<?php echo get_selected($sfl, 'wr_content'); ?>>内容</option>
+									<option value="wr_subject||wr_content"<?php echo get_selected($sfl, 'wr_subject||wr_content'); ?>>标题+内容</option>
+									<option value="mb_id,1"<?php echo get_selected($sfl, 'mb_id,1'); ?>>会员账户</option>
+									<option value="mb_id,0"<?php echo get_selected($sfl, 'mb_id,0'); ?>>会员账户(跟帖)</option>
+									<option value="wr_name,1"<?php echo get_selected($sfl, 'wr_name,1'); ?>>发布人</option>
+									<option value="wr_name,0"<?php echo get_selected($sfl, 'wr_name,0'); ?>>发布人(跟帖)</option>
 								</select>
 							</div>
 							<div class="form-group">
-								<label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
-								<input type="text" name="stx" value="<?php echo stripslashes($stx) ?>" required id="stx" class="form-control input-sm" maxlength="20" placeholder="검색어">
+								<label for="stx" class="sound_only">搜索内容<strong class="sound_only"> 필수</strong></label>
+								<input type="text" name="stx" value="<?php echo stripslashes($stx) ?>" required id="stx" class="form-control input-sm" maxlength="20" placeholder="搜索内容">
 							</div>
 
 							<div class="btn-group btn-group-justified">

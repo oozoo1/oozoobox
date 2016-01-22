@@ -74,7 +74,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
     echo $option_hidden;
     ?>
       <tr>
-        <td height="40" background="/images/title_bg.png" align="center"><span style="font-size:16px; font-weight:bold; color:#fff;"><?php echo $g5['title'] ?></span></td>
+        <td height="40" background="/images/title_bg.png" align="center"><span style="font-size:16px; font-weight:bold; color:#fff;">发布信息</span></td>
       </tr>
       <?php if ($is_category) { ?>
       <tr>
@@ -109,7 +109,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
             function add_file(delete_code) {
                 var upload_count = <?php echo (int)$board['bo_upload_count']; ?>;
                 if (upload_count && flen >= upload_count) {
-                    alert("이 게시판은 "+upload_count+"개 까지만 파일 업로드가 가능합니다.");
+                    alert("只能添加 "+upload_count+"个 文件.");
                     return;
                 }
             
@@ -128,7 +128,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
                 objCell = objRow.insertCell(0);
             
                 objContent = "<div class='row'>";
-                objContent += "<div class='col-sm-7'><div class='form-group'><div class='input-group input-group-sm'><span class='input-group-addon'>파일 "+objNum+"</span><input type='file' class='form-control input-sm' name='bf_file[]' title='파일 용량 <?php echo $upload_max_filesize; ?> 이하만 업로드 가능'></div></div></div>";
+                objContent += "<div class='col-sm-7'><div class='form-group'><div class='input-group input-group-sm'><span class='input-group-addon'>文件 "+objNum+"</span><input type='file' class='form-control input-sm' name='bf_file[]' title='文件大小 <?php echo $upload_max_filesize; ?> 이하만 업로드 가능'></div></div></div>";
                 if (delete_code) {
                     objContent += delete_code;
                 } else {
@@ -160,16 +160,16 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
       </tr>
       <tr>
         <td class="wheight"> 
-            <button class="btn btn-sm btn-color" type="button" onclick="add_file();"><i class="fa fa-plus-circle fa-lg"></i> 추가하기</button>
-            <button class="btn btn-sm btn-black" type="button" onclick="del_file();"><i class="fa fa-times-circle fa-lg"></i> 삭제하기</button>                  
+            <button class="btn btn-sm btn-color" type="button" onclick="add_file();"><i class="fa fa-plus-circle fa-lg"></i> 添加图片</button>
+            <button class="btn btn-sm btn-black" type="button" onclick="del_file();"><i class="fa fa-times-circle fa-lg"></i> 删除图片</button>                  
             <label class="control-label sp-label">
-                <input type="radio" name="as_img" value="0"<?php if(!$write['as_img']) echo ' checked';?>> 상단출력
+                <input type="radio" name="as_img" value="0"<?php if(!$write['as_img']) echo ' checked';?>> 图片显示上部
             </label>
             <label class="control-label sp-label">
-                <input type="radio" name="as_img" value="1"<?php if($write['as_img'] == "1") echo ' checked';?>> 하단출력
+                <input type="radio" name="as_img" value="1"<?php if($write['as_img'] == "1") echo ' checked';?>> 图片显示下部
             </label>
             <label class="control-label sp-label">
-                <input type="radio" name="as_img" value="2"<?php if($write['as_img'] == "2") echo ' checked';?>> 본문삽입
+                <input type="radio" name="as_img" value="2"<?php if($write['as_img'] == "2") echo ' checked';?>> 图片显示本文
             </label>
         </td>
       </tr> 
@@ -187,8 +187,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
       <tr>
         <td class="wheight" height="100" align="center">
             <div class="write-btn pull-center">
-                <button type="submit" id="btn_submit" accesskey="s" class="btn btn-color btn-sm"><i class="fa fa-check"></i> <b>작성완료</b></button>
-                <a href="./board.php?bo_table=<?php echo $bo_table ?>" class="btn btn-black btn-sm" role="button">취소</a>
+                <button type="submit" id="btn_submit" accesskey="s" class="btn btn-color btn-sm"><i class="fa fa-check"></i> <b>确认发布</b></button>
+                <a href="./board.php?bo_table=<?php echo $bo_table ?>" class="btn btn-black btn-sm" role="button">取消</a>
             </div>
         </td>
       </tr>

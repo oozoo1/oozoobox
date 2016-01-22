@@ -21,12 +21,18 @@ $result = sql_query($sql);
                         请在下面输入您的问题
                     </label>
                 </dt>
+                <form action="/bbs/board.php" method="get">
+                <input type="hidden" name="bo_table" value="buyerfaq" />
+                <input type="hidden" name="sca" value="" />
+                <input type="hidden" name="sop" value="and" />
+                <input type="hidden" name="sfl" value="wr_subject" />
                 <dd class="search-input" sizcache="5" sizset="49">
                     <p class="input-box">
-                        <input name="" title="请简单完整的输入您的问题" class="txt" type="text" placeholder="请简单完整的输入您的问题"/>
+                        <input name="stx" title="请简单完整的输入您的问题" class="txt" type="text" placeholder="请简单完整的输入您的问题"/>
                     </p>
-                    <a><button class="btn_search">검색</button></a>
+                    <a><button class="btn_search" type="submit">검색</button></a>
                 </dd>
+                </form>
             </dl>
             <!--s: CS_Main_FAQ-->
 			<div class="cs_main_faq">
@@ -34,7 +40,7 @@ $result = sql_query($sql);
 				<ul>
                     <?php for ($i=0; $row_faq=sql_fetch_array($faq); $i++){ $dr_memo = cut_str($row_faq[wr_subject],36);?>
                 	<li>
-                    	<a><p class="faq_subject"><?=$dr_memo?></p></a>
+                    	<a href="/bbs/board.php?bo_table=buyerfaq&wr_id=<?=$row_faq[wr_id]?>"><p class="faq_subject"><?=$dr_memo?></p></a>
                         <p class="category">[<?=$row_faq[ca_name]?>]</p>
                     </li>
                     <? } ?>                 
@@ -49,7 +55,7 @@ $result = sql_query($sql);
                     <ul>
                         <?php for ($i=0; $row=sql_fetch_array($result); $i++){ $dr_memo = cut_str($row[wr_subject],16);?>
                         <li>
-                            <a><p class="cs_subject"><?=$dr_memo?></p></a>
+                            <a href="/bbs/board.php?bo_table=notice&wr_id=<?=$row[wr_id]?>"><p class="cs_subject"><?=$dr_memo?></p></a>
                             <p class="cs_category"><?=$row[wr_name]?></p>                    
                         </li>
                         <? } ?>                             
@@ -64,7 +70,7 @@ $result = sql_query($sql);
                         	<p>广告、不文明用语、和其他网站的价格比较，与商品无关的内容，以及违反通信礼仪或违反OOZOOBOX规定的留言，将会被无通知删除。</p>
                         	<p class="attention">已经上传的商谈留言内容，将不能修改。1:1商谈全天24小时都可以进行申请，我们将尽快竭诚为您解答。</p>
                         </div>
-                        <a class="btn_request">
+                        <a class="btn_request" href="/bbs/write.php?bo_table=qa">
                         	<button>1:1상담신청</button> <!-----------채팅창 생성------------------>
                         </a>
                     </div>
