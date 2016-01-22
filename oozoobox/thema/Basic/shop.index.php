@@ -149,11 +149,7 @@ $result = sql_query($sql);
             </div>
             <div class="module_body">
             	<a class="big_chn" href="/shop/bannerhit.php?bn_id=<?=$baner14['bn_id']?>&url=<?=urlencode($baner14['bn_url'])?>" <? if($baner14[bn_new_win]=="1"){?>target="_blank"<? } ?>>
-            		<? if($baner14[bn_img1]){?>
-                	<img src="http://data.oozoobox.com/data/banner/<?=$baner14[bn_img1]?>" onmouseover="http://data.oozoobox.com/data/banner/<?=$baner14[bn_img2]?>" onmouseout="http://data.oozoobox.com/data/banner/<?=$baner14[bn_img1]?>"/>
-                	<? }else{ ?>
-                	<img src="/images/ad_no.png"/>
-                	<? } ?>
+                	<img src="<? if($baner14[bn_img1]){?>http://data.oozoobox.com/data/banner/<?=$baner14[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
                 </a>
                 <div class="small_chn_con">
                 	<a class="small_chn" href="/shop/bannerhit.php?bn_id=<?=$baner15['bn_id']?>&url=<?=urlencode($baner15['bn_url'])?>" <? if($baner15[bn_new_win]=="1"){?>target="_blank"<? } ?>>
@@ -474,11 +470,11 @@ $result = sql_query($sql);
                         <dd><a>我要买</a></dd>
                     </dl>
                     <dl>
-                        <dt class="menu_tit">판매자센터</dt>
-                        <dd>입점관리</dd>
-                        <dd>관련상품등록</dd>
-                        <dd>상품올리기</dd>
-                        <dd>입점신청</dd>
+                        <dt class="menu_tit">商家服务</dt>
+                        <dd>商家入驻</dd>
+                        <dd>商家中心</dd>
+                        <dd>登陆商品</dd>
+                        <dd>天猫规则</dd>
                     </dl>
                     <dl>
                         <dt class="menu_tit">支付方式 </dt>
