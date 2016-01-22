@@ -142,11 +142,13 @@ $list_cnt = count($list);
 				// 이미지
 				$img = apms_it_thumbnail($list[$i], $thumb_w, $thumb_h, false, true);
 				
-				$sql = " select count(*) as cnt FROM g5_shop_cart WHERE it_id = '{$list[$i][it_id]}' and ct_status = '입금'";
-				$rowcon = sql_fetch($sql);
-				$total_count = $rowcon['cnt'];
-
-
+					$sql = " select count(*) as cnt FROM g5_shop_cart WHERE it_id = '{$list[$i][it_id]}' and ct_status = '입금'";
+					$rowcon = sql_fetch($sql);
+					$total_count = $rowcon['cnt'];
+					
+					$sql = " select count(*) as cnt from {$g5['g5_shop_item_use_table']} where it_id = '{$list[$i]['it_id']}'";
+					$row = sql_fetch($sql);
+					$content_cnt=$row['cnt'];
 
 			?>
                 <li class="<?php if($i % 4 == 3){?>list_album_item last_item<?php }else{ ?>list_album_item<?php } ?>">
@@ -158,7 +160,7 @@ $list_cnt = count($list);
                         </span>
                         <a href="<?php echo $list[$i]['href'];?>" class="album_wish_plus">
                             <span class="album_ico_wish">
-                                <em>13</em>
+                                <em><? echo number_format($list[$i][it_8]);?></em>
                             </span>
                         </a>
                         <span class="album_info">
@@ -199,7 +201,7 @@ $list_cnt = count($list);
                                     <span class="album_item_after">
                                         <a href="#">
                                             <span>评价</span>
-                                            <em>8,141</em>
+                                            <em><?=$content_cnt?></em>
                                         </a>
                                     </span>
                                 </span>
@@ -222,6 +224,15 @@ $list_cnt = count($list);
 
 				// 이미지
 				$img = apms_it_thumbnail($list[$i], $thumb_w, $thumb_h, false, true);
+				
+					$sql = " select count(*) as cnt FROM g5_shop_cart WHERE it_id = '{$list[$i][it_id]}' and ct_status = '입금'";
+					$rowcon = sql_fetch($sql);
+					$total_count = $rowcon['cnt'];
+					
+					$sql = " select count(*) as cnt from {$g5['g5_shop_item_use_table']} where it_id = '{$list[$i]['it_id']}'";
+					$row = sql_fetch($sql);
+					$content_cnt=$row['cnt'];
+
 
 			?>
                 <li class="<?php if($i % 2 == 1){?>list_list_item last_item<?php }else{ ?>list_list_item<?php } ?>">
@@ -262,7 +273,7 @@ $list_cnt = count($list);
                                     <a href="<?php echo $list[$i]['href'];?>">
                                     	<span class="list_ico_buy"></span>
                                         <span>月成交</span>
-                                        <em>1,011</em>
+                                        <em><?=$total_count?></em>
                                         <span>笔</span>
                                     </a>
                                 </span>
@@ -270,7 +281,7 @@ $list_cnt = count($list);
                                     <a href="<?php echo $list[$i]['href'];?>">
                                     	<span class="list_ico_after"></span>
                                         <span>评价</span>
-                                        <em>8,141</em>
+                                        <em><?=$content_cnt?></em>
                                         <span>件</span>
                                     </a>
                                 </span>
@@ -278,7 +289,7 @@ $list_cnt = count($list);
                                     <a href="<?php echo $list[$i]['href'];?>">
                                     	<span class="list_ico_wish"></span>
                                         <span>喜欢</span>
-                                        <em>8,141</em>
+                                        <em><? echo number_format($list[$i][it_8]);?></em>
                                         <span>人</span>
                                     </a>
                                 </span>                                    

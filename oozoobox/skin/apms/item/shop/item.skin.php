@@ -5,6 +5,55 @@ add_stylesheet('<link rel="stylesheet" href="'.$item_skin_url.'/style.css" media
 
 if($is_orderable) echo '<script src="'.$item_skin_url.'/shop.js"></script>'.PHP_EOL;
 
+//////////////////////////////////点赞开始/////////////////////////////////////////////////////
+		$mb_id=$_GET[mb];
+		$it_id=$_GET[it_id];	
+
+		if($_GET[type]=="yes"){
+		if (!$member['mb_id'])
+    alert('会员才可以点赞哦！.');
+		//////////////////누루기전/////////////////////////			
+				$it_8=$it[it_8]+1;
+				
+				$sql = " insert into g5_shop_item_good
+							set mb_id = '$mb_id',
+								 it_id = '$it_id',								 
+								 good_time = '".G5_TIME_YMDHIS."'";
+				sql_query($sql);	
+				
+				$sql = " update g5_shop_item
+							set it_8 = '$it_8'
+							 where it_id = '$it_id' ";
+				$sql_query=sql_query($sql);	
+		
+				echo "<script>alert('感谢您点赞！');window.location='/shop/item.php?it_id=$_GET[it_id]&ca_id=$_GET[ca_id]'</script>";
+		
+		}else if($_GET[type]=="no"){
+		if (!$member['mb_id'])
+    alert('会员才可以点赞哦！.');		
+		//////////////////누루기후/////////////////////////
+				$it_8=$it[it_8]-1;
+				
+				$sql_del="delete from  g5_shop_item_good where it_id='$it_id' and mb_id='$mb_id' ";
+				$query_del=sql_query($sql_del);
+				
+				
+				$sql = " update g5_shop_item
+							set it_8 = '$it_8'
+							 where it_id = '$it_id' ";
+				$sql_query=sql_query($sql);			
+		
+		
+				echo "<script>alert('您的赞已被收回！');window.location='/shop/item.php?it_id=$_GET[it_id]&ca_id=$_GET[ca_id]'</script>";
+		}
+		
+$sqlgood = "SELECT * FROM g5_shop_item_good WHERE mb_id = '$member[mb_id]' and it_id='$it_id'";
+$resultgood = sql_query($sqlgood);
+$row_good=sql_fetch_array($resultgood);
+
+/////////////////////////////////////////////////////点赞结束/////////////////////////////////////////////////////////
+
+
 // 이미지처리
 $j=0;
 $thumbnails = array();
@@ -116,14 +165,17 @@ $row = sql_fetch($sql);
                             <th scope="row">满意度</th>
                             <td><?php echo apms_get_star($it['it_use_avg'],'fa-lg red'); //평균별점 ?>
                             	<div class="u_like_module">
-                                	<a class="btn_u_like" href="#">
+                                  <? if($row_good[mb_id]){?>
+                                  <a class="btn_u_like on" href="/shop/item.php?it_id=<?=$_GET[it_id]?>&ca_id=<?=$_GET[ca_id]?>&mb=<?=$member[mb_id]?>&type=no">
                                     	<span class="ico_u"></span>
-                                        <em class="u_cnt">1,852</em> <!--누르기 전-->
-                                    </a>
-                                	<a class="btn_u_like on" href="#">
+                                        <em class="u_cnt"><? echo number_format($it[it_8]);?></em> <!--누른 후-->
+                                  </a>  
+                                  <? }else{ ?>
+                                	<a class="btn_u_like" href="/shop/item.php?it_id=<?=$_GET[it_id]?>&ca_id=<?=$_GET[ca_id]?>&mb=<?=$member[mb_id]?>&type=yes">
                                     	<span class="ico_u"></span>
-                                        <em class="u_cnt">1,853</em> <!--누른 후-->
-                                    </a>                                    
+                                        <em class="u_cnt"><? echo number_format($it[it_8]);?></em> <!--누르기 전-->
+                                  </a>                                 
+                                	<? } ?>                              
                                 </div>
                                 <? if (!$row['wi_id']) {?>
                                 <a href="#" onclick="apms_wishlist('<?php echo $it['it_id']; ?>'); return false;"><img src="/images/detail_btn_wishlist.png" onMouseOver="this.src='/images/detail_btn_wishlist_o.png'"  onMouseOut="this.src='/images/detail_btn_wishlist.png'" alt="收藏关注商品"/></a><? }else{ ?>

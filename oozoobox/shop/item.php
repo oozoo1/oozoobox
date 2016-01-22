@@ -20,7 +20,7 @@ $sql_ca = ($ca_id) ? "b.ca_id = '{$ca_id}'" : "a.ca_id = b.ca_id";
 $sql = " select a.*, b.ca_name, b.ca_use from {$g5['g5_shop_item_table']} a, {$g5['g5_shop_category_table']} b where a.it_id = '$it_id' and $sql_ca ";
 $it = sql_fetch($sql);
 
-if (!$it['it_id'])
+if (!$_GET['it_id'])
     alert('자료가 없습니다.');
 
 // 멤버쉽 확인 ------------------------

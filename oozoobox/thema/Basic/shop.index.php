@@ -224,7 +224,13 @@ $result = sql_query($sql);
  <!-------------------- 허걸 : s: UL 반복2번---------------- ------->
             	<ul class="wonderful_line">
  <!-------------------- 허걸:  s: 반복4번  마지막 하나만 다름------------->     
-                    <? for ($i=0; $row_main=sql_fetch_array($resultmain); $i++){ ?>         
+                    <? 
+										for ($i=0; $row_main=sql_fetch_array($resultmain); $i++){ 										
+										$sql = " select count(*) as cnt from {$g5['g5_shop_item_use_table']} where it_id = '{$row_main['it_id']}'";
+										$row = sql_fetch($sql);
+										$content_cnt=$row['cnt'];
+										
+										?>         
                   	<li class="<? if($i=="4" || $i=="9"){?>wonderful_item hidden_1366<? }else{ ?>wonderful_item<? } ?>">
                     	<div class="<? if($i=="4" || $i=="9"){?>card_item last_1920<? }else{ ?>card_item<? } ?>" href="#">
                         	<a href="/shop/item.php?it_id=<?=$row_main[it_id]?>&ca_id=<?=$row_main[ca_id]?>">
@@ -235,7 +241,7 @@ $result = sql_query($sql);
                             <span class="wonderful_wish">
                                 <a href="/shop/item.php?it_id=<?=$row_main[it_id]?>&ca_id=<?=$row_main[ca_id]?>">
                                     <span class="ico_wonderful_wish">	
-                                    	<em>13</em>
+                                    	<em><? echo number_format($row_main[it_8]);?></em>
                                     </span>
                                 </a>
                             </span>                            
@@ -259,10 +265,10 @@ $result = sql_query($sql);
                                             </a>
                                         </span>
                                         <span class="wonderful_after">
-                                        	<a href="#">
+                                        	<a href="/shop/item.php?it_id=<?=$row_main[it_id]?>&ca_id=<?=$row_main[ca_id]?>#detail_container">
                                         		<img width="100%" src="/images/wonderful_after.png" onmouseover="this.src='/images//wonderful_after_o.png'" onmouseout="this.src='/images//wonderful_after.png'"/>
                                             </a>
-                                            <em>101</em>
+                                            <em><?=$content_cnt?></em>
                                         </span>
                                     </span>
                                 </span>
