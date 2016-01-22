@@ -187,22 +187,18 @@ $list_cnt = count($list);
                                 <a href="#">
                                     <span class="album_item_price">
                                         <i class="album_price_rmb">¥</i>
-                                        <span class="album_price_integer"><?php echo ($list[$i]['it_tel_inq']) ? 'Call' : $list[$i]['it_price'];?></span>
+                                        <span class="album_price_integer"><?php echo ($list[$i]['it_tel_inq']) ? 'Call' : number_format($list[$i]['it_price'],2);?></span>
                                     </span>
                                 </a>
                                 <span class="album_item_tag">
                                     <span class="album_item_buy">
-                                        <a href="#">
                                             <span>月成交</span>
                                             <em><?=$total_count?></em>
                                             <span>笔</span>
-                                        </a>
                                     </span>
                                     <span class="album_item_after">
-                                        <a href="#">
                                             <span>评价</span>
                                             <em><?=$content_cnt?></em>
-                                        </a>
                                     </span>
                                 </span>
                             </span>                            
@@ -264,34 +260,28 @@ $list_cnt = count($list);
                                 <a href="<?php echo $list[$i]['href'];?>">
                                     <span class="list_item_price">
                                         <i class="list_price_rmb">¥</i>
-                                        <span class="list_price_integer"><?php echo ($list[$i]['it_tel_inq']) ? 'Call' : number_format($list[$i]['it_price']);?></span>
+                                        <span class="list_price_integer"><?php echo ($list[$i]['it_tel_inq']) ? 'Call' : number_format($list[$i]['it_price'],2);?></span>
                                     </span>
                                 </a>
                             </span>
                             <span class="list_item_tag">
                                 <span class="list_item_buy">
-                                    <a href="<?php echo $list[$i]['href'];?>">
                                     	<span class="list_ico_buy"></span>
                                         <span>月成交</span>
                                         <em><?=$total_count?></em>
                                         <span>笔</span>
-                                    </a>
                                 </span>
                                 <span class="list_item_after">
-                                    <a href="<?php echo $list[$i]['href'];?>">
                                     	<span class="list_ico_after"></span>
                                         <span>评价</span>
                                         <em><?=$content_cnt?></em>
                                         <span>件</span>
-                                    </a>
                                 </span>
                                 <span class="list_item_wish">
-                                    <a href="<?php echo $list[$i]['href'];?>">
                                     	<span class="list_ico_wish"></span>
                                         <span>喜欢</span>
                                         <em><? echo number_format($list[$i][it_8]);?></em>
                                         <span>人</span>
-                                    </a>
                                 </span>                                    
                             </span>
                         </span>                            
