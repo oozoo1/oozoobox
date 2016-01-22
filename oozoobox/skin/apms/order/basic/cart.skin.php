@@ -48,7 +48,7 @@ if($header_skin)
                 <li>支付成功</li> 
             </ol>
     	</div>
-        <div class="order_notice">
+        <!----div class="order_notice">
         	<h4>주문 전 확인사항  <span class="order_notice_small">장바구니에 담겨진 제품을 구입하실때 아래 사향을 꼭 확인해 주십시오</span></h4>
             <ul>
             	<li>- OOZOOBOX에서 배송되는 제품과 商店에서 배송되는 제품은 서로 다른 장바구니에 담겨지며, 다른 장바구니에 담긴 제품들은 묶음 배송이 되지 않습니다.</li>
@@ -61,7 +61,7 @@ if($header_skin)
                 <li>- 결제 전, 선택 상품의 옵션과 수량을 다시 한 번 확인 부탁드립니다.</li>
                 <li>- 장바구니의 상품은 30일간 보관됩니다.</li>
             </ul>            
-        </div>
+        </div----->
         <!-- s: 장바구니 상품 없음-->
         <div id="order_no_item">
         	<div class="content2">                 
@@ -70,47 +70,39 @@ if($header_skin)
                 <tr class="<?php echo $head_class;?>">
                     <th scope="col">
                         <label for="ct_all" class="sound_only">상품 전체</label>
-                        <span><input type="checkbox" name="ct_all" value="1" id="ct_all" checked="checked"></span>
-                    </th>
+                        <span><input type="checkbox" name="ct_all" value="1" id="ct_all" checked="checked"></span>                    </th>
                     <th scope="col"><span>图片</span></th>
                     <th scope="col"><span>商品</span></th>
                     <th scope="col"><span>数量</span></th>
                     <th scope="col"><span>价格</span></th>
                     <th scope="col"><span>小计</span></th>
                     <th scope="col"><span>积分</span></th>
-                    <th scope="col"><span class="last">运费</span></th>
                 </tr>
                 <?php for($i=0;$i < count($item); $i++) { ?>
                     <tr<?php echo ($i == 0) ? ' class="tr-line"' : '';?>>
                         <td class="text-center">
                             <label for="ct_chk_<?php echo $i; ?>" class="sound_only">상품</label>
-                            <input type="checkbox" name="ct_chk[<?php echo $i; ?>]" value="1" id="ct_chk_<?php echo $i; ?>" checked="checked">
-                        </td>
+                            <input type="checkbox" name="ct_chk[<?php echo $i; ?>]" value="1" id="ct_chk_<?php echo $i; ?>" checked="checked">                        </td>
                         <td class="text-center">
                             <div class="item-img">
                                 <?php echo get_it_image($item[$i]['it_id'], 100, 100); ?>
                                 <div class="item-type">
-                                    <?php echo $item[$i]['pt_it']; ?>
-                                </div>
-                            </div>
-                        </td>
+                                    <?php echo $item[$i]['pt_it']; ?>                                </div>
+                            </div>                        </td>
                         <td>
                             <input type="hidden" name="it_id[<?php echo $i; ?>]" value="<?php echo $item[$i]['it_id']; ?>">
                             <input type="hidden" name="it_name[<?php echo $i; ?>]" value="<?php echo get_text($item[$i]['it_name']); ?>">
                             <a href="./item.php?it_id=<?php echo $item[$i]['it_id'];?>">
-                                <b><?php echo stripslashes($item[$i]['it_name']); ?></b>
-                            </a>
+                                <b><?php echo stripslashes($item[$i]['it_name']); ?></b>                            </a>
                             <?php if($item[$i]['it_options']) { ?>
                                 <div class="well well-sm"><?php echo $item[$i]['it_options'];?></div>
                                 <button type="button" class="btn btn-primary btn-sm btn-block mod_options">选项/数量 修改</button>
-                            <?php } ?>
-                        </td>
+                            <?php } ?>                        </td>
                         <td class="text-center"><?php echo number_format($item[$i]['qty']); ?></td>
                         <td class="text-right"><?php echo $item[$i]['ct_price']; ?></td>
                         <td class="text-right"><span id="sell_price_<?php echo $i; ?>"><?php echo number_format($item[$i]['sell_price']); ?></span></td>
                         <td class="text-right"><?php echo number_format($item[$i]['point']); ?></td>
-                        <td class="text-center"><?php echo $item[$i]['ct_send_cost']; ?></td>
-                    </tr>
+                  </tr>
                 <?php } ?>
                 <?php if ($i == 0) { ?>
                     <tr><td colspan="8" class="text-center text-muted"><p style="padding:50px 0;">购物车 没有东西了！ 快去抢购吧！.</p></td></tr>
@@ -122,8 +114,7 @@ if($header_skin)
                     	<tr>
                         	<td class="save" colspan="8">
                             	<button name="btnMoreProduct" class="more_ozbox" type="button" value="0">배송비 절약상품 보기</button>
-                                <p class="order_delivery"><?php echo number_format($send_cost); ?> 元</p>
-                            </td>
+                                <p class="order_delivery"><?php echo number_format($send_cost); ?> 元</p>                            </td>
                         </tr>
                         <? } ?>
                         <tr>
@@ -133,20 +124,28 @@ if($header_skin)
                                 <span class="order_price">¥<?php echo number_format($tot_price-$send_cost,2); ?> </span>
                                 <img class="order_plus" alt="상품금액" src="/images/ico_order_plus.png"/>
                                 <span class="order_article">运费</span>
-                                <span class="order_price">¥<?php echo number_format($send_cost); ?></span>
-                            </td>                                
+                                <span class="order_price">¥<?php echo number_format($send_cost); ?></span>                            </td>                                
                         </tr>
                         <tr>
                         	<td class="merge" colspan="8">
+                        <div class="col-sm-6">
+                            <div class="btn-group btn-group-justified" style="width:240px;">
+                                <div class="btn-group">
+                                    <button type="button" onclick="return form_check('seldelete');" class="btn btn-black btn-block btn-sm" style="width:120px;"><i class="fa fa-times"></i> 选择删除</button>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" onclick="return form_check('alldelete');" class="btn btn-black btn-block btn-sm" style="width:120px;"><i class="fa fa-trash"></i> 清空购物车</button>
+                                </div>
+                            </div>
+                        </div>
                         	<span class="order_article_b">结算总额</span>
                             <span class="order_price"><?php echo number_format($tot_price,2); ?></span>
-                            <span class="order_article">元</span>
-                            </td>
+                            <span class="order_article">元</span>                            </td>
                         </tr>
                     </tfoot>
                     <?php } ?>
                 </table>
-                </div>
+          </div>
             </div>
         </div>
         
@@ -171,19 +170,7 @@ if($header_skin)
 
                     <div class="row">
                         <div class="col-sm-3"></div>
-                        <div class="col-sm-6">
-                            <div class="btn-group btn-group-justified">
-                                <div class="btn-group">
-                                    <a href="<?php echo G5_SHOP_URL; ?>/list.php?ca_id=<?php echo $continue_ca_id; ?>" class="btn btn-black btn-block btn-sm"><i class="fa fa-cart-plus"></i> 继续购物</a>
-                                </div>
-                                <div class="btn-group">
-                                    <button type="button" onclick="return form_check('seldelete');" class="btn btn-black btn-block btn-sm"><i class="fa fa-times"></i> 选择删除</button>
-                                </div>
-                                <div class="btn-group">
-                                    <button type="button" onclick="return form_check('alldelete');" class="btn btn-black btn-block btn-sm"><i class="fa fa-trash"></i> 清空购物车</button>
-                                </div>
-                            </div>
-                        </div>
+
                         <div class="col-sm-3"></div>
                     </div>
             <?php } ?>

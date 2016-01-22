@@ -260,7 +260,7 @@ $result = sql_query($sql);
                                     </a>
                                     <span class="item_tag">
                                     	<span class="wonderful_cart">
-                                        	<a href="#">
+                                        	<a href="/shop/item.php?it_id=<?=$row_main[it_id]?>&ca_id=<?=$row_main[ca_id]?>">
                                             	<img width="100%" src="/images/wonderful_cart.png" onmouseover="this.src='/images/wonderful_cart_o.png'" onmouseout="this.src='/images/wonderful_cart.png'"/>
                                             </a>
                                         </span>
