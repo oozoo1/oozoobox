@@ -315,6 +315,7 @@ fieldset legend{display: none;}
 .oz_wonderful_con .card_item .ico_wonderful_wish{width:34px; height:34px; display:block; background:url("/images/bg_album_ico_wish.png") no-repeat; position:absolute; top:0; left:0;}
 .oz_wonderful_con .card_item .ico_wonderful_wish em {overflow:hidden; width:34px; display:block; padding-top:14px; text-align:center;}
 .oz_wonderful_con .card_item .item_pic {width: 100%; height: 313px; display: block;}
+.oz_wonderful_con .card_item .item_pic img {height:100%;}
 .oz_wonderful_con .card_item .item_info {padding: 14px 12px 8px; text-align: left; display: block;}
 .oz_wonderful_con .card_item .item_desc {height: 34px; line-height: 14px; overflow: hidden; display: block;}
 .oz_wonderful_con .card_item .item_name {color: rgb(102, 102, 102); line-height: 18px; font-size: 13px;}
@@ -1323,11 +1324,34 @@ h3.cs_main_title {padding:0 6px 12px ; border-bottom:2px solid #a5a5a5; font-siz
 #MainEvent02 .mainevent_btn {width:142px; height:44px; display:block; margin:25px auto;}
 
 
+/*MD 소개
+===============================*/
+article { padding: 30px 0 20px; }
+h4.md_title { font-size:22px; color: #333; margin-bottom: 50px; font-weight:bold;}
+.md_tabs > div { margin-top: 10px; background: white !important; }
+.md_tabs > div span { border-bottom: 4px solid #ccc !important; color: #333 !important; font-weight: 300; line-height: 186px !important; display: block; text-align: center; font-size: 24px; }
 
+.md_tabs ul.horizontal { list-style: none outside none; margin: 0; }
+.md_tabs li { width:160px; background: white; border-bottom: 4px solid #ccc; margin: 0 10px 0 0; display: inline-block; text-align:right;}
 
+.md_tabs a { color: #333; display: block; font-size: 18px; font-weight:bold; padding: 14px 24px; text-decoration: none;}
+.md_tabs a.md_yong {background:url("/images/ico_md_yong.png") no-repeat 12px 2px;}
+.md_tabs a.md_go {background:url("/images/ico_md_go.png") no-repeat 12px 4px;}
+.md_tabs a.md_kim {background:url("/images/ico_md_kim.png") no-repeat 12px 4px;}
+.md_tabs a.md_geol {background:url("/images/ico_md_geol.png") no-repeat 12px 4px;}
 
+.md_abs a:hover { color:#f47a22; }
+.md_tabs a.md_yong:hover {background:url("/images/ico_md_yong_o.png") no-repeat 12px 2px;}
+.md_tabs a.md_go:hover {background:url("/images/ico_md_go_o.png") no-repeat 12px 4px;}
+.md_tabs a.md_kim:hover {background:url("/images/ico_md_kim_o.png") no-repeat 12px 4px;}
+.md_tabs a.md_geol:hover {background:url("/images/ico_md_geol_o.png") no-repeat 12px 4px;}
 
-
+.md_tabs .active { background: #ffdb95 !important; border-bottom: 4px solid #f47a22 !important; }
+.md_tabs .active a { color:#f47a22 !important; }
+.md_tabs .active a.md_yong {background:url("/images/ico_md_yong_o.png") no-repeat 12px 2px;}
+.md_tabs .active a.md_go{background:url("/images/ico_md_go_o.png") no-repeat 12px 4px;}
+.md_tabs .active a.md_kim {background:url("/images/ico_md_kim_o.png") no-repeat 12px 4px;}
+.md_tabs .active a.md_geol {background:url("/images/ico_md_geol_o.png") no-repeat 12px 4px;}
 
 
 /*************************************************/
