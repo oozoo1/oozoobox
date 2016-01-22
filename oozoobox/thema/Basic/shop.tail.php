@@ -37,16 +37,16 @@ $cart_count = sql_num_rows($result);
     	<li><a>公司介绍</a></li>    
     	<li><a>联系我们</a></li>
     	<li><a>配送方式 </a></li>
-    	<li><a>제휴문의</a></li>   
-    	<li><a>채용안내</a></li>
+    	<li><a>合作咨询</a></li>   
+    	<li><a>招聘指南 </a></li>
     	<li><a>客户服务</a></li>
     	<li><a>服务协议</a></li>         
     </ul>
     <div class="footer_info">
     	<p>
-        OOZOOBOX | 대표：이하준 | 地址 : 913/101 38, Uisadang-daero, Yeongdeungpo-gu, Seoul, Korea | 邮政编码 ：07236 <br>
+        OOZOOBOX | 대표：李荷俊 | 地址 : 韩国首尔特别市永登浦区议事堂大街38 101/913| 邮政编码 ：07236 <br>
         联系电话 ：+82-2-1234-1234 / +82-70-1234-1234 | FAX : +82-50-1234-1234 <br>
-        发货和退货地址：（07236) 10F 21, Gukhoe-daero 62-gil, Yeongdeungpo-gu, Seoul, Korea <br>
+        发货和退货地址：韩国首尔特别市永登浦区国会大街62路 21 10楼| 邮政编码 ：07236<br>
         公司营业执照号 ：107-86-81797 | 通信销售申报号码 ：제2015-서울영등포-1249호 <br>
         服务时间: 周一到周六 08:00 ~ 17:00 | 服务热线 : +82-2-1234-1234<br>
          Copyright © 2015 OZOOBOX.com 版权所有 <br>
