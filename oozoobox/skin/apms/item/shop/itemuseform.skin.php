@@ -11,7 +11,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$item_skin_url.'/style.css" type=
 
 <div class="form-box">
 	<div class="form-header">
-		<h2>Review</h2>
+		<h2>填写评价</h2>
 	</div>
 	<div class="form-body">
 		<form name="fitemuse" class="form-light padding-15" role="form" method="post" action="./itemuseformupdate.php" onsubmit="return fitemuse_submit(this);" autocomplete="off">
@@ -23,7 +23,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$item_skin_url.'/style.css" type=
 			<input type="hidden" name="page" value="<?php echo $page; ?>">
 
 			<div class="form-group">
-				<label for="is_subject"><b class="en">제목</b><strong class="sound_only"> 필수</strong></label>
+				<label for="is_subject"><b class="en">标题</b><strong class="sound_only"> 필수</strong></label>
 				<input type="text" name="is_subject" value="<?php echo get_text($use['is_subject']); ?>" id="is_subject" required class="form-control input-sm minlength=2" minlength="2" maxlength="250">
 			</div>
 			<div class="form-group">
@@ -32,7 +32,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$item_skin_url.'/style.css" type=
 
 			<div class="row font-12">
 				<div class="col-sm-2 text-center">
-					<label><b class="en">별점주기</b></label>
+					<label><b class="en">星级</b></label>
 				</div>
 				<div class="col-sm-2 text-center">
 					<label class="red">
@@ -69,8 +69,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$item_skin_url.'/style.css" type=
 			<br>
 
 			<div class="text-center">
-				<button type="submit" class="btn btn-color btn-sm">작성완료</button>
-				<button type="button" class="btn btn-black btn-sm" onclick="window.close();">닫기</button>
+				<button type="submit" class="btn btn-color btn-sm">确认</button>
+				<button type="button" class="btn btn-black btn-sm" onclick="window.close();">关闭</button>
 			</div>
 		</form>
 	</div>

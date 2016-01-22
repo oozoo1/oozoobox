@@ -1537,13 +1537,13 @@ function apms_datetime($date, $type='m.d') {
 	$y = $d * 10; //1년 = 1일 * 10일
 
 	if ($diff < $s) {
-		$time = $diff."초전";
+		$time = $diff."秒前";
 	} else if ($h > $diff && $diff >= $s) {
-		$time = round($diff/$s)."분전";
+		$time = round($diff/$s)."分前";
 	} else if ($d > $diff && $diff >= $h) {
-		$time = round($diff/$h)."시간전";
+		$time = round($diff/$h)."小时前";
 	} else if ($y > $diff && $diff >= $d) {
-		$time = round($diff/$d)."일전";
+		$time = round($diff/$d)."日前";
 	} else {
 		$time = date($type, $date);
 	} 

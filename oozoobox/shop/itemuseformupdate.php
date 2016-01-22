@@ -28,8 +28,8 @@ if ($w == "" || $w == "u") {
     $is_name     = addslashes($member['mb_nick']); // 별명으로 변경
     $is_password = $member['mb_password'];
 
-    if (!$is_subject) alert("제목을 입력하여 주십시오.");
-    if (!$is_content) alert("내용을 입력하여 주십시오.");
+    if (!$is_subject) alert("请填写标题.");
+    if (!$is_content) alert("请填写内容.");
 }
 
 // 포토후기
@@ -68,7 +68,7 @@ if ($w == "") {
     $is_id = sql_insert_id();
 
     if ($default['de_item_use_use']) {
-        $alert_msg = "글은 관리자가 확인한 후에 출력됩니다.";
+        $alert_msg = "管理员审核出现在列表.";
     }  else {
 		//$alert_msg = "등록 되었습니다.";
 
@@ -82,7 +82,7 @@ else if ($w == "u")
     $sql = " select is_password from {$g5['g5_shop_item_use_table']} where is_id = '$is_id' ";
     $row = sql_fetch($sql);
     if ($row['is_password'] != $is_password)
-        alert("비밀번호가 틀리므로 수정하실 수 없습니다.");
+        alert("密码错误无法修改.");
 
     $sql = " update {$g5['g5_shop_item_use_table']}
                 set is_subject = '$is_subject',
@@ -101,9 +101,9 @@ else if ($w == "d")
         $row = sql_fetch($sql);
         if (!$row['cnt']) {
 			if($move) {
-				alert("자신의 글만 삭제하실 수 있습니다.");
+				alert("只能删除自己的评价.");
 			} else {
-				apms_alert("1|자신의 글만 삭제하실 수 있습니다.");
+				apms_alert("1|只能删除自己的评价.");
 			}
 		}
 	}

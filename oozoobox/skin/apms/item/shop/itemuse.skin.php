@@ -42,7 +42,7 @@ $list_cnt = count($list);
 				</div>
 				<div class="media-desc">
 					<a href="#" onclick="more_is('more_is_<?php echo $i; ?>'); return false;">
-						<span class="text-muted"><?php echo apms_cut_text($list[$i]['is_content'], $wset['ucont'], '… <span class="font-11 text-muted">더보기</span>'); ?></span>
+						<span class="text-muted"><?php echo apms_cut_text($list[$i]['is_content'], $wset['ucont'], '… <span class="font-11 text-muted">MORE</span>'); ?></span>
 					</a>
 				</div>
 			</div>
@@ -51,11 +51,11 @@ $list_cnt = count($list);
 				<?php if ($list[$i]['is_btn']) { ?>
 					<div class="media-btn text-right">
 						<a href="#" onclick="apms_form('itemuse_form', '<?php echo $list[$i]['is_edit_href'];?>'); return false; ">
-							<span class="text-muted"><i class="fa fa-plus"></i> 수정</span>
+							<span class="text-muted"><i class="fa fa-plus"></i> 修改</span>
 						</a>
 						&nbsp;
 						<a href="#" onclick="apms_delete('itemuse', '<?php echo $list[$i]['is_del_href'];?>', '<?php echo $list[$i]['is_del_return'];?>'); return false; ">
-							<span class="text-muted"><i class="fa fa-times"></i> 삭제</span>
+							<span class="text-muted"><i class="fa fa-times"></i> 删除</span>
 						</a>
 					</div>
 				<?php } ?>
@@ -68,7 +68,7 @@ $list_cnt = count($list);
 	<?php if ($is_free_write) { ?>
 		구매와 상관없이 후기를 등록할 수 있습니다.
 	<?php } else { ?>
-		구매하신 분만 후기를 등록할 수 있습니다.
+		购买后才可以评价
 	<?php } ?>
 </div>
 
@@ -84,9 +84,8 @@ $list_cnt = count($list);
 	<div class="pull-right">
 		<div class="btn-group">
 			<button type="button" class="btn btn-color btn-sm" onclick="apms_form('itemuse_form', '<?php echo $itemuse_form; ?>');">
-				<i class="fa fa-pencil"></i> 후기쓰기<span class="sound_only"> 새 창</span>
+				<i class="fa fa-pencil"></i> 填写评价<span class="sound_only"> 새 창</span>
 			</button>
-			<a class="btn btn-black btn-sm" href="<?php echo $itemuse_list; ?>"><i class="fa fa-plus"></i> 더보기</a>
 			<?php if($admin_href) { ?>
 				<a class="btn btn-black btn-sm" href="<?php echo $admin_href; ?>"><i class="fa fa-th-large"></i><span class="hidden-xs"> 관리</span></a>
 			<?php } ?>

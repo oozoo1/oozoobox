@@ -528,7 +528,7 @@ $row = sql_fetch($sql);
                             
                             <!--s: 후기 리스트-->
                             <ul id="tab2_after_comment">
-                            	<?php include_once('./itemcomment.php'); ?>
+                            	<?php include_once('./itemuse.php'); ?>
 							</ul>
                             <!--s: 후기 리스트-->                        
                         </div>
