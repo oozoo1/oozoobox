@@ -478,8 +478,8 @@ $result = sql_query($sql);
                     </dl>
                     <dl>
                         <dt class="menu_tit">支付方式 </dt>
-                        <dd><a>如何注册支付宝</a></dd>
-                        <dd><a>支付协议</a></dd>
+                        <dd><a href="/bbs/board.php?bo_table=faq&wr_id=6">如何注册支付宝</a></dd>
+                        <dd><a href="/bbs/board.php?bo_table=faq&wr_id=7">支付协议</a></dd>
                         <dd><a>支付方式</a></dd>
                     </dl>
                     <dl>
@@ -492,7 +492,7 @@ $result = sql_query($sql);
                     <dl>
                         <dt class="menu_tit">客服中心</dt>
                         <dd><a>FAQ</a></dd>
-                        <dd><a>服务协议</a></dd>
+                        <dd><a href="/bbs/board.php?bo_table=faq&wr_id=8">服务协议</a></dd>
                         <dd><a>会员修改个人资料</a></dd>
                         <dd><a>会员修改密码</a></dd>
                         <dd><a>修改收货地址</a></dd>
