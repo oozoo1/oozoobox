@@ -22,13 +22,13 @@ $resultmy = sql_query($sqlmy);
 												<? for ($i=0; $row_my=sql_fetch_array($resultmy); $i++){ ?>
                         <div class="guess_like_item">
                         	<div class="guess_pic">
-                            	<a class="guess_pic_link" href="/shop/item.php?it_id=<?=$row_my[it_id]?>&ca_id=<?=$row_my[ca_id]?>">
+                            	<a class="guess_pic_link" href="/shop/item.php?it_id=<?=$row_my[it_id]?>&ca_id=<?=$row_my[ca_id]?>" target="_parent">
                                  	<img src="http://data.oozoobox.com/data/item/<?=$row_my[it_img1]?>" alt="상품사진01"/>
                                 </a>
                             </div>
                             <div class="guess_item">
-                            	<a class="guess_tit" href="/shop/item.php?it_id=<?=$row_my[it_id]?>&ca_id=<?=$row_my[ca_id]?>"><?=$row_my[it_name]?></a>
-                                <a class="guess_subtit" href="/shop/item.php?it_id=<?=$row_my[it_id]?>&ca_id=<?=$row_my[ca_id]?>"><?=$row_my[it_basic]?></a>
+                            	<a class="guess_tit" href="/shop/item.php?it_id=<?=$row_my[it_id]?>&ca_id=<?=$row_my[ca_id]?>" target="_parent"><?=$row_my[it_name]?></a>
+                                <a class="guess_subtit" href="/shop/item.php?it_id=<?=$row_my[it_id]?>&ca_id=<?=$row_my[ca_id]?>" target="_parent"><?=$row_my[it_basic]?></a>
                                 <span class="guess_price">¥<?php echo number_format($row_my['it_price'],2); ?></span>
                             </div>
                         </div>

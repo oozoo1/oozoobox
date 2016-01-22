@@ -21,15 +21,15 @@ $resultmy = sql_query($sqlmy);
 												<? for ($i=0; $row_my=sql_fetch_array($resultmy); $i++){ ?>
                         <div class="selection_like_item">
                         	<div class="selection_pic">
-                            	<a class="selection_pic_link" href="/shop/item.php?it_id=<?=$row_my[it_id]?>&ca_id=<?=$row_my[ca_id]?>">
+                            	<a class="selection_pic_link" href="/shop/item.php?it_id=<?=$row_my[it_id]?>&ca_id=<?=$row_my[ca_id]?>" target="_parent">
                                  	<img src="http://data.oozoobox.com/data/item/<?=$row_my[it_img1]?>" alt="상품사진01"/>
                                 </a>
                             </div>
                             <div class="selection_item">                       
-                            	<a class="selection_tit" href="/shop/item.php?it_id=<?=$row_my[it_id]?>&ca_id=<?=$row_my[ca_id]?>"><?=$row_my[it_name]?></a>
+                            	<a class="selection_tit" href="/shop/item.php?it_id=<?=$row_my[it_id]?>&ca_id=<?=$row_my[ca_id]?>" target="_parent"><?=$row_my[it_name]?></a>
                                 <div class="md_selection">
                                     <img src="/images/md_selection_pic_01.png" alt="MD照片"/>
-                                    <a class="selection_txt" href="/shop/item.php?it_id=<?=$row_my[it_id]?>&ca_id=<?=$row_my[ca_id]?>"><?=$row_my[it_basic]?></a>
+                                    <a class="selection_txt" href="/shop/item.php?it_id=<?=$row_my[it_id]?>&ca_id=<?=$row_my[ca_id]?>" target="_parent"><?=$row_my[it_basic]?></a>
                                 </div>
                             </div>
                         </div>
