@@ -470,11 +470,11 @@ $result = sql_query($sql);
                         <dd><a>我要买</a></dd>
                     </dl>
                     <dl>
-                        <dt class="menu_tit">商家服务</dt>
-                        <dd>商家入驻</dd>
-                        <dd>商家中心</dd>
-                        <dd>登陆商品</dd>
-                        <dd>天猫规则</dd>
+                        <dt class="menu_tit">판매자센터</dt>
+                        <dd>입점관리</dd>
+                        <dd>관련상품등록</dd>
+                        <dd>상품올리기</dd>
+                        <dd>입점신청</dd>
                     </dl>
                     <dl>
                         <dt class="menu_tit">支付方式 </dt>
