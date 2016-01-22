@@ -45,14 +45,14 @@ $skin_url = $member_skin_url;
       <div class="row">
         <div class="twelve columns">
           <article>
-            <h4>Animation</h4>
+            <h4>MD介绍</h4>
 
             <div class='tabs tabs_animate'>
               <ul class='horizontal'>
-                <li class="md_yong"><a href="#tab-1">金龙喆</a></li>
-                <li class="md_go"><a href="#tab-2">高在赫</a></li>
-                <li class="md_kim"><a href="#tab-3">金美慧</a></li>
-                <li class="md_geol"><a href="#tab-4">许 杰</a></li>
+                <li><a class="md_yong" href="#tab-1">金龙喆</a></li>
+                <li><a class="md_go" href="#tab-2">高在赫</a></li>
+                <li><a class="md_kim" href="#tab-3">金美慧</a></li>
+                <li><a class="md_geol" href="#tab-4">许 杰</a></li>
               </ul>
               <div id='tab-1'><span>용 소개</span></div>
               <div id='tab-2'><span>고 소개</span></div>
