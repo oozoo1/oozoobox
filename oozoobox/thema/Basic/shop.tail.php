@@ -72,7 +72,11 @@ $cart_count = sql_num_rows($result);
 					</div>
 				</li>
 				<li>
-					<a href="/shop/cart.php" class="message_list" ><i class="message"></i><div class="span">购物车</div><span class="cart_num"><?=$cart_count?></span></a>
+					<? if($member[mb_id]){?>
+						<a href="/shop/cart.php" class="message_list" ><i class="message"></i><div class="span">购物车</div><span class="cart_num"><?=$cart_count?></span></a>
+					<? }else{ ?>
+						<a class="top_quick05" href="/bbs/login.php?url=<?=urlencode("/shop/cart.php")?>">购物车</a> <!--"장바구니"-->
+					<? } ?>
 				</li>
 				<li>
 					<a href="/shop/member_todayview.php" class="mpbtn_histroy"><i class="zuji"></i></a>

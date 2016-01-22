@@ -72,7 +72,8 @@ if($today[id]){
                                 <? if($member[mb_id]){?>
                                     <a class="top_quick05" href="/shop/cart.php" target="_parent" rel="nofollow">购物车</a> <!--"장바구니"-->
                                 <? }else{ ?>
-                                <a class="top_quick05" href="#" onClick="javascript:if(confirm('您还不是网站会员 是否要登陆网站？')){document.location.href='/bbs/login.php?url=<?=urlencode("/shop/cart.php")?>'};">购物车</a> <!--"장바구니"-->
+                                <a class="top_quick05" href="/bbs/login.php?url=<?=urlencode("/shop/cart.php")?>">购物车</a> <!--"장바구니"-->
+                                <!-- <a class="top_quick05" href="#" onClick="javascript:if(confirm('您还不是网站会员 是否要登陆网站？')){document.location.href='/bbs/login.php?url=<?=urlencode("/shop/cart.php")?>'};">购物车</a> --> <!--"장바구니"-->
                                 <? } ?>
                                 </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
