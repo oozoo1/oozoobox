@@ -3,7 +3,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<title><?php echo $config['cf_title']; ?> - 주문 알림 메일</title>
+<title><?php echo $config['cf_title']; ?> - 订单提示邮件</title>
 </head>
 
 <?php
@@ -20,103 +20,73 @@ $ft_a_st = 'display:block;padding:30px 0;background:#484848;color:#fff;text-alig
 <div style="margin:30px auto;width:600px;border:10px solid #f7f7f7">
     <div style="border:1px solid #dedede">
         <h1 style="margin:0 0 20px;padding:30px 30px 20px;background:#f7f7f7;color:#555;font-size:1.4em">
-            <?php echo $config['cf_title'];?> - 주문이 접수되었습니다.
+            <?php echo $config['cf_title'];?> - 您的订单已下单.
         </h1>
 
         <p style="<?php echo $cont_st; ?>">
-            <strong>주문번호 <?php echo $od_id; ?></strong><br>
-            본 메일은 <?php echo G5_TIME_YMDHIS; ?> (<?php echo get_yoil(G5_TIME_YMDHIS); ?>)을 기준으로 작성되었습니다.
+            <strong>订单号码 <?php echo $od_id; ?></strong><br>
+            本邮件 <?php echo G5_TIME_YMDHIS; ?> (<?php echo get_yoil(G5_TIME_YMDHIS); ?>) 发送.
         </p>
 
         <table style="<?php echo $cont_st; ?>">
-        <caption style="<?php echo $caption_st; ?>"> 주문 내역</caption>
+        <caption style="<?php echo $caption_st; ?>"> 订单内容</caption>
         <colgroup>
             <col style="width:130px">
             <col>
         </colgroup>
         <tbody>
         <tr>
-            <th scope="row" style="<?php echo $th_st; ?>">상품명</th>
+            <th scope="row" style="<?php echo $th_st; ?>">商品名</th>
             <td style="<?php echo $td_st; ?>"><a href="<?php echo G5_SHOP_URL.'/item.php?it_id='.$list[$i]['it_id']; ?>" target="_blank" style="text-decoration:none"><span style="display:inline-block;vertical-align:middle"><?php echo $list[$i]['it_simg']; ?></span> <?php echo $list[$i]['it_name']; ?></a></td>
         </tr>
         <tr>
-            <th scope="row" style="<?php echo $th_st; ?>">판매가격</th>
+            <th scope="row" style="<?php echo $th_st; ?>">价格</th>
             <td style="<?php echo $td_st; ?>"><?php echo display_price($list[$i]['ct_price']); ?></td>
         </tr>
         <tr>
-            <th scope="row" style="<?php echo $th_st; ?>">선택옵션 </th>
+            <th scope="row" style="<?php echo $th_st; ?>">套餐 </th>
             <td style="<?php echo $td_st; ?>"><?php echo $list[$i]['it_opt']; ?></td>
         </tr>
         </tbody>
         </table>
 
-        <table style="<?php echo $cont_st; ?>">
-        <caption style="<?php echo $caption_st; ?>">주문하신 분 정보</caption>
-        <colgroup>
-            <col style="width:130px">
-            <col>
-        </colgroup>
-        <tbody>
-        <tr>
-            <th scope="row" style="<?php echo $th_st; ?>">이름</th>
-            <td style="<?php echo $td_st; ?>"><?php echo $od_name; ?></td>
-        </tr>
-        <tr>
-            <th scope="row" style="<?php echo $th_st; ?>">전화번호</th>
-            <td style="<?php echo $td_st; ?>"><?php echo $od_tel; ?></td>
-        </tr>
-        <tr>
-            <th scope="row" style="<?php echo $th_st; ?>">핸드폰</th>
-            <td style="<?php echo $td_st; ?>"><?php echo $od_hp; ?></td>
-        </tr>
-        <tr>
-            <th scope="row" style="<?php echo $th_st; ?>">주소</th>
-            <td style="<?php echo $td_st; ?>"><?php echo sprintf("(%s%s)", $od_zip1, $od_zip2).' '.print_address($od_addr1, $od_addr2, $od_addr3, $od_addr_jibeon); ?></td>
-        </tr>
-
-        <?php if ($od_hope_date) { ?>
-        <tr>
-            <th scope="row" style="<?php echo $th_st; ?>">희망배송일</th>
-            <td style="<?php echo $td_st; ?>"><?php echo $od_hope_date;?> (<?php echo get_yoil($od_hope_date);?>)</td>
-        </tr>
-        <?php } ?>
         </tbody>
         </table>
 
 
         <table style="<?php echo $cont_st; ?>">
-        <caption style="<?php echo $caption_st; ?>">배송지 정보</caption>
+        <caption style="<?php echo $caption_st; ?>">收货信息</caption>
         <colgroup>
             <col style="width:130px">
             <col>
         </colgroup>
         <tbody>
         <tr>
-            <th scope="row" style="<?php echo $th_st; ?>">이 름</th>
+            <th scope="row" style="<?php echo $th_st; ?>">姓名</th>
             <td style="<?php echo $td_st; ?>"><?php echo $od_b_name; ?></td>
         </tr>
         <tr>
-            <th scope="row" style="<?php echo $th_st; ?>">전화번호</th>
+            <th scope="row" style="<?php echo $th_st; ?>">电话号码</th>
             <td style="<?php echo $td_st; ?>"><?php echo $od_b_tel; ?></td>
         </tr>
         <tr>
-            <th scope="row" style="<?php echo $th_st; ?>">핸드폰</th>
+            <th scope="row" style="<?php echo $th_st; ?>">手机号码</th>
             <td style="<?php echo $td_st; ?>"><?php echo $od_b_hp; ?></td>
         </tr>
         <tr>
-            <th scope="row" style="<?php echo $th_st; ?>">주소</th>
+            <th scope="row" style="<?php echo $th_st; ?>">地址</th>
             <td style="<?php echo $td_st; ?>"><?php echo sprintf("(%s%s)", $od_b_zip1, $od_b_zip2).' '.print_address($od_b_addr1, $od_b_addr2, $od_b_addr3, $od_b_addr_jibeon); ?></td>
         </tr>
         <tr>
-            <th scope="row" style="<?php echo $th_st; ?>">전하실 말씀</th>
+            <th scope="row" style="<?php echo $th_st; ?>">留言</th>
             <td style="<?php echo $td_st; ?>"><?php echo $od_memo; ?></td>
         </tr>
         </tbody>
         </table>
 
-        <p style="<?php echo $cont_st; ?>">이 주문과 관련된 내용은 <b><?php echo  $default['de_admin_company_tel']; ?></b>로 연락주시기 바랍니다.</p>
+        如果订单有误 请与 <b><?php echo  $default['de_admin_company_tel']; ?></b>联系.</p>
 
-        <a href="<?php echo G5_SHOP_URL.'/'; ?>" target="_blank" style="<?php echo $ft_a_st; ?>"><?php echo $config['cf_title']; ?></a>
+        <a href="<?php echo G5_SHOP_URL.'/'; ?>" target="_blank" style="<?php echo $ft_a_st; ?>">查看我的订单</a>
 
 </body>
 </html>
