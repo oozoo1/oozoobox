@@ -16,8 +16,8 @@ if($default['de_iche_use'] || $default['de_vbank_use'] || $default['de_hp_use'] 
 <?php } ?>
 
 <div id="display_pay_button" class="btn_confirm" style="display:none">
-    <input type="submit" value="주문하기" onclick="return forderform_check(this.form);" class="btn_submit">
-    <a href="javascript:history.go(-1);" class="btn01">취소</a>
+    <input type="submit" value="确认下单" onclick="return forderform_check(this.form);" class="btn_submit">
+    <a href="javascript:history.go(-1);" class="btn01">取消</a>
 </div>
 <div id="display_pay_process" style="display:none">
     <img src="<?php echo G5_URL; ?>/shop/img/loading.gif" alt="">
@@ -25,7 +25,7 @@ if($default['de_iche_use'] || $default['de_vbank_use'] || $default['de_hp_use'] 
 </div>
 
 <?php
-// 무통장 입금만 사용할 때는 주문하기 버튼 보이게
+// 무통장 입금만 사용할 때는 确认下单 버튼 보이게
 if(!($default['de_iche_use'] || $default['de_vbank_use'] || $default['de_hp_use'] || $default['de_card_use'] || $default['de_easy_pay_use'])) {
 ?>
 <script>

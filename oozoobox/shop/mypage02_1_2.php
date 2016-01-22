@@ -30,76 +30,39 @@ include_once('./_head.php');
 $skin_path = $member_skin_path;
 $skin_url = $member_skin_url;
 ?>
-		<a href="/shop/mypage.php"><h3 class="mp_tit">MY OOZOOBOX <span class="mp_tit_small">고객님의 개인정보, 주문 내역 등의 이용 기록을 조회할 수 있습니다.</span></h3></a>
+		<a href="/shop/mypage.php"><h3 class="mp_tit">MY OOZOOBOX <span class="mp_tit_small">顾客的个人情报及订单详情等使用记录可以查询。</span></h3></a>
 		<? include ("member_left.php");?>   
         
         <!--s: RIGHT CONTENTS-->
         <div class="My_container">
         	<h4 class="Mypage_tit">
-            주문취소
+            订单取消
             </h4>
-            
-			<div class="Cancel_Step">
-            	<img src="/images/mypage02_1_1_step02.png" alt="Step02"/>
-            </div>
 
-            <h4 class="strapline">2. 취소사유 <span class="explain">(포인트가 적용 되었던 결제금액으로 환불되며, 전체 취소할 경우 포인트는 자동환불 됩니다.)</span></h4>    
+            <h4 class="strapline">2. 取消理由 <span class="explain">(使用过的 积分全部会 清零/不退还)</span></h4>    
+            <form class="form" role="form" method="post" action="./orderinquirycancel.php" onsubmit="return fcancel_check(this);">
+            <input type="hidden" name="od_id"  value="<?=$_GET[od_id]?>">
             <table class="order-list-table order-cancel-table">
-            	<colgroup>
-                	<col style="width:50%"/>
-                    <col/>
-                </colgroup>
                 <thead>
                 	<tr>
-                        <th class="first">취소사유</th>
-                        <th>상품취소 상세내용 입력</th>
+                        <th>取消理由</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="separate">
-                    	<td class="pro">
-                        	<ul>
-                            	<li>
-                                    <span class="radio-wrap">
-                                        <input type="radio"/> OOZOOBOX내 다른 상품으로 재 주문
-                                    </span>
-                                </li>
-                            	<li>
-                                    <span class="radio-wrap">
-                                        <input type="radio"/> 타사이트 상품 주문
-                                    </span>
-                                </li>
-                            	<li>
-                                    <span class="radio-wrap">
-                                        <input type="radio"/> 구매의사가 없어짐
-                                    </span>
-                                </li>
-                            	<li>
-                                    <span class="radio-wrap">
-                                        <input type="radio"/> 동일 상품 재 주문 (주문정보수정)
-                                    </span>
-                                </li>
-                            	<li>
-                                    <span class="radio-wrap">
-                                        <input type="radio"/> 기타(구매자 책임 사유)
-                                    </span>
-                                </li>
-                            </ul>
-                        </td>
+                <tbody>                
+                    <tr class="separate">                    	
                         <td class="pro">
                         	<div class="cancel_textbox">
-                            	<textarea class="cancel_textbox" type="text"></textarea>
-                            </div>
+                            <textarea name="cancel_memo" cols="40" class="cancel_textbox" id="cancel_memo" required="required"></textarea>
+                          </div>
                         </td>
                     </tr>
                     <!-------e: 취소할 상품 선택---------->
                 </tbody>
             </table>
             <div class="basicbtns">
-            	<a href="/shop/mypage02_1_1.php"><button><img src="/images/btn_my_before.png" alt="上一部"/></button></a>
-                <a href="/shop/mypage02_1_3.php"><button><img src="/images/btn_my_next.png" alt="下一部"/></button></a>
+            	<button type="submit" ><img src="/images/btn_my_next.png" alt="上一部"/></button>
             </div>                    
-            
+            </form>
         </div>
         <!--e: RIGHT CONTENTS-->
 

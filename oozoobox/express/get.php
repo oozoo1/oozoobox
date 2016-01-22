@@ -5,7 +5,7 @@ $typeNu = $_GET["nu"];  //快递单号
 //echo $typeCom.'<br/>' ;
 //echo $typeNu ;
 
-$AppKey='XXXXXX';//请将XXXXXX替换成您在http://kuaidi100.com/app/reg.html申请到的KEY
+$AppKey='987d20ee28d679df';//请将XXXXXX替换成您在http://kuaidi100.com/app/reg.html申请到的KEY
 $url ='http://api.kuaidi100.com/api?id='.$AppKey.'&com='.$typeCom.'&nu='.$typeNu.'&show=2&muti=1&order=asc';
 
 //请勿删除变量$powered 的信息，否者本站将不再为你提供快递接口服务。

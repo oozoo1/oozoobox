@@ -173,7 +173,7 @@ $cart_count = sql_num_rows($result);
         <input type="hidden" name="act" value="">
         <input type="hidden" name="records" value="<?php echo $i; ?>">
         <a href="<?php echo G5_SHOP_URL; ?>/list.php?ca_id=<?php echo $continue_ca_id; ?>" class="btn01">쇼핑 계속하기</a>
-        <button type="button" onclick="return form_check('buy');" class="btn_submit">주문하기</button>
+        <button type="button" onclick="return form_check('buy');" class="btn_submit">确认购物</button>
         <div><button type="button" onclick="return form_check('seldelete');" class="btn01">선택삭제</button>
         <button type="button" onclick="return form_check('alldelete');" class="btn01">비우기</button></div>
         <?php } ?>

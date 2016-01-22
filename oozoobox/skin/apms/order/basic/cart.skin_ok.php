@@ -158,7 +158,7 @@ if($header_skin)
                             <td>178,000원</td>
                             <td class="order_btn">
                             	<button name="btnLaterBuyPart" id="btnLaterBuyPart" type="button">
-                                	<img alt="나중에 주문하기" src="/images/btn_order_later.png"/>
+                                	<img alt="나중에 确认下单" src="/images/btn_order_later.png"/>
                                 </button>
                             	<button name="btnWishlistPart" id="btnWishlistPart" type="button">
                                 	<img alt="위시리스트담기" src="/images/btn_order_wishlist.png"/>
@@ -271,7 +271,7 @@ if($header_skin)
                             <td>178,000원</td>
                             <td class="order_btn">
                             	<button name="btnLaterBuyPart" id="btnLaterBuyPart" type="button">
-                                	<img alt="나중에 주문하기" src="/images/btn_order_later.png"/>
+                                	<img alt="나중에 确认下单" src="/images/btn_order_later.png"/>
                                 </button>
                             	<button name="btnWishlistPart" id="btnWishlistPart" type="button">
                                 	<img alt="위시리스트담기" src="/images/btn_order_wishlist.png"/>
@@ -558,7 +558,7 @@ if($header_skin)
                                     <td>178,000원</td>
                                     <td class="order_btn">
                                         <button name="btnLaterBuyPart" id="btnLaterBuyPart" type="button">
-                                            <img alt="나중에 주문하기" src="/images/btn_order_later.png"/>
+                                            <img alt="나중에 确认下单" src="/images/btn_order_later.png"/>
                                         </button>
                                         <button name="btnWishlistPart" id="btnWishlistPart" type="button">
                                             <img alt="위시리스트담기" src="/images/btn_order_wishlist.png"/>
@@ -584,7 +584,7 @@ if($header_skin)
                     </div>
                     <!--e: 选择商品添加购物车-->
                 </div>
-                <!--e: 위시리스트, 나중에 주문하기 content-->
+                <!--e: 위시리스트, 나중에 确认下单 content-->
                 <div class="btn_area">
                     <button class="select" id="btnLCheckAll" type="button">
                         <img src="/images/btn_CheckAll.png" alt="全部选择"/>
@@ -603,9 +603,9 @@ if($header_skin)
                     </button>              
                 </div>     
             </div>
-            <!--위시리스트, 나중에 주문하기 wrap--> 
+            <!--위시리스트, 나중에 确认下单 wrap--> 
         </div>
-        <!--e: 위시리스트, 나중에 주문하기-->
+        <!--e: 위시리스트, 나중에 确认下单-->
         <!----------------------------------STEP 01------------------------------------->
         
         
@@ -937,7 +937,7 @@ $(document).ready(function(){
 				<div class="col-sm-3"></div>
 				<div class="col-sm-6">
 					<div class="form-group">
-						<button type="button" onclick="return form_check('buy');" class="btn btn-color btn-block btn-lg"><i class="fa fa-check-square fa-lg"></i> 주문하기</button>
+						<button type="button" onclick="return form_check('buy');" class="btn btn-color btn-block btn-lg"><i class="fa fa-check-square fa-lg"></i> 确认下单</button>
 					</div>
 				</div>
 				<div class="col-sm-3"></div>

@@ -14,10 +14,10 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
         </ol>
     </div>
     <div class="order_notice">
-        <h4>결제시 주의사항 <span class="order_notice_small">결제하실때 아래 사항을 꼭 확인해 주세요</span></h4>
+        <h4>购买时 注意事项 <span class="order_notice_small">购买时 请注意 以下事项</span></h4>
         <ul>
-            <li>- 정확한 주문을 위해 주문상품과 금액을 꼭 확인하시고, 수령인 및 배송지 정보를 정확하게 입력하시기 바랍니다.</li>
-            <li>- 직접 취소가 가능한 내역은 `我的购物信息 > 我的订单` 에서 확인 가능하며, 불가한 내역은 고객센터로 문의해 주세요.</li>
+            <li>- 为了确保您的资金问题 请再次确认 商品金额, 请再次确认 收货地址 和收货人的信息 是否正确.</li>
+            <li>- 取消订单内容可以在 `我的购物信息 > 我的订单` 里面确认, 不能确认的 请联系客服！.</li>
         </ul>            
     </div>
 
@@ -39,7 +39,6 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 		<th scope="col"><span>代金卷</span></th>
 		<th scope="col"><span>小计</span></th>
 		<th scope="col"><span>积分</span></th>
-		<th scope="col"><span class="last">运费</span></th>
 	</tr>
 	<?php for($i=0; $i < count($item); $i++) { ?>
 		<tr<?php echo ($i == 0) ? ' class="tr-line"' : '';?>>
@@ -74,7 +73,6 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 			</td>
 			<td class="text-right"><b><?php echo $item[$i]['total_price']; ?></b></td>
 			<td class="text-right"><?php echo $item[$i]['point']; ?></td>
-			<td class="text-center"><?php echo $item[$i]['ct_send_cost']; ?></td>
 		</tr>
 	<?php } ?>
 	</tbody>

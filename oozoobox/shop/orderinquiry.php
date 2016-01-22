@@ -155,7 +155,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
 			$od_status = '退货';
 			break;
 		default:
-			$od_status = '取消订单';
+			$od_status = '订单已取消';
 			break;
 	}
 	
@@ -194,6 +194,65 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
 }
 
 ?>
+	<script language="javascript">
+	$(document).ready(function()
+	{
+		$("#btnSnap").click(function()
+		{
+			$("#retData").html('loading...');
+ 
+			var expressid = $("#expressid").val();
+            var expressno = $("#expressno").val();
+			$.get("/express/get.php",{com:expressid,nu:expressno},
+				function(data)
+				{
+//					$("#retData").html(data);
+//
+//					var retData = eval(data);
+//					var retMsg = '';
+//					var j = 0;
+//
+//					for (var i=0;i<retData.length;i++)
+//					{
+//						if (i == retData.length -1)
+//						{
+//							retMsg += "<font color='#CC0000'>" + retData[i].item + "</font><br/>";
+//						}else{
+//							retMsg += retData[i].item + "<br/>";
+//						}
+//					}
+//					
+					$("#retData").html(data);
+				}
+			);
+ 
+			return false;
+		});
+	});
+	</script>
+	<style> 
+	#retForm{width:640px;line-height:22px;padding-bottom:10px;border-bottom:1px dotted #ccc;}
+	#retData{
+	padding:10px;
+	line-height:18px;
+	width: 96%;
+	border: 0;
+}
+	.txtPartner{width:960px;margin:20px 10px;padding:10px 0 0 0;border-top:1px solid #dfdfdf;}
+	.txtPartner h1{font-size:14px;color:#FF5632;}
+	.txtPartner a{float:left;margin:0 10px 10px 0;}
+    .logo {
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	padding: 10px;
+	font-family: "微软雅黑";
+}
+    .txtURL {
+	font-size: 12px;
+	padding: 10px;
+}
+    </style>
 		<a href="/shop/mypage.php"><h3 class="mp_tit">MY OOZOOBOX <span class="mp_tit_small">顾客的个人情报及订单详情等使用记录可以查询。</span></h3></a>
 		<? include ("member_left.php");?>   
         
@@ -266,7 +325,10 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
 <!------------------------s: 01.결제완료일때  (1개)------------------------->
 										<?php
                     for ($i=0; $i < count($list); $i++) { 
-                    ?>
+                    ?>       
+                                
+                    <input name="expressid" type="hidden" id="expressid" value="ems" title="快递公司"/> 
+                    <input name="expressno" type="hidden" id="expressno" value="<?=$list[$i][od_invoice]?>" title="运单号码"/>
                     <div class="modal" id="<?=$list[$i][od_id]?>">                    
                     <iframe src="/shop/popup/oderview.php?od_id=<?=$list[$i][od_id]?>" width="800" height="600" style="border:solid 0px;" scrolling="no"></iframe>
                     	<div style="text-align:center">
@@ -319,6 +381,9 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                             	</div>
                             </div>
                         <?  } ?>
+                        <div class="txtAboutSnap">
+                          <div id="retData"></div>
+                        </div>
                         </td>
                         <td class="seller">
                         	<span class="seller-info">
@@ -344,9 +409,7 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                               ?>
                           </strong>
                           <? if($list[$i][od_status]=="商品运输中"){?>
-                            <span class="tracking">
-                                <a>快递跟中</a>
-                            </span>
+                            <input type="submit"  class="tracking" style="border:solid 0px; font-weight:bold;" value="快递跟中" id="btnSnap" class="btnSnap"/>
                           <? } ?>
                           <? if($list[$i][od_status]=="交易完成"){?>
                             <span class="status-date">
@@ -384,7 +447,7 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                             <div class="buttons">
                             
                             <? if($list[$i][od_status]=="等待付款" || $list[$i][od_status]=="商品准备中" || $list[$i][od_status]=="交易完成"){ ?>
-                              <a href="/shop/mypage02_1_1.php" class="button">
+                              <a href="/shop/mypage02_1_2.php?od_id=<?=$list[$i][od_id]?>" class="button">
                               	<button class="cancel">取消订单</button>
                               </a>
                               <a class="button">
@@ -403,7 +466,7 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                             <? } ?>
 
 														<? if($list[$i][od_status]=="商品运输中"){ ?>
-                           	 <a href="/shop/mypage02_1_5.php" class="button"><button class="cancel">退货/取消订单 申请</button></a>
+                           	 <a href="/shop/mypage02_1_2.php?od_id=<?=$list[$i][od_id]?>" class="button"><button class="cancel">退货/取消订单 申请</button></a>
                             <? } ?>
                             
                             </div>

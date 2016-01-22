@@ -30,18 +30,14 @@ include_once('./_head.php');
 $skin_path = $member_skin_path;
 $skin_url = $member_skin_url;
 ?>
-		<a href="/shop/mypage.php"><h3 class="mp_tit">MY OOZOOBOX <span class="mp_tit_small">고객님의 개인정보, 주문 내역 등의 이용 기록을 조회할 수 있습니다.</span></h3></a>
+		<a href="/shop/mypage.php"><h3 class="mp_tit">MY OOZOOBOX <span class="mp_tit_small">顾客的个人情报及订单详情等使用记录可以查询。</span></h3></a>
 		<? include ("member_left.php");?>   
         
         <!--s: RIGHT CONTENTS-->
         <div class="My_container">
         	<h4 class="Mypage_tit">
             주문취소
-            </h4>
-            
-			<div class="Cancel_Step">
-            	<img src="/images/mypage02_1_1_step03.png" alt="Step03"/>
-            </div>
+            </h4>            
 
             <div class="My_leave_step04">
             	<span class="msg_big">
@@ -51,7 +47,7 @@ $skin_url = $member_skin_url;
                판매자 취소 승인 후 고객님께 환불됩니다.
                 </span>
                 <div class="basicbtns">
-                    <a href="/shop/mypage02_1.php"><button><img src="/images/btn_Gomypage02_1.png" alt="Go mypage02_1"/></button></a>
+                    <a href="/shop/orderinquiry.php"><button><img src="/images/btn_Gomypage02_1.png" alt="Go mypage02_1"/></button></a>
                     <a href="/"><button><img src="/images/btn_Gohome.png" alt="首页"/></button></a>
                 </div>    
             </div>

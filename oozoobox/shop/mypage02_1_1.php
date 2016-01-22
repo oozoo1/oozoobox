@@ -24,7 +24,7 @@ $mb_signature = ($member['mb_signature']) ? apms_content(conv_content($member['m
 
 
 
-$g5['title'] = get_text($member['mb_name']).'님 마이페이지';
+$g5['title'] = get_text($member['mb_name']).'订单取消';
 include_once('./_head.php');
 
 $skin_path = $member_skin_path;

@@ -1,15 +1,6 @@
 <?php
 include_once('./_common.php');
 
-// 세션에 저장된 토큰과 폼으로 넘어온 토큰을 비교하여 틀리면 에러
-if ($token && get_session("ss_token") == $token) {
-    // 맞으면 세션을 지워 다시 입력폼을 통해서 들어오도록 한다.
-    set_session("ss_token", "");
-} else {
-    set_session("ss_token", "");
-    alert("토큰 에러", G5_SHOP_URL);
-}
-
 $od = sql_fetch(" select * from {$g5['g5_shop_order_table']} where od_id = '$od_id' and mb_id = '{$member['mb_id']}' ");
 
 if (!$od['od_id']) {
@@ -24,10 +15,6 @@ $sql = " select SUM(IF(ct_status = '주문', 1, 0)) as od_count2,
 $ct = sql_fetch($sql);
 
 $uid = md5($od['od_id'].$od['od_time'].$od['od_ip']);
-
-if($od['od_cancel_price'] > 0 || $ct['od_count1'] != $ct['od_count2']) {
-    alert("취소할 수 있는 주문이 아닙니다.", G5_SHOP_URL."/orderinquiryview.php?od_id=$od_id&amp;uid=$uid");
-}
 
 // PG 결제 취소
 if($od['od_tno']) {
@@ -151,9 +138,5 @@ $sql = " update {$g5['g5_shop_order_table']}
             where od_id = '$od_id' ";
 sql_query($sql);
 
-// 주문취소 회원의 포인트를 되돌려 줌
-if ($od['od_receipt_point'] > 0)
-    insert_point($member['mb_id'], $od['od_receipt_point'], "주문번호 $od_id 본인 취소");
-
-goto_url(G5_SHOP_URL."/orderinquiryview.php?od_id=$od_id&amp;uid=$uid");
+goto_url(G5_SHOP_URL."/");
 ?>
