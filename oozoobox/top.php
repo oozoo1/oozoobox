@@ -26,7 +26,7 @@ if($today[id]){
                     <div id="oz_sn_bd"> <!----- @media  있음------>
                         <div class="oz_sn_container">
                             <p class="oz_sn_prm_info">
-                            	<em><a href="<?=$today_link?>" <? if($today[t_target]){?>target="_blank"<? } ?>><?php echo "$top_message";?></a></em> <!--"고객님, 오늘은 자외선이 강하네요. 외출할때 반드시 썬크림을 사용하세요>>>썬크림보러가기"  SW: php가 필요할지도.. -->
+                            	<em><a href="<?=$today_link?>" <? if($today[t_target]){?>target="_blank"<? }else{ ?> target="_parent"<? } ?>><?php echo "$top_message";?></a></em> <!--"고객님, 오늘은 자외선이 강하네요. 외출할때 반드시 썬크림을 사용하세요>>>썬크림보러가기"  SW: php가 필요할지도.. -->
                             </p>
                             <ul class="oz_sn_quick_menu">
                             <?php if($member[mb_id]){?>
