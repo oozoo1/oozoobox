@@ -64,19 +64,21 @@ if(G5_IS_MOBILE) {
 							}
 						 ?>
 							<div class="pull-right font-11 ">
+              <? if($member[mb_id]=="admin"){?>
 								<?php if ($list[$i]['is_reply']) { ?>
 									<a href="#" onclick="comment_box('<?php echo $comment_id ?>', 'c'); return false;">
 										<span class="text-muted">답변</span>
 									</a>
 								<?php } ?>
+                <? } ?>
 								<?php if ($list[$i]['is_edit']) { ?>
 									<a href="#" onclick="comment_box('<?php echo $comment_id ?>', 'cu'); return false;">
-										<span class="text-muted media-btn">수정</span>
+										<span class="text-muted media-btn">修改</span>
 									</a>
 								<?php } ?>
 								<?php if ($list[$i]['is_del'])  { ?>
 									<a href="#" onclick="apms_delete('itemcomment', '<?php echo $list[$i]['del_href'];?>','<?php echo $list[$i]['del_return'];?>'); return false;">
-										<span class="text-muted media-btn">삭제</span>
+										<span class="text-muted media-btn">删除</span>
 									</a>
 								<?php } ?>
 								<?php if ($is_shingo)  { ?>
@@ -87,11 +89,11 @@ if(G5_IS_MOBILE) {
 								<?php if ($is_admin) { ?>
 									<?php if ($list[$i]['is_lock']) { // 글이 잠긴상태이면 ?>
 										<a href="#" onclick="apms_shingo('<?php echo $list[$i]['it_id'];?>', '<?php echo $comment_id;?>', 'unlock'); return false;">
-											<span class="text-muted media-btn"><i class="fa fa-unlock fa-lg"></i><span class="sound_only">해제</span></span>
+											<span class="text-muted media-btn"><i class="fa fa-unlock fa-lg"></i><span class="sound_only">解除</span></span>
 										</a>
 									<?php } else { ?>
 										<a href="#" onclick="apms_shingo('<?php echo $list[$i]['it_id'];?>', '<?php echo $comment_id;?>', 'lock'); return false;">
-											<span class="text-muted media-btn"><i class="fa fa-lock fa-lg"></i><span class="sound_only">잠금</span></span>
+											<span class="text-muted media-btn"><i class="fa fa-lock fa-lg"></i><span class="sound_only">锁定</span></span>
 										</a>
 									<?php } ?>
 								<?php } ?>
@@ -151,22 +153,22 @@ if(G5_IS_MOBILE) {
 						<input type="hidden" name="page" value="" id="comment_page">
 
 						<div class="form-group">
-							<textarea id="wr_content" name="wr_content" rows=5 maxlength="10000" required class="form-control input-sm"><?php echo $c_wr_content;  ?></textarea>
+							<textarea id="wr_content" name="wr_content" rows=5 maxlength="10000" required class="form-control input-sm" style="width:97%;"><?php echo $c_wr_content;  ?></textarea>
 						</div>
 						<div class="comment-btn">
 							<div class="form-group pull-right">
 								<div class="btn-group">
-									<button class="btn btn-color btn-sm" type="button" onclick="apms_comment('itemcomment');" id="btn_submit"><i class="fa fa-comment"></i> <b>등록</b></button>
-									<button class="btn btn-black btn-sm" title="이모티콘" type="button" onclick="apms_emoticon();"><i class="fa fa-smile-o fa-lg"></i><span class="sound_only">이모티콘</span></button>
-									<button class="btn btn-black btn-sm" title="새댓글" type="button" onclick="comment_box('','c');"><i class="fa fa-pencil fa-lg"></i><span class="sound_only">새댓글 작성</span></button>
-									<button class="btn btn-black btn-sm" title="새로고침" type="button" onclick="apms_page('itemcomment','<?php echo $itemcomment_url;?>');"><i class="fa fa-refresh fa-lg"></i><span class="sound_only">댓글 새로고침</span></button>
-									<button class="btn btn-black btn-sm" title="늘이기" type="button" onclick="apms_textarea('wr_content','down');"><i class="fa fa-plus-circle fa-lg"></i><span class="sound_only">입력창 늘이기</span></button>
-									<button class="btn btn-black btn-sm" title="줄이기" type="button" onclick="apms_textarea('wr_content','up');"><i class="fa fa-minus-circle fa-lg"></i><span class="sound_only">입력창 줄이기</span></button>
+									<button class="btn btn-color btn-sm" type="button" onclick="apms_comment('itemcomment');" id="btn_submit"><i class="fa fa-comment"></i> <b>发布</b></button>
+									<button class="btn btn-black btn-sm" title="表情" type="button" onclick="apms_emoticon();"><i class="fa fa-smile-o fa-lg"></i><span class="sound_only">表情</span></button>
+									<button class="btn btn-black btn-sm" title="新的评价" type="button" onclick="comment_box('','c');"><i class="fa fa-pencil fa-lg"></i><span class="sound_only">新的评价</span></button>
+									<button class="btn btn-black btn-sm" title="刷新" type="button" onclick="apms_page('itemcomment','<?php echo $itemcomment_url;?>');"><i class="fa fa-refresh fa-lg"></i><span class="sound_only">刷新</span></button>
+									<button class="btn btn-black btn-sm" title="输入框放大" type="button" onclick="apms_textarea('wr_content','down');"><i class="fa fa-plus-circle fa-lg"></i><span class="sound_only">输入框放大</span></button>
+									<button class="btn btn-black btn-sm" title="输入框缩小" type="button" onclick="apms_textarea('wr_content','up');"><i class="fa fa-minus-circle fa-lg"></i><span class="sound_only">输入框缩小</span></button>
 								</div>
 							</div>
 							<div id="it_vc_opt" class="form-group pull-left">
 								<ol>
-								<li><label class="font-12"><input type="checkbox" name="wr_secret" value="secret" id="wr_secret"> 비밀글</label></li>
+								<li><label class="font-12"><input type="checkbox" name="wr_secret" value="secret" id="wr_secret"> 保密-不让别人看见</label></li>
 								<?php if($is_comment_sns) { ?>
 									<li id="it_vc_send_sns"></li>
 								<?php } ?>
@@ -181,9 +183,9 @@ if(G5_IS_MOBILE) {
 	<?php } else { ?>
 		<div class="well text-center">
 			<?php if($is_author_comment) { ?>
-				지정된 회원만 댓글 등록이 가능합니다.
+				只有指定会员才可以评论.
 			<?php } else { ?>
-				<a href="<?php echo $itemcomment_login_url;?>">로그인한 회원만 댓글 등록이 가능합니다.</a>
+				<a href="<?php echo $itemcomment_login_url;?>">登陆后才可以发布评论.</a>
 			<?php } ?>
 		</div>
 	<?php } ?>

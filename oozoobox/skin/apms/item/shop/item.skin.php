@@ -176,10 +176,10 @@ $row = sql_fetch($sql);
                         <td>
                             <?php
                                 if($it['it_point_type'] == 2) {
-                                    echo '구매금액(추가옵션 제외)의 '.$it['it_point'].'%';
+                                    echo '购买价格(套餐除外) '.$it['it_point'].'%';
                                 } else {
                                     $it_point = get_item_point($it);
-                                    echo number_format($it_point).'점';
+                                    echo number_format($it_point).'分';
                                 }
                             ?>
                         </td>
@@ -519,88 +519,16 @@ $row = sql_fetch($sql);
                 </div>
                 <!--e: #tab1 商品详情 "상품상세보기" -->
                 <!--s: #tab2 用户评价 "상품후기" -->
-                <div id="detail_tab2" class="detail_tab_content">
-					<div class="tab_content_warp">
+                <div id="detail_tab2" class="detail_tab_content">                
+									<div class="tab_content_warp">
                         <h4 class="tab_content_tit">用户评价 <span class="strap">Comment</span></h4>
-                        <p class="tab2_titcomment">상품평은 구매완료 후 <a href="#" class="linkmyafter">수취확인</a>에서 작성하실 수 있습니다. 광고, 비방 제품과 관계없는 애용, 타 사이트 및 가격비교, 기타 통신예절에 어긋나거나 OOZOO BOX의 취지와 맞지 않은 글은 예고없이 삭제 및 수정될 수 있습니다.</p>
                         <div class="tab2_view_after">
                         	
-                            <a href="#detail_container">
-                            	<img alt="去制作用户评价(후기작성하러가기)" src="/images/btn_tab2_writeafter.png" title="去制作用户评价(후기작성하러가기)" onclick="fn_CtlDsp('detail_tab2','detail_tab1','li_1')"/>
-                            </a>
+                           
                             
                             <!--s: 후기 리스트-->
                             <ul id="tab2_after_comment">
-                            	<!-- 후기 1--->
-                                <li>
-                                	<p class="after_comment_number">111</p><!-- 번호 --->
-                                    <div class="after_information"> <!-- 내용--->
-                                    	<p class="after_talk">
-                                        	각각 기능이 다른데, 혹시 각각의 가능별로 빈들을 불류한 제품은 추가 계획이 없나요? <br>
-                                        </p>
-                                        <p class="after_writer">
-                                            <span class="after_writer_nick">ykc** </span><span class="after_writer_place">, 상해</span><!--작성자 & 지역-->
-                                            <span class="after_writer_bar">|</span>2015-11-13 20:15:12 <!--날짜-->
-                                        </p>
-                                        <p class="after_reply"> <!-- 판매자 답변-->
-                                        	안녕하세요, 엔엠씨입니다 ^__^ <br>
-                                            먼저, 저희 엔엠씨에 많은 관심을 가져주셔서 정말 감사드립니다.<br> 
-                                            문의하신 화산콩(마그마빈) 클렌저의 색상별 생산 여부는<br>
-                                            아직 계획되어 있지 않은 점 참조 부탁드립니다.<br>
-                                            또한, 고객님의 의견을 수렴하여 더욱 개선되어지는 엔엠씨 화장품이 될 것을 약속드리겠습니다~!<br>
-                                            행복한 월요일 보내세요~<br>
-                                            감사합니다 ^^ 
-                                            <span class="after_reply_date">2015-08-24 09:40:18</span>
-                                        </p>
-                                    </div>
-                                    <dl class="after_info"> <!-- 작성자 정보--->
-                                    	<dt>평점</dt> <!--만족도-->
-                                        <dd>
-                                        	<span class="after_satisfy_grade">매우만족</span>
-                                            <span class="after_satisfy_star"></span>
-                                        </dd>
-                                        <dt>직업</dt><dd>주부</dd> <!--직업-->
-                                        <dt>나이</dt><dd>35세</dd> <!--나이-->
-                                        <dt>성별</dt><dd>여</dd>  <!--성별-->
-                                        <dt class="frequency">사용빈도</dt><dd class="frequency_sub">매일</dd> <!--사용빈도-->
-                                    </dl>                                    
-                            	</li>
-								<!-- 후기 2--->
-                                <li>
-                                	<p class="after_comment_number"><!-- 번호 --->
-                                    110
-                                    </p>
-                                    <div class="after_information"> <!-- 내용--->
-                                    	<p class="after_talk">
-                                        	후기를 썼던것 같은데 없는거 보니 착각인가봐요..ㅋㅋ<br>
-                                            거품이 생각보다 많이 안나서 쪼끔 실망스럽지만<br> 
-                                            그래도 세정력은 괜찮네요ㅎㅎ<br>
-                                            다음 제품 개발할 때는 향을 조금이라도 추가 해주셨음 좋겠어요~ 
-                                        </p>
-                                        <p class="after_writer">
-                                            <span class="after_writer_nick">ykc** </span><span class="after_writer_place">, 상해</span><!--작성자 & 지역-->
-                                            <span class="after_writer_bar">|</span>2015-11-13 20:15:12 <!--날짜-->
-                                        </p>
-                                        <p class="after_reply"> <!-- 판매자 답변-->
-                                        	안녕하세요, 엔엠씨입니당 ^0^<br>
-                                            저희 엔엠씨를 이용해주셔서 정말 감사드립니당~!<br> 
-                                            고객님의 의견을 수렴하여 더욱 개선되어지는 엔엠씨 화장품이 될 것을 약속드리겠습니다~!<br>
-                                            행복한 하루 보내세용^7^
-                                            <span class="after_reply_date">2015-08-24 09:40:18</span>
-                                        </p>
-                                    </div>
-                                    <dl class="after_info"> <!-- 작성자 정보--->
-                                    	<dt>평점</dt> <!--만족도-->
-                                        <dd>
-                                        	<span class="after_satisfy_grade">매우만족</span>
-                                            <span class="after_satisfy_star"></span>
-                                        </dd>
-                                        <dt>직업</dt><dd>주부</dd> <!--직업-->
-                                        <dt>나이</dt><dd>35세</dd> <!--나이-->
-                                        <dt>성별</dt><dd>여</dd>  <!--성별-->
-                                        <dt class="frequency">사용빈도</dt><dd class="frequency_sub">매일</dd> <!--사용빈도-->
-                                    </dl>                                    
-                            	</li>
+                            	<?php include_once('./itemcomment.php'); ?>
 							</ul>
                             <!--s: 후기 리스트-->                        
                         </div>

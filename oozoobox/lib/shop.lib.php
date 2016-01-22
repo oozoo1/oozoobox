@@ -956,7 +956,7 @@ function get_item_options($it_id, $subject)
                 $str .= '<th><label for="it_option_'.$seq.'">'.$subj[$i].'</label></th>'.PHP_EOL;
 
                 $select = '<select id="it_option_'.$seq.'" class="it_option"'.$disabled.'>'.PHP_EOL;
-                $select .= '<option value="">선택</option>'.PHP_EOL;
+                $select .= '<option value="">选择</option>'.PHP_EOL;
                 for($k=0; $k<$opt_count; $k++) {
                     $opt_val = $opt[$k];
                     if(strlen($opt_val)) {
@@ -974,7 +974,7 @@ function get_item_options($it_id, $subject)
         $str .= '<th><label for="it_option_1">'.$subj[0].'</label></th>'.PHP_EOL;
 
         $select = '<select id="it_option_1" class="it_option">'.PHP_EOL;
-        $select .= '<option value="">선택</option>'.PHP_EOL;
+        $select .= '<option value="">选择</option>'.PHP_EOL;
         for($i=0; $row=sql_fetch_array($result); $i++) {
             if($row['io_price'] >= 0)
                 $price = '&nbsp;&nbsp;+ '.$row['io_price'].'원';
@@ -1050,7 +1050,7 @@ function get_item_supply($it_id, $subject)
             $str .= '<th><label for="it_supply_'.$seq.'">'.$subj[$i].'</label></th>'.PHP_EOL;
 
             $select = '<select id="it_supply_'.$seq.'" class="it_supply">'.PHP_EOL;
-            $select .= '<option value="">선택</option>'.PHP_EOL;
+            $select .= '<option value="">选择</option>'.PHP_EOL;
             for($k=0; $k<$opt_count; $k++) {
                 $opt_val = $opt[$k];
                 if($opt_val) {
@@ -1218,7 +1218,7 @@ function get_goods($cart_id)
 // 패턴의 내용대로 해당 디렉토리에서 정렬하여 <select> 태그에 적용할 수 있게 반환
 function get_list_skin_options($pattern, $dirname='./', $sval='')
 {
-    $str = '<option value="">선택</option>'.PHP_EOL;
+    $str = '<option value="">选择</option>'.PHP_EOL;
 
     unset($arr);
     $handle = opendir($dirname);
