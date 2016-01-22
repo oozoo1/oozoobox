@@ -1347,7 +1347,7 @@ h4.md_title { font-size:22px; color: #333; margin-bottom: 50px; font-weight:bold
 
 .md_tabs .active { background: #ffdb95 !important; border-bottom: 4px solid #f47a22 !important; }
 .md_tabs .active a { color:#f47a22 !important; }
-.md_tabs .active a.md_yong {background:url("/images/ico_md_yong_o.png") no-repeat 12px 4px;}
+.md_tabs .active a.md_yong {background:url("/images/ico_md_yong_o.png") no-repeat 12px 2px;}
 .md_tabs .active a.md_go{background:url("/images/ico_md_go_o.png") no-repeat 12px 4px;}
 .md_tabs .active a.md_kim {background:url("/images/ico_md_kim_o.png") no-repeat 12px 4px;}
 .md_tabs .active a.md_geol {background:url("/images/ico_md_geol_o.png") no-repeat 12px 4px;}
