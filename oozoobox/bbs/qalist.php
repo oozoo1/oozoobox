@@ -18,7 +18,7 @@ if ($qaconfig['qa_category']) {
     $category_option .= '<li><a href="'.$category_href.'"';
     if ($sca=='')
         $category_option .= ' id="bo_cate_on"';
-    $category_option .= '>전체</a></li>';
+    $category_option .= '>全部</a></li>';
 
     $categories = explode('|', $qaconfig['qa_category']); // 구분자가 | 로 되어 있음
     for ($i=0; $i<count($categories); $i++) {
