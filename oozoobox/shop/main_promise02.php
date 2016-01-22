@@ -31,42 +31,30 @@ $skin_path = $member_skin_path;
 $skin_url = $member_skin_url;
 ?>
 
-<link rel="stylesheet" type="text/css" href="/md/styles.css">
- <!--MD 탭메뉴--->
+  <script type="text/javascript" src="/oz_js/jquery.tabslet.min.js"></script> <!--MD 탭메뉴--->
 
-  <!-- JS -->
-  <script type="text/javascript" src="/md/jquery.tabslet.min.js"></script>
-  <!-- JS ends -->
+<article>
+    <h4 class="md_title">MD介绍</h4>
+    
+    <div class='md_tabs md_tabs_animate'>
+        <ul class='horizontal'>
+            <li><a class="md_yong" href="#tab-1">金龙喆</a></li>
+            <li><a class="md_go" href="#tab-2">高在赫</a></li>
+            <li><a class="md_kim" href="#tab-3">金美慧</a></li>
+            <li><a class="md_geol" href="#tab-4">许 杰</a></li>
+        </ul>
+        <div id="tab-1"><span>용 소개</span></div>
+        <div id="tab-2"><span>고 소개</span></div>
+        <div id="tab-3"><span>킴 소개</span></div>
+        <div id="tab-4"><span>걸 소개</span></div>
+    </div>
+</article>
 
-
-
-
-
-      <div class="row">
-        <div class="twelve columns">
-          <article>
-            <h4>MD介绍</h4>
-
-            <div class='tabs tabs_animate'>
-              <ul class='horizontal'>
-                <li><a class="md_yong" href="#tab-1">金龙喆</a></li>
-                <li><a class="md_go" href="#tab-2">高在赫</a></li>
-                <li><a class="md_kim" href="#tab-3">金美慧</a></li>
-                <li><a class="md_geol" href="#tab-4">许 杰</a></li>
-              </ul>
-              <div id='tab-1'><span>용 소개</span></div>
-              <div id='tab-2'><span>고 소개</span></div>
-              <div id='tab-3'><span>킴 소개</span></div>
-              <div id='tab-4'><span>걸 소개</span></div>
-            </div>
-          </article>
-        </div>
-      </div>
 
 
 
 <script>
-$('.tabs').tabslet({
+$('.md_tabs').tabslet({
   mouseevent: 'click',
   attribute: 'href',
   animation: true
