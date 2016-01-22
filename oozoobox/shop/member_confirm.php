@@ -125,7 +125,6 @@ include_once('./_head.php');
 		position:fixed;
 		top:-500px;
 		left:37%;
-		right:37%;
 		background-color:#fff;
 		color:#7F7F7F;
 		z-index:999999;
@@ -142,7 +141,7 @@ include_once('./_head.php');
 .pass_confirm {width:494px; height:300px; border:3px solid #e7e7e7;}
 .inner {position:relative;}
 .pop_tit {width:494px; height:110px; margin-bottom:20px; border-bottom:1px solid #e7e7e7;}
-.pop_tit h3 {width:100%; height:38px; background-color:#fa9551; font-size:18px; color:#fff; padding:5px 0 0 20px;}
+.pop_tit h3 {width:445px; height:38px; background-color:#fa9551; font-size:18px; color:#fff; padding:5px 0 0 50px;}
 .pop_tit p {width:100%; display:inline-block; text-align:center; margin-top:10px;}
 .pass_confirm .passbox {margin-left:80px; height:35px; color:#666;}
 .pass_confirm span {width:115px; display:inline-block; margin-right:10px;}
