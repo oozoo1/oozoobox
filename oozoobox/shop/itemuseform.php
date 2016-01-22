@@ -10,9 +10,9 @@ include_once(G5_EDITOR_LIB);
 
 if (!$is_member) {
 	if($move) {
-	    alert("회원만 가능합니다.");
+	    alert("您不是会员.");
 	} else {
-	    alert_close("회원만 가능합니다.");
+	    alert_close("您不是会员.");
 	}
 }
 
