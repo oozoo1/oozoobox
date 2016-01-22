@@ -149,7 +149,11 @@ $result = sql_query($sql);
             </div>
             <div class="module_body">
             	<a class="big_chn" href="/shop/bannerhit.php?bn_id=<?=$baner14['bn_id']?>&url=<?=urlencode($baner14['bn_url'])?>" <? if($baner14[bn_new_win]=="1"){?>target="_blank"<? } ?>>
-                	<img src="<? if($baner14[bn_img1]){?>http://data.oozoobox.com/data/banner/<?=$baner14[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>"/>
+            		<? if($baner14[bn_img1]){?>
+                	<img src="http://data.oozoobox.com/data/banner/<?=$baner14[bn_img1]?>" onmouseover="http://data.oozoobox.com/data/banner/<?=$baner14[bn_img2]?>" onmouseout="http://data.oozoobox.com/data/banner/<?=$baner14[bn_img1]?>"/>
+                	<? }else{ ?>
+                	<img src="/images/ad_no.png"/>
+                	<? } ?>
                 </a>
                 <div class="small_chn_con">
                 	<a class="small_chn" href="/shop/bannerhit.php?bn_id=<?=$baner15['bn_id']?>&url=<?=urlencode($baner15['bn_url'])?>" <? if($baner15[bn_new_win]=="1"){?>target="_blank"<? } ?>>
