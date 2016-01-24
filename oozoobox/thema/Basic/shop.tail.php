@@ -34,7 +34,7 @@ $cart_count = sql_num_rows($result);
 <div id="footer">
 	<ul class="footer_link">
     	<li><a href="/">首页</a></li>
-    	<li><a>公司介绍</a></li>    
+    	<li><a href="/company/index.html">公司介绍</a></li>    
     	<li><a>联系我们</a></li>
     	<li><a>配送方式 </a></li>
     	<li><a>合作咨询</a></li>   
@@ -44,7 +44,7 @@ $cart_count = sql_num_rows($result);
     </ul>
     <div class="footer_info">
     	<p>
-        OOZOOBOX | 대표：李荷俊 | 地址 : 韩国首尔特别市永登浦区议事堂大街38 101/913| 邮政编码 ：07236 <br>
+        OOZOOBOX | 代表：李荷俊 | 地址 : 韩国首尔特别市永登浦区议事堂大街38 101/913| 邮政编码 ：07236 <br>
         联系电话 ：+82-2-1234-1234 / +82-70-1234-1234 | FAX : +82-50-1234-1234 <br>
         发货和退货地址：韩国首尔特别市永登浦区国会大街62路 21 10楼| 邮政编码 ：07236<br>
         公司营业执照号 ：107-86-81797 | 通信销售申报号码 ：제2015-서울영등포-1249호 <br>
