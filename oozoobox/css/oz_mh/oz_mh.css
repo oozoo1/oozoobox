@@ -79,12 +79,12 @@ fieldset legend{display: none;}
 .oz_headercontent {-ms-zoom: 1;}
 
 /***logo***/
-#oz_mallLogo {float:left; z-index:9; padding-top:50px; width:280px; height:64px; line-height:64px; position:relative;}
+#oz_mallLogo {float:left; z-index:9; padding-top:40px; width:280px; height:64px; line-height:64px; position:relative;}
 #oz_mallLogo a {color: rgb(255, 255, 255); text-indent: 0px !important; display: block; position: relative;}
 #oz_mallLogo s {position:absolute; display:block; top:0; cursor:pointer;}
 #oz_mallLogo .oz_mlogo {padding: 0px; margin-right: 10px; float: left;}
-#oz_mallLogo .oz_mlogo a {width: 190px; height:30px; overflow: hidden; font-size: 22px;}
-#oz_mallLogo .oz_mlogo s {background: url('/images/oz_logo.png') no-repeat 0px 0px; width: 190px; height: 28px; }
+#oz_mallLogo .oz_mlogo a {width: 215px; height:43px; overflow: hidden; font-size: 22px;}
+#oz_mallLogo .oz_mlogo s {background: url('/images/oz_logo.png') no-repeat 0px 0px; width: 215px; height: 43px; }
 
 /***배너***/
 .oz_header_extra {overflow: hidden;}
