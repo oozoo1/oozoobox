@@ -476,11 +476,11 @@ $result = sql_query($sql);
                         <dd><a>我要买</a></dd>
                     </dl>
                     <dl>
-                        <dt class="menu_tit">판매자센터</dt>
-                        <dd>입점관리</dd>
-                        <dd>관련상품등록</dd>
-                        <dd>상품올리기</dd>
-                        <dd>입점신청</dd>
+                        <dt class="menu_tit">买家服务中心</dt>
+                        <dd>开店流程</dd> <!--입점절차-->
+                        <dd>商品发布</dd> <!--상품등록-->
+                        <dd>账户开通</dd> <!--회원가입-->
+                        <dd>常见问题</dd> <!--FAQ-->
                     </dl>
                     <dl>
                         <dt class="menu_tit">支付方式 </dt>
