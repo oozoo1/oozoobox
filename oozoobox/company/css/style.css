@@ -144,7 +144,7 @@ h5{ font-size: 14px; line-height: 24px; }
 .navbar-default .navbar-nav > .active > a, 
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover { background-color: transparent; }
 .on.navbar-default .navbar-brand{ margin-left: -90px; padding-left: 90px; }
-
+.navbar-default .navbar-nav a.main_tit {margin-top:2px;}
 .navbar-brand { margin-top: -18px; }
 .navbar-default .navbar-nav  a:hover{ color: #00AEFF!important; }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover { color: #00AEFF!important; background: transparent; }
@@ -161,9 +161,9 @@ h5{ font-size: 14px; line-height: 24px; }
 .slider .main_content {width:100%; background:#ddd; padding-bottom:100px;}
 .slider-wrap{width:1170px; margin:0 auto;}
 .slider-content{ padding-top: 50px; }
-.slider .main_content  .col-md-7 {width:80%;}
-.slider h1 { margin: 0 0 20px 0; font-size: 50px; color: #fff; text-transform: uppercase; line-height: 60px; font-weight: 700; }
-.slider .main_content h2 {color: #999999; text-transform: capitalize; font-size: 22px; font-weight:normal; }
+.slider .main_content  .col-md-7 {width:83%;}
+.slider h1 { margin: 0 0 20px 0; font-size: 50px; color: #555555; text-transform: uppercase; line-height: 60px; font-weight:600; }
+.slider .main_content h2 {color: #666666; text-transform: capitalize; font-size: 20px; font-weight:normal; }
 .slider p { margin-bottom: 25px; color: #fff; }
 
 .top-link { margin-top: 60px; }
@@ -177,7 +177,7 @@ h5{ font-size: 14px; line-height: 24px; }
 
 /*Features section
 =============================================================*/
-#feature{  position: relative; background-image: url("../images/bg/features-bg02.jpg"); background-attachment: fixed !important; background-size: cover; background-repeat: repeat; color: #FFF; padding-bottom:131px; }
+#feature{  position: relative; background-image: url("../images/bg/features-bg02.jpg"); background-attachment: fixed !important; background-size: cover; background-repeat: repeat; color: #FFF; padding-bottom:175px; }
 .feature-inner{ padding: 30px 10px ; }
 #feature .about-inner {width:100%; float:left;}/*추가*/
 .feature-bg,.feature-bg.white{ -webkit-transition: all .2s ease 0s; -o-transition: all .2s ease 0s; transition: all .2s ease 0s; }
@@ -292,13 +292,14 @@ h5{ font-size: 14px; line-height: 24px; }
 
 #counter-area{ background: #00AEFF; padding: 80px 0px; }
 .facts{ }
-.line{ width: 50px; background: #fff; height: 2px; margin: 0 auto; }
+.line{ width: 50px; background: #333; height: 2px; margin: 0 auto; }
 .columns{ position: relative; }
 .columns:after{ position: absolute; content: ""; width: 0px; height: 100%; border-right: 1px solid #ddd; top: 13px; right: 0px; -webkit-transform:  rotate(-21deg); -ms-transform:  rotate(-21deg); -o-transform:  rotate(-21deg); transform:  rotate(-21deg); }
-.facts-wrap i{ font-size: 60px; line-height: 60px; color: #fff; }
-.fact-content h6{ font-size: 20px; padding: 20px 0px 10px; text-transform: uppercase; font-weight: 500; color: #fff; }
-.facts-wrap-num{ font-size: 40px; color: #fff; line-height: 40px; padding-top: 10px; font-weight: 700; font-family:'맑은고딕','Open Sans', sans-serif; }
+.facts-wrap i{ font-size:32px; line-height:36px; color: #bbb }
+.fact-content h6{ font-size: 20px; padding: 5px 0px ; text-transform: uppercase; font-weight: 600; color: #b0a08f; }
+.facts-wrap-num{ font-size: 16px; color: #666; line-height: 24px; padding: 10px 15px; font-weight: 600; font-family:'맑은고딕','Open Sans', sans-serif; }
 .columns:last-child:after{ border: 0px; }
+#overview .recruit_board {width:100%; background:#fff; padding-top:30px;}
 
 
 /*TESTIMONIAL section
@@ -386,7 +387,7 @@ h5{ font-size: 14px; line-height: 24px; }
 /*CONATCT
 =====================================================================*/
 
-#contact{ background: url("../images/bg/contact-bg02.jpg") fixed 50% 50%; background-size: cover; padding: 150px 0px 244px 0; }
+#contact{ background: url("../images/bg/contact-bg02.jpg") fixed 50% 50%; background-size: cover; padding: 150px 0px 288px 0; }
 .form-group label{ text-transform: capitalize; margin-bottom: 10px; }
 .form-control{ -webkit-box-shadow: none; box-shadow: none; border-radius: 2px; height: 45px; background: transparent; }
 .form-control:focus{ border-color: #00AEFF; -webkit-box-shadow: none; box-shadow: none; }
@@ -430,7 +431,7 @@ h5{ font-size: 14px; line-height: 24px; }
 
  .footer-socail li a i{ font-size: 20px; line-height: 20px; width: 45px; height: 45px; border: 1px solid#ddd; padding-top: 10px; -webkit-transition: all .4s ease 0s; -o-transition: all .4s ease 0s; transition: all .4s ease 0s; }
 .footer-socail li a:hover i{ border-color: #00AEFF; }
-.logo-title img{ width: 150px; height: auto; margin: 0 auto; }
+.logo-title img{ width: 255px; height: auto; margin: 0 auto; }
 
 .copyright span{ color: #00AEFF; }
 
