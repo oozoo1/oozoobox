@@ -545,7 +545,7 @@ $row = sql_fetch($sql);
         </div>
         <!--e: 상세보기 제품 사진, 가격정보-->
 <?
-$sql = " select count(*) as cnt from {$g5['g5_shop_item_use_table']} where it_id = '{$_GET['it_id']}'";
+$sql = " select count(*) as cnt from {$g5['g5_shop_item_use_table']} where it_id = '{$_GET['it_id']}' and is_confirm = '1'";
 $row = sql_fetch($sql);
 $content_cnt=$row['cnt'];
 ?>

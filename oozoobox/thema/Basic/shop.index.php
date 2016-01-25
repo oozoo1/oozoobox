@@ -226,7 +226,7 @@ $result = sql_query($sql);
  <!-------------------- 허걸:  s: 반복4번  마지막 하나만 다름------------->     
                     <? 
 										for ($i=0; $row_main=sql_fetch_array($resultmain); $i++){ 										
-										$sql = " select count(*) as cnt from {$g5['g5_shop_item_use_table']} where it_id = '{$row_main['it_id']}'";
+										$sql = " select count(*) as cnt from {$g5['g5_shop_item_use_table']} where it_id = '{$row_main['it_id']}' and is_confirm = '1'";
 										$row = sql_fetch($sql);
 										$content_cnt=$row['cnt'];
 										
