@@ -363,13 +363,13 @@ fieldset legend{display: none;}
 .oz_market_con .market_title {width: 220px; height: 30px; color: rgb(0, 0, 0); line-height: 30px; padding-left: 5px; font-size: 17px; font-weight: 700; margin-top: 10px; display: block; position: relative;}
 .oz_market_con .market_title .title_deco { background: url("/images/market_con_title_deco.png") no-repeat; left: 95px; top: 7px; width: 212px; height: 19px; display: block; position: absolute;}
 .oz_market_con .module_body { width: 100%;}
-.oz_market_con .module_body .market_line { transition:height 0.3s; height: 400px; overflow: hidden; -webkit-transition: height .3s; -moz-transition: height .3s; -o-transition: height .3s; margin-bottom:30px;}
+.oz_market_con .module_body .market_line { transition:height 0.3s;  -webkit-transition: height .3s; -moz-transition: height .3s; -o-transition: height .3s; margin-bottom:30px;}
 .oz_market_con .module_body .more.market_line { margin: 0px !important; height: 0px;}
 
-.oz_market_con .module_body .market_item { border: 2px solid rgb(255, 255, 255); border-image: none; width: 394px; height: 100%; overflow: hidden; margin-right: 9px; float: left; position: relative; background-color: rgb(255, 255, 255);}
+.oz_market_con .module_body .market_item { border: 2px solid rgb(255, 255, 255); border-image: none; width: 394px; height: 100%; overflow: hidden; margin-right: 9px; margin-bottom:15px; float: left; position: relative; background-color: rgb(255, 255, 255);}
 .oz_market_con .module_body .last_990.market_item { margin-right: 0px;}
 .oz_market_con .module_body .market_item .main_pic { width: 100%; height: 252px; display: block; position: relative;}
-.oz_market_con .module_body .market_item .main_pic img { left: 0px; top: 0px; width: 100%; position: absolute;}
+.oz_market_con .module_body .market_item .main_pic img { left: 0px; top: 0px; width: 100%; height:100%; position: absolute;}
 .oz_market_con .module_body .market_item .market_info {float:left; width:229px; margin:10px 0 0 10px; height:83px; font-size:14px; line-height:18px; display:block;}
 .oz_market_con .module_body .market_item .market_info:hover {color:rgb(234,91,12);}
 .oz_market_con .module_body .market_item .market_good {width:150px; float:left; height:40px; position:relative; margin:7px 0 8px 10px; background:url('/images/ico_market_good.png') no-repeat;}
