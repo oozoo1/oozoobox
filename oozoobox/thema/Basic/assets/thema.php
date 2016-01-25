@@ -33,8 +33,8 @@ if($col_content == 13) { // Full Wide
 //Stylesheet
 add_stylesheet('<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,300,500,500italic,700,900,400italic,700italic">',0);
 $bootstrap_css = (_RESPONSIVE_) ? 'bootstrap.min.css' : 'bootstrap-apms.min.css';
-add_stylesheet('<link rel="stylesheet" href="'.THEMA_URL.'/assets/bs3/css/'.$bootstrap_css.'" type="text/css" media="screen" class="thema-mode">',0);
-add_stylesheet('<link rel="stylesheet" href="'.COLORSET_URL.'/colorset.css" type="text/css" media="screen" class="thema-colorset">',0);
+add_stylesheet('<link rel="stylesheet" href="/thema/Basic/assets/bs3/css/'.$bootstrap_css.'" type="text/css" media="screen" class="thema-mode">',0);
+add_stylesheet('<link rel="stylesheet" href="/thema/Basic/colorset/Basic/colorset.css" type="text/css" media="screen" class="thema-colorset">',0);
 ?>
 <style> 
 	body { 

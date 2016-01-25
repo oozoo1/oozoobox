@@ -8,7 +8,7 @@ if($is_seometa == 'view') { //게시물
 	$seometa['creator'] = apms_get_text($write['wr_name']);
 	$seometa['keyword'] = apms_seo_keyword($write['as_tag'], $write['ca_name']);
 	$seometa['type'] = 'article';
-	$seometa['url'] = G5_BBS_URL.'/board.php?bo_table='.$bo_table.'&amp;wr_id='.$wr_id;
+	$seometa['url'] = '/bbs/board.php?bo_table='.$bo_table.'&amp;wr_id='.$wr_id;
 	$seometa['img'] = apms_wr_thumbnail($bo_table, $write, 0, 0); // 썸네일
 } else if($is_seometa == 'it') { // 상품
 	$seometa['subject'] = apms_get_text($it['it_name']);
@@ -16,7 +16,7 @@ if($is_seometa == 'view') { //게시물
 	$seometa['creator'] = ($author['mb_nick']) ? $author['mb_nick'] : $seometa['publisher'];
 	$seometa['keyword'] = apms_seo_keyword($it['pt_tag']);
 	$seometa['type'] = 'product';
-	$seometa['url'] = G5_SHOP_URL.'/item.php?it_id='.$it['it_id'];
+	$seometa['url'] = '/shop/item.php?it_id='.$it['it_id'];
 	$seometa['img'] = apms_it_thumbnail($it, 0, 0, false, true);
 } else if($is_seometa == 'iqa') { //상품문의
 	$seometa['subject'] = apms_get_text($view['iq_subject']);
@@ -24,7 +24,7 @@ if($is_seometa == 'view') { //게시물
 	$seometa['creator'] = apms_get_text($view['iq_name']);
 	$seometa['keyword'] = apms_seo_keyword($view['pt_tag']);
 	$seometa['type'] = 'article';
-	$seometa['url'] = G5_SHOP_URL.'/itemqaview.php?iq_id='.$iq_id;
+	$seometa['url'] = '/shop/itemqaview.php?iq_id='.$iq_id;
 	$seometa['img'] = apms_it_write_thumbnail($view['it_id'], $view['iq_content'], 0, 0);
 } else if($is_seometa == 'iuse') { //상품후기
 	$seometa['subject'] = apms_get_text($view['is_subject']);
@@ -32,7 +32,7 @@ if($is_seometa == 'view') { //게시물
 	$seometa['creator'] = apms_get_text($view['is_name']);
 	$seometa['keyword'] = apms_seo_keyword($view['pt_tag']);
 	$seometa['type'] = 'article';
-	$seometa['url'] = G5_SHOP_URL.'/itemuseview.php?is_id='.$is_id;
+	$seometa['url'] = '/shop/itemuseview.php?is_id='.$is_id;
 	$seometa['img'] = apms_it_write_thumbnail($view['it_id'], $view['is_content'], 0, 0);
 } else if($is_seometa == 'page') { // 페이지
 	$seometa['subject'] = $at['subject'];
@@ -40,7 +40,7 @@ if($is_seometa == 'view') { //게시물
 	$seometa['creator'] = ($config['cf_admin_email_name']) ? $config['cf_admin_email_name'] : $config['cf_title'];
 	$seometa['keyword'] = APMS_SEO_KEYWORD;
 	$seometa['type'] = 'website';
-	$seometa['url'] = G5_BBS_URL.'/page.php?hid='.$hid;
+	$seometa['url'] = '/bbs/page.php?hid='.$hid;
 	$seometa['img']['src'] = $seo_page_img;
 } else if($is_seometa == 'content') { // 컨텐츠
 	$seometa['subject'] = $at['subject'];
@@ -48,7 +48,7 @@ if($is_seometa == 'view') { //게시물
 	$seometa['creator'] = ($config['cf_admin_email_name']) ? $config['cf_admin_email_name'] : $config['cf_title'];
 	$seometa['keyword'] = APMS_SEO_KEYWORD;
 	$seometa['type'] = 'website';
-	$seometa['url'] = G5_BBS_URL.'/content.php?co_id='.$co_id;
+	$seometa['url'] = '/bbs/content.php?co_id='.$co_id;
 	$seometa['img']['src'] = $seo_page_img;
 } else {
 	$seometa['subject'] = '';

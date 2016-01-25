@@ -72,12 +72,12 @@ if (defined('G5_IS_ADMIN')) {
 } else {
     $shop_css = '';
     if (defined('_SHOP_')) $shop_css = '_shop';
-    echo '<link rel="stylesheet" href="'.G5_CSS_URL.'/'.(G5_IS_MOBILE?'mobile':'default').$shop_css.'.css">'.PHP_EOL;
+    echo '<link rel="stylesheet" href="/css/'.(G5_IS_MOBILE?'mobile':'default').$shop_css.'.css">'.PHP_EOL;
 }
-echo '<link rel="stylesheet" href="'.G5_CSS_URL.'/apms.css">'.PHP_EOL;
-echo '<link rel="stylesheet" href="'.G5_CSS_URL.'/font-awesome/css/font-awesome.min.css">'.PHP_EOL;
+echo '<link rel="stylesheet" href="/css/apms.css">'.PHP_EOL;
+echo '<link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">'.PHP_EOL;
 if($xp['xp_icon'] == 'txt') {
-	echo '<link rel="stylesheet" href="'.G5_CSS_URL.'/level/'.$xp['xp_icon_css'].'.css">'.PHP_EOL;
+	echo '<link rel="stylesheet" href="/css/level/'.$xp['xp_icon_css'].'.css">'.PHP_EOL;
 }
 ?>
 <!--[if lte IE 8]>
@@ -85,8 +85,8 @@ if($xp['xp_icon'] == 'txt') {
 <![endif]-->
 <script>
 // 자바스크립트에서 사용하는 전역변수 선언
-var g5_url       = "<?php echo G5_URL ?>";
-var g5_bbs_url   = "<?php echo G5_BBS_URL ?>";
+var g5_url       = "/";
+var g5_bbs_url   = "/bbs";
 var g5_is_member = "<?php echo isset($is_member)?$is_member:''; ?>";
 var g5_is_admin  = "<?php echo isset($is_admin)?$is_admin:''; ?>";
 var g5_is_mobile = "<?php echo G5_IS_MOBILE ?>";
@@ -102,7 +102,7 @@ if ($is_admin) {
 }
 ?>
 </script>
-<script src="<?php echo G5_JS_URL ?>/jquery-1.8.3.min.js"></script>
+<script src="/js/jquery-1.8.3.min.js"></script>
 <?php
 /* 사용안함
 if (defined('_SHOP_')) {
@@ -114,9 +114,9 @@ if (defined('_SHOP_')) {
 }
 */
 ?>
-<script src="<?php echo G5_JS_URL ?>/common.js"></script>
-<script src="<?php echo G5_JS_URL ?>/wrest.js"></script>
-<script src="<?php echo G5_JS_URL ?>/apms.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/wrest.js"></script>
+<script src="/js/apms.js"></script>
 <?php
 $body_mode = 'is-pc';
 if(G5_IS_MOBILE) {
