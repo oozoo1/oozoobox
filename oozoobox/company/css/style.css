@@ -161,18 +161,19 @@ h5{ font-size: 14px; line-height: 24px; }
 .slider .main_content {width:100%; background:#ddd; padding-bottom:100px;}
 .slider-wrap{width:1170px; margin:0 auto;}
 .slider-content{ padding-top: 50px; }
-.slider .main_content  .col-md-7 {width:85%;}
+.slider .main_content  .col-md-7 {width:80%;}
 .slider h1 { margin: 0 0 20px 0; font-size: 50px; color: #fff; text-transform: uppercase; line-height: 60px; font-weight: 700; }
-.slider .main_content h2 { font-family: "Noto Sans KR", '맑은고딕', 'lora', serif; color: #fff; text-transform: capitalize; font-size: 24px; }
+.slider .main_content h2 {color: #999999; text-transform: capitalize; font-size: 22px; font-weight:normal; }
 .slider p { margin-bottom: 25px; color: #fff; }
 
 .top-link { margin-top: 60px; }
-.top-link a{ padding: 20px 30px; border-radius: 3px; background: #fff; font-weight: 700; -webkit-transition: all .3s linear 0s; -o-transition: all .3s linear 0s; transition: all .3s linear 0s; }
+.top-link a{ padding: 20px 30px; border-radius: 5px; background: #fff; font-weight: 700; -webkit-transition: all .3s linear 0s; -o-transition: all .3s linear 0s; transition: all .3s linear 0s; }
 .top-link a i{ color: #00AEFF; font-size: 25px; margin-right: 10px; }
-.top-link a:hover{ background: #00AEFF; color: #fff; }
+.top-link a:hover{ background: #b0a08f; color: #fff; }
 
 .top-link a:hover i{ color: #fff; }
-
+.slider .main_content li {margin-right:10px ;}
+.slider .main_content li img {width:auto;}
 
 /*Features section
 =============================================================*/
