@@ -242,8 +242,11 @@ function getCookie(name){
                                         <li class="last"><a href="/shop/main_event04.php"><font <?php if($_GET[type]=="share"){?> class="ck_font"<?php }?>>相互共享</font></a></li>  <!--"커뮤니티"-->
                                     </ul>
 
-                                    <form name="oz_searchTop" class="oz_mallSearch_form oz_clearfix" action="#" target="_top" acceptcharset="gbk">
-                                        <input type="hidden" name="type" value="<?php echo $_GET[type];?>">
+                                    <form name="oz_searchTop" class="oz_mallSearch_form oz_clearfix" action="/shop/search.php" acceptcharset="gbk">
+                                    <input type="hidden" name="qname" id="ssch_qname" value="1" <?php echo $qname_check?'checked="checked"':'';?>>
+                                    <input type="hidden" name="qexplan" id="ssch_qexplan" value="1" <?php echo $qexplan_check?'checked="checked"':'';?>>
+                                    <input type="hidden" name="qid" id="ssch_qid" value="1" <?php echo $qid_check?'checked="checked"':'';?>>
+                                    <input type="hidden" name="qtag" id="ssch_qtag" value="1" <?php echo $qtag_check?'checked="checked"':'';?>>                                    
                                         <fieldset>
                                             <legend>天猫搜索</legend> 
                                             <div class="oz_mallSearch_input oz_clearfix">

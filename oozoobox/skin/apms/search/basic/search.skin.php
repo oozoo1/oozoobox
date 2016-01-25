@@ -27,6 +27,7 @@ $list_cnt = count($list);
 include_once($skin_path.'/search.skin.form.php');
 
 ?>
+<br />
 
 <style>
 	.list-wrap .list-container { overflow:hidden; margin-right:<?php echo ($gap_right > 0) ? '-'.$gap_right : 0;?>px; margin-bottom:<?php echo ($gap_bottom > 15) ? 0 : 15;?>px; }
@@ -125,16 +126,16 @@ include_once($skin_path.'/search.skin.form.php');
 									<?php } ?>
 									<?php if($wset['buy']) { ?>
 										&nbsp;
-										<i class="fa fa-shopping-cart"></i> <?php echo ($list[$i]['it_sum_qty']) ? '<span class="blue">'.number_format($list[$i]['it_sum_qty']).'</span>' : 0;?>
+										<i class="fa fa-shopping-cart"></i> <?php echo ($list[$i]['it_sum_qty']) ? '<span class="blue">'.number_format($list[$i]['it_sum_qty'],2).'</span>' : 0;?>
 									<?php } ?>
 									<?php if($list[$i]['it_point']) { ?>
 										&nbsp;
 										<i class="fa fa-gift"></i> 
-										<span class="green"><?php echo ($list[$i]['it_point_type'] == 2) ? $list[$i]['it_point'].'%' : number_format(get_item_point($list[$i]));?></span>
+										<span class="green"><?php echo ($list[$i]['it_point_type'] == 2) ? $list[$i]['it_point'].'%' : number_format(get_item_point($list[$i],2));?></span>
 									<?php } ?>
 								</div>
 								<div class="pull-right font-16 en">
-									<b><?php echo ($list[$i]['it_tel_inq']) ? 'Call' : number_format($list[$i]['it_price']);?></b>
+									<b>¥ <?php echo ($list[$i]['it_tel_inq']) ? 'Call' : number_format($list[$i]['it_price'],2);?></b>
 								</div>
 								<div class="clearfix"></div>
 							</div>
