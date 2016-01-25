@@ -312,18 +312,18 @@ $result = sql_query($sql);
 								$row = sql_fetch($sql);
 								$content_cnt=$row['cnt'];
 								
-								$sql1 = "SELECT it_id , it_img1 FROM g5_shop_item WHERE it_id = '{$row_md[wr_10]}'";
-								$result1 = sql_query($sql1);
-								$row_item=sql_fetch_array($result1);
+								$sqlfile="select * from g5_shop_banner where bo_table='mditem' and wr_id = '{$row_md['wr_id']}' and bf_no = '0'";
+								$sqlimg=sql_query($sqlfile);
+								$rowimg=sql_fetch_array($sqlimg);
+								
+                $dr_memo = cut_str($row_md[wr_content],95);
 							?>
                 	<div class="<? if($i=="3" || $i=="7"){?>market_item last_990<? }else{ ?>market_item<? } ?>">
                     	<a class="main_pic" href="/shop/item.php?it_id=<?=$row_md[wr_10]?>">
-                        	<? if($row_item[it_img1]){?><img src="http://data.oozoobox.com/data/item/<?=$row_item[it_img1]?>" alt="<?php echo $img['alt'];?>"><? }else{ ?><img src="/images/noimg.png"><? } ?>
+                        	<? if($rowimg[bf_file]){?><img src="http://data.oozoobox.com/data/file/mditem/<?=$rowimg[bf_file]?>" alt="<?php echo $img['alt'];?>"><? }else{ ?><img src="/images/noimg.png"><? } ?>
                         </a>
                         <a class="market_info" href="/shop/item.php?it_id=<?=$row_md[wr_10]?>">
-                            气温突降的寒夜里，<br>
-                            今天晚餐来碗<br>
-                            热气腾腾的拉面怎么样？
+                            <?=$dr_memo?>
                         </a>
                         <a class="market_good" href="/shop/item.php?it_id=<?=$row_md[wr_10]?>">
                                 <span class="market_good_no"><?=$content_cnt?></span>

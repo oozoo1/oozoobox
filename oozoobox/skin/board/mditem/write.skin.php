@@ -96,6 +96,94 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
         <td class="wheight"><?php echo $editor_html; // 에디터 사용시는 에디터로, 아니면 textarea 로 노출 ?></td>
       </tr>
 
+	<?php if ($is_file) { ?>
+    <style>
+    #variableFiles { width:100%; margin:0; border:0; }
+    #variableFiles td { padding:0px 0px 7px; border:0; }
+    #variableFiles input[type=file] { box-shadow : none; border: 1px solid #ccc !important; outline:none; }
+    #variableFiles .form-group { margin-left:0; margin-right:0; margin-bottom:7px; }
+    #variableFiles .checkbox-inline { padding-top:0px; font-weight:normal; }
+    </style>  
+      <tr>
+        <td class="wheight">		
+		<table id="variableFiles"></table>
+			<script>
+            var flen = 0;
+            function add_file(delete_code) {
+                var upload_count = <?php echo (int)$board['bo_upload_count']; ?>;
+                if (upload_count && flen >= upload_count) {
+                    alert("이 게시판은 "+upload_count+"개 까지만 파일 업로드가 가능합니다.");
+                    return;
+                }
+            
+                var objTbl;
+                var objNum;
+                var objRow;
+                var objCell;
+                var objContent;
+                if (document.getElementById)
+                    objTbl = document.getElementById("variableFiles");
+                else
+                    objTbl = document.all["variableFiles"];
+            
+                objNum = objTbl.rows.length;
+                objRow = objTbl.insertRow(objNum);
+                objCell = objRow.insertCell(0);
+            
+                objContent = "<div class='row'>";
+                objContent += "<div class='col-sm-7'><div class='form-group'><div class='input-group input-group-sm'><span class='input-group-addon'>파일 "+objNum+"</span><input type='file' class='form-control input-sm' name='bf_file[]' title='파일 용량 <?php echo $upload_max_filesize; ?> 이하만 업로드 가능'></div></div></div>";
+                if (delete_code) {
+                    objContent += delete_code;
+                } else {
+                    <?php if ($is_file_content) { ?>
+                    objContent += "<div class='col-sm-5'><div class='form-group'><input type='text'name='bf_content[]' class='form-control input-sm' placeholder='이미지에 대한 내용을 입력하세요.'></div></div>";
+                    <?php } ?>
+                    ;
+                }
+                objContent += "</div>";
+            
+                objCell.innerHTML = objContent;
+            
+                flen++;
+            }
+            
+            <?php echo $file_script; //수정시에 필요한 스크립트?>
+            
+            function del_file() {
+                // file_length 이하로는 필드가 삭제되지 않아야 합니다.
+                var file_length = <?php echo (int)$file_length; ?>;
+                var objTbl = document.getElementById("variableFiles");
+                if (objTbl.rows.length - 1 > file_length) {
+                    objTbl.deleteRow(objTbl.rows.length - 1);
+                    flen--;
+                }
+            }
+            </script>
+        </td>
+      </tr>
+      <tr>
+        <td class="wheight"> 
+            <button class="btn btn-sm btn-color" type="button" onclick="add_file();"><i class="fa fa-plus-circle fa-lg"></i> 추가하기</button>
+            <button class="btn btn-sm btn-black" type="button" onclick="del_file();"><i class="fa fa-times-circle fa-lg"></i> 삭제하기</button>                  
+            <label class="control-label sp-label">
+                <input type="radio" name="as_img" value="0"<?php if(!$write['as_img']) echo ' checked';?>> 상단출력
+            </label>
+            <label class="control-label sp-label">
+                <input type="radio" name="as_img" value="1"<?php if($write['as_img'] == "1") echo ' checked';?>> 하단출력
+            </label>
+            <label class="control-label sp-label">
+                <input type="radio" name="as_img" value="2"<?php if($write['as_img'] == "2") echo ' checked';?>> 본문삽입
+            </label>
+        </td>
+      </tr> 
+	<?php } ?>
+	<?php for ($i=1; $is_link && $i<=G5_LINK_COUNT; $i++) { ?>
+      <tr>
+        <td  class="wheight">
+				<input type="text" name="wr_link<?php echo $i ?>" value="<?php if($w=="u"){ echo $write['wr_link'.$i]; } ?>" id="wr_link<?php echo $i ?>" placeholder="   链接 #<?php echo $i ?>" class="winput" size="50">
+        </td>
+      </tr>
+      <?php } ?>	
       <tr>
         <td height="20" style="border-bottom:solid 1px #eee;"></td>
       </tr>

@@ -184,9 +184,7 @@ $md_img="/images/md4.png";
 											</div>	
 										<?php } ?>
                     <? if($member[mb_id]=="admin"){ $l_href="/bbs/write.php?w=u&bo_table=mditem&wr_id=4&page=&sca=%EA%B3%A0%EC%9E%AC%ED%98%81";}else{$l_href="$list[$i]['href']";}?>
-                      <a href="<?php echo $l_href;?>">
-                        <? if($row_item[it_img1]){?><img src="/data/item/<?=$row_item[it_img1]?>" alt="<?php echo $img['alt'];?>"><? }else{ ?><img src="/images/noimg.png"><? } ?>
-                      </a>
+                      <a href="<?php echo $l_href;?>"><img src="<?=$img?>"></a>
 									</div>
 								</div>
 							</div>
