@@ -243,21 +243,19 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
 		</div>	
 	<?php } ?>
 
-	<h3 class="view-comment">Comments</h3>
-	<?php include_once('./view_comment.php'); ?>
 
 	<div class="clearfix"></div>
 
 	<div class="view-btn text-right">
 		<div class="btn-group">
 			<?php if ($prev_href) { ?>
-				<a href="<?php echo $prev_href ?>" class="btn btn-black btn-sm" title="이전글">
-					<i class="fa fa-chevron-circle-left"></i><span class="hidden-xs"> 이전</span>
+				<a href="<?php echo $prev_href ?>" class="btn btn-black btn-sm" title="上一页">
+					<i class="fa fa-chevron-circle-left"></i><span class="hidden-xs"> 上一页</span>
 				</a>
 			<?php } ?>
 			<?php if ($next_href) { ?>
-				<a href="<?php echo $next_href ?>" class="btn btn-black btn-sm" title="다음글">
-					<i class="fa fa-chevron-circle-right"></i><span class="hidden-xs"> 다음</span>
+				<a href="<?php echo $next_href ?>" class="btn btn-black btn-sm" title="下一页">
+					<i class="fa fa-chevron-circle-right"></i><span class="hidden-xs"> 下一页</span>
 				</a>
 			<?php } ?>
 			<?php if ($copy_href) { ?>
@@ -272,12 +270,12 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
 			<?php } ?>
 			<?php if ($delete_href) { ?>
 				<a href="<?php echo $delete_href ?>" class="btn btn-black btn-sm" title="삭제" onclick="del(this.href); return false;">
-					<i class="fa fa-times"></i><span class="hidden-xs"> 삭제</span>
+					<i class="fa fa-times"></i><span class="hidden-xs"> 删除</span>
 				</a>
 			<?php } ?>
 			<?php if ($update_href) { ?>
 				<a href="<?php echo $update_href ?>" class="btn btn-black btn-sm" title="수정">
-					<i class="fa fa-plus"></i><span class="hidden-xs"> 수정</span>
+					<i class="fa fa-plus"></i><span class="hidden-xs"> 修改</span>
 				</a>
 			<?php } ?>
 			<?php if ($search_href) { ?>
@@ -286,11 +284,11 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
 				</a>
 			<?php } ?>
 			<a href="<?php echo $list_href ?>" class="btn btn-black btn-sm">
-				<i class="fa fa-bars"></i><span class="hidden-xs"> 목록</span>
+				<i class="fa fa-bars"></i><span class="hidden-xs"> 目录</span>
 			</a>
 			<?php if ($reply_href) { ?>
 				<a href="<?php echo $reply_href ?>" class="btn btn-black btn-sm">
-					<i class="fa fa-comments"></i><span class="hidden-xs"> 답변</span>
+					<i class="fa fa-comments"></i><span class="hidden-xs"> 回复</span>
 				</a>
 			<?php } ?>
 			<?php if ($write_href) { ?>
