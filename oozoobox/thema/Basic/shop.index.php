@@ -307,6 +307,9 @@ $result = sql_query($sql);
 						// 쇼핑몰 메인출력
 						$sqlmd = " select * from g5_write_mditem ORDER BY `g5_write_mditem`.`wr_datetime` DESC LIMIT 0 , 8";
 						$resultmd = sql_query($sqlmd);
+						$a=1;
+						$b=1;
+						$c=1;
 								for ($i=0; $row_md=sql_fetch_array($resultmd); $i++){ 										
 								$sql = " select count(*) as cnt from {$g5['g5_shop_item_use_table']} where it_id = '{$row_md['wr_10']}'";
 								$row = sql_fetch($sql);
@@ -330,7 +333,7 @@ $result = sql_query($sql);
                         </a>
                         <div class="market_right">
                             <a href="/bbs/board.php?bo_table=mditem&sca=<?=urlencode("$row_md[ca_name]")?>">
-                                <img width="100%" src="/images/md_go_01.png" onmouseover="this.src='/images/md_go_01_o.png'" onmouseout="this.src='/images/md_go_01.png'"/>
+                                <img width="100%" src="/images/md_go_0<?=$a++?>.png" onmouseover="this.src='/images/md_go_0<?=$b++?>_o.png'" onmouseout="this.src='/images/md_go_0<?=$c++?>.png'"/>
                             </a>
                         </div>
                     </div>
