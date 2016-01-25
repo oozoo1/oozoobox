@@ -43,7 +43,7 @@ if($today[id]){
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <?php }else{ ?>
                                 <li>
-                                    <a href="/shop/partner/register.php" target="_parent">입점신청</a> <!--"입점신청"-->
+                                    <a href="/shop/partner/register.php" target="_parent">商家注入</a> <!--"입점신청"-->
                                 </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <?php } ?>
@@ -56,7 +56,7 @@ if($today[id]){
                                 </li>
                             <?php }else{ ?>
                                 <li>
-                                    <a href="/shop/partner/login.php" target="_parent">입점자로그인</a> <!--"로그인하세요"-->
+                                    <!--><a href="/shop/partner/login.php" target="_parent">입점자로그인</a> <!--><!--"로그인하세요"-->
                                 </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <li>
