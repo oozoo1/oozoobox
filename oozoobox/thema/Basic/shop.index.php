@@ -241,7 +241,7 @@ $result = sql_query($sql);
                             <span class="wonderful_wish">
                                 <a href="/shop/item.php?it_id=<?=$row_main[it_id]?>&ca_id=<?=$row_main[ca_id]?>">
                                     <span class="ico_wonderful_wish">	
-                                    	<em><? echo number_format($row_main[it_8]);?></em>
+                                    	<em><? echo number_format($row_main[it_8]*1);?></em>
                                     </span>
                                 </a>
                             </span>                            
