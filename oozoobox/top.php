@@ -55,7 +55,6 @@ if($today[id]){
                                     <a class="top_quick02" href="/bbs/logout.php" target="_parent" rel="nofollow">退出登录</a><!--"로그아웃"-->
                                 </li>
                             <?php }else{ ?>
-                                <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <li>
                                     <a class="top_quick03" href="/bbs/login.php" target="_parent">请登录</a> <!--"로그인하세요"-->
                                 </li>
