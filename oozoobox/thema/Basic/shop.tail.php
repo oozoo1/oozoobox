@@ -35,12 +35,12 @@ $cart_count = sql_num_rows($result);
 	<ul class="footer_link">
     	<li><a href="/">首页</a></li>
     	<li><a href="/company/index.html">公司介绍</a></li>    
-    	<li><a>联系我们</a></li>
-    	<li><a>配送方式 </a></li>
-    	<li><a>合作咨询</a></li>   
-    	<li><a>招聘指南 </a></li>
-    	<li><a>客户服务</a></li>
-    	<li><a>服务协议</a></li>         
+    	<li><a href="/company/index.html#feature">联系我们</a></li>
+    	<li><a href="/shop/main_promise03.php">配送方式 </a></li>
+    	<li><a href="/company/index.html#contact">合作咨询</a></li>   
+    	<li><a href="/company/index.html#overview">招聘指南 </a></li>
+    	<li><a href="/shop/cscenter.php">客户服务</a></li>
+    	<li><a href="/bbs/board.php?bo_table=faq&wr_id=8">服务协议</a></li>         
     </ul>
     <div class="footer_info">
     	<p>
