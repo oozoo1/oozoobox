@@ -17,8 +17,8 @@ $skin_url = $member_skin_url;
 <div id="MainEvent02">
 	<img src="/images/event_vote.png" alt="投票"/>
     <div class="event_vote">
-    	<div class="vote01"><input type="radio"/><span> 金惠珍</span></div>
-        <div class="vote02"><input type="radio"/><span> 闵夏莉</span></div>
+    	<div class="vote01"><input name="vote" type="radio"/><span> 金惠珍</span></div>
+        <div class="vote02"><input name="vote" type="radio"/><span> 闵夏莉</span></div>
         <textarea class="event_vote_txt" placeholder="请您写一下儿选择的理由"></textarea>
         <div class="btn_event_vote">
             <a>
