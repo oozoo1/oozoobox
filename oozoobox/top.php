@@ -38,12 +38,12 @@ if($today[id]){
                                 <?php } ?>
                                 <?php if($member['partner']) { ?>
                                 <li>
-                                    <a href="/shop/partner/" target="_parent">마이샵</a> <!--"마이샵관리페이지"-->
+                                    <a href="/shop/partner/" target="_parent">商家管理</a> <!--"마이샵관리페이지"-->
                                 </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <?php }else{ ?>
                                 <li>
-                                    <a href="/shop/partner/register.php" target="_parent">입점신청</a> <!--"입점신청"-->
+                                    <a href="/shop/partner/register.php" target="_parent">商家注入</a> <!--"입점신청"-->
                                 </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <?php } ?>
@@ -55,9 +55,6 @@ if($today[id]){
                                     <a class="top_quick02" href="/bbs/logout.php" target="_parent" rel="nofollow">退出登录</a><!--"로그아웃"-->
                                 </li>
                             <?php }else{ ?>
-                                <li>
-                                    <a href="/shop/partner/login.php" target="_parent">입점자로그인</a> <!--"로그인하세요"-->
-                                </li>
                                 <li class="oz_sn_separator"></li> <!--oz_site_nav의 세로줄-->
                                 <li>
                                     <a class="top_quick03" href="/bbs/login.php" target="_parent">请登录</a> <!--"로그인하세요"-->
