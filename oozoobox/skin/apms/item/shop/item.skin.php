@@ -168,12 +168,12 @@ $row = sql_fetch($sql);
                                   <? if($row_good[mb_id]){?>
                                   <a class="btn_u_like on" href="/shop/item.php?it_id=<?=$_GET[it_id]?>&ca_id=<?=$_GET[ca_id]?>&mb=<?=$member[mb_id]?>&type=no">
                                     	<span class="ico_u"></span>
-                                        <em class="u_cnt"><? echo number_format($it[it_8]);?></em> <!--누른 후-->
+                                        <em class="u_cnt"><? echo number_format($it[it_8]*1);?></em> <!--누른 후-->
                                   </a>  
                                   <? }else{ ?>
                                 	<a class="btn_u_like" href="/shop/item.php?it_id=<?=$_GET[it_id]?>&ca_id=<?=$_GET[ca_id]?>&mb=<?=$member[mb_id]?>&type=yes">
                                     	<span class="ico_u"></span>
-                                        <em class="u_cnt"><? echo number_format($it[it_8]);?></em> <!--누르기 전-->
+                                        <em class="u_cnt"><? echo number_format($it[it_8]*1);?></em> <!--누르기 전-->
                                   </a>                                 
                                 	<? } ?>                              
                                 </div>

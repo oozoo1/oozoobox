@@ -87,6 +87,18 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
       </tr>
       <? } ?>
       <tr>
+        <td class="wheight">
+                <select name="wr_1"  class="winput">
+                    <option value="" <? if($_GET[wr_1]==""){?>selected="selected"<? } ?>>&nbsp;&nbsp; 其他</option>
+                    <option value="10" <? if($_GET[wr_1]=="10"){?>selected="selected"<? } ?>>&nbsp;&nbsp; 给宝宝最好</option>
+                    <option value="20" <? if($_GET[wr_1]=="20"){?>selected="selected"<? } ?>>&nbsp;&nbsp; 白滑牛奶皮肤</option>
+                    <option value="30" <? if($_GET[wr_1]=="30"){?>selected="selected"<? } ?>>&nbsp;&nbsp; 津津有味</option>
+                    <option value="50" <? if($_GET[wr_1]=="50"){?>selected="selected"<? } ?>>&nbsp;&nbsp; 小生活必备</option>
+                    <option value="40" <? if($_GET[wr_1]=="40"){?>selected="selected"<? } ?>>&nbsp;&nbsp; 美丽的穿着</option> 
+             	 </select>
+        </td>
+      </tr>
+      <tr>
         <td class="wheight"><input type="text" name="wr_10" value="<?php echo $write[wr_10] ?>" id="wr_10" required class="winput" size="50" maxlength="255" placeholder="   请输入商品 it_id"></td>
       </tr>
       <tr>

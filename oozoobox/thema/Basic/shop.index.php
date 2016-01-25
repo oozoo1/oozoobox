@@ -241,7 +241,7 @@ $result = sql_query($sql);
                             <span class="wonderful_wish">
                                 <a href="/shop/item.php?it_id=<?=$row_main[it_id]?>&ca_id=<?=$row_main[ca_id]?>">
                                     <span class="ico_wonderful_wish">	
-                                    	<em><? echo number_format($row_main[it_8]);?></em>
+                                    	<em><? echo number_format($row_main[it_8]*1);?></em>
                                     </span>
                                 </a>
                             </span>                            
@@ -305,7 +305,7 @@ $result = sql_query($sql);
               <?
 
 						// 쇼핑몰 메인출력
-						$sqlmd = " select * from g5_write_mditem ORDER BY `g5_write_mditem`.`wr_datetime` DESC LIMIT 0 , 8";
+						$sqlmd = " select * from g5_write_mditem where wr_1 = '' ORDER BY `g5_write_mditem`.`wr_datetime` DESC LIMIT 0 , 8";
 						$resultmd = sql_query($sqlmd);
 						$a=1;
 						$b=1;
