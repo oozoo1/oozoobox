@@ -94,8 +94,13 @@ if ($q) {
 if ($qcaid)
     $where[] = " a.ca_id like '$qcaid%' ";
 
-if ($qfrom && $qto)
+if ($qfrom && $qto){		// 최소가격과 최대가격이 동시에 존재 한다면
     $where[] = " a.it_price between '$qfrom' and '$qto' ";
+}elseif($qfrom){			// 최소가격만 존재 한다면
+	$where[] = " a.it_price >= '$qfrom' ";
+}elseif($qto){				// 최대가격만 존재 한다면
+	$where[] = " a.it_price <= '$qto' ";
+}
 
 $sql_where = " where " . implode(" and ", $where);
 
