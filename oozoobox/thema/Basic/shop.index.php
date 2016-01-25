@@ -312,7 +312,7 @@ $result = sql_query($sql);
 								$row = sql_fetch($sql);
 								$content_cnt=$row['cnt'];
 								
-								$sqlfile="select * from g5_shop_banner where bo_table='mditem' and wr_id = '{$row_md['wr_id']}' and bf_no = '0'";
+								$sqlfile="select * from g5_board_file where bo_table='mditem' and wr_id = '{$row_md['wr_id']}' and bf_no = '0'";
 								$sqlimg=sql_query($sqlfile);
 								$rowimg=sql_fetch_array($sqlimg);
 								
@@ -320,7 +320,7 @@ $result = sql_query($sql);
 							?>
                 	<div class="<? if($i=="3" || $i=="7"){?>market_item last_990<? }else{ ?>market_item<? } ?>">
                     	<a class="main_pic" href="/shop/item.php?it_id=<?=$row_md[wr_10]?>">
-                        	<? if($rowimg[bf_file]){?><img src="http://data.oozoobox.com/data/file/mditem/<?=$rowimg[bf_file]?>" alt="<?php echo $img['alt'];?>"><? }else{ ?><img src="/images/noimg.png"><? } ?>
+                        	<? if($rowimg[bf_file]){?><img src="/data/file/mditem/<?=$rowimg[bf_file]?>" alt="<?php echo $img['alt'];?>"><? }else{ ?><img src="/images/noimg.png"><? } ?>
                         </a>
                         <a class="market_info" href="/shop/item.php?it_id=<?=$row_md[wr_10]?>">
                             <?=$dr_memo?>
