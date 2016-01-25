@@ -160,7 +160,7 @@ $list_cnt = count($list);
                         </span>
                         <a href="<?php echo $list[$i]['href'];?>" class="album_wish_plus">
                             <span class="album_ico_wish">
-                                <em><? echo number_format($list[$i][it_8]);?></em>
+                                <em><? echo number_format($list[$i][it_8]*1);?></em>
                             </span>
                         </a>
                         <span class="album_info">
@@ -280,7 +280,7 @@ $list_cnt = count($list);
                                 <span class="list_item_wish">
                                     	<span class="list_ico_wish"></span>
                                         <span>喜欢</span>
-                                        <em><? echo number_format($list[$i][it_8]);?></em>
+                                        <em><? echo number_format($list[$i][it_8]*1);?></em>
                                         <span>人</span>
                                 </span>                                    
                             </span>
