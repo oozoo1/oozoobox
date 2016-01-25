@@ -72,7 +72,7 @@ if (G5_DOMAIN) {
     define('G5_URL', G5_DOMAIN);
 } else {
     if (isset($g5_path['url']))
-        define('G5_URL', $g5_path['url']);
+        define('G5_URL', '');
     else
         define('G5_URL', '');
 }
