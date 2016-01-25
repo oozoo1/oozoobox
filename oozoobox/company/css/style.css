@@ -156,14 +156,14 @@ h5{ font-size: 14px; line-height: 24px; }
 
 /*SLIDER HEADER 
 ============================================================*/
-.slider { background: url("../images/showcase-bg02.png") no-repeat center center; background-size: cover; min-height: 580px; height: 500px; overflow: hidden; }
-.slider-wrap{position:absolute; top:580px; left:0; width:100%; padding: 150px 0px; background:#333;}
-.slider-img{ }
-.slider-img img{ width: 300px; height: 700px; }
-.slider{ }
-.slider-content{ padding-top: 80px; }
+.slider {}
+.slider .main_bg {background: url("../images/showcase-bg02.png") no-repeat center center; background-size: cover; min-height: 580px; height: 500px; overflow: hidden; }
+.slider .main_content {width:100%; background:#ddd; padding-bottom:100px;}
+.slider-wrap{width:1170px; margin:0 auto;}
+.slider-content{ padding-top: 50px; }
+.slider .main_content  .col-md-7 {width:85%;}
 .slider h1 { margin: 0 0 20px 0; font-size: 50px; color: #fff; text-transform: uppercase; line-height: 60px; font-weight: 700; }
-.slider h2 { font-family: "Noto Sans KR", '맑은고딕', 'lora', serif; font-style: italic; color: #fff; text-transform: capitalize; font-size: 24px; }
+.slider .main_content h2 { font-family: "Noto Sans KR", '맑은고딕', 'lora', serif; color: #fff; text-transform: capitalize; font-size: 24px; }
 .slider p { margin-bottom: 25px; color: #fff; }
 
 .top-link { margin-top: 60px; }
