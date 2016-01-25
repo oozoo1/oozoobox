@@ -28,6 +28,7 @@ add_stylesheet('<link rel="stylesheet" href="/css/oz_mh/oz_mh.css" type="text/cs
         s.parentNode.insertBefore(j, s)
     })(window, document, 'script', '//eco-api.meiqia.com/dist/meiqia.js', '_MEIQIA');
     _MEIQIA('entId', 5768);
+		
 </script>
 <? } ?>
 
@@ -307,7 +308,7 @@ function getCookie(name){
 																	
                                 ?>
                                 <div class="img-box"> 
-                                    <a href="#">
+                                    <a href="/shop/item.php?it_id=<?=$row1[wr_10]?>&ca_id=10">
                                     	<img onerror="if(this.src=='http://pics.auction.co.kr/common/img_error300.gif') return; this.src='http://pics.auction.co.kr/common/img_error130.gif';" style="height:200px; width:260px" alt="MD" src="/data/file/mditem/<?=$rowimg[bf_file]?>"/>
                                     </a> 
                                     <div class="icon-check">
@@ -319,12 +320,12 @@ function getCookie(name){
                                     <p class="price"><span>¥</span><?php echo number_format($rowprice['it_price'],2); ?></p>
                                     <div class="sns-wallpaper">
                                         <span>
-                                            <a href="#">
+                                            <a href="/shop/item.php?it_id=<?=$row1[wr_10]?>&ca_id=10">
                                             	<img alt="商品상세정보" src="/images/btn_top_glo_md_detail.png"/>
                                             </a>
                                         </span> 
                                         <span>
-                                            <a onclick="javascript:favoriteItemOpenSingleRegist(this.parentNode, 'B282487011', '4470', 'http://sell3.auction.co.kr');" href="javascript:void(0);">
+                                            <a href="/shop/item.php?it_id=<?=$row1[wr_10]?>&ca_id=10">
                                             	<img alt="관심商品등록" src="/images/btn_top_glo_md_wish.png"/>
                                             </a>
                                         </span>
@@ -397,7 +398,7 @@ function getCookie(name){
 																	
                                 ?>
                                 <div class="img-box"> 
-                                    <a href="#">
+                                    <a href="/shop/item.php?it_id=<?=$row1[wr_10]?>&ca_id=20">
                                     	<img onerror="if(this.src=='http://pics.auction.co.kr/common/img_error300.gif') return; this.src='http://pics.auction.co.kr/common/img_error130.gif';" style="height:200px; width:260px" alt="MD" src="/data/file/mditem/<?=$rowimg[bf_file]?>"/>
                                     </a> 
                                     <div class="icon-check">
@@ -409,12 +410,12 @@ function getCookie(name){
                                     <p class="price"><span>¥</span><?php echo number_format($rowprice['it_price'],2); ?></p>
                                     <div class="sns-wallpaper">
                                         <span>
-                                            <a href="#">
+                                            <a href="/shop/item.php?it_id=<?=$row1[wr_10]?>&ca_id=20">
                                             	<img alt="商品상세정보" src="/images/btn_top_glo_md_detail.png"/>
                                             </a>
                                         </span> 
                                         <span>
-                                            <a onclick="javascript:favoriteItemOpenSingleRegist(this.parentNode, 'B282487011', '4470', 'http://sell3.auction.co.kr');" href="javascript:void(0);">
+                                            <a href="/shop/item.php?it_id=<?=$row1[wr_10]?>&ca_id=20">
                                             	<img alt="관심商品등록" src="/images/btn_top_glo_md_wish.png"/>
                                             </a>
                                         </span>
@@ -487,7 +488,7 @@ function getCookie(name){
 																	
                                 ?>
                                 <div class="img-box"> 
-                                    <a href="#">
+                                    <a href="/shop/item.php?it_id=<?=$row1[wr_10]?>&ca_id=30">
                                     	<img onerror="if(this.src=='http://pics.auction.co.kr/common/img_error300.gif') return; this.src='http://pics.auction.co.kr/common/img_error130.gif';" style="height:200px; width:260px" alt="MD" src="/data/file/mditem/<?=$rowimg[bf_file]?>"/>
                                     </a> 
                                     <div class="icon-check">
@@ -499,12 +500,12 @@ function getCookie(name){
                                     <p class="price"><span>¥</span><?php echo number_format($rowprice['it_price'],2); ?></p>
                                     <div class="sns-wallpaper">
                                         <span>
-                                            <a href="#">
+                                            <a href="/shop/item.php?it_id=<?=$row1[wr_10]?>&ca_id=30">
                                             	<img alt="商品상세정보" src="/images/btn_top_glo_md_detail.png"/>
                                             </a>
                                         </span> 
                                         <span>
-                                            <a onclick="javascript:favoriteItemOpenSingleRegist(this.parentNode, 'B282487011', '4470', 'http://sell3.auction.co.kr');" href="javascript:void(0);">
+                                            <a href="/shop/item.php?it_id=<?=$row1[wr_10]?>&ca_id=30">
                                             	<img alt="관심商品등록" src="/images/btn_top_glo_md_wish.png"/>
                                             </a>
                                         </span>
@@ -576,7 +577,7 @@ function getCookie(name){
 																	
                                 ?>
                                 <div class="img-box"> 
-                                    <a href="#">
+                                    <a href="/shop/item.php?it_id=<?=$row1[wr_10]?>&ca_id=50">
                                     	<img onerror="if(this.src=='http://pics.auction.co.kr/common/img_error300.gif') return; this.src='http://pics.auction.co.kr/common/img_error130.gif';" style="height:200px; width:260px" alt="MD" src="/data/file/mditem/<?=$rowimg[bf_file]?>"/>
                                     </a> 
                                     <div class="icon-check">
@@ -588,12 +589,12 @@ function getCookie(name){
                                     <p class="price"><span>¥</span><?php echo number_format($rowprice['it_price'],2); ?></p>
                                     <div class="sns-wallpaper">
                                         <span>
-                                            <a href="#">
+                                            <a href="/shop/item.php?it_id=<?=$row1[wr_10]?>&ca_id=50">
                                             	<img alt="商品상세정보" src="/images/btn_top_glo_md_detail.png"/>
                                             </a>
                                         </span> 
                                         <span>
-                                            <a onclick="javascript:favoriteItemOpenSingleRegist(this.parentNode, 'B282487011', '4470', 'http://sell3.auction.co.kr');" href="javascript:void(0);">
+                                            <a href="/shop/item.php?it_id=<?=$row1[wr_10]?>&ca_id=50">
                                             	<img alt="관심商品등록" src="/images/btn_top_glo_md_wish.png"/>
                                             </a>
                                         </span>
@@ -665,7 +666,7 @@ function getCookie(name){
 																	
                                 ?>
                                 <div class="img-box"> 
-                                    <a href="#">
+                                    <a href="/shop/item.php?it_id=<?=$row1[wr_10]?>&ca_id=40">
                                     	<img onerror="if(this.src=='http://pics.auction.co.kr/common/img_error300.gif') return; this.src='http://pics.auction.co.kr/common/img_error130.gif';" style="height:200px; width:260px" alt="MD" src="/data/file/mditem/<?=$rowimg[bf_file]?>"/>
                                     </a> 
                                     <div class="icon-check">
@@ -677,12 +678,12 @@ function getCookie(name){
                                     <p class="price"><span>¥</span><?php echo number_format($rowprice['it_price'],2); ?></p>
                                     <div class="sns-wallpaper">
                                         <span>
-                                            <a href="#">
+                                            <a href="/shop/item.php?it_id=<?=$row1[wr_10]?>&ca_id=40">
                                             	<img alt="商品상세정보" src="/images/btn_top_glo_md_detail.png"/>
                                             </a>
                                         </span> 
                                         <span>
-                                            <a onclick="javascript:favoriteItemOpenSingleRegist(this.parentNode, 'B282487011', '4470', 'http://sell3.auction.co.kr');" href="javascript:void(0);">
+                                            <a href="/shop/item.php?it_id=<?=$row1[wr_10]?>&ca_id=40">
                                             	<img alt="관심商品등록" src="/images/btn_top_glo_md_wish.png"/>
                                             </a>
                                         </span>
