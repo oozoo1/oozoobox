@@ -156,8 +156,8 @@ h5{ font-size: 14px; line-height: 24px; }
 
 /*SLIDER HEADER 
 ============================================================*/
-.slider { background: url("../images/showcase-bg.jpg") no-repeat center center fixed; background-size: cover; min-height: 580px; height: 500px; overflow: hidden; }
-.slider-wrap{ padding: 150px 0px; }
+.slider { background: url("../images/showcase-bg02.png") no-repeat center center; background-size: cover; min-height: 580px; height: 500px; overflow: hidden; }
+.slider-wrap{position:absolute; top:580px; left:0; width:100%; padding: 150px 0px; background:#333;}
 .slider-img{ }
 .slider-img img{ width: 300px; height: 700px; }
 .slider{ }
