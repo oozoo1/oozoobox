@@ -420,11 +420,15 @@ $result = sql_query($sql);
                     <h3 class="oz_main_news_tit">公告</h3>
                     <div class="oz_main_news_list">
                         <ul>
-                            <li><a href="#" target="_blank">【官方公告】宇宙”物流预警“邀你备战大促！</a></li>
-                            <li><a href="#" target="_blank">恭喜恭喜！EXO第二张迷你专辑获奖者名单公布！</a></li>
-                            <li><a href="#" target="_blank">系统维护</a></li>
-                            <li><a href="#" target="_blank">优秀博客 栏目正在准备中</a></li>
-                            <li><a href="#" target="_blank">关于换货及退货的公告</a></li>
+														<?
+              
+                          // 쇼핑몰 메인출력
+                          $sqlnotice = " select * from g5_write_notice ORDER BY `g5_write_notice`.`wr_datetime` DESC LIMIT 0 , 8";
+                          $resultnotice = sql_query($sqlnotice);
+                              for ($i=0; $row_notice=sql_fetch_array($resultnotice); $i++){ 	
+                            ?>
+                            <li><a href="/bbs/board.php?bo_table=notice&wr_id=<?=$row_notice[wr_id]?>" target="_blank"><?=$row_notice[wr_subject]?></a></li>
+                            <? } ?>
                         </ul>
                     </div>
                 </div>
