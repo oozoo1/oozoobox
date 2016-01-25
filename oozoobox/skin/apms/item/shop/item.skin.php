@@ -544,15 +544,19 @@ $row = sql_fetch($sql);
             <!--e: 제품 가격 정보-->
         </div>
         <!--e: 상세보기 제품 사진, 가격정보-->
-
+<?
+$sql = " select count(*) as cnt from {$g5['g5_shop_item_use_table']} where it_id = '{$_GET['it_id']}'";
+$row = sql_fetch($sql);
+$content_cnt=$row['cnt'];
+?>
         <!--s:상세보기 제품 정보, 게시판-->
         <div id="detail_container">
             <ul class="detail_tabs">
                 <li id="li_1" class="active" rel="detail_tab1">商品详情</li>
-                <li id="li_2" rel="detail_tab2">用户评价 <span class="tap_no">(110)</span></li>
+                <li id="li_2" rel="detail_tab2">用户评价 <span class="tap_no">(<?=$content_cnt?>)</span></li>
                 <!--<li id="li_3" rel="detail_tab3">询问/回复</li>-->
                 <!--<li id="li_4" rel="detail_tab4">卖家信息</li>-->
-                <li id="li_5" rel="detail_tab5">取消/换货/退货 <span class="tap_no">(18)</span></li>
+                <li id="li_5" rel="detail_tab5">取消/换货/退货</li>
             </ul>
                         
             <div class="detail_tab_container">
@@ -884,18 +888,12 @@ $row = sql_fetch($sql);
             <div class="relation-area">
             	<h3>相关推荐</h3>
                 <ul class="relation-pro">
+                <? for ($i=0; $row_view=sql_fetch_array($resultview); $i++){ 	?>
                 	<li>
-                    	<a href="#"><img src="/images/detail_rel01.png" alt="관련상품01"/></a>
+                    	<a href="/shop/item.php?it_id=<?=$row_view[it_id]?>&ca_id=<?=$row_view[ca_id]?>"><img src="http://data.oozoobox.com/data/item/<?=$row_view[it_img1]?>" alt="<?=$row_view[it_basic]?>"/></a>
                     </li>
-                	<li>
-                    	<a href="#"><img src="/images/detail_rel01.png" alt="관련상품01"/></a>
-                    </li>
-                	<li>
-                    	<a href="#"><img src="/images/detail_rel01.png" alt="관련상품01"/></a>
-                    </li> 
-                	<li>
-                    	<a href="#"><img src="/images/detail_rel01.png" alt="관련상품01"/></a>
-                    </li>               
+                <? } ?>
+            
                 </ul>
             </div>
         </div> 
