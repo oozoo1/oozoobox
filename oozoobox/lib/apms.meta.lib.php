@@ -71,7 +71,7 @@ $seometa['description'] = ($seometa['description']) ? str_replace("\"", "'", $se
 <meta name="subject" content="<?php echo str_replace("\"", "'", $seometa['subject']);?>" />
 <?php } ?>
 <meta name="publisher" content="<?php echo $seometa['publisher'];?>" />
-<meta name="author" content="<?php echo $seometa['creator'];?>" />
+<meta name="author" content="<?php echo $seometa['publisher'];?>" />
 <meta name="robots" content="index,follow" />
 <?php if($seometa['keyword']) { ?>
 <meta name="keywords" content="<?php echo str_replace("\"", "'", $seometa['keyword']);?>" />
@@ -81,10 +81,10 @@ $seometa['description'] = ($seometa['description']) ? str_replace("\"", "'", $se
 <?php } ?>
 <meta property="og:title" content="<?php echo $seometa['title'];?>"/>
 <meta property="og:site_name" content="<?php echo $seometa['publisher'];?>" />
-<meta property="og:author" content="<?php echo $seometa['creator'];?>" />
+<meta property="og:author" content="<?php echo $seometa['publisher'];?>" />
 <meta property="og:type" content="<?php echo $seometa['type'];?>" />
-<?php if($seometa['img']['src']) { ?>
-<meta property="og:image" content="<?php echo $seometa['img']['src'];?>" />
+<?php if($seometa['img']['src']) { $dr_memo = str_replace("dev","www",stripslashes(strip_tags($seometa['img']['src'])));?>
+<meta property="og:image" content="<?php echo $dr_memo;?>" />
 <?php } ?>
 <?php if($seometa['description']) { ?>
 <meta property="og:description" content="<?php echo $seometa['description'];?>" />
