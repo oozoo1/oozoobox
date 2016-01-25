@@ -20,12 +20,101 @@ $ellipsis = (G5_IS_MOBILE) ? '' : ' class="ellipsis"';
 $ellipsis = ($thumb_h > 0) ? $ellipsis : '';
 
 $list_cnt = count($list);
+
+if($_GET[sca]=="김용철" || $_GET[sca]==""){
+$md_name="金龙喆";
+$md_served="韩国化妆品MD";
+$md_language="韩文,英文";
+$md_hobby="看书,高尔夫,听音乐";
+$md_img="/images/md1.png";
+}
+
+if($_GET[sca]=="고재혁"){
+$md_name="高在赫";
+$md_served="韩国美食MD";
+$md_language="韩文,英文";
+$md_hobby="看书,散步,听音乐";
+$md_img="/images/md2.png";
+}
+
+if($_GET[sca]=="김미혜"){
+$md_name="金美慧";
+$md_served="韩国服装MD";
+$md_language="韩文,英文,中文";
+$md_hobby="看书,舞蹈,听音乐";
+$md_img="/images/md3.png";
+}
+
+if($_GET[sca]=="허걸"){
+$md_name="许杰";
+$md_served="婴儿用品MD";
+$md_language="韩文,中文";
+$md_hobby="购物,听音乐,唱歌,台球,足球";
+$md_img="/images/md4.png";
+}
+
 ?>
+<style>
+.md_img{border-radius: 100px;}
+</style>
+<table width="990" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td width="656" valign="top">
+      <table width="656" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="160" height="160" rowspan="2" valign="top"><img src="<?=$md_img?>" class="md_img"></td>
+          <td width="25" rowspan="2">&nbsp;</td>
+          <td height="35" style="font-size:24px; font-weight:bold;"><?=$md_name?></td>
+        </tr>
+        <tr>
+          <td height="125" valign="top" style="line-height:24px;">
+          担&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 任：<?=$md_served?> <br>
+          语言能力：<?=$md_language?><br>
+          兴趣爱好：<?=$md_hobby?><br>
+          服务时间: 周一到周六 08:00 ~ 17:00          </td>
+        </tr>
+      </table>    </td>
+    <td width="334" valign="top">
+      <table width="334" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="80" valign="top"><a href="/bbs/board.php?bo_table=mditem&sca=<?=urlencode('김용철')?>"><? if($_GET[sca]=="김용철"){?><img src="/images/md1_ck.png"><? }else{ ?><img onmouseover="this.src='/images/md1_on.png'" onmouseout="this.src='/images/md1_off.png'" alt="" src="/images/md1_off.png"><? } ?></a></td>
+          <td height="80" valign="top"><a href="/bbs/board.php?bo_table=mditem&sca=<?=urlencode('고재혁')?>"><? if($_GET[sca]=="고재혁"){?><img src="/images/md2_ck.png"><? }else{ ?><img onmouseover="this.src='/images/md2_on.png'" onmouseout="this.src='/images/md2_off.png'" alt="" src="/images/md2_off.png"><? } ?></a></td>
+        </tr>
+        <tr>
+          <td height="80" valign="top"><a href="/bbs/board.php?bo_table=mditem&sca=<?=urlencode('김미혜')?>"><? if($_GET[sca]=="김미혜"){?><img src="/images/md3_ck.png"><? }else{ ?><img onmouseover="this.src='/images/md3_on.png'" onmouseout="this.src='/images/md3_off.png'" alt="" src="/images/md3_off.png"><? } ?></a></td>
+          <td height="80" valign="top"><a href="/bbs/board.php?bo_table=mditem&sca=<?=urlencode('허걸')?>"><? if($_GET[sca]=="허걸"){?><img src="/images/md4_ck.png"><? }else{ ?><img onmouseover="this.src='/images/md4_on.png'" onmouseout="this.src='/images/md4_off.png'" alt="" src="/images/md4_off.png"><? } ?></a></td>
+        </tr>
+      </table>    </td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" height="15"></td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" bgcolor="#eeeeee" height="5"></td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" height="15"></td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <section class="board-list<?php echo (G5_IS_MOBILE) ? ' font-14' : '';?>">
 
-	<?php if($notice_count > 0) include_once($board_skin_path.'/notice.skin.php'); // 공지사항	?>
-	<?php if($is_category) include_once($board_skin_path.'/category.skin.php'); // 카테고리	?>
 
 	<style>
 		.list-wrap .list-container { overflow:hidden; margin-right:<?php echo ($gap_right > 0) ? '-'.$gap_right : 0;?>px; margin-bottom:<?php echo ($gap_bottom > 15) ? 0 : 15;?>px; }
@@ -142,7 +231,7 @@ $list_cnt = count($list);
 			</div>
 
 			<?php if (!$is_list) { ?>
-				<div class="text-center text-muted list-none">게시물이 없습니다.</div>
+				<div class="text-center text-muted list-none">没有内容.</div>
 			<?php } ?>
 
 			<div class="list-btn-box">
