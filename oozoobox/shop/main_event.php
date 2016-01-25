@@ -44,7 +44,7 @@ $resultmain = sql_query($sqlmain);
                     <span class="original_price">¥ <?php echo number_format($row_main['it_price'],2); ?></span>
                     <del>¥ <?php echo number_format($row_main['it_cust_price'],2); ?></del>
                 </span>
-                <span class="like"><? echo number_format($row_main[it_8]);?></span>
+                <span class="like"><? echo number_format($row_main[it_8]*1);?></span>
                 <span class="text">SK-2护肤面膜贴 SK-2化妆品 朴水保10片装</span>
             </div>
             <span class="Event_go_detail"><img src="/images/event01_url_01.png" alt="SK_2 자세히보기"/></span>
