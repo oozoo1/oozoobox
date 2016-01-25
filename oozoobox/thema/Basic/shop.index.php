@@ -305,7 +305,7 @@ $result = sql_query($sql);
               <?
 
 						// 쇼핑몰 메인출력
-						$sqlmd = " select * from g5_write_mditem ORDER BY `g5_write_mditem`.`wr_datetime` DESC LIMIT 0 , 8";
+						$sqlmd = " select * from g5_write_mditem where wr_1 = '' ORDER BY `g5_write_mditem`.`wr_datetime` DESC LIMIT 0 , 8";
 						$resultmd = sql_query($sqlmd);
 						$a=1;
 						$b=1;
