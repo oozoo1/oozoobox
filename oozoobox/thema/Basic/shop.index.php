@@ -377,8 +377,8 @@ $result = sql_query($sql);
                     </dl>
                     <dl>
                         <dt class="menu_tit">售后服务</dt>
-                        <dd><a>换货/退款政策</a></dd>
-                        <dd><a>联系卖家</a></dd>
+                        <dd><a href="/bbs/board.php?bo_table=faq&wr_id=9">换货/退款政策</a></dd>
+                        <!--<dd><a>联系卖家</a></dd>-->
                         <dd><a>退换货流程</a></dd>
                         <dd><a>售后服务</a></dd>
                     </dl>
