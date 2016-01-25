@@ -22,7 +22,7 @@ if (!isset($g5['title'])) {
     $g5_head_title = $g5['title'];
 }
 else { // 상태바에 표시될 제목
-    $g5_head_title = $g5['title'].' > '.$config['cf_title'];
+    $g5_head_title = $config['cf_title'].' > '.$g5['title'];
 }
 
 $g5_head_title = apms_get_text($g5_head_title);

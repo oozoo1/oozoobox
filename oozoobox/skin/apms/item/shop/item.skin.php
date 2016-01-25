@@ -551,7 +551,7 @@ $row = sql_fetch($sql);
                 <li id="li_1" class="active" rel="detail_tab1">商品详情</li>
                 <li id="li_2" rel="detail_tab2">用户评价 <span class="tap_no">(110)</span></li>
                 <!--<li id="li_3" rel="detail_tab3">询问/回复</li>-->
-                <li id="li_4" rel="detail_tab4">卖家信息</li>
+                <!--<li id="li_4" rel="detail_tab4">卖家信息</li>-->
                 <li id="li_5" rel="detail_tab5">取消/换货/退货 <span class="tap_no">(18)</span></li>
             </ul>
                         
