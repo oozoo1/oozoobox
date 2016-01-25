@@ -27,7 +27,7 @@
                 	<img src="/images/tit_myozbox03.png" alt="我的活动 My Activity"/>
                 </h4>
                 <ul class="MM_List">
-                	<li><a href="/shop/main_promise02.php">MD介绍</a></li>
+                	<li><a href="/bbs/board.php?bo_table=mditem&sca=%EA%B3%A0%EC%9E%AC%ED%98%81">MD介绍</a></li>
                     <!--<li><a href="/shop/mypage03_1.php">商品咨询</a></li>--> <!--채팅창이 있으므로 필요없음-->
                     <li><a href="/shop/mypage03_2.php">我的评论管理</a></li>
                     <li><a href="/shop/mypage03_3.php">填写商品评论</a></li>
