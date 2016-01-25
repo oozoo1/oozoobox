@@ -363,6 +363,7 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                         $row_item=sql_fetch_array($result1);
                         
                         ?>
+                        <? if($k){?>
                         	<div class="product-block">
                             	<a class="product-thumbnail" href="/shop/item.php?it_id=<?=$row_item[it_id]?>">
                                 	<img src="/data/item/<?=$row_item[it_img1]?>" style="width:60px; height:60px" alt="상품01"/>
@@ -380,6 +381,21 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                                     </div>
                             	</div>
                             </div>
+                        <? }else{ ?>
+                        		<div class="product-block">
+                                	<img src="/images/noimg_64.png" style="width:60px; height:60px" alt="상품01"/>
+                                <div class="product-content">
+                                	<div class="product-name">
+                                    	商品已被卖家删除
+                                    </div>
+                                    <div class="product-option">
+                                    
+                                    </div>
+                                    <div class="order-num">
+                                    </div>
+                            	</div>
+                            </div>
+                        <? } ?>
                         <?  } ?>
                         <div class="txtAboutSnap">
                           <div id="retData"></div>
@@ -409,7 +425,7 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                               ?>
                           </strong>
                           <? if($list[$i][od_status]=="商品运输中"){?>
-                            <input type="submit"  class="tracking" style="border:solid 0px; font-weight:bold;" value="快递跟中" id="btnSnap" class="btnSnap"/>
+                            <input type="submit" style="border:solid 0px; font-weight:bold;" value="快递跟踪" id="btnSnap" class="btnSnap"/>
                           <? } ?>
                           <? if($list[$i][od_status]=="交易完成"){?>
                             <span class="status-date">
