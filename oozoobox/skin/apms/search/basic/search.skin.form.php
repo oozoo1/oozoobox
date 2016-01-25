@@ -10,6 +10,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 </style>
 <table width="990" border="0" cellspacing="0" cellpadding="0" align="center">
 <form id="frmdetailsearch" name="frmdetailsearch" class="form-horizontal" role="form">
+<input type="hidden" name="q" id="qsort" value="<?php echo $_GET[q] ?>">
 <input type="hidden" name="qsort" id="qsort" value="<?php echo $qsort ?>">
 <input type="hidden" name="qorder" id="qorder" value="<?php echo $qorder ?>">
 <input type="hidden" name="qcaid" id="qcaid" value="<?php echo $qcaid ?>">
