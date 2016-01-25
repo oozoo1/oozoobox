@@ -15,8 +15,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
 .wheight{ padding:5px 10px 5px 10px;}
 .winput{ border:solid 1px #e8e8e8; width:100%; height:34px; color:#666666;}
 </style>
-<div class="wdivbox">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <!-- 게시물 작성/수정 시작 { -->
     <form name="fwrite" id="fwrite" action="<?php echo $action_url ?>" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off" role="form" class="form-horizontal">
     <input type="hidden" name="uid" value="<?php echo get_uniqid(); ?>">
@@ -30,48 +28,50 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
     <input type="hidden" name="sst" value="<?php echo $sst ?>">
     <input type="hidden" name="sod" value="<?php echo $sod ?>">
     <input type="hidden" name="page" value="<?php echo $page ?>">
+<div class="wdivbox">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <?php
-    $option_cnt = 0;
-    $option = '';
-    $option_hidden = '';
-    if ($is_notice || $is_html || $is_secret || $is_mail) {
-        $option = '';
-        if ($is_notice) {
-            $option .= "\n".'<label class="control-label sp-label"><input type="checkbox" id="notice" name="notice" value="1" '.$notice_checked.'> 공지</label>';
-            $option_ctn++;
-        }
-    
-        if ($is_html) {
-            if ($is_dhtml_editor) {
-                $option_hidden .= '<input type="hidden" value="html1" name="html">';
-            } else {
-                $option .= "\n".'<label class="control-label sp-label"><input type="checkbox" id="html" name="html" onclick="html_auto_br(this);" value="'.$html_value.'" '.$html_checked.'> HTML</label>';
-                $option_ctn++;
-            }
-        }
-    
-        if ($is_secret) {
-            if ($is_admin || $is_secret==1) {
-                $option .= "\n".'<label class="control-label sp-label"><input type="checkbox" id="secret" name="secret" value="secret" '.$secret_checked.'> 비밀글</label>';
-                $option_ctn++;
-            } else {
-                $option_hidden .= '<input type="hidden" name="secret" value="secret">';
-            }
-        }
-    
-        if ($is_admin) {
-            $main_checked = ($write['as_type']) ? ' checked' : '';
-            $option .= "\n".'<label class="control-label sp-label"><input type="checkbox" id="as_type" name="as_type" value="1" '.$main_checked.'> 메인글</label>';
-            $option_ctn++;
-        }
-    
-        if ($is_mail) {
-            $option .= "\n".'<label class="control-label sp-label"><input type="checkbox" id="mail" name="mail" value="mail" '.$recv_email_checked.'> 답변메일받기</label>';
-            $option_ctn++;
-        }
-    }
-    
-    echo $option_hidden;
+		$option_cnt = 0;
+		$option = '';
+		$option_hidden = '';
+		if ($is_notice || $is_html || $is_secret || $is_mail) {
+			$option = '';
+			if ($is_notice) {
+				$option .= "\n".'<label class="control-label sp-label"><input type="checkbox" id="notice" name="notice" value="1" '.$notice_checked.'> 공지</label>';
+				$option_ctn++;
+			}
+
+			if ($is_html) {
+				if ($is_dhtml_editor) {
+					$option_hidden .= '<input type="hidden" value="html1" name="html">';
+				} else {
+					$option .= "\n".'<label class="control-label sp-label"><input type="checkbox" id="html" name="html" onclick="html_auto_br(this);" value="'.$html_value.'" '.$html_checked.'> HTML</label>';
+					$option_ctn++;
+				}
+			}
+
+			if ($is_secret) {
+				if ($is_admin || $is_secret==1) {
+					$option .= "\n".'<label class="control-label sp-label"><input type="checkbox" id="secret" name="secret" value="secret" '.$secret_checked.'> 비밀글</label>';
+					$option_ctn++;
+				} else {
+					$option_hidden .= '<input type="hidden" name="secret" value="secret">';
+				}
+			}
+
+			if ($is_admin) {
+				$main_checked = ($write['as_type']) ? ' checked' : '';
+				$option .= "\n".'<label class="control-label sp-label"><input type="checkbox" id="as_type" name="as_type" value="1" '.$main_checked.'> 메인글</label>';
+				$option_ctn++;
+			}
+
+			if ($is_mail) {
+				$option .= "\n".'<label class="control-label sp-label"><input type="checkbox" id="mail" name="mail" value="mail" '.$recv_email_checked.'> 답변메일받기</label>';
+				$option_ctn++;
+			}
+		}
+
+		echo $option_hidden;
     ?>
       <tr>
         <td height="40" background="/images/title_bg.png" align="center"><span style="font-size:16px; font-weight:bold; color:#fff;"><?php echo $g5['title'] ?></span></td>
@@ -95,6 +95,13 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
       <tr>
         <td class="wheight"><?php echo $editor_html; // 에디터 사용시는 에디터로, 아니면 textarea 로 노출 ?></td>
       </tr>
+			<?php for ($i=1; $is_link && $i<=G5_LINK_COUNT; $i++) { ?>
+      <tr>
+        <td  class="wheight">
+				<input type="text" name="wr_link<?php echo $i ?>" value="<?php if($w=="u"){ echo $write['wr_link'.$i]; } ?>" id="wr_link<?php echo $i ?>" placeholder="   链接 #<?php echo $i ?>" class="winput" size="50">
+        </td>
+      </tr>
+      <?php } ?>	
 
 	<?php if ($is_file) { ?>
     <style>
@@ -164,26 +171,10 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
       <tr>
         <td class="wheight"> 
             <button class="btn btn-sm btn-color" type="button" onclick="add_file();"><i class="fa fa-plus-circle fa-lg"></i> 추가하기</button>
-            <button class="btn btn-sm btn-black" type="button" onclick="del_file();"><i class="fa fa-times-circle fa-lg"></i> 삭제하기</button>                  
-            <label class="control-label sp-label">
-                <input type="radio" name="as_img" value="0"<?php if(!$write['as_img']) echo ' checked';?>> 상단출력
-            </label>
-            <label class="control-label sp-label">
-                <input type="radio" name="as_img" value="1"<?php if($write['as_img'] == "1") echo ' checked';?>> 하단출력
-            </label>
-            <label class="control-label sp-label">
-                <input type="radio" name="as_img" value="2"<?php if($write['as_img'] == "2") echo ' checked';?>> 본문삽입
-            </label>
+            <button class="btn btn-sm btn-black" type="button" onclick="del_file();"><i class="fa fa-times-circle fa-lg"></i> 삭제하기</button>
         </td>
       </tr> 
 	<?php } ?>
-	<?php for ($i=1; $is_link && $i<=G5_LINK_COUNT; $i++) { ?>
-      <tr>
-        <td  class="wheight">
-				<input type="text" name="wr_link<?php echo $i ?>" value="<?php if($w=="u"){ echo $write['wr_link'.$i]; } ?>" id="wr_link<?php echo $i ?>" placeholder="   链接 #<?php echo $i ?>" class="winput" size="50">
-        </td>
-      </tr>
-      <?php } ?>	
       <tr>
         <td height="20" style="border-bottom:solid 1px #eee;"></td>
       </tr>
@@ -195,10 +186,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
             </div>
         </td>
       </tr>
-      </form>
     </table>
 </div>
-
+      </form>
     <script>
     <?php if($write_min || $write_max) { ?>
     // 글자수 제한

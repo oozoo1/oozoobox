@@ -15,8 +15,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
 .wheight{ padding:5px 10px 5px 10px;}
 .winput{ border:solid 1px #e8e8e8; width:100%; height:34px; color:#666666;}
 </style>
-<div class="wdivbox">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <!-- 게시물 작성/수정 시작 { -->
     <form name="fwrite" id="fwrite" action="<?php echo $action_url ?>" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off" role="form" class="form-horizontal">
     <input type="hidden" name="uid" value="<?php echo get_uniqid(); ?>">
@@ -30,6 +28,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
     <input type="hidden" name="sst" value="<?php echo $sst ?>">
     <input type="hidden" name="sod" value="<?php echo $sod ?>">
     <input type="hidden" name="page" value="<?php echo $page ?>">
+<div class="wdivbox">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <?php
     $option_cnt = 0;
     $option = '';
@@ -192,10 +192,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
             </div>
         </td>
       </tr>
-      </form>
     </table>
 </div>
-
+      </form>
     <script>
     <?php if($write_min || $write_max) { ?>
     // 글자수 제한
