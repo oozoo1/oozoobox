@@ -183,9 +183,10 @@ $md_img="/images/md4.png";
 												<input type="checkbox" name="chk_wr_id[]" value="<?php echo $list[$i]['wr_id'] ?>" id="chk_wr_id_<?php echo $i ?>">
 											</div>	
 										<?php } ?>
-										<a href="<?php echo $list[$i]['href'];?>">
-											<img src="/data/item/<?=$row_item[it_img1]?>" alt="<?php echo $img['alt'];?>">
-										</a>
+                    <? if($member[mb_id]=="admin"){ $l_href="/bbs/write.php?w=u&bo_table=mditem&wr_id=4&page=&sca=%EA%B3%A0%EC%9E%AC%ED%98%81";}else{$l_href="$list[$i]['href']";}?>
+                      <a href="<?php echo $l_href;?>">
+                        <? if($row_item[it_img1]){?><img src="/data/item/<?=$row_item[it_img1]?>" alt="<?php echo $img['alt'];?>"><? }else{ ?><img src="/images/noimg.png"><? } ?>
+                      </a>
 									</div>
 								</div>
 							</div>
@@ -197,7 +198,7 @@ $md_img="/images/md4.png";
 										<input type="checkbox" name="chk_wr_id[]" value="<?php echo $list[$i]['wr_id'] ?>" id="chk_wr_id_<?php echo $i ?>">
 									</div>	
 								<?php } ?>
-								<a href="<?php echo $list[$i]['href'];?>">
+								<a href="<?php echo $l_href;?>">
 									<img src="<?php echo $img['src'];?>" alt="<?php echo $img['alt'];?>">
 								</a>
 							</div>
@@ -212,18 +213,7 @@ $md_img="/images/md4.png";
 									<?php echo $list[$i]['subject'];?>
 								<?php } ?>
 							</a>
-						</strong>
-
-						<div class="list-details font-12 text-muted">
-							<span class="pull-left">
-								<?php echo $list[$i]['name'];?>
-							</span>
-							<span class="pull-right en font-13">
-								<i class="fa fa-comment"></i>
-								<?php echo ($list[$i]['wr_comment']) ? '<span class="red">'.number_format($list[$i]['wr_comment']).'</span>' : 0;?>
-							</span>
-							<div class="clearfix"></div>
-						</div>
+						</strong>						
 					</div>
 				</div>
 			<?php $k++; } ?>

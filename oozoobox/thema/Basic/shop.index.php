@@ -302,152 +302,39 @@ $result = sql_query($sql);
             </div>
             <div class="module_body">
             	<div class="market_line">
-                	<div class="market_item">
-                    	<a class="main_pic" href="#">
-                        	<img src="/images/md_01.png"/>
+              <?
+
+						// 쇼핑몰 메인출력
+						$sqlmd = " select * from g5_write_mditem ORDER BY `g5_write_mditem`.`wr_datetime` DESC LIMIT 0 , 8";
+						$resultmd = sql_query($sqlmd);
+								for ($i=0; $row_md=sql_fetch_array($resultmd); $i++){ 										
+								$sql = " select count(*) as cnt from {$g5['g5_shop_item_use_table']} where it_id = '{$row_md['wr_10']}'";
+								$row = sql_fetch($sql);
+								$content_cnt=$row['cnt'];
+								
+								$sql1 = "SELECT it_id , it_img1 FROM g5_shop_item WHERE it_id = '{$row_md[wr_10]}'";
+								$result1 = sql_query($sql1);
+								$row_item=sql_fetch_array($result1);
+							?>
+                	<div class="<? if($i=="3" || $i=="7"){?>market_item last_990<? }else{ ?>market_item<? } ?>">
+                    	<a class="main_pic" href="/shop/item.php?it_id=<?=$row_md[wr_10]?>">
+                        	<? if($row_item[it_img1]){?><img src="http://data.oozoobox.com/data/item/<?=$row_item[it_img1]?>" alt="<?php echo $img['alt'];?>"><? }else{ ?><img src="/images/noimg.png"><? } ?>
                         </a>
-                        <a class="market_info" href="#">
+                        <a class="market_info" href="/shop/item.php?it_id=<?=$row_md[wr_10]?>">
                             气温突降的寒夜里，<br>
                             今天晚餐来碗<br>
                             热气腾腾的拉面怎么样？
                         </a>
-                        <a class="market_good" href="#">
-                                <span class="market_good_no">2,501</span>
+                        <a class="market_good" href="/shop/item.php?it_id=<?=$row_md[wr_10]?>">
+                                <span class="market_good_no"><?=$content_cnt?></span>
                         </a>
                         <div class="market_right">
-                            <a href="#">
+                            <a href="/bbs/board.php?bo_table=mditem&sca=<?=urlencode("$row_md[ca_name]")?>">
                                 <img width="100%" src="/images/md_go_01.png" onmouseover="this.src='/images/md_go_01_o.png'" onmouseout="this.src='/images/md_go_01.png'"/>
                             </a>
                         </div>
                     </div>
-                    <div class="market_item">
-                    	<a class="main_pic" href="#">
-                        	<img src="/images/md_02.png"/>
-                        </a>
-                        <a class="market_info" href="#">
-                            回家的路上买上辛拉面回去吃？<br>
-                            今天爸爸下班回家的脚步<br>
-                            声格外轻快。
-                        </a>
-                        <a class="market_good" href="#">
-                                <span class="market_good_no">2,501</span>
-                        </a>
-                        <div class="market_right">
-                            <a href="#">
-                                <img width="100%" src="/images/md_go_02.png" onmouseover="this.src='/images/md_go_02_o.png'" onmouseout="this.src='/images/md_go_02.png'"/>
-                            </a>
-                        </div>
-                    </div>
-                	<div class="market_item">
-                    	<a class="main_pic" href="#">
-                        	<img src="/images/md_03.png"/>
-                        </a>
-                        <a class="market_info" href="#">
-                            宝宝干爽的小屁屁，<br>
-                            看这笑得格外开怀的小脸，<br>
-                            看来今天的心情也很好呢！
-                        </a>
-                        <a class="market_good" href="#">
-                                <span class="market_good_no">2,501</span>
-                        </a>
-                        <div class="market_right">
-                            <a href="#">
-                                <img width="100%" src="/images/md_go_03.png" onmouseover="this.src='/images/md_go_03_o.png'" onmouseout="this.src='/images/md_go_03.png'"/>
-                            </a>
-                        </div>
-                    </div>                    
-                	<div class="market_item last_990">
-                    	<a class="main_pic" href="#">
-                        	<img src="/images/md_04.png"/>
-                        </a>
-                        <a class="market_info" href="#">
-                        为了您的健康，<br>
-                        供应新鲜的黄色食品和红色食品。
-                        </a>
-                        <a class="market_good" href="#">
-                                <span class="market_good_no">2,501</span>
-                        </a>
-                        <div class="market_right">
-                            <a href="#">
-                                <img width="100%" src="/images/md_go_04.png" onmouseover="this.src='/images/md_go_04_o.png'" onmouseout="this.src='/images/md_go_04.png'"/>
-                            </a>
-                        </div>
-                    </div>                    
-                </div>
-<!-------------------------허걸: 아래는 반복--------------------------->
-                <div class="market_line">
-                	<div class="market_item">
-                    	<a class="main_pic" href="#">
-                        	<img src="/images/md_01.png"/>
-                        </a>
-                        <a class="market_info" href="#">
-                            气温突降的寒夜里，<br>
-                            今天晚餐来碗<br>
-                            热气腾腾的拉面怎么样？
-                        </a>
-                        <a class="market_good" href="#">
-                                <span class="market_good_no">2,501</span>
-                        </a>
-                        <div class="market_right">
-                            <a href="#">
-                                <img width="100%" src="/images/md_go_01.png" onmouseover="this.src='/images/md_go_01_o.png'" onmouseout="this.src='/images/md_go_01.png'"/>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="market_item">
-                    	<a class="main_pic" href="#">
-                        	<img src="/images/md_02.png"/>
-                        </a>
-                        <a class="market_info" href="#">
-                            回家的路上买上辛拉面回去吃？<br>
-                            今天爸爸下班回家的脚步<br>
-                            声格外轻快。
-                        </a>
-                        <a class="market_good" href="#">
-                                <span class="market_good_no">2,501</span>
-                        </a>
-                        <div class="market_right">
-                            <a href="#">
-                                <img width="100%" src="/images/md_go_02.png" onmouseover="this.src='/images/md_go_02_o.png'" onmouseout="this.src='/images/md_go_02.png'"/>
-                            </a>
-                        </div>
-                    </div>
-                	
-                    <div class="market_item">
-                    	<a class="main_pic" href="#">
-                        	<img src="/images/md_03.png"/>
-                        </a>
-                        <a class="market_info" href="#">
-                        为了您的健康，<br>
-                        供应新鲜的黄色食品和红色食品。
-                        </a>
-                        <a class="market_good" href="#">
-                                <span class="market_good_no">2,501</span>
-                        </a>
-                        <div class="market_right">
-                            <a href="#">
-                                <img width="100%" src="/images/md_go_03.png" onmouseover="this.src='/images/md_go_03_o.png'" onmouseout="this.src='/images/md_go_03.png'"/>
-                            </a>
-                        </div>
-                    </div>                    
-                	<div class="market_item last_990">
-                    	<a class="main_pic" href="#">
-                        	<img src="/images/md_04.png"/>
-                        </a>
-                        <a class="market_info" href="#">
-                        为了您的健康，<br>
-                        供应新鲜的黄色食品和红色食品。
-                        </a>
-                        <a class="market_good" href="#">
-                                <span class="market_good_no">2,501</span>
-                        </a>
-                        <div class="market_right">
-                            <a href="#">
-                                <img width="100%" src="/images/md_go_04.png" onmouseover="this.src='/images/md_go_04_o.png'" onmouseout="this.src='/images/md_go_04.png'"/>
-                            </a>
-                        </div>
-                    </div>                    
+                <? } ?>                 
                 </div>
 <!------------------------------여기까지 반복--------------------------->                
             </div>
