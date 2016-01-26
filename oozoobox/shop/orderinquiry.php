@@ -363,7 +363,7 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                         $row_item=sql_fetch_array($result1);
                         
                         ?>
-                        <? if($k){?>
+                        <? if($row_item[it_id]){?>
                         	<div class="product-block">
                             	<a class="product-thumbnail" href="/shop/item.php?it_id=<?=$row_item[it_id]?>">
                                 	<img src="/data/item/<?=$row_item[it_img1]?>" style="width:60px; height:60px" alt="상품01"/>
