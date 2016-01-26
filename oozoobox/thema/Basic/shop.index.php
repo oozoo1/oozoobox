@@ -389,9 +389,9 @@ $result = sql_query($sql);
                         <dt class="menu_tit">客服中心</dt>
                         <dd><a href="/shop/cscenter.php">FAQ</a></dd>
                         <dd><a href="/bbs/board.php?bo_table=faq&wr_id=8">服务协议</a></dd>
-                        <dd><a>会员修改个人资料</a></dd>
-                        <dd><a>会员修改密码</a></dd>
-                        <dd><a>修改收货地址</a></dd>
+                        <dd><a href="/bbs/board.php?bo_table=faq&wr_id=15">会员修改个人资料</a></dd>
+                        <dd><a href="/bbs/board.php?bo_table=faq&wr_id=16">会员修改密码</a></dd>
+                        <dd><a href="/bbs/board.php?bo_table=faq&wr_id=17">修改收货地址</a></dd>
                     </dl>
                 </div>
                 <!--s: 제휴업체-->
