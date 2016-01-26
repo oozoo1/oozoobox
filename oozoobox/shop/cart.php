@@ -56,6 +56,9 @@ $sql = " select a.ct_id,
 				a.ct_status,
 				a.ct_send_cost,
 				a.it_sc_type,
+				a.it_sc_minimum,
+				a.it_sc_price,
+				a.it_sc_qty,
 				b.ca_id,
 				b.ca_id2,
 				b.ca_id3,
@@ -129,6 +132,31 @@ for ($i=0; $row=sql_fetch_array($result); $i++)
 
 	$tot_point      += $point;
 	$tot_sell_price += $sell_price;
+	
+	$item[$i]['price'] = get_sendcost($s_cart_id, 0);
+	
+	
+	// it_sc_type : (0:쇼핑몰 기본설정 사용, 1:무료배송, 2:조건부 무료배송, 3:유료배송, 4:수량별 부과)
+	// 배송비 : it_sc_price
+	// 수량별 부과일때 기준수량 : it_sc_qty
+	// 조건부 무료일대 기준금액 : it_sc_minimum
+	
+	//아이템별 배송비
+	if($row['it_sc_type'] == 0){			//0:쇼핑몰 기본설정 사용
+		$item[$i]['sc_price'] =  0;
+	}else if($row['it_sc_type'] == 1){		//1:무료배송
+		$item[$i]['sc_price'] =  0;
+	}else if($row['it_sc_type'] == 2){		//2:조건부 무료배송
+		if($row['it_sc_minimum'] >= $sum['price'] ){
+			$item[$i]['sc_price'] =  0;
+		}else{
+			$item[$i]['sc_price'] =  $row['it_sc_price'];
+		}
+	}else if($row['it_sc_type'] == 3){		//3:유료배송
+		$item[$i]['sc_price'] =  $row['it_sc_price'];
+	}else if($row['it_sc_type'] == 4){		//4:수량별 부과
+		$item[$i]['sc_price'] =  $row['it_sc_price'] * $sum['qty'];
+	}
 
 } // for 끝
 
