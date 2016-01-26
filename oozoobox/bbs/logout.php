@@ -4,6 +4,7 @@ include_once('./_common.php');
 // 이호경님 제안 코드
 unset($_SESSION['ss_mb_id']);
 unset($_SESSION['ss_mb_key']);
+unset($_SESSION['ss_cart_id']);
 // 자동로그인 해제 --------------------------------
 set_cookie('ck_mb_id', '', 0);
 set_cookie('ck_auto', '', 0);
