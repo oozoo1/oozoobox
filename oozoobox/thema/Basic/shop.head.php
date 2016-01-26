@@ -184,8 +184,8 @@ str += '                    <a onClick="closeFootAd()" href="#" title="我知道
 str += '            </div>';
 str += '            <div style="background: rgb(255, 204, 1); left: 0px; width: 50%; height: 100%; position: absolute;"></div>';
 str += '            <div style="background: rgb(255, 204, 1); width: 50%; height: 100%; right: 0px; position: absolute;"></div>      ';
-str += '            <img width="990" height="80" style="margin: 0px auto; top: 0px; position: relative; z-index: 10;" src="/data/banner/20160120161127_1.png" alt="广告"/>';
-str += '            <a style="left: 0px ; top: 0px; width: 100%; height: 100%; display: block; position: absolute; z-index: 100;"  href="/shop/bannerhit.php?bn_id=1&url=http%3A%2F%2Fwww.oozoobox.com" > <img width="100%" height="100%" src="/images/s.png"></a>';
+str += '            <img width="990" height="80" style="margin: 0px auto; top: 0px; position: relative; z-index: 10;" src="<? if($baner1[bn_img1]){?>/data/banner/<?=$baner1[bn_img1]?><? }else{ ?>/images/ad_no.png<? } ?>" alt="广告"/>';
+str += '            <a style="left: 0px ; top: 0px; width: 100%; height: 100%; display: block; position: absolute; z-index: 100;"  href="/shop/bannerhit.php?bn_id=<?=$baner1['bn_id']?>&url=<?=urlencode($baner1['bn_url'])?>" <? if($baner1[bn_new_win]=="1"){?>target="_blank"<? } ?> > <img width="100%" height="100%" src="/images/s.png"></a>';
 str += '        </div>';
 $("#tableDiv").html(str);
 //상단 광고배너를 동적으로 생성 E ==============================
