@@ -238,7 +238,7 @@ function getCookie(name){
                                 <!--s:검색창-->
                                 <div class="oz_mall_search" id="oz_mallSearch"><!--@media 적용-->
                                     <ul class="oz_event_query">
-                                    	<li><a href="/shop/main_event02.php"><font <?php if($_GET[type]=="month"){?> class="ck_font"<?php }?>>本月推选</font></a></li> <!--"이달의 베스트"-->
+                                    	<li><a href="/shop/main_event02.php?type=mon"><font <?php if($_GET[type]=="mon"){?> class="ck_font"<?php }?>>本月推选</font></a></li> <!--"이달의 베스트"-->
                                         <li><a href="/shop/main_event03.php"><font <?php if($_GET[type]=="sale"){?> class="ck_font"<?php }?>>优惠专区</font></a></li> <!--"이벤트"-->
                                         <li class="last"><a href="/shop/main_event04.php"><font <?php if($_GET[type]=="share"){?> class="ck_font"<?php }?>>相互共享</font></a></li>  <!--"커뮤니티"-->
                                     </ul>
