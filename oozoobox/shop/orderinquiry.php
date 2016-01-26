@@ -304,8 +304,8 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                     <option value="<?=$_SERVER['PHP_SELF']?>?type=2&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="2"){echo "selected";}?>>已付款</option>
                     <option value="<?=$_SERVER['PHP_SELF']?>?type=3&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="3"){echo "selected";}?>>商品准备中</option>
                     <option value="<?=$_SERVER['PHP_SELF']?>?type=4&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="4"){echo "selected";}?>>商品运输中</option>
-                    <option value="<?=$_SERVER['PHP_SELF']?>?type=5&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="5"){echo "selected";}?>>确认交易</option>
-                    <option value="<?=$_SERVER['PHP_SELF']?>?type=6&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="6"){echo "selected";}?>>交易完成</option>
+                    <option value="<?=$_SERVER['PHP_SELF']?>?type=5&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="5"){echo "selected";}?>>完成交易</option>
+                    <option value="<?=$_SERVER['PHP_SELF']?>?type=6&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="6"){echo "selected";}?>>订单取消记录</option>
                     <option value="<?=$_SERVER['PHP_SELF']?>?type=7&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="7"){echo "selected";}?>>交换/退货</option>
                 </select>
             </div>
