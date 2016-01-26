@@ -25,11 +25,11 @@ $cate_w = ($boset['ctype'] == "2") ? apms_bunhal($ca_cnt + 1, $boset['bunhal']) 
 	</div>
 	<div class="dropdown visible-xs">
 		<a id="categoryLabel" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-color btn-block">
-			<?php echo ($sca) ? $sca : '전체';?>(<?php echo number_format($total_count);?>)
+			<?php echo ($sca) ? $sca : '全部';?>(<?php echo number_format($total_count);?>)
 		</a>
 		<ul class="dropdown-menu" role="menu" aria-labelledby="categoryLabel">
 			<li<?php if(!$sca) echo ' class="selected"';?>>
-				<a href="./board.php?bo_table=<?php echo $bo_table;?>">전체</a>
+				<a href="./board.php?bo_table=<?php echo $bo_table;?>">全部</a>
 			</li>
 			<?php for ($i=0; $i < $ca_cnt; $i++) { ?>
 				<li<?php if($categories[$i] == $sca) echo ' class="selected"';?>>

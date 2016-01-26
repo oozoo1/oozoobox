@@ -2,16 +2,6 @@
 if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 ?>
 
-<div style="padding:15px;">
-	<div class="input-group input-group-sm">
-		<span class="input-group-addon">Total <?php echo number_format($total_count);?></span>
-		<select name="ca_id" onchange="location='./mypost.php?mode=<?php echo $mode; ?>&ca_id=' + encodeURIComponent(this.value);" class="form-control input-sm">
-			<option value="">전체보기</option>
-			<?php echo apms_category($ca_id);?>
-		</select>
-	</div>
-</div>
-
 <div class="mypost-media">
 <?php 
 	for ($i=0; $i < count($list); $i++) { 

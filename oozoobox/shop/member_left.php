@@ -9,7 +9,6 @@
                 	<li><a href="/shop/member_confirm.php">信息修改</a></li>
                     <li><a href="/shop/member_address.php">地址管理</a></li>
                     <li><a href="/shop/mypage01_3.php">个人信息使用内容</a></li>
-                    <li><a href="/shop/mypage01_4.php">会员等级</a></li>
                     <li><a href="/shop/member_out_ck.php">注销会员</a></li>
                 </ul>
             	<h4 class="MM_tit">
@@ -30,10 +29,9 @@
                 	<li><a href="/bbs/board.php?bo_table=mditem&sca=%EA%B3%A0%EC%9E%AC%ED%98%81">MD介绍</a></li>
                     <!--<li><a href="/shop/mypage03_1.php">商品咨询</a></li>--> <!--채팅창이 있으므로 필요없음-->
                     <li><a href="/shop/mypage03_2.php">我的评论管理</a></li>
-                    <li><a href="/shop/mypage03_3.php">填写商品评论</a></li>
-                    <li><a href="/shop/mypage03_4.php">意见返顾</a></li> <!-- CS CENTER에 상품취소 환불등을 건의 할 때-->
-                    <li><a href="/shop/mypage03_5.php">举报/投诉 管理</a></li> <!-- CS CENTER에 판매자를 신고할 때-->
-                    <li><a href="/shop/mypage04_3.php">获奖列表</a></li>
+                    <li><a href="/bbs/board.php?bo_table=free&sca=%E6%84%8F%E8%A7%81%E8%BF%94%E9%A1%BE">意见返顾</a></li> <!-- CS CENTER에 상품취소 환불등을 건의 할 때-->
+                    <li><a href="/bbs/board.php?bo_table=free&sca=%E4%B8%BE%E6%8A%A5%2F%E6%8A%95%E8%AF%89%E7%AE%A1%E7%90%86">举报/投诉 管理</a></li> <!-- CS CENTER에 판매자를 신고할 때-->
+                    <li><a href="/bbs/board.php?bo_table=event">获奖列表</a></li>
                 </ul>  
               <!--  
             	<h4 class="MM_tit">
