@@ -170,7 +170,7 @@ if($header_skin)
 </div>
 <table border="0" cellspacing="0" cellpadding="0" align="center">
   <tr>
-		<? if($od['od_receipt_time']){}else{?>
+		<? if($od['od_status']=="주문"){?>
     <td height="90">
         <form name=alipayment action="/alipay/alipayapi.php" method=post target="_blank">
         <input type="hidden" size="30" name="WIDout_trade_no" value="<?=$od_id?>" title="订单号码" />
@@ -187,7 +187,7 @@ if($header_skin)
         </form>        
     </td>    
     <td width="10"></td>
-    <? } ?>
+    <? }else{ } ?>
     <td>
       <div class="text-center">
         <button type="button" data-toggle="collapse" href="#sod_fin_cancelfrm" aria-expanded="false" aria-controls="sod_fin_cancelfrm" class="btn btn-black btn-sm" style="text-align:center; padding:10px 20px 10px 20px; background-color:#ddd;"><font color="#242424">取消订单</font></button>
