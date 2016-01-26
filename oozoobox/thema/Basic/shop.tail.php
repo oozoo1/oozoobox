@@ -1,30 +1,5 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
-$s_cart_id = get_session('ss_cart_id');
-$sql = " select a.ct_id,
-				a.it_id,
-				a.it_name,
-				a.ct_price,
-				a.ct_point,
-				a.ct_qty,
-				a.ct_status,
-				a.ct_send_cost,
-				a.it_sc_type,
-				b.ca_id,
-				b.ca_id2,
-				b.ca_id3,
-				b.pt_it,
-				b.pt_msg1,
-				b.pt_msg2,
-				b.pt_msg3
-		   from {$g5['g5_shop_cart_table']} a left join {$g5['g5_shop_item_table']} b on ( a.it_id = b.it_id )
-		  where a.od_id = '$s_cart_id' ";
-$sql .= " group by a.it_id ";
-$sql .= " order by a.ct_id ";
-$result = sql_query($sql);
-
-$cart_count = sql_num_rows($result);
-
 ?>
 <!-- .wrapper -->
 <?php if($_SERVER['PHP_SELF']=="/index.php" || $_SERVER['PHP_SELF']=="/write_html.php" || $_SERVER['PHP_SELF']=="/shop/index.php" || $_SERVER['PHP_SELF']=="/shop/list.php" || $_SERVER['PHP_SELF']=="/bbs/login.php"){}else{ ?>
@@ -76,7 +51,7 @@ $cart_count = sql_num_rows($result);
 						<a href="<? if($member[mb_id]){?>/shop/cart.php<? }else{ ?>/bbs/login.php?url=<?=urlencode("/shop/cart.php")?><? } ?>" class="message_list" >
                             <i class="message"></i>
                             <div class="span">购物车</div>
-                            <span class="cart_num"><?=$cart_count?></span>
+                            <span class="cart_num"><iframe width="100%" height="33" src="/cart_count.php" border="0" frameborder="no" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes" runat="server"></iframe></span>
                         </a>
 				</li>
 				<li>
