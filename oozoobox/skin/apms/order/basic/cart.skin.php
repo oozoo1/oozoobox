@@ -100,7 +100,7 @@ if($header_skin)
                             <?php } ?>                        </td>
                         <td class="text-center"><?php echo number_format($item[$i]['qty']); ?></td>
                         <td class="text-right"><?php echo $item[$i]['ct_price']; ?></td>
-                        <td class="text-right"><span id="sell_price_<?php echo $i; ?>"><?php echo number_format($item[$i]['sell_price']); ?></span></td>
+                        <td class="text-right"><span id="sell_price_<?php echo $i; ?>"><?php echo number_format($item[$i]['sell_price'],2); ?></span></td>
                         <td class="text-right"><?php echo number_format($item[$i]['point']); ?></td>
                   </tr>
                 <?php } ?>

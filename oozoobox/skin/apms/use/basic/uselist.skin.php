@@ -115,7 +115,7 @@ $list_cnt = count($list);
 </div>
 
 <?php if(!$i) { ?>
-	<div class="use-none text-center text-muted">등록된 후기가 없습니다.</div>
+	<div class="use-none text-center text-muted">没有内容.</div>
 <?php } ?>
 
 <div class="text-center">

@@ -39,7 +39,7 @@ $misu_price = $pp['pp_price'] - $pp['pp_receipt_price'];
 if($pp['pp_receipt_price'] > 0)
 	$pp_receipt_price = display_price($pp['pp_receipt_price']);
 else
-	$pp_receipt_price = '아직 입금되지 않았거나 입금정보를 입력하지 못하였습니다.';
+	$pp_receipt_price = '还没有支付 现在确认支付吗？.';
 
 $app_no_subj = '';
 $disp_bank = true;

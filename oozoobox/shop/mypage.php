@@ -23,19 +23,15 @@ $row5 = sql_fetch($sql5);
 
             	<div class="My_info_bar">
                 	<div class="My_baseinfo">
-                    	<a class="My_picframe" href="#"><!--사진 올리는 창-->
+                    	<span class="My_picframe"><!--사진 올리는 창-->
                         	<img src="/images/my_picture.png" alt="My picture"/>
-                        </a>
+                       </span>
                         <span class="My_nickname">
-                        	<a href="#">
-                            	<em><?=$member[mb_name]?><!--별명--></em>(<?=$member[mb_id]?>)<!--ID-->
-                            </a>
+                            	<em><?=$member[mb_name]?><!--별명--></em>(<?=$member[mb_id]?>) 您的积分：<?=$member[mb_point]?> <!--ID-->
                         </span>
                         <span class="My_grade">
-                        	<a href="#">
                             	<img src="/images/my_grade_vip.png" alt="vip"/>
                                 <em>您的等级<b> <?=$member[mb_level]?> </b>级</em>
-                            </a>
                         </span>
 					</div>
                     <a class="My_address" href="/shop/member_address.php"> <!--주소수정하는 창으로-->
