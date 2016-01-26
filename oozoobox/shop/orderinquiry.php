@@ -290,6 +290,8 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                 </div>
                 <div class="order-search">
                 <form method="get">
+                <input type="hidden" name="type" value="<?=$_GET[type]?>">
+                <input type="hidden" name="oldtime" value="<?=$_GET[oldtime]?>">
                     <input class="text" name="sc" value="<?=$_GET[sc]?>" type="text" style="width:138px; height:22px;"/>
                     <input class="btn_search" type="submit" value="查询"/>
                 </form>
