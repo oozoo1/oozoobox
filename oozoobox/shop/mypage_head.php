@@ -33,5 +33,14 @@ $skin_url = $member_skin_url;
         
         <!--s: RIGHT CONTENTS-->
         <div class="My_container">
+        <? if($_GET[bo_table]=="free" || $_GET[bo_table]=="event"){?>
+        <h4 class="Mypage_tit">
+        <? if($_GET[sca]){ echo $_GET[sca];}else{echo"获奖列表";}?>
+        </h4>
+        <? } ?>
         	<!--s: 내 정보 BAR-->
+          <? if($_GET[bo_table]=="free" || $_GET[bo_table]=="event"){?>
+          
+          <? }else{ ?>
         	<div class="My_info">
+          <? } ?>

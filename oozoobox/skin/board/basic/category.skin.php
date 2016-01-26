@@ -11,7 +11,7 @@ $cate_w = ($boset['ctype'] == "2") ? apms_bunhal($ca_cnt + 1, $boset['bunhal']) 
 		<ul class="nav nav-tabs<?php echo ($boset['ctype'] == "1") ? ' nav-justified' :'';?><?php echo ($cate_w) ? ' text-center' :'';?>">
 			<li<?php echo (!$sca) ? ' class="active"' : '';?><?php echo $cate_w;?>>
 				<a href="./board.php?bo_table=<?php echo $bo_table;?>">
-					전체<?php if(!$sca) echo '('.number_format($total_count).')';?>
+					全部<?php if(!$sca) echo '('.number_format($total_count).')';?>
 				</a>
 			</li>
 			<?php for ($i=0; $i < $ca_cnt; $i++) { ?>
