@@ -8,8 +8,8 @@ $ct_chk_count = count($_POST['ct_chk']);
 if(!$ct_chk_count)
     alert('처리할 자료를 하나 이상 선택해 주십시오.');
 
-$status_normal = array('주문','입금','준비','배송','완료');
-$status_cancel = array('취소','반품','품절');
+$status_normal = array('주문','입금','준비','배송','완료','반품');
+$status_cancel = array('취소','품절');
 
 if (in_array($_POST['ct_status'], $status_normal) || in_array($_POST['ct_status'], $status_cancel)) {
     ; // 통과

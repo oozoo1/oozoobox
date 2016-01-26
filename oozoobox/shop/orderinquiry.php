@@ -306,6 +306,7 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                     <option value="<?=$_SERVER['PHP_SELF']?>?type=4&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="4"){echo "selected";}?>>商品运输中</option>
                     <option value="<?=$_SERVER['PHP_SELF']?>?type=5&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="5"){echo "selected";}?>>确认交易</option>
                     <option value="<?=$_SERVER['PHP_SELF']?>?type=6&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="6"){echo "selected";}?>>交易完成</option>
+                    <option value="<?=$_SERVER['PHP_SELF']?>?type=7&oldtime=<?=$_GET[oldtime]?>" <? if($_GET[type]=="7"){echo "selected";}?>>交换/退货</option>
                 </select>
             </div>
             <table class="order-list-table">
