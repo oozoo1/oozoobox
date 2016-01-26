@@ -296,7 +296,7 @@ $result = sql_query($sql);
     	<!--s: MD 추천 상품-->
         <div class="oz_market_con">
         	<div class="market_title">
-            	采购员推存
+            	MD推存
                 <b class="title_deco">
                 </b>
             </div>
