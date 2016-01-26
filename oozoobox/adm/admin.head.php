@@ -78,7 +78,7 @@ function imageview(id, w, h)
             <?php if(defined('G5_USE_SHOP')) { ?>
             <li><a href="<?php echo G5_ADMIN_URL ?>/shop_admin/configform.php">쇼핑몰환경</a></li>
             <li><a href="<?php echo G5_ADMIN_URL ?>/service.php">부가서비스</a></li>
-            <li><a href="<?php echo G5_SHOP_URL ?>/">쇼핑몰</a></li>
+            <li><a href="/">쇼핑몰</a></li>
             <?php } ?>
             <li id="tnb_logout"><a href="<?php echo G5_BBS_URL ?>/logout.php">로그아웃</a></li>
         </ul>
