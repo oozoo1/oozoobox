@@ -1,8 +1,8 @@
 <?php
 include_once('./_common.php');
-if ($_GET['type']=="10" || $_GET['type']=="20" || $_GET['type']=="30" || $_GET['type']=="40" || $_GET['type']=="50"){}else{alert('活动结束.');}
+if ($_GET['type']=="10" || $_GET['type']=="20" || $_GET['type']=="30" || $_GET['type']=="40" || $_GET['type']=="50" || $_GET['type']=="hit" || $_GET['type']=="hot" || $_GET['type']=="50"){}else{alert('活动结束.');}
 
-
+$event_img=$_GET[type];
 
 $g5['title'] ='OOZOOBOX活动';
 include_once('./_head.php');
@@ -11,10 +11,14 @@ $skin_path = $member_skin_path;
 $skin_url = $member_skin_url;
 
 
+if($_GET[type]="hit" || $_GET[type]="hot"){
+	$ca_id="";
+}else{
+	$ca_id=" where ca_id = '{$_GET[type]}'";
+}
 
-
-
-$sqlmain = " select * from g5_shop_item where ca_id = '{$_GET[type]}' ORDER BY `g5_shop_item`.`it_8` DESC LIMIT 0 , 16";
+$num=rand(12,15);
+$sqlmain = " select * from g5_shop_item $ca_id order by rand() limit $num";
 $resultmain = sql_query($sqlmain);
 
 ?>
@@ -23,7 +27,7 @@ $resultmain = sql_query($sqlmain);
 
 
 <div class="Event_bn">
-	<img src="/images/bn_event_main02.png" />
+	<img src="/images/event/event_<?=$event_img?>.jpg" />
 </div>
 
 
