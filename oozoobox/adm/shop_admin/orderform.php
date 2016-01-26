@@ -128,7 +128,7 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
             |
             주문일시 <strong><?php echo substr($od['od_time'],0,16); ?> (<?php echo get_yoil($od['od_time']); ?>)</strong>
             |
-            주문총액 <strong><?php echo number_format($od['od_cart_price'] + $od['od_send_cost'] + $od['od_send_cost2']); ?></strong>원
+            주문총액 <strong><?php echo number_format($od['od_cart_price'] + $od['od_send_cost'] + $od['od_send_cost2'],2); ?></strong>원
         </p>
         <?php if ($default['de_hope_date_use']) { ?><p>희망배송일은 <?php echo $od['od_hope_date']; ?> (<?php echo get_yoil($od['od_hope_date']); ?>) 입니다.</p><?php } ?>
         <?php if($od['od_mobile']) { ?>
@@ -285,8 +285,8 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
                     <label for="ct_qty_<?php echo $chk_cnt; ?>" class="sound_only"><?php echo $opt['ct_option']; ?> 수량</label>
                     <input type="text" name="ct_qty[<?php echo $chk_cnt; ?>]" id="ct_qty_<?php echo $chk_cnt; ?>" value="<?php echo $opt['ct_qty']; ?>" required class="frm_input required" size="5">
                 </td>
-                <td class="td_num"><?php echo number_format($opt_price); ?></td>
-                <td class="td_num"><?php echo number_format($ct_price['stotal']); ?></td>
+                <td class="td_num"><?php echo number_format($opt_price),2; ?></td>
+                <td class="td_num"><?php echo number_format($ct_price['stotal'],2); ?></td>
                 <td class="td_num"><?php echo number_format($opt['cp_price']); ?></td>
                 <td class="td_num"><?php echo number_format($ct_point['stotal']); ?></td>
                 <td class="td_sendcost_by"><?php echo $ct_send_cost; ?></td>
@@ -406,9 +406,9 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
             <td class="td_numbig td_numsum"><?php echo display_price($amount['order']); ?></td>
             <td class="td_numbig"><?php echo display_price($od['od_send_cost'] + $od['od_send_cost2']); ?></td>
             <td class="td_numbig"><?php echo display_point($od['od_receipt_point']); ?></td>
-            <td class="td_numbig td_numincome"><?php echo number_format($amount['receipt']); ?>원</td>
+            <td class="td_numbig td_numincome"><?php echo number_format($amount['receipt'],2); ?>원</td>
             <td class="td_numbig td_numcoupon"><?php echo display_price($amount['coupon']); ?></td>
-            <td class="td_numbig td_numcancel"><?php echo number_format($amount['cancel']); ?>원</td>
+            <td class="td_numbig td_numcancel"><?php echo number_format($amount['cancel'],2); ?>원</td>
         </tr>
         </tbody>
         </table>
@@ -823,7 +823,7 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
                     <th scope="row" class="sodr_sppay"><label for="od_receipt_price"><?php echo $s_receipt_way; ?> 결제금액</label></th>
                     <td>
                         <?php echo $html_receipt_chk; ?>
-                        <input type="text" name="od_receipt_price" id="od_receipt_price" value="<?php echo $od['od_receipt_price']; ?>" class="frm_input" size="10"> 원
+                        <input type="text" name="od_receipt_price" id="od_receipt_price" value="<?php echo $od['od_receipt_price'],2; ?>" class="frm_input" size="10"> 원
                     </td>
                 </tr>
                 <tr>

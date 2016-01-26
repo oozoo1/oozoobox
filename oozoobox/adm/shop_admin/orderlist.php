@@ -372,11 +372,11 @@ if(!sql_query(" select mb_id from {$g5['g5_shop_order_delete_table']} limit 1 ",
         <td headers="th_odrer" class="td_name"><?php echo $mb_nick; ?></td>
         <td headers="th_odrertel" class="td_tel"><?php echo get_text($row['od_tel']); ?></td>
         <td headers="th_recvr" class="td_name"><a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>?sort1=<?php echo $sort1; ?>&amp;sort2=<?php echo $sort2; ?>&amp;sel_field=od_b_name&amp;search=<?php echo get_text($row['od_b_name']); ?>"><?php echo get_text($row['od_b_name']); ?></a></td>
-        <td rowspan="3" class="td_numsum"><?php echo number_format($row['od_cart_price'] + $row['od_send_cost'] + $row['od_send_cost2']); ?></td>
-        <td rowspan="3" class="td_numincome"><?php echo number_format($row['od_receipt_price']); ?></td>
-        <td rowspan="3" class="td_numcancel<?php echo $td_color; ?>"><?php echo number_format($row['od_cancel_price']); ?></td>
-        <td rowspan="3" class="td_numcoupon"><?php echo number_format($row['couponprice']); ?></td>
-        <td rowspan="3" class="td_numrdy"><?php echo number_format($row['od_misu']); ?></td>
+        <td rowspan="3" class="td_numsum"><?php echo number_format($row['od_cart_price'] + $row['od_send_cost'] + $row['od_send_cost2'],2); ?></td>
+        <td rowspan="3" class="td_numincome"><?php echo number_format($row['od_receipt_price'],2); ?></td>
+        <td rowspan="3" class="td_numcancel<?php echo $td_color; ?>"><?php echo number_format($row['od_cancel_price'],2); ?></td>
+        <td rowspan="3" class="td_numcoupon"><?php echo number_format($row['couponprice'],2); ?></td>
+        <td rowspan="3" class="td_numrdy"><?php echo number_format($row['od_misu'],2); ?></td>
         <td rowspan="3" class="td_mngsmall">
             <a href="./orderform.php?od_id=<?php echo $row['od_id']; ?>&amp;<?php echo $qstr; ?>" class="mng_mod"><span class="sound_only"><?php echo $row['od_id']; ?> </span>보기</a>
         </td>
@@ -450,11 +450,11 @@ if(!sql_query(" select mb_id from {$g5['g5_shop_order_delete_table']} limit 1 ",
         <td>&nbsp;</td>
         <td><?php echo number_format($tot_itemcount); ?>건</td>
         <th scope="row">합 계</th>
-        <td><?php echo number_format($tot_orderprice); ?></td>
-        <td><?php echo number_format($tot_receiptprice); ?></td>
-        <td><?php echo number_format($tot_ordercancel); ?></td>
-        <td><?php echo number_format($tot_couponprice); ?></td>
-        <td><?php echo number_format($tot_misu); ?></td>
+        <td><?php echo number_format($tot_orderprice),2; ?></td>
+        <td><?php echo number_format($tot_receiptprice),2; ?></td>
+        <td><?php echo number_format($tot_ordercancel),2; ?></td>
+        <td><?php echo number_format($tot_couponprice),2; ?></td>
+        <td><?php echo number_format($tot_misu),2; ?></td>
         <td></td>
     </tr>
     </tfoot>

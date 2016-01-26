@@ -459,17 +459,14 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                     <tr>
                     	<td colspan="3" class="actions">
                         	<div class="links">
-                                <a class="declaration">投诉商品</a>
-                            	<a class="link" onClick="window.open('/shop/popup/pop03.html', '', 'width=800, height=744, scrollbars=no')">商品咨询</a>
+                                <a class="declaration" href="/bbs/write.php?bo_table=free&it_id=<?=$row_item[it_id]?>">投诉商品</a>
+                            	<a class="link" href="/bbs/write.php?bo_table=free&it_id=<?=$row_item[it_id]?>&type=no">商品咨询</a>
                             </div>
                             <div class="buttons">
                             
-                            <? if($list[$i][od_status]=="等待付款" || $list[$i][od_status]=="商品准备中" || $list[$i][od_status]=="交易完成"){ ?>
+                            <? if($list[$i][od_status]=="等待付款" || $list[$i][od_status]=="商品准备中" || $list[$i][od_status]=="交易完成" || $list[$i][od_status]=="已付款"){ ?>
                               <a href="/shop/mypage02_1_2.php?od_id=<?=$list[$i][od_id]?>" class="button">
                               	<button class="cancel">取消订单</button>
-                              </a>
-                              <a class="button">
-                               	<button class="orange">修改收货地址</button>
                               </a>
                             <? } ?>
                             
@@ -477,14 +474,8 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
                             	<a onClick="window.open('/shop/popup/pop05.html', '', 'width=660, height=535, scrollbars=no')" class="button"><button class="orange">确认收货</button></a>
                             <? } ?>
 														
-                            <? if($list[$i][od_status]=="交易完成"){ ?>
-                              <a class="button" onClick="window.open('/shop/popup/pop07.html', '', 'width=600, height=760, scrollbars=no')" >
-                              <button class="cancel">好评/差评</button>
-                              </a>
-                            <? } ?>
-
 														<? if($list[$i][od_status]=="商品运输中"){ ?>
-                           	 <a href="/shop/mypage02_1_2.php?od_id=<?=$list[$i][od_id]?>" class="button"><button class="cancel">退货/取消订单 申请</button></a>
+                           	 <a href="/shop/mypage02_1_2.php?od_id=<?=$list[$i][od_id]?>" class="button"><button class="cancel">取消订单</button></a>
                             <? } ?>
                             
                             </div>

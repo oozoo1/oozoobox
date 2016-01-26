@@ -1,6 +1,8 @@
 <? 
 	include_once('./_common.php');
-
+		$sqlorder = "SELECT * FROM g5_shop_order WHERE od_id = '{$_GET[od_id]}'";
+		$resultorder = sql_query($sqlorder);
+		$row_order=sql_fetch_array($resultorder);
 ?>
 <meta charset="utf-8">
 <style>
@@ -50,11 +52,11 @@ h4.in-layer-tit {font-size:14px; height:24px; margin:28px 0 0; padding-left:12px
 
 <div class="pass_confirm" id="pop04_wrap">
     <div class="pop_tit">
-        <h3>주문상세정보</h3>
+        <h3>订单详细</h3>
         <p class="pro_tit">
-        결제번호 : <a><span>1234567890</span></a>
+        结帐号吗 : <a><span><?=$row_order[od_id]?></span></a>
         <b style="margin:0 3px;"> | </b> 
-        주문일자 : <a><span>2016년 01월 04일 </span></a>
+        订单日期 : <a><span><?=$row_order[od_time]?></span></a>
         </p> 
     </div> 
     <div class="pop04_content">
@@ -81,13 +83,13 @@ h4.in-layer-tit {font-size:14px; height:24px; margin:28px 0 0; padding-left:12px
                 </colgroup>
                 <thead>
                 	<tr>
-                    	<th class="first">상품번호<br>(주문번호)</th>
-                        <th>상품명/주문옵션</th>
-                        <th>상품금액<br></th>
-                        <th>할인금액</th>
-                        <th>배송비</th>
-                        <th>판매자</th>
-                        <th>주문상태</th>
+                    	<th class="first">商品号码<br>(订单号码)</th>
+                        <th>商品名称</th>
+                        <th>商品价格<br></th>
+                        <th>优惠价格</th>
+                        <th>运费</th>
+                        <th>卖家</th>
+                        <th>状态</th>
                     </tr>
                 </thead>
             	<tbody>
@@ -99,23 +101,29 @@ h4.in-layer-tit {font-size:14px; height:24px; margin:28px 0 0; padding-left:12px
                         	<a class="order_tit" href="/shop/item.php?it_id=<?=$row_item[it_id]?>" target="_parent"><?=$row_item[it_name]?></a>
                         </td>
                         <td class="price" rowspan="2">
-                        	<strong class="num"><?=$row_item[it_price]?></strong>
-                            원
+                        	<strong class="num"><?=number_format($row_item[it_price],2)?></strong>
+                            元
                         </td>
                         <td class="price" rowspan="2">
-                        	<strong>-0</strong>원
+                        	<strong><?=number_format($row_order[od_coupon],2)?></strong>元
                         </td>
                         <td class="price" rowspan="2">
-                        	<strong>0</strong>원
+                        	<strong><?=number_format($row_order[od_send_cost],2)?></strong>元
                         </td>   
                         <td class="seller" rowspan="2">
-                        	<span>베이비제이</span>
+                        	<span><?=$row_item[pt_id]?></span>
                         </td>
                         <td class="status" rowspan="2"> 
-                        	<strong class="status_msg">배송출발</strong>
-                            <span class="order_tracking">
-                            	<a href="#">배송추적</a> <!-------SW: 허걸!! "결제완료","상품준비중"일때는 없음--->
-                            </span>
+                        	<strong class="status_msg">
+													<? 
+														if($row[ct_status]=="취소"){echo "已取消";}
+														if($row[ct_status]=="입금"){echo "已付款";}
+														if($row[ct_status]=="주문"){echo "未付款";}
+														if($row[ct_status]=="준비"){echo "准备发货";}
+														if($row[ct_status]=="배송"){echo "运输中";}
+														if($row[ct_status]=="완료"){echo "交易完成";}
+													?>
+                          </strong>
                         </td>
                     </tr>
                     <tr>
@@ -127,7 +135,7 @@ h4.in-layer-tit {font-size:14px; height:24px; margin:28px 0 0; padding-left:12px
             </table>
          <? } ?>   
             <div class="myoz_layer_column_left">
-            	<h4 class="in-layer-tit">배송지정보</h4>
+            	<h4 class="in-layer-tit">收货人信息</h4>
                 <table class="tbl_order_detail">
                 	<colgroup>
                     	<col style="width:32%"/>
@@ -135,27 +143,26 @@ h4.in-layer-tit {font-size:14px; height:24px; margin:28px 0 0; padding-left:12px
                     </colgroup>
                     <tbody>
                     	<tr>
-                        	<th class="first">받으시는 분</th>
-                            <td>김미혜</td>
+                        	<th class="first">收货人</th>
+                            <td><?=$row_order[od_name]?></td>
                         </tr>
                     	<tr>
-                        	<th class="first">연락처</th>
-                            <td>123456789</td>
+                        	<th class="first">联系电话</th>
+                            <td><?=$row_order[od_hp]?></td>
                         </tr>
                     	<tr>
-                        	<th class="first">주소</th>
-                            <td>吉林 延边朝鲜族自治州 延吉市
-                            长白路 东方公寓 香慧超市(原广客来超市)</td>
+                        	<th class="first">地址</th>
+                            <td><?=$row_order[od_b_addr1]?> - <?=$row_order[od_b_addr2]?> - <?=$row_order[od_b_addr3]?> (<?=$row_order[od_b_addr_jibeon]?>)</td>
                         </tr>
                      	<tr>
-                        	<th class="first">배송시 요구사항</th>
-                            <td>빠른시일내에 배송부탁드립니다.</td>
+                        	<th class="first">留言</th>
+                            <td><?=$row_order[od_memo]?></td>
                         </tr>                                                                       
                     </tbody>               	
                 </table>
             </div>
 						<div class="myoz_layer_column_right">
-            	<h4 class="in-layer-tit">결제정보</h4>
+            	<h4 class="in-layer-tit">付款信息</h4>
                 <table class="tbl_order_detail">
                 	<colgroup>
                     	<col style="width:32%"/>
@@ -163,20 +170,16 @@ h4.in-layer-tit {font-size:14px; height:24px; margin:28px 0 0; padding-left:12px
                     </colgroup>
                     <tbody>
                     	<tr>
-                        	<th class="first">최종 결제금액</th>
-                            <td class="price">1000</td>
+                        	<th class="first">总价</th>
+                            <td class="price"><?=number_format($row_order[od_cart_price],2)?></td>
                         </tr>
                     	<tr>
-                        	<th class="first">상품금액</th>
-                            <td>123456789</td>
-                        </tr>
-                    	<tr>
-                        	<th class="first">배송비</th>
-                            <td>14444</td>
+                        	<th class="first">运费</th>
+                            <td class="price"><?=number_format($row_order[od_send_cost],2)?></td>
                         </tr>
                      	<tr>
-                        	<th class="first">포인트</th>
-                            <td>1000</td>
+                        	<th class="first">积分</th>
+                            <td class="price"><?=$row_order[od_receipt_point]?></td>
                         </tr>                                                                       
                     </tbody>
                 	

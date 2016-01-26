@@ -89,6 +89,17 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
       <tr>
         <td class="wheight"><input type="text" name="wr_subject" value="<?php echo $subject ?>" id="wr_subject" required class="winput" size="50" maxlength="255" placeholder="   请输入标题"></td>
       </tr>
+      <? if($_GET[it_id]){?>
+      <input name="wr_1" type="hidden" value="<?=$_GET[it_id]?>">
+      <tr>
+        <td class="wheight">商品号码：<?=$_GET[it_id]?></td>
+      </tr>
+      <? if($_GET[type]){?>
+      <tr>
+        <td class="wheight"><label><input type="radio" name="wr_2" value="배송">快递</label>&nbsp;&nbsp;&nbsp; <label><input type="radio" name="wr_2" value="반품">退货</label>&nbsp;&nbsp;&nbsp; <label><input type="radio" name="wr_2" value="기타">其他</label></td>
+      </tr>
+      <? } ?>
+      <? } ?>
       <tr>
         <td class="wheight"><?php echo $editor_html; // 에디터 사용시는 에디터로, 아니면 textarea 로 노출 ?></td>
       </tr>

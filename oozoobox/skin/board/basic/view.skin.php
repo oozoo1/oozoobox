@@ -128,6 +128,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css" medi
 	 ?>
 
 	<div class="view-content">
+  <? if($view[wr_1]){?>상품코드：<?=$view[wr_1]?><? } ?>
+  <? if($view[wr_2]){?>신고상태：<?=$view[wr_2]?><? } ?>
+  <br><br><br>
 		<?php echo get_view_thumbnail($view['content']); ?>
 	</div>
 
