@@ -204,7 +204,7 @@ if($header_skin)
 		var new_SendCost = old_SendCost*1 + sc*1;
 		var new_tot_price = old_tot_price*1 + se*1+ sc*1;
 			new_price = new_price.toFixed(2);
-			new_SendCost = new_SendCost.toFixed(2);
+			new_SendCost = new_SendCost;
 			new_tot_price = new_tot_price.toFixed(2);
 		
 		//var str = "old_price : " + old_price +"\n"+ "old_SendCost : " + old_SendCost +"\n"+ "old_tot_price : " + old_tot_price +"\n"+ "se : " + se +"\n"+ "sc : " + sc +"\n"+ "new_price : " + new_price +"\n"+ "new_SendCost : " + new_SendCost +"\n"+ "new_tot_price : " + new_tot_price;
