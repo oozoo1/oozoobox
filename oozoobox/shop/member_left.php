@@ -8,7 +8,7 @@
                 <ul class="MM_List">
                 	<li><a href="/shop/member_confirm.php">信息修改</a></li>
                     <li><a href="/shop/member_address.php">地址管理</a></li>
-                    <li><a href="/shop/mypage01_3.php">个人信息使用内容</a></li>
+                    <!-- <li><a href="/shop/mypage01_3.php">个人信息使用内容</a></li> -->
                     <li><a href="/shop/member_out_ck.php">注销会员</a></li>
                 </ul>
             	<h4 class="MM_tit">
