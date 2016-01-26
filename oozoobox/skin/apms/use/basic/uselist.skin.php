@@ -8,56 +8,55 @@ add_stylesheet('<link rel="stylesheet" href="'.$skin_url.'/style.css" media="scr
 if($header_skin)
 	include_once('./header.php');
 
-if(!$wset['cont']) $wset['cont'] = 60;
+if(!$wset['cont']) $wset['cont'] = 120;
 
 $list_cnt = count($list);
 
 ?>
+<style>
+.sc_title_off{float:left;padding:12px 15px 12px 15px; border-left:solid 1px #f5f5f5; border-right:solid 1px #f5f5f5; color:#6d6d6d; border-right:solid 1px #e5e5e5;}
+.sc_input{ width:45px; height:21px; border:solid 1px #e8e8e8; color:#6d6d6d;}
 
-<div class="use-box">
-	<form class="form" role="form" method="get" action="./itemuselist.php">
-		<div class="row">
-			<div class="col-sm-3">
-				<div class="form-group">
-					<label for="ca_id" class="sound_only">분류</label>
-					<select name="ca_id" id="ca_id" class="form-control input-sm">
-						<option value="">카테고리</option>
-						<?php echo apms_category($ca_id);?>
-					</select>
-				</div>
-			</div>
-			<div class="col-sm-3">
-				<div class="form-group">
-					<label for="sfl" class="sound_only">검색항목<strong class="sound_only"> 필수</strong></label>
-					<select name="sfl" id="sfl" class="form-control input-sm">
-						<option value="">선택</option>
-						<option value="b.it_name"    <?php echo get_selected($sfl, "b.it_name", true); ?>>상품명</option>
-						<option value="a.it_id"      <?php echo get_selected($sfl, "a.it_id"); ?>>상품코드</option>
-						<option value="a.is_subject" <?php echo get_selected($sfl, "a.is_subject"); ?>>후기제목</option>
-						<option value="a.is_name"    <?php echo get_selected($sfl, "a.is_id"); ?>>작성자명</option>
-						<option value="a.mb_id"      <?php echo get_selected($sfl, "a.mb_id"); ?>>작성자아이디</option>
-					</select>
-				</div>
-			</div>
-			<div class="col-sm-3">
-				<div class="form-group">
-					<div class="form-group">
-						<label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
-						<input type="text" name="stx" value="<?php echo $stx; ?>" id="stx" class="form-control input-sm" placeholder="검색어">
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-3">
-				<div class="form-group">
-					<button type="submit" class="btn btn-black btn-sm btn-block"><i class="fa fa-search"></i> 검색하기</button>
-				</div>
-			</div>
-		</div>
-	</form>
-</div>
+</style>
+<table width="990" border="0" cellspacing="0" cellpadding="0" align="center">
+<form class="form" role="form" method="get" action="./itemuselist.php">
+  <tr>
+    <td bgcolor="#f5f5f5" style="border:solid 1px #e8e8e8;">
+      <table width="988" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr>
+          <td>
+            <div class="sc_title_off">
+              <select name="ca_id" id="ca_id" class="form-control input-sm">
+                <option value="">分类</option>
+                <?php echo apms_category($ca_id);?>
+              </select>
+            </div>
+            <div class="sc_title_off">
+              <select name="sfl" id="sfl" class="form-control input-sm">
+                <option value="">选择</option>
+                <option value="b.it_name"    <?php echo get_selected($sfl, "b.it_name", true); ?>>商品名称</option>
+                <option value="a.it_id"      <?php echo get_selected($sfl, "a.it_id"); ?>>商品号码</option>
+                <option value="a.is_subject" <?php echo get_selected($sfl, "a.is_subject"); ?>>标题</option>
+                <option value="a.is_name"    <?php echo get_selected($sfl, "a.is_id"); ?>>发布人</option>
+                <option value="a.mb_id"      <?php echo get_selected($sfl, "a.mb_id"); ?>>发布人账号</option>
+              </select>
+            </div>
+            <div class="sc_title_off">
+							<input type="text" name="stx" value="<?php echo $stx; ?>" id="stx" style="height:28px; width:120px; border:solid 1px #ddd;" placeholder="搜索内容">
+            </div>
+          </td>          
+          <td width="34"><button type="submit" style="border:solid 0px;"><img src="/images/sc_bt.png"></button></td>
+          <td width="43"><a href="/shop/itemuselist.php"><img src="/images/sc_c.png"></a></td>
+        </tr>
+      </table>    
+    </td>
+  </tr>
+</form>
+</table>
+
 
 <div class="div-box-light"> 
-	총 <b><?php echo number_format($total_count);?></b>개의 후기가 등록되어 있습니다.
+	总共 <b><?php echo number_format($total_count);?></b>个评论.
 </div>
 
 <div class="h20"></div>

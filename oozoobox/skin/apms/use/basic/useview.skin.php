@@ -35,20 +35,6 @@ $it_price = ($view['it_tel_inq']) ? '전화문의' : number_format(get_price($vi
 		<?php echo get_view_thumbnail($view['is_content'], $default['pt_img_width']); ?>
 	</div>
 
-	<div class="view-sns text-right">
-		<?php 
-			$sns_url  = G5_SHOP_URL.'/itemuseview.php?is_id='.$is_id;
-			$sns_title = get_text($view['is_subject'].' : '.$view['it_name'].' | '.$config['cf_title']);
-			$sns_img = $skin_url.'/img';
-			echo  get_sns_share_link('facebook', $sns_url, $sns_title, $sns_img.'/sns_fb_s.png').' ';
-			echo  get_sns_share_link('twitter', $sns_url, $sns_title, $sns_img.'/sns_twt_s.png').' ';
-			echo  get_sns_share_link('googleplus', $sns_url, $sns_title, $sns_img.'/sns_goo_s.png').' ';
-			echo  get_sns_share_link('kakaostory', $sns_url, $sns_title, $sns_img.'/sns_kakaostory_s.png').' ';
-			echo  get_sns_share_link('kakaotalk', $sns_url, $sns_title, $sns_img.'/sns_kakao_s.png').' ';
-			echo  get_sns_share_link('naverband', $sns_url, $sns_title, $sns_img.'/sns_naverband_s.png').' ';
-		?>
-	</div>
-
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3 class="panel-title">Review Item</h3>
@@ -83,16 +69,16 @@ $it_price = ($view['it_tel_inq']) ? '전화문의' : number_format(get_price($vi
 
 <div class="view-btn">
 	<div class="form-group pull-left">
-		<a href="./itemuselist.php?sfl=<?php echo urlencode('a.it_id');?>&amp;stx=<?php echo urlencode($view['it_id']);?>" class="btn btn-black btn-sm"><i class="fa fa-eye"></i> 더보기</a>
+		<a href="./itemuselist.php?sfl=<?php echo urlencode('a.it_id');?>&amp;stx=<?php echo urlencode($view['it_id']);?>" class="btn btn-black btn-sm"><i class="fa fa-eye"></i> 查看</a>
 	</div>
 	<div class="form-group pull-right">
 		<?php if($view['is_edit_href']) { ?>
-			<a href="<?php echo $view['is_edit_href']; ?>" class="btn btn-black btn-sm"><i class="fa fa-plus"></i><span class="hidden-xs"> 수정</span></a>
+			<a href="<?php echo $view['is_edit_href']; ?>" class="btn btn-black btn-sm"><i class="fa fa-plus"></i><span class="hidden-xs"> 修改</span></a>
 		<?php } ?>
 		<?php if($view['is_del_href']) { ?>
-			<a href="<?php echo $view['is_del_href']; ?>" class="btn btn-black btn-sm"><i class="fa fa-times"></i><span class="hidden-xs"> 삭제</span></a>
+			<a href="<?php echo $view['is_del_href']; ?>" class="btn btn-black btn-sm"><i class="fa fa-times"></i><span class="hidden-xs"> 删除</span></a>
 		<?php } ?>
-		<a href="./itemuselist.php?<?php echo $qstr;?>" class="btn btn-black btn-sm"><i class="fa fa-bars"></i> 목록</a>
+		<a href="./itemuselist.php?<?php echo $qstr;?>" class="btn btn-black btn-sm"><i class="fa fa-bars"></i> 目录</a>
 	</div>
 	<div class="clearfix"></div>
 </div>
