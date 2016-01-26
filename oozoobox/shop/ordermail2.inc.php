@@ -18,7 +18,7 @@ mailer($od_name, $od_email, $config['cf_admin_email'], $subject, $content, 1);
 //------------------------------------------------------------------------------
 // 주문자에게 메일보내기
 //------------------------------------------------------------------------------
-$subject = $config['cf_title'].' - 주문 내역 안내 메일';
+$subject = $config['cf_title'].' - 订单提示邮件';
 ob_start();
 include G5_SHOP_PATH.'/mail/orderupdate2.mail.php';
 $content = ob_get_contents();
@@ -70,7 +70,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++)
         $price_plus = '';
         if($row2['io_price'] >= 0)
             $price_plus = '+';
-        $options .= '<li'.$options_li.'>'.$row2['ct_option'].' ('.$price_plus.display_price($row2['io_price']).') '.$row2['ct_qty'].'개</li>'.PHP_EOL;
+        $options .= '<li'.$options_li.'>'.$row2['ct_option'].' ('.$price_plus.display_price($row2['io_price']).') '.$row2['ct_qty'].'件</li>'.PHP_EOL;
     }
 
     if($k > 0)
@@ -82,7 +82,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++)
     $list[$i]['it_opt']  = $options;
     $list[$i]['ct_price'] = $sum['price'];
 
-    $subject = $config['cf_title'].' - 주문 알림 메일 (주문자 '.$od_name.'님)';
+    $subject = $config['cf_title'].' - 订单提示邮件 (付款人 '.$od_name.')';
     ob_start();
     include G5_SHOP_PATH.'/mail/orderupdate3.mail.php';
     $content = ob_get_contents();

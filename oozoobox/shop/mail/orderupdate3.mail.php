@@ -16,77 +16,95 @@ $ft_a_st = 'display:block;padding:30px 0;background:#484848;color:#fff;text-alig
 ?>
 
 <body>
-
-<div style="margin:30px auto;width:600px;border:10px solid #f7f7f7">
-    <div style="border:1px solid #dedede">
-        <h1 style="margin:0 0 20px;padding:30px 30px 20px;background:#f7f7f7;color:#555;font-size:1.4em">
-            <?php echo $config['cf_title'];?> - 您的订单已下单.
-        </h1>
-
-        <p style="<?php echo $cont_st; ?>">
-            <strong>订单号码 <?php echo $od_id; ?></strong><br>
-            本邮件 <?php echo G5_TIME_YMDHIS; ?> (<?php echo get_yoil(G5_TIME_YMDHIS); ?>) 发送.
-        </p>
-
-        <table style="<?php echo $cont_st; ?>">
-        <caption style="<?php echo $caption_st; ?>"> 订单内容</caption>
-        <colgroup>
-            <col style="width:130px">
-            <col>
-        </colgroup>
-        <tbody>
-        <tr>
-            <th scope="row" style="<?php echo $th_st; ?>">商品名</th>
-            <td style="<?php echo $td_st; ?>"><a href="<?php echo G5_SHOP_URL.'/item.php?it_id='.$list[$i]['it_id']; ?>" target="_blank" style="text-decoration:none"><span style="display:inline-block;vertical-align:middle"><?php echo $list[$i]['it_simg']; ?></span> <?php echo $list[$i]['it_name']; ?></a></td>
-        </tr>
-        <tr>
-            <th scope="row" style="<?php echo $th_st; ?>">价格</th>
-            <td style="<?php echo $td_st; ?>"><?php echo display_price($list[$i]['ct_price']); ?></td>
-        </tr>
-        <tr>
-            <th scope="row" style="<?php echo $th_st; ?>">套餐 </th>
-            <td style="<?php echo $td_st; ?>"><?php echo $list[$i]['it_opt']; ?></td>
-        </tr>
-        </tbody>
-        </table>
-
-        </tbody>
-        </table>
-
-
-        <table style="<?php echo $cont_st; ?>">
-        <caption style="<?php echo $caption_st; ?>">收货信息</caption>
-        <colgroup>
-            <col style="width:130px">
-            <col>
-        </colgroup>
-        <tbody>
-        <tr>
-            <th scope="row" style="<?php echo $th_st; ?>">姓名</th>
-            <td style="<?php echo $td_st; ?>"><?php echo $od_b_name; ?></td>
-        </tr>
-        <tr>
-            <th scope="row" style="<?php echo $th_st; ?>">电话号码</th>
-            <td style="<?php echo $td_st; ?>"><?php echo $od_b_tel; ?></td>
-        </tr>
-        <tr>
-            <th scope="row" style="<?php echo $th_st; ?>">手机号码</th>
-            <td style="<?php echo $td_st; ?>"><?php echo $od_b_hp; ?></td>
-        </tr>
-        <tr>
-            <th scope="row" style="<?php echo $th_st; ?>">地址</th>
-            <td style="<?php echo $td_st; ?>"><?php echo sprintf("(%s%s)", $od_b_zip1, $od_b_zip2).' '.print_address($od_b_addr1, $od_b_addr2, $od_b_addr3, $od_b_addr_jibeon); ?></td>
-        </tr>
-        <tr>
-            <th scope="row" style="<?php echo $th_st; ?>">留言</th>
-            <td style="<?php echo $td_st; ?>"><?php echo $od_memo; ?></td>
-        </tr>
-        </tbody>
-        </table>
-
-        如果订单有误 请与 <b><?php echo  $default['de_admin_company_tel']; ?></b>联系.</p>
-
-        <a href="<?php echo G5_SHOP_URL.'/'; ?>" target="_blank" style="<?php echo $ft_a_st; ?>">查看我的订单</a>
-
+<table border="0" cellspacing="0" cellpadding="0" align="center" width="630">
+  <tr>
+    <td width="21" height="18"><img src="http://data.oozoobox.com/images/mail/left_top.png"></td>
+    <td height="18" background="http://data.oozoobox.com/images/mail/top_bg.png" style="background-repeat: repeat-x;"></td>
+    <td width="21" height="18"><img src="http://data.oozoobox.com/images/mail/right_top.png"></td>
+  </tr>
+  <tr>
+    <td width="21" valign="top" background="http://data.oozoobox.com/images/mail/left_bg.png"></td>
+    <td height="600" valign="top">
+      <div style="width:600px;border:10px solid #fff;">
+          <div style="border:1px solid #dedede">
+              <h1 style="margin:0 0 20px;padding:30px 30px 20px;background:#f7f7f7;color:#555;font-size:1.4em">
+                  <?php echo $config['cf_title'];?> - 您的订单已下单.
+              </h1>
+      
+              <p style="<?php echo $cont_st; ?>">
+                  <strong>订单号码 <?php echo $od_id; ?></strong><br>
+                  本邮件 <?php echo G5_TIME_YMDHIS; ?> (<?php echo get_yoil(G5_TIME_YMDHIS); ?>) 发送.
+              </p>
+      
+              <table style="<?php echo $cont_st; ?>">
+              <caption style="<?php echo $caption_st; ?>"> 订单内容</caption>
+              <colgroup>
+                  <col style="width:130px">
+                  <col>
+              </colgroup>
+              <tbody>
+              <tr>
+                  <th scope="row" style="<?php echo $th_st; ?>">商品名</th>
+                  <td style="<?php echo $td_st; ?>"><a href="<?php echo G5_SHOP_URL.'/item.php?it_id='.$list[$i]['it_id']; ?>" target="_blank" style="text-decoration:none"><span style="display:inline-block;vertical-align:middle"><?php echo $list[$i]['it_simg']; ?></span> <?php echo $list[$i]['it_name']; ?></a></td>
+              </tr>
+              <tr>
+                  <th scope="row" style="<?php echo $th_st; ?>">价格</th>
+                  <td style="<?php echo $td_st; ?>"><?=number_format($list[$i]['ct_price'],2)?></td>
+              </tr>
+              <tr>
+                  <th scope="row" style="<?php echo $th_st; ?>">套餐 </th>
+                  <td style="<?php echo $td_st; ?>"><?php echo $list[$i]['it_opt']; ?></td>
+              </tr>
+              </tbody>
+              </table>
+      
+              </tbody>
+              </table>
+      
+      
+              <table style="<?php echo $cont_st; ?>">
+              <caption style="<?php echo $caption_st; ?>">收货信息</caption>
+              <colgroup>
+                  <col style="width:130px">
+                  <col>
+              </colgroup>
+              <tbody>
+              <tr>
+                  <th scope="row" style="<?php echo $th_st; ?>">姓名</th>
+                  <td style="<?php echo $td_st; ?>"><?php echo $od_b_name; ?></td>
+              </tr>
+              <tr>
+                  <th scope="row" style="<?php echo $th_st; ?>">电话号码</th>
+                  <td style="<?php echo $td_st; ?>"><?php echo $od_b_tel; ?></td>
+              </tr>
+              <tr>
+                  <th scope="row" style="<?php echo $th_st; ?>">手机号码</th>
+                  <td style="<?php echo $td_st; ?>"><?php echo $od_b_hp; ?></td>
+              </tr>
+              <tr>
+                  <th scope="row" style="<?php echo $th_st; ?>">地址</th>
+                  <td style="<?php echo $td_st; ?>"><?php echo sprintf("(%s%s)", $od_b_zip1, $od_b_zip2).' '.print_address($od_b_addr1, $od_b_addr2, $od_b_addr3, $od_b_addr_jibeon); ?></td>
+              </tr>
+              <tr>
+                  <th scope="row" style="<?php echo $th_st; ?>">留言</th>
+                  <td style="<?php echo $td_st; ?>"><?php echo $od_memo; ?></td>
+              </tr>
+              </tbody>
+              </table>
+      
+              如果订单有误 请与 <b><?php echo  $default['de_admin_company_tel']; ?></b>联系.</p>
+      
+              <a href="<?php echo G5_SHOP_URL.'/'; ?>" target="_blank" style="<?php echo $ft_a_st; ?>">查看我的订单</a>
+     		</div>
+     </div>
+    </td>
+    <td width="21" valign="top" background="http://data.oozoobox.com/images/mail/right_bg.png"></td>
+  </tr>
+  <tr>
+    <td width="21" height="18"><img src="http://data.oozoobox.com/images/mail/left_bottom.png"></td>
+    <td height="18" background="http://data.oozoobox.com/images/mail/bottom_bg.png"></td>
+    <td height="18"><img src="http://data.oozoobox.com/images/mail/right_bottom.png"></td>
+  </tr>
+</table>
 </body>
 </html>
