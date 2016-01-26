@@ -210,11 +210,11 @@ $row = sql_fetch($sql);
                         <tr><th scope="row">价格</th><td>电话咨询</td></tr>
                     <?php } else { // 전화문의가 아닐 경우?>
                         <?php if ($it['it_cust_price']) { ?>
-                            <tr><th scope="row">市场价格</th><td><?php echo number_format($it['it_cust_price'],2); ?></td></tr>
+                            <tr><th scope="row">市场价格</th><td><?php echo number_format($it['it_cust_price'],2); ?> 元</td></tr>
                         <?php } // 시중가격 끝 ?>
                         <tr><th scope="row">价格</th><td>
-                                <?php echo display_price(get_price($it)); ?>
-                                <input type="hidden" id="it_price" value="<?php echo get_price($it); ?>">
+                               <?php echo number_format($it['it_price'],2); ?>  元
+                                <input type="hidden" id="it_price" value="<?php echo number_format($it['it_price'],2); ?>">
                         </td></tr>
                     <?php } ?>
                     <?php
