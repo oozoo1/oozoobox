@@ -367,10 +367,10 @@ $result = sql_query($sql);
                     </dl>
                     <dl>
                         <dt class="menu_tit">买家服务中心</dt>
-                        <dd>开店流程</dd> <!--입점절차-->
-                        <dd>商品发布</dd> <!--상품등록-->
-                        <dd>账户开通</dd> <!--회원가입-->
-                        <dd>常见问题</dd> <!--FAQ-->
+                        <dd><a href="/bbs/board.php?bo_table=faq&wr_id=13">开店流程</a></dd> <!--입점절차-->
+                        <dd><a href="/bbs/board.php?bo_table=faq&wr_id=14">商品发布</a></dd> <!--상품등록-->
+                        <dd><a href="/bbs/board.php?bo_table=faq&wr_id=4">账户开通</a></dd> <!--회원가입-->
+                        <dd><a href="/shop/cscenter.php">常见问题</a></dd> <!--FAQ-->
                     </dl>
                     <dl>
                         <dt class="menu_tit">支付方式 </dt>
