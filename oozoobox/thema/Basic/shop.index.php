@@ -363,7 +363,7 @@ $result = sql_query($sql);
                         <dd><a href="/bbs/board.php?bo_table=faq&wr_id=3">忘记密码</a></dd>
                         <dd><a href="/bbs/board.php?bo_table=faq&wr_id=5">查看已购买商品</a></dd>
                         <dd><a href="/bbs/board.php?bo_table=faq&wr_id=4">如何注册成为会员</a></dd>
-                        <dd><a>我要买</a></dd>
+                        <!--<dd><a>我要买</a></dd>-->
                     </dl>
                     <dl>
                         <dt class="menu_tit">买家服务中心</dt>
@@ -376,18 +376,18 @@ $result = sql_query($sql);
                         <dt class="menu_tit">支付方式 </dt>
                         <dd><a href="/bbs/board.php?bo_table=faq&wr_id=6">如何注册支付宝</a></dd>
                         <dd><a href="/bbs/board.php?bo_table=faq&wr_id=7">支付协议</a></dd>
-                        <dd><a>支付方式</a></dd>
+                        <dd><a href="/bbs/board.php?bo_table=faq&wr_id=12">支付方式</a></dd>
                     </dl>
                     <dl>
                         <dt class="menu_tit">售后服务</dt>
                         <dd><a href="/bbs/board.php?bo_table=faq&wr_id=9">换货/退款政策</a></dd>
                         <!--<dd><a>联系卖家</a></dd>-->
-                        <dd><a>退换货流程</a></dd>
-                        <dd><a>售后服务</a></dd>
+                        <dd><a href="/bbs/board.php?bo_table=faq&wr_id=10">退换货流程</a></dd>
+                        <dd><a href="/bbs/board.php?bo_table=faq&wr_id=11">售后服务</a></dd>
                     </dl>
                     <dl>
                         <dt class="menu_tit">客服中心</dt>
-                        <dd><a>FAQ</a></dd>
+                        <dd><a href="/shop/cscenter.php">FAQ</a></dd>
                         <dd><a href="/bbs/board.php?bo_table=faq&wr_id=8">服务协议</a></dd>
                         <dd><a>会员修改个人资料</a></dd>
                         <dd><a>会员修改密码</a></dd>

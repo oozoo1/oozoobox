@@ -82,7 +82,10 @@ if($header_skin)
                     <tr<?php echo ($i == 0) ? ' class="tr-line"' : '';?>>
                         <td class="text-center">
                             <label for="ct_chk_<?php echo $i; ?>" class="sound_only">상품</label>
-                            <input type="checkbox" name="ct_chk[<?php echo $i; ?>]" value="1" id="ct_chk_<?php echo $i; ?>" checked="checked">                        </td>
+                            <input type="checkbox" name="ct_chk[<?php echo $i; ?>]" value="1" id="ct_chk_<?php echo $i; ?>" checked="checked" onchange="fn_ReTotPrice(this.checked,<?php echo $i; ?>)">
+                            <input type="hidden" id=hd_sc_price<?php echo $i; ?> value = "<?php echo $item[$i]['sc_price'] ?>">
+                            <input type="hidden" id=hd_sell_price<?php echo $i; ?> value = "<?php echo $item[$i]['sell_price'] ?>">
+                        </td>
                         <td class="text-center">
                             <div class="item-img">
                                 <?php echo get_it_image($item[$i]['it_id'], 100, 100); ?>
@@ -95,7 +98,11 @@ if($header_skin)
                             <a href="./item.php?it_id=<?php echo $item[$i]['it_id'];?>">
                                 <b><?php echo stripslashes($item[$i]['it_name']); ?></b>                            </a>
                             <?php if($item[$i]['it_options']) { ?>
-                                <div class="well well-sm"><?php echo $item[$i]['it_options'];?></div>
+                                <div class="well well-sm"><?php echo $item[$i]['it_options'];?>
+	                                <?php if($item[$i]['sc_price']){?>
+	                                <?php echo "</br>"."运费 : ".number_format($item[$i]['sc_price']);?></div>
+	                                <?php }?>
+                                </div>
                                 <button type="button" class="btn btn-primary btn-sm btn-block mod_options">选项/数量 修改</button>
                             <?php } ?>                        </td>
                         <td class="text-center"><?php echo number_format($item[$i]['qty']); ?></td>
@@ -110,7 +117,7 @@ if($header_skin)
                 </tbody>
                 <?php if ($tot_price > 0 || $send_cost > 0) { ?>
                 <tfoot>
-                        <?php if ($send_cost > 0) { // 배송비가 0 보다 크다면 (있다면) ?>
+                        <?php if ($send_cost > 10000000000000000000000) { // 배송비가 0 보다 크다면 (있다면) 무조건 안걸리게 주석처리 ?>
                     	<tr>
                         	<td class="save" colspan="8">
                             	<button name="btnMoreProduct" class="more_ozbox" type="button" value="0">배송비 절약상품 보기</button>
@@ -121,10 +128,10 @@ if($header_skin)
                         	<td class="order_sum" colspan="8">
                                 <img class="order_plus" alt="상품금액" src="/images/ico_order_plus.png"/>
                                 <span class="order_article">商品金额</span>
-                                <span class="order_price">¥<?php echo number_format($tot_price-$send_cost,2); ?> </span>
+                                <span id="price" class="order_price">¥<?php echo number_format($tot_price-$send_cost,2); ?> </span>
                                 <img class="order_plus" alt="상품금액" src="/images/ico_order_plus.png"/>
                                 <span class="order_article">运费</span>
-                                <span class="order_price">¥<?php echo number_format($send_cost); ?></span>                            </td>                                
+                                <span id="SendCost" class="order_price">¥<?php echo number_format($send_cost); ?></span>                            </td>                                
                         </tr>
                         <tr>
                         	<td class="merge" colspan="8">
@@ -139,7 +146,7 @@ if($header_skin)
                             </div>
                         </div>
                         	<span class="order_article_b">结算总额</span>
-                            <span class="order_price"><?php echo number_format($tot_price,2); ?></span>
+                            <span id="tot_price" class="order_price"><?php echo number_format($tot_price,2); ?></span>
                             <span class="order_article">元</span>                            </td>
                         </tr>
                     </tfoot>
@@ -179,6 +186,35 @@ if($header_skin)
 </div>
 </form>
 <script>
+	//체크박스 값이 바뀔대 합계금액 및 배송비 금액을 재계산해 준다.
+	function fn_ReTotPrice(ch,i){
+		var old_price = $("#price").html().replace('¥', '').replace(',', '');
+		var old_SendCost = $("#SendCost").html().replace('¥', '').replace(',', '');
+		var old_tot_price = $("#tot_price").html().replace('¥', '').replace(',', '');
+		
+		var sc = eval("frmcartlist.hd_sc_price"+i).value;
+		var se = eval("frmcartlist.hd_sell_price"+i).value;
+		
+		if(!ch){
+			se = se*(-1);
+			sc = sc*(-1);
+		}
+	
+		var new_price = old_price*1 + se*1;
+		var new_SendCost = old_SendCost*1 + sc*1;
+		var new_tot_price = old_tot_price*1 + se*1+ sc*1;
+			new_price = new_price.toFixed(2);
+			new_SendCost = new_SendCost.toFixed(2);
+			new_tot_price = new_tot_price.toFixed(2);
+		
+		//var str = "old_price : " + old_price +"\n"+ "old_SendCost : " + old_SendCost +"\n"+ "old_tot_price : " + old_tot_price +"\n"+ "se : " + se +"\n"+ "sc : " + sc +"\n"+ "new_price : " + new_price +"\n"+ "new_SendCost : " + new_SendCost +"\n"+ "new_tot_price : " + new_tot_price;
+		//alert(str);
+	
+		$("#price").html("¥" + new_price);
+		$("#SendCost").html("¥" + new_SendCost);
+		$("#tot_price").html(new_tot_price);
+	}
+
 	$(function() {
 		var close_btn_idx;
 
