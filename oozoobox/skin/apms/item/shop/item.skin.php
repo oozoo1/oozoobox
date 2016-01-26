@@ -441,7 +441,7 @@ $row = sql_fetch($sql);
                             }
         
                             if($(".it_opt_list").size() < 1) {
-                                alert("선택옵션을 선택해 주십시오.");
+                                alert("请选择套餐.");
                                 return false;
                             }
         
@@ -455,19 +455,19 @@ $row = sql_fetch($sql);
                                 val = $(this).val();
         
                                 if(val.length < 1) {
-                                    alert("수량을 입력해 주십시오.");
+                                    alert("请输入数量.");
                                     result = false;
                                     return false;
                                 }
         
                                 if(val.replace(/[0-9]/g, "").length > 0) {
-                                    alert("수량은 숫자로 입력해 주십시오.");
+                                    alert("数量只能输入数字.");
                                     result = false;
                                     return false;
                                 }
         
                                 if(parseInt(val.replace(/[^0-9]/g, "")) < 1) {
-                                    alert("수량은 1이상 입력해 주십시오.");
+                                    alert("最少输入1件以上数量.");
                                     result = false;
                                     return false;
                                 }
@@ -482,12 +482,12 @@ $row = sql_fetch($sql);
                             }
         
                             if(min_qty > 0 && sum_qty < min_qty) {
-                                alert("선택옵션 개수 총합 "+number_format(String(min_qty))+"개 이상 주문해 주십시오.");
+                                alert("套餐选择总数量不要超过 "+number_format(String(min_qty))+"件以上.");
                                 return false;
                             }
         
                             if(max_qty > 0 && sum_qty > max_qty) {
-                                alert("선택옵션 개수 총합 "+number_format(String(max_qty))+"개 이하로 주문해 주십시오.");
+                                alert("套餐选择总数量不要超过 "+number_format(String(max_qty))+"件以上.");
                                 return false;
                             }
         
@@ -497,7 +497,7 @@ $row = sql_fetch($sql);
                                         alert(error.replace(/\\n/g, "\n"));
                                         return false;
                                     } else {
-                                        if(confirm("장바구니에 담겼습니다.\n\n바로 확인하시겠습니까?")) {
+                                        if(confirm("已装入购物车.\n\n是否要进入购物车?")) {
                                             document.location.href = "./cart.php";
                                         }
                                     }

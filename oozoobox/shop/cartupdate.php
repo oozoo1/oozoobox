@@ -24,13 +24,13 @@ if (!$tmp_cart_id)
 // 레벨(권한)이 상품구입 권한보다 작다면 상품을 구입할 수 없음.
 if ($member['mb_level'] < $default['de_level_sell'])
 {
-    alert('상품을 구입할 수 있는 권한이 없습니다.');
+    alert('没有购买权限.');
 }
 
 if($act == "buy")
 {
     if(!count($_POST['ct_chk']))
-        alert("주문하실 상품을 하나이상 선택해 주십시오.");
+        alert("请选择购买的商品.");
 
     $fldcnt = count($_POST['it_id']);
     for($i=0; $i<$fldcnt; $i++) {
@@ -70,7 +70,7 @@ if($act == "buy")
                     if($row['io_id'])
                         $item_option .= '('.$row['ct_option'].')';
 
-                    alert($item_option." 의 재고수량이 부족합니다.\\n\\n현재 재고수량 : " . number_format($it_stock_qty - $sum_qty) . " 개");
+                    alert($item_option." 没有数量.\\n\\n现在只有 : " . number_format($it_stock_qty - $sum_qty) . " 件");
                 }
             }
 
@@ -97,7 +97,7 @@ else if ($act == "alldelete") // 모두 삭제이면
 else if ($act == "seldelete") // 선택삭제
 {
     if(!count($_POST['ct_chk']))
-        alert("삭제하실 상품을 하나이상 선택해 주십시오.");
+        alert("请选择删除的商品.");
 
     $fldcnt = count($_POST['it_id']);
     for($i=0; $i<$fldcnt; $i++) {
@@ -113,7 +113,7 @@ else // 장바구니에 담기
 {
     $count = count($_POST['it_id']);
     if ($count < 1)
-        alert('장바구니에 담을 상품을 선택하여 주십시오.');
+        alert('请选择商品.');
 
     $ct_count = 0;
     for($i=0; $i<$count; $i++) {
@@ -125,18 +125,18 @@ else // 장바구니에 담기
         $opt_count = count($_POST['io_id'][$it_id]);
 
         if($opt_count && $_POST['io_type'][$it_id][0] != 0)
-            alert('상품의 선택옵션을 선택해 주십시오.');
+            alert('请选择商品你套餐.');
 
         for($k=0; $k<$opt_count; $k++) {
             if ($_POST['ct_qty'][$it_id][$k] < 1)
-                alert('수량은 1 이상 입력해 주십시오.');
+                alert('最少购买一件商品.');
         }
 
         // 상품정보
         $sql = " select * from {$g5['g5_shop_item_table']} where it_id = '$it_id' ";
         $it = sql_fetch($sql);
         if(!$it['it_id'])
-            alert('상품정보가 존재하지 않습니다.');
+            alert('没有商品.');
 
         // 바로구매에 있던 장바구니 자료를 지운다.
         if($i == 0 && $sw_direct)
@@ -151,10 +151,10 @@ else // 장바구니에 담기
             }
 
             if($it['it_buy_min_qty'] > 0 && $sum_qty < $it['it_buy_min_qty'])
-                alert($it['it_name'].'의 선택옵션 개수 총합 '.number_format($it['it_buy_min_qty']).'개 이상 주문해 주십시오.');
+                alert($it['it_name'].'请选择 '.number_format($it['it_buy_min_qty']).'件以上商品.');
 
             if($it['it_buy_max_qty'] > 0 && $sum_qty > $it['it_buy_max_qty'])
-                alert($it['it_name'].'의 선택옵션 개수 총합 '.number_format($it['it_buy_max_qty']).'개 이하로 주문해 주십시오.');
+                alert($it['it_name'].'请选择 '.number_format($it['it_buy_max_qty']).'件以下商品.');
 
             // 기존에 장바구니에 담긴 상품이 있는 경우에 최대 구매수량 체크
             if($it['it_buy_max_qty'] > 0) {
@@ -167,7 +167,7 @@ else // 장바구니에 담기
                 $row4 = sql_fetch($sql4);
 
                 if(($sum_qty + $row4['ct_sum']) > $it['it_buy_max_qty'])
-                    alert($it['it_name'].'의 선택옵션 개수 총합 '.number_format($it['it_buy_max_qty']).'개 이하로 주문해 주십시오.', './cart.php');
+                    alert($it['it_name'].'总共不要超过 '.number_format($it['it_buy_max_qty']).'件以上商品.', './cart.php');
             }
         }
 
@@ -217,7 +217,7 @@ else // 장바구니에 담기
 
                 if ($ct_qty + $sum_qty > $it_stock_qty)
                 {
-                    alert($io_value." 의 재고수량이 부족합니다.\\n\\n현재 재고수량 : " . number_format($it_stock_qty - $sum_qty) . " 개");
+                    alert($io_value." 没有数量.\\n\\n现有数量 : " . number_format($it_stock_qty - $sum_qty) . " 件");
                 }
             }
         }
