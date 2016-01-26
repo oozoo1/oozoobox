@@ -70,7 +70,7 @@ if($header_skin)
                 <tr class="<?php echo $head_class;?>">
                     <th scope="col">
                         <label for="ct_all" class="sound_only">상품 전체</label>
-                        <span><input type="checkbox" name="ct_all" value="1" id="ct_all" checked="checked"></span>                    </th>
+                        <span><input type="checkbox" name="ct_all" value="1" id="ct_all" checked="checked" onchange="fn_AllCk(this.checked)"></span>                    </th>
                     <th scope="col"><span>图片</span></th>
                     <th scope="col"><span>商品</span></th>
                     <th scope="col"><span>数量</span></th>
@@ -186,26 +186,39 @@ if($header_skin)
 </div>
 </form>
 <script>
+	//전체체크 또는 전체 해제 일대 일때
+	function fn_AllCk(ch){
+		if(ch){
+			$("#price").html("¥" + "<?php echo number_format($tot_price-$send_cost,2); ?>");
+			$("#SendCost").html("¥" + "<?php echo number_format($send_cost); ?>");
+			$("#tot_price").html("<?php echo number_format($tot_price,2); ?>");
+		}else{
+			$("#price").html("¥" + "0");
+			$("#SendCost").html("¥" + "0");
+			$("#tot_price").html("0");
+		}
+	}
+	
 	//체크박스 값이 바뀔대 합계금액 및 배송비 금액을 재계산해 준다.
 	function fn_ReTotPrice(ch,i){
-		var old_price = $("#price").html().replace('¥', '').replace(',', '');
-		var old_SendCost = $("#SendCost").html().replace('¥', '').replace(',', '');
-		var old_tot_price = $("#tot_price").html().replace('¥', '').replace(',', '');
+		old_price = $("#price").html().replace('¥', '').replace(',', '');
+		old_SendCost = $("#SendCost").html().replace('¥', '').replace(',', '');
+		old_tot_price = $("#tot_price").html().replace('¥', '').replace(',', '');
 		
-		var sc = eval("frmcartlist.hd_sc_price"+i).value;
-		var se = eval("frmcartlist.hd_sell_price"+i).value;
+		sc = eval("frmcartlist.hd_sc_price"+i).value;
+		se = eval("frmcartlist.hd_sell_price"+i).value;
 		
 		if(!ch){
 			se = se*(-1);
 			sc = sc*(-1);
 		}
 	
-		var new_price = old_price*1 + se*1;
-		var new_SendCost = old_SendCost*1 + sc*1;
-		var new_tot_price = old_tot_price*1 + se*1+ sc*1;
-			new_price = new_price.toFixed(2);
-			new_SendCost = new_SendCost;
-			new_tot_price = new_tot_price.toFixed(2);
+		new_price = Number(old_price) + Number(se);
+		new_SendCost = Number(old_SendCost) + Number(sc);
+		new_tot_price = Number(old_tot_price) + Number(se)+ Number(sc);
+		new_price = new_price.toFixed(2);
+		new_SendCost = new_SendCost;
+		new_tot_price = new_tot_price.toFixed(2);
 		
 		//var str = "old_price : " + old_price +"\n"+ "old_SendCost : " + old_SendCost +"\n"+ "old_tot_price : " + old_tot_price +"\n"+ "se : " + se +"\n"+ "sc : " + sc +"\n"+ "new_price : " + new_price +"\n"+ "new_SendCost : " + new_SendCost +"\n"+ "new_tot_price : " + new_tot_price;
 		//alert(str);
