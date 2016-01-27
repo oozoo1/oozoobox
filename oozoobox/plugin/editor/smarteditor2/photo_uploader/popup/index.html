@@ -14,35 +14,35 @@
 <div class="container pop_container">
 	<!-- header -->
     <div id="pop_header">
-        <h1>사진 첨부하기</h1>
+        <h1>上传图片</h1>
     </div>
     <!-- //header -->
     <div class="content_container">
         <div class="drag_explain">
-            <p>마우스로 드래그하여 순서를 바꿀수 있습니다.</p>
+            <p>用鼠标拖动可以更换顺序</p>
             <div class="file_selet_group">
             <span class="btn btn-success fileinput-button">
-                <span>파일선택</span>
+                <span>上传图片</span>
                 <!-- The file input field used as target for the file upload widget -->
                 <input id="fileupload" type="file" name="files[]" multiple accept="image/*">
             </span>
             <button type="button" class="btn btn-danger delete" id="all_remove_btn">
-                <span>전체삭제</span>
+                <span>全部删除</span>
             </button>
             </div>
         </div>
         <div class="drag_area" id="drag_area">
             <ul class="sortable" id="sortable">
             </ul>
-            <em class="blind">마우스로 드래그해서 이미지를 추가해주세요.</em><span id="guide_text" class="bg hidebg"></span>
+            <em class="blind">把图片拖个到此窗口也可以上传。</em><span id="guide_text" class="bg hidebg"></span>
         </div>
-        <div class="seletion_explain">이미지는 한번에 10개까지 선택할수 있습니다.</div>
+        <div class="seletion_explain">可一次上床10张照片</div>
         <div class="btn_group">
             <button type="button" class="btn" id="img_upload_submit">
-                <span>등록</span>
+                <span>上传</span>
             </button>
             <button type="button" class="btn" id="close_w_btn" >
-                <span>취소</span>
+                <span>取消</span>
             </button>
         </div>
     </div>

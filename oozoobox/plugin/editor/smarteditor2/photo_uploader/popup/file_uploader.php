@@ -17,7 +17,7 @@ if(bSuccessUpload) {
 	$tmp_name = $_FILES['Filedata']['tmp_name'];
 	$name = $_FILES['Filedata']['name'];
 	
-	$filename_ext = strtolower(array_pop(explode('.',$name)));
+	$filename_ext = strtolower(array_pop(explode('.',$name)));
 	
 	if (!preg_match("/(jpe?g|gif|bmp|png)$/i", $filename_ext)) {
 		$url .= '&errstr='.$name;

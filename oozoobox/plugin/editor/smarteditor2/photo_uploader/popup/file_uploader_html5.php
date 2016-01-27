@@ -43,5 +43,5 @@ $data_url = G5_DATA_URL.'/editor/'.$ym;
         $sFileInfo .= "&sFileURL=".$save_url;
     }
     
-    echo $sFileInfo;
+    echo $sFileInfo;
 ?>

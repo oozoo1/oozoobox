@@ -9,9 +9,9 @@ function editor_html($id, $content, $is_dhtml_editor=true)
     $editor_url = G5_EDITOR_URL.'/'.$config['cf_editor'];
 
     $html = "";
-    $html .= "<span class=\"sound_only\">웹에디터 시작</span>";
+    $html .= "<span class=\"sound_only\">编辑器开始</span>";
     if ($is_dhtml_editor)
-        $html .= '<script>document.write("<div class=\'cke_sc\'><button type=\'button\' class=\'btn_cke_sc\'>단축키 일람</button></div>");</script>';
+        $html .= '<script>document.write("<div class=\'cke_sc\'><button type=\'button\' class=\'btn_cke_sc\'>快捷键</button></div>");</script>';
 
     if ($is_dhtml_editor && $js) {
         $html .= "\n".'<script src="'.$editor_url.'/js/HuskyEZCreator.js"></script>';
@@ -23,13 +23,13 @@ function editor_html($id, $content, $is_dhtml_editor=true)
             $(".btn_cke_sc").click(function(){
                 if ($(this).next("div.cke_sc_def").length) {
                     $(this).next("div.cke_sc_def").remove();
-                    $(this).text("단축키 일람");
+                    $(this).text("快捷键");
                 } else {
                     $(this).after("<div class=\'cke_sc_def\' />").next("div.cke_sc_def").load("'.$editor_url.'/shortcut.html");
-                    $(this).text("단축키 일람 닫기");
+                    $(this).text("关闭快捷键");
                 }
             });
-            $(document).on("click", ".btn_cke_sc_close", function(){
+            $(".btn_cke_sc_close").live("click",function(){
                 $(this).parent("div.cke_sc_def").remove();
             });
         });';
@@ -39,7 +39,7 @@ function editor_html($id, $content, $is_dhtml_editor=true)
 
     $smarteditor_class = $is_dhtml_editor ? "smarteditor2" : "";
     $html .= "\n<textarea id=\"$id\" name=\"$id\" class=\"$smarteditor_class\" maxlength=\"65536\" style=\"width:100%\">$content</textarea>";
-    $html .= "\n<span class=\"sound_only\">웹 에디터 끝</span>";
+    $html .= "\n<span class=\"sound_only\">编辑器结束</span>";
     return $html;
 }
 
@@ -59,9 +59,9 @@ function get_editor_js($id, $is_dhtml_editor=true)
 function chk_editor_js($id, $is_dhtml_editor=true)
 {
     if ($is_dhtml_editor) {
-        return "if (!{$id}_editor_data || jQuery.inArray({$id}_editor_data.toLowerCase(), ['&nbsp;','<p>&nbsp;</p>','<p><br></p>','<p></p>','<br>']) != -1) { alert(\"내용을 입력해 주십시오.\"); oEditors.getById['{$id}'].exec('FOCUS'); return false; }\n";
+        return "if (!{$id}_editor_data || jQuery.inArray({$id}_editor_data.toLowerCase(), ['&nbsp;','<p>&nbsp;</p>','<p><br></p>','<p></p>','<br>']) != -1) { alert(\"请输入内容。\"); oEditors.getById['{$id}'].exec('FOCUS'); return false; }\n";
     } else {
-        return "if (!{$id}_editor.value) { alert(\"내용을 입력해 주십시오.\"); {$id}_editor.focus(); return false; }\n";
+        return "if (!{$id}_editor.value) { alert(\"请输入内容。\"); {$id}_editor.focus(); return false; }\n";
     }
 }
 ?>

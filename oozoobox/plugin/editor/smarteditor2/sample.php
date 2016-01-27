@@ -12,7 +12,7 @@
 
 	<div style="width:736px;">
 	<?php
-		$postMessage = $_POST["ir1"]; 
+		$postMessage = $_POST["content"]; 
 		echo $postMessage;
 	?>
 	</div>

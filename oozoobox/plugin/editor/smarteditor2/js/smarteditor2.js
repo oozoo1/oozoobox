@@ -11403,13 +11403,9 @@ nhn.husky.SE2M_FontNameWithLayerUI = jindo.$Class({
 		
 		// [SMARTEDITORSUS-245] 서비스 적용 시 글꼴정보를 넘기지 않으면 기본 글꼴 목록이 보이지 않는 오류
 		if(!this.htOptions || !this.htOptions.aDefaultFontList || this.htOptions.aDefaultFontList.length === 0){
-			this.addFont("돋움,Dotum", "돋움", 0, "", "", 1, null, true);
-			this.addFont("돋움체,DotumChe,AppleGothic", "돋움체", 0, "", "", 1);
-			this.addFont("굴림,Gulim", "굴림", 0, "", "", 1, null, true);
-			this.addFont("굴림체,GulimChe", "굴림체", 0, "", "", 1, null, true);
-			this.addFont("바탕,Batang,AppleMyungjo", "바탕", 0, "", "", 1);
-			this.addFont("바탕체,BatangChe", "바탕체", 0, "", "", 1, null, true);
-			this.addFont("궁서,Gungsuh,GungSeo", "궁서", 0, "", "", 1);
+			this.addFont("宋体,Dotum", "宋体", 0, "", "", 1, null, true);
+			this.addFont("黑体,Gulim", "黑体", 0, "", "", 1, null, true);
+			this.addFont("楷体,Batang,AppleMyungjo", "楷体", 0, "", "", 1);
 			this.addFont('Arial', 'Arial', 0, "", "", 1, "abcd");
 			this.addFont('Tahoma', 'Tahoma', 0, "", "", 1, "abcd");
 			this.addFont('Times New Roman', 'Times New Roman', 0, "", "", 1, "abcd");
@@ -11758,7 +11754,7 @@ nhn.husky.SE2M_FontNameWithLayerUI = jindo.$Class({
 
 	_getFontFamilyFromLI : function(elLi){
 		//return elLi.childNodes[1].innerHTML.toLowerCase();
-		// <li><button type="button"><span>돋음</span>(</span><em style="font-family:'돋음',Dotum,'굴림',Gulim,Helvetica,Sans-serif;">돋음</em><span>)</span></span></button></li>
+		// <li><button type="button"><span>돋음</span>(</span><em style="font-family:'돋음',Dotum,'微软雅黑',Gulim,Helvetica,Sans-serif;">돋음</em><span>)</span></span></button></li>
 		return (elLi.getElementsByTagName("EM")[0]).style.fontFamily; 
 	},
 	
@@ -21299,5 +21295,5 @@ var oMessageMap = {
 	'SE_Footnote.defaultText' : '각주내용을 입력해 주세요',
 	'SE.failedToLoadFlash' : '플래시가 차단되어 있어 해당 기능을 사용할 수 없습니다.',
 	'SE2M_EditingModeChanger.confirmTextMode' : '텍스트 모드로 전환하면 작성된 내용은 유지되나, \n\n글꼴 등의 편집효과와 이미지 등의 첨부내용이 모두 사라지게 됩니다.\n\n전환하시겠습니까?',
-	'SE2M_FontNameWithLayerUI.sSampleText' : '가나다라'
+	'SE2M_FontNameWithLayerUI.sSampleText' : 'ABCD'
 };
