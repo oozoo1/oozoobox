@@ -8,12 +8,12 @@ include_once(G5_LIB_PATH.'/mailer.lib.php');
 referer_check();
 
 if (!($w == '' || $w == 'u')) {
-    alert('w 값이 제대로 넘어오지 않았습니다.');
+    alert('w值传递错误.');
 }
 
 if ($w == 'u' && $is_admin == 'super') {
     if (file_exists(G5_PATH.'/DEMO'))
-        alert('데모 화면에서는 하실(보실) 수 없는 작업입니다.');
+        alert('当前功能无法在演示(Demo)模式下使用.');
 }
 
 
@@ -22,10 +22,10 @@ if($w == 'u')
 else if($w == '')
     $mb_id = trim($_POST['mb_id']);
 else
-    alert('잘못된 접근입니다', G5_URL);
+    alert('请使用正确方式访问', G5_URL);
 
 if(!$mb_id)
-    alert('회원아이디 값이 없습니다. 올바른 방법으로 이용해 주십시오.');
+    alert('您的操作已被记录，请使用正常方式登录使用.');
 
 $mb_password    = trim($_POST['mb_password']);
 $mb_password_re = trim($_POST['mb_password_re']);
@@ -77,9 +77,9 @@ if ($w == '' || $w == 'u') {
     if ($msg = count_mb_id($mb_id))         alert($msg, "", true, true);
 
     if ($w == '' && !$mb_password)
-        alert('비밀번호가 넘어오지 않았습니다.');
+        alert('请输入密码.');
     if($w == '' && $mb_password != $mb_password_re)
-        alert('비밀번호가 일치하지 않습니다.');
+        alert('您输入的两次密码不一致.');
 
     if ($msg = empty_mb_name($mb_name))       alert($msg, "", true, true);
     if ($msg = empty_mb_nick($mb_nick))     alert($msg, "", true, true);
@@ -103,16 +103,16 @@ if ($w == '' || $w == 'u') {
         // 본인확인 체크
         if($config['cf_cert_use'] && $config['cf_cert_req']) {
             if(trim($_POST['cert_no']) != $_SESSION['ss_cert_no'] || !$_SESSION['ss_cert_no'])
-                alert("회원가입을 위해서는 본인확인을 해주셔야 합니다.");
+                alert("为了完成注册需要进行实名认证.");
         }
 
         if ($config['cf_use_recommend'] && $mb_recommend) {
             if (!exist_mb_id($mb_recommend))
-                alert("추천인이 존재하지 않습니다.");
+                alert("找不到您输入的推荐人信息.");
         }
 
         if (strtolower($mb_id) == strtolower($mb_recommend)) {
-            alert('본인을 추천할 수 없습니다.');
+            alert('您不能设置自己为推荐人.');
         }
     } else {
         // 자바스크립트로 정보변경이 가능한 버그 수정
@@ -139,7 +139,7 @@ if($config['cf_cert_use'] && $_SESSION['ss_cert_type'] && $_SESSION['ss_cert_dup
     $sql = " select mb_id from {$g5['member_table']} where mb_id <> '{$member['mb_id']}' and mb_dupinfo = '{$_SESSION['ss_cert_dupinfo']}' ";
     $row = sql_fetch($sql);
     if ($row['mb_id']) {
-        alert("입력하신 본인확인 정보로 가입된 내역이 존재합니다.\\n회원아이디 : ".$row['mb_id']);
+        alert("您输入的实名认证信息已被其他会员注册使用\\n会员ID : ".$row['mb_id']);
     }
 }
 
@@ -221,15 +221,15 @@ if ($w == '') {
     sql_query($sql);
 
     // 회원가입 포인트 부여
-    insert_point($mb_id, $config['cf_register_point'], '회원가입 축하', '@member', $mb_id, '회원가입');
+    insert_point($mb_id, $config['cf_register_point'], '祝贺成为会员', '@member', $mb_id, '注册会员');
 
     // 추천인에게 포인트 부여
     if ($config['cf_use_recommend'] && $mb_recommend)
-        insert_point($mb_recommend, $config['cf_recommend_point'], $mb_id.'의 추천인', '@member', $mb_recommend, $mb_id.' 추천');
+        insert_point($mb_recommend, $config['cf_recommend_point'], $mb_id.'的推荐人', '@member', $mb_recommend, $mb_id.' 推荐');
 
     // 회원님께 메일 발송
     if ($config['cf_email_mb_member']) {
-        $subject = '['.$config['cf_title'].'] 회원가입을 축하드립니다.';
+        $subject = '['.$config['cf_title'].'] 祝贺您成为会员.';
 
         $mb_md5 = md5($mb_id.$mb_email.G5_TIME_YMDHIS);
         $certify_href = G5_BBS_URL.'/email_certify.php?mb_id='.$mb_id.'&amp;mb_md5='.$mb_md5;
@@ -248,7 +248,7 @@ if ($w == '') {
 
     // 최고관리자님께 메일 발송
     if ($config['cf_email_mb_super_admin']) {
-        $subject = '['.$config['cf_title'].'] '.$mb_nick .' 님께서 회원으로 가입하셨습니다.';
+        $subject = '['.$config['cf_title'].'] '.$mb_nick .' 注册成为了新会员.';
 
         ob_start();
         include_once ('./register_form_update_mail2.php');
@@ -266,10 +266,10 @@ if ($w == '') {
 
 } else if ($w == 'u') {
     if (!trim($_SESSION['ss_mb_id']))
-        alert('로그인 되어 있지 않습니다.');
+        alert('请您登录后使用.');
 
     if (trim($_POST['mb_id']) != $mb_id)
-        alert("로그인된 정보와 수정하려는 정보가 틀리므로 수정할 수 없습니다.\\n만약 올바르지 않은 방법을 사용하신다면 바로 중지하여 주십시오.");
+        alert("您的登录信息与操作会员账户不符\\n您的操作及IP地址已被记录，请使用正常方式操作.");
 
     $sql_password = "";
     if ($mb_password)
@@ -401,7 +401,7 @@ if (isset($_FILES['mb_icon']) && is_uploaded_file($_FILES['mb_icon']['tmp_name']
 
 // 인증메일 발송
 if ($config['cf_use_email_certify'] && $old_email != $mb_email) {
-    $subject = '['.$config['cf_title'].'] 인증확인 메일입니다.';
+    $subject = '['.$config['cf_title'].'] 邮件地址认证邮件.';
 
     $mb_datetime = $member['mb_datetime'] ? $member['mb_datetime'] : G5_TIME_YMDHIS;
     $mb_md5 = md5($mb_id.$mb_email.$mb_datetime);
@@ -437,7 +437,7 @@ if($w == '' && $default['de_member_reg_coupon_use'] && $default['de_member_reg_c
     } while(1);
 
     if($create_coupon) {
-        $cp_subject = '신규 회원가입 축하 쿠폰';
+        $cp_subject = '祝贺您成为我们的会员';
         $cp_method = 2;
         $cp_target = '';
         $cp_start = G5_TIME_YMD;
@@ -481,14 +481,14 @@ if ($w == '') {
 
     if ($old_email != $mb_email && $config['cf_use_email_certify']) {
         set_session('ss_mb_id', '');
-        alert('회원 정보가 수정 되었습니다.\n\nE-mail 주소가 변경되었으므로 다시 인증하셔야 합니다.', G5_URL);
+        alert('您的会员账户信息已发生更改\n\n由于邮件地址变更，您需要重新进行邮件地址认证.', G5_URL);
     } else {
         echo '
         <!doctype html>
         <html lang="ko">
         <head>
         <meta charset="utf-8">
-        <title>회원정보수정</title>
+        <title>会员信息修改</title>
         <body>
         <form name="fregisterupdate" method="post" action="'.G5_HTTP_BBS_URL.'/register_form.php">
         <input type="hidden" name="w" value="u">
@@ -497,7 +497,7 @@ if ($w == '') {
         <input type="hidden" name="is_update" value="1">
         </form>
         <script>
-        alert("회원 정보가 수정 되었습니다.");
+        alert("您的会员账户信息已发生更改.");
         document.fregisterupdate.submit();
         </script>
         </body>
