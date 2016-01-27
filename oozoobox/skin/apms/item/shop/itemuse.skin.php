@@ -50,11 +50,11 @@ $list_cnt = count($list);
 				<?php echo get_view_thumbnail($list[$i]['is_content'], $default['pt_img_width']); // 후기 내용 ?>
 				<?php if ($list[$i]['is_btn']) { ?>
 					<div class="media-btn text-right">
-						<a href="#" onclick="apms_form('itemuse_form', '<?php echo $list[$i]['is_edit_href'];?>'); return false; ">
+						<a href="<?php echo $list[$i]['is_edit_href'];?>">
 							<span class="text-muted"><i class="fa fa-plus"></i> 修改</span>
 						</a>
 						&nbsp;
-						<a href="#" onclick="apms_delete('itemuse', '<?php echo $list[$i]['is_del_href'];?>', '<?php echo $list[$i]['is_del_return'];?>'); return false; ">
+						<a href="<?php echo $list[$i]['is_del_href'];?>">
 							<span class="text-muted"><i class="fa fa-times"></i> 删除</span>
 						</a>
 					</div>
@@ -83,9 +83,11 @@ $list_cnt = count($list);
 	<?php } ?>
 	<div class="pull-right">
 		<div class="btn-group">
-			<button type="button" class="btn btn-color btn-sm" onclick="apms_form('itemuse_form', '<?php echo $itemuse_form; ?>');">
-				<i class="fa fa-pencil"></i> 填写评价<span class="sound_only"> 새 창</span>
+    <a href="<?php echo $itemuse_form; ?>">
+			<button type="button" class="btn btn-color btn-sm">
+				<i class="fa fa-pencil"></i> 填写评价
 			</button>
+    </a>
 			<?php if($admin_href) { ?>
 				<a class="btn btn-black btn-sm" href="<?php echo $admin_href; ?>"><i class="fa fa-th-large"></i><span class="hidden-xs"> 관리</span></a>
 			<?php } ?>

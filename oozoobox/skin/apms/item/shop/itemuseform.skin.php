@@ -70,7 +70,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$item_skin_url.'/style.css" type=
 
 			<div class="text-center">
 				<button type="submit" class="btn btn-color btn-sm">确认</button>
-				<button type="button" class="btn btn-black btn-sm" onclick="window.close();">关闭</button>
+				<button type="button" class="btn btn-black btn-sm" onclick="javascript:history.go(-1);">取消</button>
 			</div>
 		</form>
 	</div>

@@ -584,8 +584,8 @@ $content_cnt=$row['cnt'];
                             
                             <!--s: 후기 리스트-->
                             <ul id="tab2_after_comment">
-                            	<?php include_once('./itemuse.php'); ?>
-							</ul>
+                           		 <iframe width="100%" height="750" src="/shop/itemuse.php?it_id=1453187261&ca_id=10" border="0" frameborder="no" marginwidth="0" marginheight="0" scrolling="yes" allowtransparency="yes" runat="server"></iframe>                            
+														</ul>
                             <!--s: 후기 리스트-->                        
                         </div>
                     </div>
@@ -966,6 +966,11 @@ $(function () {
         var activeTab = $(this).attr("rel");
         $("#" + activeTab).fadeIn()
     });
+		
+	if('use'=='use'){
+    fn_CtlDsp('detail_tab1','detail_tab2','li_2')
+  }
+
 });
 	
 	

@@ -105,8 +105,18 @@ for ($i=0; $row=sql_fetch_array($result); $i++)	{
 
 $write_pages = (G5_IS_MOBILE) ? $config['cf_mobile_pages'] : $config['cf_write_pages'];
 $list_page = './itemuse.php?it_id='.$it_id.'&amp;ca_id='.$ca_id.'&amp;urows='.$urows.'&amp;page=';
-
+if($move) {
+	include_once('./_head.php');
+} else {
+	include_once(G5_PATH.'/head.sub.php');
+	@include_once(THEMA_PATH.'/head.sub.php');
+}
 include_once($item_skin_path.'/itemuse.skin.php');
-
+if($move) {
+	include_once('./_tail.php');
+} else {
+	@include_once(THEMA_PATH.'/tail.sub.php');
+	include_once(G5_PATH.'/tail.sub.php');
+}
 unset($list);
 ?>

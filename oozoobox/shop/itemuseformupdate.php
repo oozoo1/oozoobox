@@ -70,7 +70,7 @@ if ($w == "") {
     if ($default['de_item_use_use']) {
         $alert_msg = "管理员审核出现在列表.";
     }  else {
-		//$alert_msg = "등록 되었습니다.";
+		echo "<script>alert('发布完成');window.location='/shop/itemuse.php?it_id=$it_id&ca_id=$ca_id'</script>";
 
 		// 내글반응	등록
 		$it['pt_id'] = ($it['pt_id']) ? $it['pt_id'] : $config['cf_admin']; // 파트너 없으면 최고관리자에게 보냄
@@ -92,7 +92,7 @@ else if ($w == "u")
 			  where is_id = '$is_id' ";
     sql_query($sql);
 
-    //$alert_msg = "수정 되었습니다.";
+    echo "<script>alert('修改成功');window.location='/shop/itemuse.php?it_id=$it_id&ca_id=$ca_id'</script>";
 }
 else if ($w == "d")
 {
@@ -130,7 +130,7 @@ else if ($w == "d")
 	$sql = " delete from {$g5['g5_shop_item_use_table']} where is_id = '$is_id' and md5(concat(is_id,is_time,is_ip)) = '{$hash}' ";
 	sql_query($sql);
 
-	//$alert_msg = "0|삭제 하셨습니다.";
+	echo "<script>alert('删除成功');window.location='/shop/itemuse.php?it_id=$it_id&ca_id=$ca_id'</script>";
 }
 
 if(!$default['de_item_use_use']) update_use_cnt($it_id);

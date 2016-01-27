@@ -71,11 +71,7 @@ if($move && $header_skin)
 
 			<div class="text-center">
 				<button type="submit" class="btn btn-color btn-sm">发布</button>
-				<?php if($move) { ?>
-					<button type="button" class="btn btn-black btn-sm" onclick="history.go(-1);">取消</button>
-				<?php } else { ?>
-					<button type="button" class="btn btn-black btn-sm" onclick="window.close();">关闭</button>
-				<?php } ?>
+				<button type="button" class="btn btn-black btn-sm" onclick="history.go(-1);">取消</button>
 			</div>
 		</form>
 	</div>
