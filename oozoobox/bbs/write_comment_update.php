@@ -5,7 +5,7 @@ include_once(G5_CAPTCHA_PATH.'/captcha.lib.php');
 
 // 090710
 if (substr_count($wr_content, "&#") > 50) {
-    alert('내용에 올바르지 않은 코드가 다수 포함되어 있습니다.');
+    alert('请勿在内容中使用代码或特殊符号.');
     exit;
 }
 
@@ -18,28 +18,28 @@ if (!empty($_POST['wr_email']))
 // 비회원의 경우 이름이 누락되는 경우가 있음
 if ($is_guest) {
     if ($wr_name == '')
-        alert('이름은 필히 입력하셔야 합니다.');
+        alert('请输入名称.');
     if(!chk_captcha())
-        alert('자동등록방지 숫자가 틀렸습니다.');
+        alert('您输入的验证码错误，请重新输入.');
 }
 
 if ($w == "c" || $w == "cu") {
     if ($member['mb_level'] < $board['bo_comment_level'])
-        alert('댓글을 쓸 권한이 없습니다.');
+        alert('评论您没有发表主题权限.');
 }
 else
-    alert('w 값이 제대로 넘어오지 않았습니다.');
+    alert('w值传递错误.');
 
 // 세션의 시간 검사
 // 4.00.15 - 댓글 수정시 연속 게시물 등록 메시지로 인한 오류 수정
 if ($w == 'c' && $_SESSION['ss_datetime'] >= (G5_SERVER_TIME - $config['cf_delay_sec']) && !$is_admin)
-    alert('너무 빠른 시간내에 게시물을 연속해서 올릴 수 없습니다.');
+    alert('您发帖速度太快了，请休息一下~.');
 
 set_session('ss_datetime', G5_SERVER_TIME);
 
 $wr = get_write($write_table, $wr_id);
 if (empty($wr['wr_id']))
-    alert("글이 존재하지 않습니다.\\n글이 삭제되었거나 이동하였을 수 있습니다.");
+    alert("未找到您访问的内容\\n您访问的内容可能已经被删除或移动到其他栏目.");
 
 
 // "인터넷옵션 > 보안 > 사용자정의수준 > 스크립팅 > Action 스크립팅 > 사용 안 함" 일 경우의 오류 처리
@@ -82,7 +82,7 @@ if ($w == 'c') // 댓글 입력
     // 댓글쓰기 포인트설정시 회원의 포인트가 음수인 경우 댓글을 쓰지 못하던 버그를 수정 (곱슬최씨님)
     $tmp_point = ($member['mb_point'] > 0) ? $member['mb_point'] : 0;
     if ($tmp_point + $board['bo_comment_point'] < 0 && !$is_admin)
-        alert('보유하신 포인트('.number_format($member['mb_point']).')가 없거나 모자라서 댓글쓰기('.number_format($board['bo_comment_point']).')가 불가합니다.\\n\\n포인트를 적립하신 후 다시 댓글을 써 주십시오.');
+        alert('当前积分('.number_format($member['mb_point']).')不足支付发表评论所需的积分('.number_format($board['bo_comment_point']).').\\n\\n请获取更多积分后重试.');
 
     // 댓글 답변
 	$response_flag = '';
@@ -94,12 +94,12 @@ if ($w == 'c') // 댓글 입력
                     where wr_id = '$comment_id' ";
         $reply_array = sql_fetch($sql);
         if (!$reply_array['wr_id'])
-            alert('답변할 댓글이 없습니다.\\n\\n답변하는 동안 댓글이 삭제되었을 수 있습니다.');
+            alert('没有找到您要回复的评论内容\\n\\n此内容可能在您编辑回复时已被删除.');
 
         $tmp_comment = $reply_array['wr_comment'];
 
         if (strlen($reply_array['wr_comment_reply']) == 5)
-            alert('더 이상 답변하실 수 없습니다.\\n\\n답변은 5단계 까지만 가능합니다.');
+            alert('回帖数量已达到回帖限制\\n\\n仅允许回复5层.');
 
         $reply_len = strlen($reply_array['wr_comment_reply']) + 1;
         if ($board['bo_reply_order']) {
@@ -130,7 +130,7 @@ if ($w == 'c') // 댓글 입력
         if (!$row['reply'])
             $reply_char = $begin_reply_char;
         else if ($row['reply'] == $end_reply_char) // A~Z은 26 입니다.
-            alert('더 이상 답변하실 수 없습니다.\\n\\n답변은 26개 까지만 가능합니다.');
+            alert('回帖数量已达到回帖限制\\n\\n仅允许回复26层.');
         else
             $reply_char = chr(ord($row['reply']) + $reply_number);
 
@@ -225,12 +225,12 @@ if ($w == 'c') // 댓글 입력
         $group_admin = get_admin('group');
         $board_admin = get_admin('board');
 
-        $wr_content = nl2br(get_text(stripslashes("원글\n{$wr['wr_subject']}\n\n\n댓글\n$wr_content")));
+        $wr_content = nl2br(get_text(stripslashes("原文\n{$wr['wr_subject']}\n\n\n评论\n$wr_content")));
 
-        $warr = array( ''=>'입력', 'u'=>'수정', 'r'=>'답변', 'c'=>'댓글 ', 'cu'=>'댓글 수정' );
+        $warr = array( ''=>'输入', 'u'=>'修改', 'r'=>'回复', 'c'=>'评论 ', 'cu'=>'修改评论' );
         $str = $warr[$w];
 
-        $subject = '['.$config['cf_title'].'] '.$board['bo_subject'].' 게시판에 '.$str.'글이 올라왔습니다.';
+        $subject = '['.$config['cf_title'].'] '.$board['bo_subject'].' 论坛版块新发表 '.$str.'内容.';
         // 4.00.15 - 메일로 보내는 댓글의 바로가기 링크 수정
         $link_url = G5_BBS_URL."/board.php?bo_table=".$bo_table."&amp;wr_id=".$wr_id."&amp;".$qstr."#c_".$comment_id;
 
@@ -309,15 +309,15 @@ else if ($w == 'cu') // 댓글 수정
             if ($member['mb_level'] >= $mb['mb_level']) // 자신의 레벨이 크거나 같다면 통과
                 ;
             else
-                alert('게시판관리자의 권한보다 높은 회원의 댓글이므로 수정할 수 없습니다.');
+                alert('评论作者等级高于您的等级，您没有编辑权限.');
         } else
-            alert('자신이 관리하는 게시판이 아니므로 댓글을 수정할 수 없습니다.');
+            alert('由于您没有当前版块管理权限所以不能进行编辑.');
     } else if ($member['mb_id']) {
         if ($member['mb_id'] != $comment['mb_id'])
-            alert('자신의 글이 아니므로 수정할 수 없습니다.');
+            alert('您没有编辑权限.');
     } else {
         if($comment['wr_password'] != $wr_password)
-            alert('댓글을 수정할 권한이 없습니다.');
+            alert('您没有修改评论权限.');
     }
 
     $sql = " select count(*) as cnt from $write_table
@@ -328,7 +328,7 @@ else if ($w == 'cu') // 댓글 수정
                 and wr_is_comment = 1 ";
     $row = sql_fetch($sql);
     if ($row['cnt'] && !$is_admin)
-        alert('이 댓글와 관련된 답변댓글이 존재하므로 수정 할 수 없습니다.');
+        alert('此内容已有关联评论，不能进行编辑修改.');
 
     $sql_ip = "";
     if (!$is_admin)
