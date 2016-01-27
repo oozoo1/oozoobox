@@ -966,11 +966,6 @@ $(function () {
         var activeTab = $(this).attr("rel");
         $("#" + activeTab).fadeIn()
     });
-		
-	if('use'=='use'){
-    fn_CtlDsp('detail_tab1','detail_tab2','li_2')
-  }
-
 });
 	
 	
