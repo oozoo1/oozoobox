@@ -9,11 +9,11 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 <div id="footer">
 	<ul class="footer_link">
     	<li><a href="/">首页</a></li>
-    	<li><a href="/company/index.html">公司介绍</a></li>    
-    	<li><a href="/company/index.html#feature">联系我们</a></li>
+    	<li><a href="/company/index.html" target="_blank">公司介绍</a></li>    
+    	<li><a href="/company/index.html#feature" target="_blank">联系我们</a></li>
     	<li><a href="/shop/main_promise03.php">配送方式 </a></li>
-    	<li><a href="/company/index.html#contact">合作咨询</a></li>   
-    	<li><a href="/company/index.html#overview">招聘指南 </a></li>
+    	<li><a href="/company/index.html#contact" target="_blank">合作咨询</a></li>   
+    	<li><a href="/company/index.html#overview" target="_blank">招聘指南 </a></li>
     	<li><a href="/shop/cscenter.php">客户服务</a></li>
     	<li><a href="/bbs/board.php?bo_table=faq&wr_id=8">服务协议</a></li>         
     </ul>
@@ -22,7 +22,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
         OOZOOBOX | 代表：李荷俊 | 地址 : 韩国首尔特别市永登浦区议事堂大街38 101/913| 邮政编码 ：07236 <br>
         联系电话 ：+82-2-1234-1234 / +82-70-1234-1234 | FAX : +82-50-1234-1234 <br>
         发货和退货地址：韩国首尔特别市永登浦区国会大街62路 21 10楼| 邮政编码 ：07236<br>
-        公司营业执照号 ：107-86-81797 | 通信销售申报号码 ：제2015-서울영등포-1249호 <br>
+        公司营业执照号 ：107-86-81797 | 通信销售申报号码 ： 제2015-서울영등포-1249호 <br>
         服务时间: 周一到周六 08:00 ~ 17:00 | 服务热线 : +82-2-1234-1234<br>
          Copyright © 2015 OOZOOBOX.com 版权所有 <br>
          <a href="http://m.kuaidi100.com" target="_blank" style="color:#fff">快递查询</a>
@@ -37,14 +37,14 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 		<div class="quick_links_panel">
 			<div class="quick_links">
 				<li>
-					<a href="#" class="my_qlinks"><i class="setting"></i></a>
-					<div class="ibar_login_box status_login">
-						<div class="login_btnbox">
+					<a href="/shop/orderinquiry.php" class="my_qlinks"><i class="setting"></i></a>
+					<!--<div class="ibar_login_box status_login">
+					<div class="login_btnbox">
 							<a href="/shop/orderinquiry.php" class="login_order">我的订单</a>
 							<a href="/shop/wishlist.php" class="login_favorite">我的收藏</a>
 						</div>
 						<i class="icon_arrow_white"></i>
-					</div>
+					</div>-->
 				</li>
 				<li>
 					
