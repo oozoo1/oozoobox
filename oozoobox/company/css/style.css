@@ -179,7 +179,7 @@ h5{ font-size: 14px; line-height: 24px; }
 ============================================================*/
 .slider {}
 .slider .main_bg {background: url("../images/showcase-bg02.png") no-repeat center center; background-size: cover; min-height: 580px; height: 500px; overflow: hidden; }
-.slider .main_content {width:100%; background:#ddd; padding-bottom:100px;}
+.slider .main_content {width:100%; background:#ddd; padding-bottom:115px;}
 .slider-wrap{width:1170px; margin:0 auto;}
 .slider-content{ padding-top: 50px; }
 .slider .main_content  .col-md-7 {width:95%;}
