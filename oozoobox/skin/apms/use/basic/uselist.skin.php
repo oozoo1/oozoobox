@@ -32,7 +32,7 @@ $list_cnt = count($list);
               </select>
             </div>
             <div class="sc_title_off">
-              <select name="sfl" id="sfl" class="form-control input-sm">
+              <select name="sfl" id="sfl" class="form-control input-sm" style="width:120px;">
                 <option value="">选择</option>
                 <option value="b.it_name"    <?php echo get_selected($sfl, "b.it_name", true); ?>>商品名称</option>
                 <option value="a.it_id"      <?php echo get_selected($sfl, "a.it_id"); ?>>商品号码</option>
