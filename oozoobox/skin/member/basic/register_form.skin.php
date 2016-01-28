@@ -61,9 +61,31 @@ body {
 	background-image: none; 
 	padding:10px 20px 10px 20px;
 }
-.r_input{border:solid 1px #d9d9d9; width:240px; height:31px; color:#bdbdbd; ime-mode:active();}
+.r_input{border:solid 1px #d9d9d9; width:240px; height:31px; color:#bdbdbd;}
 -->
+
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder { /* WebKit browsers */
+  color:transparent;
+}
+
+input:focus:-moz-placeholder,
+textarea:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:transparent;
+}
+
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:transparent;
+}
+
+input:focus:-ms-input-placeholder,
+textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:transparent;
+}
 </style>
+
+
 <script type="text/javascript"><!--自动检查账号是否被注册-->
 	$(
 	  function()
@@ -138,27 +160,27 @@ function setFocus()
               <table width="420" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                   <td width="100" height="50"><img src="<?=$skin_url?>/images/join_title_01.png"></td>
-                  <td><input type="text" name="mb_id" value="<?php echo $member['mb_id'] ?>" id="reg_mb_id" <?php echo $required ?> <?php echo $readonly ?> minlength="3" onKeyUp="check()" maxlength="20" class="r_input" onKeyDown="changeEnter()" placeholder="请输入,英文,数字,用户名"></td>
+                  <td><input type="text" name="mb_id" value="<?php echo $member['mb_id'] ?>" id="reg_mb_id" <?php echo $required ?> <?php echo $readonly ?> minlength="3" onKeyUp="check()" maxlength="20" class="r_input" onKeyDown="changeEnter()" style="ime-mode: disabled;" placeholder="请输入,英文,数字,用户名" ></td>
                   <td width="70" align="left"><span id="chk"></span></td>
                 </tr>
                 <tr>
                   <td width="100" height="50"><img src="<?=$skin_url?>/images/join_title_02.png"></td>
-                  <td><input type="text" id="reg_mb_name" name="mb_name" <?php echo $required ?> <?php echo $readonly; ?> class="r_input" size="10" placeholder="请输入真实姓名" onKeyUp="check()" onKeyDown="changeEnter()"></td>
+                  <td><input type="text" id="reg_mb_name" name="mb_name" <?php echo $required ?> <?php echo $readonly; ?> class="r_input" size="10" placeholder="请输入真实姓名" onKeyUp="check()" onKeyDown="changeEnter()" style="ime-mode: active;"></td>
                   <td width="70" align="left"><span id="mbname"></span></td>
                 </tr>
                 <tr>
                   <td height="50"><img src="<?=$skin_url?>/images/join_title_03.png"></td>
-                  <td><input type="password" name="mb_password" id="reg_mb_password" <?php echo $required ?> class="r_input" minlength="3" maxlength="20" placeholder="请输入密码" OnKeyDown="changeEnter()"></td>
+                  <td><input type="password" name="mb_password" id="reg_mb_password" <?php echo $required ?> class="r_input" minlength="3" maxlength="20" placeholder="请输入密码" OnKeyDown="changeEnter()" style="ime-mode: disabled;"></td>
                   <td align="left">&nbsp;</td>
                 </tr>
                 <tr>
                   <td height="50"><img src="<?=$skin_url?>/images/join_title_04.png"></td>
-                  <td><input type="password" name="mb_password_re" id="reg_mb_password_re" <?php echo $required ?> class="r_input" minlength="3" maxlength="20" onKeyUp="validate()"  placeholder="请再次输入密码" OnKeyDown="changeEnter()"></td>
+                  <td><input type="password" name="mb_password_re" id="reg_mb_password_re" <?php echo $required ?> class="r_input" minlength="3" maxlength="20" onKeyUp="validate()"  placeholder="请再次输入密码" OnKeyDown="changeEnter()" style="ime-mode: disabled;"></td>
                   <td align="left"><span id="tishi"></span></td>
                 </tr>
                 <tr>
                   <td height="50"><img src="<?=$skin_url?>/images/join_title_05.png"></td>
-                  <td><input type="text" name="mb_email" value="<?php echo isset($member['mb_email'])?$member['mb_email']:''; ?>" id="mb_email" required class="r_input" size="70" maxlength="100" placeholder="请输入E-mail地址" OnKeyDown="changeEnter()"></td>
+                  <td><input type="text" name="mb_email" value="<?php echo isset($member['mb_email'])?$member['mb_email']:''; ?>" id="mb_email" required class="r_input" size="70" maxlength="100" placeholder="请输入E-mail地址" OnKeyDown="changeEnter()" style="ime-mode: disabled;"></td>
                   <td><span id="email"></span></td>
                 </tr>
               </table>
@@ -303,4 +325,16 @@ function fregisterform_submit(f)
 		return true;
 }
 </script>
+
+<script>
+
+$(".r_input").keyup(function(){
+
+	$(this).val( $(this).val().replace(/[^A-z]/g, '') );
+
+});
+
+</script>
+
+
 </body>
