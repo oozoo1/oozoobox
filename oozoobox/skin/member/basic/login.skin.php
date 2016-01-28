@@ -96,7 +96,7 @@ a:active {
                   <td>
                     <table width="300" border="0" cellspacing="0" cellpadding="0">
                         <tr>
-                          <td height="50"><input name="mb_id" type="text" id="mb_id" class="input" OnKeyDown="changeEnter()" style="border:solid 1px #dedede; background-image:url(/images/login_id_bg.png); color:#aaaaaa; width:300px; height:40px; padding-left:50px;"/></td>
+                          <td height="50"><input name="mb_id" type="text" id="mb_id" class="input" OnKeyDown="changeEnter()" style="border:solid 1px #dedede; background-image:url(/images/login_id_bg.png); color:#aaaaaa; width:300px; height:40px; padding-left:50px; ime-mode:inactive;"/></td>
                         </tr>
                         <tr>
                           <td height="50"><input name="mb_password" type="password" id="mb_password" class="input" OnKeyDown="changeEnter()" style="border:solid 1px #dedede; background-image:url(/images/login_pw_bg.png); color:#aaaaaa; width:300px; height:40px; padding-left:50px;"/></td>
