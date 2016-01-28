@@ -2,13 +2,13 @@
 include_once('./cs_head.php');
 
 //////////////////////////공지사항///////////////////////////////////////
-$sql_faq = "SELECT * FROM `g5_write_buyerfaq` ORDER BY `g5_write_buyerfaq`.`wr_datetime` DESC LIMIT 0 , 10";
+$sql_faq = "SELECT * FROM `g5_write_buyerfaq` WHERE `wr_is_comment` =0 ORDER BY `g5_write_buyerfaq`.`wr_datetime` DESC LIMIT 0 , 10";
 $faq = sql_query($sql_faq);
 
 
 
 //////////////////////////공지사항///////////////////////////////////////
-$sql = "SELECT * FROM `g5_write_notice` ORDER BY `g5_write_notice`.`wr_datetime` DESC LIMIT 0 , 5";
+$sql = "SELECT * FROM `g5_write_notice` WHERE `wr_is_comment` =0 ORDER BY `g5_write_notice`.`wr_datetime` DESC LIMIT 0 , 5";
 $result = sql_query($sql);
 
 ?>

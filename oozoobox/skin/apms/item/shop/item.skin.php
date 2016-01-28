@@ -363,10 +363,8 @@ $row = sql_fetch($sql);
                             <input type="image" onclick="document.pressed=this.value;" src="/images/detail_btn_01.png" value="바로구매">
                             <input type="image" onclick="document.pressed=this.value;" src="/images/detail_btn_02.png" value="장바구니">
 
-                            <a href="#" onclick="apms_wishlist('<?php echo $it['it_id']; ?>'); return false;">
-                                <button id="btnAddToWishList" type="button">
+                            <a href="/bbs/write.php?bo_table=itemqa&it_id=<?=$_GET[it_id]?>&ca_id=<?=$_GET[ca_id]?>">                           
                                     <img alt="MD询问(MD에게 묻기)" src="/images/detail_btn_03.png" title="MD询问(MD에게 묻기)"/>
-                                </button>
                             </a>
                             <a href="/shop/itemrecommend.php?it_id=<?php echo $it['it_id']; ?>&ca_id=<?php echo $ca_id; ?>">
                                     <img alt="找人付款" src="/images/detail_btn_04.png" title="找人付款"/>
@@ -384,10 +382,8 @@ $row = sql_fetch($sql);
                                     <img alt="载入购物车" src="/images/detail_btn_02.png" title="购物车"/>
                                 </button>
                             </a>
-                            <a href="#" onclick="apms_wishlist('<?php echo $it['it_id']; ?>'); return false;">
-                                <button id="btnAddToWishList" type="button">
+                            <a href="#" onClick="javascript:if(confirm('您还不是网站会员 是否要登陆网站？')){document.location.href='/bbs/login.php?url=<?=urlencode("{$_SERVER[PHP_SELF]}?{$_SERVER[QUERY_STRING]}")?>'};">
                                     <img alt="MD询问(MD에게 묻기)" src="/images/detail_btn_03.png" title="MD询问(MD에게 묻기)"/>
-                                </button>
                             </a>
                             <a href="#" onClick="javascript:if(confirm('您还不是网站会员 是否要登陆网站？')){document.location.href='/bbs/login.php?url=<?=urlencode("{$_SERVER[PHP_SELF]}?{$_SERVER[QUERY_STRING]}")?>'};">
                                 <button id="btnAddToSend" type="button">
@@ -395,9 +391,7 @@ $row = sql_fetch($sql);
                                 </button>
                             </a>                                       
                         </div>                         
-                      <? } ?>  
-                        
-                        
+                      <? } ?>         
 						<?php /*?>     
                         <div class="detail_seller_store" style="padding-left: 3px;"><br>
                             <a href="<?php echo $at_href['myshop'];?>?id=<?php echo $author['mb_id'];?>">

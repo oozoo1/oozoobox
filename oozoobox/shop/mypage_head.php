@@ -39,7 +39,7 @@ $skin_url = $member_skin_url;
         </h4>
         <? } ?>
         	<!--s: 내 정보 BAR-->
-          <? if($_GET[bo_table]=="free" || $_GET[bo_table]=="event"){?>
+          <? if($_GET[bo_table]=="free" || $_GET[bo_table]=="event" || $_GET[it_id]){?>
           
           <? }else{ ?>
         	<div class="My_info">

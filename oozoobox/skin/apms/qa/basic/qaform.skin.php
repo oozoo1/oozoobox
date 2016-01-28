@@ -1,6 +1,6 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
-
+include_once('./mypage_head.php');
 // StyleSheet
 add_stylesheet('<link rel="stylesheet" href="'.$skin_url.'/style.css" type="text/css" media="screen">',0);
 
@@ -9,10 +9,14 @@ if($move && $header_skin)
 	include_once('./header.php');
 
 ?>
-
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="16"></td>
+  </tr>
+</table>
 <div class="form-box">
 	<div class="form-header">
-		<h2>Q & A</h2>
+		<h2>MD咨询</h2>
 	</div>
 	<div class="form-body">
 
@@ -24,19 +28,9 @@ if($move && $header_skin)
 			<input type="hidden" name="qrows" value="<?php echo $qrows; ?>">
 			<input type="hidden" name="page" value="<?php echo $page; ?>">
 			<input type="hidden" name="move" value="<?php echo $move; ?>">
+      <input type="hidden" name="iq_email" value="<?php echo get_text($qa['iq_email']); ?>" class="form-control input-sm" size="30">
+      <input type="hidden" name="iq_hp" value="<?php echo get_text($qa['iq_hp']); ?>" class="form-control input-sm" size="20">
 
-			<div class="row">
-				<div class="col-sm-6">
-					<div class="form-group">
-						<label for="iq_email"><b class="en">이메일</b></label>
-						<input type="text" name="iq_email" value="<?php echo get_text($qa['iq_email']); ?>" class="form-control input-sm" size="30">
-					</div>
-				</div>
-				<div class="col-sm-6">
-					<label for="iq_hp"><b class="en">휴대폰</b></label>
-					<input type="text" name="iq_hp" value="<?php echo get_text($qa['iq_hp']); ?>" class="form-control input-sm" size="20">
-				</div>
-			</div>
 			<div class="form-group">
 				<label for="iq_subject"><b class="en">제목</b><strong class="sound_only"> 필수</strong></label>
 				<input type="text" name="iq_subject" value="<?php echo get_text($qa['iq_subject']); ?>" id="iq_subject" required class="form-control input-sm minlength=2" minlength="2" maxlength="250" placeholder="이메일 입력시 답변이 이메일로 전송되며, 휴대폰 입력시 답변등록 알림이 SMS로 전송됩니다.">
@@ -71,3 +65,4 @@ if($move && $header_skin)
 		$("#iq_answer").addClass("form-control input-sm form-iq-size");
 	});
 </script>
+<? include_once('./mypage_tail.php'); ?>

@@ -14,6 +14,15 @@ function chkReset(f)
     document.getElementById("pw2").style.display = "";
 }
 </script>
+<script language="javascript"> 
+function changeEnter(){ 
+    if(event.keyCode==13){event.keyCode=9;} 
+} 
+function setFocus()
+{
+		document.getElementById("mb_id").focus()
+}
+</script> 
 <!-- 登录开始 { -->
 <style type="text/css">
 <!--
@@ -60,8 +69,9 @@ a:active {
 }
 -->
 </style>
+<body onLoad="setFocus()">
 <table width="990" border="0" cellspacing="0" cellpadding="0" align="center">
-<form name="flogin" action="<?php echo $login_action_url ?>" onsubmit="return flogin_submit(this);" method="post">
+<form name="flogin" action="<?php echo $login_action_url ?>" onsubmit="return fregisterform_submit(this);" method="post">
 <input type="hidden" name="url" value='<?php echo $login_url ?>'>
   <tr>
     <td height="162" valign="top" style="padding-top:20px;"><a href="/"><img src="<?=$skin_url?>/images/join_logo.png" border="0"></a></td>
@@ -86,10 +96,10 @@ a:active {
                   <td>
                     <table width="300" border="0" cellspacing="0" cellpadding="0">
                         <tr>
-                          <td height="50"><input name="mb_id" type="text" class="input" style="border:solid 1px #dedede; background-image:url(/images/login_id_bg.png); color:#aaaaaa; width:300px; height:40px; padding-left:50px;"/></td>
+                          <td height="50"><input name="mb_id" type="text" id="mb_id" class="input" OnKeyDown="changeEnter()" style="border:solid 1px #dedede; background-image:url(/images/login_id_bg.png); color:#aaaaaa; width:300px; height:40px; padding-left:50px;"/></td>
                         </tr>
                         <tr>
-                          <td height="50"><input name="mb_password" type="password" class="input" style="border:solid 1px #dedede; background-image:url(/images/login_pw_bg.png); color:#aaaaaa; width:300px; height:40px; padding-left:50px;"/></td>
+                          <td height="50"><input name="mb_password" type="password" id="mb_password" class="input" OnKeyDown="changeEnter()" style="border:solid 1px #dedede; background-image:url(/images/login_pw_bg.png); color:#aaaaaa; width:300px; height:40px; padding-left:50px;"/></td>
                         </tr>
                         <tr>
                           <td height="70"><input type="submit" value="  登  录  " class="left"  style="background-color:#fd5c02; width:300px; height:40px; border:0; font-weight:bold; color:#fff;"/></td>
@@ -118,4 +128,42 @@ a:active {
   </tr>
 </form>
 </table>
+<script>
+// submit 最终检测确认
+function fregisterform_submit(f)
+{
+		// 会员ID 检查
+		if (f.mb_id.value == "") {
+//				var msg = mb_id_check();
+				if (msg) {
+						alert(msg);
+						f.mb_id.focus();
+						//f.mb_id.select();
+						return false;
+				}
+		}else{
+				//var msg = mb_id_check();
+				if(!/^[a-zA-Z0-9]{1,}$/gi.test(document.getElementById("mb_id").value)) {
+					alert('只能输入英文或者数字！');					 
+					f.mb_id.focus();
+					document.getElementById("mb_id").value="";
+					return false;
+				}	
+		}
+
+		if (f.mb_password.value == "") {
+				alert('密码不能为空');
+				if (f.mb_password.value.length < 4) {
+						alert("密码必须输入4个以上字符组成");
+						f.mb_password.focus();
+						return false;
+				}
+		}
+
+		document.getElementById("btn_submit").disabled = "disabled";
+
+		return true;
+}
+</script>
 <!-- } 登录结束 -->
+</body>
