@@ -3,32 +3,32 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 ?>
 <section id="sod_frm_pay" class="order-payment">
 	<div class="panel panel-default">
-		<div class="panel-heading"><strong><i class="fa fa-check fa-lg"></i> 결제정보</strong></div>
+		<div class="panel-heading"><strong><i class="fa fa-check fa-lg"></i> 结算信息</strong></div>
 		<div class="panel-body">
 			<?php if($oc_cnt > 0) { ?>
 				<div class="form-group">
-					<label class="col-sm-2 control-label"><b>주문할인금액</b></label>
+					<label class="col-sm-2 control-label"><b>订单金额</b></label>
 					<label class="col-sm-2 control-label">
-						<span id="od_cp_price">0</span>원
+						<span id="od_cp_price">0</span>元
 					</label>
 					<div class="col-sm-7">
 						<input type="hidden" name="od_cp_id" value="">
 						<div class="btn-group">
-							<button type="button" id="od_coupon_btn" class="btn btn-black btn-sm">쿠폰적용</button>
+							<button type="button" id="od_coupon_btn" class="btn btn-black btn-sm">使用购物券</button>
 						</div>
 					</div>
 				</div>
 			<?php } ?>
 			<?php if($sc_cnt > 0) { ?>
 				<div class="form-group">
-					<label class="col-sm-2 control-label"><b>배송할인금액</b></label>
+					<label class="col-sm-2 control-label"><b>运费优惠</b></label>
 					<label class="col-sm-2 control-label">
-						<span id="sc_cp_price">0</span>원
+						<span id="sc_cp_price">0</span>元
 					</label>
 					<div class="col-sm-7">
 						<input type="hidden" name="sc_cp_id" value="">
 						<div class="btn-group">
-							<button type="button" id="sc_coupon_btn" class="btn btn-black btn-sm">쿠폰적용</button>
+							<button type="button" id="sc_coupon_btn" class="btn btn-black btn-sm">使用优惠券</button>
 						</div>
 					</div>
 				</div>
@@ -38,7 +38,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 			<?php if($is_none) { ?>
 				<div class="alert alert-danger text-center">
 					<?php if($default['as_point']) { ?>
-						<b>보유하신 포인트가 부족합니다.</b>
+						<b>没有积分.</b>
 					<?php } else { ?>
 						<b>결제할 방법이 없습니다.</b> 운영자에게 알려주시면 감사하겠습니다.
 					<?php } ?>
@@ -51,7 +51,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 							 <label><input type="radio" id="od_settle_kakaopay" name="od_settle_case" value="KAKAOPAY"> <span class="kakaopay_icon">KAKAOPAY</span></label>
 						<?php } ?>
 						<?php if($is_po) { ?>
-							 <label><input type="radio" id="od_settle_point" name="od_settle_case" value="포인트"> 포인트결제</label>
+							 <label><input type="radio" id="od_settle_point" name="od_settle_case" value="포인트"> 积分结账</label>
 						<?php } ?>
 						<?php if($is_mu) { ?>
 							<label><input name="od_settle_case" type="radio" id="od_settle_bank" value="支付宝" checked="checked"> 支付宝

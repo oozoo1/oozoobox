@@ -482,44 +482,44 @@ if($is_kakaopay_use) {
     ?>
 
     <section id="sod_frm_pay">
-        <h2>결제정보</h2>
+        <h2>结账信息</h2>
 
         <div class="tbl_frm01 tbl_wrap">
             <table>
             <tbody>
             <?php if($oc_cnt > 0) { ?>
             <tr>
-                <th scope="row">주문할인쿠폰</th>
+                <th scope="row">订单打折</th>
                 <td>
                     <input type="hidden" name="od_cp_id" value="">
-                    <button type="button" id="od_coupon_btn" class="btn_frmline">쿠폰적용</button>
+                    <button type="button" id="od_coupon_btn" class="btn_frmline">使用购物券</button>
                 </td>
             </tr>
             <tr>
-                <th scope="row">주문할인금액</th>
-                <td><span id="od_cp_price">0</span>원</td>
+                <th scope="row">订单打折金额</th>
+                <td><span id="od_cp_price">0</span>元</td>
             </tr>
             <?php } ?>
             <?php if($sc_cnt > 0) { ?>
             <tr>
-                <th scope="row">배송비할인쿠폰</th>
+                <th scope="row">运费打折</th>
                 <td>
                     <input type="hidden" name="sc_cp_id" value="">
-                    <button type="button" id="sc_coupon_btn" class="btn_frmline">쿠폰적용</button>
+                    <button type="button" id="sc_coupon_btn" class="btn_frmline">使用购物券</button>
                 </td>
             </tr>
             <tr>
-                <th scope="row">배송비할인금액</th>
-                <td><span id="sc_cp_price">0</span>원</td>
+                <th scope="row">运费打折金额</th>
+                <td><span id="sc_cp_price">0</span>元</td>
             </tr>
             <?php } ?>
             <tr>
-                <th>총 주문금액</th>
-                <td><span id="od_tot_price"><?php echo number_format($tot_price); ?></span>원</td>
+                <th>总价</th>
+                <td><span id="od_tot_price"><?php echo number_format($tot_price),2; ?></span>元</td>
             </tr>
             <tr>
-                <th>추가배송비</th>
-                <td><span id="od_send_cost2">0</span>원 (지역에 따라 추가되는 도선료 등의 배송비입니다.)</td>
+                <th>运费</th>
+                <td><span id="od_send_cost2">0</span>元</td>
             </tr>
             </tbody>
             </table>

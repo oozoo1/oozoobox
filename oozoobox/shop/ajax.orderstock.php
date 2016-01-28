@@ -7,7 +7,7 @@ else
     $tmp_cart_id = get_session('ss_cart_id');
 
 if (get_cart_count($tmp_cart_id) == 0)// 장바구니에 담기
-    die("장바구니가 비어 있습니다.\n\n이미 주문하셨거나 장바구니에 담긴 상품이 없는 경우입니다.");
+    die("购物车 没有商品 .\n\n请到我的我的购物信息里确认是否已下订单.");
 
 $keep_term = $default['de_cart_keep_term'];
 if(!$keep_term)
@@ -34,7 +34,7 @@ if($cart_stock_limit > 0) {
     $row = sql_fetch($sql);
 
     if(!$row['cnt'])
-        die("주문 요청 때까지 ".$cart_stock_limit."시간 이상 경과되어 주문 상품이 초기화 됐습니다.\n\n 장바구니에서 주문하실 상품을 다시 확인해 주십시오.");
+        die("购买信息 超过".$cart_stock_limit."小时 以上 购买信息无法确认.\n\n 请到 我的购物信息确认.");
 }
 
 // 재고체크
@@ -59,7 +59,7 @@ for($i=0; $row=sql_fetch_array($result); $i++) {
         if($row['io_id'])
             $item_option .= '('.$row['ct_option'].')';
 
-        die($item_option." 의 재고수량이 부족합니다.\n\n현재 재고수량 : " . number_format($it_stock_qty) . " 개");
+        die($item_option." 库存数量不足.\n\n现有数量 : " . number_format($it_stock_qty) . " 件");
     }
 }
 

@@ -35,7 +35,7 @@ if($skin_row['order_'.MOBILE_.'set']) {
 	$wset = apms_unpack($skin_row['order_'.MOBILE_.'set']);
 }
 
-$g5['title'] = '장바구니';
+$g5['title'] = '购物车';
 include_once('./_head.php');
 
 $skin_path = $order_skin_path;

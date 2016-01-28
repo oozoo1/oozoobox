@@ -41,7 +41,7 @@ $href = G5_BBS_URL.'/password_lost_certify.php?mb_no='.$mb['mb_no'].'&amp;mb_non
 $subject = "[".$config['cf_title']."] 找回会员登录信息";
 
 $content = "";
-
+$content .= '<table border="0" cellspacing="0" cellpadding="0" align="center" width="630"><tr><td width="21" height="18"><img src="http://data.oozoobox.com/images/mail/left_top.png"></td><td height="18" background="http://data.oozoobox.com/images/mail/top_bg.png" style="background-repeat: repeat-x;"></td><td width="21" height="18"><img src="http://data.oozoobox.com/images/mail/right_top.png"></td></tr><tr><td width="21" valign="top" background="http://data.oozoobox.com/images/mail/left_bg.png"></td><td height="600" valign="top">';
 $content .= '<div style="margin:30px auto;width:600px;border:10px solid #f7f7f7">';
 $content .= '<div style="border:1px solid #dedede">';
 $content .= '<h1 style="padding:30px 30px 0;background:#f7f7f7;color:#555;font-size:1.4em">';
@@ -64,6 +64,7 @@ $content .= '</p>';
 $content .= '<a href="'.$href.'" target="_blank" style="display:block;padding:30px 0;background:#484848;color:#fff;text-decoration:none;text-align:center">更改密码</a>';
 $content .= '</div>';
 $content .= '</div>';
+$content .= '</td><td width="21" valign="top" background="http://data.oozoobox.com/images/mail/right_bg.png"></td></tr><tr><td width="21" height="18"><img src="http://data.oozoobox.com/images/mail/left_bottom.png"></td><td height="18" background="http://data.oozoobox.com/images/mail/bottom_bg.png"></td><td height="18"><img src="http://data.oozoobox.com/images/mail/right_bottom.png"></td></tr></table>';
 
 mailer($config['cf_admin_email_name'], $config['cf_admin_email'], $mb['mb_email'], $subject, $content, 1);
 alert("{$email} 已向您的邮箱发送找回会员信息指南邮件\\n\\n请根据邮件内容进行操作", G5_URL.'');

@@ -266,10 +266,10 @@ else // 장바구니에 담기
             // 구매가격이 음수인지 체크
             if($io_type) {
                 if((int)$io_price < 0)
-                    alert('구매금액이 음수인 상품은 구매할 수 없습니다.');
+                    alert('购买金额无法修改.');
             } else {
                 if((int)$it['it_price'] + (int)$io_price < 0)
-                    alert('구매금액이 음수인 상품은 구매할 수 없습니다.');
+                    alert('购买金额无法修改.');
             }
 
             // 동일옵션의 상품이 있으면 수량 더함
@@ -290,7 +290,7 @@ else // 장바구니에 담기
 
                 if ($tmp_ct_qty + $ct_qty > $tmp_it_stock_qty)
                 {
-                    alert($io_value." 의 재고수량이 부족합니다.\\n\\n현재 재고수량 : " . number_format($tmp_it_stock_qty) . " 개");
+                    alert($io_value." 的 库存数量不够.\\n\\n现有数量 : " . number_format($tmp_it_stock_qty) . " 件");
                 }
 
                 $sql3 = " update {$g5['g5_shop_cart_table']}

@@ -7,17 +7,22 @@ if($_GET['user'])
 {
    $user=$_GET['user'];    
     //此处可进行数据库匹配，本次省略直接判断
-	$sql="select mb_id from g5_member where mb_id='$user'";//判断用户是否已经存在
-	$result=sql_query($sql);
-	$num_rows=sql_fetch_array($result);	
-    if($num_rows>0)
-	{		
-		echo "<img src=\"images/member_ck_no.gif\" class=\"t1\"/>";
-	}
-    else
-	{
-		echo "<img src=\"images/member_ck_ok.gif\" class=\"t1\"/>";
-	}
+		
+		if (preg_match("/[^0-9a-z_]+/i", $user)){
+		echo "<font color=red>只能输入 英文和数字组合！</font>";
+		}else	{	
+			$sql="select mb_id from g5_member where mb_id='$user'";//判断用户是否已经存在
+			$result=sql_query($sql);
+			$num_rows=sql_fetch_array($result);	
+					if($num_rows>0)
+				{		
+					echo "<img src=\"images/member_ck_no.gif\" class=\"t1\"/>";
+				}
+					else
+				{
+					echo "<img src=\"images/member_ck_ok.gif\" class=\"t1\"/>";
+				}
+		}
 }
 
 
@@ -36,6 +41,7 @@ if($_GET['old_pass'])
 	}
     else
 	{
+		echo "<script>alert('现有密码错误 请从新输入');</script>";
 		echo "<img src=\"/bbs/images/member_ck_no.gif\" class=\"t1\"/>";
 	}
 }
@@ -58,6 +64,7 @@ if($_GET['e_mail'])
 									if($num_rows>0)
 								{		
 									echo "<font color=red>已被注册</font>";
+									echo "<script>alert('已被注册 请换其他邮件 再试一次！');</script>";
 								}
 									else
 								{
@@ -69,14 +76,30 @@ if($_GET['e_mail'])
 }
 if($_GET['mail'])
 {
-  $mb_email=$_GET['mail'];    
+  $reg_mb_email=$_GET['mail'];    
     //此处可进行数据库匹配，本次省略直接判断
 
-						if (!preg_match("/([0-9a-zA-Z_-]+)@([0-9a-zA-Z_-]+)\.([0-9a-zA-Z_-]+)/", $mb_email)){
+						if (!preg_match("/([0-9a-zA-Z_-]+)@([0-9a-zA-Z_-]+)\.([0-9a-zA-Z_-]+)/", $reg_mb_email)){
 								echo "<font color=red>格式不正确</font>";
 						}else{
-									echo "<img src=\"/bbs/images/member_ck_ok.gif\" class=\"t1\"/>";
+
+							// 邮箱重复验证
+			
+								$sql="select mb_email from g5_member where mb_email='$reg_mb_email'";//判断用户是否已经存在
+								$result=sql_query($sql);
+								$num_rows=sql_fetch_array($result);	
+									if($num_rows>0)
+								{		
+									echo "<font color=red>已被注册</font>";
+									echo "<script>alert('已被注册 请换其他邮件 再试一次！');</script>";
 								}
+									else
+								{
+									echo "<img src=\"/bbs/images/member_ck_ok.gif\" class=\"t1\"/>";
+									echo "<button type=\"submit\" class=\"btn btn-color\">确认修改</button>";
+								}
+								
+					 }
 
 }
 ?>

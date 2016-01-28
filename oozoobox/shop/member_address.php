@@ -179,6 +179,15 @@ if($_GET[type]=="default"){
 $sql = "SELECT * FROM g5_shop_order_address WHERE mb_id = '$member[mb_id]'";
 $result = sql_query($sql);
 ?>
+<script language="javascript"> 
+function changeEnter(){ 
+    if(event.keyCode==13){event.keyCode=9;} 
+} 
+function setFocus()
+{
+		document.getElementById("old_mb_password").focus()
+}
+</script>   
 <!----------------------------------添加收货地址---开始------------------------------------------------------------------------------->
 <script type="text/javascript"  src="/js/ct.js"></script>  
 <style type="text/css">
@@ -225,21 +234,21 @@ $result = sql_query($sql);
             <td width="70" align="right" class="linetd">所在地区 *</td>
             <td>
                 <div id="sel" style="width:400px;">
-                    <select onChange="getCity(this)" name="ad_addr1" required style=" border:solid 1px #cccccc; margin-right:5px;">
+                    <select onChange="getCity(this)" name="ad_addr1" required style=" border:solid 1px #cccccc; margin-right:5px;" onKeyDown="changeEnter()">
                     <? if($member[mb_addr1]){?>
                         <option value=""><?=$member[mb_addr1]?></option>
                     <? }else{ ?>
                         <option value="">请选择--省</option>
                     <? } ?>
                     </select>
-                    <select onChange="getCity(this)" name="ad_addr2" required style="border:solid 1px #cccccc; margin-right:5px;">
+                    <select onChange="getCity(this)" name="ad_addr2" required style="border:solid 1px #cccccc; margin-right:5px;" onKeyDown="changeEnter()">
                     <? if($member[mb_addr2]){?>
                         <option value=""><?=$member[mb_addr2]?></option>
                     <? }else{ ?>
                         <option value="">请选择--市</option>
                     <? } ?>                                
                     </select>
-                    <select onChange="getCity(this)" name="ad_addr3" required style="border:solid 1px #cccccc;">
+                    <select onChange="getCity(this)" name="ad_addr3" required style="border:solid 1px #cccccc;" onKeyDown="changeEnter()">
                     <? if($member[mb_addr3]){?>
                         <option value=""><?=$member[mb_addr3]?></option>
                     <? }else{ ?>
@@ -251,31 +260,31 @@ $result = sql_query($sql);
           </tr>
           <tr>
             <td align="right" class="linetd">详细地址 *</td>
-            <td><textarea name="ad_jibeon" class="form-control input-sm" id="mq" required style="width:318px; height:60px;" accesskey="s" role="combobox" placeholder="建议您如实填写详细收货地址，例如街道名称，门牌号码，楼层和房间号等信息"></textarea></td>
+            <td><textarea name="ad_jibeon" class="form-control input-sm" id="mq" required style="width:318px; height:60px;" accesskey="s" role="combobox" onKeyDown="changeEnter()" placeholder="建议您如实填写详细收货地址，例如街道名称，门牌号码，楼层和房间号等信息"></textarea></td>
           </tr>
           <tr>
             <td align="right" class="linetd">邮政编码 *</td>
-            <td><input name="ad_subject" type="text" class="form-control input-sm" required id="mq" style="width:200px; height:20px;" accesskey="s" value="" role="combobox" placeholder="如您不清楚邮递区号，请填写000000" /></td>
+            <td><input name="ad_subject" type="text" class="form-control input-sm" required id="mq" style="width:200px; height:20px;" accesskey="s" value="" onKeyDown="changeEnter()" role="combobox" placeholder="如您不清楚邮递区号，请填写000000" /></td>
           </tr>
           <tr>
             <td align="right" class="linetd">收货人姓名 *</td>
-            <td><input name="ad_name" type="text" class="form-control input-sm" required id="mq" style="width:200px; height:20px;" accesskey="s" value="" role="combobox" placeholder="长度不超过25个字符" /></td>
+            <td><input name="ad_name" type="text" class="form-control input-sm" required id="mq" style="width:200px; height:20px;" accesskey="s" value="" onKeyDown="changeEnter()" role="combobox" placeholder="长度不超过25个字符" /></td>
           </tr>
           <tr>
             <td align="right" class="linetd">手机号码 *</td>
-            <td><input name="ad_hp" type="text" class="form-control input-sm" required id="mq" style="width:200px; height:20px;" accesskey="s" value="" maxlength="11" role="combobox" placeholder="手机号码必须填写" /></td>
+            <td><input name="ad_hp" type="text" class="form-control input-sm" required id="mq" style="width:200px; height:20px;" accesskey="s" value="" onKeyDown="changeEnter()" maxlength="11" role="combobox" placeholder="手机号码必须填写" /></td>
           </tr>
           <tr>
             <td align="right" class="linetd">电话号码 *</td>
             <td>
                 <div class="linediv">
-                    <input name="ext1_00" type="text" class="form-control input-sm" required id="mq" style="width:40px; height:20px;" accesskey="s" value="" maxlength="4" role="combobox" placeholder="区号" /> 
+                    <input name="ext1_00" type="text" class="form-control input-sm" required id="mq" style="width:40px; height:20px;" accesskey="s" value="" onKeyDown="changeEnter()" maxlength="4" role="combobox" placeholder="区号" /> 
                 </div>
                 <div class="linediv">
-                    <input name="ext1_01" type="text" class="form-control input-sm" required id="mq" style="width:60px; height:20px;" accesskey="s" value="" maxlength="8" role="combobox" placeholder="电话号码" />
+                    <input name="ext1_01" type="text" class="form-control input-sm" required id="mq" style="width:60px; height:20px;" accesskey="s" value="" onKeyDown="changeEnter()" maxlength="8" role="combobox" placeholder="电话号码" />
                 </div>
                 <div class="linediv">
-                    <input name="ext1_02" type="text" class="form-control input-sm" required id="mq" style="width:46px; height:20px;" accesskey="s" value="" maxlength="6" role="combobox" placeholder="分机" />
+                    <input name="ext1_02" type="text" class="form-control input-sm" id="mq" style="width:46px; height:20px;" accesskey="s" value="" onKeyDown="changeEnter()" maxlength="6" role="combobox" placeholder="分机" />
                 </div>    
             </td>
           </tr>
@@ -342,21 +351,21 @@ $result = sql_query($sql);
                     <td width="70" align="right" class="linetd">所在地区 *</td>
                     <td>
                         <div id="sel" style="width:400px;">
-                            <select onChange="getCity(this)" name="ad_addr1" required style=" border:solid 1px #cccccc; margin-right:5px;">
+                            <select onChange="getCity(this)" name="ad_addr1" required style=" border:solid 1px #cccccc; margin-right:5px;" onKeyDown="changeEnter()">
                             <? if($member[mb_addr1]){?>
                                 <option value=""><?=$view[ad_addr1]?></option>
                             <? }else{ ?>
                                 <option value="">请选择--省</option>
                             <? } ?>
                             </select>
-                            <select onChange="getCity(this)" name="ad_addr2" required style="border:solid 1px #cccccc; margin-right:5px;">
+                            <select onChange="getCity(this)" name="ad_addr2" required style="border:solid 1px #cccccc; margin-right:5px;" onKeyDown="changeEnter()">
                             <? if($member[mb_addr2]){?>
                                 <option value=""><?=$view[ad_addr2]?></option>
                             <? }else{ ?>
                                 <option value="">请选择--市</option>
                             <? } ?>                                
                             </select>
-                            <select onChange="getCity(this)" name="ad_addr3" required style="border:solid 1px #cccccc;">
+                            <select onChange="getCity(this)" name="ad_addr3" required style="border:solid 1px #cccccc;" onKeyDown="changeEnter()">
                             <? if($member[mb_addr3]){?>
                                 <option value=""><?=$view[ad_addr3]?></option>
                             <? }else{ ?>
@@ -368,31 +377,31 @@ $result = sql_query($sql);
                   </tr>
                   <tr>
                     <td align="right" class="linetd">详细地址 *</td>
-                    <td><textarea name="ad_jibeon" class="form-control input-sm" id="mq" required style="width:318px; height:60px;" accesskey="s" role="combobox" placeholder="建议您如实填写详细收货地址，例如街道名称，门牌号码，楼层和房间号等信息"><?=$view[ad_jibeon]?></textarea></td>
+                    <td><textarea name="ad_jibeon" class="form-control input-sm" id="mq" required onKeyDown="changeEnter()" style="width:318px; height:60px;" accesskey="s" role="combobox" placeholder="建议您如实填写详细收货地址，例如街道名称，门牌号码，楼层和房间号等信息"><?=$view[ad_jibeon]?></textarea></td>
                   </tr>
                   <tr>
                     <td align="right" class="linetd">邮政编码 *</td>
-                    <td><input name="ad_subject" type="text" class="form-control input-sm" required id="mq" style="width:200px; height:20px;" accesskey="s" value="<?=$view[ad_subject]?>" role="combobox" placeholder="如您不清楚邮递区号，请填写000000" /></td>
+                    <td><input name="ad_subject" type="text" class="form-control input-sm" required onKeyDown="changeEnter()" id="mq" style="width:200px; height:20px;" accesskey="s" value="<?=$view[ad_subject]?>" role="combobox" placeholder="如您不清楚邮递区号，请填写000000" /></td>
                   </tr>
                   <tr>
                     <td align="right" class="linetd">收货人姓名 *</td>
-                    <td><input name="ad_name" type="text" class="form-control input-sm" required id="mq" style="width:200px; height:20px;" accesskey="s" value="<?=$view[ad_name]?>" role="combobox" placeholder="长度不超过25个字符" /></td>
+                    <td><input name="ad_name" type="text" class="form-control input-sm" required onKeyDown="changeEnter()" id="mq" style="width:200px; height:20px;" accesskey="s" value="<?=$view[ad_name]?>" role="combobox" placeholder="长度不超过25个字符" /></td>
                   </tr>
                   <tr>
                     <td align="right" class="linetd">手机号码 *</td>
-                    <td><input name="ad_hp" type="text" class="form-control input-sm" required id="mq" style="width:200px; height:20px;" accesskey="s" value="<?=$view[ad_hp]?>" maxlength="11" role="combobox" placeholder="手机号码必须填写" /></td>
+                    <td><input name="ad_hp" type="text" class="form-control input-sm" required onKeyDown="changeEnter()" id="mq" style="width:200px; height:20px;" accesskey="s" value="<?=$view[ad_hp]?>" maxlength="11" role="combobox" placeholder="手机号码必须填写" /></td>
                   </tr>
                   <tr>
                     <td align="right" class="linetd">电话号码 *</td>
                     <td>
                         <div class="linediv">
-                            <input name="ext1_00" type="text" class="form-control input-sm" required id="mq" style="width:40px; height:20px;" accesskey="s" value="<?=$tel_1?>" maxlength="4" role="combobox" placeholder="区号" /> 
+                            <input name="ext1_00" type="text" class="form-control input-sm" required onKeyDown="changeEnter()" id="mq" style="width:40px; height:20px;" accesskey="s" value="<?=$tel_1?>" maxlength="4" role="combobox" placeholder="区号" /> 
                         </div>
                         <div class="linediv">
-                            <input name="ext1_01" type="text" class="form-control input-sm" required id="mq" style="width:60px; height:20px;" accesskey="s" value="<?=$tel_2?>" maxlength="8" role="combobox" placeholder="电话号码" />
+                            <input name="ext1_01" type="text" class="form-control input-sm" required onKeyDown="changeEnter()" id="mq" style="width:60px; height:20px;" accesskey="s" value="<?=$tel_2?>" maxlength="8" role="combobox" placeholder="电话号码" />
                         </div>
                         <div class="linediv">
-                            <input name="ext1_02" type="text" class="form-control input-sm" required id="mq" style="width:46px; height:20px;" accesskey="s" value="<?=$tel_3?>" maxlength="6" role="combobox" placeholder="分机" />
+                            <input name="ext1_02" type="text" class="form-control input-sm" onKeyDown="changeEnter()" id="mq" style="width:46px; height:20px;" accesskey="s" value="<?=$tel_3?>" maxlength="6" role="combobox" placeholder="分机" />
                         </div>                    </td>
                   </tr>
                   <tr>

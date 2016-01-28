@@ -74,7 +74,7 @@ include_once($skin_path.'/search.skin.form.php');
 									<?php echo $item_label;?>
 									<div class="img-item">
 
-										<a href="<?php echo $list[$i]['href'];?>">
+										<a href="<?php echo $list[$i]['href'];?>" target="_blank">
 											<img src="<?php echo $img['src'];?>" alt="<?php echo $img['alt'];?>">
 										</a>
 										<?php if($dc) { ?>
@@ -90,7 +90,7 @@ include_once($skin_path.'/search.skin.form.php');
 							<div class="list-img">
 								<?php echo $item_icon;?>
 								<?php echo $item_label;?>
-								<a href="<?php echo $list[$i]['href'];?>">
+								<a href="<?php echo $list[$i]['href'];?>" target="_blank">
 									<img src="<?php echo $img['src'];?>" alt="<?php echo $img['alt'];?>">
 								</a>
 								<?php if($dc) { ?>
@@ -109,7 +109,7 @@ include_once($skin_path.'/search.skin.form.php');
 								</div>
 							<?php } ?>
 							<strong>
-								<a href="<?php echo $list[$i]['href'];?>">
+								<a href="<?php echo $list[$i]['href'];?>" target="_blank">
 									<?php echo $list[$i]['it_name'];?>
 								</a>
 							</strong>

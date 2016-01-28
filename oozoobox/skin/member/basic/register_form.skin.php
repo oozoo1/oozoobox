@@ -20,9 +20,8 @@ $ext1_07  = $ex1_filed[7];
 $ext1_08  = $ex1_filed[8];
 $ext1_09  = $ex1_filed[9];
 ?>
-<script type="text/javascript"  src="/js/ct.js"></script>  
 <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script> 
-<script src="<?php echo G5_JS_URL ?>/jquery.register_form.js"></script>
+<script src="/js/jquery.register_form.js"></script>
 <?php if($config['cf_cert_use'] && ($config['cf_cert_ipin'] || $config['cf_cert_hp'])) { ?>
 	<script src="<?php echo G5_JS_URL ?>/certify.js"></script>
 <?php } ?>
@@ -62,7 +61,7 @@ body {
 	background-image: none; 
 	padding:10px 20px 10px 20px;
 }
-.r_input{border:solid 1px #d9d9d9; width:240px; height:31px; color:#bdbdbd;}
+.r_input{border:solid 1px #d9d9d9; width:240px; height:31px; color:#bdbdbd; ime-mode:active();}
 -->
 </style>
 <script type="text/javascript"><!--自动检查账号是否被注册-->
@@ -81,28 +80,37 @@ body {
 						)		
 						
 		//邮箱   jQuery(普通应用时推荐，简单易用)
-    	$("#reg_mb_email").blur(function()
+    	$("#mb_email").blur(function()
 								 {        //文本框鼠标焦点消失事件
-			 						$.get("./member_ck_id.php?e_mail="+$("#reg_mb_email").val(),null,function(data)   //此处get方式 可换为post方式按需求调整，其他无需修改使用方式一样
+			 						$.get("./member_ck_id.php?e_mail="+$("#mb_email").val(),null,function(data)   //此处get方式 可换为post方式按需求调整，其他无需修改使用方式一样
       		 					 	{
           		  						$("#email").html(data);   //向ID为chk的元素内添加html代码
        		 						}
 			 						);
        	 						}
-						)		
-			
-						
-						     
+						)		 
 		}
 	)
+	
 </script> 
+ 
+<script language="javascript"> 
+function changeEnter(){ 
+    if(event.keyCode==13){event.keyCode=9;} 
+} 
+function setFocus()
+{
+		document.getElementById("reg_mb_id").focus()
+}
+</script> 
+<body onLoad="setFocus()">
 <table width="990" border="0" cellspacing="0" cellpadding="0" align="center">
-<form class="form-horizontal register-form" role="form" id="fregisterform" name="fregisterform" action="<?php echo $action_url ?>" onsubmit="return fregisterform_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off">
+<form id="fregisterform" name="fregisterform" onSubmit="return fregisterform_submit(this);" action="<?php echo $action_url ?>" method="post" enctype="multipart/form-data" autocomplete="off">
 	<input type="hidden" name="mb_nick" value="<? echo date("Ymdhis");?>">
 	<input type="hidden" name="w" value="<?php echo $w ?>">
 	<input type="hidden" name="url" value="<?php echo $urlencode ?>">
-	<input type="hidden" name="agree" value="<?php echo $agree ?>">
-	<input type="hidden" name="agree2" value="<?php echo $agree2 ?>">
+	<input type="hidden" name="agree" value="1">
+	<input type="hidden" name="agree2" value="1">
 	<input type="hidden" name="cert_type" value="<?php echo $member['mb_certify']; ?>">
 	<input type="hidden" name="cert_no" value="">
 	<?php if (isset($member['mb_sex'])) {  ?><input type="hidden" name="mb_sex" value="<?php echo $member['mb_sex'] ?>"><?php }  ?>
@@ -130,27 +138,27 @@ body {
               <table width="420" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                   <td width="100" height="50"><img src="<?=$skin_url?>/images/join_title_01.png"></td>
-                  <td><input type="text" name="mb_id" value="<?php echo $member['mb_id'] ?>" id="reg_mb_id" <?php echo $required ?> <?php echo $readonly ?> minlength="3" maxlength="20" class="r_input" placeholder="请输入,英文,数字,用户名"></td>
+                  <td><input type="text" name="mb_id" value="<?php echo $member['mb_id'] ?>" id="reg_mb_id" <?php echo $required ?> <?php echo $readonly ?> minlength="3" onKeyUp="check()" maxlength="20" class="r_input" onKeyDown="changeEnter()" placeholder="请输入,英文,数字,用户名"></td>
                   <td width="70" align="left"><span id="chk"></span></td>
                 </tr>
                 <tr>
                   <td width="100" height="50"><img src="<?=$skin_url?>/images/join_title_02.png"></td>
-                  <td><input type="text" id="reg_mb_name" name="mb_name" <?php echo $required ?> <?php echo $readonly; ?> class="r_input" size="10" placeholder="请输入真实姓名" onKeyUp="check()" ></td>
+                  <td><input type="text" id="reg_mb_name" name="mb_name" <?php echo $required ?> <?php echo $readonly; ?> class="r_input" size="10" placeholder="请输入真实姓名" onKeyUp="check()" onKeyDown="changeEnter()"></td>
                   <td width="70" align="left"><span id="mbname"></span></td>
                 </tr>
                 <tr>
                   <td height="50"><img src="<?=$skin_url?>/images/join_title_03.png"></td>
-                  <td><input type="password" name="mb_password" id="reg_mb_password" <?php echo $required ?> class="r_input" minlength="3" maxlength="20" placeholder="请输入密码"></td>
+                  <td><input type="password" name="mb_password" id="reg_mb_password" <?php echo $required ?> class="r_input" minlength="3" maxlength="20" placeholder="请输入密码" OnKeyDown="changeEnter()"></td>
                   <td align="left">&nbsp;</td>
                 </tr>
                 <tr>
                   <td height="50"><img src="<?=$skin_url?>/images/join_title_04.png"></td>
-                  <td><input type="password" name="mb_password_re" id="reg_mb_password_re" <?php echo $required ?> class="r_input" minlength="3" maxlength="20" onKeyUp="validate()"  placeholder="请再次输入密码"></td>
+                  <td><input type="password" name="mb_password_re" id="reg_mb_password_re" <?php echo $required ?> class="r_input" minlength="3" maxlength="20" onKeyUp="validate()"  placeholder="请再次输入密码" OnKeyDown="changeEnter()"></td>
                   <td align="left"><span id="tishi"></span></td>
                 </tr>
                 <tr>
                   <td height="50"><img src="<?=$skin_url?>/images/join_title_05.png"></td>
-                  <td><input type="text" name="mb_email" value="<?php echo isset($member['mb_email'])?$member['mb_email']:''; ?>" id="reg_mb_email" required class="r_input" size="70" maxlength="100" placeholder="请输入E-mail地址"></td>
+                  <td><input type="text" name="mb_email" value="<?php echo isset($member['mb_email'])?$member['mb_email']:''; ?>" id="mb_email" required class="r_input" size="70" maxlength="100" placeholder="请输入E-mail地址" OnKeyDown="changeEnter()"></td>
                   <td><span id="email"></span></td>
                 </tr>
               </table>
@@ -172,7 +180,7 @@ body {
                 其他会员 可看到您的个人信息.
               </label>
             </td>
-            <td align="right"><button type="submit" class="btn btn-color">下一步</button></td>
+            <td align="right"><input type="submit" value="<?php echo $w==''?'下一步':'信息设置'; ?>" id="btn_submit" class="btn btn-color" accesskey="s"></td>
           </tr>
         </table>
     </td>
@@ -192,192 +200,107 @@ body {
 				}
 				else {
 						document.getElementById("tishi").innerHTML="<font color=red>两次不同</font>";
-					document.getElementById("submit").disabled = true;
+						document.getElementById("submit").disabled = true;
 				}
 		}
 		
 		function check() {
 				if(!/^[\u4e00-\u9fa5]+$/gi.test(document.getElementById("reg_mb_name").value)) {
 						document.getElementById("mbname").innerHTML="<font color=red>请输入中文</font>";
-						document.getElementById("submit").disabled = false;
+						document.getElementById("fregisterform_submit").disabled = false;
 				}
 				else {
 						document.getElementById("mbname").innerHTML="<img src=\"images/member_ck_ok.gif\" class=\"t1\"/>";
-					document.getElementById("submit").disabled = true;
+					document.getElementById("fregisterform_submit").disabled = true;
 				}
+				
 		}
 </script>
 </form>
 </table>
+
 <script>
-$(function() {
-	$("#reg_zip_find").css("display", "inline-block");
-
-	<?php if($config['cf_cert_use'] && $config['cf_cert_ipin']) { ?>
-	// 아이핀인증
-	$("#win_ipin_cert").click(function() {
-		if(!cert_confirm())
-			return false;
-
-		var url = "<?php echo G5_OKNAME_URL; ?>/ipin1.php";
-		certify_win_open('kcb-ipin', url);
-		return;
-	});
-
-	<?php } ?>
-	<?php if($config['cf_cert_use'] && $config['cf_cert_hp']) { ?>
-	// 휴대폰인증
-	$("#win_hp_cert").click(function() {
-		if(!cert_confirm())
-			return false;
-
-		<?php
-		switch($config['cf_cert_hp']) {
-			case 'kcb':
-				$cert_url = G5_OKNAME_URL.'/hpcert1.php';
-				$cert_type = 'kcb-hp';
-				break;
-			case 'kcp':
-				$cert_url = G5_KCPCERT_URL.'/kcpcert_form.php';
-				$cert_type = 'kcp-hp';
-				break;
-			case 'lg':
-				$cert_url = G5_LGXPAY_URL.'/AuthOnlyReq.php';
-				$cert_type = 'lg-hp';
-				break;
-			default:
-				echo 'alert("기본환경설정에서 휴대폰 본인확인 설정을 해주십시오");';
-				echo 'return false;';
-				break;
-		}
-		?>
-
-		certify_win_open("<?php echo $cert_type; ?>", "<?php echo $cert_url; ?>");
-		return;
-	});
-	<?php } ?>
-});
-
-// submit 최종 폼체크
+// submit 最终检测确认
 function fregisterform_submit(f)
 {
-	// 회원아이디 검사
-	if (f.w.value == "") {
-		var msg = reg_mb_id_check();
-		if (msg) {
-			alert(msg);
-			f.mb_id.select();
-			return false;
-		}
-	}
-
-	if (f.w.value == "") {
-		if (f.mb_password.value.length < 3) {
-			alert("密码请 输入3字符以上.");
-			f.mb_password.focus();
-			return false;
-		}
-	}
-
-	if (f.mb_password.value != f.mb_password_re.value) {
-		alert("两次密码输入不同.");
-		f.mb_password_re.focus();
-		return false;
-	}
-
-	if (f.mb_password.value.length > 0) {
-		if (f.mb_password_re.value.length < 3) {
-			alert("密码请 输入3字符以上.");
-			f.mb_password_re.focus();
-			return false;
-		}
-	}
-
-	// 이름 검사
-	if (f.w.value=="") {
-		if (f.mb_name.value.length < 1) {
-			alert("请输入真实姓名.");
-			f.mb_name.focus();
-			return false;
+		// 会员ID 检查
+		if (f.reg_mb_id.value == "") {
+//				var msg = reg_mb_id_check();
+				if (msg) {
+						alert(msg);
+						f.reg_mb_id.focus();
+						//f.mb_id.select();
+						return false;
+				}
+		}else{
+				//var msg = reg_mb_id_check();
+				if(!/^[a-zA-Z0-9]{1,}$/gi.test(document.getElementById("reg_mb_id").value)) {
+					alert('只能输入英文或者数字！');					 
+					f.reg_mb_id.focus();
+					document.getElementById("reg_mb_id").value="";
+					return false;
+				}	
 		}
 
-		/*
-		var pattern = /([^가-힣\x20])/i;
-		if (pattern.test(f.mb_name.value)) {
-			alert("이름은 한글로 입력하십시오.");
-			f.mb_name.select();
-			return false;
+		// 姓名 检查
+		if (f.reg_mb_name.value == "") {
+			alert("请输入姓名");
+		}else {
+				//var msg = reg_mb_name_check();
+				if(!/^[\u4e00-\u9fa5]+$/gi.test(document.getElementById("reg_mb_name").value)) {
+					alert('只能输入汉字！');					 
+					f.reg_mb_name.focus();
+					document.getElementById("reg_mb_name").value="";
+					return false;
+				}	
+		 
 		}
-		*/
-	}
+		
+		
 
-	<?php if($w == '' && $config['cf_cert_use'] && $config['cf_cert_req']) { ?>
-	// 본인확인 체크
-	if(f.cert_no.value=="") {
-		alert("회원가입을 위해서는 본인확인을 해주셔야 합니다.");
-		return false;
-	}
-	<?php } ?>
-
-	// 닉네임 검사
-	if ((f.w.value == "") || (f.w.value == "u" && f.mb_nick.defaultValue != f.mb_nick.value)) {
-		var msg = reg_mb_nick_check();
-		if (msg) {
-			alert(msg);
-			f.reg_mb_nick.select();
-			return false;
+		if (f.w.value == "") {
+				if (f.reg_mb_password.value.length < 4) {
+						alert("密码必须输入4个以上字符组成");
+						f.reg_mb_password.focus();
+						return false;
+				}
 		}
-	}
 
-	// E-mail 검사
-	if ((f.w.value == "") || (f.w.value == "u" && f.mb_email.defaultValue != f.mb_email.value)) {
-		var msg = reg_mb_email_check();
-		if (msg) {
-			alert(msg);
-			f.reg_mb_email.select();
-			return false;
+		if (f.reg_mb_password.value.length > 0) {
+				if (f.reg_mb_password.value.length < 4) {
+						alert("密码必须输入4个以上字符组成");
+						f.reg_mb_password.focus();
+						return false;
+				}
 		}
-	}
-
-	<?php if (($config['cf_use_hp'] || $config['cf_cert_hp']) && $config['cf_req_hp']) {  ?>
-	// 휴대폰번호 체크
-	var msg = reg_mb_hp_check();
-	if (msg) {
-		alert(msg);
-		f.reg_mb_hp.select();
-		return false;
-	}
-	<?php } ?>
-
-	if (typeof f.mb_icon != "undefined") {
-		if (f.mb_icon.value) {
-			if (!f.mb_icon.value.toLowerCase().match(/.(gif)$/i)) {
-				alert("회원아이콘이 gif 파일이 아닙니다.");
-				f.mb_icon.focus();
+		
+		if (f.reg_mb_password.value != f.reg_mb_password_re.value) {
+				alert("您输入的密码不一致");
+				f.reg_mb_password_re.focus();
 				return false;
-			}
-		}
-	}
-
-	if (typeof(f.mb_recommend) != "undefined" && f.mb_recommend.value) {
-		if (f.mb_id.value == f.mb_recommend.value) {
-			alert("본인을 추천할 수 없습니다.");
-			f.mb_recommend.focus();
-			return false;
 		}
 
-		var msg = reg_mb_recommend_check();
-		if (msg) {
-			alert(msg);
-			f.mb_recommend.select();
-			return false;
+
+		// E-mail 检查
+		if (f.mb_email.value == "") {
+			alert("请输入E-mail地址");
+		}else {
+				//var msg = reg_mb_email_check();
+				
+			 var temp = document.getElementById("mb_email");   //输入邮箱的文本框     //对电子邮件的验证 
+			 var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;    
+			 if(!myreg.test(temp.value)){        
+			 			alert('请输入有效的E_mail！');					 
+					 f.mb_email.focus();
+					 document.getElementById("mb_email").value="";
+					 return false;
+			 }
+			 
 		}
-	}
 
-	<?php echo chk_captcha_js();  ?>
+		document.getElementById("btn_submit").disabled = "disabled";
 
-	document.getElementById("btn_submit").disabled = "disabled";
-
-	return true;
+		return true;
 }
 </script>
+</body>

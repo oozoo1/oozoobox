@@ -181,6 +181,15 @@ include_once('./_head.php');
 						     
 		}
 	)
+</script> 
+<script language="javascript"> 
+function changeEnter(){ 
+    if(event.keyCode==13){event.keyCode=9;} 
+} 
+function setFocus()
+{
+		document.getElementById("old_mb_password").focus()
+}
 </script>   
     <div class="overlay" id="overlay" style="display:none;"></div>
     <div class="box" id="box">
@@ -200,11 +209,11 @@ include_once('./_head.php');
                 </div>
             	<div class="passbox">
                 	<span>请输入新的密码</span>
-                    <input name="mb_password" class="txt" id="reg_mb_password" style="width:145px;" required type="password" minlength="4" maxlength="16"/ title="密码">
+                    <input name="mb_password" class="txt" id="reg_mb_password" style="width:145px;" required onKeyDown="changeEnter()" type="password" minlength="4" maxlength="16"/ title="密码">
                 </div>
                 <div class="passbox">
                 	<span>请再输入新的密码</span>
-                    <input name="mb_password_re" class="txt" id="reg_mb_password_re" style="width:145px;" required type="password" minlength="4" maxlength="16" title="密码" onKeyUp="validate()"/> <span id="tishi"></span>
+                    <input name="mb_password_re" class="txt" id="reg_mb_password_re" style="width:145px;" required onKeyDown="changeEnter()" type="password" minlength="4" maxlength="16" title="密码" onKeyUp="validate()"/> <span id="tishi"></span>
                 </div><br />
 
                 <div style="text-align:center;">
@@ -289,7 +298,7 @@ function fregisterform_submit(f)
         	<h4 class="Mypage_tit">
             我的基本消息
             </h4>
-            <form action="" method="post">
+            <form id="fregisterform" name="fregisterform" onSubmit="return fregisterform_submit(this);" action="/shop/member_confirm.php" method="post" enctype="multipart/form-data" autocomplete="off">
             <input type="hidden" name="type" value="update" />
             <table class="My_Information">
                 <colgroup>
@@ -313,7 +322,7 @@ function fregisterform_submit(f)
                         <? if($_GET[type]=="email"){?>
                           <form action="" method="post">
                             <input type="hidden" name="type" value="email" />
-                            <input name="mb_email" class="txt" style="height:30px;" id="mb_email" type="text" maxlength="40"> <span id="email"></span> <button type="submit" class="btn btn-color">确认修改</button>
+                            <input name="mb_email" class="txt" style="height:30px;" id="mb_email" type="text" maxlength="40"> <span id="email"></span> 
                           </form>
                         <? }else{ ?>
                         	<?=$member[mb_email]?><a href="/shop/member_confirm.php?type=email" style="margin-left:20px;"> <img src="/images/btn_change_email.png" alt="修改电子邮件"/></a>
@@ -323,7 +332,7 @@ function fregisterform_submit(f)
                     <tr>
                     	<th>真实姓名</th>
                         <td>
-                        	<input name="mb_name" class="txt" type="text" maxlength="20" value="<?=$member[mb_name]?>" title="姓名" style="width:370px">
+                        	<input name="mb_name" class="txt" type="text" maxlength="20" value="<?=$member[mb_name]?>" title="姓名" style="width:370px" onKeyDown="changeEnter()">
                         </td>
                     </tr>
                     <tr>
@@ -337,17 +346,17 @@ function fregisterform_submit(f)
                     <tr>
                     	<th>出生年日</th>
                         <td>
-                        	<select name="birth_y" title="选择出生年度" id="select_BirYear" style="width:80px">
+                        	<select name="birth_y" title="选择出生年度" id="select_BirYear" style="width:80px" onKeyDown="changeEnter()">
                               <?php for ($y=1940; $y<=2016; $y++){?>
                             	<option value="<?=$y?>" <? if($y=="$birth_y"){ echo "selected=\"selected\"";}else if($y=="1988"){ echo "selected=\"selected\"";}?>><?=$y?></option>
                               <? } ?>  
                             </select> 年
-                            <select name="birth_m" title="选择出生月" id="select_BirMonth" style="width:50px; margin-left:15px">
+                            <select name="birth_m" title="选择出生月" id="select_BirMonth" style="width:50px; margin-left:15px" onKeyDown="changeEnter()">
                               <?php for ($m=1; $m<=12; $m++){?>
                             	<option value="<?=$m?>" <? if($m=="$birth_m"){ echo "selected=\"selected\"";}?>><?=$m?></option>
                               <? } ?> 
                             </select> 月
-                            <select name="birth_d" title="选择出生年日" id="select_BirDay" style="width:50px; margin-left:15px">
+                            <select name="birth_d" title="选择出生年日" id="select_BirDay" style="width:50px; margin-left:15px" onKeyDown="changeEnter()">
                               <?php for ($d=1; $d<=31; $d++){?>
                             	<option value="<?=$d?>" <? if($d=="$birth_d"){ echo "selected=\"selected\"";}?>><?=$d?></option>
                               <? } ?> 
@@ -360,7 +369,7 @@ function fregisterform_submit(f)
                     </tr>  
                     <tr>
                     	<th>ＱＱ & 微信</th>
-                        <td><input name="mb_1" class="txt" type="text" value="<?=$member[mb_1]?>" title="ＱＱ" style="width:370px" placeholder="请输入QQ号码 或 微信账号"></input></td>
+                        <td><input name="mb_1" class="txt" type="text" value="<?=$member[mb_1]?>" title="ＱＱ" style="width:370px" placeholder="请输入QQ号码 或 微信账号" onKeyDown="changeEnter()"></input></td>
                     </tr>                                                                                                            
                 </tbody>
             </table>
