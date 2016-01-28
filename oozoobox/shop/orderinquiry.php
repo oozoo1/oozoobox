@@ -233,7 +233,6 @@ if(is_file($skin_path.'/setup.skin.php') && ($is_demo || $is_admin == 'super')) 
 	<style> 
 	#retForm{width:640px;line-height:22px;padding-bottom:10px;border-bottom:1px dotted #ccc;}
 	#retData{
-	padding:10px;
 	line-height:18px;
 	width: 96%;
 	border: 0;
